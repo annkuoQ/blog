@@ -47,7 +47,7 @@
 <body>
   
   
-  <header class="l_header pure">
+  <header class="l_header no_sidebar pure">
   <div id="loading-bar-wrapper">
     <div id="loading-bar" class="pure"></div>
   </div>
@@ -90,6 +90,15 @@
 								</a>
 							</li>
       			
+  						<li>
+								<a class="nav flat-box" href="/hhh/about/"
+                  
+                  
+                  id="hhhabout">
+									<i class=' fa-fw'></i>&nbsp;關於
+								</a>
+							</li>
+      			
       		
 				</ul>
 			</div>
@@ -114,8 +123,6 @@
 			<a class="logo flat-box"></a>
 			<ul class='switcher h-list'>
 				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
-        
-          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
         
 			</ul>
 		</div>
@@ -154,6 +161,15 @@
 							</a>
             </li>
           
+            <li>
+							<a class="nav flat-box" href="/hhh/about/"
+                
+                
+                id="hhhabout">
+								<i class=' fa-fw'></i>&nbsp;關於
+							</a>
+            </li>
+          
        
       </ul>
 		</nav>
@@ -165,7 +181,7 @@
 
   <div class="l_body nocover">
     <div class='body-wrapper'>
-      <div class='l_main'>
+      <div class='l_main no_sidebar'>
   
 
   <article id="page" class="post white-box article-type-page" itemscope itemprop="blogPost">
@@ -212,7 +228,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-01-04</p>
+    <p>2020-01-05</p>
   </a>
 </div>
 
@@ -244,7 +260,11 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        
+        <p>頭髮很捲的人</p>
+<p>喜歡觀察</p>
+<p>喜歡紀錄</p>
+<p>喜歡無所事事</p>
+
       </div>
       
       
@@ -361,7 +381,9 @@
     <div class='content pure'>
       <ul class="entry">
         
-          <li><a class="flat-box" title="/hhh/categories/%E5%B9%BC%E5%B9%BC/" href="/hhh/categories/%E5%B9%BC%E5%B9%BC/"><div class='name'>幼幼</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/hhh/categories/%E7%AE%A1%E7%90%86-%E4%BC%81%E5%8A%83/" href="/hhh/categories/%E7%AE%A1%E7%90%86-%E4%BC%81%E5%8A%83/"><div class='name'>管理 / 企劃</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/hhh/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/" href="/hhh/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/"><div class='name'>資工 / 程設</div><div class='badge'>(1)</div></a></li>
         
       </ul>
     </div>
@@ -406,7 +428,7 @@
 </header>
 
     <div class='content pure'>
-      <a href="/hhh/tags/tag1/" style="font-size: 24px; color: rgba(255, 255, 255, 0.8)">tag1</a> <a href="/hhh/tags/tag2/" style="font-size: 24px; color: rgba(255, 255, 255, 0.8)">tag2</a> <a href="/hhh/tags/%E5%98%BF%E5%98%BF/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">嘿嘿</a> <a href="/hhh/tags/%E6%8B%89%E6%8B%89/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">拉拉</a>
+      <a href="/hhh/tags/GitHub-Pages/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">GitHub-Pages</a> <a href="/hhh/tags/Hexo/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">Hexo</a> <a href="/hhh/tags/%E6%97%85%E9%81%8A/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">旅遊</a>
     </div>
   </section>
 
@@ -594,7 +616,7 @@
   var prompt = function (message, style, time)
   {
       style = (style === undefined) ? 'alert-success' : style;
-      time = (time === undefined) ? 1500 : time*1000;
+      time = (time === undefined) ? 300 : time*1000;
       $('<div>')
           .appendTo('body')
           .addClass('alert ' + style)
