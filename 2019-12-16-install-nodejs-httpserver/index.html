@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Win 10 安裝 Node.js 和 http-server | AnnKuoQ</title>
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="/hhh/img/favicon.ico">
+  
+
+  
+    
+<link rel="stylesheet" href="/hhh/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  
+  
+  <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/hhh/' >
+        
+          AnnKuoQ
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/hhh/"
+                  
+                  
+                  id="hhh">
+									<i class=' fa-fw'></i>&nbsp;首頁
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/hhh/categories/"
+                  
+                  
+                  id="hhhcategories">
+									<i class=' fa-fw'></i>&nbsp;文章分類
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/hhh/tags/"
+                  
+                  
+                  id="hhhtags">
+									<i class=' fa-fw'></i>&nbsp;標籤
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/hhh/about/"
+                  
+                  
+                  id="hhhabout">
+									<i class=' fa-fw'></i>&nbsp;關於
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜尋" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/hhh/"
+                
+                
+                id="hhh">
+								<i class=' fa-fw'></i>&nbsp;最新文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/hhh/categories/"
+                
+                
+                id="hhhcategories">
+								<i class=' fa-fw'></i>&nbsp;文章分類
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/hhh/tags/"
+                
+                
+                id="hhhtags">
+								<i class=' fa-fw'></i>&nbsp;標籤
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/hhh/about/"
+                
+                
+                id="hhhabout">
+								<i class=' fa-fw'></i>&nbsp;關於
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/hhh/2019-12-16-install-nodejs-httpserver/">
+        Win 10 安裝 Node.js 和 http-server
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://annkuoq.github.io/blog/" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>AnnKuoQ</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-12-16</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/hhh/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>資工 / 程設</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>為什麼要安裝 Node.js？</p>
+<ul>
+<li>因為它可以讓後端伺服器跑 JavaScript</li>
+</ul>
+<p>為什麼要安裝 http-server？</p>
+<ul>
+<li>因為它可以讓我們的電腦提供 Web Service</li>
+</ul>
+<a id="more"></a>
+
+<h3 id="安裝-Node-js"><a href="#安裝-Node-js" class="headerlink" title="安裝 Node.js"></a>安裝 Node.js</h3><ol>
+<li>到 Node.js 官網 <a href="https://nodejs.org/en/" target="_blank" rel="noopener">下載</a> 目前最新的穩定版本</li>
+<li>雙擊執行 <code>node-v12.13.1-x64</code></li>
+<li>不停的點 <code>Next</code> 下一步，並完成安裝</li>
+<li>檢查環境變數是否已新增 <code>C:\Program Files\nodejs\</code></li>
+<li>檢查 Node.js 和 NPM 的版本資訊<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v12.13.1</span><br><span class="line"></span><br><span class="line">$ npm -v</span><br><span class="line">6.12.1</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="環境設定"><a href="#環境設定" class="headerlink" title="環境設定"></a>環境設定</h4><ol>
+<li><p>在 <code>C:\Program Files\nodejs</code> 路徑下創建 <code>node_global</code> &amp; <code>node_cache</code> 資料夾</p>
+</li>
+<li><p>對<code>本機</code>按<code>右鍵</code> &gt; <code>內容</code> &gt; <code>進階系統設定</code> &gt; <code>進階</code> &gt; <code>環境變數</code> &gt;<br>點擊<code>系統變數</code>的 <code>Path</code> &gt; <code>編輯</code> &gt; <code>新增</code> &gt;<br><code>C:\Program Files\nodejs\node_global</code> 和 <code>C:\Program Files\nodejs\node_modules</code> &gt; <code>確定</code></p>
+</li>
+<li><p>開啟 CMD，輸入 <code>set PATH=C:</code>，讓環境變數立即生效，不用重開機</p>
+</li>
+<li><p>關閉 CMD 再重啟，輸入 <code>echo %PATH%</code>，查看是否有增加上面兩個路徑</p>
+</li>
+<li><p>更改 <code>global</code> 和 <code>cache</code> 資料夾路徑</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm config set prefix &quot;C:\Program Files\nodejs\node_global&quot;</span><br><span class="line">$ npm config set cache &quot;C:\Program Files\nodejs\node_cache&quot;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="安裝與執行-http-server"><a href="#安裝與執行-http-server" class="headerlink" title="安裝與執行 http-server"></a>安裝與執行 http-server</h3><ol>
+<li>下安裝指令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm install http-server -g</span><br><span class="line">C:\Program Files\nodejs\node_global\hs -&gt; C:\Program Files\nodejs\node_global\node_modules\http-server\bin\http-server</span><br><span class="line">C:\Program Files\nodejs\node_global\http-server -&gt; C:\Program Files\nodejs\node_global\node_modules\http-server\bin\http-server</span><br><span class="line">+ http-server@0.12.0</span><br><span class="line">added 27 packages from 35 contributors in 2.798s</span><br></pre></td></tr></table></figure></li>
+<li>移動到要開放的工作目錄<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd C:\Users\user\Desktop\test</span><br></pre></td></tr></table></figure></li>
+<li>啟動 localhost<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ http-server . 8080</span><br><span class="line">Starting up http-server, serving .</span><br><span class="line">Available on:</span><br><span class="line">  http:&#x2F;&#x2F;192.168.1.114:8080</span><br><span class="line">  http:&#x2F;&#x2F;127.0.0.1:8080</span><br><span class="line">Hit CTRL-C to stop the server</span><br></pre></td></tr></table></figure></li>
+<li>瀏覽器前往 <a href="http://127.0.0.1:8080" target="_blank" rel="noopener">http://127.0.0.1:8080</a> ，可以看到 test 目錄的東西</li>
+<li>輸入 <code>CTRL-C</code> 停止 <code>http-server</code></li>
+</ol>
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><ul>
+<li><a href="https://woodwhales.cn/2019/01/13/016/" target="_blank" rel="noopener">Ndoe.js安装及环境配置(for windows)</a></li>
+<li><a href="https://www.twblogs.net/a/5bd32ddd2b717778ac1fe7b7" target="_blank" rel="noopener">node安裝後的設置(node_global和node_cache)</a></li>
+<li><a href="https://yuugou727.github.io/blog/2017/05/01/npm-global-cache-folder/" target="_blank" rel="noopener">更改npm global與cache資料夾路徑</a></li>
+</ul>
+
+      </div>
+      
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/hhh/tags/Node-js/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Node.js</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/hhh/tags/http-server/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>http-server</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一頁</h6>
+                          <h4>
+                              <a href="/hhh/2019-12-17-install-ffmpeg/" rel="prev" title="Win 10 安裝 FFmpeg">
+                                
+                                    Win 10 安裝 FFmpeg
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/hhh/tags/ffmpeg/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> ffmpeg</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一頁&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/hhh/2019-12-15-change-file-explorer-open-in-win10/" rel="prev" title="更改 Win 10 檔案總管預設開啟位置">
+                                  
+                                      更改 Win 10 檔案總管預設開啟位置
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/hhh/tags/Windows/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Windows</a> <a class="tag" href="/hhh/tags/File-Explorer/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> File Explorer</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Win 10 安裝 Node.js 和 http-server',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://annkuoq.github.io/blog/img/logo_w.png'/>
+      </div>
+    
+    
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget plain'>
+  
+<header class='pure'>
+  <div><i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;關於這裡</div>
+  
+</header>
+
+  <div class='content pure'>
+    <p>擺放各種筆記的地方 (´ ●ω● ` )/</p>
+
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分類</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/hhh/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/hhh/categories/%E7%AE%A1%E7%90%86-%E4%BC%81%E5%8A%83/" href="/hhh/categories/%E7%AE%A1%E7%90%86-%E4%BC%81%E5%8A%83/"><div class='name'>管理 / 企劃</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/hhh/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/" href="/hhh/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/"><div class='name'>資工 / 程設</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/hhh/categories/%E8%BD%89%E6%AA%94-%E5%BD%B1%E9%9F%B3/" href="/hhh/categories/%E8%BD%89%E6%AA%94-%E5%BD%B1%E9%9F%B3/"><div class='name'>轉檔 / 影音</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/hhh/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/" href="/hhh/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/"><div class='name'>電腦 / 硬體</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/hhh/categories/%E9%9F%B3%E6%A8%82-%E6%A8%82%E5%99%A8/" href="/hhh/categories/%E9%9F%B3%E6%A8%82-%E6%A8%82%E5%99%A8/"><div class='name'>音樂 / 樂器</div><div class='badge'>(5)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;標籤雲</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/hhh/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/hhh/tags/Cmder/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">Cmder</a> <a href="/hhh/tags/Docusaurus/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">Docusaurus</a> <a href="/hhh/tags/File-Explorer/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">File Explorer</a> <a href="/hhh/tags/Git/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">Git</a> <a href="/hhh/tags/GitHub-Pages/" style="font-size: 19px; color: rgba(255, 255, 255, 0.8)">GitHub Pages</a> <a href="/hhh/tags/Hexo/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">Hexo</a> <a href="/hhh/tags/Line/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">Line</a> <a href="/hhh/tags/Node-js/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">Node.js</a> <a href="/hhh/tags/Photo-Viewer/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">Photo Viewer</a> <a href="/hhh/tags/Travel/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">Travel</a> <a href="/hhh/tags/Windows/" style="font-size: 19px; color: rgba(255, 255, 255, 0.8)">Windows</a> <a href="/hhh/tags/ffmpeg/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">ffmpeg</a> <a href="/hhh/tags/http-server/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">http-server</a> <a href="/hhh/tags/ukulele/" style="font-size: 24px; color: rgba(255, 255, 255, 0.8)">ukulele</a>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章目錄</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安裝-Node-js"><span class="toc-text">安裝 Node.js</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#環境設定"><span class="toc-text">環境設定</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安裝與執行-http-server"><span class="toc-text">安裝與執行 http-server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#參考資料"><span class="toc-text">參考資料</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+  <br>
+  <div><p>© 2020 AnnKuoQ<p/></div>
+  <div>
+    <p>Hexo ｜ Material-X Theme</p>
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/hhh/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/hhh/js/app.js"></script>
+
+
+
+  
+<script src="/hhh/js/search.js"></script>
+
+
+
+
+
+<!-- 复制 -->
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
