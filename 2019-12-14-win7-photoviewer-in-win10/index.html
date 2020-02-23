@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Win 10 使用 Win 7 的相片檢視器 | AnnKuoQ</title>
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="/blog/img/favicon.ico">
+  
+
+  
+    
+<link rel="stylesheet" href="/blog/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  
+  
+  <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/blog/' >
+        
+          AnnKuoQ
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/blog/"
+                  
+                  
+                  id="blog">
+									<i class=' fa-fw'></i>&nbsp;首頁
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/categories/"
+                  
+                  
+                  id="blogcategories">
+									<i class=' fa-fw'></i>&nbsp;文章分類
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/tags/"
+                  
+                  
+                  id="blogtags">
+									<i class=' fa-fw'></i>&nbsp;標籤
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/about/"
+                  
+                  
+                  id="blogabout">
+									<i class=' fa-fw'></i>&nbsp;關於
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜尋" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/blog/"
+                
+                
+                id="blog">
+								<i class=' fa-fw'></i>&nbsp;最新文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/categories/"
+                
+                
+                id="blogcategories">
+								<i class=' fa-fw'></i>&nbsp;文章分類
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/tags/"
+                
+                
+                id="blogtags">
+								<i class=' fa-fw'></i>&nbsp;標籤
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/about/"
+                
+                
+                id="blogabout">
+								<i class=' fa-fw'></i>&nbsp;關於
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/blog/2019-12-14-win7-photoviewer-in-win10/">
+        Win 10 使用 Win 7 的相片檢視器
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://annkuoq.github.io/blog/" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>AnnKuoQ</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-12-14</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>電腦 / 硬體</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>為什麼要改用 Win 7 的 Windows 相片檢視器？</p>
+<ul>
+<li>因為 Win 10 內建的 相片 APP 開圖片很慢</li>
+</ul>
+<a id="more"></a>
+
+<h2 id="如果電腦本身有-Windows-相片檢視器"><a href="#如果電腦本身有-Windows-相片檢視器" class="headerlink" title="如果電腦本身有 Windows 相片檢視器"></a>如果電腦本身有 Windows 相片檢視器</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><ol>
+<li>對 <code>開始</code> 按右鍵 &gt; <code>執行</code> &gt; 輸入 <code>regedit</code> &gt; <code>確定</code></li>
+<li>開啟<code>登錄編輯程式</code>後，找到以下路徑<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">電腦\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations</span><br></pre></td></tr></table></figure></li>
+<li>在空白處按<code>右鍵</code> &gt; <code>新增</code> &gt; <code>字串符</code></li>
+<li>名稱: 圖檔格式 (e.g. <code>.jpg</code> <code>.jpeg</code> <code>.png</code> <code>.gif</code> <code>.bmp</code> <code>.ico</code>…)<br>數值資料:  <code>PhotoViewer.FileAssoc.Tiff</code><br>(每種圖檔格式都要個別新增)</li>
+<li>關閉<code>登錄編輯程式</code></li>
+<li>對任一圖檔按<code>右鍵</code> &gt; <code>開啟檔案</code> &gt;  <code>Windows 相片檢視器</code></li>
+</ol>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><ol>
+<li><code>開始</code> &gt; <code>設定</code> &gt; <code>應用程式</code> &gt; <code>預設應用程式</code> &gt; <code>相片檢視器</code> &gt; <code>Windows 相片檢視器</code></li>
+</ol>
+<h2 id="如果電腦沒有-Windows-相片檢視器"><a href="#如果電腦沒有-Windows-相片檢視器" class="headerlink" title="如果電腦沒有 Windows 相片檢視器"></a>如果電腦沒有 Windows 相片檢視器</h2><ol>
+<li>開啟 <code>記事本</code> &gt; 將以下文字存成文字檔 &gt; 檔名改為 <code>PhotoViewer.reg</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">; Change Extension&#39;s File Type</span><br><span class="line">[HKEY_CURRENT_USER\Software\Classes\.jpg]</span><br><span class="line">@&#x3D;&quot;PhotoViewer.FileAssoc.Tiff&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; Change Extension&#39;s File Type</span><br><span class="line">[HKEY_CURRENT_USER\Software\Classes\.jpeg]</span><br><span class="line">@&#x3D;&quot;PhotoViewer.FileAssoc.Tiff&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; Change Extension&#39;s File Type</span><br><span class="line">[HKEY_CURRENT_USER\Software\Classes\.gif]</span><br><span class="line">@&#x3D;&quot;PhotoViewer.FileAssoc.Tiff&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; Change Extension&#39;s File Type</span><br><span class="line">[HKEY_CURRENT_USER\Software\Classes\.png]</span><br><span class="line">@&#x3D;&quot;PhotoViewer.FileAssoc.Tiff&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; Change Extension&#39;s File Type</span><br><span class="line">[HKEY_CURRENT_USER\Software\Classes\.bmp]</span><br><span class="line">@&#x3D;&quot;PhotoViewer.FileAssoc.Tiff&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; Change Extension&#39;s File Type</span><br><span class="line">[HKEY_CURRENT_USER\Software\Classes\.tiff]</span><br><span class="line">@&#x3D;&quot;PhotoViewer.FileAssoc.Tiff&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; Change Extension&#39;s File Type</span><br><span class="line">[HKEY_CURRENT_USER\Software\Classes\.ico]</span><br><span class="line"></span><br><span class="line">@&#x3D;&quot;PhotoViewer.FileAssoc.Tiff&quot;</span><br></pre></td></tr></table></figure></li>
+<li>下載完成後，點擊兩下執行</li>
+<li>出現 <code>安全性警告</code> <code>無法辨認發行者，您確定要執行這個軟體？</code> &gt; <code>執行</code><br>出現 <code>使用者帳戶控制</code>  <code>您是否要允許此應用程式變更您的電腦</code> &gt; <code>是</code><br>出現 <code>登錄檔編輯程式</code> <code>新增資訊會意外變更或刪除值，而且會造成元件無法正確工作，如果不信任 C:\Users\user\Desktop\PhotoViewer.reg 中的資訊來源，請不要新增至登錄。是否確定要繼續？</code> &gt; <code>是</code></li>
+<li>出現 <code>登錄檔編輯程式</code> <code>C:\Users\user\Desktop\PhotoViewer.reg 中的機碼和值已經成功加入登錄中</code> &gt; <code>確定</code></li>
+<li><code>開始</code> &gt; <code>設定</code> &gt; <code>應用程式</code> &gt; <code>預設應用程式</code> &gt; <code>相片檢視器</code> &gt; <code>Windows 相片檢視器</code></li>
+</ol>
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><ul>
+<li><a href="https://hcwang.pixnet.net/blog/post/42718982-win10%E5%B0%87%E7%9B%B8%E7%89%87%E6%AA%A2%E8%A6%96%E5%99%A8%E7%82%BA%E9%A0%90%E8%A8%AD%E9%81%B8%E9%A0%85" target="_blank" rel="noopener">Win10將相片檢視器為預設選項</a></li>
+<li><a href="https://www.kocpc.com.tw/archives/95887" target="_blank" rel="noopener">如何在Windows 10使用傳統的「相片檢視器」程式來看圖</a></li>
+</ul>
+
+      </div>
+      
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/Windows/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Windows</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/Photo-Viewer/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Photo Viewer</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一頁</h6>
+                          <h4>
+                              <a href="/blog/2019-12-15-change-file-explorer-open-in-win10/" rel="prev" title="更改 Win 10 檔案總管預設開啟位置">
+                                
+                                    更改 Win 10 檔案總管預設開啟位置
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/Windows/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Windows</a> <a class="tag" href="/blog/tags/File-Explorer/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> File Explorer</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一頁&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/blog/2019-12-10-install-cmder-and-git/" rel="prev" title="Win 10 安裝 Cmder 與 Git">
+                                  
+                                      Win 10 安裝 Cmder 與 Git
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/Cmder/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Cmder</a> <a class="tag" href="/blog/tags/Git/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Git</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Win 10 使用 Win 7 的相片檢視器',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://annkuoq.github.io/blog/img/logo_w.png'/>
+      </div>
+    
+    
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget plain'>
+  
+<header class='pure'>
+  <div><i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;關於這裡</div>
+  
+</header>
+
+  <div class='content pure'>
+    <p>擺放各種筆記的地方 (´ ●ω● ` )/</p>
+
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分類</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/blog/categories/%E7%AE%A1%E7%90%86-%E4%BC%81%E5%8A%83/" href="/blog/categories/%E7%AE%A1%E7%90%86-%E4%BC%81%E5%8A%83/"><div class='name'>管理 / 企劃</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/" href="/blog/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/"><div class='name'>資工 / 程設</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E8%BD%89%E6%AA%94-%E5%BD%B1%E9%9F%B3/" href="/blog/categories/%E8%BD%89%E6%AA%94-%E5%BD%B1%E9%9F%B3/"><div class='name'>轉檔 / 影音</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/" href="/blog/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/"><div class='name'>電腦 / 硬體</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E9%9F%B3%E6%A8%82-%E6%A8%82%E5%99%A8/" href="/blog/categories/%E9%9F%B3%E6%A8%82-%E6%A8%82%E5%99%A8/"><div class='name'>音樂 / 樂器</div><div class='badge'>(8)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;標籤雲</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/blog/tags/Cmder/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">Cmder</a> <a href="/blog/tags/Docusaurus/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">Docusaurus</a> <a href="/blog/tags/File-Explorer/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">File Explorer</a> <a href="/blog/tags/Git/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">Git</a> <a href="/blog/tags/GitHub-Pages/" style="font-size: 19px; color: rgba(255, 255, 255, 0.8)">GitHub Pages</a> <a href="/blog/tags/Hexo/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">Hexo</a> <a href="/blog/tags/Line/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">Line</a> <a href="/blog/tags/Node-js/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">Node.js</a> <a href="/blog/tags/Photo-Viewer/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">Photo Viewer</a> <a href="/blog/tags/Travel/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">Travel</a> <a href="/blog/tags/Windows/" style="font-size: 19px; color: rgba(255, 255, 255, 0.8)">Windows</a> <a href="/blog/tags/ffmpeg/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">ffmpeg</a> <a href="/blog/tags/http-server/" style="font-size: 14px; color: rgba(255, 255, 255, 0.8)">http-server</a> <a href="/blog/tags/ukulele/" style="font-size: 24px; color: rgba(255, 255, 255, 0.8)">ukulele</a>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章目錄</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#如果電腦本身有-Windows-相片檢視器"><span class="toc-text">如果電腦本身有 Windows 相片檢視器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法一"><span class="toc-text">方法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法二"><span class="toc-text">方法二</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如果電腦沒有-Windows-相片檢視器"><span class="toc-text">如果電腦沒有 Windows 相片檢視器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#參考資料"><span class="toc-text">參考資料</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+  <br>
+  <div><p>© 2020 AnnKuoQ<p/></div>
+  <div>
+    <p>Hexo ｜ Material-X Theme</p>
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/blog/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/app.js"></script>
+
+
+
+  
+<script src="/blog/js/search.js"></script>
+
+
+
+
+
+<!-- 复制 -->
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
