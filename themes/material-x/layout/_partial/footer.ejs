@@ -1,0 +1,27 @@
+<footer id="footer" class="clearfix">
+  <% if (theme.footer) { %>
+    <div class="footer">
+      <%- markdown(theme.footer) %>
+    </div>
+    <br>
+  <%}%>
+  <% if (theme.social) { %>
+    <div class="social-wrapper">
+      <% (theme.social||[]).forEach(function(value){ %>
+        <% if (value.url && value.icon) { %>
+          <a href="<%= url_for(value.url) %>"
+            class="social <%- value.icon %> flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        <%}%>
+      <%})%>
+    </div>
+  <%}%>
+  <br>
+  <div><p>© 2020 AnnKuoQ<p/></div>
+  <div>
+    <p><a href="https://hexo.io/">Hexo</a> ｜ <a href="https://github.com/xaoxuu/hexo-theme-volantis/">Volantis Theme</a></p>  
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>

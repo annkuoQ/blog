@@ -1,0 +1,164 @@
+############################### 基本信息 ###############################
+info:
+  name: Material X
+  docs: https://xaoxuu.com/wiki/material-x/
+  cdn: # 要使用CDN，请在根目录的config文件中写上 use_cdn: true
+    css:
+      style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.11.26/css/style.css
+    js:
+      app: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.11/js/app.js
+      search: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.11/js/search.js
+      volantis: https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0.6/js/volantis.min.js
+
+
+
+############################### 主题风格 ###############################
+# style: material    # material: 导航栏和标题栏背景是主题色
+style: pure        # pure: 导航栏和标题栏背景是白色
+
+
+############################### 服务开关 ###############################
+scrollreveal: false
+nodewaves: true
+busuanzi: false
+# fastclick: true
+
+
+# 日期格式 http://momentjs.com/docs/
+date_format: 'YYYY-MM-DD' # 文章发布日期的格式
+updated_date_format: 'll' # 文章更新日期的格式
+
+############################### 自定义 ###############################
+
+  # 主页封面菜单
+features:
+    - name: 首頁
+      url: /
+    - name: 文章分類
+      url: categories/
+    - name: 標籤
+      url: tags/
+#    - name: 關於
+#      url: about/
+
+# 桌面端导航栏菜单
+menu_desktop:
+    - name: 首頁
+      url: /
+    - name: 文章分類
+      url: categories/
+    - name: 標籤
+      url: tags/
+#    - name: 關於
+#      url: about/
+
+# 手机端导航菜单（从右上角的按钮点击展开）
+menu_mobile:
+    - name: 最新文章
+      url: /
+    - name: 文章分類
+      url: categories/
+    - name: 標籤
+      url: tags/
+#    - name: 關於
+#      url: about/
+
+layout:
+  # 文章列表（主页、自定义的列表）布局
+  posts:
+  # 列表中每一篇文章的meta信息
+    meta: [title, author, date, categories, top]
+  # 列表类页面的侧边栏
+    sidebar: [author, plain, list, grid, category, tagcloud]
+  # 文章页面布局
+  article:
+  # 文章页面主体元素，你也可以在页面的Front-matter中设置
+    body: [article, comments]
+    # 默认的meta信息，文章中没有配置则按照这里的配置来显示，设置为false则不显示
+    # 其中，title只在header中有效，music和thumbnail无需在这里设置，文章中有则显示
+    # 如果tags放置在meta.header中，那么在post列表中不显示（因为卡片下方已经有了）
+    header: [title, author, date, categories, wordcount, top]
+    footer: [tags]
+    # 文章页面的侧边栏
+    sidebar: [author, plain, grid, category, tagcloud, list, related_posts, toc]
+  # 其他的页面布局暂时等于文章列表
+
+
+# 侧边栏小部件配置
+sidebar:
+  - widget: author
+    avatar: https://annkuoq.github.io/blog/img/logo_w.png
+  - widget: plain
+    icon: fas fa-info-circle
+    title: 關於這裡
+    body: 擺放各種筆記的地方 (´ ●ω● ` )/
+  - widget: category
+    more:
+      icon: fas fa-expand-arrows-alt
+      url: categories/
+      rel: nofollow
+  - widget: tagcloud
+    icon: fas fa-tags
+    more:
+      icon: fas fa-expand-arrows-alt
+      url: tags/
+      rel: nofollow
+  - widget: toc
+
+
+
+
+
+############################### 评论系统 ###############################
+# Comments
+# livere_uid: 要使用哪个请复制到根目录配置文件！
+# gitalk: 要使用哪个请复制到根目录配置文件！
+#   clientID: 你的clientID
+#   clientSecret: 你的clientSecret
+#   repo: 你的repo名
+#   owner: 你的GitHub名
+#   admin: [] 至少填写你的GitHub名
+# leancloud: 要使用哪个请复制到根目录配置文件！
+#   app_id: 你的appId
+#   app_key: 你的appKey
+
+
+############################### 杂项，请勿删除 ###############################
+#valine配置
+valine:
+  enable: true # 如果你想用Valine评论系统，请设置enable为true
+  volantis: true # 是否启用volantis版本（禁止匿名，增加若干贴吧、QQ表情）
+  # 还需要在根目录配置文件中添加下面这三行内容
+  # leancloud:
+  #   app_id: 你的appId
+  #   app_key: 你的appKey
+  guest_info: nick,mail,link #valine comment header info
+  placeholder: 快来评论吧~ # valine comment input placeholder(like: Please leave your footprints )
+  avatar: mp # gravatar style https://valine.js.org/avatar
+  pageSize: 10 # comment list page size
+  verify: true # valine verify code (true/false)
+  notify: true # valine mail notify (true/false)
+  lang: zh-cn
+  highlight: true
+
+# 搜索配置
+search:
+  enable: true
+  service: hexo
+  # google
+  google_api_key:
+  google_engine_id:
+  # algolia
+  algolia_app_id:
+  algolia_api_key:
+  algolia_index_name:
+  # azure
+  azure_service_name:
+  azure_index_name:
+  azure_query_key:
+  # baidu
+  baidu_api_id:
+
+# Less渲染
+less:
+  compress: true
