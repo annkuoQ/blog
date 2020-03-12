@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://annkuoq.github.io/2019-12-17-install-ffmpeg/</loc>
+    <loc>https://annkuoq.github.io/2020-03-08-add-utterances-comment-widget-to-hexo/</loc>
     
-    <lastmod>2020-03-10T15:10:01.095Z</lastmod>
+    <lastmod>2020-03-12T12:31:12.007Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://annkuoq.github.io/2020-03-08-add-utterances-comment-widget-to-hexo/</loc>
+    <loc>https://annkuoq.github.io/2020-01-03-use-hexo-to-deploy-github-pages/</loc>
     
-    <lastmod>2020-03-10T14:53:31.845Z</lastmod>
+    <lastmod>2020-03-12T12:30:42.270Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://annkuoq.github.io/2019-12-17-install-ffmpeg/</loc>
+    
+    <lastmod>2020-03-10T15:10:01.095Z</lastmod>
     
   </url>
   
@@ -124,13 +131,6 @@
     <loc>https://annkuoq.github.io/2019-12-14-win7-photoviewer-in-win10/</loc>
     
     <lastmod>2020-01-11T09:03:31.287Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://annkuoq.github.io/2020-01-03-use-hexo-to-deploy-github-pages/</loc>
-    
-    <lastmod>2020-01-11T07:17:28.068Z</lastmod>
     
   </url>
   
