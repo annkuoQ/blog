@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="google-site-verification" content="BA0c9S2A0y6LKGGUAyEEIYAl4C0O7hED1HrbKlYmzts" />
   
-  <title>Win 10 使用 Win 7 的相片檢視器 | AnnKuoQ Blog</title>
+  <title>如何讓 Google 搜尋到我的部落格 | AnnKuoQ Blog</title>
   
   
 
@@ -181,8 +181,8 @@
         
   
     <h1 class="title">
-      <a href="/blog/2019-12-14-win7-photoviewer-in-win10/">
-        Win 10 使用 Win 7 的相片檢視器
+      <a href="/blog/2020-03-15-how-to-find-my-blog-on-google-search/">
+        如何讓 Google 搜尋到我的部落格
       </a>
     </h1>
   
@@ -213,7 +213,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-12-14</p>
+    <p>2020-03-15</p>
   </a>
 </div>
 
@@ -223,9 +223,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/blog/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/' rel="nofollow">
+    <a href='/blog/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>電腦 / 硬體</p>
+      <p>資工 / 程設</p>
     </a>
   </div>
 
@@ -253,33 +253,94 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>為什麼要改用 Win 7 的 Windows 相片檢視器？</p>
-<ul>
-<li>因為 Win 10 內建的 相片 APP 開圖片很慢</li>
-</ul>
+        <p>首先要先了解 Google 搜尋是怎麼運作的<br>其實 Google 不是搜尋整個網路<br>而是在搜尋 Google 的網頁索引 (index)</p>
 <a id="more"></a>
 
-<h2 id="如果電腦本身有-Windows-相片檢視器"><a href="#如果電腦本身有-Windows-相片檢視器" class="headerlink" title="如果電腦本身有 Windows 相片檢視器"></a>如果電腦本身有 Windows 相片檢視器</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><ol>
-<li>對 <code>開始</code> 按右鍵 &gt; <code>執行</code> &gt; 輸入 <code>regedit</code> &gt; <code>確定</code></li>
-<li>開啟<code>登錄編輯程式</code>後，找到以下路徑<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">電腦\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations</span><br></pre></td></tr></table></figure></li>
-<li>在空白處按<code>右鍵</code> &gt; <code>新增</code> &gt; <code>字串符</code></li>
-<li>名稱: 圖檔格式 (e.g. <code>.jpg</code> <code>.jpeg</code> <code>.png</code> <code>.gif</code> <code>.bmp</code> <code>.ico</code>…)<br>數值資料:  <code>PhotoViewer.FileAssoc.Tiff</code><br>(每種圖檔格式都要個別新增)</li>
-<li>關閉<code>登錄編輯程式</code></li>
-<li>對任一圖檔按<code>右鍵</code> &gt; <code>開啟檔案</code> &gt;  <code>Windows 相片檢視器</code></li>
+<h2 id="Google-搜尋的運作方式"><a href="#Google-搜尋的運作方式" class="headerlink" title="Google 搜尋的運作方式"></a>Google 搜尋的運作方式</h2><p>有三個步驟</p>
+<ul>
+<li>Crawling 抓取</li>
+<li>Indexing 建立索引</li>
+<li>Serving and Ranking 傳回搜尋結果和排名</li>
+</ul>
+<h3 id="1-Crawling-抓取"><a href="#1-Crawling-抓取" class="headerlink" title="1. Crawling 抓取"></a>1. Crawling 抓取</h3><p>因為網頁沒有統一登錄的地方<br>所以 Google 會透過自動化程式 (爬蟲) 來抓取網路上的內容<br>再將這些網頁所含的資料傳回 Google 伺服器</p>
+<h3 id="2-Indexing-建立索引"><a href="#2-Indexing-建立索引" class="headerlink" title="2. Indexing 建立索引"></a>2. Indexing 建立索引</h3><p>Google 的系統在分析網頁的內容後 (文字、圖片、影片等)<br>就會將這些資料編目到 Google 索引中<br>就像書末索引一樣<br>Google 會為網頁中的每個字詞建立條目</p>
+<h3 id="3-Serving-and-Ranking-傳回搜尋結果和排名"><a href="#3-Serving-and-Ranking-傳回搜尋結果和排名" class="headerlink" title="3. Serving and Ranking 傳回搜尋結果和排名"></a>3. Serving and Ranking 傳回搜尋結果和排名</h3><p>因為搜尋結果太多了<br>所以 Gooogle 會用演算法排名<br>例如關鍵字出現頻率、或使用者所在位置、以前的搜尋紀錄等等</p>
+<p>現在我們知道了 Google 其實是在搜尋 index<br>所以你有兩條路:</p>
+<ul>
+<li>一是等 Google Crawlers 爬到你且建好索引的那一天</li>
+<li>二是直接把網頁內容告訴 Google</li>
+</ul>
+<p>看起來當然是直接告訴 Google 比較快～</p>
+<h2 id="使用-Search-Console"><a href="#使用-Search-Console" class="headerlink" title="使用 Search Console"></a>使用 Search Console</h2><p>Search Console 是 Google 的服務<br>我們把網站交給它之後<br>就可以搜尋到自己的部落格囉！</p>
+<h3 id="安裝步驟"><a href="#安裝步驟" class="headerlink" title="安裝步驟"></a>安裝步驟</h3><ol>
+<li><p>登入 Google 並前往 <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener">Search Console</a> &gt; <code>立即開始</code></p>
+</li>
+<li><p>選擇要新增的網站資源</p>
+<ul>
+<li><code>網域</code>: 必須進行 DNS 驗證</li>
+<li><code>網址前置字元</code>: 支援多種驗證方式</li>
+</ul>
+</li>
 </ol>
-<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><ol>
-<li><code>開始</code> &gt; <code>設定</code> &gt; <code>應用程式</code> &gt; <code>預設應用程式</code> &gt; <code>相片檢視器</code> &gt; <code>Windows 相片檢視器</code></li>
+<p>因為我是用 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> 架站，並沒有買網域，所以用 <code>網址前置字元</code><br>接著輸入包含通訊協定和子網域的完整網址: <code>https://annkuoq.github.io/blog/</code></p>
+<ol start="3">
+<li>驗證我擁有這個網站<br>Google 提供了多種驗證方法:<ul>
+<li>上傳 HTML 檔案</li>
+<li>HTML 標記</li>
+<li>DNS 紀錄</li>
+<li>Google Analytics (分析) 追蹤程式碼</li>
+<li>Google 代碼管理工具容器片段</li>
+<li>Google 協作平台</li>
+<li>Blogger</li>
+<li>Google Domains</li>
+</ul>
+</li>
 </ol>
-<h2 id="如果電腦沒有-Windows-相片檢視器"><a href="#如果電腦沒有-Windows-相片檢視器" class="headerlink" title="如果電腦沒有 Windows 相片檢視器"></a>如果電腦沒有 Windows 相片檢視器</h2><ol>
-<li>開啟 <code>記事本</code> &gt; 將以下文字存成文字檔 &gt; 檔名改為 <code>PhotoViewer.reg</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">; Change Extension&#39;s File Type</span><br><span class="line">[HKEY_CURRENT_USER\Software\Classes\.jpg]</span><br><span class="line">@&#x3D;&quot;PhotoViewer.FileAssoc.Tiff&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; Change Extension&#39;s File Type</span><br><span class="line">[HKEY_CURRENT_USER\Software\Classes\.jpeg]</span><br><span class="line">@&#x3D;&quot;PhotoViewer.FileAssoc.Tiff&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; Change Extension&#39;s File Type</span><br><span class="line">[HKEY_CURRENT_USER\Software\Classes\.gif]</span><br><span class="line">@&#x3D;&quot;PhotoViewer.FileAssoc.Tiff&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; Change Extension&#39;s File Type</span><br><span class="line">[HKEY_CURRENT_USER\Software\Classes\.png]</span><br><span class="line">@&#x3D;&quot;PhotoViewer.FileAssoc.Tiff&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; Change Extension&#39;s File Type</span><br><span class="line">[HKEY_CURRENT_USER\Software\Classes\.bmp]</span><br><span class="line">@&#x3D;&quot;PhotoViewer.FileAssoc.Tiff&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; Change Extension&#39;s File Type</span><br><span class="line">[HKEY_CURRENT_USER\Software\Classes\.tiff]</span><br><span class="line">@&#x3D;&quot;PhotoViewer.FileAssoc.Tiff&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; Change Extension&#39;s File Type</span><br><span class="line">[HKEY_CURRENT_USER\Software\Classes\.ico]</span><br><span class="line"></span><br><span class="line">@&#x3D;&quot;PhotoViewer.FileAssoc.Tiff&quot;</span><br></pre></td></tr></table></figure></li>
-<li>下載完成後，點擊兩下執行</li>
-<li>出現 <code>安全性警告</code> <code>無法辨認發行者，您確定要執行這個軟體？</code> &gt; <code>執行</code><br>出現 <code>使用者帳戶控制</code>  <code>您是否要允許此應用程式變更您的電腦</code> &gt; <code>是</code><br>出現 <code>登錄檔編輯程式</code> <code>新增資訊會意外變更或刪除值，而且會造成元件無法正確工作，如果不信任 C:\Users\user\Desktop\PhotoViewer.reg 中的資訊來源，請不要新增至登錄。是否確定要繼續？</code> &gt; <code>是</code></li>
-<li>出現 <code>登錄檔編輯程式</code> <code>C:\Users\user\Desktop\PhotoViewer.reg 中的機碼和值已經成功加入登錄中</code> &gt; <code>確定</code></li>
-<li><code>開始</code> &gt; <code>設定</code> &gt; <code>應用程式</code> &gt; <code>預設應用程式</code> &gt; <code>相片檢視器</code> &gt; <code>Windows 相片檢視器</code></li>
+<p>我是用 <code>HTML 標記</code> 的方式<br>把 <code>&lt;meta&gt; tag</code> 貼到 <code>\themes\你的主題名稱\layout\_partia\head.ejs</code></p>
+<div align="center"><img src="/blog/2020-03-15-how-to-find-my-blog-on-google-search/verify.jpg" width="450px"></div>
+
+<ul>
+<li>儲存 <code>.head.ejs</code></li>
+<li>清除快取和舊的靜態檔案</li>
+<li>重新產生靜態檔案與部署網站<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></li>
+<li>點擊 <code>驗證</code> 鈕</li>
+<li>驗證成功～</li>
+</ul>
+<div align="center"><img src="/blog/2020-03-15-how-to-find-my-blog-on-google-search/verified.jpg" width="450px"></div>
+
+<h3 id="測試搜尋結果"><a href="#測試搜尋結果" class="headerlink" title="測試搜尋結果"></a>測試搜尋結果</h3><p>過幾天後，搜尋 <code>site:https://annkuoq.github.io/blog/</code><br>看見自己的網站出現太感人了 😭</p>
+<h2 id="Sitemap-網站地圖"><a href="#Sitemap-網站地圖" class="headerlink" title="Sitemap 網站地圖"></a>Sitemap 網站地圖</h2><p>除了給 Google 網址<br>也可以提供 Sitemap (網站地圖)<br>它會列出所有頁面 URL 和 metadata<br>讓搜尋引擎更有效的完整抓取網站</p>
+<h3 id="如何產生-Sitemap"><a href="#如何產生-Sitemap" class="headerlink" title="如何產生 Sitemap"></a>如何產生 Sitemap</h3><h4 id="1-線上產生器"><a href="#1-線上產生器" class="headerlink" title="1. 線上產生器"></a>1. 線上產生器</h4><p>網路上有很多免費 Sitemap 線上產生器<br>例如 <a href="https://www.xml-sitemaps.com/" target="_blank" rel="noopener">XML-Sitemaps</a></p>
+<ol>
+<li>輸入網址 &gt; <code>START</code></li>
+<li>等待服務爬你的網站</li>
+<li><code>View Sitemap Details</code> &gt; <code>Download Your XML Sitemap File</code></li>
+<li>把 <code>sitemap.xml</code> 放到 <code>\public</code> 目錄下</li>
+<li>在根目錄的 <code>_config.yml</code> 加上設定<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">  path: sitemap.xml</span><br></pre></td></tr></table></figure></li>
+<li>清除快取和舊的靜態檔案<br>重新產生靜態檔案與部署網站<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<h4 id="2-第三方套件"><a href="#2-第三方套件" class="headerlink" title="2. 第三方套件"></a>2. 第三方套件</h4>有一個叫 <a href="https://www.npmjs.com/package/hexo-generator-sitemap" target="_blank" rel="noopener">hexo-generator-sitemap</a> 的套件<br>能讓你的 Sitemap 和靜態檔案同時產生</li>
+<li>安裝套件 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure></li>
+<li>在根目錄的 <code>_config.yml</code> 加上設定<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">  path: sitemap.xml</span><br></pre></td></tr></table></figure></li>
+<li>清除快取和舊的靜態檔案<br>產生靜態檔案和 Sitemap<br>重新部署網站<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+</li>
 </ol>
-<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><ul>
-<li><a href="https://hcwang.pixnet.net/blog/post/42718982-win10%E5%B0%87%E7%9B%B8%E7%89%87%E6%AA%A2%E8%A6%96%E5%99%A8%E7%82%BA%E9%A0%90%E8%A8%AD%E9%81%B8%E9%A0%85" target="_blank" rel="noopener">Win10將相片檢視器為預設選項</a></li>
-<li><a href="https://www.kocpc.com.tw/archives/95887" target="_blank" rel="noopener">如何在Windows 10使用傳統的「相片檢視器」程式來看圖</a></li>
+<h3 id="提交-Sitemap"><a href="#提交-Sitemap" class="headerlink" title="提交 Sitemap"></a>提交 Sitemap</h3><p>部署好網站後<br>可以看到根目錄有一個 <code>sitemap.xml</code> 檔案<br>接著就可以去 Search Console 主控台</p>
+<ol>
+<li>點擊左側欄位中的 <code>Sitemap</code></li>
+<li>輸入 <code>sitemap.xml</code></li>
+<li>點擊 <code>提交</code></li>
+</ol>
+<h2 id="新增或修改網頁內容"><a href="#新增或修改網頁內容" class="headerlink" title="新增或修改網頁內容"></a>新增或修改網頁內容</h2><p>如果之後有新增網頁或修改內容<br>可以重新提交 Sitemap<br>或請 Search Console 重新檢索</p>
+<ol>
+<li>點擊左側的 <code>網址審查</code></li>
+<li>輸入網址</li>
+<li>點擊 <code>要求建立索引</code></li>
+</ol>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://support.google.com/webmasters?hl=zh-Hant#topic=9128571" target="_blank" rel="noopener">Search Console 官方文件</a></li>
+<li><a href="https://www.yesharris.com/search-console-intro/" target="_blank" rel="noopener">Google Search Console 初學者指南，如何使用及安裝</a></li>
+<li><a href="https://jenifers001d.github.io/2019/12/09/SEO/SEO1-Website-is-Not-Showing-in-Google-Search/" target="_blank" rel="noopener">為什麼搜尋 (Google) 不到我的 Hexo 部落格？</a></li>
 </ul>
 
       </div>
@@ -295,7 +356,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/Windows/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Windows</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/Photo-Viewer/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Photo Viewer</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/GitHub-Pages/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>GitHub Pages</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/Hexo/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Hexo</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/Google-Search-Console/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Google Search Console</p></a></div>
 
 
         
@@ -308,40 +369,21 @@
       
           <div class="prev-next">
               
-                  <section class="prev">
-                      <span class="art-item-left">
-                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一頁</h6>
-                          <h4>
-                              <a href="/blog/2019-12-15-change-file-explorer-open-in-win10/" rel="prev" title="更改 Win 10 檔案總管預設開啟位置">
-                                
-                                    更改 Win 10 檔案總管預設開啟位置
-                                
-                              </a>
-                          </h4>
-                          
-                              
-                              <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/Windows/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Windows</a> <a class="tag" href="/blog/tags/File-Explorer/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> File Explorer</a>
-                              </h6>
-                          
-                      </span>
-                  </section>
-              
               
                   <section class="next">
                       <span class="art-item-right" aria-hidden="true">
                           <h6>下一頁&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                           <h4>
-                              <a href="/blog/2019-12-10-install-cmder-and-git/" rel="prev" title="Win 10 安裝 Cmder 與 Git">
+                              <a href="/blog/2020-03-08-add-utterances-comment-widget-to-hexo/" rel="prev" title="在 Hexo 安裝 utterances 留言版">
                                   
-                                      Win 10 安裝 Cmder 與 Git
+                                      在 Hexo 安裝 utterances 留言版
                                   
                               </a>
                           </h4>
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/blog/tags/Cmder/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Cmder</a> <a class="tag" href="/blog/tags/Git/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Git</a>
+                                  <a class="tag" href="/blog/tags/GitHub-Pages/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> GitHub Pages</a> <a class="tag" href="/blog/tags/Hexo/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Hexo</a> <a class="tag" href="/blog/tags/utterances/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> utterances</a>
                               </h6>
                           
                       </span>
@@ -386,7 +428,7 @@
 
   <script>
     window.subData = {
-      title: 'Win 10 使用 Win 7 的相片檢視器',
+      title: '如何讓 Google 搜尋到我的部落格',
       tools: true
     }
   </script>
@@ -640,7 +682,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#如果電腦本身有-Windows-相片檢視器"><span class="toc-text">如果電腦本身有 Windows 相片檢視器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法一"><span class="toc-text">方法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法二"><span class="toc-text">方法二</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如果電腦沒有-Windows-相片檢視器"><span class="toc-text">如果電腦沒有 Windows 相片檢視器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#參考資料"><span class="toc-text">參考資料</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Google-搜尋的運作方式"><span class="toc-text">Google 搜尋的運作方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Crawling-抓取"><span class="toc-text">1. Crawling 抓取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Indexing-建立索引"><span class="toc-text">2. Indexing 建立索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Serving-and-Ranking-傳回搜尋結果和排名"><span class="toc-text">3. Serving and Ranking 傳回搜尋結果和排名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-Search-Console"><span class="toc-text">使用 Search Console</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安裝步驟"><span class="toc-text">安裝步驟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#測試搜尋結果"><span class="toc-text">測試搜尋結果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sitemap-網站地圖"><span class="toc-text">Sitemap 網站地圖</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何產生-Sitemap"><span class="toc-text">如何產生 Sitemap</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-線上產生器"><span class="toc-text">1. 線上產生器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-第三方套件"><span class="toc-text">2. 第三方套件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提交-Sitemap"><span class="toc-text">提交 Sitemap</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新增或修改網頁內容"><span class="toc-text">新增或修改網頁內容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#參考資料"><span class="toc-text">參考資料</span></a></li></ol>
     </div>
   </section>
 
