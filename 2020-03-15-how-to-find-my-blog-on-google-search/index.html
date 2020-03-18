@@ -310,23 +310,29 @@
 
 <h3 id="測試搜尋結果"><a href="#測試搜尋結果" class="headerlink" title="測試搜尋結果"></a>測試搜尋結果</h3><p>過幾天後，搜尋 <code>site:https://annkuoq.github.io/blog/</code><br>看見自己的網站出現太感人了 😭</p>
 <h2 id="Sitemap-網站地圖"><a href="#Sitemap-網站地圖" class="headerlink" title="Sitemap 網站地圖"></a>Sitemap 網站地圖</h2><p>除了給 Google 網址<br>也可以提供 Sitemap (網站地圖)<br>它會列出所有頁面 URL 和 metadata<br>讓搜尋引擎更有效的完整抓取網站</p>
+<p>標準的 XML Sitemap 範例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;urlset xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.sitemaps.org&#x2F;schemas&#x2F;sitemap&#x2F;0.9&quot;&gt;</span><br><span class="line">   &lt;url&gt;</span><br><span class="line">      &lt;loc&gt;http:&#x2F;&#x2F;www.example.com&#x2F;&lt;&#x2F;loc&gt;</span><br><span class="line">      &lt;lastmod&gt;2005-01-01&lt;&#x2F;lastmod&gt;</span><br><span class="line">      &lt;changefreq&gt;monthly&lt;&#x2F;changefreq&gt;</span><br><span class="line">      &lt;priority&gt;0.8&lt;&#x2F;priority&gt;</span><br><span class="line">   &lt;&#x2F;url&gt;</span><br><span class="line">&lt;&#x2F;urlset&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>想了解上面那些 tag 的用意 <a href="https://www.sitemaps.org/zh_TW/protocol.html" target="_blank" rel="noopener">可點我</a></p>
+</blockquote>
 <h3 id="如何產生-Sitemap"><a href="#如何產生-Sitemap" class="headerlink" title="如何產生 Sitemap"></a>如何產生 Sitemap</h3><h4 id="1-線上產生器"><a href="#1-線上產生器" class="headerlink" title="1. 線上產生器"></a>1. 線上產生器</h4><p>網路上有很多免費 Sitemap 線上產生器<br>例如 <a href="https://www.xml-sitemaps.com/" target="_blank" rel="noopener">XML-Sitemaps</a></p>
 <ol>
-<li>輸入網址 &gt; <code>START</code></li>
-<li>等待服務爬你的網站</li>
-<li><code>View Sitemap Details</code> &gt; <code>Download Your XML Sitemap File</code></li>
-<li>把 <code>sitemap.xml</code> 放到 <code>\public</code> 目錄下</li>
 <li>在根目錄的 <code>_config.yml</code> 加上設定<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">  path: sitemap.xml</span><br></pre></td></tr></table></figure></li>
-<li>清除快取和舊的靜態檔案<br>重新產生靜態檔案與部署網站<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<h4 id="2-第三方套件"><a href="#2-第三方套件" class="headerlink" title="2. 第三方套件"></a>2. 第三方套件</h4>有一個叫 <a href="https://www.npmjs.com/package/hexo-generator-sitemap" target="_blank" rel="noopener">hexo-generator-sitemap</a> 的套件<br>能讓你的 Sitemap 和靜態檔案同時產生</li>
+<li>清除快取和舊的靜態檔案<br>重新產生靜態檔案與部署網站<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></li>
+<li>到 <a href="https://www.xml-sitemaps.com/" target="_blank" rel="noopener">XML-Sitemaps</a> 輸入網址 &gt; <code>START</code></li>
+<li><code>View Sitemap Details</code> &gt; <code>Download Your XML Sitemap File</code></li>
+<li>把 <code>sitemap.xml</code> 上傳到根目錄 (GitHub Repo)</li>
+</ol>
+<h4 id="2-第三方套件"><a href="#2-第三方套件" class="headerlink" title="2. 第三方套件"></a>2. 第三方套件</h4><p>有一個叫 <a href="https://www.npmjs.com/package/hexo-generator-sitemap" target="_blank" rel="noopener">hexo-generator-sitemap</a> 的套件<br>能讓你的 Sitemap 和靜態檔案同時產生</p>
+<ol>
 <li>安裝套件 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure></li>
 <li>在根目錄的 <code>_config.yml</code> 加上設定<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">  path: sitemap.xml</span><br></pre></td></tr></table></figure></li>
 <li>清除快取和舊的靜態檔案<br>產生靜態檔案和 Sitemap<br>重新部署網站<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<h3 id="提交-Sitemap"><a href="#提交-Sitemap" class="headerlink" title="提交 Sitemap"></a>提交 Sitemap</h3><p>部署好網站後<br>可以看到根目錄有一個 <code>sitemap.xml</code> 檔案<br>接著就可以去 Search Console 主控台</p>
-<ol>
+<h3 id="提交-Sitemap"><a href="#提交-Sitemap" class="headerlink" title="提交 Sitemap"></a>提交 Sitemap</h3><ol>
+<li>前往 Search Console 主控台</li>
 <li>點擊左側欄位中的 <code>Sitemap</code></li>
 <li>輸入 <code>sitemap.xml</code></li>
 <li>點擊 <code>提交</code></li>
