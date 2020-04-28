@@ -5,10 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="google-site-verification" content="BA0c9S2A0y6LKGGUAyEEIYAl4C0O7hED1HrbKlYmzts" />
   
-  <title>如何用笨方法知道影片從頭到尾的 Bitrate | AnnKuoQ Blog</title>
+  <title>如何知道影片從頭到尾 Bitrate 的變化 | AnnKuoQ Blog</title>
   
   
-  <meta name="description" content="最近在研究適合網路串流的 VBR 轉檔，想知道整段影片的 Bitrate 是怎樣變化的，要是 maximum bitrate 高過網速時，可能就會出現緩衝轉圈圈的情況">
+  <meta name="description" content="最近在研究適合網路串流的 VBR 轉檔，想知道整段影片的 Bitrate 是怎樣變化的，要是 maximum bitrate 高過網速時，可能就會出現緩衝轉圈圈的情況，如果用 MediaInfo 看，只會有 average bitrate ...">
   
 
   
@@ -183,7 +183,7 @@
   
     <h1 class="title">
       <a href="/blog/2020-04-26-how-to-check-video-bitrate/">
-        如何用笨方法知道影片從頭到尾的 Bitrate
+        如何知道影片從頭到尾 Bitrate 的變化
       </a>
     </h1>
   
@@ -258,7 +258,7 @@
 <a id="more"></a>
 
 <p>如果用 <a href="https://mediaarea.net/en/MediaInfo" target="_blank" rel="noopener">MediaInfo</a> 看，只會有 average bitrate (平均流量)<br>但實際上 Bitrate 是上下不停變動的</p>
-<p>在開始之前<br>要先安裝好 <a href="https://www.ffmpeg.org/" target="_blank" rel="noopener">ffmpeg</a> 和 <a href="https://www.microsoft.com/zh-tw/microsoft-365/excel" target="_blank" rel="noopener">Excel</a> 軟體～</p>
+<p>在開始之前<br>要先安裝好 <a href="https://www.ffmpeg.org/" target="_blank" rel="noopener">FFmpeg</a> 和 <a href="https://www.microsoft.com/zh-tw/microsoft-365/excel" target="_blank" rel="noopener">Excel</a> 軟體～</p>
 <h2 id="列出影格大小與長度"><a href="#列出影格大小與長度" class="headerlink" title="列出影格大小與長度"></a>列出影格大小與長度</h2><p>首先用 ffprobe 來找出影格資訊</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ffprobe -print_format csv -select_streams v:0 -show_entries frame&#x3D;pkt_size,pkt_duration_time input.mp4 &gt; output.csv</span><br></pre></td></tr></table></figure>
 <p>參數解釋:</p>
@@ -426,7 +426,7 @@
 <p>接著就可以用圖表功能畫出 Bitrate 變化囉～</p>
 <div align="center"><img src="/blog/2020-04-26-how-to-check-video-bitrate/bitrate-graph.jpg" width="500px"></div>
 
-<h2 id="其他軟體"><a href="#其他軟體" class="headerlink" title="其他軟體"></a>其他軟體</h2><p>看完笨方法之後<br>有沒有其他比較輕鬆的方式呢？</p>
+<h2 id="其他軟體"><a href="#其他軟體" class="headerlink" title="其他軟體"></a>其他軟體</h2><p>看完上面這個笨方法之後<br>有沒有其他比較輕鬆的方式呢？</p>
 <h3 id="Bitrate-Viewer"><a href="#Bitrate-Viewer" class="headerlink" title="Bitrate Viewer"></a><a href="https://www.videohelp.com/software/Bitrate-Viewer-2" target="_blank" rel="noopener">Bitrate Viewer</a></h3><p>這是一個免費軟體<br>主要支援 MPEG-1, MPEG-2, MPEG-4 等格式<br>只要把影片拖拉進軟體內<br>就會自動跑出圖表</p>
 <div align="center"><img src="/blog/2020-04-26-how-to-check-video-bitrate/bitrate-viewer.jpg" width="500px"></div>
 
@@ -527,7 +527,7 @@
 
   <script>
     window.subData = {
-      title: '如何用笨方法知道影片從頭到尾的 Bitrate',
+      title: '如何知道影片從頭到尾 Bitrate 的變化',
       tools: true
     }
   </script>
