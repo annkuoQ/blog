@@ -14,6 +14,6 @@ jobs:
       uses: y4code/hexo-deploy-action@master
       env:
         PERSONAL_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-        PUBLISH_REPOSITORY: blog/annkuoq.github.io # The repository the action should deploy to.
+        PUBLISH_REPOSITORY: annkuoq/blog # The repository the action should deploy to.
         BRANCH: gh-pages  # The branch the action should deploy to.
         PUBLISH_DIR: ./public # The folder the action should deploy.
