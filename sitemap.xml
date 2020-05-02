@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://annkuoq.github.io/2020-01-03-use-hexo-to-deploy-github-pages/</loc>
+    
+    <lastmod>2020-04-30T16:11:21.671Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://annkuoq.github.io/2020-04-26-how-to-check-video-bitrate/</loc>
     
     <lastmod>2020-04-28T14:58:11.380Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://annkuoq.github.io/2020-03-09-add-utterances-comment-widget-to-hexo/</loc>
     
     <lastmod>2020-04-28T14:56:35.590Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://annkuoq.github.io/2020-01-03-use-hexo-to-deploy-github-pages/</loc>
-    
-    <lastmod>2020-04-28T14:55:08.926Z</lastmod>
     
   </url>
   
