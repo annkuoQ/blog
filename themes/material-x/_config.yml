@@ -97,12 +97,6 @@ sidebar:
       icon: fas fa-expand-arrows-alt
       url: categories/
       rel: nofollow
-  - widget: tagcloud
-    icon: fas fa-tags
-    more:
-      icon: fas fa-expand-arrows-alt
-      url: tags/
-      rel: nofollow
   - widget: toc
 
 

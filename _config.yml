@@ -3,15 +3,14 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: AnnKuoQ
+title: AnnKuoQ Blog
 subtitle: 一個擺放各種筆記的地方
-description: 
+description: 一個擺放各種筆記的地方
 keywords:
 author: AnnKuoQ
 language: zh-TW
 timezone: 
 favicon: /img/favicon.ico
-
 sitemap:
   path: sitemap.xml
 
@@ -104,5 +103,5 @@ theme: material-x
 deploy:
   type: git
   repo: git@github.com:annkuoQ/blog.git
-  branch: master
+  branch: gh-pages
   

@@ -1,10 +1,11 @@
 ---
 title: 用 Hexo 和 GitHub Pages 架部落格
 date: 2020-01-03 23:19:47
+description: Hexo 中文資源比較多，也有很多別人做好的主題可以直接用，一鍵就可以產生靜態網站並部署，在開始之前要先創建一個 repo，然後執行 npm install -g hexo-cli ...
 categories: 資工 / 程設
 tags:
-- Hexo
-- GitHub Pages
+- hexo
+- github pages
 ---
 
 為什麼要用 Hexo？
@@ -272,13 +273,14 @@ found 0 vulnerabilities
 ```
 2. 開啟 `_config.yml`，編寫以下的值，並儲存檔案
 ```
-url: https://annkuoq.github.io (GitHub Pages Host 網址)
-root: /test/ (GitHub Project 名稱)
+# URL
+url: https://<username>.github.io
+root: /<reponame>/
 
 deploy:
   type: git
-  repo: git@github.com:annkuoQ/test.git (Repo 的 URL)
-  branch: master (要放網站的分支)
+  repo: git@github.com:<username>/<reponame>.git
+  branch: master
 ```
 3. 部署到 GitHub
 ```

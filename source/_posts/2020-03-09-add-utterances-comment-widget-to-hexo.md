@@ -1,10 +1,11 @@
 ---
 title: 在 Hexo 安裝 utterances 留言版
-date: 2020-03-08 22:14:53
+date: 2020-03-09 22:14:53
+description: utterances 沒廣告、不追蹤用戶隱私，留言會自動開 issue 到 repo，首先在 github 創建一個 public repo，然後安裝 utterances app ...
 categories: 資工 / 程設
 tags:
-- Hexo
-- GitHub Pages
+- hexo
+- github pages
 - utterances
 ---
 

@@ -1,10 +1,11 @@
 ---
 title: 用 Docusaurus 和 GitHub Pages 架網站
 date: 2019-12-27 23:18:01
+description: Docusaurus 是 Facebook 團隊的開源作品，可以輕鬆產生靜態網站，適合用於 Documentation Website，在開始前要安裝 git 和 node.js，並創建一個 repo ...
 categories: 資工 / 程設
 tags:
-- Docusaurus
-- GitHub Pages
+- docusaurus
+- github pages
 ---
 
 為什麼要用 Docusaurus？

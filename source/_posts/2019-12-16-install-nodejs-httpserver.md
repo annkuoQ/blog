@@ -1,9 +1,10 @@
 ---
 title: Win 10 安裝 Node.js 和 http-server
 date: 2019-12-16 13:56:25
+description: Node.js 可以讓後端伺服器跑 JavaScript，而 http-server 可以讓我們的電腦提供 Web Service，首先到 Node.js 官網下載目前最新的穩定版本，然後檢查環境變數是否已新增 ...
 categories: 資工 / 程設
 tags:
-- Node.js
+- node.js
 - http-server
 ---
 

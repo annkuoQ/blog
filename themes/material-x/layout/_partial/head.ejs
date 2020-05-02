@@ -18,14 +18,14 @@
   %>
   <title><% if (title) { %><%= title %> | <% } %><%= config.title %></title>
   <% if (page.keywords && config.keywords){ %>
-  <meta name="keywords" content="<%- page.keywords %>, <%- config.keywords %>">
+  <meta name="keywords" content="<%- page.keywords %>">
   <% } else if (page.keywords) { %>
   <meta name="keywords" content="<%- page.keywords %>">
   <% } else if (config.keywords) { %>
   <meta name="keywords" content="<%- config.keywords %>">
   <% } %>
   <% if (page.description && config.description){ %>
-  <meta name="description" content="<%- page.description %>, <%- config.description %>">
+  <meta name="description" content="<%- page.description %>">
   <% } else if (page.description) { %>
   <meta name="description" content="<%- page.description %>">
   <% } else if (config.description) { %>
