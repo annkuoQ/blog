@@ -32,7 +32,8 @@ $ npm -v
 
 #### 環境設定
 1. 在 `C:\Program Files\nodejs` 路徑下創建 `node_global` & `node_cache` 資料夾
-2. 對`本機`按`右鍵` > `內容` > `進階系統設定` > `進階` > `環境變數` > 
+2. 開啟檔案總管
+對`本機`按`右鍵` > `內容` > `進階系統設定` > `進階` > `環境變數` > 
 點擊`系統變數`的 `Path` > `編輯` > `新增` > 
 `C:\Program Files\nodejs\node_global` 和 `C:\Program Files\nodejs\node_modules` > `確定`
 
@@ -67,7 +68,7 @@ Available on:
 Hit CTRL-C to stop the server
 ```
 4. 瀏覽器前往 http://127.0.0.1:8080 ，可以看到 test 目錄的東西
-5. 輸入 `CTRL-C` 停止 `http-server`
+5. 點擊 `Ctrl` + `C` 停止 `http-server`
 
 ### 參考資料
 - [Ndoe.js安装及环境配置(for windows)](https://woodwhales.cn/2019/01/13/016/)

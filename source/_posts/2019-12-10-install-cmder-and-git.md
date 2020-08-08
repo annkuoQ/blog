@@ -24,7 +24,9 @@ tags:
 
 4. 將 Cmder 資料夾放到 C 槽底下 `C:\cmder`
 
-5. 對 `本機` 按右鍵 > `內容` > `進階系統設定` > `進階` > `環境變數` > 點擊`系統變數`的 `Path` > `編輯` > `新增` > `C:\cmder` > `確定`
+5. 開啟檔案總管
+對 `本機` 按右鍵 > `內容` > `進階系統設定` > `進階` > `環境變數` >
+點擊`系統變數`的 `Path` > `編輯` > `新增` > `C:\cmder` > `確定`
 
 6. 開啟 CMD，輸入 `set PATH=C:`，讓環境變數立即生效，不用重開機
 
@@ -35,15 +37,15 @@ tags:
   ```
   Warning!
   
-  ConEmu binaries were marked as 'Down loaded from inter net':
-  C:\cmder\ve ndor\conemu-maximus5\C on Emu.exe
-  C:\cmder\vendor\conemu-maximus5\C on Emu64.exe
-  C:\cmder\vendor\conemu-maximus5\C on Emu\C on EmuC.exe
-  C:\cmder\vendor\c on emu-maximus5\ConEmu\C on EmuC64.exe
-  C:\cmder\ve ndor\c on emu-maximus5\C on Emu\C on EmuCD.dll
-  C:\cmder\ve ndor\conemu-maximus5\C on Emu\C on EmuCD64.dll
-  C:\cmder\ve ndor\conemu-maximus5\C on Emu\C on EmuHIcdll
-  C:\cmder\ve ndor\c on emu-maximus5\C on Emu\C on EmuHk64.dll
+  ConEmu binaries were marked as 'Down loaded from internet':
+  C:\cmder\vendor\conemu-maximus5\ConEmu.exe
+  C:\cmder\vendor\conemu-maximus5\ConEmu64.exe
+  C:\cmder\vendor\conemu-maximus5\ConEmu\ConEmuC.exe
+  C:\cmder\vendor\conemu-maximus5\ConEmu\ConEmuC64.exe
+  C:\cmder\vendor\conemu-maximus5\ConEmu\ConEmuCD.dll
+  C:\cmder\vendor\conemu-maximus5\ConEmu\ConEmuCD64.dll
+  C:\cmder\vendor\conemu-maximus5\ConEmu\ConEmuHIcdll
+  C:\cmder\vendor\conemu-maximus5\ConEmu\ConEmuHk64.dll
   
   This may cause blocking or access denied errors!
   
@@ -57,45 +59,24 @@ tags:
   -> Ignore and Continue
        You may face further warnings
   ```
-
   
+  點擊 `Unblock and Continue` 即可解決上面的錯誤
 
-  9. 點擊叉叉後，還是成功開啟 Cmder
-```
-Generating clink initial settings in "C:\cmder\config\settings"
-複製了         1 個檔案。
-Additional *.lua files in "C:\cmder\config" are loaded on startup.
-Creating initial user_aliases store in "C:\cmder\config\user_aliases.cmd"...
-複製了         1 個檔案。
-Running Git for Windows one time Post Install....
-"running post-install"
-'C:\Windows\system32\drivers\etc\hosts' -> '/etc/hosts'
-'C:\Windows\system32\drivers\etc\protocol' -> '/etc/protocols'
-'C:\Windows\system32\drivers\etc\services' -> '/etc/services'
-'C:\Windows\system32\drivers\etc\networks' -> '/etc/networks'
-找不到批次檔。
-Creating user startup file: "C:\cmder\config\user_profile.cmd"
-複製了         1 個檔案。
-```
 
-10. 關閉 Cmder
-
-11. 到警告視窗提到的路徑找出這些檔案
-對它們點擊`右鍵` > `內容` > 勾選 `解除封鎖` > `確定`
+  9. 但若是你點擊了 `Unblock and Continue` 以外的選項
+  就要到警告視窗提到的路徑找出這些檔案
+  對它們點擊`右鍵` > `內容` > 勾選 `解除封鎖` > `確定`
 
 ```
-C:\cmder\ve ndor\conemu-maximus5\C on Emu.exe
-C:\cmder\vendor\conemu-maximus5\C on Emu64.exe
-C:\cmder\vendor\conemu-maximus5\C on Emu\C on EmuC.exe
-C:\cmder\vendor\c on emu-maximus5\ConEmu\C on EmuC64.exe
-C:\cmder\ve ndor\c on emu-maximus5\C on Emu\C on EmuCD.dll
-C:\cmder\ve ndor\conemu-maximus5\C on Emu\C on EmuCD64.dll
-C:\cmder\ve ndor\conemu-maximus5\C on Emu\C on EmuHIcdll
-C:\cmder\ve ndor\c on emu-maximus5\C on Emu\C on EmuHk64.dll
+C:\cmder\vendor\conemu-maximus5\ConEmu.exe
+C:\cmder\vendor\conemu-maximus5\ConEmu64.exe
+C:\cmder\vendor\conemu-maximus5\ConEmu\ConEmuC.exe
+C:\cmder\vendor\conemu-maximus5\ConEmu\ConEmuC64.exe
+C:\cmder\vendor\conemu-maximus5\ConEmu\ConEmuCD.dll
+C:\cmder\vendor\conemu-maximus5\ConEmu\ConEmuCD64.dll
+C:\cmder\vendor\conemu-maximus5\ConEmu\ConEmuHIcdll
+C:\cmder\vendor\conemu-maximus5\ConEmu\ConEmuHk64.dll
 ```
-
-
-12. 再次開啟 Cmder 沒有警告視窗了
 
 ## 優化 Cmder
 ### 1. 更改提示符號 λ
