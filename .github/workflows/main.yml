@@ -10,8 +10,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
-    - name: Build and Deploy
-      uses: y4code/hexo-deploy-action@master
+    - name: Hexo Deploy
+      uses: Solybum/hexo-deploy@1.0
       env:
         PERSONAL_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         PUBLISH_REPOSITORY: annkuoq/blog # The repository the action should deploy to.
