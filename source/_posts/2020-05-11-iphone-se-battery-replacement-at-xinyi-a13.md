@@ -7,7 +7,7 @@ tags:
 - iPhone
 ---
 
-手上這支 iPhone SE 已經四年多~!
+手上這支 iPhone SE 已經四年多
 電池健康度為 82%
 雖然它本來就只有 1624 mAh
 但感覺用 safari 滿容易發熱和噴電的
