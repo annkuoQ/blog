@@ -2,7 +2,7 @@
 title: 如何讓 Google 搜尋到自己的部落格
 date: 2020-03-15 10:50:02
 description: 首先要先了解 Google 搜尋是怎麼運作的，因為 Google 不是搜尋整個網路，而是在搜尋 Google 的網頁索引 (index)，共有三個步驟，一 Crawling 抓取，二 Indexing 建立索引 ...
-categories: 資工 / 程設
+categories: 企劃 / 行銷
 tags: 
 - hexo
 - github pages

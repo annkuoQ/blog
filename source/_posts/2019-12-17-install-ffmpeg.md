@@ -2,7 +2,7 @@
 title: Win 10 安裝 FFmpeg
 date: 2019-12-17 12:25:39
 description: ffmpeg 是一個開源的影音處理軟體，不管是轉檔、分析、播放、剪接、字幕、濾鏡都做得到，首先前往官網下載打包好的靜態函式庫版本，解壓縮資料夾後，放到 C 槽路徑下面 ...
-categories: 轉檔 / 影音
+categories: 轉檔 / 編碼
 tags:
 - ffmpeg
 ---

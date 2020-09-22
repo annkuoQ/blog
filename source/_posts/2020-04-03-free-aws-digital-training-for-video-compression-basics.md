@@ -2,7 +2,7 @@
 title: 免費的 AWS 轉檔基礎知識線上課程
 date: 2020-04-03 22:13:37
 description: AWS 為了讓大家能更了解他們的服務，提供了許多免費的線上課程，其中包括了許多基礎知識，例如雲端架構、資料庫、物聯網、媒體服務等等，這次我上的是轉檔基礎知識 ...
-categories: 轉檔 / 影音
+categories: 轉檔 / 編碼
 tags:
 - aws
 - compression

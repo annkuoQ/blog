@@ -2,7 +2,7 @@
 title: 如何知道影片從頭到尾 Bitrate 的變化
 date: 2020-04-26 14:29:21
 description: 最近在研究適合網路串流的 VBR 轉檔，想知道整段影片的 Bitrate 是怎樣變化的，要是 maximum bitrate 高過網速時，可能就會出現緩衝轉圈圈的情況，如果用 MediaInfo 看，只會有 average bitrate ...
-categories: 轉檔 / 影音
+categories: 轉檔 / 編碼
 tags:
 - ffmpeg
 - excel
