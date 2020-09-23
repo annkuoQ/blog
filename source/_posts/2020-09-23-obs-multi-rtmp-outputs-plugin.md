@@ -68,7 +68,7 @@ OBS 預設只能直播一個平台
   拷貝任意 `.ini` 到桌面上，並將檔名改為 `zh-TW.ini`
   接著使用 `文字編輯` 打開
   把這個 [網頁](https://raw.githubusercontent.com/sorayuki/obs-multi-rtmp/master/locale/zh-TW.ini) 上的內容全部複製到 `文字編輯` 裡並儲存
-  最後把這個 `zh-TW.ini` 拷貝到 `Macintosh HD/Library/Application Support/obs-studio/plugins/obs-multi-rtmp/data/locale` 底下就好囉
+  最後把這個 `zh-TW.ini` 拷貝回當初的 `locale\` 目錄底下就好囉
 
 4. 點擊 `建立新串流目標` > 輸入`名稱`、`伺服器`、`串流碼`等設定 > `OK`
 <div align="center"><img src="/2020-09-23-obs-multi-rtmp-outputs-plugin/mac-obs-multi-rtmp-setting.jpg" width="500px"/></div>
@@ -80,7 +80,7 @@ OBS 預設只能直播一個平台
 不過要注意電腦效能和網速能承受的量
 
 另外可以發現 Windows 版本是 `0.2.5`、Mac 是 `0.2.4`
-所以 Windows 有多一個 Audio mixer ID 的功能
+所以 Windows 有多一個 Audio Mixer ID 的功能
 
 總之開源的力量真的很強大
 雖然我不會寫程式 🤣
