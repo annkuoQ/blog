@@ -40,13 +40,13 @@ OBS 預設只能直播一個平台
 <div align="center"><img src="/2020-09-23-obs-multi-rtmp-outputs-plugin/windows-obs-multi-rtmp.jpg" width="700px"/></div>
 
   其實原本打開的時候，套件語系是英文的
-後來去檢查才發現這個 `.zip` 只有包含簡體中文
-但我系統是設繁體中文，所以沒有對應的語系就自動跳預設語系了 (英文)
+  後來去檢查才發現這個 `.zip` 只有包含簡體中文
+  但我系統是設繁體中文，所以沒有對應的語系就自動跳預設語系了 (英文)
 
   不過好加在有人有發繁體中文的 [Pull Requests](https://github.com/sorayuki/obs-multi-rtmp/pull/44)，作者也有 Merge
-只是沒有釋出在 0.2.5 版本的 `.zip` 裡
-所以要到 [zh-TW.ini](https://raw.githubusercontent.com/sorayuki/obs-multi-rtmp/master/locale/zh-TW.ini) (`右鍵` > `另存新檔` > 命名為 `zh-TW.ini`)
-再把這個檔案複製到 `C:\Program Files\obs-studio\data\obs-plugins\obs-multi-rtmp\locale` 底下就好囉
+  只是沒有釋出在 0.2.5 版本的 `.zip` 裡
+  所以要到 [zh-TW.ini](https://raw.githubusercontent.com/sorayuki/obs-multi-rtmp/master/locale/zh-TW.ini) (`右鍵` > `另存新檔` > 命名為 `zh-TW.ini`)
+  再把這個檔案複製到 `C:\Program Files\obs-studio\data\obs-plugins\obs-multi-rtmp\locale` 底下就好囉
 4. 點擊 `建立新串流目標` > 輸入`名稱`、`伺服器`、`串流碼`等設定 > `OK`
 <div align="center"><img src="/2020-09-23-obs-multi-rtmp-outputs-plugin/windows-obs-multi-rtmp-setting.jpg" width="500px"/></div>
 5. 點擊 `開始` 送直播訊號
@@ -61,10 +61,16 @@ OBS 預設只能直播一個平台
 <div align="center"><img src="/2020-09-23-obs-multi-rtmp-outputs-plugin/mac-open-pkg-unidentified-developer.jpg" width="500px"/></div>
 
 3. 打開 OBS，介面左上角會多一個區塊
-( mac 我不知道怎麼改語系 😂)
 <div align="center"><img src="/2020-09-23-obs-multi-rtmp-outputs-plugin/mac-obs-multi-rtmp.jpg" width="600px"/></div>
 
-4. 點擊 `Add new target` > 輸入 `Name`, `Server`, `Key` 等設定 > `OK`
+  這邊跟上面 Windows 一樣，套件語系是英文的
+  首先到 `Macintosh HD/Library/Application Support/obs-studio/plugins/obs-multi-rtmp/data/locale`
+  拷貝任意 `.ini` 到桌面上，並將檔名改為 `zh-TW.ini`
+  接著使用 `文字編輯` 打開
+  把這個 [網頁](https://raw.githubusercontent.com/sorayuki/obs-multi-rtmp/master/locale/zh-TW.ini) 上的內容全部複製到 `文字編輯` 裡並儲存
+  最後把這個 `zh-TW.ini` 拷貝到 `Macintosh HD/Library/Application Support/obs-studio/plugins/obs-multi-rtmp/data/locale` 底下就好囉
+
+4. 點擊 `建立新串流目標` > 輸入`名稱`、`伺服器`、`串流碼`等設定 > `OK`
 <div align="center"><img src="/2020-09-23-obs-multi-rtmp-outputs-plugin/mac-obs-multi-rtmp-setting.jpg" width="500px"/></div>
 5. 點擊 `Start` 送直播訊號
 
@@ -73,6 +79,12 @@ OBS 預設只能直播一個平台
 也可以個別設定解析度和編碼格式
 不過要注意電腦效能和網速能承受的量
 
+另外可以發現 Windows 版本是 `0.2.5`、Mac 是 `0.2.4`
+所以 Windows 有多一個 Audio mixer ID 的功能
+
+總之開源的力量真的很強大
+雖然我不會寫程式 🤣
+但我可以幫忙寫說明文件和宣傳～
 
 ## 參考資料
 - [Multiple RTMP outputs plugin | OBS Forums](https://obsproject.com/forum/resources/multiple-rtmp-outputs-plugin.964/)
