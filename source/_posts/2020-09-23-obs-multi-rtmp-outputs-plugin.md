@@ -9,7 +9,7 @@ tags:
 
 OBS 預設只能直播一個平台
 但我需要同時直播 YouTube 和 Facebook
-所以這陣子都在搜尋有沒有什麼好的解決方式
+所以這陣子都在搜尋有沒有什麼好的解決方法
 
 <!-- more -->
 
@@ -19,8 +19,8 @@ OBS 預設只能直播一個平台
 - 自架伺服器: Nginx (學習門檻較高)
 
 在心灰意冷的時候看到 [OBS Forum](https://obsproject.com/forum/threads/multiple-rtmp-outputs-plugin.122535/) 上有人做了 Plug-in
-原本只有出 Windows 的
-但後面也有熱心人士做了 Mac 版的 (感動)
+原本只有供應 Windows 使用
+但後面有熱心人打包成 Mac 版的 (感動)
 
 話不多說就趕快開始吧！
 
@@ -43,7 +43,7 @@ OBS 預設只能直播一個平台
   後來發現有網友發繁中的 [Pull Requests](https://github.com/sorayuki/obs-multi-rtmp/pull/44)，作者也有 Merge
   只是沒有釋出在 0.2.5 版本的 `.zip` 裡
   所以要到 [zh-TW.ini](https://raw.githubusercontent.com/sorayuki/obs-multi-rtmp/master/locale/zh-TW.ini) (`右鍵` > `另存新檔` > 命名為 `zh-TW.ini`)
-  再把這個檔案複製到 `C:\Program Files\obs-studio\data\obs-plugins\obs-multi-rtmp\locale` 底下就好囉
+  再把這個檔案複製到 `C:\Program Files\obs-studio\data\obs-plugins\obs-multi-rtmp\locale` 目錄底下就好囉
 4. 點擊 `建立新串流目標` > 輸入`名稱`、`伺服器`、`串流碼`等設定 > `OK`
 5. 點擊 `開始` 送直播訊號
 <div align="center"><img src="/2020-09-23-obs-multi-rtmp-outputs-plugin/windows-obs-multi-rtmp-setting.jpg" width="700px"/></div>
@@ -57,7 +57,7 @@ OBS 預設只能直播一個平台
   就要去 `系統偏好設定` > `安全性與隱私` > `強制打開`
 <div align="center"><img src="/2020-09-23-obs-multi-rtmp-outputs-plugin/mac-open-pkg-unidentified-developer.jpg" width="500px"/></div>
 
-3. 打開 OBS，介面左上角會多一個區塊
+3. 打開 OBS，介面左上角會出現一個 `多路串流` 的區塊
 
   這邊跟上面 Windows 一樣，套件語系是英文的
   首先到 `Macintosh HD/Library/Application Support/obs-studio/plugins/obs-multi-rtmp/data/locale`
@@ -79,7 +79,7 @@ OBS 預設只能直播一個平台
 
 總之開源的力量真的很強大
 雖然我不會寫程式 🤣
-但我可以幫忙寫說明文件和宣傳～
+但我可以幫忙寫說明文件和宣傳哈哈
 
 ## 參考資料
 - [Multiple RTMP outputs plugin | OBS Forums](https://obsproject.com/forum/resources/multiple-rtmp-outputs-plugin.964/)
