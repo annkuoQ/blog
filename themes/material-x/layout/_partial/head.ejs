@@ -70,6 +70,14 @@
     function setLoadingBarProgress(num) {
       document.getElementById('loading-bar').style.width=num+"%";
     }
+    
+    (function (window, document, undefined) {
+        $(document).ready(function() {
+            $('article a[href^="http"]').each(function () {
+                $(this).attr('target', '_blank');
+            });
+        });
+    })(this, document);
   </script>
 
 
