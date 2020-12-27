@@ -114,7 +114,7 @@ $ ffprobe -print_format csv -select_streams v:0 -show_entries frame=pkt_size,pkt
 
 接著就可以用圖表功能畫出 Bitrate 變化囉～
 
-<div align="center"><img src="/2020-04-26-how-to-check-video-bitrate/bitrate-graph.jpg" width="500px" /></div>
+<div align="center"><img src="./bitrate-graph.jpg"" width="500px" /></div>
 
 ## 其他軟體
 
@@ -127,7 +127,7 @@ $ ffprobe -print_format csv -select_streams v:0 -show_entries frame=pkt_size,pkt
 只要把影片拖拉進軟體內
 就會自動跑出圖表
 
-<div align="center"><img src="/2020-04-26-how-to-check-video-bitrate/bitrate-viewer.jpg" width="500px" /></div>
+<div align="center"><img src="./bitrate-viewer.jpg"" width="500px" /></div>
 
 ### [VLC media player](https://www.videolan.org/vlc/index.nb.html)
 這是一個開源的免費軟體
@@ -139,7 +139,7 @@ $ ffprobe -print_format csv -select_streams v:0 -show_entries frame=pkt_size,pkt
 
 這樣就可以看到目前使用了多少 Bitrate
 
-<div align="center"><img src="/2020-04-26-how-to-check-video-bitrate/vlc-player.jpg" width="700px" /></div>
+<div align="center"><img src="./vlc-player.jpg"" width="700px" /></div>
 
 以上方法看起來
 還是用 Bitrate Viewer 最快了

@@ -17,7 +17,7 @@ tags:
 記號是 `H`
 用左手指快速擊弦所發出的聲音
 
-<div align="center"><img src="/2013-08-11-ukulele-tab-symbols-and-repetition/hammer_on.jpg" width="150px"/></div>
+<div align="center"><img src="./hammer_on.jpg"" width="150px"/></div>
 
 1. 左手食指按第一弦第五格
 2. 右手彈第一弦
@@ -27,7 +27,7 @@ tags:
 記號是 `P`
 用左手指快速勾弦所發出的聲音
 
-<div align="center"><img src="/2013-08-11-ukulele-tab-symbols-and-repetition/pull_off.jpg" width="150px"/></div>
+<div align="center"><img src="./pull_off.jpg"" width="150px"/></div>
 
 1. 左手食指按第一弦第五格，無名指按第一弦第七格
 2. 右手彈第一弦
@@ -37,14 +37,14 @@ tags:
 記號是 `S`
 用左手壓弦後快速的橫向滑動
 
-<div align="center"><img src="/2013-08-11-ukulele-tab-symbols-and-repetition/slide_up.jpg" width="150px"/></div>
+<div align="center"><img src="./slide_up.jpg"" width="150px"/></div>
 
 第一個: 從低的音滑到高的音
 1. 左手按第一弦第五格
 2. 右手彈第一弦
 3. 左手快速滑動到第一弦第七格 (發出第一弦第五格到第七格的連音)
 
-<div align="center"><img src="/2013-08-11-ukulele-tab-symbols-and-repetition/slide_down.jpg" width="150px"/></div>
+<div align="center"><img src="./slide_down.jpg"" width="150px"/></div>
 
 第二個: 從高的音滑到低的音
 1. 左手按第一弦第七格
@@ -58,7 +58,7 @@ tags:
 鬆弦記號是 `R`
 把推好的弦放鬆讓音變回來
 
-<div align="center"><img src="/2013-08-11-ukulele-tab-symbols-and-repetition/bend_release.jpg" width="150px"/></div>
+<div align="center"><img src="./bend_release.jpg"" width="150px"/></div>
 
 1. 左手按第一弦第五格
 2. 右手彈第一弦
@@ -69,7 +69,7 @@ tags:
 記號是箭頭加上一個`實心圓點`
 撥完弦之後用手把音切掉
 
-<div align="center"><img src="/2013-08-11-ukulele-tab-symbols-and-repetition/staccato.jpg" width="200px"/></div>
+<div align="center"><img src="./staccato.jpg"" width="200px"/></div>
 
 1. 左手按第一弦第三格
 2. 右手往下刷
@@ -79,7 +79,7 @@ tags:
 記號是箭頭加上一個`空心圓點`
 先把音悶住在撥弦
 
-<div align="center"><img src="/2013-08-11-ukulele-tab-symbols-and-repetition/mute.jpg" width="200px"/></div>
+<div align="center"><img src="./mute.jpg"" width="200px"/></div>
 
 1. 左手按第一弦第三格
 2. 右手輕壓住弦
@@ -89,56 +89,56 @@ tags:
 記號是一個`波浪箭頭`
 用右手依序慢慢的撥過四條弦
 
-<div align="center"><img src="/2013-08-11-ukulele-tab-symbols-and-repetition/arpeggio.jpg" width="150px"/></div>
+<div align="center"><img src="./arpeggio.jpg"" width="150px"/></div>
 
 1. 左手按第一弦第三格
 2. 右手從第四弦慢慢撥到第一弦
 
 ### 反覆記號
 
-#### 1. 左右蓋子 <img src="/2013-08-11-ukulele-tab-symbols-and-repetition/repeat_sign_1.jpg" width="50px"/>
+#### 1. 左右蓋子 <img src="./repeat_sign_1.jpg"" width="50px"/>
 
 當看到它時
 就要重複蓋子裡的所有小節
 
-<div align="center"><img src="/2013-08-11-ukulele-tab-symbols-and-repetition/repeat1.jpg" width="300px"/></div>
+<div align="center"><img src="./repeat1.jpg"" width="300px"/></div>
 
 答案是: `1 2 3 4 3 4`
 
-#### 2. 上面蓋子 <img src="/2013-08-11-ukulele-tab-symbols-and-repetition/repeat_sign_2.jpg" width="130px"/>
+#### 2. 上面蓋子 <img src="./repeat_sign_2.jpg"" width="130px"/>
 
 第一次彈奏，彈 1 裡面的
 第二次彈 2 裡面的
 
-<div align="center"><img src="/2013-08-11-ukulele-tab-symbols-and-repetition/repeat2.jpg" width="320px"/></div>
+<div align="center"><img src="./repeat2.jpg"" width="320px"/></div>
 
 答案是: `1 2 3 1 4 5`
 
-#### 3. Da Capo <img src="/2013-08-11-ukulele-tab-symbols-and-repetition/da_capo.jpg" width="100px"/>
+#### 3. Da Capo <img src="./da_capo.jpg"" width="100px"/>
 
 當在小節上方看到 **Da Capo**
 或在小節下方看到 **(D.C.)**
 代表要從頭彈起
 
-<div align="center"><img src="/2013-08-11-ukulele-tab-symbols-and-repetition/repeat3.jpg" width="320px"/></div>
+<div align="center"><img src="./repeat3.jpg"" width="320px"/></div>
 
 答案是: `1 2 3 4 5 1 2 3 4 5`
 
-#### 4. Da Segno <img src="/2013-08-11-ukulele-tab-symbols-and-repetition/da_segno.jpg" width="120px"/>
+#### 4. Da Segno <img src="./da_segno.jpg"" width="120px"/>
 
 當在小節上方看到 **Da Segno**
 或在小節下方看到 **(D.S.)**
-代表從前面的 <img src="/2013-08-11-ukulele-tab-symbols-and-repetition/segno_teken.jpg" width="20px"/> 彈起
+代表從前面的 <img src="./segno_teken.jpg"" width="20px"/> 彈起
 
-<div align="center"><img src="/2013-08-11-ukulele-tab-symbols-and-repetition/repeat4.jpg" width="380px"/></div>
+<div align="center"><img src="./repeat4.jpg"" width="380px"/></div>
 
 答案是: `1 2 3 4 5 6 4 5 6`
 
-#### 5. Coda <img src="/2013-08-11-ukulele-tab-symbols-and-repetition/coda.jpg" width="80px"/>
+#### 5. Coda <img src="./coda.jpg"" width="80px"/>
 
 通常譜重複到第二遍時，烏龜才會出現
 所以當看到它時，就跳到下一個烏龜處彈起
 
-<div align="center"><img src="/2013-08-11-ukulele-tab-symbols-and-repetition/repeat5.jpg" width="380px"/></div>
+<div align="center"><img src="./repeat5.jpg"" width="380px"/></div>
 
 答案是: `1 2 3 4 1 2 6 7`

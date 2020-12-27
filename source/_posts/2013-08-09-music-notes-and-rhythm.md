@@ -16,7 +16,7 @@ tags:
 
 `音符` 由符頭、符桿、符尾組成
 
-<div align="center"><img src="/2013-08-09-music-notes-and-rhythm/note.jpg" width="200px" /></div>
+<div align="center"><img src="./note.jpg"" width="200px" /></div>
 
 `拍值` 是拍子的長度
 它不代表絕對的時間長度，而是用來了解它們之間 `相對` 的時間長度
@@ -28,7 +28,7 @@ tags:
 - `八分音符` 把四分音符分成一半，長度是 1/2 拍
 - `十六分音符` 把八分音符分成一半，長度是 1/4 拍
 
-<div align="center"><img src="/2013-08-09-music-notes-and-rhythm/note-value.jpg" width="500px" /></div>
+<div align="center"><img src="./note-value.jpg"" width="500px" /></div>
 
 > 全音符 x 1  = 二分音符 x 2 = 四分音符 x 4 = 八分音符 x 8 = 十六分音符 x 16
 
@@ -46,7 +46,7 @@ BPM (beats per minute) 是每分鐘的拍數
 分子 4 代表每一小節有 `四拍`
 這數字是可以換的，只要知道分母分子代表的意思就好囉
 
-<div align="center"><img src="/2013-08-09-music-notes-and-rhythm/whole-note.jpg" width="250px" /></div>
+<div align="center"><img src="./whole-note.jpg"" width="250px" /></div>
 
 全音符的長度是四拍，剛說過每一小節有四拍
 所以一個全音符就塞滿了整個小節
@@ -70,7 +70,7 @@ BPM (beats per minute) 是每分鐘的拍數
 剛說過每一小節有四拍
 所以 一個兩拍 + 一個兩拍 = 四拍
 
-<div align="center"><img src="/2013-08-09-music-notes-and-rhythm/half-note.jpg" width="250px" /></div>
+<div align="center"><img src="./half-note.jpg"" width="250px" /></div>
 
 彈四遍的話就是
 嘴巴念 `1、2、3、4` `1、2、3、4` `1、2、3、4` `1、2、3、4`
@@ -81,7 +81,7 @@ BPM (beats per minute) 是每分鐘的拍數
 四分音符的長度是一拍
 所以四個四分音符就有四拍
 
-<div align="center"><img src="/2013-08-09-music-notes-and-rhythm/quarter-note.jpg" width="250px" /></div>
+<div align="center"><img src="./quarter-note.jpg"" width="250px" /></div>
 
 彈四遍的話就是
 嘴巴念 `1、2、3、4` `1、2、3、4` `1、2、3、4` `1、2、3、4`
@@ -93,7 +93,7 @@ BPM (beats per minute) 是每分鐘的拍數
 所以八個八分音符有四拍
 譜上的 `1`、`2`、`3`、`4` 是往下刷，`&` 是往上刷
 
-<div align="center"><img src="/2013-08-09-music-notes-and-rhythm/eighth-note.jpg" width="250px" /></div>
+<div align="center"><img src="./eighth-note.jpg"" width="250px" /></div>
 
 兩個八分音符在一起時，符尾可相連，變成ㄇ字型 ♫
 兩個十六分也可以喔，就變有兩條槓 ♬

@@ -175,7 +175,7 @@ INFO  Start processing
 INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.
 ```
 4. 前往 http://localhost:4000 顯示範例網站
-![hexo-new-site](/2020-01-03-use-hexo-to-deploy-github-pages/hexo-new-site.jpg)
+![hexo-new-site](./hexo-new-site.jpg)
 5. `Ctrl+ C` 停止服務器
 
 ## 建立文章
@@ -256,7 +256,7 @@ INFO  Start processing
 INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.
 ```
 6. 前往 http://localhost:4000/test/2020/01/03/post-title/ 可以看到新文章出現
-![hexo-new-post](/2020-01-03-use-hexo-to-deploy-github-pages/hexo-new-post.jpg)
+![hexo-new-post](./hexo-new-post.jpg)
 
 ## 部署網站
 1. 安裝 Git 部署套件

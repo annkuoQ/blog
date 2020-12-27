@@ -20,7 +20,7 @@ AWS 為了讓大家能更了解他們的服務
 點擊 `Launch` 就會另開視窗開啟課程
 課程結束還能獲得結業證書
 
-<div align="center"><img src="/2020-04-03-free-aws-digital-training-for-video-compression-basics/completion-certificate.jpg" width="400px" /></div>
+<div align="center"><img src="./completion-certificate.jpg"" width="400px" /></div>
 
 但課程大多是英文
 我英文超爛的
@@ -174,7 +174,7 @@ Bitrate 越高，則:
 1931 年，國際照明委員會開發了 CIE 1931 Color Space
 此馬蹄形是人可見的所有色彩
 
-<div align="center"><img src="/2020-04-03-free-aws-digital-training-for-video-compression-basics/color_system.jpg" width="450px" /></div>
+<div align="center"><img src="./color_system.jpg"" width="450px" /></div>
 
 色彩空間 (Color Space) 用於測量成像技術的準確性
 例如列印、攝影、影音等
@@ -189,7 +189,7 @@ Bitrate 越高，則:
 在使用此顏色空間時，稱為色域 (gamut)
 意思是特定空間的完整顏色範圍
 
-<div align="center"><img src="/2020-04-03-free-aws-digital-training-for-video-compression-basics/color_space.jpg" width="450px" /></div>
+<div align="center"><img src="./color_space.jpg"" width="450px" /></div>
 
 注意 SD 到 HD 只有很小的進步
 但 HD 到 UHD 則有大幅進展
@@ -212,7 +212,7 @@ pixel 是 picture element 的混成詞
 
 越多顏色，就能用越平滑的漸層取代階梯的效果
 
-<div align="center"><img src="/2020-04-03-free-aws-digital-training-for-video-compression-basics/bit_depth.jpg" width="450px" /></div>
+<div align="center"><img src="./bit_depth.jpg"" width="450px" /></div>
 
 ### 色彩通道 (Color Channel)
 一個像素可以儲存三種原色 (紅綠藍) 的色彩通道 (Color Channels)
@@ -388,7 +388,7 @@ I-frame 首先被壓縮
 大區塊由區塊 (block) 組成
 區塊由單個像素 (pixel) 組成
 
-<div align="center"><img src="/2020-04-03-free-aws-digital-training-for-video-compression-basics/frame.jpg" width="450px" /></div>
+<div align="center"><img src="./frame.jpg"" width="450px" /></div>
 
 請注意
 大區塊、區塊、像素不一定是正方形

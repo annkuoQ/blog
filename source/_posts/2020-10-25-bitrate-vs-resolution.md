@@ -59,17 +59,17 @@ tags:
 ### 截圖比較
 - [點我看大圖](https://annkuoq.github.io/blog/2020-10-25-bitrate-vs-resolution/compare.jpg) 👈
 
-<div align="center"><img src="/2020-10-25-bitrate-vs-resolution/compare.jpg" width="700px"/></div>
+<div align="center"><img src="./compare.jpg"" width="700px"/></div>
 
 ### 完整截圖 (依畫質排序)
 
-<div align="center"><img src="/2020-10-25-bitrate-vs-resolution/1080p4m.jpg" width="700px"/></div>
+<div align="center"><img src="./1080p4m.jpg"" width="700px"/></div>
 
-<div align="center"><img src="/2020-10-25-bitrate-vs-resolution/480p4m.jpg" width="700px"/></div>
+<div align="center"><img src="./480p4m.jpg"" width="700px"/></div>
 
-<div align="center"><img src="/2020-10-25-bitrate-vs-resolution/480p1m.jpg" width="700px"/></div>
+<div align="center"><img src="./480p1m.jpg"" width="700px"/></div>
 
-<div align="center"><img src="/2020-10-25-bitrate-vs-resolution/1080p1m.jpg" width="700px"/></div>
+<div align="center"><img src="./1080p1m.jpg"" width="700px"/></div>
 
 因為 1080p 要記錄的像素比 480p 還要多，所以需要更多流量
 雖然兩者檔案大小一樣，但 480p 畫質比較好

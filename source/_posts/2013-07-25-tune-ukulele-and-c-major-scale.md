@@ -23,7 +23,7 @@ tags:
 
 ### C 大調音階
 
-<div align="center"><img src="/2013-07-25-tune-ukulele-and-c-major-scale/c-major-scale.jpg" width="500px" /></div>
+<div align="center"><img src="./c-major-scale.jpg"" width="500px" /></div>
 
 `C 大調` 是由 DO 為出發點的七個音
 由 C D E F G A B 組成
@@ -52,7 +52,7 @@ Do 到 Mi 是三度
 `半音 + 半音 = 全音`
 把 `Do Re Mi Fa Sol La Ti Do` 丟到 `十二平均律` 裡面就變這樣
 
-<div align="center"><img src="/2013-07-25-tune-ukulele-and-c-major-scale/equal-temperament.jpg" width="500px" /></div>
+<div align="center"><img src="./equal-temperament.jpg"" width="500px" /></div>
 
 C 加一個半音等於 C# 或 Db
 再加一個半音等於 D
@@ -71,11 +71,11 @@ C 加一個半音等於 C# 或 Db
 搭配著鋼琴邊彈邊看，有沒有更懂一點了呢
 懂了之後，就可以開始調音囉
 
-<div align="center"><img src="/2013-07-25-tune-ukulele-and-c-major-scale/equal-temperament-2.jpg" width="500px" /></div>
+<div align="center"><img src="./equal-temperament-2.jpg"" width="500px" /></div>
 
 ### 調音
 
-<div align="center"><img src="/2013-07-25-tune-ukulele-and-c-major-scale/ukulele-tune.jpg" width="450px" /></div>
+<div align="center"><img src="./ukulele-tune.jpg"" width="450px" /></div>
 
 在我們彈奏之前
 第一件事就是要調音
