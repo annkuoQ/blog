@@ -15,7 +15,7 @@ tags:
 
 ### 空弦音
 
-<div align="center"><img src="/2014-02-01-ukulele-do-re-mi-scales/open_string_note.jpg" width="350px"/></div>
+<div align="center"><img src="./open_string_note.jpg"" width="350px"/></div>
 
 先從最細的開始
 第四弦是 G
@@ -28,7 +28,7 @@ tags:
 再來還要知道音與音之間的距離
 就是 `全全半全全全半`
 
-<div align="center"><img src="/2014-02-01-ukulele-do-re-mi-scales/interval.jpg" width="450px"/></div>
+<div align="center"><img src="./interval.jpg"" width="450px"/></div>
 
 指板上的每個音格都是一個半音
 半音 + 半音 = 全音
@@ -51,7 +51,7 @@ G 和 A 距離一個全音 (兩格) => A 在第十二格
 
 以此類推，你就能知道指板上所有的音
 
-<div align="center"><img src="/2014-02-01-ukulele-do-re-mi-scales/note_fretboard.jpg" width="450px"/></div>
+<div align="center"><img src="./note_fretboard.jpg"" width="450px"/></div>
 
 ### Do Re Mi
 
@@ -59,7 +59,7 @@ G 和 A 距離一個全音 (兩格) => A 在第十二格
 因為手要一直橫移很麻煩
 所以我們會換一條弦
 
-<div align="center"><img src="/2014-02-01-ukulele-do-re-mi-scales/doremi.jpg" width="350px"/></div>
+<div align="center"><img src="./doremi.jpg"" width="350px"/></div>
 
 食指負責第一格
 中指負責第二格
@@ -88,7 +88,7 @@ G 和 A 距離一個全音 (兩格) => A 在第十二格
 首先把剛在指板上推算的音拿出來
 然後上個色
 
-<div align="center"><img src="/2014-02-01-ukulele-do-re-mi-scales/position_shifting_note.jpg" width="450px"/></div>
+<div align="center"><img src="./position_shifting_note.jpg"" width="450px"/></div>
 
 綠色的範圍就是 `低音 C` 到 `高音 A` 囉~
 

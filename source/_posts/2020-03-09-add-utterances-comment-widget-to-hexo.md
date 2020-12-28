@@ -25,7 +25,7 @@ utterances APP 要求存取的權限有:
   - Read access to metadata
   - Read and write access to issues
 
-<div align="center"><img src="/2020-03-09-add-utterances-comment-widget-to-hexo/permissions.jpg" width="400px" /></div>
+<div align="center"><img src="./permissions.jpg"" width="400px" /></div>
 
 3. 輸入 `owner/repo`，就是要放留言的倉庫
 4. 設定 issue 標題怎麼開，有以下幾種選擇:
@@ -65,11 +65,11 @@ utterances APP 要求存取的權限有:
 1. 點擊留言版的 `Sign in to comment`
 2. 同意授權 > `Authorize utterances by utterances`
 
-<div align="center"><img src="/2020-03-09-add-utterances-comment-widget-to-hexo/authorize.jpg" width="400px" /></div>
+<div align="center"><img src="./authorize.jpg"" width="400px" /></div>
 
 3. 回到留言板留言後，repo 就會自動開好票囉
 
-<div align="center"><img src="/2020-03-09-add-utterances-comment-widget-to-hexo/test-comment.jpg" width="800px" /></div>
+<div align="center"><img src="./test-comment.jpg"" width="800px" /></div>
 
 ## 參考資料
 - [utterances 官方網站](https://utteranc.es/)

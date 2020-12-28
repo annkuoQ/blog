@@ -14,7 +14,7 @@ tags:
 
 <!-- more -->
 
-<div align="center"><img src="/2013-08-10-ukulele-read-chord-and-tab/chord.jpg" width="350px" /></div>
+<div align="center"><img src="./chord.jpg"" width="350px" /></div>
 
 `直式` 就是把烏克麗麗面對自己拿直的樣子
 由右而左 1A 2E 3C 4G
@@ -34,7 +34,7 @@ tags:
 `C` `Am` `F` `G7`
 會這四個就可以彈很多歌囉
 
-<div align="center"><img src="/2013-08-10-ukulele-read-chord-and-tab/4chords.jpg" width="400px" /></div>
+<div align="center"><img src="./4chords.jpg"" width="400px" /></div>
 
 和弦圖上方的英文是和弦名稱
 黑點點是要按的位置
@@ -54,14 +54,14 @@ tags:
 它其實也是烏克麗麗的指板
 把烏克麗麗面向自己就和 TAB 一樣了
 
-<div align="center"><img src="/2013-08-10-ukulele-read-chord-and-tab/tab.jpg" width="600px" /></div>
+<div align="center"><img src="./tab.jpg"" width="600px" /></div>
 
 由上而下 1A 2E 3C 4G
 TAB 上的數字就是我們要按的格數
 通常由右手撥弦
 
 #### 1. 練習一 - 按弦與撥弦位置
-<div align="center"><img src="/2013-08-10-ukulele-read-chord-and-tab/tab1.jpg" width="300px" /></div>
+<div align="center"><img src="./tab1.jpg"" width="300px" /></div>
 
 左邊 TAB 在第二弦上有個 1
 代表要按第二弦的第一格
@@ -73,7 +73,7 @@ TAB 上的數字就是我們要按的格數
 所以只需要用右手彈第四弦即可
 
 #### 2. 練習二 - 彈奏順序
-<div align="center"><img src="/2013-08-10-ukulele-read-chord-and-tab/tab2.jpg" width="300px" /></div>
+<div align="center"><img src="./tab2.jpg"" width="300px" /></div>
 
 TAB 上有四個數字
 彈奏的順序是由左而右
@@ -83,7 +83,7 @@ TAB 上有四個數字
 第四個案第四弦第四格，右手彈第四弦
 
 #### 3. 練習三 - 同時彈奏
-<div align="center"><img src="/2013-08-10-ukulele-read-chord-and-tab/tab3.jpg" width="300px" /></div>
+<div align="center"><img src="./tab3.jpg"" width="300px" /></div>
 
 第一個: 同時按第一弦第二格和第二弦第三格，右手撥第一二弦
 第二個: 同時按第一弦第四格和第二弦第五個，右手撥第一二弦
@@ -91,7 +91,7 @@ TAB 上有四個數字
 第四個: 同時按第三弦第三格和第四弦第一格，右手撥第三四弦
 
 #### 4. 練習四 - 和弦
-<div align="center"><img src="/2013-08-10-ukulele-read-chord-and-tab/tab4.jpg" width="300px" /></div>
+<div align="center"><img src="./tab4.jpg"" width="300px" /></div>
 
 有一整排的數字要同時彈奏時
 通常就是和弦
@@ -102,7 +102,7 @@ TAB 上有四個數字
 按第二弦第一格和第四弦第二格，一三弦空弦音，右手四條刷下去
 
 #### 5. 練習五 - 箭頭方向
-<div align="center"><img src="/2013-08-10-ukulele-read-chord-and-tab/tab5.jpg" width="300px" /></div>
+<div align="center"><img src="./tab5.jpg"" width="300px" /></div>
 
 箭頭就是指刷的方向
 它有四個箭頭 上下上下
@@ -125,7 +125,7 @@ TAB 上有四個數字
 
 #### 6. 練習六 - ㄇ 與 V
 
-<div align="center"><img src="/2013-08-10-ukulele-read-chord-and-tab/tab6.jpg" width="300px" /></div>
+<div align="center"><img src="./tab6.jpg"" width="300px" /></div>
 
 這兩個符號也是指刷的方向
 ㄇ 是往下刷

@@ -27,7 +27,7 @@ OBS 預設只能直播一個平台
 ## Windows 安裝
 1. 下載 [obs-multi-rtmp_Windows_0.2.5.zip](https://github.com/sorayuki/obs-multi-rtmp/releases/)
 解壓縮後有兩個資料夾: `data`, `obs-plugins`
-<div align="center"><img src="/2020-09-23-obs-multi-rtmp-outputs-plugin/windows-download-obs-multi-rtmp-zip.jpg" width="700px"/></div>
+<div align="center"><img src="./windows-download-obs-multi-rtmp-zip.jpg"" width="700px"/></div>
 2. 把套件複製到相對應的主程式目錄底下
 
   - 套件主程式 (.dll 檔)
@@ -46,16 +46,16 @@ OBS 預設只能直播一個平台
   再把這個檔案複製到 `C:\Program Files\obs-studio\data\obs-plugins\obs-multi-rtmp\locale` 目錄底下就好囉
 4. 點擊 `建立新串流目標` > 輸入`名稱`、`伺服器`、`串流碼`等設定 > `OK`
 5. 點擊 `開始` 送直播訊號
-<div align="center"><img src="/2020-09-23-obs-multi-rtmp-outputs-plugin/windows-obs-multi-rtmp-setting.jpg" width="700px"/></div>
+<div align="center"><img src="./windows-obs-multi-rtmp-setting.jpg"" width="700px"/></div>
 
 ## Mac 安裝
 1. 下載這位 [網友](https://obsproject.com/forum/threads/multiple-rtmp-outputs-plugin.122535/post-470367) 做的 [obs-multi-rtmp_0.2.4.pkg](https://ci.appveyor.com/api/buildjobs/lbt0iaac6ta8u357/artifacts/obs-multi-rtmp_0.2.4.pkg)
 2. 點兩下執行安裝
 若顯示 `無法打開 XXX，因為它來自未識別的開發者`
-<div align="center"><img src="/2020-09-23-obs-multi-rtmp-outputs-plugin/mac-can-not-opened-pkg.jpg" width="400px"/></div>
+<div align="center"><img src="./mac-can-not-opened-pkg.jpg"" width="400px"/></div>
 
   就要去 `系統偏好設定` > `安全性與隱私` > `強制打開`
-<div align="center"><img src="/2020-09-23-obs-multi-rtmp-outputs-plugin/mac-open-pkg-unidentified-developer.jpg" width="500px"/></div>
+<div align="center"><img src="./mac-open-pkg-unidentified-developer.jpg"" width="500px"/></div>
 
 3. 打開 OBS，介面左上角會出現一個 `多路串流` 的區塊
 
@@ -67,7 +67,7 @@ OBS 預設只能直播一個平台
   最後把這個 `zh-TW.ini` 拷貝回當初的 `locale\` 目錄底下就好囉
 4. 點擊 `建立新串流目標` > 輸入`名稱`、`伺服器`、`串流碼`等設定 > `OK`
 5. 點擊 `開始` 送直播訊號
-<div align="center"><img src="/2020-09-23-obs-multi-rtmp-outputs-plugin/mac-obs-multi-rtmp-setting.jpg" width="700px"/></div>
+<div align="center"><img src="./mac-obs-multi-rtmp-setting.jpg"" width="700px"/></div>
 
 ## 補充
 這個套件可以單獨停止或開始某路直播
