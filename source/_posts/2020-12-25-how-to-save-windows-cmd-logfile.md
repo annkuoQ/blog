@@ -276,11 +276,15 @@ D:\test 的目錄
 - `>>` 會從檔案結尾接續寫下去 (append)
 
 ## 結論
-- `>file`: 輸出 stdout 到 file
-- `1>file`: 同上
-- `2>file`: 輸出 stderr 到 file
-- `>file 2>&1`: 輸出 stdout 和 stderr 到 file
-- `>>file`: 若 file 存在，就從結尾接續寫下去
+- log 種類
+  - `stdout` 標準輸出: 代號為 `1`，正常執行時的 log
+  - `stderr` 標準錯誤輸出: 代號為 `2`，出現錯誤時的 log
+- 輸出 log 的指令
+  - `command >file`: 輸出 stdout 到 file
+  - `command 1>file`: 同上
+  - `command 2>file`: 輸出 stderr 到 file
+  - `command >file 2>&1`: 將 stdout 和 stderr 同時輸出到 file
+  - `command >>file`: 若 file 存在，就從結尾接續寫下去
 
 ## 參考資料
 - [Using command redirection operators | Microsoft Docs](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-xp/bb490982(v=technet.10))
