@@ -5,7 +5,7 @@ description: 最近在學寫批次檔，需要輸出 log 檔作為紀錄，去�
 categories: 資工 / 程設
 tags:
 - CMD
-- Windows
+- windows
 ---
 
 最近在學寫批次檔

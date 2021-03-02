@@ -4,8 +4,8 @@ date: 2021-01-09 21:02:33
 description: 前陣子在網路上看到一個很酷的開源專案，充分的使用 GitHub，每隔一段時間用 GitHub Actions 看網站有沒有掛掉，若掛掉就用 GitHub Issues 回報異常事件，使用 GitHub Pages 產生服務狀態的頁面 ...
 categories: 資工 / 程設
 tags:
-- Upptime
-- GitHub
+- upptime
+- github
 ---
 
 前陣子在網路上看到一個很酷的開源專案
