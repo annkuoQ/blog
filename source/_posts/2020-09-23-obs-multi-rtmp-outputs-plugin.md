@@ -58,7 +58,7 @@ OBS 預設只能直播一個平台
 <div align="center"><img src="./mac-download-obs-multi-rtmp-zip.jpg"" width="700px"/></div>
 
 2. 把套件資料夾複製到相對應的主程式目錄底下
-將 `obs-multi-rtmp` 資料夾複製到 `/Library/Application Support/obs-studio/plugins/` 目錄下
+將 `obs-multi-rtmp` 資料夾複製到 `/Users/你的使用者名稱/Library/Application Support/obs-studio/plugins` 目錄下
 (如果沒有 `obs-studio/plugins/` 資料夾，請自行新增)
 
 <div align="center"><img src="./mac-plugin-copy.jpg"" width="700px"/></div>
