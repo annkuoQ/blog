@@ -31,11 +31,13 @@ OBS 預設只能直播一個平台
 <div align="center"><img src="./windows-download-obs-multi-rtmp-zip.jpg"" width="700px"/></div>
 2. 把套件複製到相對應的主程式目錄底下
 
-  - 套件主程式 (.dll 檔)
-將 `obs-plugins\64bit\obs-multi-rtmp.dll` 複製到 `C:\Program Files\obs-studio\obs-plugins\64bit` 目錄底下
+  - 套件主程式
+將 `obs-plugins\64bit` 底下的 `obs-multi-rtmp.dll` 檔案 複製到 `C:\Program Files\obs-studio\obs-plugins\64bit` 目錄下
 
-  - 套件語系 (資料夾)
-將 `data\obs-plugins\obs-multi-rtmp\` 複製到 `C:\Program Files\obs-studio\data\obs-plugins` 目錄底下
+  - 套件語系
+將 `data\obs-plugins` 底下的 `obs-multi-rtmp` 資料夾 複製到 `C:\Program Files\obs-studio\data\obs-plugins` 目錄底下
+
+<div align="center"><img src="./windows-plug-copy.jpg"" width="700px"/></div>
 
 3. 打開 OBS，介面左上角會出現一個 `多路串流` 的區塊
 你可能需要拉寬那個視窗才看得清楚
