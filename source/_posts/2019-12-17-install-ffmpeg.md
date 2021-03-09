@@ -29,6 +29,8 @@ ffmpeg.zeranoe.com 已於 2020 年 9 月 18 日 [關閉](https://www.reddit.com/
 往下拉到 release 的部分有四個連結
 點擊第一個 `release-full.7z` 下載
 
+<div align="center"><img src="./release_full_download.jpg"" width="700px"/></div>
+
 2. 解壓縮資料夾後，修改資料夾名稱為 `ffmpeg`
 
 3. 將資料夾放到以下路徑 `C:\ffmpeg`
