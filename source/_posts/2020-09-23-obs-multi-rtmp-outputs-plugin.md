@@ -47,21 +47,11 @@ OBS 預設只能直播一個平台
 <div align="center"><img src="./windows-obs-multi-rtmp-setting.jpg"" width="700px"/></div>
 
 ## Mac 安裝
-1. ~下載這位 [網友](https://obsproject.com/forum/threads/multiple-rtmp-outputs-plugin.122535/post-470364) 做的 `obs-multi-rtmp_0.2.4.pkg`~
+1. 下載這位 [網友](https://obsproject.com/forum/threads/multiple-rtmp-outputs-plugin.122535/post-516109) 做的 `obs-multi-rtmp_0.2.5.3.pkg`
 
-目前這個連結已經壞了
-不過在 [這裡](https://github.com/kilinbox/obs-multi-rtmp/releases) 又有另外一位熱心網友編譯了 Mac 版
-
-首先下載 `obs-multi-rtmp-macos-x64-0.2.5.3.zip` 並解壓縮
-(0.2.5.3 是我這個時候的最新版本，你也可以下載之後更新的版本)
-
-<div align="center"><img src="./mac-download-obs-multi-rtmp-zip.jpg"" width="700px"/></div>
-
-2. 把套件資料夾複製到相對應的主程式目錄底下
-將 `obs-multi-rtmp` 資料夾複製到 `/Users/你的使用者名稱/Library/Application Support/obs-studio/plugins` 目錄下
-(如果沒有 `obs-studio/plugins/` 資料夾，請自行新增)
-
-<div align="center"><img src="./mac-plugin-copy.jpg"" width="700px"/></div>
+2. 點兩下執行安裝
+若顯示 `無法打開 XXX，因為它來自未識別的開發者`
+就要去 `系統偏好設定` > `安全性與隱私` > 點擊 `強制打開`
 
 3. 打開 OBS，介面左上角會出現一個 `多路串流` 的區塊
 你可能需要拉寬那個視窗才看得清楚
