@@ -21,7 +21,7 @@ tags:
 我們可以使用 Windows 內建的 `tracert` 指令
 
 ## 如何使用 tracert
-
+### 操作步驟
 1. 鍵盤同時按著 `win` + `R`
 2. 輸入 `cmd`，並點擊 `確定`
 3. 輸入 `tracert -?` 查看使用方法
@@ -44,7 +44,7 @@ $ tracert -?
 中括號表示非必填的參數，如 `[-d]`
 而 `tracert` 和 `target_name` 為必填
 
-`target_name` 是你要連接的目的地
+  `target_name` 是你要連接的目的地
 可以打 IP 或 Host Name
 IP 長得像 `172.217.160.110`
 Host Name 就是你熟悉的 `www.google.com`
@@ -54,6 +54,8 @@ Host Name 就是你熟悉的 `www.google.com`
 
 <div align="center"><img src="./tracert_youtube.jpg" width="700px"/></div>
 
+### 瞭解測試結果
+
 最左邊是經過的網路節點，共有 11 個
 中間 3 個時間，表示測試 3 次
 最右邊是該節點的 IP 和 Host Name
@@ -62,9 +64,9 @@ Host Name 就是你熟悉的 `www.google.com`
 而是某些設備可能有防火牆，所以不會回覆我們
 
 根據 IP 與 Host Name 可以判斷
-- 1 ~ 3 是在公司內部
-- 4 ~ 7 是在中華電信
-- 8 ~ 11 是 Google 內部
+- 1 ~ 3 在公司內部
+- 4 ~ 7 在中華電信
+- 8 ~ 11 在 Google 內部
 
 所以如果
 - 在公司內部很慢，就要找網管人員
@@ -72,14 +74,14 @@ Host Name 就是你熟悉的 `www.google.com`
 - 在 Google 很慢，~就找 Google 工程師~
 
 通常中華出去後，就不是我們能控制了
-畢竟你在你家暢通，不代表外面的路暢通
+畢竟你在你家暢通，不代表外面的路也暢通
 因為大家都用同一條路
 
 另外直播跟一般使用並不同
-看中的是 `穩定度`
+更看中的是 `穩定度`
 而不是秒數要很小 (除非你要即時互動)
-只是看看網頁，瞬斷也不會有影響
-但如果是直播，斷個五秒就沒畫面了 QQ
+如果只是看看網頁，瞬斷也不會有影響
+但直播斷個五秒就沒畫面了 QQ
 
 ## 結合 ping 與 tracert 的 mtr
 `ping` 只能測兩點之間
@@ -88,21 +90,21 @@ Host Name 就是你熟悉的 `www.google.com`
 而 `mtr` 則是可以結合以上兩種的指令
 
 `mtr` 是在 Linux 內建的指令
-在 windows 則是有好心人寫的 WinMTR 小軟體
+在 Windows 則是有好心人寫的 WinMTR 小軟體
 
 ### 操作步驟
-1. 到該 [網址](https://sourceforge.net/projects/winmtr/)，點擊 Download
+1. 到該 [網址](https://sourceforge.net/projects/winmtr/)，點擊 `Download`
 2. 解壓縮後，點擊 `WinMTR.exe` 開啟軟體
 3. 輸入 IP 或 Host Name 後，點擊 `Start` 開始測試
-4. 等待一段時間
+4. 等待一段時間...
 5. 點擊 `Stop` 結束測試
 
-### 匯出測試報告
+### 匯出測試結果
 - 點擊 `Copy` 可以複製測試結果到剪貼簿
 - 點擊 `Export` 可以將結果匯出成檔案
 它支援了純文字和 HTML 格式
 
-### 報告欄位涵義
+### 瞭解測試結果
 - `Nr`: 經過節點的數目
 - `Loss%`: 丟包率
 - `Sent`: 已傳送封包數量
@@ -114,7 +116,6 @@ Host Name 就是你熟悉的 `www.google.com`
 
 由 mtr 可以知道 `延遲` 與 `丟包` 兩者情況
 
-### 後記
 下次如果遇到網路問題
 可以使用以上工具來釐清是 `內部` 還是 `外部` 問題
 並且有耐心的長時間觀察
