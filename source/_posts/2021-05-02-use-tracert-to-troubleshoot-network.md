@@ -21,6 +21,7 @@ tags:
 我們可以使用 Windows 內建的 `tracert` 指令
 
 ## 如何使用 tracert
+
 ### 操作步驟
 1. 鍵盤同時按著 `win` + `R`
 2. 輸入 `cmd`，並點擊 `確定`
@@ -42,7 +43,7 @@ $ tracert -?
     -6                 強制使用 IPv6。
 ```
 中括號表示非必填的參數，如 `[-d]`
-而 `tracert` 和 `target_name` 為必填
+而 `tracert` 和 `target_name` 為必填參數
 
   `target_name` 是你要連接的目的地
 可以打 IP 或 Host Name
@@ -71,21 +72,23 @@ Host Name 就是你熟悉的 `www.google.com`
 所以如果
 - 在公司內部很慢，就要找網管人員
 - 在中華很慢，就打中華客服
-- 在 Google 很慢，~就找 Google 工程師~
+- 在 Google 很慢，~就找 Google，但他可能不會理你~
 
-通常中華出去後，就不是我們能控制了
-畢竟你在你家暢通，不代表外面的路也暢通
-因為大家都用同一條路
+總之你在你家暢通
+不代表外面的路也暢通
 
 另外直播跟一般使用並不同
-更看中的是 `穩定度`
-而不是秒數要很小 (除非你要即時互動)
+更看中的是 `穩定度` (不掉封包)
+而不是 `延遲` (秒數) 要很小很小
+當然你要 "即時互動" 就另當別論
+
 如果只是看看網頁，瞬斷也不會有影響
 但直播斷個五秒就沒畫面了 QQ
 
 ## 結合 ping 與 tracert 的 mtr
-`ping` 只能測兩點之間
-`tracert` 可以測中間經過的點
+- `ping` 只能測兩點之間
+- `tracert` 可以測中間經過的點
+
 但 `tracert` 只會做一次，不能持續監測
 而 `mtr` 則是可以結合以上兩種的指令
 
@@ -99,10 +102,13 @@ Host Name 就是你熟悉的 `www.google.com`
 4. 等待一段時間...
 5. 點擊 `Stop` 結束測試
 
+<div align="center"><img src="./winmtr_youtube.jpg" width="600px"/></div>
+
 ### 匯出測試結果
 - 點擊 `Copy` 可以複製測試結果到剪貼簿
 - 點擊 `Export` 可以將結果匯出成檔案
-它支援了純文字和 HTML 格式
+
+它支援了 `純文字` 和 `HTML` 格式
 
 ### 瞭解測試結果
 - `Nr`: 經過節點的數目
@@ -116,10 +122,10 @@ Host Name 就是你熟悉的 `www.google.com`
 
 由 mtr 可以知道 `延遲` 與 `丟包` 兩者情況
 
-下次如果遇到網路問題
+下次如果遇到網路問題~
 可以使用以上工具來釐清是 `內部` 還是 `外部` 問題
 並且有耐心的長時間觀察
-才能找出問題點喔
+才能找出問題點喔！
 
 ## 參考資料
 - [tracert | Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tracert)
