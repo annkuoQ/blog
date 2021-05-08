@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="google-site-verification" content="BA0c9S2A0y6LKGGUAyEEIYAl4C0O7hED1HrbKlYmzts" />
+  
+  <title>一樣的 Bitrate，解析度高的畫質會比較好嗎？ | AnnKuoQ Blog</title>
+  
+  
+  <meta name="description" content="我知道 Bitrate 越大，畫質越好，但是解析度越大，就代表畫質越好嗎？解析度、Bitrate、畫質它們三者的關係是什麼呢？誰是影響畫質的最大因素呢？於是決定做個實驗，看看同樣 Bitrate，不同解析度的畫質誰比較好 ...">
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="/blog/img/favicon.ico">
+  
+
+  
+    
+<link rel="stylesheet" href="/blog/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+
+
+
+<body>
+  
+  
+  <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/blog/' >
+        
+          AnnKuoQ Blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/blog/"
+                  
+                  
+                  id="blog">
+									<i class=' fa-fw'></i>&nbsp;首頁
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/categories/"
+                  
+                  
+                  id="blogcategories">
+									<i class=' fa-fw'></i>&nbsp;文章分類
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/tags/"
+                  
+                  
+                  id="blogtags">
+									<i class=' fa-fw'></i>&nbsp;標籤
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜尋" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/blog/"
+                
+                
+                id="blog">
+								<i class=' fa-fw'></i>&nbsp;最新文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/categories/"
+                
+                
+                id="blogcategories">
+								<i class=' fa-fw'></i>&nbsp;文章分類
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/tags/"
+                
+                
+                id="blogtags">
+								<i class=' fa-fw'></i>&nbsp;標籤
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/blog/2020-10-25-bitrate-vs-resolution/">
+        一樣的 Bitrate，解析度高的畫質會比較好嗎？
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://annkuoq.github.io/blog/" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>AnnKuoQ</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-10-25</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/%E8%BD%89%E6%AA%94-%E7%B7%A8%E7%A2%BC/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>轉檔 / 編碼</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>某天同事問說 iMovie 怎麼輸出<br>我說: 除了設解析度，還有 Bitrate<br>同事問 Bitrate 是什麼？<br>我說: 就是資料流，每秒的資料量<br>通常越大，畫質越好，但檔案越大</p>
+<a id="more"></a>
+
+<p>後來回到自己的位置上<br>突然覺得很好奇<br>我知道 Bitrate 越大，畫質越好<br>但是解析度越大，就代表畫質越好嗎？</p>
+<p>解析度、Bitrate、畫質它們三者的關係是什麼呢？<br>誰是影響畫質的最大因素呢？</p>
+<p>於是決定做個實驗<br>看看同樣 Bitrate，不同解析度的畫質誰比較好</p>
+<h2 id="測試方法"><a href="#測試方法" class="headerlink" title="測試方法"></a>測試方法</h2><ul>
+<li>使用 <a href="https://mixkit.co/free-stock-video/man-plays-an-accordion-in-front-of-a-fountain-and-631/" target="_blank" rel="noopener">Mixkit</a> 的影片素材</li>
+<li>使用 <a href="https://ffmpeg.org/" target="_blank" rel="noopener">FFmpeg</a> 轉出四個檔案<ul>
+<li>1080p 4 Mbps<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -s 1920x1080 -c:v libx264 -x264-params &quot;nal-hrd&#x3D;cbr:force-cfr&#x3D;1&quot; -b:v 4M -minrate 4M -maxrate 4M -bufsize 8M 1080p4M.mp4</span><br></pre></td></tr></table></figure></li>
+<li>1080p 1 Mbps<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -s 1920x1080 -c:v libx264 -x264-params &quot;nal-hrd&#x3D;cbr:force-cfr&#x3D;1&quot; -b:v 1M -minrate 1M -maxrate 1M -bufsize 2M 1080p1M.mp4</span><br></pre></td></tr></table></figure></li>
+<li>480p 4 Mbps<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -s 854x480 -c:v libx264 -x264-params &quot;nal-hrd&#x3D;cbr:force-cfr&#x3D;1&quot; -b:v 4M -minrate 4M -maxrate 4M -bufsize 8M 480p4M.mp4</span><br></pre></td></tr></table></figure></li>
+<li>480p 1 Mbps<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -s 854x480 -c:v libx264 -x264-params &quot;nal-hrd&#x3D;cbr:force-cfr&#x3D;1&quot; -b:v 1M -minrate 1M -maxrate 1M -bufsize 2M 480p1M.mp4</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="測試結果"><a href="#測試結果" class="headerlink" title="測試結果"></a>測試結果</h2><h3 id="畫質比較"><a href="#畫質比較" class="headerlink" title="畫質比較"></a>畫質比較</h3><ul>
+<li><code>1080p4M</code> &gt; <code>480p4M</code> &gt; <code>480p1M</code> &gt; <code>1080p1M</code></li>
+</ul>
+<h3 id="大小比較"><a href="#大小比較" class="headerlink" title="大小比較"></a>大小比較</h3><ul>
+<li><code>1080p4M</code> = <code>480p4M</code> &gt; <code>1080p1M</code> = <code>480p1M</code></li>
+</ul>
+<h3 id="截圖比較"><a href="#截圖比較" class="headerlink" title="截圖比較"></a>截圖比較</h3><ul>
+<li><a href="https://annkuoq.github.io/blog/2020-10-25-bitrate-vs-resolution/compare.jpg">點我看大圖</a> 👈</li>
+</ul>
+<div align="center"><img src="./compare.jpg"" width="700px"/></div>
+
+<h3 id="完整截圖-依畫質排序"><a href="#完整截圖-依畫質排序" class="headerlink" title="完整截圖 (依畫質排序)"></a>完整截圖 (依畫質排序)</h3><div align="center"><img src="./1080p4m.jpg"" width="700px"/></div>
+
+<div align="center"><img src="./480p4m.jpg"" width="700px"/></div>
+
+<div align="center"><img src="./480p1m.jpg"" width="700px"/></div>
+
+<div align="center"><img src="./1080p1m.jpg"" width="700px"/></div>
+
+<p>因為 1080p 要記錄的像素比 480p 還要多，所以需要更多 Bitrate<br>雖然兩者檔案大小一樣，但 480p 畫質比較好</p>
+<p>這讓我想起「一碗麵的故事」<br>一個人吃一碗麵剛剛好<br>三個人吃一碗麵會餓<br>雖然有很多人 (像素)，但只吃一碗麵 (Bitrate)<br>結果每個人都營養不良 (畫質不良)</p>
+<p>所以或許反過來想<br>你應該依照可以提供的 Bitrate 來決定解析度<br>要是你只能提供 5 Mbps<br>解析度卻給到 4K<br>那也觀賞馬賽克了 QQ</p>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><ol>
+<li>同 Bitrate，解析度越大 -&gt; 畫質越差</li>
+<li>同解析度，Bitrate 越大 -&gt; 畫質越好<br>(但 Bitrate 大到一定的階段，畫質也不會一直無限好上去)</li>
+<li>一樣的 Bitrate，不論解析度多大，檔案大小都一樣</li>
+</ol>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://mixkit.co/" target="_blank" rel="noopener">Mixkit</a></li>
+<li><a href="https://ffmpeg.org/" target="_blank" rel="noopener">FFmpeg</a></li>
+<li><a href="https://www.ptt.cc/man/AVEncode/DA31/M.1320786495.A.B02.html" target="_blank" rel="noopener">同片源1080p與720p同流量下的畫質 - 精華區 AVEncode</a></li>
+<li><a href="https://forum.videohelp.com/threads/395300-For-same-bitrate-which-looks-better-between-720p-and-1080p" target="_blank" rel="noopener">For same bitrate which looks better between 720p and 1080p - VideoHelp Forum</a></li>
+</ul>
+
+      </div>
+      
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/ffmpeg/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>ffmpeg</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/Mixkit/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Mixkit</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一頁</h6>
+                          <h4>
+                              <a href="/blog/2020-12-25-how-to-save-windows-cmd-logfile/" rel="prev" title="如何在 CMD 輸出 log 檔">
+                                
+                                    如何在 CMD 輸出 log 檔
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/windows/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> windows</a> <a class="tag" href="/blog/tags/CMD/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> CMD</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一頁&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/blog/2020-09-23-obs-multi-rtmp-outputs-plugin/" rel="prev" title="如何使用 OBS 同時直播多個平台">
+                                  
+                                      如何使用 OBS 同時直播多個平台
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/obs/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> obs</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+
+
+
+
+<div>
+  <section id="comments" class="comments">
+    <style>
+      .utterances{max-width: 100%;}
+    </style>
+      <script src="https://utteranc.es/client.js"
+              repo="annkuoQ/blog-utterances"
+              issue-term="title"
+              theme="github-dark"
+              crossorigin="anonymous"
+              async>
+      </script>
+</section>
+</div>
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '一樣的 Bitrate，解析度高的畫質會比較好嗎？',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://annkuoq.github.io/blog/img/logo_w.png'/>
+      </div>
+    
+    
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget plain'>
+  
+<header class='pure'>
+  <div><i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;關於這裡</div>
+  
+</header>
+
+  <div class='content pure'>
+    <p>擺放各種筆記的地方 (´ ●ω● ` )/</p>
+
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分類</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/blog/categories/%E4%BC%81%E5%8A%83-%E8%A1%8C%E9%8A%B7/" href="/blog/categories/%E4%BC%81%E5%8A%83-%E8%A1%8C%E9%8A%B7/"><div class='name'>企劃 / 行銷</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E7%9B%B4%E6%92%AD-%E4%B8%B2%E6%B5%81/" href="/blog/categories/%E7%9B%B4%E6%92%AD-%E4%B8%B2%E6%B5%81/"><div class='name'>直播 / 串流</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/" href="/blog/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/"><div class='name'>資工 / 程設</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E8%BD%89%E6%AA%94-%E7%B7%A8%E7%A2%BC/" href="/blog/categories/%E8%BD%89%E6%AA%94-%E7%B7%A8%E7%A2%BC/"><div class='name'>轉檔 / 編碼</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/" href="/blog/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/"><div class='name'>電腦 / 硬體</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E9%9F%B3%E6%A8%82-%E6%A8%82%E5%99%A8/" href="/blog/categories/%E9%9F%B3%E6%A8%82-%E6%A8%82%E5%99%A8/"><div class='name'>音樂 / 樂器</div><div class='badge'>(8)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章目錄</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#測試方法"><span class="toc-text">測試方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#測試結果"><span class="toc-text">測試結果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#畫質比較"><span class="toc-text">畫質比較</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大小比較"><span class="toc-text">大小比較</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#截圖比較"><span class="toc-text">截圖比較</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#完整截圖-依畫質排序"><span class="toc-text">完整截圖 (依畫質排序)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#結論"><span class="toc-text">結論</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#參考資料"><span class="toc-text">參考資料</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+  <br>
+  <div><p>© 2020 AnnKuoQ<p/></div>
+  <div>
+    <p><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> ｜ <a href="https://github.com/xaoxuu/hexo-theme-volantis/" target="_blank" rel="noopener">Volantis Theme</a></p>  
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/blog/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/app.js"></script>
+
+
+
+  
+<script src="/blog/js/search.js"></script>
+
+
+
+
+
+<!-- 复制 -->
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
