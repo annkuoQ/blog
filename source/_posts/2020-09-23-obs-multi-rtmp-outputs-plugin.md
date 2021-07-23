@@ -24,7 +24,7 @@ OBS 預設只能直播一個平台
 ## Windows 安裝
 > 2021/7/23 更新
 > [0.2.6 版](https://github.com/sorayuki/obs-multi-rtmp/releases/tag/0.2.6) 已可自動安裝在 windows 上，不用手動複製檔案
-> 請點擊下載 obs-multi-rtmp.zip，解壓縮後執行 `.exe`
+> 請點擊下載 obs-multi-rtmp.zip，解壓縮後執行 .exe
 
 1. ~下載 [obs-multi-rtmp_Windows_0.2.5.zip](https://github.com/sorayuki/obs-multi-rtmp/releases/)~
 ~(0.2.5 是我這個時候的最新版本，你也可以下載之後更新的版本)~
@@ -49,8 +49,8 @@ OBS 預設只能直播一個平台
 
 ## Mac 安裝
 > 2021/7/23 更新
-> 該網友的連結已掛
-> 可改使用 [此連結](https://github.com/sorayuki/obs-multi-rtmp/releases/tag/0.2.6) 的 .pkg
+> 該網友的連結已掛，可改使用 [此連結](https://github.com/sorayuki/obs-multi-rtmp/releases/tag/0.2.6)
+> 請點擊下載 obs-multi-rtmp_0.2.6.pkg
 
 1. ~下載這位 [網友](https://obsproject.com/forum/threads/multiple-rtmp-outputs-plugin.122535/post-516109) 做的 `obs-multi-rtmp_0.2.5.3.pkg`~
 
