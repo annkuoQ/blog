@@ -18,24 +18,25 @@ OBS 預設只能直播一個平台
 - 用第三方軟體: Restream, Straas (未來可能改為收費)
 - 自架伺服器: Nginx (學習門檻較高)
 
-在心灰意冷的時候看到 [OBS Forum](https://obsproject.com/forum/threads/multiple-rtmp-outputs-plugin.122535/) 上有人做了 Plug-in
-原本只有供應 Windows 使用
-但後面有熱心人打包成 Mac 版的 (感動)
-
+在心灰意冷的時候看到 [OBS Forum](https://obsproject.com/forum/resources/multiple-rtmp-outputs-plugin.964/) 上有人做了 Plug-in
 話不多說就趕快開始吧！
 
 ## Windows 安裝
-1. 下載 [obs-multi-rtmp_Windows_0.2.5.zip](https://github.com/sorayuki/obs-multi-rtmp/releases/)
-(0.2.5 是我這個時候的最新版本，你也可以下載之後更新的版本)
-解壓縮後有兩個資料夾: `data`, `obs-plugins`
+> 2021/7/23 更新
+> [0.2.6 版](https://github.com/sorayuki/obs-multi-rtmp/releases/tag/0.2.6) 已可自動安裝在 windows 上，不用手動複製檔案
+> 請點擊下載 obs-multi-rtmp.zip，解壓縮後執行 `.exe`
+
+1. ~下載 [obs-multi-rtmp_Windows_0.2.5.zip](https://github.com/sorayuki/obs-multi-rtmp/releases/)~
+~(0.2.5 是我這個時候的最新版本，你也可以下載之後更新的版本)~
+~解壓縮後有兩個資料夾: `data`, `obs-plugins`~
 <div align="center"><img src="./windows-download-obs-multi-rtmp-zip.jpg"" width="700px"/></div>
-2. 把套件複製到相對應的主程式目錄底下
+2. ~把套件複製到相對應的主程式目錄底下~
 
-  - 套件主程式 (.dll 檔)
-將 `obs-plugins\64bit\obs-multi-rtmp.dll` 複製到 `C:\Program Files\obs-studio\obs-plugins\64bit` 目錄下
+  - ~套件主程式 (.dll 檔)~
+~將 `obs-plugins\64bit\obs-multi-rtmp.dll` 複製到 `C:\Program Files\obs-studio\obs-plugins\64bit` 目錄下~
 
-  - 套件語系 (資料夾)
-將 `data\obs-plugins\obs-multi-rtmp` 複製到 `C:\Program Files\obs-studio\data\obs-plugins` 目錄下
+  - ~套件語系 (資料夾)~
+~將 `data\obs-plugins\obs-multi-rtmp` 複製到 `C:\Program Files\obs-studio\data\obs-plugins` 目錄下~
 
 <div align="center"><img src="./windows-plugin-copy.jpg"" width="700px"/></div>
 
@@ -47,7 +48,11 @@ OBS 預設只能直播一個平台
 <div align="center"><img src="./windows-obs-multi-rtmp-setting.jpg"" width="700px"/></div>
 
 ## Mac 安裝
-1. 下載這位 [網友](https://obsproject.com/forum/threads/multiple-rtmp-outputs-plugin.122535/post-516109) 做的 `obs-multi-rtmp_0.2.5.3.pkg`
+> 2021/7/23 更新
+> 該網友的連結已掛
+> 可改使用 [此連結](https://github.com/sorayuki/obs-multi-rtmp/releases/tag/0.2.6) 的 .pkg
+
+1. ~下載這位 [網友](https://obsproject.com/forum/threads/multiple-rtmp-outputs-plugin.122535/post-516109) 做的 `obs-multi-rtmp_0.2.5.3.pkg`~
 
 2. 點兩下執行安裝
 若顯示 `無法打開 XXX，因為它來自未識別的開發者`
