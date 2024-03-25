@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="google-site-verification" content="BA0c9S2A0y6LKGGUAyEEIYAl4C0O7hED1HrbKlYmzts" />
+  
+  <title>在 Hexo 安裝 utterances 留言版 | AnnKuoQ Blog</title>
+  
+  
+  <meta name="description" content="utterances 沒廣告、不追蹤用戶隱私，留言會自動開 issue 到 repo，首先在 github 創建一個 public repo，然後安裝 utterances app ...">
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="/blog/img/favicon.ico">
+  
+
+  
+    
+<link rel="stylesheet" href="/blog/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+
+
+
+<body>
+  
+  
+  <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/blog/' >
+        
+          AnnKuoQ Blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/blog/"
+                  
+                  
+                  id="blog">
+									<i class=' fa-fw'></i>&nbsp;首頁
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/categories/"
+                  
+                  
+                  id="blogcategories">
+									<i class=' fa-fw'></i>&nbsp;文章分類
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/tags/"
+                  
+                  
+                  id="blogtags">
+									<i class=' fa-fw'></i>&nbsp;標籤
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜尋" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/blog/"
+                
+                
+                id="blog">
+								<i class=' fa-fw'></i>&nbsp;最新文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/categories/"
+                
+                
+                id="blogcategories">
+								<i class=' fa-fw'></i>&nbsp;文章分類
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/tags/"
+                
+                
+                id="blogtags">
+								<i class=' fa-fw'></i>&nbsp;標籤
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/blog/2020-03-09-add-utterances-comment-widget-to-hexo/">
+        在 Hexo 安裝 utterances 留言版
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://annkuoq.github.io/blog/" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>AnnKuoQ</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-03-09</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>資工 / 程設</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>為什麼要用 utterances？</p>
+<ul>
+<li>因為沒有廣告</li>
+<li>因為不會追蹤用戶隱私</li>
+<li>因為不用再申請一個帳號 (部落格本來就架在 GitHub 上)</li>
+</ul>
+<a id="more"></a>
+
+<h2 id="安裝步驟"><a href="#安裝步驟" class="headerlink" title="安裝步驟"></a>安裝步驟</h2><ol>
+<li>在 GitHub 創建一個 Public Repository</li>
+<li>安裝 <a href="https://github.com/apps/utterances" target="_blank" rel="noopener">utterances app</a> &gt; <code>Only select repositories</code> &gt; 選剛剛創建的 repo &gt; <code>Install</code><br>utterances APP 要求存取的權限有:<ul>
+<li>No access to code</li>
+<li>Read access to metadata</li>
+<li>Read and write access to issues</li>
+</ul>
+</li>
+</ol>
+<div align="center"><img src="./permissions.jpg"" width="400px" /></div>
+
+<ol start="3">
+<li><p>輸入 <code>owner/repo</code>，就是要放留言的倉庫</p>
+</li>
+<li><p>設定 issue 標題怎麼開，有以下幾種選擇:</p>
+<ul>
+<li>Issue title contains page pathname</li>
+<li>Issue title contains page URL</li>
+<li>Issue title contains page title</li>
+<li>Issue title contains page og:title</li>
+<li>Specific issue number</li>
+<li>Issue title contains specific term</li>
+</ul>
+</li>
+<li><p>選擇主題樣式，有以下幾種選擇:</p>
+<ul>
+<li>GitHub Light</li>
+<li>GitHub Dark</li>
+<li>GitHub Dark Orange</li>
+<li>Icy Dark</li>
+<li>Dark Blue</li>
+<li>Photon Dark</li>
+</ul>
+</li>
+<li><p>複製自動產生的程式碼到 <code>\themes\你的主題名稱\layout\_partia\article.ejs</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;section id&#x3D;&quot;comments&quot; class&#x3D;&quot;comments&quot;&gt;</span><br><span class="line">      &lt;style&gt;</span><br><span class="line">        .utterances&#123;max-width: 100%;&#125;</span><br><span class="line">      &lt;&#x2F;style&gt;</span><br><span class="line">        &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;utteranc.es&#x2F;client.js&quot;</span><br><span class="line">                repo&#x3D;&quot;annkuoQ&#x2F;blog-utterances&quot;</span><br><span class="line">                issue-term&#x3D;&quot;title&quot;</span><br><span class="line">                theme&#x3D;&quot;github-dark&quot;</span><br><span class="line">                crossorigin&#x3D;&quot;anonymous&quot;</span><br><span class="line">                async&gt;</span><br><span class="line">        &lt;&#x2F;script&gt;</span><br><span class="line">  &lt;&#x2F;section&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="測試留言"><a href="#測試留言" class="headerlink" title="測試留言"></a>測試留言</h2><ol>
+<li>點擊留言版的 <code>Sign in to comment</code></li>
+<li>同意授權 &gt; <code>Authorize utterances by utterances</code></li>
+</ol>
+<div align="center"><img src="./authorize.jpg"" width="400px" /></div>
+
+<ol start="3">
+<li>回到留言板留言後，repo 就會自動開好票囉</li>
+</ol>
+<div align="center"><img src="./test-comment.jpg"" width="800px" /></div>
+
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://utteranc.es/" target="_blank" rel="noopener">utterances 官方網站</a></li>
+<li><a href="https://blog.csdn.net/weixin_41287260/article/details/103049579" target="_blank" rel="noopener">hexo+yilia 集成 utteranc 评论系统</a></li>
+</ul>
+
+      </div>
+      
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/hexo/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>hexo</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/github-pages/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>github pages</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/utterances/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>utterances</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一頁</h6>
+                          <h4>
+                              <a href="/blog/2020-03-15-how-to-find-my-blog-on-google-search/" rel="prev" title="如何讓 Google 搜尋到自己的部落格">
+                                
+                                    如何讓 Google 搜尋到自己的部落格
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/hexo/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> hexo</a> <a class="tag" href="/blog/tags/github-pages/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> github pages</a> <a class="tag" href="/blog/tags/google-search-console/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> google search console</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一頁&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/blog/2020-01-03-use-hexo-to-deploy-github-pages/" rel="prev" title="用 Hexo 和 GitHub Pages 架部落格">
+                                  
+                                      用 Hexo 和 GitHub Pages 架部落格
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/hexo/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> hexo</a> <a class="tag" href="/blog/tags/github-pages/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> github pages</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+
+
+
+
+<div>
+  <section id="comments" class="comments">
+    <style>
+      .utterances{max-width: 100%;}
+    </style>
+      <script src="https://utteranc.es/client.js"
+              repo="annkuoQ/blog-utterances"
+              issue-term="title"
+              theme="github-dark"
+              crossorigin="anonymous"
+              async>
+      </script>
+</section>
+</div>
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '在 Hexo 安裝 utterances 留言版',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://annkuoq.github.io/blog/img/logo_w.png'/>
+      </div>
+    
+    
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget plain'>
+  
+<header class='pure'>
+  <div><i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;關於這裡</div>
+  
+</header>
+
+  <div class='content pure'>
+    <p>擺放各種筆記的地方 (´ ●ω● ` )/</p>
+
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分類</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/blog/categories/%E4%BC%81%E5%8A%83-%E8%A1%8C%E9%8A%B7/" href="/blog/categories/%E4%BC%81%E5%8A%83-%E8%A1%8C%E9%8A%B7/"><div class='name'>企劃 / 行銷</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E7%9B%B4%E6%92%AD-%E4%B8%B2%E6%B5%81/" href="/blog/categories/%E7%9B%B4%E6%92%AD-%E4%B8%B2%E6%B5%81/"><div class='name'>直播 / 串流</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/" href="/blog/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/"><div class='name'>資工 / 程設</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E8%BD%89%E6%AA%94-%E7%B7%A8%E7%A2%BC/" href="/blog/categories/%E8%BD%89%E6%AA%94-%E7%B7%A8%E7%A2%BC/"><div class='name'>轉檔 / 編碼</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/" href="/blog/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/"><div class='name'>電腦 / 硬體</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E9%9F%B3%E6%A8%82-%E6%A8%82%E5%99%A8/" href="/blog/categories/%E9%9F%B3%E6%A8%82-%E6%A8%82%E5%99%A8/"><div class='name'>音樂 / 樂器</div><div class='badge'>(8)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章目錄</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安裝步驟"><span class="toc-text">安裝步驟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#測試留言"><span class="toc-text">測試留言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#參考資料"><span class="toc-text">參考資料</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+  <br>
+  <div><p>© 2020 AnnKuoQ<p/></div>
+  <div>
+    <p><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> ｜ <a href="https://github.com/xaoxuu/hexo-theme-volantis/" target="_blank" rel="noopener">Volantis Theme</a></p>  
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/blog/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/app.js"></script>
+
+
+
+  
+<script src="/blog/js/search.js"></script>
+
+
+
+
+
+<!-- 复制 -->
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="google-site-verification" content="BA0c9S2A0y6LKGGUAyEEIYAl4C0O7hED1HrbKlYmzts" />
+  
+  <title>免費的 AWS 轉檔基礎知識線上課程 | AnnKuoQ Blog</title>
+  
+  
+  <meta name="description" content="AWS 為了讓大家能更了解他們的服務，提供了許多免費的線上課程，其中包括了許多基礎知識，例如雲端架構、資料庫、物聯網、媒體服務等等，這次我上的是轉檔基礎知識 ...">
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="/blog/img/favicon.ico">
+  
+
+  
+    
+<link rel="stylesheet" href="/blog/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+
+
+
+<body>
+  
+  
+  <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/blog/' >
+        
+          AnnKuoQ Blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/blog/"
+                  
+                  
+                  id="blog">
+									<i class=' fa-fw'></i>&nbsp;首頁
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/categories/"
+                  
+                  
+                  id="blogcategories">
+									<i class=' fa-fw'></i>&nbsp;文章分類
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/tags/"
+                  
+                  
+                  id="blogtags">
+									<i class=' fa-fw'></i>&nbsp;標籤
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜尋" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/blog/"
+                
+                
+                id="blog">
+								<i class=' fa-fw'></i>&nbsp;最新文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/categories/"
+                
+                
+                id="blogcategories">
+								<i class=' fa-fw'></i>&nbsp;文章分類
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/tags/"
+                
+                
+                id="blogtags">
+								<i class=' fa-fw'></i>&nbsp;標籤
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/blog/2020-04-03-free-aws-digital-training-for-video-compression-basics/">
+        免費的 AWS 轉檔基礎知識線上課程
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://annkuoq.github.io/blog/" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>AnnKuoQ</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-04-03</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/%E8%BD%89%E6%AA%94-%E7%B7%A8%E7%A2%BC/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>轉檔 / 編碼</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>AWS 為了讓大家能更了解他們的服務<br>提供了許多免費的線上課程<br>其中包括了許多基礎知識<br>例如雲端架構、資料庫、物聯網、媒體服務等等</p>
+<a id="more"></a>
+
+<p>只要到 <a href="https://www.aws.training/" target="_blank" rel="noopener">aws.training</a> 註冊帳號就能上課囉～<br>這次我上的是轉檔基礎知識 <a href="https://www.aws.training/Details/eLearning?id=17775" target="_blank" rel="noopener">Video Compression Basics</a><br>點擊 <code>Launch</code> 就會另開視窗開啟課程<br>課程結束還能獲得結業證書</p>
+<div align="center"><img src="./completion-certificate.jpg"" width="400px" /></div>
+
+<p>但課程大多是英文<br>我英文超爛的<br>辛苦翻譯之後就想說留下來 👇<br><del>雖然不一定完全正確</del></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="影音的發展"><a href="#影音的發展" class="headerlink" title="影音的發展"></a>影音的發展</h3><p>1950 年，電視從黑白變成彩色<br>十年內電視機數量從 600 萬增加到 6000 萬</p>
+<p>1990 年，類比電視被數位電視取代<br>電漿電視和液晶電視的數量在美國增長到 2.2 億</p>
+<p>2000 年，數位串流影音透過網路傳遞 (OTT - Over-The-Top)<br>讓用於觀看影音的設備，如平板電腦、智慧型手機、遊戲機數量激增</p>
+<p>如今，優質的影音內容已流傳到數十億台設備<br>包括劇情長片、連續劇等<br>而且觀眾準備要支付額外費用來觀看影音</p>
+<h3 id="優質影音內容"><a href="#優質影音內容" class="headerlink" title="優質影音內容"></a>優質影音內容</h3><p>傳輸影音涉及一連串複雜的技術<br>當今以不同解析度和壓縮方式來顯示不同的串流<br>範圍包括廣播電視、教育、金融等行業甚至政府機構<br>都需要將影音傳送到各種類型的設備<br>而且小設備和大設備的畫質要看起來一樣好</p>
+<h3 id="觀賞體驗"><a href="#觀賞體驗" class="headerlink" title="觀賞體驗"></a>觀賞體驗</h3><p>觀眾消費的方式也有所發展<br>在線性傳統電視以外，消費者可以有以下選項:</p>
+<ul>
+<li>直播 (Live Event): 體育、音樂會、會議等，並傳送到多個設備</li>
+<li>點播 (Video-on-Demand): 隨時隨地可用多種設備，來觀看預先錄製的內容</li>
+<li>時間轉移 (Time shifted viewing): 不受電視台播放的時間限制，可透過重播來觀賞內容</li>
+</ul>
+<h3 id="影音越來越大"><a href="#影音越來越大" class="headerlink" title="影音越來越大"></a>影音越來越大</h3><p>現今大部分的影音都是用很高的品質拍攝，幾乎與電影勢均力敵<br>隨著畫質的提高，影音檔案也越來越大<br>HD (High Definition) 是 SDTV (Standard Definition Television) 的巨大進步<br>而 4K UHD (Ultra High Definition) 是 HD 的四倍<br>HDR (High Dynamic Range) 則能提供更豐富的色彩<br>日本政府也要求 2020 東京奧運要以 8K 播送</p>
+<h3 id="影音壓縮"><a href="#影音壓縮" class="headerlink" title="影音壓縮"></a>影音壓縮</h3><p>影音壓縮是必要的<br>因為原始未壓縮的檔案太大<br>無法有效率的在網路上儲存與傳遞<br>最好的大小是 5 Mb/sec</p>
+<h3 id="關鍵概念"><a href="#關鍵概念" class="headerlink" title="關鍵概念"></a>關鍵概念</h3><p>要了解壓縮的原理，我們需要注意以下概念:</p>
+<ul>
+<li><code>解析度 (resolution)</code>、<code>影格速率 (frame rate)</code>、<code>位元速率 (bitrate)</code></li>
+<li><code>色彩空間 (color space)</code>、<code>位元深度 (bit depth)</code></li>
+<li><code>編解碼器 (codec)</code>、<code>容器 (container)</code></li>
+</ul>
+<h2 id="解析度、影格速率、位元速率"><a href="#解析度、影格速率、位元速率" class="headerlink" title="解析度、影格速率、位元速率"></a>解析度、影格速率、位元速率</h2><h3 id="解析度-Resolution"><a href="#解析度-Resolution" class="headerlink" title="解析度 (Resolution)"></a>解析度 (Resolution)</h3><p>解析度是畫面能保留的細節程度<br>通常以寬度和高度的尺寸表示<br>以像素 (pixel) 為單位</p>
+<p>像素是數位影像中最小的元素<br>一個像素能顯示一種顏色<br>越多像素就越接近原始影像<br>所以解析度是畫面清晰度的重要因素</p>
+<h3 id="解析度和寬高比-Aspect-Ratio"><a href="#解析度和寬高比-Aspect-Ratio" class="headerlink" title="解析度和寬高比 (Aspect Ratio)"></a>解析度和寬高比 (Aspect Ratio)</h3><p>解析度也代表寬高比</p>
+<ul>
+<li>SDTV: 720 x 480 / <code>4:3</code> (1.33:1)</li>
+<li>HD: 1920 x 1080 / <code>16:9</code> (1.78:1)</li>
+<li>UHD (4K): 3840 x 2160 / <code>16:9</code> (1.78:1)</li>
+</ul>
+<h3 id="影格速率-Frame-Rate"><a href="#影格速率-Frame-Rate" class="headerlink" title="影格速率 (Frame Rate)"></a>影格速率 (Frame Rate)</h3><p>影片實際上不是動態的，它是一連串的靜止圖像<br>因為顯示速度夠快，所以產生動態效果</p>
+<p>fps (frames per second) 是顯示圖像的頻率<br>解析度影響清晰度與細節<br>而影格速率影響動作的平滑度</p>
+<h3 id="影片的影格速率"><a href="#影片的影格速率" class="headerlink" title="影片的影格速率"></a>影片的影格速率</h3><p>35 mm 電影膠片通常是 24 fps</p>
+<p>影片的格率通常是電壓頻率的倍數<br>歐洲電壓頻率為 50 Hz<br>影片格率為 25 fps, 50 fps … 以此類推</p>
+<p>美洲電壓頻率為 60 Hz<br>影片格率為 30 fps, 60 fps … 以此類推</p>
+<p>但美洲有兩種不是整數的常用格率<br>1950 年，當電視加入彩色訊號時，它干擾了黑白訊號<br>為了解決訊號干擾的問題<br>格率從 30 改為 29.97 fps，60 改為 59.94 fps</p>
+<h3 id="隔行掃描-Interlaced"><a href="#隔行掃描-Interlaced" class="headerlink" title="隔行掃描 (Interlaced)"></a>隔行掃描 (Interlaced)</h3><p>在 CRT 電視上<br>畫面的呈現方式是一行一行、從上到下、從左到右逐行顯示<br>在掃描的過程中，重新定位需花費時間</p>
+<blockquote>
+<p>第一行左到右 &gt; 右回到左 &gt; 第二行左到右 &gt; 右回到左 &gt; …. </p>
+</blockquote>
+<p>由於早期螢幕內的化學材質和掃描時間<br>發現以 30 fps 掃描一個畫面時，所有線條會產生明顯閃爍</p>
+<p>解決方式是先顯示奇數行的畫面，再顯示偶數行<br>這些奇數和偶數行稱為圖場 (fields)<br>因為它們顯示得很快，以兩倍的影格速率顯示<br>我們的眼睛就把它們融合在一起<br>動態看起來更平滑，同時也消除閃爍</p>
+<p>隔行掃描 (Interlaced) 在高度尺寸後面以小寫字母 <code>i</code> 顯示<br>e.g. 480i, 1080i</p>
+<h3 id="類比電視標準"><a href="#類比電視標準" class="headerlink" title="類比電視標準"></a>類比電視標準</h3><p>類比電視制定了每格掃描線數量和影格速率的標準<br>歐洲使用 PAL，每格有 625 條掃描線<br>美洲使用 NTSC，每格有 525 條掃描線</p>
+<p>到了 2012 年<br>類比電視已在大部分地區慢慢被淘汰</p>
+<h3 id="逐行掃描-Progressive"><a href="#逐行掃描-Progressive" class="headerlink" title="逐行掃描 (Progressive)"></a>逐行掃描 (Progressive)</h3><p>在 LCD, LED, OLEO 這類平面電視<br>可以一次顯示所有掃描線，而且不會閃爍</p>
+<p>逐行掃描 (Progressive) 在高度尺寸後面以小寫字母 <code>p</code> 顯示<br>e.g. 720p, 1080p<br>但 4K 以上的解析度只有逐行掃描，所以不使用 p 表示</p>
+<h3 id="位元速率-Bitrate"><a href="#位元速率-Bitrate" class="headerlink" title="位元速率 (Bitrate)"></a>位元速率 (Bitrate)</h3><p>小 b (bit) 是電腦的最小單位<br>只有兩種狀態: 是或否、0 或 1</p>
+<p>Bitrate 通常表示為 bits per second<br>Mb/s (Mbps) - Megabits per second (百萬位元/每秒)<br>kb/s (Kbps) - Kilobits per second (千位元/每秒)</p>
+<p>Bitrate 越高，則:</p>
+<ul>
+<li>影像品質越好</li>
+<li>檔案容量越大</li>
+<li>所需頻寬 (bandwidth) 越大</li>
+</ul>
+<h2 id="色彩空間和位元深度"><a href="#色彩空間和位元深度" class="headerlink" title="色彩空間和位元深度"></a>色彩空間和位元深度</h2><h3 id="色彩空間-Color-Space"><a href="#色彩空間-Color-Space" class="headerlink" title="色彩空間 (Color Space)"></a>色彩空間 (Color Space)</h3><p>在十九世紀<br>科學家開始研究人眼與光波<br>他們用色彩模型 (Color model) 來描述人類能看見的顏色<br>這些色彩模型是色彩空間 (Color space) 的基礎</p>
+<p>1931 年，國際照明委員會開發了 CIE 1931 Color Space<br>此馬蹄形是人可見的所有色彩</p>
+<div align="center"><img src="./color_system.jpg"" width="450px" /></div>
+
+<p>色彩空間 (Color Space) 用於測量成像技術的準確性<br>例如列印、攝影、影音等</p>
+<p>後來的 Rec. 601, Rec. 709, Rec. 2020 標準<br>則規定了顯示器可呈現的色彩</p>
+<ul>
+<li>1982 年，Rec. 601 代表 SDTV 的色彩空間</li>
+<li>1990 年，Rec. 709 代表 HD 的色彩空間</li>
+<li>2012 年，Rec. 2020 代表 4K UHD 的色彩空間</li>
+</ul>
+<p>三角形內的區域代表可見的顏色<br>在使用此顏色空間時，稱為色域 (gamut)<br>意思是特定空間的完整顏色範圍</p>
+<div align="center"><img src="./color_space.jpg"" width="450px" /></div>
+
+<p>注意 SD 到 HD 只有很小的進步<br>但 HD 到 UHD 則有大幅進展</p>
+<h3 id="位元深度-Bit-Depth"><a href="#位元深度-Bit-Depth" class="headerlink" title="位元深度 (Bit Depth)"></a>位元深度 (Bit Depth)</h3><p>數位圖像由像素 (pixel) 組成<br>pixel 是 picture element 的混成詞</p>
+<p>每個像素儲存特定的顏色<br>分配給像素的儲存空間稱為位元深度 (Bit Depth)<br>儲存單位是 bit，它也是電腦儲存的最小單位<br>空間越大，顏色則顯示越準確</p>
+<p>假設有一個像素要顯示為紅色陰影<br>如果用 1 bit 來描述這個顏色</p>
+<ul>
+<li>1 bit -&gt; 2 的 1 次方 = 2 種顏色</li>
+<li>2 bits -&gt; 2 的 2 次方 = 4 種顏色</li>
+<li>3 bits -&gt; 2 的 3 次方 = 8 種顏色</li>
+<li>8 bits -&gt; 2 的 8 次方 = 256 種顏色</li>
+</ul>
+<p>越多顏色，就能用越平滑的漸層取代階梯的效果</p>
+<div align="center"><img src="./bit_depth.jpg"" width="450px" /></div>
+
+<h3 id="色彩通道-Color-Channel"><a href="#色彩通道-Color-Channel" class="headerlink" title="色彩通道 (Color Channel)"></a>色彩通道 (Color Channel)</h3><p>一個像素可以儲存三種原色 (紅綠藍) 的色彩通道 (Color Channels)<br>也就是說一個像素有三個色彩通道</p>
+<p>如果三個顏色通道各有 8 bits<br>紅綠藍就各有 256 種顏色<br>一個像素就有 1600 萬種不同顏色與強度</p>
+<blockquote>
+<p>256 x 256 x 256 = 16777216 種顏色</p>
+</blockquote>
+<p>這稱為 24 bit color，或說這個影片的位元深度有 24<br>1600 萬種顏色已適用大部分的終端用戶需求</p>
+<p>10 bits 可提供 10 億種顏色 (HDR)</p>
+<blockquote>
+<p>1024 x 1024 x 1024 = 1073741824</p>
+</blockquote>
+<p>12 bits 則可提供 680 億種顏色</p>
+<blockquote>
+<p>4096 x 4096 x 4096 = 68719476736</p>
+</blockquote>
+<h2 id="編解碼器和容器"><a href="#編解碼器和容器" class="headerlink" title="編解碼器和容器"></a>編解碼器和容器</h2><h3 id="壓縮-Compression"><a href="#壓縮-Compression" class="headerlink" title="壓縮 (Compression)"></a>壓縮 (Compression)</h3><p>原始檔太大<br>導致不方便在網路上移動<br>也不好在家用型設備上觀看<br>所以必須要壓縮</p>
+<p>壓縮過程中會刪除一些顏色資料<br>但通常我們不會發覺<br>實際上，我們對亮度還要比顏色更敏感</p>
+<p>特別的是<br>我們對平滑或漸層的細微變化很敏感<br>但不會去注意複雜部分的細節差異</p>
+<h3 id="編解碼器-Codec"><a href="#編解碼器-Codec" class="headerlink" title="編解碼器 (Codec)"></a>編解碼器 (Codec)</h3><p>壓縮視訊和音訊的軟體稱為編解碼器 (Codec)<br>縮寫來自: compress / decompress 或 encode / decode</p>
+<p>這些年來已經創建了數十種編解碼器<br>而且還持續開發中<br>目的是為了在減少大小的同時保持影像品質</p>
+<h3 id="編解碼器類型"><a href="#編解碼器類型" class="headerlink" title="編解碼器類型"></a>編解碼器類型</h3><p>無損編解碼器 (Lossless codecs)<br>解壓縮後可回復原始資料<br>通常用於剪輯後製與特效製作</p>
+<p>有損編解碼器 (Lossy codecs)<br>減少了多餘的視覺資料<br>同時盡可能看起來像原始影像<br>通常用於發布</p>
+<p>你在智慧電視和個人裝置上看的影音<br>就是使用有損編解碼器進行壓縮</p>
+<p>有損編解碼器有不同程度的損失 (loss)<br>損失最少的是幀內編解碼器 (mezzanine codecs)<br>它介於無損與高度壓縮之間</p>
+<h3 id="編碼標準的演變"><a href="#編碼標準的演變" class="headerlink" title="編碼標準的演變"></a>編碼標準的演變</h3><p>有兩個組織在研發與命名編碼標準</p>
+<ul>
+<li>ITU-T Video Coding Experts Group (VCEG)</li>
+<li>ISO-IEC Moving Picture Experts Group (MPWG)</li>
+</ul>
+<p>H.264 (ITU 命名) 是過去十年在網路傳輸上，最受歡迎的格式之一<br>也稱為 MPEG-4 Part 10 Advanced Video Coding (MPEG 命名)</p>
+<p>2013 年，H.265 也稱為 HEVC (MPEG-H Pan 2 High Efficiency Video Coding)<br>是為了提高 4K UHD 的傳遞效率而研發</p>
+<p>從主要用於廣播電視的 MPEG-2 到 H.264 和現在的 H.265<br>新的 codec 都比上一代舊的 codec 減少 50% 的 bandwidth<br>並且顯著改善畫質又降低 bitrate</p>
+<h3 id="容器-Container"><a href="#容器-Container" class="headerlink" title="容器 (Container)"></a>容器 (Container)</h3><p>影音壓縮之後<br>需要放一些基本數據到容器中<br>以便讓設備可以儲存、移動、回放</p>
+<p>容器就像一個箱子<br>視訊、音訊、字幕和 metadata 是箱子中的貨物</p>
+<p>容器可以透過副檔名來識別<br>常用的容器有: .mov, .mpg</p>
+<p>注意: mpeg 可以是編解碼器，也是容器的名稱</p>
+<p>每種容器的容納方式和用途不同<br>有些只能容納一種類型的編解碼器<br>有些可以容納多種編解碼器<br>有些對可容納的編解碼器會有限制</p>
+<h3 id="MPEG-Transport-Stream-TS"><a href="#MPEG-Transport-Stream-TS" class="headerlink" title="MPEG Transport Stream (TS)"></a>MPEG Transport Stream (TS)</h3><p>MPEG Transport Stream (.ts) 是最古老且用途最廣泛的容器之一</p>
+<p><code>.ts</code> 容器可以容納多個視訊和音訊的編解碼器<br>甚至可以容納多個容器，例如其他 <code>.ts</code><br>這就是單個串流傳送多個電視節目的方式</p>
+<p>想像一下大箱子裡的小箱子<br>顧名思義，它被設計成運輸容器 (transportation container)</p>
+<h2 id="圖像群組"><a href="#圖像群組" class="headerlink" title="圖像群組"></a>圖像群組</h2><p>編碼器使用複雜的演算來實現不同類型的壓縮<br>希望保持畫質且同時減少檔案大小</p>
+<p>有一種重要的壓縮類型是 圖像群組 GOP (Group of Pictures)<br>而單一圖像最常用的類型則是 JPEG (Joint Photographic Experts Group)</p>
+<h3 id="JPEG-壓縮方式"><a href="#JPEG-壓縮方式" class="headerlink" title="JPEG 壓縮方式"></a>JPEG 壓縮方式</h3><p>JPEG 丟棄人眼不會注意的顏色和複雜細節<br>因為我們對顏色的敏感度不如亮度</p>
+<p>JPEG 稱為幀內編碼 (intra-frame)<br>幀內代表只參考本身的影格<br>換句話說，解碼所需的訊息都在這個壓縮檔裡</p>
+<p>想像一下<br>有棵樹在畫面中，然後有個人騎車經過<br>相機捕捉一系列的靜止圖像<br>JPEG 壓縮法可以應用在每一個影格上<br>這稱為 Motion JPEG<br>它是最早使用的視訊壓縮技術之一</p>
+<p>但它沒考慮影格之間重複的資料<br>像是背景和樹在每個影格裡幾乎沒變<br>這就是所謂的時間冗餘 (temporal redundancy)<br>所以後來發明了幀間壓縮技術 (inter-frame)<br>來跟蹤影格與影格之間的變化和不變化</p>
+<h3 id="GOP-壓縮方式"><a href="#GOP-壓縮方式" class="headerlink" title="GOP 壓縮方式"></a>GOP 壓縮方式</h3><p>編碼器讀取並儲存一連串的影格 (Sequence)<br>先對第一格使用幀內編碼，並創建關鍵影格 (I-frame)<br>再來分析此影格與下一個影格的差異<br>這些後續影格稱為預測影格 P-frames (Predictive)<br>不變的像素不會再次壓縮，而是從 I-frame 引用</p>
+<p>接著，編碼器會創建另一個 P-frame<br>在這種情況下，它可能會參考前面的 I-frame 或 P-frame<br>然後，編碼器可以選擇介於 I 和 P 影格之間的影格<br>以向前和向後參考影格的方式進行壓縮<br>這稱為雙向預測影格 B-frame (Bi-directional Predictive)</p>
+<p>通常 I-frame 使用最多容量<br>其次是 P-frame，最後是 B-frame</p>
+<p>這些影格需要以正確的順序播放給觀眾<br>所以每個影格會分配時間戳記 PTS (Presentation Time Stamp)</p>
+<p>並且需要按照編碼順序解碼影格<br>播放順序不代表解壓縮的順序<br>I-frame 首先被壓縮<br>再來是 P-frame 被壓縮，最後是 B-frame<br>為了以正確的順序解碼<br>每個影格會分配時間戳記 DTS (Decode Time Stamp)</p>
+<p>因此解碼器會按照解碼順序 (DTS) 解壓縮影格<br>再按照呈現順序 (PTS) 播放給觀眾</p>
+<p>當 GOP 結束時<br>編碼器會再創建一個新的 I-frame<br>並重複壓縮的過程</p>
+<p>一個 GOP 是從 I-frame 到下一個 I-frame 的前一個影格<br>影音串流常用的 GOP 長度可能是<br>24, 30, 60, 90 或 25, 50, 100 格<br>大多數編碼器都可調整 GOP 的 B-frame 數量和 GOP 長度</p>
+<h3 id="影格的組成結構"><a href="#影格的組成結構" class="headerlink" title="影格的組成結構"></a>影格的組成結構</h3><p>影格 (frame) 分為多個片段 (slice)<br>切片由大區塊 (macroblock) 組成<br>大區塊由區塊 (block) 組成<br>區塊由單個像素 (pixel) 組成</p>
+<div align="center"><img src="./frame.jpg"" width="450px" /></div>
+
+<p>請注意<br>大區塊、區塊、像素不一定是正方形<br>它們可以是矩形<br>尺寸範圍取決於編解碼器</p>
+<h3 id="CBR-和-VBR"><a href="#CBR-和-VBR" class="headerlink" title="CBR 和 VBR"></a>CBR 和 VBR</h3><p>固定位元速率 Constant bitrate (CBR)<br>會讓整個影音在大部分時間是相同的 Bitrate<br>之所以出現變化，是因為不同類型的影格有不同的位元速率<br>而且客戶端的緩衝區 (buffers) 會在播放時讓 bitrate 產生少量變化</p>
+<p>變動位元速率 Variable bitrate (VBR)<br>則會持續變動整個影音的 Bitrate</p>
+<p>VBR 將 bits 散佈開來<br>複雜畫面用多一點 bits<br>靜態畫面用少一點 bits</p>
+<p>通常脫口秀用 CBR<br>運動比賽或動作片用 VBR</p>
+<h2 id="學習重點"><a href="#學習重點" class="headerlink" title="學習重點"></a>學習重點</h2><p>上完這堂課，你現在應該能夠:</p>
+<ul>
+<li>解釋影音技術的發展是如何改變觀眾的消費模式</li>
+<li>解釋視訊壓縮的關鍵概念，包含:<ul>
+<li>解析度、影格速率、位元速率</li>
+<li>顏色空間、位元深度</li>
+<li>壓縮方式，編解碼器、容器</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+      
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/aws/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>aws</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/compression/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>compression</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一頁</h6>
+                          <h4>
+                              <a href="/blog/2020-04-26-how-to-check-video-bitrate/" rel="prev" title="如何知道影片從頭到尾 Bitrate 的變化">
+                                
+                                    如何知道影片從頭到尾 Bitrate 的變化
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/ffmpeg/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> ffmpeg</a> <a class="tag" href="/blog/tags/excel/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> excel</a> <a class="tag" href="/blog/tags/bitrate-viewer/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> bitrate viewer</a> <a class="tag" href="/blog/tags/vlc-media-player/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> vlc media player</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一頁&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/blog/2020-03-15-how-to-find-my-blog-on-google-search/" rel="prev" title="如何讓 Google 搜尋到自己的部落格">
+                                  
+                                      如何讓 Google 搜尋到自己的部落格
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/hexo/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> hexo</a> <a class="tag" href="/blog/tags/github-pages/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> github pages</a> <a class="tag" href="/blog/tags/google-search-console/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> google search console</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+
+
+
+
+<div>
+  <section id="comments" class="comments">
+    <style>
+      .utterances{max-width: 100%;}
+    </style>
+      <script src="https://utteranc.es/client.js"
+              repo="annkuoQ/blog-utterances"
+              issue-term="title"
+              theme="github-dark"
+              crossorigin="anonymous"
+              async>
+      </script>
+</section>
+</div>
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '免費的 AWS 轉檔基礎知識線上課程',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://annkuoq.github.io/blog/img/logo_w.png'/>
+      </div>
+    
+    
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget plain'>
+  
+<header class='pure'>
+  <div><i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;關於這裡</div>
+  
+</header>
+
+  <div class='content pure'>
+    <p>擺放各種筆記的地方 (´ ●ω● ` )/</p>
+
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分類</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/blog/categories/%E4%BC%81%E5%8A%83-%E8%A1%8C%E9%8A%B7/" href="/blog/categories/%E4%BC%81%E5%8A%83-%E8%A1%8C%E9%8A%B7/"><div class='name'>企劃 / 行銷</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E7%9B%B4%E6%92%AD-%E4%B8%B2%E6%B5%81/" href="/blog/categories/%E7%9B%B4%E6%92%AD-%E4%B8%B2%E6%B5%81/"><div class='name'>直播 / 串流</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/" href="/blog/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/"><div class='name'>資工 / 程設</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E8%BD%89%E6%AA%94-%E7%B7%A8%E7%A2%BC/" href="/blog/categories/%E8%BD%89%E6%AA%94-%E7%B7%A8%E7%A2%BC/"><div class='name'>轉檔 / 編碼</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/" href="/blog/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/"><div class='name'>電腦 / 硬體</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E9%9F%B3%E6%A8%82-%E6%A8%82%E5%99%A8/" href="/blog/categories/%E9%9F%B3%E6%A8%82-%E6%A8%82%E5%99%A8/"><div class='name'>音樂 / 樂器</div><div class='badge'>(8)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章目錄</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#影音的發展"><span class="toc-text">影音的發展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#優質影音內容"><span class="toc-text">優質影音內容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#觀賞體驗"><span class="toc-text">觀賞體驗</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#影音越來越大"><span class="toc-text">影音越來越大</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#影音壓縮"><span class="toc-text">影音壓縮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#關鍵概念"><span class="toc-text">關鍵概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解析度、影格速率、位元速率"><span class="toc-text">解析度、影格速率、位元速率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#解析度-Resolution"><span class="toc-text">解析度 (Resolution)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解析度和寬高比-Aspect-Ratio"><span class="toc-text">解析度和寬高比 (Aspect Ratio)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#影格速率-Frame-Rate"><span class="toc-text">影格速率 (Frame Rate)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#影片的影格速率"><span class="toc-text">影片的影格速率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隔行掃描-Interlaced"><span class="toc-text">隔行掃描 (Interlaced)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#類比電視標準"><span class="toc-text">類比電視標準</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逐行掃描-Progressive"><span class="toc-text">逐行掃描 (Progressive)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#位元速率-Bitrate"><span class="toc-text">位元速率 (Bitrate)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#色彩空間和位元深度"><span class="toc-text">色彩空間和位元深度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#色彩空間-Color-Space"><span class="toc-text">色彩空間 (Color Space)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#位元深度-Bit-Depth"><span class="toc-text">位元深度 (Bit Depth)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#色彩通道-Color-Channel"><span class="toc-text">色彩通道 (Color Channel)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#編解碼器和容器"><span class="toc-text">編解碼器和容器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#壓縮-Compression"><span class="toc-text">壓縮 (Compression)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#編解碼器-Codec"><span class="toc-text">編解碼器 (Codec)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#編解碼器類型"><span class="toc-text">編解碼器類型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#編碼標準的演變"><span class="toc-text">編碼標準的演變</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#容器-Container"><span class="toc-text">容器 (Container)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MPEG-Transport-Stream-TS"><span class="toc-text">MPEG Transport Stream (TS)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#圖像群組"><span class="toc-text">圖像群組</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JPEG-壓縮方式"><span class="toc-text">JPEG 壓縮方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GOP-壓縮方式"><span class="toc-text">GOP 壓縮方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#影格的組成結構"><span class="toc-text">影格的組成結構</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CBR-和-VBR"><span class="toc-text">CBR 和 VBR</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#學習重點"><span class="toc-text">學習重點</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+  <br>
+  <div><p>© 2020 AnnKuoQ<p/></div>
+  <div>
+    <p><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> ｜ <a href="https://github.com/xaoxuu/hexo-theme-volantis/" target="_blank" rel="noopener">Volantis Theme</a></p>  
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/blog/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/app.js"></script>
+
+
+
+  
+<script src="/blog/js/search.js"></script>
+
+
+
+
+
+<!-- 复制 -->
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

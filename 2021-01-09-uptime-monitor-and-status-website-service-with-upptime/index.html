@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="google-site-verification" content="BA0c9S2A0y6LKGGUAyEEIYAl4C0O7hED1HrbKlYmzts" />
+  
+  <title>利用 GitHub Actions 監控網站服務 - Upptime | AnnKuoQ Blog</title>
+  
+  
+  <meta name="description" content="前陣子在網路上看到一個很酷的開源專案，充分的使用 GitHub，每隔一段時間用 GitHub Actions 看網站有沒有掛掉，若掛掉就用 GitHub Issues 回報異常事件，使用 GitHub Pages 產生服務狀態的頁面 ...">
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="/blog/img/favicon.ico">
+  
+
+  
+    
+<link rel="stylesheet" href="/blog/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+
+
+
+<body>
+  
+  
+  <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/blog/' >
+        
+          AnnKuoQ Blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/blog/"
+                  
+                  
+                  id="blog">
+									<i class=' fa-fw'></i>&nbsp;首頁
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/categories/"
+                  
+                  
+                  id="blogcategories">
+									<i class=' fa-fw'></i>&nbsp;文章分類
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/tags/"
+                  
+                  
+                  id="blogtags">
+									<i class=' fa-fw'></i>&nbsp;標籤
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜尋" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/blog/"
+                
+                
+                id="blog">
+								<i class=' fa-fw'></i>&nbsp;最新文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/categories/"
+                
+                
+                id="blogcategories">
+								<i class=' fa-fw'></i>&nbsp;文章分類
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/tags/"
+                
+                
+                id="blogtags">
+								<i class=' fa-fw'></i>&nbsp;標籤
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/blog/2021-01-09-uptime-monitor-and-status-website-service-with-upptime/">
+        利用 GitHub Actions 監控網站服務 - Upptime
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://annkuoq.github.io/blog/" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>AnnKuoQ</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2021-01-09</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>資工 / 程設</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>前陣子在網路上看到一個很酷的開源專案<br>充分的使用<del>榨乾</del> GitHub</p>
+<ul>
+<li>每隔一段時間用 GitHub Actions 看網站有沒有掛掉</li>
+<li>若掛掉就用 GitHub Issues 回報異常事件</li>
+<li>使用 GitHub Pages 產生服務狀態的頁面</li>
+</ul>
+<a id="more"></a>
+
+<h2 id="Actions-簡介"><a href="#Actions-簡介" class="headerlink" title="Actions 簡介"></a>Actions 簡介</h2><p><a href="https://docs.github.com/en/free-pro-team@latest/actions" target="_blank" rel="noopener">Actions</a> 是 GitHub 上的一個自動化服務<br>你可以把腳本放到上面<br>當特定事件發生時，自動執行你的腳本</p>
+<p>以 Upptime 來說<br>預設是每隔五分鐘來你的網站一次<br>同時也會記錄每次的 response time<br>讓你在頁面上看歷史紀錄等等</p>
+<p>這些動作都寫在 Actions 的腳本中<br>機器都會自己執行<br>完全不用動到一根指頭</p>
+<p>目前 Actions 支援 Windows, macOS, Linux <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners#supported-runners-and-hardware-resources" target="_blank" rel="noopener">三種環境</a><br>然後 <a href="https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-billing-and-payments-on-github/about-billing-for-github-actions#about-billing-for-github-actions" target="_blank" rel="noopener">額度</a> 的話，如果是免費個人帳戶</p>
+<ul>
+<li>在 Linux 上，一個月有 2000 分鐘的執行時間</li>
+<li>在 Windows 上，用 1 分鐘會消耗 2 分鐘的額度 (Linux 的兩倍)</li>
+<li>在 macOS 上，用 1 分鐘會消耗 10 分鐘的額度 (Linux 的十倍)</li>
+</ul>
+<p>當然你也可以用 <a href="https://docs.github.com/en/free-pro-team@latest/actions/hosting-your-own-runners/about-self-hosted-runners" target="_blank" rel="noopener">自己的機器</a> 跑</p>
+<p>不過！<br>如果你的 Repo 設為公開的話<br>就可以免費使用 Actions<br><del>既然用免費的，就要有某天要付錢的覺悟</del></p>
+<p>大概介紹完之後<br>就來開始裝 Upptime 吧</p>
+<h2 id="創建-GitHub-Repo"><a href="#創建-GitHub-Repo" class="headerlink" title="創建 GitHub Repo"></a>創建 GitHub Repo</h2><ol>
+<li>進入 Upptime 的 <a href="https://github.com/upptime/upptime" target="_blank" rel="noopener">repo</a></li>
+<li>點擊 <code>Use this template</code></li>
+</ol>
+<div align="center"><img src="./use-this-template.png" width="700px"/></div>
+
+<ol start="3">
+<li>創建 repo<ul>
+<li>輸入 repo name</li>
+<li>選擇要不要公開 repo</li>
+<li>勾選 <code>Include all branches</code></li>
+<li>點擊 <code>Create repository from temple</code></li>
+</ul>
+</li>
+</ol>
+<div align="center"><img src="./create-new-repo.png" width="700px"/></div>
+
+<p>等一陣子後<br>就會複製一樣的 repo 到你的帳號下</p>
+<h2 id="設定-GitHub-Pages"><a href="#設定-GitHub-Pages" class="headerlink" title="設定 GitHub Pages"></a>設定 GitHub Pages</h2><ol>
+<li>到你的 repo，點擊 <code>Settings</code></li>
+</ol>
+<div align="center"><img src="./repo-setting.png" width="700px"/></div>
+
+<ol start="2">
+<li>往下捲到 GitHub Pages 的 Source<ul>
+<li>Branch 設為 <code>gh-pages</code></li>
+<li>點擊 <code>Save</code></li>
+</ul>
+</li>
+</ol>
+<div align="center"><img src="./gh-pages-setting.png" width="700px"/></div>
+
+<h2 id="設定-Repository-Secret"><a href="#設定-Repository-Secret" class="headerlink" title="設定 Repository Secret"></a>設定 Repository Secret</h2><p>為了讓 Upptime 有 commit 和 publish 網頁的權限<br>需要設定 Personal Access Token</p>
+<ol>
+<li>點擊自己的 Profile picture &gt; <code>Settings</code></li>
+</ol>
+<div align="center"><img src="./profile-Setting.png" width="200px"/></div>
+
+<ol start="2">
+<li>點擊左側的 <code>Developer settings</code> &gt; <code>Personal access tokens</code> &gt; <code>Generate new token</code></li>
+</ol>
+<div align="center"><img src="./generate-new-token.png" width="700px"/></div>
+
+<ol start="3">
+<li>新增 token<ul>
+<li>Note: <code>upptime</code></li>
+<li>Select scopes: 勾選 <code>repo</code> 和 <code>workflow</code></li>
+<li>點擊 <code>Generate token</code></li>
+</ul>
+</li>
+</ol>
+<div align="center"><img src="./new-pat.png"" width="700px"/></div>
+
+<ol start="4">
+<li>複製這段很長的 token</li>
+</ol>
+<div align="center"><img src="./copy-pat.png" width="700px"/></div>
+
+<ol start="5">
+<li>返回 repo &gt; <code>Settings</code><br>點擊左側 <code>Secrets</code>&gt; <code>Add a new secret</code> &gt; <code>New repository secret</code></li>
+</ol>
+<div align="center"><img src="./repository-secret.png" width="700px"/></div>
+
+<ol start="6">
+<li>設定 repo 的 token<ul>
+<li>Name: <code>GH_PAT</code></li>
+<li>Value: 貼上剛剛複製的 <code>token</code></li>
+<li>點擊 <code>Add secret</code></li>
+</ul>
+</li>
+</ol>
+<div align="center"><img src="./new-secret.png" width="500px"/></div>
+
+<blockquote>
+<p>Personal Access Token 只能建立在個人帳戶底下<br>所以你若把 upptime repo 建在組織底下<br>之後綁 token 的人離職的話…</p>
+</blockquote>
+<h2 id="更新-YAML-檔"><a href="#更新-YAML-檔" class="headerlink" title="更新 YAML 檔"></a>更新 YAML 檔</h2><p>Upptime 使用 <code>.yml</code> 來做 “集中式設定”<br>只要更改這個檔案的設定<br>所有相關程式碼就會連動修改</p>
+<ol>
+<li>到你的 repo，點擊 <code>Code</code> &gt; <code>.upptimerc.yml</code></li>
+</ol>
+<div align="center"><img src="./repo-code.png" width="700px"/></div>
+
+<ol start="2">
+<li>點擊鉛筆編輯檔案</li>
+<li>以下是我修改的地方<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># 你的 GitHub username</span><br><span class="line">owner: annkuoQ</span><br><span class="line"></span><br><span class="line"># 你的 GitHub repo name</span><br><span class="line">repo: upptime</span><br><span class="line"></span><br><span class="line"># 加入要監控的網站名稱與 URL</span><br><span class="line">sites:</span><br><span class="line">  - name: AnnKuoQ Blog</span><br><span class="line">    url: https:&#x2F;&#x2F;annkuoq.github.io&#x2F;blog&#x2F;</span><br><span class="line"></span><br><span class="line"># 移除 cname，因為我沒有自己的 domain，所以改用 baseUrl，輸入 repo 名稱</span><br><span class="line">status-website:</span><br><span class="line">    #cname: demo.upptime.js.org (移除)</span><br><span class="line">    baseUrl: &#x2F;upptime </span><br><span class="line"></span><br><span class="line"># 自訂狀態頁面的 navbar 名稱與連結</span><br><span class="line">navbar:</span><br><span class="line">    - title: Status</span><br><span class="line">      href: &#x2F;upptime</span><br></pre></td></tr></table></figure></li>
+<li>點擊 <code>Commit changes</code></li>
+</ol>
+<h2 id="查看-GitHub-Actions"><a href="#查看-GitHub-Actions" class="headerlink" title="查看 GitHub Actions"></a>查看 GitHub Actions</h2><p>設定好 <code>.yml</code> 後<br>Actions 就會自動開始跑 (黃圈圈在轉)<br>跑成功會顯示綠色的勾勾<br>跑失敗會顯示紅色的叉叉</p>
+<div align="center"><img src="./actions-workflow.png" width="700px"/></div>
+
+<p>如果發現 Actions 沒跑<br>或是想要讓它馬上執行<br>就點擊左側的 <code>Setup CI</code> &gt; <code>Run workflow</code> &gt; <code>Run workflow</code></p>
+<div align="center"><img src="./manually-setup-ci.png" width="700px"/></div>
+
+<h2 id="查看-Status-Website"><a href="#查看-Status-Website" class="headerlink" title="查看 Status Website"></a>查看 Status Website</h2><p>你的狀態頁面 URL 是: <code>https://&lt;user_name&gt;.github.io/&lt;repo_name&gt;/</code><br>或是可以到 repo &gt; <code>Settings</code> &gt; <code>GitHub Pages</code> 查 URL</p>
+<div align="center"><img src="./publish_url.png" width="700px"/></div>
+
+<p>點擊 URL 後，我們來到了狀態頁面<br>頁面分成三個區塊</p>
+<ul>
+<li>Active Incidents 顯示目前的異常事件</li>
+<li>Past Incidents 顯示過去的異常事件</li>
+<li>Live Status 可以切換五種 response time 圖形<ul>
+<li>總平均</li>
+<li>近一天</li>
+<li>近七天</li>
+<li>近一個月</li>
+<li>近一年</li>
+</ul>
+</li>
+</ul>
+<div align="center"><img src="./status-page.png" width="700px"/></div>
+
+<h2 id="進階設定"><a href="#進階設定" class="headerlink" title="進階設定"></a>進階設定</h2><h3 id="自訂-Workflows"><a href="#自訂-Workflows" class="headerlink" title="自訂 Workflows"></a>自訂 Workflows</h3><p>Upptime 有七個 Workflows<br>只要把下面這段貼到 <code>.upptimerc.yml</code><br>就可以自訂排程的時間點</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">workflowSchedule:</span><br><span class="line">  graphs: &quot;0 0 * * *&quot;</span><br><span class="line">  responseTime: &quot;0 23 * * *&quot;</span><br><span class="line">  staticSite: &quot;0 1 * * *&quot;</span><br><span class="line">  summary: &quot;0 0 * * *&quot;</span><br><span class="line">  updateTemplate: &quot;0 0 * * *&quot;</span><br><span class="line">  updates: &quot;0 3 * * *&quot;</span><br><span class="line">  uptime: &quot;*&#x2F;5 * * * *&quot;</span><br></pre></td></tr></table></figure>
+<p>排程的語法是使用 <a href="https://crontab.guru/" target="_blank" rel="noopener">Crontab</a><br>例如 <code>uptime: &quot;*/5 * * * *&quot;</code><br>代表每五分鐘檢查一次網站<br>你可以改成 <code>&quot;0 * * * *&quot;</code> 變每小時執行一次</p>
+<p>若還想了解其他的 workflows 可以參考 <a href="https://upptime.js.org/docs/triggers#available-workflows" target="_blank" rel="noopener">這份文件</a></p>
+<h3 id="i18n"><a href="#i18n" class="headerlink" title="i18n"></a>i18n</h3><p>Status Website 預設是英文的<br>如果你想要改成其他語言<br>可以把要修改的部分貼到 <code>.upptimerc.yml</code><br>例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">i18n:</span><br><span class="line">  activeIncidents: 目前異常事件</span><br><span class="line">  pastIncidents: 過去的異常事件</span><br><span class="line">  incidentDetails: 事件細節</span><br><span class="line">  incidentFixed: 已修復</span><br><span class="line">  incidentOngoing: 尚未修復</span><br></pre></td></tr></table></figure>
+
+<p>若想知道還有哪些字串提供 i18n<br>可以參考 <a href="https://upptime.js.org/docs/configuration#internationalization" target="_blank" rel="noopener">這份文件</a></p>
+<h2 id="後記"><a href="#後記" class="headerlink" title="後記"></a>後記</h2><h3 id="HTTP-code-0"><a href="#HTTP-code-0" class="headerlink" title="HTTP code: 0 !?"></a>HTTP code: 0 !?</h3><p>有時候會收到某些網站的 down 通知<br>不過實際去看網站又沒掛</p>
+<p>issue 上面是寫:</p>
+<ul>
+<li>HTTP code: 0</li>
+<li>Response time: 0 ms</li>
+</ul>
+<p>HTTP code 根本沒有 0 這種東西吧<br>在連到我的網站前就發生錯誤了<br>猜測是網路發生了什麼問題</p>
+<h3 id="Actions-不準時"><a href="#Actions-不準時" class="headerlink" title="Actions 不準時 !?"></a>Actions 不準時 !?</h3><p>雖然設定每五分鐘檢查一次網站<br>但實際上有時候是二十分、四十分、甚至一小時<br>猜測可能是因為我是免費帳戶<br>優先權比較低</p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://upptime.js.org/docs/get-started" target="_blank" rel="noopener">Getting started | Upptime</a></li>
+<li><a href="https://github.com/upptime/upptime" target="_blank" rel="noopener">upptime - GitHub</a></li>
+</ul>
+
+      </div>
+      
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/upptime/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>upptime</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/github/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>github</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一頁</h6>
+                          <h4>
+                              <a href="/blog/2021-02-03-how-to-use-line-notify-to-send-messages/" rel="prev" title="如何使用 LINE Notify 發通知">
+                                
+                                    如何使用 LINE Notify 發通知
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/windows/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> windows</a> <a class="tag" href="/blog/tags/CMD/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> CMD</a> <a class="tag" href="/blog/tags/LINE/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> LINE</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一頁&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/blog/2020-12-25-how-to-save-windows-cmd-logfile/" rel="prev" title="如何在 CMD 輸出 log 檔">
+                                  
+                                      如何在 CMD 輸出 log 檔
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/windows/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> windows</a> <a class="tag" href="/blog/tags/CMD/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> CMD</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+
+
+
+
+<div>
+  <section id="comments" class="comments">
+    <style>
+      .utterances{max-width: 100%;}
+    </style>
+      <script src="https://utteranc.es/client.js"
+              repo="annkuoQ/blog-utterances"
+              issue-term="title"
+              theme="github-dark"
+              crossorigin="anonymous"
+              async>
+      </script>
+</section>
+</div>
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '利用 GitHub Actions 監控網站服務 - Upptime',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://annkuoq.github.io/blog/img/logo_w.png'/>
+      </div>
+    
+    
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget plain'>
+  
+<header class='pure'>
+  <div><i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;關於這裡</div>
+  
+</header>
+
+  <div class='content pure'>
+    <p>擺放各種筆記的地方 (´ ●ω● ` )/</p>
+
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分類</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/blog/categories/%E4%BC%81%E5%8A%83-%E8%A1%8C%E9%8A%B7/" href="/blog/categories/%E4%BC%81%E5%8A%83-%E8%A1%8C%E9%8A%B7/"><div class='name'>企劃 / 行銷</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E7%9B%B4%E6%92%AD-%E4%B8%B2%E6%B5%81/" href="/blog/categories/%E7%9B%B4%E6%92%AD-%E4%B8%B2%E6%B5%81/"><div class='name'>直播 / 串流</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/" href="/blog/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/"><div class='name'>資工 / 程設</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E8%BD%89%E6%AA%94-%E7%B7%A8%E7%A2%BC/" href="/blog/categories/%E8%BD%89%E6%AA%94-%E7%B7%A8%E7%A2%BC/"><div class='name'>轉檔 / 編碼</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/" href="/blog/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/"><div class='name'>電腦 / 硬體</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E9%9F%B3%E6%A8%82-%E6%A8%82%E5%99%A8/" href="/blog/categories/%E9%9F%B3%E6%A8%82-%E6%A8%82%E5%99%A8/"><div class='name'>音樂 / 樂器</div><div class='badge'>(8)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章目錄</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Actions-簡介"><span class="toc-text">Actions 簡介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#創建-GitHub-Repo"><span class="toc-text">創建 GitHub Repo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#設定-GitHub-Pages"><span class="toc-text">設定 GitHub Pages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#設定-Repository-Secret"><span class="toc-text">設定 Repository Secret</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新-YAML-檔"><span class="toc-text">更新 YAML 檔</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看-GitHub-Actions"><span class="toc-text">查看 GitHub Actions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看-Status-Website"><span class="toc-text">查看 Status Website</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#進階設定"><span class="toc-text">進階設定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自訂-Workflows"><span class="toc-text">自訂 Workflows</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#i18n"><span class="toc-text">i18n</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#後記"><span class="toc-text">後記</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-code-0"><span class="toc-text">HTTP code: 0 !?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Actions-不準時"><span class="toc-text">Actions 不準時 !?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#參考資料"><span class="toc-text">參考資料</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+  <br>
+  <div><p>© 2020 AnnKuoQ<p/></div>
+  <div>
+    <p><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> ｜ <a href="https://github.com/xaoxuu/hexo-theme-volantis/" target="_blank" rel="noopener">Volantis Theme</a></p>  
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/blog/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/app.js"></script>
+
+
+
+  
+<script src="/blog/js/search.js"></script>
+
+
+
+
+
+<!-- 复制 -->
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

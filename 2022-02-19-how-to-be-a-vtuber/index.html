@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="google-site-verification" content="BA0c9S2A0y6LKGGUAyEEIYAl4C0O7hED1HrbKlYmzts" />
+  
+  <title>介紹 VTuber 相關技術與軟體 | AnnKuoQ Blog</title>
+  
+  
+  <meta name="description" content="VTuber 是 Virtual YouTuber 的縮寫，就是虛擬形象結合真人的 YouTuber，透過捕捉真人的動作，讓虛擬人物有生動的表情與動作，其實現在的技術門檻降低很多了...">
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="/blog/img/favicon.ico">
+  
+
+  
+    
+<link rel="stylesheet" href="/blog/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+
+
+
+<body>
+  
+  
+  <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/blog/' >
+        
+          AnnKuoQ Blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/blog/"
+                  
+                  
+                  id="blog">
+									<i class=' fa-fw'></i>&nbsp;首頁
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/categories/"
+                  
+                  
+                  id="blogcategories">
+									<i class=' fa-fw'></i>&nbsp;文章分類
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/tags/"
+                  
+                  
+                  id="blogtags">
+									<i class=' fa-fw'></i>&nbsp;標籤
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜尋" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/blog/"
+                
+                
+                id="blog">
+								<i class=' fa-fw'></i>&nbsp;最新文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/categories/"
+                
+                
+                id="blogcategories">
+								<i class=' fa-fw'></i>&nbsp;文章分類
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/tags/"
+                
+                
+                id="blogtags">
+								<i class=' fa-fw'></i>&nbsp;標籤
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/blog/2022-02-19-how-to-be-a-vtuber/">
+        介紹 VTuber 相關技術與軟體
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://annkuoq.github.io/blog/" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>AnnKuoQ</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2022-02-19</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/%E7%9B%B4%E6%92%AD-%E4%B8%B2%E6%B5%81/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>直播 / 串流</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>VTuber 是 Virtual YouTuber 的縮寫<br>就是虛擬形象結合真人的 YouTuber<br>透過捕捉真人的動作，讓虛擬人物有生動的表情與動作</p>
+<p>其實現在的技術門檻降低很多了<br>網路上也有很多教學</p>
+<a id="more"></a>
+
+<p>本篇主要是講 3D VTuber<br>(因為我還沒研究到 2D 啊 @@)</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>我把它拆成三塊</p>
+<ul>
+<li>3D 模型</li>
+<li>動作捕捉</li>
+<li>直播串流</li>
+</ul>
+<h2 id="3D-模型"><a href="#3D-模型" class="headerlink" title="3D 模型"></a>3D 模型</h2><p>我不會建模<br>什麼 Unity, Blender, MMD 也沒聽過</p>
+<p>沒關係～<br>你可以用這個 <a href="https://vroid.com/en/studio" target="_blank" rel="noopener">VRoid Studio</a> 免費輕鬆建模！<br>直接生成一個基本人物，然後去微調它裡面的設定</p>
+<div align="center"><img src="./vroid-studio.png" width="700px"/></div>
+
+<p>五官、四肢、髮型、服裝都有很多預設可選擇<br>也能用滑鼠直接拉數值來調整</p>
+<p>顏色 (Texture) 可以在裡面直接畫<br>或是在 Photoshop 畫完匯進去也可以喔</p>
+<p>骨架 (Bones) 目前只有頭髮有支援<br>如果要更細緻就要找其他建模軟體了<br>但學習門檻會很高</p>
+<p>解釋一下骨架要幹麻？<br>如果頭髮沒有骨架<br>當你轉頭的時候，頭髮就死板板的跟著轉<br>如果有骨架<br>頭髮就會隨著頭動的方向而擺動，比較像現實世界</p>
+<p>然後還有衣服<br>除了可以使用內建的衣服，來改顏色與增減布料<br>也可以到 <a href="https://booth.pm/zh-tw/search/vroid" target="_blank" rel="noopener">BOOTH</a> 購買人家做好的成衣</p>
+<p>最後完成了之後，你需要存兩種檔案</p>
+<ul>
+<li><code>.vroid</code> (之後還能在 VRoid Studio 繼續編輯)</li>
+<li><code>.vrm</code> (模型完成檔)</li>
+</ul>
+<blockquote>
+<p>補充: VRoid Studio <a href="https://vroid.pixiv.help/hc/en-us/articles/360008211814-Can-I-use-VRoid-Studio-for-commercial-purposes-" target="_blank" rel="noopener">可商用條款</a></p>
+</blockquote>
+<h2 id="動作捕捉"><a href="#動作捕捉" class="headerlink" title="動作捕捉"></a>動作捕捉</h2><p>這裡分成硬體和軟體<br>最簡單的硬體就是 Webcam<br>也是你在家遠距上班用的視訊鏡頭</p>
+<p>軟體使用 <a href="https://www.vseeface.icu/" target="_blank" rel="noopener">VSeeFace</a> 免費的動捕軟體<br>首先匯入你在 VRoid Studio 完成的 <code>.vrm</code> 檔<br>然後插上 Webcam 攝影機</p>
+<p>神奇的事就發生了~<br>你做什麼表情，模型就跟你做一樣的表情<br>注意: 這裡僅有臉部捕捉，若要手部或身體捕捉，就要有另外的設備</p>
+<div align="center"><img src="./vseeface.png" width="700px"/></div>
+
+<p>VSeeFace 也是有很多可以微調的地方<br>自動眨眼、捕捉靈敏度、熱鍵切換表情等等<br>網路上有很多教學影片可以看<br>若有問題也可以使用<a href="https://twitter.com/emiliana_vt" target="_blank" rel="noopener">推特</a>聯絡開發者</p>
+<blockquote>
+<p>補充: VSeeFace <a href="https://www.vseeface.icu/#terms-of-use" target="_blank" rel="noopener">可商用條款</a></p>
+</blockquote>
+<p>上面講的是臉部捕捉，那全身捕捉呢？<br>大概分為兩種，光學式和穿戴式</p>
+<ul>
+<li><p>光學式<br>要有一個攝影棚，架設很多攝影機<br>人身上穿很多點點的衣服 (電影幕後花絮常看到)<br>攝影機去捕捉點點的軌跡來記錄動作<br>這種一般人負擔不起的</p>
+</li>
+<li><p>穿戴式<br>把好幾個感應器穿在身上各個部位<br>類似手機陀螺儀，可以偵測到你在移動<br>藉由無線網路回傳給接受器<br>有名的品牌有: Xsens, Rokoko, Neuron</p>
+</li>
+</ul>
+<p>不過呢～<br>如果只是一般直播，臉部捕捉就夠了<br>除非是什麼演唱會之類的</p>
+<p>(補充!!!)<br>後來我發現一個超厲害的軟體<br>可以透過 Webcam 來做到全身捕捉<br>就是 <a href="https://qiita.com/yukihiko_a/items/43d09db5628334789fab" target="_blank" rel="noopener">ThreeDPoseTracker</a><br>不過我電腦效能不夠，看來要升級 GPU 惹 QQ</p>
+<h2 id="直播串流"><a href="#直播串流" class="headerlink" title="直播串流"></a>直播串流</h2><p>免費直播軟體的霸主肯定是 <a href="https://obsproject.com/" target="_blank" rel="noopener">OBS</a> 沒錯<br>開放原始碼，而且擁有廣大的社群<br>有問題都可以到<a href="https://obsproject.com/forum/" target="_blank" rel="noopener">官方論壇</a>搜尋看看喔<br>也有很多外掛可以下載</p>
+<p>你可以使用遊戲擷取 (Game Capture)來把 VSeeFace 擷取進畫面裡<br>然後把上下左右裁剪掉，就不會露出功能介面</p>
+<div align="center"><img src="./obs-game-capture.png" width="700px"/></div>
+
+<blockquote>
+<p>補充: OBS <a href="https://obsproject.com/help" target="_blank" rel="noopener">可商用條款</a></p>
+</blockquote>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="麥克風"><a href="#麥克風" class="headerlink" title="麥克風"></a>麥克風</h3><p>美美的皮，配上破破的聲音<br>肯定無法忍受啊</p>
+<p>如果你環境很吵，又用電容式麥克風<br>那空調聲、滑鼠聲、媽媽叫吃飯都會收進去</p>
+<p>如果用動圈式麥克風，因為比較不敏感<br>就不會什麼都收進去，但嘴巴要很靠近麥講話</p>
+<p>如果你只有一個人的話，買 USB 麥克風即可<br>不要買 XLR 搞死自己，因為它還要接錄音介面</p>
+<h3 id="聊天室"><a href="#聊天室" class="headerlink" title="聊天室"></a>聊天室</h3><p>很多 V 都會把觀眾留言放在畫面上<br>那要怎麼用呢？<br>首先去直播聊天室按 <code>...</code> &gt; <code>在彈出式視窗中開啟聊天室</code><br>把網址複製到 OBS 的瀏覽器來源 (Browser Source)</p>
+<p>你會發現…背景怎麼有顏色，但別人的都是透明的啊<br>如果你剛好懂怎麼寫網頁，那就可以自己改 CSS</p>
+<p>如果不懂就可以去 <a href="https://chatv2.septapus.com/" target="_blank" rel="noopener">Chat v2.0 Style Generator</a> 網站<br>修改自己想要的顏色與字型等<br>最後把下面的 CSS 複製到 OBS 中</p>
+<h3 id="配樂"><a href="#配樂" class="headerlink" title="配樂"></a>配樂</h3><p>一個人講話肯定很乾，這時來點配樂也是不錯的</p>
+<p>但是要注意版權！建議使用 YouTube 的免費<a href="https://www.youtube.com/audiolibrary" target="_blank" rel="noopener">音樂庫</a><br>可以透過篩選找出不同的情境跟氛圍<br>每首歌有自己的授權類型，有些會需要註明出處喔</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>最後啊～<br>雖然這些軟體都是免費的<br>但你可能會發現自己的電腦跑不動<br>而且如果要直播，網路也要穩定才行<br>就要開始砸更多錢錢囉</p>
+<p>另外有看過一個名言<br>皮讓人停下來，魂讓人留下來<br>如果皮很美，但講話/企劃內容很無聊<br>那也是無法留住人的</p>
+<p>哎呀離題啦<br>總之經營 VTuber 是有很多眉角的<br>可不是只有技術方面要處理喔</p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://vroid.com/en/studio" target="_blank" rel="noopener">VRoid Studio</a></li>
+<li><a href="https://www.vseeface.icu/" target="_blank" rel="noopener">VSeeFace</a></li>
+<li><a href="https://obsproject.com/" target="_blank" rel="noopener">Open Broadcaster Software | OBS</a></li>
+</ul>
+
+      </div>
+      
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/obs/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>obs</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/vtuber/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>vtuber</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/motion-capture/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>motion capture</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/vroid-studio/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>vroid studio</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/vseeface/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>vseeface</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一頁</h6>
+                          <h4>
+                              <a href="/blog/2024-03-25-how-to-play-local-hls-m3u8-in-windows-chrome/" rel="prev" title="如何在 Win10 Chrome 播放本機的 HLS M3U8 影片">
+                                
+                                    如何在 Win10 Chrome 播放本機的 HLS M3U8 影片
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/http-server/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> http-server</a> <a class="tag" href="/blog/tags/hls/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> hls</a> <a class="tag" href="/blog/tags/m3u8/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> m3u8</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一頁&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/blog/2021-05-08-how-to-combine-videos-using-ffmpeg/" rel="prev" title="如何使用 ffmpeg 串接多個影片">
+                                  
+                                      如何使用 ffmpeg 串接多個影片
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/ffmpeg/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> ffmpeg</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+
+
+
+
+<div>
+  <section id="comments" class="comments">
+    <style>
+      .utterances{max-width: 100%;}
+    </style>
+      <script src="https://utteranc.es/client.js"
+              repo="annkuoQ/blog-utterances"
+              issue-term="title"
+              theme="github-dark"
+              crossorigin="anonymous"
+              async>
+      </script>
+</section>
+</div>
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '介紹 VTuber 相關技術與軟體',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://annkuoq.github.io/blog/img/logo_w.png'/>
+      </div>
+    
+    
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget plain'>
+  
+<header class='pure'>
+  <div><i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;關於這裡</div>
+  
+</header>
+
+  <div class='content pure'>
+    <p>擺放各種筆記的地方 (´ ●ω● ` )/</p>
+
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分類</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/blog/categories/%E4%BC%81%E5%8A%83-%E8%A1%8C%E9%8A%B7/" href="/blog/categories/%E4%BC%81%E5%8A%83-%E8%A1%8C%E9%8A%B7/"><div class='name'>企劃 / 行銷</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E7%9B%B4%E6%92%AD-%E4%B8%B2%E6%B5%81/" href="/blog/categories/%E7%9B%B4%E6%92%AD-%E4%B8%B2%E6%B5%81/"><div class='name'>直播 / 串流</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/" href="/blog/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/"><div class='name'>資工 / 程設</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E8%BD%89%E6%AA%94-%E7%B7%A8%E7%A2%BC/" href="/blog/categories/%E8%BD%89%E6%AA%94-%E7%B7%A8%E7%A2%BC/"><div class='name'>轉檔 / 編碼</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/" href="/blog/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/"><div class='name'>電腦 / 硬體</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E9%9F%B3%E6%A8%82-%E6%A8%82%E5%99%A8/" href="/blog/categories/%E9%9F%B3%E6%A8%82-%E6%A8%82%E5%99%A8/"><div class='name'>音樂 / 樂器</div><div class='badge'>(8)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章目錄</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3D-模型"><span class="toc-text">3D 模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#動作捕捉"><span class="toc-text">動作捕捉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#直播串流"><span class="toc-text">直播串流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#麥克風"><span class="toc-text">麥克風</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#聊天室"><span class="toc-text">聊天室</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配樂"><span class="toc-text">配樂</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#結語"><span class="toc-text">結語</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#參考資料"><span class="toc-text">參考資料</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+  <br>
+  <div><p>© 2020 AnnKuoQ<p/></div>
+  <div>
+    <p><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> ｜ <a href="https://github.com/xaoxuu/hexo-theme-volantis/" target="_blank" rel="noopener">Volantis Theme</a></p>  
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/blog/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/app.js"></script>
+
+
+
+  
+<script src="/blog/js/search.js"></script>
+
+
+
+
+
+<!-- 复制 -->
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

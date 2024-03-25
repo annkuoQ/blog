@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="google-site-verification" content="BA0c9S2A0y6LKGGUAyEEIYAl4C0O7hED1HrbKlYmzts" />
+  
+  <title>如何使用 ffmpeg 串接多個影片 | AnnKuoQ Blog</title>
+  
+  
+  <meta name="description" content="最近同事在用 Premiere 串接影片時，表示輸出很花時間，因為 Premiere 會重新編碼，以這個案例來說，其實可以使用 ffmpeg 來達成，因為是相同格式的影片，不用重新編碼 ...">
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="/blog/img/favicon.ico">
+  
+
+  
+    
+<link rel="stylesheet" href="/blog/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+
+
+
+<body>
+  
+  
+  <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/blog/' >
+        
+          AnnKuoQ Blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/blog/"
+                  
+                  
+                  id="blog">
+									<i class=' fa-fw'></i>&nbsp;首頁
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/categories/"
+                  
+                  
+                  id="blogcategories">
+									<i class=' fa-fw'></i>&nbsp;文章分類
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/tags/"
+                  
+                  
+                  id="blogtags">
+									<i class=' fa-fw'></i>&nbsp;標籤
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜尋" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/blog/"
+                
+                
+                id="blog">
+								<i class=' fa-fw'></i>&nbsp;最新文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/categories/"
+                
+                
+                id="blogcategories">
+								<i class=' fa-fw'></i>&nbsp;文章分類
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/tags/"
+                
+                
+                id="blogtags">
+								<i class=' fa-fw'></i>&nbsp;標籤
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/blog/2021-05-08-how-to-combine-videos-using-ffmpeg/">
+        如何使用 ffmpeg 串接多個影片
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://annkuoq.github.io/blog/" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>AnnKuoQ</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2021-05-08</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/%E8%BD%89%E6%AA%94-%E7%B7%A8%E7%A2%BC/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>轉檔 / 編碼</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>最近同事在用 Premiere 串接影片時<br>表示輸出很花時間<br>因為 Premiere 會重新編碼</p>
+<a id="more"></a>
+
+<p>以這個案例來說<br>其實可以使用 ffmpeg 來達成<br>因為是相同格式的影片，不用重新編碼<br>咻一下～就轉完了～</p>
+<p>下面介紹兩種串接方法<br>一種是串接相同的編碼格式<br>另一種是串接不同的編碼格式</p>
+<h2 id="相同編碼格式"><a href="#相同編碼格式" class="headerlink" title="相同編碼格式"></a>相同編碼格式</h2><h3 id="Concat-demuxer"><a href="#Concat-demuxer" class="headerlink" title="Concat demuxer"></a>Concat demuxer</h3><ol>
+<li>在你放影片的資料夾，新建一個文字檔</li>
+<li>檔案裡寫上要串接的檔名，開頭加上 <code>file</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">file &quot;file1.mp4&quot;</span><br><span class="line">file &quot;file2.mp4&quot;</span><br><span class="line">file &quot;file3.mp4&quot;</span><br><span class="line">...以此類推</span><br></pre></td></tr></table></figure></li>
+<li>將檔名儲存為 <code>list.txt</code></li>
+<li>在此資料夾開啟 CMD，執行以下指令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -f concat -i list.txt -y -c copy output.mp4</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="Non-monotonous-DTS"><a href="#Non-monotonous-DTS" class="headerlink" title="Non-monotonous DTS"></a>Non-monotonous DTS</h3><p>如果在轉檔的過程中，出現以下 log<br>那影片就可能會出現影音不同步的情況<br>需要改用 <a href="https://annkuoq.github.io/blog/2021-05-08-how-to-combine-videos-using-ffmpeg/#不同編碼格式">重新編碼</a> 的方式串接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Non-monotonous DTS in output stream 0:1; previous: XXXX, current: XXXX; changing to XXXX. This may result in incorrect timestamps in the output file.</span><br></pre></td></tr></table></figure>
+
+<h2 id="不同編碼格式"><a href="#不同編碼格式" class="headerlink" title="不同編碼格式"></a>不同編碼格式</h2><h3 id="Concat-filter"><a href="#Concat-filter" class="headerlink" title="Concat filter"></a>Concat filter</h3><p>假設要串接三個檔案的指令如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i file.mp4 -i file2.webm -i file3.mov^</span><br><span class="line">-filter_complex &quot;[0:0][0:1][1:0][1:1][2:0][2:1]concat&#x3D;n&#x3D;3:v&#x3D;1:a&#x3D;1[outv][outa]&quot;^</span><br><span class="line">-map &quot;[outv]&quot; -map &quot;[outa]&quot; output.mkv</span><br></pre></td></tr></table></figure>
+<p>解釋一下指令意思</p>
+<ul>
+<li>第一行: 三個來源檔的檔名</li>
+<li>第二行: <ul>
+<li>把 <code>[0:0][0:1][1:0][1:1][2:0][2:1]</code> 映射到 <code>[outv]</code> <code>[outa]</code></li>
+<li><code>concat=n=3</code>: 串接 3 個檔案</li>
+<li><code>v=1</code>: 輸出 1 個 video stream</li>
+<li><code>a=1</code>: 輸出 1 個 audio stream </li>
+</ul>
+</li>
+<li>第三行: 把 <code>[outv]</code> 和 <code>[outa]</code> 映射到 <code>output.mkv</code></li>
+</ul>
+<blockquote>
+<p>這些 <code>[0:0]</code> 或 <code>[1:1]</code> 都是 stream 的索引值 (index)<br>也就是 stream 的編號</p>
+</blockquote>
+<h3 id="何為索引值-index"><a href="#何為索引值-index" class="headerlink" title="何為索引值 (index)"></a>何為索引值 (index)</h3><p>一個影片會包含很多個 stream<br>例如視訊、音訊、字幕等</p>
+<p>你在轉檔的時候<br>必須指定要使用哪一個 stream 當作來源<br>而 index 就像這些 stream 的編號</p>
+<p>我們試著執行以下指令 <code>ffmpeg -i file1.mp4 -i file2.mp4 -i file3.mp4</code></p>
+<ul>
+<li>第 3 ~ 15 行是 <code>Input #0</code> 的資訊 -&gt;<code>file1.mp4</code></li>
+<li>第 16 ~ 28 行是 <code>Input #1</code> 的資訊 -&gt;<code>file2.mp4</code></li>
+<li>第 29 ~ 41 行是 <code>Input #2</code> 的資訊 -&gt;<code>file3.mp4</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">$ ffmpeg -i file1.mp4 -i file2.mp4 -i file3.mp4</span><br><span class="line"></span><br><span class="line">Input #0, mov,mp4,m4a,3gp,3g2,mj2, from &#39;file1.mp4&#39;:</span><br><span class="line">  Metadata:</span><br><span class="line">    major_brand     : isom</span><br><span class="line">    minor_version   : 512</span><br><span class="line">    compatible_brands: isomiso2avc1mp41</span><br><span class="line">    encoder         : Lavf58.29.100</span><br><span class="line">  Duration: 00:05:00.40, start: 0.000000, bitrate: 6130 kb&#x2F;s</span><br><span class="line">    Stream #0:0(eng): Video: h264 (High) (avc1 &#x2F; 0x31637661), yuv420p(tv, bt709), 1920x1080 [SAR 1:1 DAR 16:9], 5997 kb&#x2F;s, 29.97 fps, 29.97 tbr, 30k tbn, 59.94 tbc (default)</span><br><span class="line">    Metadata:</span><br><span class="line">      handler_name    : MP4 Video Media Handler</span><br><span class="line">    Stream #0:1(eng): Audio: aac (LC) (mp4a &#x2F; 0x6134706D), 48000 Hz, stereo, fltp, 125 kb&#x2F;s (default)</span><br><span class="line">    Metadata:</span><br><span class="line">      handler_name    : MP4 Sound Media Handler</span><br><span class="line">Input #1, mov,mp4,m4a,3gp,3g2,mj2, from &#39;file2.mp4&#39;:</span><br><span class="line">  Metadata:</span><br><span class="line">    major_brand     : isom</span><br><span class="line">    minor_version   : 512</span><br><span class="line">    compatible_brands: isomiso2avc1mp41</span><br><span class="line">    encoder         : Lavf58.29.100</span><br><span class="line">  Duration: 00:05:00.50, start: 0.000000, bitrate: 6346 kb&#x2F;s</span><br><span class="line">    Stream #1:0(eng): Video: h264 (High) (avc1 &#x2F; 0x31637661), yuv420p(tv, bt709), 1920x1080 [SAR 1:1 DAR 16:9], 6212 kb&#x2F;s, 29.97 fps, 29.97 tbr, 30k tbn, 59.94 tbc (default)</span><br><span class="line">    Metadata:</span><br><span class="line">      handler_name    : MP4 Video Media Handler</span><br><span class="line">    Stream #1:1(eng): Audio: aac (LC) (mp4a &#x2F; 0x6134706D), 44100 Hz, stereo, fltp, 125 kb&#x2F;s (default)</span><br><span class="line">    Metadata:</span><br><span class="line">      handler_name    : MP4 Sound Media Handler</span><br><span class="line">Input #2, mov,mp4,m4a,3gp,3g2,mj2, from &#39;file3.mp4&#39;:</span><br><span class="line">  Metadata:</span><br><span class="line">    major_brand     : isom</span><br><span class="line">    minor_version   : 512</span><br><span class="line">    compatible_brands: isomiso2avc1mp41</span><br><span class="line">    encoder         : Lavf58.29.100</span><br><span class="line">  Duration: 00:05:00.60, start: 0.000000, bitrate: 6086 kb&#x2F;s</span><br><span class="line">    Stream #2:0(eng): Video: h264 (High) (avc1 &#x2F; 0x31637661), yuv420p(tv, bt709), 1920x1080 [SAR 1:1 DAR 16:9], 5952 kb&#x2F;s, 29.97 fps, 29.97 tbr, 30k tbn, 59.94 tbc (default)</span><br><span class="line">    Metadata:</span><br><span class="line">      handler_name    : MP4 Video Media Handler</span><br><span class="line">    Stream #2:1(eng): Audio: aac (LC) (mp4a &#x2F; 0x6134706D), 44100 Hz, stereo, fltp, 125 kb&#x2F;s (default)</span><br><span class="line">    Metadata:</span><br><span class="line">      handler_name    : MP4 Sound Media Handler</span><br></pre></td></tr></table></figure></li>
+<li>三個 input<ul>
+<li>第 3 行 <code>Input #0</code> 代表第 1 個 input (<code>file1.mp4</code>)</li>
+<li>第 16 行 <code>Input #1</code> 代表第 2 個 input (<code>file2.mp4</code>)</li>
+<li>第 29 行 <code>Input #2</code> 代表第 3 個 input (<code>file3.mp4</code>)</li>
+</ul>
+</li>
+<li>六個 index<ul>
+<li>第 10 行 <code>Stream #0:0</code> 代表第 1 個 input 的第 1 個 stream (<code>file1 的 video</code>)</li>
+<li>第 13 行 <code>Stream #0:1</code> 代表第 1 個 input 的第 2 個 stream (<code>file1 的 audio</code>)</li>
+<li>第 23 行 <code>Stream #1:0</code> 代表第 2 個 input 的第 1 個 stream (<code>file2 的 video</code>)</li>
+<li>第 26 行 <code>Stream #1:1</code> 代表第 2 個 input 的第 2 個 stream (<code>file2 的 audio</code>)</li>
+<li>第 36 行 <code>Stream #2:0</code> 代表第 3 個 input 的第 1 個 stream (<code>file3 的 video</code>)</li>
+<li>第 39 行 <code>Stream #2:1</code> 代表第 3 個 input 的第 2 個 stream (<code>file3 的 audio</code>)</li>
+</ul>
+</li>
+</ul>
+<p>聰明的你有沒有發現～<br>index 是從 <code>0</code> 而不是 <code>1</code> 開始編號呢？</p>
+<ul>
+<li>0 代表第一個</li>
+<li>1 代表第二個</li>
+<li>2 代表第三個</li>
+<li>…以此類推</li>
+</ul>
+<p>所以 <code>0:5</code> 就是我要取第 1 個 input 的第 6 個 stream 的意思<br><code>3:1</code> 就是我要取第 4 個 input 的第 2 個 stream 囉</p>
+<p>關於 index 還有另一種寫法～<br>就是加上 stream 的種類:</p>
+<ul>
+<li>v 代表 video</li>
+<li>a 代表 audio</li>
+<li>s 代表 subtitle</li>
+</ul>
+<p>範例</p>
+<ul>
+<li><code>1:a</code>: 第 2 個 input 的所有 audio stream</li>
+<li><code>3:s:4</code>: 第 4 個 input 的第 5 個 subtitle stream</li>
+</ul>
+<p>所以在我們上面的案例中:<br>你可以把 <code>[0:0][0:1][1:0][1:1][2:0][2:1]</code><br>改成 <code>[0:v][0:a][1:v][1:a][2:v][2:a]</code><br>或是 <code>[0:v:0][0:a:0][1:v:0][1:a:0][2:v:0][2:a:0]</code></p>
+<p>雖然它們三者結果相同，但意義不同!!!<br>舉個例子來說:</p>
+<ul>
+<li><code>2:1</code> 是第 3 個 input 的第 2 個 stream</li>
+<li><code>2:a</code> 是第 3 個 input 的所有 audio stream (此案例剛好也只有一個 audio stream)</li>
+<li><code>2:a:0</code> 是第 3 個 input 的第 1 個 audio stream</li>
+</ul>
+<h2 id="加-LOGO"><a href="#加-LOGO" class="headerlink" title="加 LOGO"></a>加 LOGO</h2><p>同事除了串接的需求<br>影片全程也要加上 Logo</p>
+<p>因為我沒有美感，不清楚 Logo 要怎麼擺<br>所以請同事做一張 1920x1080 (與影片尺寸相符) 且帶透明的 <code>.png</code><br>直接先把 Logo 的位置和大小給定住<br>我轉檔的時候就直接蓋上去</p>
+<p>指令如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i file1.mp4 -i file2.mp4 -i file3.mp4 -i logo.png^</span><br><span class="line">-filter_complex &quot;[0:v][0:a][1:v][1:a][2:v][2:a]concat&#x3D;n&#x3D;3:v&#x3D;1:a&#x3D;1[v][a];^</span><br><span class="line">[v][3:v]overlay&#x3D;x&#x3D;0:y&#x3D;0[vlogo]&quot;^</span><br><span class="line">-map &quot;[vlogo]&quot; -map &quot;[a]&quot; output_logo.mp4</span><br></pre></td></tr></table></figure>
+<p>解釋一下指令意思</p>
+<ul>
+<li>第一行: 三個影片和一個 logo 的檔名</li>
+<li>第二行: 把 <code>[0:v][0:a][1:v][1:a][2:v][2:a]</code> 映射到 <code>[v]</code> 和 <code>[a]</code></li>
+<li>第三行: <ul>
+<li>把 <code>[v][3:v]</code> 映射到 <code>[vlogo]</code></li>
+<li><code>overlay=x=0:y=0</code>: logo 的 x 和 y 位置都是 0</li>
+</ul>
+</li>
+<li>第四行: 把 <code>[vlogo]</code> 和 <code>[a]</code> 映射到 <code>output_logo.mp4</code></li>
+</ul>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://ffmpeg.org/ffmpeg-filters.html#concat" target="_blank" rel="noopener">Concat - FFmpeg Filters Documentation</a></li>
+<li><a href="https://trac.ffmpeg.org/wiki/Concatenate" target="_blank" rel="noopener">Concatenate – FFmpeg wiki</a></li>
+<li><a href="https://trac.ffmpeg.org/wiki/Map" target="_blank" rel="noopener">Map – FFmpeg wiki</a></li>
+<li><a href="https://stackoverflow.com/questions/7333232/how-to-concatenate-two-mp4-files-using-ffmpeg" target="_blank" rel="noopener">h.264 - How to concatenate two MP4 files using FFmpeg? - Stack Overflow</a></li>
+<li><a href="https://superuser.com/questions/890612/ffmpeg-video-concat-and-overlay" target="_blank" rel="noopener">FFMPEG Video Concat and Overlay - Super User</a></li>
+</ul>
+
+      </div>
+      
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/ffmpeg/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>ffmpeg</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一頁</h6>
+                          <h4>
+                              <a href="/blog/2022-02-19-how-to-be-a-vtuber/" rel="prev" title="介紹 VTuber 相關技術與軟體">
+                                
+                                    介紹 VTuber 相關技術與軟體
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/obs/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> obs</a> <a class="tag" href="/blog/tags/vtuber/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> vtuber</a> <a class="tag" href="/blog/tags/motion-capture/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> motion capture</a> <a class="tag" href="/blog/tags/vroid-studio/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> vroid studio</a> <a class="tag" href="/blog/tags/vseeface/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> vseeface</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一頁&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/blog/2021-05-02-use-tracert-to-troubleshoot-network/" rel="prev" title="網路卡卡？快用 tracert 找出問題點！">
+                                  
+                                      網路卡卡？快用 tracert 找出問題點！
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/network/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> network</a> <a class="tag" href="/blog/tags/tracert/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> tracert</a> <a class="tag" href="/blog/tags/ping/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> ping</a> <a class="tag" href="/blog/tags/mtr/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> mtr</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+
+
+
+
+<div>
+  <section id="comments" class="comments">
+    <style>
+      .utterances{max-width: 100%;}
+    </style>
+      <script src="https://utteranc.es/client.js"
+              repo="annkuoQ/blog-utterances"
+              issue-term="title"
+              theme="github-dark"
+              crossorigin="anonymous"
+              async>
+      </script>
+</section>
+</div>
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '如何使用 ffmpeg 串接多個影片',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://annkuoq.github.io/blog/img/logo_w.png'/>
+      </div>
+    
+    
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget plain'>
+  
+<header class='pure'>
+  <div><i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;關於這裡</div>
+  
+</header>
+
+  <div class='content pure'>
+    <p>擺放各種筆記的地方 (´ ●ω● ` )/</p>
+
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分類</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/blog/categories/%E4%BC%81%E5%8A%83-%E8%A1%8C%E9%8A%B7/" href="/blog/categories/%E4%BC%81%E5%8A%83-%E8%A1%8C%E9%8A%B7/"><div class='name'>企劃 / 行銷</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E7%9B%B4%E6%92%AD-%E4%B8%B2%E6%B5%81/" href="/blog/categories/%E7%9B%B4%E6%92%AD-%E4%B8%B2%E6%B5%81/"><div class='name'>直播 / 串流</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/" href="/blog/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/"><div class='name'>資工 / 程設</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E8%BD%89%E6%AA%94-%E7%B7%A8%E7%A2%BC/" href="/blog/categories/%E8%BD%89%E6%AA%94-%E7%B7%A8%E7%A2%BC/"><div class='name'>轉檔 / 編碼</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/" href="/blog/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/"><div class='name'>電腦 / 硬體</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E9%9F%B3%E6%A8%82-%E6%A8%82%E5%99%A8/" href="/blog/categories/%E9%9F%B3%E6%A8%82-%E6%A8%82%E5%99%A8/"><div class='name'>音樂 / 樂器</div><div class='badge'>(8)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章目錄</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#相同編碼格式"><span class="toc-text">相同編碼格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Concat-demuxer"><span class="toc-text">Concat demuxer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Non-monotonous-DTS"><span class="toc-text">Non-monotonous DTS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不同編碼格式"><span class="toc-text">不同編碼格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Concat-filter"><span class="toc-text">Concat filter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#何為索引值-index"><span class="toc-text">何為索引值 (index)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#加-LOGO"><span class="toc-text">加 LOGO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#參考資料"><span class="toc-text">參考資料</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+  <br>
+  <div><p>© 2020 AnnKuoQ<p/></div>
+  <div>
+    <p><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> ｜ <a href="https://github.com/xaoxuu/hexo-theme-volantis/" target="_blank" rel="noopener">Volantis Theme</a></p>  
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/blog/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/app.js"></script>
+
+
+
+  
+<script src="/blog/js/search.js"></script>
+
+
+
+
+
+<!-- 复制 -->
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

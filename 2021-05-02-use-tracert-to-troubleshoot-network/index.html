@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="google-site-verification" content="BA0c9S2A0y6LKGGUAyEEIYAl4C0O7hED1HrbKlYmzts" />
+  
+  <title>網路卡卡？快用 tracert 找出問題點！ | AnnKuoQ Blog</title>
+  
+  
+  <meta name="description" content="網路是一個很複雜的東西，從你家到目的地必須經過很多個節點，為了釐清封包是在哪個點卡住了，我們可以使用 Windows 內建的 `tracert` 指令 ...">
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="/blog/img/favicon.ico">
+  
+
+  
+    
+<link rel="stylesheet" href="/blog/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+
+
+
+<body>
+  
+  
+  <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/blog/' >
+        
+          AnnKuoQ Blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/blog/"
+                  
+                  
+                  id="blog">
+									<i class=' fa-fw'></i>&nbsp;首頁
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/categories/"
+                  
+                  
+                  id="blogcategories">
+									<i class=' fa-fw'></i>&nbsp;文章分類
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/blog/tags/"
+                  
+                  
+                  id="blogtags">
+									<i class=' fa-fw'></i>&nbsp;標籤
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜尋" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/blog/"
+                
+                
+                id="blog">
+								<i class=' fa-fw'></i>&nbsp;最新文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/categories/"
+                
+                
+                id="blogcategories">
+								<i class=' fa-fw'></i>&nbsp;文章分類
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/tags/"
+                
+                
+                id="blogtags">
+								<i class=' fa-fw'></i>&nbsp;標籤
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/blog/2021-05-02-use-tracert-to-troubleshoot-network/">
+        網路卡卡？快用 tracert 找出問題點！
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="https://annkuoq.github.io/blog/" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>AnnKuoQ</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2021-05-02</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/blog/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>電腦 / 硬體</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>最近直播有遇到網路不穩的情況<br>但一句「網路卡卡」並不能有效的回報問題</p>
+<a id="more"></a>
+
+<p>網路是一個很複雜的東西<br>從你家到目的地必須經過很多個節點<br>為了釐清封包是在哪個點卡住了<br>我們可以使用 Windows 內建的 <code>tracert</code> 指令</p>
+<h2 id="如何使用-tracert"><a href="#如何使用-tracert" class="headerlink" title="如何使用 tracert"></a>如何使用 tracert</h2><h3 id="操作步驟"><a href="#操作步驟" class="headerlink" title="操作步驟"></a>操作步驟</h3><ol>
+<li><p>鍵盤同時按著 <code>win</code> + <code>R</code></p>
+</li>
+<li><p>輸入 <code>cmd</code>，並點擊 <code>確定</code></p>
+</li>
+<li><p>輸入 <code>tracert -?</code> 查看使用方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ tracert -?</span><br><span class="line"></span><br><span class="line">使用方式: tracert [-d] [-h maximum_hops] [-j host-list] [-w timeout]</span><br><span class="line">               [-R] [-S srcaddr] [-4] [-6] target_name</span><br><span class="line"></span><br><span class="line">選項:</span><br><span class="line">    -d                 不要將位址解析為主機名稱。</span><br><span class="line">    -h maximum_hops    搜尋目標所用的最大躍點數目。</span><br><span class="line">    -j host-list       鬆散的主機清單來源路由 (僅 IPv4)。</span><br><span class="line">    -w timeout         每個回覆的等候逾時 (毫秒)。</span><br><span class="line">    -R                 追蹤來回路徑 (僅 IPv6)。</span><br><span class="line">    -S srcaddr         要使用的來源位址 (僅 IPv6)。</span><br><span class="line">    -4                 強制使用 IPv4。</span><br><span class="line">    -6                 強制使用 IPv6。</span><br></pre></td></tr></table></figure>
+<p>中括號表示非必填的參數，如 <code>[-d]</code><br>而 <code>tracert</code> 和 <code>target_name</code> 為必填參數</p>
+<p><code>target_name</code> 是你要連接的目的地<br>可以打 IP 或 Host Name<br>IP 長得像 <code>172.217.160.110</code><br>Host Name 就是你熟悉的 <code>www.google.com</code></p>
+</li>
+<li><p>測試公司電腦到 YouTube 伺服器<br>輸入 <code>tracert a.rtmp.youtube.com</code></p>
+</li>
+</ol>
+<div align="center"><img src="./tracert_youtube.jpg" width="700px"/></div>
+
+<h3 id="瞭解測試結果"><a href="#瞭解測試結果" class="headerlink" title="瞭解測試結果"></a>瞭解測試結果</h3><p>最左邊是經過的網路節點，共有 11 個<br>中間 3 個時間，表示測試 3 次<br>最右邊是該節點的 IP 和 Host Name</p>
+<p>1 和 6 顯示 <code>*</code> 並不是封包沒傳到<br>而是某些設備可能有防火牆，所以不會回覆我們</p>
+<p>根據 IP 與 Host Name 可以判斷</p>
+<ul>
+<li>1 ~ 3 在公司內部</li>
+<li>4 ~ 7 在中華電信</li>
+<li>8 ~ 11 在 Google 內部</li>
+</ul>
+<p>所以如果</p>
+<ul>
+<li>在公司內部很慢，就要找網管人員</li>
+<li>在中華很慢，就打中華客服</li>
+<li>在 Google 很慢，<del>就找 Google，但他可能不會理你</del></li>
+</ul>
+<p>總之你在你家暢通<br>不代表外面的路也暢通</p>
+<p>另外直播跟一般使用並不同<br>更看中的是 <code>穩定度</code> (不掉封包)<br>而不是 <code>延遲</code> (秒數) 要很小很小<br>當然你要 “即時互動” 就另當別論</p>
+<p>如果只是看看網頁，瞬斷也不會有影響<br>但直播斷個五秒就沒畫面了 QQ</p>
+<h2 id="結合-ping-與-tracert-的-mtr"><a href="#結合-ping-與-tracert-的-mtr" class="headerlink" title="結合 ping 與 tracert 的 mtr"></a>結合 ping 與 tracert 的 mtr</h2><ul>
+<li><code>ping</code> 只能測兩點之間</li>
+<li><code>tracert</code> 可以測中間經過的點</li>
+</ul>
+<p>但 <code>tracert</code> 只會做一次，不能持續監測<br>而 <code>mtr</code> 則是可以結合以上兩種的指令</p>
+<p><code>mtr</code> 是在 Linux 內建的指令<br>在 Windows 則是有好心人寫的 WinMTR 小軟體</p>
+<h3 id="操作步驟-1"><a href="#操作步驟-1" class="headerlink" title="操作步驟"></a>操作步驟</h3><ol>
+<li>到該 <a href="https://sourceforge.net/projects/winmtr/" target="_blank" rel="noopener">網址</a>，點擊 <code>Download</code></li>
+<li>解壓縮後，點擊 <code>WinMTR.exe</code> 開啟軟體</li>
+<li>輸入 IP 或 Host Name 後，點擊 <code>Start</code> 開始測試</li>
+<li>等待一段時間…</li>
+<li>點擊 <code>Stop</code> 結束測試</li>
+</ol>
+<div align="center"><img src="./winmtr_youtube.jpg" width="600px"/></div>
+
+<h3 id="匯出測試結果"><a href="#匯出測試結果" class="headerlink" title="匯出測試結果"></a>匯出測試結果</h3><ul>
+<li>點擊 <code>Copy</code> 可以複製測試結果到剪貼簿</li>
+<li>點擊 <code>Export</code> 可以將結果匯出成檔案</li>
+</ul>
+<p>它支援了 <code>純文字</code> 和 <code>HTML</code> 格式</p>
+<h3 id="瞭解測試結果-1"><a href="#瞭解測試結果-1" class="headerlink" title="瞭解測試結果"></a>瞭解測試結果</h3><ul>
+<li><code>Nr</code>: 經過節點的數目</li>
+<li><code>Loss%</code>: 丟包率</li>
+<li><code>Sent</code>: 已傳送封包數量</li>
+<li><code>Recv</code>: 成功接收封包數量</li>
+<li><code>Best</code>: 最小回應時間 (ms)</li>
+<li><code>Aveg</code>: 平均回應時間 (ms)</li>
+<li><code>Worst</code>: 最大回應時間 (ms)</li>
+<li><code>Last</code>: 最後一次的回應時間 (ms)</li>
+</ul>
+<p>由 mtr 可以知道 <code>延遲</code> 與 <code>丟包</code> 兩者情況</p>
+<p>下次如果遇到網路問題~<br>可以使用以上工具來釐清是 <code>內部</code> 還是 <code>外部</code> 問題<br>並且有耐心的長時間觀察<br>才能找出問題點喔！</p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tracert" target="_blank" rel="noopener">tracert | Microsoft Docs</a></li>
+<li><a href="https://help.aliyun.com/document_detail/98706.html" target="_blank" rel="noopener">MTR工具使用说明与结果分析 - 阿里云</a></li>
+</ul>
+
+      </div>
+      
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/network/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>network</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/tracert/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>tracert</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/ping/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>ping</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/mtr/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>mtr</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一頁</h6>
+                          <h4>
+                              <a href="/blog/2021-05-08-how-to-combine-videos-using-ffmpeg/" rel="prev" title="如何使用 ffmpeg 串接多個影片">
+                                
+                                    如何使用 ffmpeg 串接多個影片
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/ffmpeg/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> ffmpeg</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一頁&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/blog/2021-04-13-how-to-use-mobile-as-webcam/" rel="prev" title="如何把手機變 Webcam (免安裝軟體、免插線、免費)">
+                                  
+                                      如何把手機變 Webcam (免安裝軟體、免插線、免費)
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/blog/tags/obs-ninja/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> obs.ninja</a> <a class="tag" href="/blog/tags/webrtc/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> webrtc</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+
+
+
+
+<div>
+  <section id="comments" class="comments">
+    <style>
+      .utterances{max-width: 100%;}
+    </style>
+      <script src="https://utteranc.es/client.js"
+              repo="annkuoQ/blog-utterances"
+              issue-term="title"
+              theme="github-dark"
+              crossorigin="anonymous"
+              async>
+      </script>
+</section>
+</div>
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '網路卡卡？快用 tracert 找出問題點！',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://annkuoq.github.io/blog/img/logo_w.png'/>
+      </div>
+    
+    
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget plain'>
+  
+<header class='pure'>
+  <div><i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;關於這裡</div>
+  
+</header>
+
+  <div class='content pure'>
+    <p>擺放各種筆記的地方 (´ ●ω● ` )/</p>
+
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分類</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/blog/categories/%E4%BC%81%E5%8A%83-%E8%A1%8C%E9%8A%B7/" href="/blog/categories/%E4%BC%81%E5%8A%83-%E8%A1%8C%E9%8A%B7/"><div class='name'>企劃 / 行銷</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E7%9B%B4%E6%92%AD-%E4%B8%B2%E6%B5%81/" href="/blog/categories/%E7%9B%B4%E6%92%AD-%E4%B8%B2%E6%B5%81/"><div class='name'>直播 / 串流</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/" href="/blog/categories/%E8%B3%87%E5%B7%A5-%E7%A8%8B%E8%A8%AD/"><div class='name'>資工 / 程設</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E8%BD%89%E6%AA%94-%E7%B7%A8%E7%A2%BC/" href="/blog/categories/%E8%BD%89%E6%AA%94-%E7%B7%A8%E7%A2%BC/"><div class='name'>轉檔 / 編碼</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/" href="/blog/categories/%E9%9B%BB%E8%85%A6-%E7%A1%AC%E9%AB%94/"><div class='name'>電腦 / 硬體</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/blog/categories/%E9%9F%B3%E6%A8%82-%E6%A8%82%E5%99%A8/" href="/blog/categories/%E9%9F%B3%E6%A8%82-%E6%A8%82%E5%99%A8/"><div class='name'>音樂 / 樂器</div><div class='badge'>(8)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章目錄</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何使用-tracert"><span class="toc-text">如何使用 tracert</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#操作步驟"><span class="toc-text">操作步驟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#瞭解測試結果"><span class="toc-text">瞭解測試結果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#結合-ping-與-tracert-的-mtr"><span class="toc-text">結合 ping 與 tracert 的 mtr</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#操作步驟-1"><span class="toc-text">操作步驟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匯出測試結果"><span class="toc-text">匯出測試結果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#瞭解測試結果-1"><span class="toc-text">瞭解測試結果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#參考資料"><span class="toc-text">參考資料</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+  <br>
+  <div><p>© 2020 AnnKuoQ<p/></div>
+  <div>
+    <p><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> ｜ <a href="https://github.com/xaoxuu/hexo-theme-volantis/" target="_blank" rel="noopener">Volantis Theme</a></p>  
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/blog/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/blog/js/app.js"></script>
+
+
+
+  
+<script src="/blog/js/search.js"></script>
+
+
+
+
+
+<!-- 复制 -->
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
