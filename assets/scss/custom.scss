@@ -1,0 +1,47 @@
+/* 統一所有分類標籤的底色 */
+.article-category a {
+    background-color: #707070 !important; /* 背景色統一為藍色 */
+    color: #ffffff !important;           /* 文字顏色統一為白色 */
+}
+
+/* 滑鼠移上分類標籤時稍微變深 */
+.article-category a:hover {
+    background-color: #A3A3A3 !important;
+}
+
+/* 標題顏色 */
+.article-title a {
+    color: #48C494 !important;
+}
+
+/* 滑鼠移上標題的顏色 */
+.article-title a:hover,
+.widget-title a:hover,
+.section-title a:hover {
+    color: #FF5722 !important;
+	transition: color 0.3s ease;
+}
+
+/* 文章正文內的超連結顏色 */
+.main-article .article-content a {
+    color: #48C494 !important; /* 改成你喜歡的顏色，例如之前的綠色 */
+    text-decoration-color: rgba(63, 172, 130, 0.5); /* 底部底線的顏色，可設為透明或淡色 */
+    transition: color 0.3s ease;
+}
+
+/* 滑鼠移上去時的樣式 */
+.main-article .article-content a:hover {
+    color: #ffffff !important; /* 建議文字轉白色，在深色背景下最清晰 */
+    background-color: #48C494 !important; /* 使用原本的綠色當背景 */
+    text-decoration: none !important; /* 移除下劃線，因為已經有背景色了 */
+    filter: brightness(105%) !important; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* 增加一點點立體感 */
+}
+
+/* 1. 直接針對該類別進行最強制性的修改 */
+h3.article-subtitle {
+    font-size: 16px !important;       /* 直接給定 px 值 */
+    color: var(--card-text-color-main) !important;
+    opacity: 0.7 !important;          /* 增加透明度讓它看起來像副標題 */
+
+}

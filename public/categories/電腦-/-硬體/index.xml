@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>電腦 / 硬體 on AnnKuoQ Blog</title>
+        <link>http://localhost:1313/blog/categories/%E9%9B%BB%E8%85%A6-/-%E7%A1%AC%E9%AB%94/</link>
+        <description>Recent content in 電腦 / 硬體 on AnnKuoQ Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <copyright>AnnKuoQ</copyright>
+        <lastBuildDate>Sun, 02 May 2021 10:28:20 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/categories/%E9%9B%BB%E8%85%A6-/-%E7%A1%AC%E9%AB%94/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>網路卡卡？快用 tracert 找出問題點！</title>
+        <link>http://localhost:1313/blog/p/2021-05-02-use-tracert-to-troubleshoot-network/</link>
+        <pubDate>Sun, 02 May 2021 10:28:20 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/p/2021-05-02-use-tracert-to-troubleshoot-network/</guid>
+        <description>&lt;p&gt;最近直播有遇到網路不穩的情況&lt;br&gt;
+但一句「網路卡卡」並不能有效的回報問題&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;網路是一個很複雜的東西&lt;br&gt;
+從你家到目的地必須經過很多個節點&lt;br&gt;
+為了釐清封包是在哪個點卡住了&lt;br&gt;
+我們可以使用 Windows 內建的 &lt;code&gt;tracert&lt;/code&gt; 指令&lt;/p&gt;
+&lt;h2 id=&#34;如何使用-tracert&#34;&gt;如何使用 tracert
+&lt;/h2&gt;&lt;h3 id=&#34;操作步驟&#34;&gt;操作步驟
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;鍵盤同時按著 &lt;code&gt;win&lt;/code&gt; + &lt;code&gt;R&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;輸入 &lt;code&gt;cmd&lt;/code&gt;，並點擊 &lt;code&gt;確定&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;輸入 &lt;code&gt;tracert -?&lt;/code&gt; 查看使用方法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ tracert -?
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;使用方式: tracert [-d] [-h maximum_hops] [-j host-list] [-w timeout]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               [-R] [-S srcaddr] [-4] [-6] target_name
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;選項:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    -d                 不要將位址解析為主機名稱。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    -h maximum_hops    搜尋目標所用的最大躍點數目。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    -j host-list       鬆散的主機清單來源路由 (僅 IPv4)。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    -w timeout         每個回覆的等候逾時 (毫秒)。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    -R                 追蹤來回路徑 (僅 IPv6)。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    -S srcaddr         要使用的來源位址 (僅 IPv6)。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    -4                 強制使用 IPv4。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    -6                 強制使用 IPv6。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;中括號表示非必填的參數，如 &lt;code&gt;[-d]&lt;/code&gt;&lt;br&gt;
+而 &lt;code&gt;tracert&lt;/code&gt; 和 &lt;code&gt;target_name&lt;/code&gt; 為必填參數&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;target_name&lt;/code&gt; 是你要連接的目的地&lt;br&gt;
+可以打 IP 或 Host Name&lt;br&gt;
+IP 長得像 &lt;code&gt;172.217.160.110&lt;/code&gt;&lt;br&gt;
+Host Name 就是你熟悉的 &lt;code&gt;www.google.com&lt;/code&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;測試公司電腦到 YouTube 伺服器&lt;br&gt;
+輸入 &lt;code&gt;tracert a.rtmp.youtube.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./tracert_youtube.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;h3 id=&#34;瞭解測試結果&#34;&gt;瞭解測試結果
+&lt;/h3&gt;&lt;p&gt;最左邊是經過的網路節點，共有 11 個&lt;br&gt;
+中間 3 個時間，表示測試 3 次&lt;br&gt;
+最右邊是該節點的 IP 和 Host Name&lt;/p&gt;
+&lt;p&gt;1 和 6 顯示 &lt;code&gt;*&lt;/code&gt; 並不是封包沒傳到&lt;br&gt;
+而是某些設備可能有防火牆，所以不會回覆我們&lt;/p&gt;
+&lt;p&gt;根據 IP 與 Host Name 可以判斷&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1 ~ 3 在公司內部&lt;/li&gt;
+&lt;li&gt;4 ~ 7 在中華電信&lt;/li&gt;
+&lt;li&gt;8 ~ 11 在 Google 內部&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以如果&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在公司內部很慢，就要找網管人員&lt;/li&gt;
+&lt;li&gt;在中華很慢，就打中華客服&lt;/li&gt;
+&lt;li&gt;在 Google 很慢，&lt;del&gt;就找 Google，但他可能不會理你&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;總之你在你家暢通&lt;br&gt;
+不代表外面的路也暢通&lt;/p&gt;
+&lt;p&gt;另外直播跟一般使用並不同&lt;br&gt;
+更看中的是 &lt;code&gt;穩定度&lt;/code&gt; (不掉封包)&lt;br&gt;
+而不是 &lt;code&gt;延遲&lt;/code&gt; (秒數) 要很小很小&lt;br&gt;
+當然你要 &amp;ldquo;即時互動&amp;rdquo; 就另當別論&lt;/p&gt;
+&lt;p&gt;如果只是看看網頁，瞬斷也不會有影響&lt;br&gt;
+但直播斷個五秒就沒畫面了 QQ&lt;/p&gt;
+&lt;h2 id=&#34;結合-ping-與-tracert-的-mtr&#34;&gt;結合 ping 與 tracert 的 mtr
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ping&lt;/code&gt; 只能測兩點之間&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tracert&lt;/code&gt; 可以測中間經過的點&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但 &lt;code&gt;tracert&lt;/code&gt; 只會做一次，不能持續監測&lt;br&gt;
+而 &lt;code&gt;mtr&lt;/code&gt; 則是可以結合以上兩種的指令&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;mtr&lt;/code&gt; 是在 Linux 內建的指令&lt;br&gt;
+在 Windows 則是有好心人寫的 WinMTR 小軟體&lt;/p&gt;
+&lt;h3 id=&#34;操作步驟-1&#34;&gt;操作步驟
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;到該 &lt;a class=&#34;link&#34; href=&#34;https://sourceforge.net/projects/winmtr/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;網址&lt;/a&gt;，點擊 &lt;code&gt;Download&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;解壓縮後，點擊 &lt;code&gt;WinMTR.exe&lt;/code&gt; 開啟軟體&lt;/li&gt;
+&lt;li&gt;輸入 IP 或 Host Name 後，點擊 &lt;code&gt;Start&lt;/code&gt; 開始測試&lt;/li&gt;
+&lt;li&gt;等待一段時間&amp;hellip;&lt;/li&gt;
+&lt;li&gt;點擊 &lt;code&gt;Stop&lt;/code&gt; 結束測試&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./winmtr_youtube.jpg&#34; width=&#34;600px&#34;/&gt;&lt;/div&gt;
+&lt;h3 id=&#34;匯出測試結果&#34;&gt;匯出測試結果
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;點擊 &lt;code&gt;Copy&lt;/code&gt; 可以複製測試結果到剪貼簿&lt;/li&gt;
+&lt;li&gt;點擊 &lt;code&gt;Export&lt;/code&gt; 可以將結果匯出成檔案&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;它支援了 &lt;code&gt;純文字&lt;/code&gt; 和 &lt;code&gt;HTML&lt;/code&gt; 格式&lt;/p&gt;
+&lt;h3 id=&#34;瞭解測試結果-1&#34;&gt;瞭解測試結果
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Nr&lt;/code&gt;: 經過節點的數目&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Loss%&lt;/code&gt;: 丟包率&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Sent&lt;/code&gt;: 已傳送封包數量&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Recv&lt;/code&gt;: 成功接收封包數量&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Best&lt;/code&gt;: 最小回應時間 (ms)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Aveg&lt;/code&gt;: 平均回應時間 (ms)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Worst&lt;/code&gt;: 最大回應時間 (ms)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Last&lt;/code&gt;: 最後一次的回應時間 (ms)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;由 mtr 可以知道 &lt;code&gt;延遲&lt;/code&gt; 與 &lt;code&gt;丟包&lt;/code&gt; 兩者情況&lt;/p&gt;
+&lt;p&gt;下次如果遇到網路問題~&lt;br&gt;
+可以使用以上工具來釐清是 &lt;code&gt;內部&lt;/code&gt; 還是 &lt;code&gt;外部&lt;/code&gt; 問題&lt;br&gt;
+並且有耐心的長時間觀察&lt;br&gt;
+才能找出問題點喔！&lt;/p&gt;
+&lt;h2 id=&#34;參考資料&#34;&gt;參考資料
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tracert&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;tracert | Microsoft Docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://help.aliyun.com/document_detail/98706.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MTR工具使用说明与结果分析 - 阿里云&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>來去直營店換 iPhone 電池</title>
+        <link>http://localhost:1313/blog/p/2020-05-11-iphone-se-battery-replacement-at-xinyi-a13/</link>
+        <pubDate>Mon, 11 May 2020 22:27:01 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/p/2020-05-11-iphone-se-battery-replacement-at-xinyi-a13/</guid>
+        <description>&lt;p&gt;手上這支 iPhone SE 已經四年多&lt;br&gt;
+電池健康度為 82%&lt;br&gt;
+雖然它本來就只有 1624 mAh&lt;br&gt;
+但感覺用 safari 滿容易發熱和噴電的&lt;br&gt;
+於是就決定去原廠換電池~&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h2 id=&#34;線上預約&#34;&gt;線上預約
+&lt;/h2&gt;&lt;p&gt;一個禮拜前先線上預約&lt;br&gt;
+到官網 &lt;a class=&#34;link&#34; href=&#34;https://getsupport.apple.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;支援服務&lt;/a&gt; &amp;gt; iPhone &amp;gt; 電池與充電 &amp;gt; 電池更換 &amp;gt; 親自送修&lt;br&gt;
+登入 Apple ID &amp;gt; 輸入產品序號 &amp;gt; 搜尋台北市 &amp;gt; Apple 台北信義 A13 &amp;gt; 選時段&lt;/p&gt;
+&lt;p&gt;接著信箱就收到了預約的詳細資料&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;換電池的價格可以看 &lt;a class=&#34;link&#34; href=&#34;https://support.apple.com/zh-tw/iphone/repair/service/battery-power&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;這裡&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;維修當天&#34;&gt;維修當天
+&lt;/h2&gt;&lt;p&gt;到了預約當天 (平日下午)&lt;br&gt;
+進店家後，往下走到 B1&lt;br&gt;
+隨便抓一個人問預約維修要去哪裡&lt;br&gt;
+然後走到某個座位後&lt;br&gt;
+換一個工作人員來檢測手機目前的情況&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;問我有沒有做備份&lt;/li&gt;
+&lt;li&gt;關閉尋找我的 iPhone&lt;/li&gt;
+&lt;li&gt;跑系統檢測 (約兩分鐘)&lt;/li&gt;
+&lt;li&gt;檢查硬體外觀有無受損&lt;/li&gt;
+&lt;li&gt;確認手機擁有人姓名、電話、Email&lt;/li&gt;
+&lt;li&gt;跑音訊檢測&lt;/li&gt;
+&lt;li&gt;講述維修條款並簽名&lt;/li&gt;
+&lt;li&gt;取出 SIM 卡並歸還&lt;/li&gt;
+&lt;li&gt;告知取件時間 (45 分鐘後)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;取件&#34;&gt;取件
+&lt;/h2&gt;&lt;p&gt;到了指定時間後&lt;br&gt;
+再次隨便抓一個人去哪裡取件&lt;br&gt;
+然後有人拿著手機過來&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;確認姓名與證件&lt;/li&gt;
+&lt;li&gt;協助安裝 SIM 卡&lt;/li&gt;
+&lt;li&gt;講述保固條款並簽名 (保固 90 天)&lt;/li&gt;
+&lt;li&gt;結帳 (收據寄信箱)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;然後工作人員說新電池不會有太多電&lt;br&gt;
+那邊展示台的手機都可以拔起來&lt;br&gt;
+你的插下去就可以充囉&lt;/p&gt;
+&lt;p&gt;趁著充電空檔一邊驗機&lt;br&gt;
+原本資料都還在&lt;br&gt;
+螢幕、相機、聽筒喇叭都正常&lt;br&gt;
+電池最大容量也變 100%&lt;br&gt;
+回家後上網聽半天的音樂都不會掛&lt;br&gt;
+真是太棒了 😀&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>更改 Win 10 檔案總管預設開啟位置</title>
+        <link>http://localhost:1313/blog/p/2019-12-15-change-file-explorer-open-in-win10/</link>
+        <pubDate>Sun, 15 Dec 2019 22:14:43 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/p/2019-12-15-change-file-explorer-open-in-win10/</guid>
+        <description>&lt;p&gt;為什麼要更改開啟位置？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Win 10 檔案總管預設是開啟&lt;code&gt;快速存取&lt;/code&gt;&lt;br&gt;
+且會自動顯示&lt;code&gt;常用資料夾&lt;/code&gt;與&lt;code&gt;最近使用過的檔案&lt;/code&gt;&lt;br&gt;
+但我只是想趕快到&lt;code&gt;本機&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- more --&gt;
+&lt;h2 id=&#34;步驟&#34;&gt;步驟
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;到 &lt;code&gt;檔案總管&lt;/code&gt; &amp;gt; 對 &lt;code&gt;快速存取&lt;/code&gt; 按 &lt;code&gt;右鍵&lt;/code&gt; &amp;gt; &lt;code&gt;選項&lt;/code&gt; &amp;gt; &lt;code&gt;一般&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;開啟檔案總管以 : &lt;code&gt;本機&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;隱私權:&lt;br&gt;
+取消勾選 &lt;code&gt;在「快速存取」中顯示最近使用的檔案&lt;/code&gt;&lt;br&gt;
+取消勾選 &lt;code&gt;在「快速存取」中顯示經常使用的資料夾&lt;/code&gt;&lt;br&gt;
+清除檔案總管歷程記錄 &amp;gt; &lt;code&gt;清除&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;點擊 &lt;code&gt;確定&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;參考資料&#34;&gt;參考資料
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://support.microsoft.com/zh-tw/help/4027032/windows-pin-remove-and-customize-in-quick-access&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Windows 支援 - 在快速存取中釘選、移除及自訂&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://walker-a.com/archives/5637&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;談Windows 10檔案總管上的 快速存取 運用與移除&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Win 10 使用 Win 7 的相片檢視器</title>
+        <link>http://localhost:1313/blog/p/2019-12-14-win7-photoviewer-in-win10/</link>
+        <pubDate>Sat, 14 Dec 2019 11:23:35 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/p/2019-12-14-win7-photoviewer-in-win10/</guid>
+        <description>&lt;p&gt;為什麼要改用 Win 7 的 Windows 相片檢視器？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;因為 Win 10 內建的 相片 APP 開圖片很慢&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- more --&gt;
+&lt;h2 id=&#34;如果電腦本身有-windows-相片檢視器&#34;&gt;如果電腦本身有 Windows 相片檢視器
+&lt;/h2&gt;&lt;h3 id=&#34;方法一&#34;&gt;方法一
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;對 &lt;code&gt;開始&lt;/code&gt; 按右鍵 &amp;gt; &lt;code&gt;執行&lt;/code&gt; &amp;gt; 輸入 &lt;code&gt;regedit&lt;/code&gt; &amp;gt; &lt;code&gt;確定&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;開啟&lt;code&gt;登錄編輯程式&lt;/code&gt;後，找到以下路徑&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;電腦\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;在空白處按&lt;code&gt;右鍵&lt;/code&gt; &amp;gt; &lt;code&gt;新增&lt;/code&gt; &amp;gt; &lt;code&gt;字串符&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;名稱: 圖檔格式 (e.g. &lt;code&gt;.jpg&lt;/code&gt; &lt;code&gt;.jpeg&lt;/code&gt; &lt;code&gt;.png&lt;/code&gt; &lt;code&gt;.gif&lt;/code&gt; &lt;code&gt;.bmp&lt;/code&gt; &lt;code&gt;.ico&lt;/code&gt;&amp;hellip;)&lt;br&gt;
+數值資料:  &lt;code&gt;PhotoViewer.FileAssoc.Tiff&lt;/code&gt;&lt;br&gt;
+(每種圖檔格式都要個別新增)&lt;/li&gt;
+&lt;li&gt;關閉&lt;code&gt;登錄編輯程式&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;對任一圖檔按&lt;code&gt;右鍵&lt;/code&gt; &amp;gt; &lt;code&gt;開啟檔案&lt;/code&gt; &amp;gt;  &lt;code&gt;Windows 相片檢視器&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;方法二&#34;&gt;方法二
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;開始&lt;/code&gt; &amp;gt; &lt;code&gt;設定&lt;/code&gt; &amp;gt; &lt;code&gt;應用程式&lt;/code&gt; &amp;gt; &lt;code&gt;預設應用程式&lt;/code&gt; &amp;gt; &lt;code&gt;相片檢視器&lt;/code&gt; &amp;gt; &lt;code&gt;Windows 相片檢視器&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;如果電腦沒有-windows-相片檢視器&#34;&gt;如果電腦沒有 Windows 相片檢視器
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;開啟 &lt;code&gt;記事本&lt;/code&gt; &amp;gt; 將以下文字存成文字檔 &amp;gt; 檔名改為 &lt;code&gt;PhotoViewer.reg&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Windows Registry Editor Version 5.00
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;; Change Extension&amp;#39;s File Type
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[HKEY_CURRENT_USER\Software\Classes\.jpg]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@=&amp;#34;PhotoViewer.FileAssoc.Tiff&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;; Change Extension&amp;#39;s File Type
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[HKEY_CURRENT_USER\Software\Classes\.jpeg]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@=&amp;#34;PhotoViewer.FileAssoc.Tiff&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;; Change Extension&amp;#39;s File Type
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[HKEY_CURRENT_USER\Software\Classes\.gif]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@=&amp;#34;PhotoViewer.FileAssoc.Tiff&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;; Change Extension&amp;#39;s File Type
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[HKEY_CURRENT_USER\Software\Classes\.png]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@=&amp;#34;PhotoViewer.FileAssoc.Tiff&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;; Change Extension&amp;#39;s File Type
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[HKEY_CURRENT_USER\Software\Classes\.bmp]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@=&amp;#34;PhotoViewer.FileAssoc.Tiff&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;; Change Extension&amp;#39;s File Type
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[HKEY_CURRENT_USER\Software\Classes\.tiff]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@=&amp;#34;PhotoViewer.FileAssoc.Tiff&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;; Change Extension&amp;#39;s File Type
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[HKEY_CURRENT_USER\Software\Classes\.ico]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@=&amp;#34;PhotoViewer.FileAssoc.Tiff&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;下載完成後，點擊兩下執行&lt;/li&gt;
+&lt;li&gt;出現 &lt;code&gt;安全性警告&lt;/code&gt; &lt;code&gt;無法辨認發行者，您確定要執行這個軟體？&lt;/code&gt; &amp;gt; &lt;code&gt;執行&lt;/code&gt;&lt;br&gt;
+出現 &lt;code&gt;使用者帳戶控制&lt;/code&gt;  &lt;code&gt;您是否要允許此應用程式變更您的電腦&lt;/code&gt; &amp;gt; &lt;code&gt;是&lt;/code&gt;&lt;br&gt;
+出現 &lt;code&gt;登錄檔編輯程式&lt;/code&gt; &lt;code&gt;新增資訊會意外變更或刪除值，而且會造成元件無法正確工作，如果不信任 C:\Users\user\Desktop\PhotoViewer.reg 中的資訊來源，請不要新增至登錄。是否確定要繼續？&lt;/code&gt; &amp;gt; &lt;code&gt;是&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;出現 &lt;code&gt;登錄檔編輯程式&lt;/code&gt; &lt;code&gt;C:\Users\user\Desktop\PhotoViewer.reg 中的機碼和值已經成功加入登錄中&lt;/code&gt; &amp;gt; &lt;code&gt;確定&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;開始&lt;/code&gt; &amp;gt; &lt;code&gt;設定&lt;/code&gt; &amp;gt; &lt;code&gt;應用程式&lt;/code&gt; &amp;gt; &lt;code&gt;預設應用程式&lt;/code&gt; &amp;gt; &lt;code&gt;相片檢視器&lt;/code&gt; &amp;gt; &lt;code&gt;Windows 相片檢視器&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;參考資料&#34;&gt;參考資料
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://hcwang.pixnet.net/blog/post/42718982-win10%E5%B0%87%E7%9B%B8%E7%89%87%E6%AA%A2%E8%A6%96%E5%99%A8%E7%82%BA%E9%A0%90%E8%A8%AD%E9%81%B8%E9%A0%85&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Win10將相片檢視器為預設選項&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.kocpc.com.tw/archives/95887&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;如何在Windows 10使用傳統的「相片檢視器」程式來看圖&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

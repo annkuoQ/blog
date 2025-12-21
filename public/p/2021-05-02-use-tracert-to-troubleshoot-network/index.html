@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr">
+    <head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="網路是一個很複雜的東西，從你家到目的地必須經過很多個節點，為了釐清封包是在哪個點卡住了，我們可以使用 Windows 內建的 `tracert` 指令 ...">
+<title>網路卡卡？快用 tracert 找出問題點！</title>
+
+<link rel='canonical' href='http://localhost:1313/blog/p/2021-05-02-use-tracert-to-troubleshoot-network/'>
+
+<link rel="stylesheet" href="/blog/scss/style.min.9181d21a9686d2b9df6804e8423ef89abbe3f2eaa68cdd1fe46406b71b17759c.css"><meta property='og:title' content="網路卡卡？快用 tracert 找出問題點！">
+<meta property='og:description' content="網路是一個很複雜的東西，從你家到目的地必須經過很多個節點，為了釐清封包是在哪個點卡住了，我們可以使用 Windows 內建的 `tracert` 指令 ...">
+<meta property='og:url' content='http://localhost:1313/blog/p/2021-05-02-use-tracert-to-troubleshoot-network/'>
+<meta property='og:site_name' content='AnnKuoQ Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='network' /><meta property='article:tag' content='tracert' /><meta property='article:tag' content='ping' /><meta property='article:tag' content='mtr' /><meta property='article:published_time' content='2021-05-02T10:28:20&#43;00:00'/><meta property='article:modified_time' content='2021-05-02T10:28:20&#43;00:00'/>
+<meta name="twitter:title" content="網路卡卡？快用 tracert 找出問題點！">
+<meta name="twitter:description" content="網路是一個很複雜的東西，從你家到目的地必須經過很多個節點，為了釐清封包是在哪個點卡住了，我們可以使用 Windows 內建的 `tracert` 指令 ...">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "dark");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切換選單">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/blog/">
+                
+                    <img src="/img/avatar.png" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/blog">AnnKuoQ Blog</a></h1>
+            <h2 class="site-description">擺放各種筆記的地方</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/blog/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/blog/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/blog/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目錄</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#如何使用-tracert">如何使用 tracert</a>
+      <ol>
+        <li><a href="#操作步驟">操作步驟</a></li>
+        <li><a href="#瞭解測試結果">瞭解測試結果</a></li>
+      </ol>
+    </li>
+    <li><a href="#結合-ping-與-tracert-的-mtr">結合 ping 與 tracert 的 mtr</a>
+      <ol>
+        <li><a href="#操作步驟-1">操作步驟</a></li>
+        <li><a href="#匯出測試結果">匯出測試結果</a></li>
+        <li><a href="#瞭解測試結果-1">瞭解測試結果</a></li>
+      </ol>
+    </li>
+    <li><a href="#參考資料">參考資料</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/blog/categories/%E9%9B%BB%E8%85%A6-/-%E7%A1%AC%E9%AB%94/" >
+                電腦 / 硬體
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/blog/p/2021-05-02-use-tracert-to-troubleshoot-network/">網路卡卡？快用 tracert 找出問題點！</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            網路是一個很複雜的東西，從你家到目的地必須經過很多個節點，為了釐清封包是在哪個點卡住了，我們可以使用 Windows 內建的 `tracert` 指令 ...
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2021-05-02T10:28:20Z'>2021-5-2</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>最近直播有遇到網路不穩的情況<br>
+但一句「網路卡卡」並不能有效的回報問題</p>
+<!-- more -->
+<p>網路是一個很複雜的東西<br>
+從你家到目的地必須經過很多個節點<br>
+為了釐清封包是在哪個點卡住了<br>
+我們可以使用 Windows 內建的 <code>tracert</code> 指令</p>
+<h2 id="如何使用-tracert">如何使用 tracert
+</h2><h3 id="操作步驟">操作步驟
+</h3><ol>
+<li>鍵盤同時按著 <code>win</code> + <code>R</code></li>
+<li>輸入 <code>cmd</code>，並點擊 <code>確定</code></li>
+<li>輸入 <code>tracert -?</code> 查看使用方法</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ tracert -?
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">使用方式: tracert [-d] [-h maximum_hops] [-j host-list] [-w timeout]
+</span></span><span class="line"><span class="cl">               [-R] [-S srcaddr] [-4] [-6] target_name
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">選項:
+</span></span><span class="line"><span class="cl">    -d                 不要將位址解析為主機名稱。
+</span></span><span class="line"><span class="cl">    -h maximum_hops    搜尋目標所用的最大躍點數目。
+</span></span><span class="line"><span class="cl">    -j host-list       鬆散的主機清單來源路由 (僅 IPv4)。
+</span></span><span class="line"><span class="cl">    -w timeout         每個回覆的等候逾時 (毫秒)。
+</span></span><span class="line"><span class="cl">    -R                 追蹤來回路徑 (僅 IPv6)。
+</span></span><span class="line"><span class="cl">    -S srcaddr         要使用的來源位址 (僅 IPv6)。
+</span></span><span class="line"><span class="cl">    -4                 強制使用 IPv4。
+</span></span><span class="line"><span class="cl">    -6                 強制使用 IPv6。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>中括號表示非必填的參數，如 <code>[-d]</code><br>
+而 <code>tracert</code> 和 <code>target_name</code> 為必填參數</p>
+<p><code>target_name</code> 是你要連接的目的地<br>
+可以打 IP 或 Host Name<br>
+IP 長得像 <code>172.217.160.110</code><br>
+Host Name 就是你熟悉的 <code>www.google.com</code></p>
+<ol start="4">
+<li>測試公司電腦到 YouTube 伺服器<br>
+輸入 <code>tracert a.rtmp.youtube.com</code></li>
+</ol>
+<div align="center"><img src="./tracert_youtube.jpg" width="700px"/></div>
+<h3 id="瞭解測試結果">瞭解測試結果
+</h3><p>最左邊是經過的網路節點，共有 11 個<br>
+中間 3 個時間，表示測試 3 次<br>
+最右邊是該節點的 IP 和 Host Name</p>
+<p>1 和 6 顯示 <code>*</code> 並不是封包沒傳到<br>
+而是某些設備可能有防火牆，所以不會回覆我們</p>
+<p>根據 IP 與 Host Name 可以判斷</p>
+<ul>
+<li>1 ~ 3 在公司內部</li>
+<li>4 ~ 7 在中華電信</li>
+<li>8 ~ 11 在 Google 內部</li>
+</ul>
+<p>所以如果</p>
+<ul>
+<li>在公司內部很慢，就要找網管人員</li>
+<li>在中華很慢，就打中華客服</li>
+<li>在 Google 很慢，<del>就找 Google，但他可能不會理你</del></li>
+</ul>
+<p>總之你在你家暢通<br>
+不代表外面的路也暢通</p>
+<p>另外直播跟一般使用並不同<br>
+更看中的是 <code>穩定度</code> (不掉封包)<br>
+而不是 <code>延遲</code> (秒數) 要很小很小<br>
+當然你要 &ldquo;即時互動&rdquo; 就另當別論</p>
+<p>如果只是看看網頁，瞬斷也不會有影響<br>
+但直播斷個五秒就沒畫面了 QQ</p>
+<h2 id="結合-ping-與-tracert-的-mtr">結合 ping 與 tracert 的 mtr
+</h2><ul>
+<li><code>ping</code> 只能測兩點之間</li>
+<li><code>tracert</code> 可以測中間經過的點</li>
+</ul>
+<p>但 <code>tracert</code> 只會做一次，不能持續監測<br>
+而 <code>mtr</code> 則是可以結合以上兩種的指令</p>
+<p><code>mtr</code> 是在 Linux 內建的指令<br>
+在 Windows 則是有好心人寫的 WinMTR 小軟體</p>
+<h3 id="操作步驟-1">操作步驟
+</h3><ol>
+<li>到該 <a class="link" href="https://sourceforge.net/projects/winmtr/"  target="_blank" rel="noopener"
+    >網址</a>，點擊 <code>Download</code></li>
+<li>解壓縮後，點擊 <code>WinMTR.exe</code> 開啟軟體</li>
+<li>輸入 IP 或 Host Name 後，點擊 <code>Start</code> 開始測試</li>
+<li>等待一段時間&hellip;</li>
+<li>點擊 <code>Stop</code> 結束測試</li>
+</ol>
+<div align="center"><img src="./winmtr_youtube.jpg" width="600px"/></div>
+<h3 id="匯出測試結果">匯出測試結果
+</h3><ul>
+<li>點擊 <code>Copy</code> 可以複製測試結果到剪貼簿</li>
+<li>點擊 <code>Export</code> 可以將結果匯出成檔案</li>
+</ul>
+<p>它支援了 <code>純文字</code> 和 <code>HTML</code> 格式</p>
+<h3 id="瞭解測試結果-1">瞭解測試結果
+</h3><ul>
+<li><code>Nr</code>: 經過節點的數目</li>
+<li><code>Loss%</code>: 丟包率</li>
+<li><code>Sent</code>: 已傳送封包數量</li>
+<li><code>Recv</code>: 成功接收封包數量</li>
+<li><code>Best</code>: 最小回應時間 (ms)</li>
+<li><code>Aveg</code>: 平均回應時間 (ms)</li>
+<li><code>Worst</code>: 最大回應時間 (ms)</li>
+<li><code>Last</code>: 最後一次的回應時間 (ms)</li>
+</ul>
+<p>由 mtr 可以知道 <code>延遲</code> 與 <code>丟包</code> 兩者情況</p>
+<p>下次如果遇到網路問題~<br>
+可以使用以上工具來釐清是 <code>內部</code> 還是 <code>外部</code> 問題<br>
+並且有耐心的長時間觀察<br>
+才能找出問題點喔！</p>
+<h2 id="參考資料">參考資料
+</h2><ul>
+<li><a class="link" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tracert"  target="_blank" rel="noopener"
+    >tracert | Microsoft Docs</a></li>
+<li><a class="link" href="https://help.aliyun.com/document_detail/98706.html"  target="_blank" rel="noopener"
+    >MTR工具使用说明与结果分析 - 阿里云</a></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/blog/tags/network/">Network</a>
+        
+            <a href="/blog/tags/tracert/">Tracert</a>
+        
+            <a href="/blog/tags/ping/">Ping</a>
+        
+            <a href="/blog/tags/mtr/">Mtr</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相關文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/blog/p/2020-05-11-iphone-se-battery-replacement-at-xinyi-a13/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">來去直營店換 iPhone 電池</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/blog/p/2019-12-15-change-file-explorer-open-in-win10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">更改 Win 10 檔案總管預設開啟位置</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/blog/p/2019-12-14-win7-photoviewer-in-win10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Win 10 使用 Win 7 的相片檢視器</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="https://github.com/annkuoQ/blog-utterances"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 AnnKuoQ
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 建立 <br />
+        主題 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.32.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 設計
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/blog/ts/main.3cd37fefb8a5e8b1583cc4816c142139608f7385c41a4327a554c4f839ad4f34.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

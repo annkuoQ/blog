@@ -1,0 +1,8 @@
+# i18n/zh-tw.yaml       
+ widget:
+    tagCloud:
+        title:
+            other: 標籤
+    categoriesCloud:
+        title:
+            other: 文章分類

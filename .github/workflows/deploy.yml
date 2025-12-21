@@ -1,0 +1,33 @@
+name: Deploy Hugo site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master  # 或是你的主要分支名稱（如果是 master 就改 master）
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive  # 確保有抓到主題
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build
+        run: hugo --gc --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.HUGO_TOKEN }}
+          publish_dir: ./public # Hugo 編譯後的輸出目錄
+          publish_branch: gh-pages # 強制指定推送到 gh-pages 分支
+          force_orphan: true # 讓 gh-pages 分支保持乾淨

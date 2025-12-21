@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Bitrate Viewer on AnnKuoQ Blog</title>
+        <link>http://localhost:1313/blog/tags/bitrate-viewer/</link>
+        <description>Recent content in Bitrate Viewer on AnnKuoQ Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <copyright>AnnKuoQ</copyright>
+        <lastBuildDate>Sun, 26 Apr 2020 14:29:21 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/bitrate-viewer/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>如何知道影片從頭到尾 Bitrate 的變化</title>
+        <link>http://localhost:1313/blog/p/2020-04-26-how-to-check-video-bitrate/</link>
+        <pubDate>Sun, 26 Apr 2020 14:29:21 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/p/2020-04-26-how-to-check-video-bitrate/</guid>
+        <description>&lt;p&gt;最近在研究適合網路串流的 VBR 轉檔&lt;br&gt;
+想知道整段影片的 Bitrate 是怎樣變化的&lt;br&gt;
+要是 maximum bitrate (最大流量) 高過網速時&lt;br&gt;
+可能就會出現緩衝轉圈圈的情況&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;如果用 &lt;a class=&#34;link&#34; href=&#34;https://mediaarea.net/en/MediaInfo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MediaInfo&lt;/a&gt; 看，只會有 average bitrate (平均流量)&lt;br&gt;
+但實際上 Bitrate 是上下不停變動的&lt;/p&gt;
+&lt;p&gt;在開始之前&lt;br&gt;
+要先安裝好 &lt;a class=&#34;link&#34; href=&#34;https://www.ffmpeg.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;FFmpeg&lt;/a&gt; 和 &lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/zh-tw/microsoft-365/excel&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Excel&lt;/a&gt; 軟體～&lt;/p&gt;
+&lt;h2 id=&#34;列出影格大小與長度&#34;&gt;列出影格大小與長度
+&lt;/h2&gt;&lt;p&gt;首先用 ffprobe 來找出影格資訊&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ ffprobe -print_format csv -select_streams v:0 -show_entries frame=pkt_size,pkt_duration_time input.mp4 &amp;gt; output.csv
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;參數解釋:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-print_format csv&lt;/code&gt;&lt;br&gt;
+用 csv 格式列印出來&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-select_streams v:0&lt;/code&gt;&lt;br&gt;
+選擇 index 為 0 的視訊流&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-show_entries frame=pkt_size,pkt_duration_time&lt;/code&gt;&lt;br&gt;
+指定列出 frame 的 容量大小和時間長度&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;input.mp4&lt;/code&gt;&lt;br&gt;
+要檢查的影片&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt; output.csv&lt;/code&gt;&lt;br&gt;
+將印出的資料另存成 .csv 檔案&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;輸出結果如下:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;pkt_duration_time (second)&lt;/th&gt;
+          &lt;th&gt;pkt_size (byte)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;140288&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;1992&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;19638&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;4110&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;8653&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;4188&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;36206&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;4686&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;hellip;&lt;/td&gt;
+          &lt;td&gt;&amp;hellip;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;累計秒數與大小&#34;&gt;累計秒數與大小
+&lt;/h2&gt;&lt;p&gt;現在只得到每一格影格的流量&lt;br&gt;
+但不曉得每一秒的流量&lt;br&gt;
+這部測試影片是 29.97 格&lt;br&gt;
+先算大約 30 格&lt;br&gt;
+所以要固定間隔 30 個 frame 來相加&lt;br&gt;
+以下附上 excel 公式～&lt;/p&gt;
+&lt;p&gt;每秒容量大小&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;第 1 格 ~ 第 30 格 size 加總 -&amp;gt; &lt;code&gt;=SUM(OFFSET($B$1,(ROW(B1)-1)*30,,30,))*8/1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;第 31 格 ~ 第 60 格 size 加總 -&amp;gt; &lt;code&gt;=SUM(OFFSET($B$1,(ROW(B2)-1)*30,,30,))*8/1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;第 61 格 ~ 第 90 格 size 加總 -&amp;gt; &lt;code&gt;=SUM(OFFSET($B$1,(ROW(B3)-1)*30,,30,))*8/1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;累計秒數長度&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;第 1 格 ~ 第 30 格 second 加總 -&amp;gt; &lt;code&gt;=SUM(OFFSET($A$1,(ROW(A1)-1)*30,,30,))&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1.&lt;/code&gt; + (第 31 格 ~ 第 60 格 second 加總) -&amp;gt; &lt;code&gt;=C1+SUM(OFFSET($A$1,(ROW(A1)-1)*30,,30,))&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2.&lt;/code&gt; + (第 61 格 ~ 第 90 格 second 加總) -&amp;gt; &lt;code&gt;=C2+SUM(OFFSET($A$1,(ROW(A2)-1)*30,,30,))&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;參數解釋&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://support.office.com/zh-tw/article/offset-%e5%87%bd%e6%95%b8-c8de19ae-dd79-4b9b-a14e-b4d906d11b66?ocmsassetID=HP010342739&amp;amp;CorrelationId=67d5fda0-b6ae-41a7-9818-9c5c5ea24f91&amp;amp;ui=zh-TW&amp;amp;rs=zh-TW&amp;amp;ad=TW&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OFFSET 函數&lt;/a&gt;&lt;br&gt;
+傳回指定列數及欄數之儲存格範圍參照&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;OFFSET(reference, rows, cols, [height], [width])&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;reference: 起始參照位置&lt;/li&gt;
+&lt;li&gt;rows: 往上或往下的參照列數&lt;/li&gt;
+&lt;li&gt;cols: 往左或往右的參照欄數&lt;/li&gt;
+&lt;li&gt;height: 要傳回參照的列數高度 (選填)&lt;/li&gt;
+&lt;li&gt;width: 要傳回參照的欄數寬度 (選填)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://support.office.com/zh-tw/article/sum-%E5%87%BD%E6%95%B8-043e1c7d-7726-4e80-8f32-07b23e057f89&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SUM 函數&lt;/a&gt;&lt;br&gt;
+加總儲存格參照範圍的值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;SUM(number1,[number2],...)&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;number1: 可以是數字、一個儲存格參照、一個儲存格範圍&lt;/li&gt;
+&lt;li&gt;number2: 同上 (選填)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;換算單位&lt;br&gt;
+&lt;code&gt;*8/1000&lt;/code&gt; 這是要幹嘛的呢？&lt;br&gt;
+因為 ffprobe 列出的單位是 byte&lt;br&gt;
+所以要換算成 Kbit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1 byte = 8 bits&lt;br&gt;
+1 bit = 0.001 kbit&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;輸出結果如下:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;pkt_duration_time&lt;/th&gt;
+          &lt;th&gt;pkt_size&lt;/th&gt;
+          &lt;th&gt;累計秒數 (second)&lt;/th&gt;
+          &lt;th&gt;每秒大小 (kbit)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;140288&lt;/td&gt;
+          &lt;td&gt;1.00101&lt;/td&gt;
+          &lt;td&gt;3550.312&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;1992&lt;/td&gt;
+          &lt;td&gt;2.00202&lt;/td&gt;
+          &lt;td&gt;2459.352&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;19638&lt;/td&gt;
+          &lt;td&gt;3.00303&lt;/td&gt;
+          &lt;td&gt;2504.12&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;4110&lt;/td&gt;
+          &lt;td&gt;4.00404&lt;/td&gt;
+          &lt;td&gt;3661.992&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;8653&lt;/td&gt;
+          &lt;td&gt;5.00505&lt;/td&gt;
+          &lt;td&gt;2185.192&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;4188&lt;/td&gt;
+          &lt;td&gt;6.00606&lt;/td&gt;
+          &lt;td&gt;3699.024&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;36206&lt;/td&gt;
+          &lt;td&gt;7.00707&lt;/td&gt;
+          &lt;td&gt;3951.6&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;4686&lt;/td&gt;
+          &lt;td&gt;8.00808&lt;/td&gt;
+          &lt;td&gt;4252.92&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;hellip;&lt;/td&gt;
+          &lt;td&gt;&amp;hellip;&lt;/td&gt;
+          &lt;td&gt;&amp;hellip;&lt;/td&gt;
+          &lt;td&gt;&amp;hellip;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;接著就可以用圖表功能畫出 Bitrate 變化囉～&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./bitrate-graph.jpg&#34;&#34; width=&#34;500px&#34; /&gt;&lt;/div&gt;
+&lt;h2 id=&#34;其他軟體&#34;&gt;其他軟體
+&lt;/h2&gt;&lt;p&gt;看完上面這個笨方法之後&lt;br&gt;
+有沒有其他比較輕鬆的方式呢？&lt;/p&gt;
+&lt;h3 id=&#34;bitrate-viewer&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.videohelp.com/software/Bitrate-Viewer-2&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Bitrate Viewer&lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;這是一個免費軟體&lt;br&gt;
+主要支援 MPEG-1, MPEG-2, MPEG-4 等格式&lt;br&gt;
+只要把影片拖拉進軟體內&lt;br&gt;
+就會自動跑出圖表&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./bitrate-viewer.jpg&#34;&#34; width=&#34;500px&#34; /&gt;&lt;/div&gt;
+&lt;h3 id=&#34;vlc-media-player&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.videolan.org/vlc/index.nb.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;VLC media player&lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;這是一個開源的免費軟體&lt;br&gt;
+它可以在播放影片的時候顯示目前的流量&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;播放影片&lt;/li&gt;
+&lt;li&gt;點擊功能表 &lt;code&gt;工具&lt;/code&gt; &amp;gt; &lt;code&gt;媒體資訊&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;切換到 &lt;code&gt;統計資訊&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;展開 &lt;code&gt;輸入位元率&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;這樣就可以看到目前使用了多少 Bitrate&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./vlc-player.jpg&#34;&#34; width=&#34;700px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;以上方法看起來&lt;br&gt;
+還是用 Bitrate Viewer 最快了&lt;br&gt;
+但支援的格式有限&lt;br&gt;
+如果想分析 HEVC (H.265) 或 VP9 之類&lt;br&gt;
+可能就要找其他軟體或用笨方法了哈哈&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

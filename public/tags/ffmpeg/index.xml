@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Ffmpeg on AnnKuoQ Blog</title>
+        <link>http://localhost:1313/blog/tags/ffmpeg/</link>
+        <description>Recent content in Ffmpeg on AnnKuoQ Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <copyright>AnnKuoQ</copyright>
+        <lastBuildDate>Sat, 08 May 2021 14:51:15 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>如何使用 ffmpeg 串接多個影片</title>
+        <link>http://localhost:1313/blog/p/2021-05-08-how-to-combine-videos-using-ffmpeg/</link>
+        <pubDate>Sat, 08 May 2021 14:51:15 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/p/2021-05-08-how-to-combine-videos-using-ffmpeg/</guid>
+        <description>&lt;p&gt;最近同事在用 Premiere 串接影片時&lt;br&gt;
+表示輸出很花時間&lt;br&gt;
+因為 Premiere 會重新編碼&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;以這個案例來說&lt;br&gt;
+其實可以使用 ffmpeg 來達成&lt;br&gt;
+因為是相同格式的影片，不用重新編碼&lt;br&gt;
+咻一下～就轉完了～&lt;/p&gt;
+&lt;p&gt;下面介紹兩種串接方法&lt;br&gt;
+一種是串接相同的編碼格式&lt;br&gt;
+另一種是串接不同的編碼格式&lt;/p&gt;
+&lt;h2 id=&#34;相同編碼格式&#34;&gt;相同編碼格式
+&lt;/h2&gt;&lt;h3 id=&#34;concat-demuxer&#34;&gt;Concat demuxer
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;在你放影片的資料夾，新建一個文字檔&lt;/li&gt;
+&lt;li&gt;檔案裡寫上要串接的檔名，開頭加上 &lt;code&gt;file&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;file &amp;#34;file1.mp4&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;file &amp;#34;file2.mp4&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;file &amp;#34;file3.mp4&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...以此類推
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;將檔名儲存為 &lt;code&gt;list.txt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在此資料夾開啟 CMD，執行以下指令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -f concat -i list.txt -y -c copy output.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;non-monotonous-dts&#34;&gt;Non-monotonous DTS
+&lt;/h3&gt;&lt;p&gt;如果在轉檔的過程中，出現以下 log&lt;br&gt;
+那影片就可能會出現影音不同步的情況&lt;br&gt;
+需要改用 &lt;a class=&#34;link&#34; href=&#34;https://annkuoq.github.io/blog/2021-05-08-how-to-combine-videos-using-ffmpeg/#%e4%b8%8d%e5%90%8c%e7%b7%a8%e7%a2%bc%e6%a0%bc%e5%bc%8f&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;重新編碼&lt;/a&gt; 的方式串接&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; Non-monotonous DTS in output stream 0:1; previous: XXXX, current: XXXX; changing to XXXX. This may result in incorrect timestamps in the output file.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;不同編碼格式&#34;&gt;不同編碼格式
+&lt;/h2&gt;&lt;h3 id=&#34;concat-filter&#34;&gt;Concat filter
+&lt;/h3&gt;&lt;p&gt;假設要串接三個檔案的指令如下:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i file.mp4 -i file2.webm -i file3.mov^
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-filter_complex &amp;#34;[0:0][0:1][1:0][1:1][2:0][2:1]concat=n=3:v=1:a=1[outv][outa]&amp;#34;^
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-map &amp;#34;[outv]&amp;#34; -map &amp;#34;[outa]&amp;#34; output.mkv
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;解釋一下指令意思&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一行: 三個來源檔的檔名&lt;/li&gt;
+&lt;li&gt;第二行:
+&lt;ul&gt;
+&lt;li&gt;把 &lt;code&gt;[0:0][0:1][1:0][1:1][2:0][2:1]&lt;/code&gt; 映射到 &lt;code&gt;[outv]&lt;/code&gt; &lt;code&gt;[outa]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;concat=n=3&lt;/code&gt;: 串接 3 個檔案&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;v=1&lt;/code&gt;: 輸出 1 個 video stream&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;a=1&lt;/code&gt;: 輸出 1 個 audio stream&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;第三行: 把 &lt;code&gt;[outv]&lt;/code&gt; 和 &lt;code&gt;[outa]&lt;/code&gt; 映射到 &lt;code&gt;output.mkv&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;這些 &lt;code&gt;[0:0]&lt;/code&gt; 或 &lt;code&gt;[1:1]&lt;/code&gt; 都是 stream 的索引值 (index)&lt;br&gt;
+也就是 stream 的編號&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;何為索引值-index&#34;&gt;何為索引值 (index)
+&lt;/h3&gt;&lt;p&gt;一個影片會包含很多個 stream&lt;br&gt;
+例如視訊、音訊、字幕等&lt;/p&gt;
+&lt;p&gt;你在轉檔的時候&lt;br&gt;
+必須指定要使用哪一個 stream 當作來源&lt;br&gt;
+而 index 就像這些 stream 的編號&lt;/p&gt;
+&lt;p&gt;我們試著執行以下指令 &lt;code&gt;ffmpeg -i file1.mp4 -i file2.mp4 -i file3.mp4&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第 3 ~ 15 行是 &lt;code&gt;Input #0&lt;/code&gt; 的資訊 -&amp;gt;&lt;code&gt;file1.mp4&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;第 16 ~ 28 行是 &lt;code&gt;Input #1&lt;/code&gt; 的資訊 -&amp;gt;&lt;code&gt;file2.mp4&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;第 29 ~ 41 行是 &lt;code&gt;Input #2&lt;/code&gt; 的資訊 -&amp;gt;&lt;code&gt;file3.mp4&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ ffmpeg -i file1.mp4 -i file2.mp4 -i file3.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Input #0, mov,mp4,m4a,3gp,3g2,mj2, from &amp;#39;file1.mp4&amp;#39;:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  Metadata:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    major_brand     : isom
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    minor_version   : 512
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    compatible_brands: isomiso2avc1mp41
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    encoder         : Lavf58.29.100
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  Duration: 00:05:00.40, start: 0.000000, bitrate: 6130 kb/s
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Stream #0:0(eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709), 1920x1080 [SAR 1:1 DAR 16:9], 5997 kb/s, 29.97 fps, 29.97 tbr, 30k tbn, 59.94 tbc (default)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Metadata:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      handler_name    : MP4 Video Media Handler
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 125 kb/s (default)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Metadata:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      handler_name    : MP4 Sound Media Handler
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Input #1, mov,mp4,m4a,3gp,3g2,mj2, from &amp;#39;file2.mp4&amp;#39;:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  Metadata:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    major_brand     : isom
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    minor_version   : 512
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    compatible_brands: isomiso2avc1mp41
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    encoder         : Lavf58.29.100
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  Duration: 00:05:00.50, start: 0.000000, bitrate: 6346 kb/s
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Stream #1:0(eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709), 1920x1080 [SAR 1:1 DAR 16:9], 6212 kb/s, 29.97 fps, 29.97 tbr, 30k tbn, 59.94 tbc (default)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Metadata:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      handler_name    : MP4 Video Media Handler
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Stream #1:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 125 kb/s (default)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Metadata:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      handler_name    : MP4 Sound Media Handler
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Input #2, mov,mp4,m4a,3gp,3g2,mj2, from &amp;#39;file3.mp4&amp;#39;:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  Metadata:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    major_brand     : isom
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    minor_version   : 512
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    compatible_brands: isomiso2avc1mp41
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    encoder         : Lavf58.29.100
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  Duration: 00:05:00.60, start: 0.000000, bitrate: 6086 kb/s
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Stream #2:0(eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709), 1920x1080 [SAR 1:1 DAR 16:9], 5952 kb/s, 29.97 fps, 29.97 tbr, 30k tbn, 59.94 tbc (default)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Metadata:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      handler_name    : MP4 Video Media Handler
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Stream #2:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 125 kb/s (default)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Metadata:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      handler_name    : MP4 Sound Media Handler
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;三個 input
+&lt;ul&gt;
+&lt;li&gt;第 3 行 &lt;code&gt;Input #0&lt;/code&gt; 代表第 1 個 input (&lt;code&gt;file1.mp4&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;第 16 行 &lt;code&gt;Input #1&lt;/code&gt; 代表第 2 個 input (&lt;code&gt;file2.mp4&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;第 29 行 &lt;code&gt;Input #2&lt;/code&gt; 代表第 3 個 input (&lt;code&gt;file3.mp4&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;六個 index
+&lt;ul&gt;
+&lt;li&gt;第 10 行 &lt;code&gt;Stream #0:0&lt;/code&gt; 代表第 1 個 input 的第 1 個 stream (&lt;code&gt;file1 的 video&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;第 13 行 &lt;code&gt;Stream #0:1&lt;/code&gt; 代表第 1 個 input 的第 2 個 stream (&lt;code&gt;file1 的 audio&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;第 23 行 &lt;code&gt;Stream #1:0&lt;/code&gt; 代表第 2 個 input 的第 1 個 stream (&lt;code&gt;file2 的 video&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;第 26 行 &lt;code&gt;Stream #1:1&lt;/code&gt; 代表第 2 個 input 的第 2 個 stream (&lt;code&gt;file2 的 audio&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;第 36 行 &lt;code&gt;Stream #2:0&lt;/code&gt; 代表第 3 個 input 的第 1 個 stream (&lt;code&gt;file3 的 video&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;第 39 行 &lt;code&gt;Stream #2:1&lt;/code&gt; 代表第 3 個 input 的第 2 個 stream (&lt;code&gt;file3 的 audio&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;聰明的你有沒有發現～&lt;br&gt;
+index 是從 &lt;code&gt;0&lt;/code&gt; 而不是 &lt;code&gt;1&lt;/code&gt; 開始編號呢？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0 代表第一個&lt;/li&gt;
+&lt;li&gt;1 代表第二個&lt;/li&gt;
+&lt;li&gt;2 代表第三個&lt;/li&gt;
+&lt;li&gt;&amp;hellip;以此類推&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以 &lt;code&gt;0:5&lt;/code&gt; 就是我要取第 1 個 input 的第 6 個 stream 的意思&lt;br&gt;
+&lt;code&gt;3:1&lt;/code&gt; 就是我要取第 4 個 input 的第 2 個 stream 囉&lt;/p&gt;
+&lt;p&gt;關於 index 還有另一種寫法～&lt;br&gt;
+就是加上 stream 的種類:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;v 代表 video&lt;/li&gt;
+&lt;li&gt;a 代表 audio&lt;/li&gt;
+&lt;li&gt;s 代表 subtitle&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;範例&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1:a&lt;/code&gt;: 第 2 個 input 的所有 audio stream&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;3:s:4&lt;/code&gt;: 第 4 個 input 的第 5 個 subtitle stream&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以在我們上面的案例中:&lt;br&gt;
+你可以把 &lt;code&gt;[0:0][0:1][1:0][1:1][2:0][2:1]&lt;/code&gt;&lt;br&gt;
+改成 &lt;code&gt;[0:v][0:a][1:v][1:a][2:v][2:a]&lt;/code&gt;&lt;br&gt;
+或是 &lt;code&gt;[0:v:0][0:a:0][1:v:0][1:a:0][2:v:0][2:a:0]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;雖然它們三者結果相同，但意義不同!!!&lt;br&gt;
+舉個例子來說:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;2:1&lt;/code&gt; 是第 3 個 input 的第 2 個 stream&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2:a&lt;/code&gt; 是第 3 個 input 的所有 audio stream (此案例剛好也只有一個 audio stream)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2:a:0&lt;/code&gt; 是第 3 個 input 的第 1 個 audio stream&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;加-logo&#34;&gt;加 LOGO
+&lt;/h2&gt;&lt;p&gt;同事除了串接的需求&lt;br&gt;
+影片全程也要加上 Logo&lt;/p&gt;
+&lt;p&gt;因為我沒有美感，不清楚 Logo 要怎麼擺&lt;br&gt;
+所以請同事做一張 1920x1080 (與影片尺寸相符) 且帶透明的 &lt;code&gt;.png&lt;/code&gt;&lt;br&gt;
+直接先把 Logo 的位置和大小給定住&lt;br&gt;
+我轉檔的時候就直接蓋上去&lt;/p&gt;
+&lt;p&gt;指令如下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i file1.mp4 -i file2.mp4 -i file3.mp4 -i logo.png^
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-filter_complex &amp;#34;[0:v][0:a][1:v][1:a][2:v][2:a]concat=n=3:v=1:a=1[v][a];^
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[v][3:v]overlay=x=0:y=0[vlogo]&amp;#34;^
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-map &amp;#34;[vlogo]&amp;#34; -map &amp;#34;[a]&amp;#34; output_logo.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;解釋一下指令意思&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一行: 三個影片和一個 logo 的檔名&lt;/li&gt;
+&lt;li&gt;第二行: 把 &lt;code&gt;[0:v][0:a][1:v][1:a][2:v][2:a]&lt;/code&gt; 映射到 &lt;code&gt;[v]&lt;/code&gt; 和 &lt;code&gt;[a]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;第三行:
+&lt;ul&gt;
+&lt;li&gt;把 &lt;code&gt;[v][3:v]&lt;/code&gt; 映射到 &lt;code&gt;[vlogo]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;overlay=x=0:y=0&lt;/code&gt;: logo 的 x 和 y 位置都是 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;第四行: 把 &lt;code&gt;[vlogo]&lt;/code&gt; 和 &lt;code&gt;[a]&lt;/code&gt; 映射到 &lt;code&gt;output_logo.mp4&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;參考資料&#34;&gt;參考資料
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://ffmpeg.org/ffmpeg-filters.html#concat&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Concat - FFmpeg Filters Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://trac.ffmpeg.org/wiki/Concatenate&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Concatenate – FFmpeg wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://trac.ffmpeg.org/wiki/Map&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Map – FFmpeg wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://stackoverflow.com/questions/7333232/how-to-concatenate-two-mp4-files-using-ffmpeg&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;h.264 - How to concatenate two MP4 files using FFmpeg? - Stack Overflow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://superuser.com/questions/890612/ffmpeg-video-concat-and-overlay&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;FFMPEG Video Concat and Overlay - Super User&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>一樣的 Bitrate，解析度高的畫質會比較好嗎？</title>
+        <link>http://localhost:1313/blog/p/2020-10-25-bitrate-vs-resolution/</link>
+        <pubDate>Sun, 25 Oct 2020 16:46:42 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/p/2020-10-25-bitrate-vs-resolution/</guid>
+        <description>&lt;p&gt;某天同事問說 iMovie 怎麼輸出&lt;br&gt;
+我說: 除了設解析度，還有 Bitrate&lt;br&gt;
+同事問 Bitrate 是什麼？&lt;br&gt;
+我說: 就是資料流，每秒的資料量&lt;br&gt;
+通常越大，畫質越好，但檔案越大&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;後來回到自己的位置上&lt;br&gt;
+突然覺得很好奇&lt;br&gt;
+我知道 Bitrate 越大，畫質越好&lt;br&gt;
+但是解析度越大，就代表畫質越好嗎？&lt;/p&gt;
+&lt;p&gt;解析度、Bitrate、畫質它們三者的關係是什麼呢？&lt;br&gt;
+誰是影響畫質的最大因素呢？&lt;/p&gt;
+&lt;p&gt;於是決定做個實驗&lt;br&gt;
+看看同樣 Bitrate，不同解析度的畫質誰比較好&lt;/p&gt;
+&lt;h2 id=&#34;測試方法&#34;&gt;測試方法
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;使用 &lt;a class=&#34;link&#34; href=&#34;https://mixkit.co/free-stock-video/man-plays-an-accordion-in-front-of-a-fountain-and-631/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Mixkit&lt;/a&gt; 的影片素材&lt;/li&gt;
+&lt;li&gt;使用 &lt;a class=&#34;link&#34; href=&#34;https://ffmpeg.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;FFmpeg&lt;/a&gt; 轉出四個檔案
+&lt;ul&gt;
+&lt;li&gt;1080p 4 Mbps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 -s 1920x1080 -c:v libx264 -x264-params &amp;#34;nal-hrd=cbr:force-cfr=1&amp;#34; -b:v 4M -minrate 4M -maxrate 4M -bufsize 8M 1080p4M.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;1080p 1 Mbps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 -s 1920x1080 -c:v libx264 -x264-params &amp;#34;nal-hrd=cbr:force-cfr=1&amp;#34; -b:v 1M -minrate 1M -maxrate 1M -bufsize 2M 1080p1M.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;480p 4 Mbps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 -s 854x480 -c:v libx264 -x264-params &amp;#34;nal-hrd=cbr:force-cfr=1&amp;#34; -b:v 4M -minrate 4M -maxrate 4M -bufsize 8M 480p4M.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;480p 1 Mbps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 -s 854x480 -c:v libx264 -x264-params &amp;#34;nal-hrd=cbr:force-cfr=1&amp;#34; -b:v 1M -minrate 1M -maxrate 1M -bufsize 2M 480p1M.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;測試結果&#34;&gt;測試結果
+&lt;/h2&gt;&lt;h3 id=&#34;畫質比較&#34;&gt;畫質比較
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1080p4M&lt;/code&gt; &amp;gt; &lt;code&gt;480p4M&lt;/code&gt; &amp;gt; &lt;code&gt;480p1M&lt;/code&gt; &amp;gt; &lt;code&gt;1080p1M&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;大小比較&#34;&gt;大小比較
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1080p4M&lt;/code&gt; = &lt;code&gt;480p4M&lt;/code&gt; &amp;gt; &lt;code&gt;1080p1M&lt;/code&gt; = &lt;code&gt;480p1M&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;截圖比較&#34;&gt;截圖比較
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://annkuoq.github.io/blog/2020-10-25-bitrate-vs-resolution/compare.jpg&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;點我看大圖&lt;/a&gt; 👈&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./compare.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;h3 id=&#34;完整截圖-依畫質排序&#34;&gt;完整截圖 (依畫質排序)
+&lt;/h3&gt;&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./1080p4m.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./480p4m.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./480p1m.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./1080p1m.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;因為 1080p 要記錄的像素比 480p 還要多，所以需要更多 Bitrate&lt;br&gt;
+雖然兩者檔案大小一樣，但 480p 畫質比較好&lt;/p&gt;
+&lt;p&gt;這讓我想起「一碗麵的故事」&lt;br&gt;
+一個人吃一碗麵剛剛好&lt;br&gt;
+三個人吃一碗麵會餓&lt;br&gt;
+雖然有很多人 (像素)，但只吃一碗麵 (Bitrate)&lt;br&gt;
+結果每個人都營養不良 (畫質不良)&lt;/p&gt;
+&lt;p&gt;所以或許反過來想&lt;br&gt;
+你應該依照可以提供的 Bitrate 來決定解析度&lt;br&gt;
+要是你只能提供 5 Mbps&lt;br&gt;
+解析度卻給到 4K&lt;br&gt;
+那也觀賞馬賽克了 QQ&lt;/p&gt;
+&lt;h2 id=&#34;結論&#34;&gt;結論
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;同 Bitrate，解析度越大 -&amp;gt; 畫質越差&lt;/li&gt;
+&lt;li&gt;同解析度，Bitrate 越大 -&amp;gt; 畫質越好&lt;br&gt;
+(但 Bitrate 大到一定的階段，畫質也不會一直無限好上去)&lt;/li&gt;
+&lt;li&gt;一樣的 Bitrate，不論解析度多大，檔案大小都一樣&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;參考資料&#34;&gt;參考資料
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://mixkit.co/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Mixkit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://ffmpeg.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;FFmpeg&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.ptt.cc/man/AVEncode/DA31/M.1320786495.A.B02.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;同片源1080p與720p同流量下的畫質 - 精華區 AVEncode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://forum.videohelp.com/threads/395300-For-same-bitrate-which-looks-better-between-720p-and-1080p&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;For same bitrate which looks better between 720p and 1080p - VideoHelp Forum&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>如何知道影片從頭到尾 Bitrate 的變化</title>
+        <link>http://localhost:1313/blog/p/2020-04-26-how-to-check-video-bitrate/</link>
+        <pubDate>Sun, 26 Apr 2020 14:29:21 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/p/2020-04-26-how-to-check-video-bitrate/</guid>
+        <description>&lt;p&gt;最近在研究適合網路串流的 VBR 轉檔&lt;br&gt;
+想知道整段影片的 Bitrate 是怎樣變化的&lt;br&gt;
+要是 maximum bitrate (最大流量) 高過網速時&lt;br&gt;
+可能就會出現緩衝轉圈圈的情況&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;如果用 &lt;a class=&#34;link&#34; href=&#34;https://mediaarea.net/en/MediaInfo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MediaInfo&lt;/a&gt; 看，只會有 average bitrate (平均流量)&lt;br&gt;
+但實際上 Bitrate 是上下不停變動的&lt;/p&gt;
+&lt;p&gt;在開始之前&lt;br&gt;
+要先安裝好 &lt;a class=&#34;link&#34; href=&#34;https://www.ffmpeg.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;FFmpeg&lt;/a&gt; 和 &lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/zh-tw/microsoft-365/excel&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Excel&lt;/a&gt; 軟體～&lt;/p&gt;
+&lt;h2 id=&#34;列出影格大小與長度&#34;&gt;列出影格大小與長度
+&lt;/h2&gt;&lt;p&gt;首先用 ffprobe 來找出影格資訊&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ ffprobe -print_format csv -select_streams v:0 -show_entries frame=pkt_size,pkt_duration_time input.mp4 &amp;gt; output.csv
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;參數解釋:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-print_format csv&lt;/code&gt;&lt;br&gt;
+用 csv 格式列印出來&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-select_streams v:0&lt;/code&gt;&lt;br&gt;
+選擇 index 為 0 的視訊流&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-show_entries frame=pkt_size,pkt_duration_time&lt;/code&gt;&lt;br&gt;
+指定列出 frame 的 容量大小和時間長度&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;input.mp4&lt;/code&gt;&lt;br&gt;
+要檢查的影片&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt; output.csv&lt;/code&gt;&lt;br&gt;
+將印出的資料另存成 .csv 檔案&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;輸出結果如下:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;pkt_duration_time (second)&lt;/th&gt;
+          &lt;th&gt;pkt_size (byte)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;140288&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;1992&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;19638&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;4110&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;8653&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;4188&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;36206&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;4686&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;hellip;&lt;/td&gt;
+          &lt;td&gt;&amp;hellip;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;累計秒數與大小&#34;&gt;累計秒數與大小
+&lt;/h2&gt;&lt;p&gt;現在只得到每一格影格的流量&lt;br&gt;
+但不曉得每一秒的流量&lt;br&gt;
+這部測試影片是 29.97 格&lt;br&gt;
+先算大約 30 格&lt;br&gt;
+所以要固定間隔 30 個 frame 來相加&lt;br&gt;
+以下附上 excel 公式～&lt;/p&gt;
+&lt;p&gt;每秒容量大小&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;第 1 格 ~ 第 30 格 size 加總 -&amp;gt; &lt;code&gt;=SUM(OFFSET($B$1,(ROW(B1)-1)*30,,30,))*8/1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;第 31 格 ~ 第 60 格 size 加總 -&amp;gt; &lt;code&gt;=SUM(OFFSET($B$1,(ROW(B2)-1)*30,,30,))*8/1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;第 61 格 ~ 第 90 格 size 加總 -&amp;gt; &lt;code&gt;=SUM(OFFSET($B$1,(ROW(B3)-1)*30,,30,))*8/1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;累計秒數長度&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;第 1 格 ~ 第 30 格 second 加總 -&amp;gt; &lt;code&gt;=SUM(OFFSET($A$1,(ROW(A1)-1)*30,,30,))&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1.&lt;/code&gt; + (第 31 格 ~ 第 60 格 second 加總) -&amp;gt; &lt;code&gt;=C1+SUM(OFFSET($A$1,(ROW(A1)-1)*30,,30,))&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2.&lt;/code&gt; + (第 61 格 ~ 第 90 格 second 加總) -&amp;gt; &lt;code&gt;=C2+SUM(OFFSET($A$1,(ROW(A2)-1)*30,,30,))&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;參數解釋&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://support.office.com/zh-tw/article/offset-%e5%87%bd%e6%95%b8-c8de19ae-dd79-4b9b-a14e-b4d906d11b66?ocmsassetID=HP010342739&amp;amp;CorrelationId=67d5fda0-b6ae-41a7-9818-9c5c5ea24f91&amp;amp;ui=zh-TW&amp;amp;rs=zh-TW&amp;amp;ad=TW&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OFFSET 函數&lt;/a&gt;&lt;br&gt;
+傳回指定列數及欄數之儲存格範圍參照&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;OFFSET(reference, rows, cols, [height], [width])&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;reference: 起始參照位置&lt;/li&gt;
+&lt;li&gt;rows: 往上或往下的參照列數&lt;/li&gt;
+&lt;li&gt;cols: 往左或往右的參照欄數&lt;/li&gt;
+&lt;li&gt;height: 要傳回參照的列數高度 (選填)&lt;/li&gt;
+&lt;li&gt;width: 要傳回參照的欄數寬度 (選填)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://support.office.com/zh-tw/article/sum-%E5%87%BD%E6%95%B8-043e1c7d-7726-4e80-8f32-07b23e057f89&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SUM 函數&lt;/a&gt;&lt;br&gt;
+加總儲存格參照範圍的值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;SUM(number1,[number2],...)&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;number1: 可以是數字、一個儲存格參照、一個儲存格範圍&lt;/li&gt;
+&lt;li&gt;number2: 同上 (選填)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;換算單位&lt;br&gt;
+&lt;code&gt;*8/1000&lt;/code&gt; 這是要幹嘛的呢？&lt;br&gt;
+因為 ffprobe 列出的單位是 byte&lt;br&gt;
+所以要換算成 Kbit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1 byte = 8 bits&lt;br&gt;
+1 bit = 0.001 kbit&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;輸出結果如下:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;pkt_duration_time&lt;/th&gt;
+          &lt;th&gt;pkt_size&lt;/th&gt;
+          &lt;th&gt;累計秒數 (second)&lt;/th&gt;
+          &lt;th&gt;每秒大小 (kbit)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;140288&lt;/td&gt;
+          &lt;td&gt;1.00101&lt;/td&gt;
+          &lt;td&gt;3550.312&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;1992&lt;/td&gt;
+          &lt;td&gt;2.00202&lt;/td&gt;
+          &lt;td&gt;2459.352&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;19638&lt;/td&gt;
+          &lt;td&gt;3.00303&lt;/td&gt;
+          &lt;td&gt;2504.12&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;4110&lt;/td&gt;
+          &lt;td&gt;4.00404&lt;/td&gt;
+          &lt;td&gt;3661.992&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;8653&lt;/td&gt;
+          &lt;td&gt;5.00505&lt;/td&gt;
+          &lt;td&gt;2185.192&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;4188&lt;/td&gt;
+          &lt;td&gt;6.00606&lt;/td&gt;
+          &lt;td&gt;3699.024&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;36206&lt;/td&gt;
+          &lt;td&gt;7.00707&lt;/td&gt;
+          &lt;td&gt;3951.6&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0.033367&lt;/td&gt;
+          &lt;td&gt;4686&lt;/td&gt;
+          &lt;td&gt;8.00808&lt;/td&gt;
+          &lt;td&gt;4252.92&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;hellip;&lt;/td&gt;
+          &lt;td&gt;&amp;hellip;&lt;/td&gt;
+          &lt;td&gt;&amp;hellip;&lt;/td&gt;
+          &lt;td&gt;&amp;hellip;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;接著就可以用圖表功能畫出 Bitrate 變化囉～&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./bitrate-graph.jpg&#34;&#34; width=&#34;500px&#34; /&gt;&lt;/div&gt;
+&lt;h2 id=&#34;其他軟體&#34;&gt;其他軟體
+&lt;/h2&gt;&lt;p&gt;看完上面這個笨方法之後&lt;br&gt;
+有沒有其他比較輕鬆的方式呢？&lt;/p&gt;
+&lt;h3 id=&#34;bitrate-viewer&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.videohelp.com/software/Bitrate-Viewer-2&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Bitrate Viewer&lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;這是一個免費軟體&lt;br&gt;
+主要支援 MPEG-1, MPEG-2, MPEG-4 等格式&lt;br&gt;
+只要把影片拖拉進軟體內&lt;br&gt;
+就會自動跑出圖表&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./bitrate-viewer.jpg&#34;&#34; width=&#34;500px&#34; /&gt;&lt;/div&gt;
+&lt;h3 id=&#34;vlc-media-player&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.videolan.org/vlc/index.nb.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;VLC media player&lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;這是一個開源的免費軟體&lt;br&gt;
+它可以在播放影片的時候顯示目前的流量&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;播放影片&lt;/li&gt;
+&lt;li&gt;點擊功能表 &lt;code&gt;工具&lt;/code&gt; &amp;gt; &lt;code&gt;媒體資訊&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;切換到 &lt;code&gt;統計資訊&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;展開 &lt;code&gt;輸入位元率&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;這樣就可以看到目前使用了多少 Bitrate&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./vlc-player.jpg&#34;&#34; width=&#34;700px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;以上方法看起來&lt;br&gt;
+還是用 Bitrate Viewer 最快了&lt;br&gt;
+但支援的格式有限&lt;br&gt;
+如果想分析 HEVC (H.265) 或 VP9 之類&lt;br&gt;
+可能就要找其他軟體或用笨方法了哈哈&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Win 10 安裝 FFmpeg</title>
+        <link>http://localhost:1313/blog/p/2019-12-17-install-ffmpeg/</link>
+        <pubDate>Tue, 17 Dec 2019 12:25:39 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/p/2019-12-17-install-ffmpeg/</guid>
+        <description>&lt;p&gt;為什麼要安裝 FFmepg？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;因為開源、彈性大&lt;/li&gt;
+&lt;li&gt;因為轉檔、分析、播放、剪接、字幕、濾鏡都做得到&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- more --&gt;
+&lt;h3 id=&#34;安裝步驟&#34;&gt;安裝步驟
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;del&gt;前往官網 &lt;a class=&#34;link&#34; href=&#34;https://ffmpeg.zeranoe.com/builds/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下載&lt;/a&gt;，我下載的版本是&lt;/del&gt;&lt;br&gt;
+&lt;del&gt;- Version: 4.2.1 (穩定版本)&lt;/del&gt;&lt;br&gt;
+&lt;del&gt;- Architecture: Windows 64-bit (作業系統)&lt;/del&gt;&lt;br&gt;
+&lt;del&gt;- Linking: Static (打包好的靜態函式庫)&lt;/del&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ffmpeg.zeranoe.com 已於 2020 年 9 月 18 日 &lt;a class=&#34;link&#34; href=&#34;https://www.reddit.com/r/ffmpeg/comments/ikht2k/ffmpegzeranoecom_will_close_on_sep_18_2020/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;關閉&lt;/a&gt;&lt;br&gt;
+目前有兩個地方可以下載&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.gyan.dev/ffmpeg/builds/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;gyan.dev&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/BtbN/FFmpeg-Builds/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;BtbN&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我選擇去 gyan.dev 下載&lt;br&gt;
+往下拉到 release 的部分有四個連結&lt;br&gt;
+點擊第一個 &lt;code&gt;release-full.7z&lt;/code&gt; 下載&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./release_full_download.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;解壓縮資料夾後，修改資料夾名稱為 &lt;code&gt;ffmpeg&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;將資料夾放到以下路徑 &lt;code&gt;C:\ffmpeg&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;開啟檔案總管&lt;br&gt;
+對 &lt;code&gt;本機&lt;/code&gt; 按右鍵 &amp;gt; &lt;code&gt;內容&lt;/code&gt; &amp;gt; &lt;code&gt;進階系統設定&lt;/code&gt; &amp;gt; &lt;code&gt;進階&lt;/code&gt; &amp;gt; &lt;code&gt;環境變數&lt;/code&gt; &amp;gt;&lt;br&gt;
+點擊&lt;code&gt;系統變數&lt;/code&gt;的 &lt;code&gt;Path&lt;/code&gt; &amp;gt; &lt;code&gt;編輯&lt;/code&gt; &amp;gt; &lt;code&gt;新增&lt;/code&gt; &amp;gt; &lt;code&gt;C:\ffmpeg\bin&lt;/code&gt; &amp;gt; &lt;code&gt;確定&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;開啟 CMD，輸入 &lt;code&gt;set PATH=C:&lt;/code&gt;，讓環境變數立即生效，不用重開機&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;關閉 CMD 再重啟，輸入 &lt;code&gt;echo %PATH%&lt;/code&gt;，查看是否有增加 &lt;code&gt;C:\ffmpeg\bin&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 CMD 或 Cmder 輸入 &lt;code&gt;ffmpeg -version&lt;/code&gt;，檢查是否安裝成功&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ ffmpeg -version
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg version 4.2.1 Copyright (c) 2000-2019 the FFmpeg developers
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;built with gcc 9.1.1 (GCC) 20190807
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;libavutil      56. 31.100 / 56. 31.100
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;libavcodec     58. 54.100 / 58. 54.100
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;libavformat    58. 29.100 / 58. 29.100
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;libavdevice    58.  8.100 / 58.  8.100
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;libavfilter     7. 57.100 /  7. 57.100
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;libswscale      5.  5.100 /  5.  5.100
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;libswresample   3.  5.100 /  3.  5.100
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;libpostproc    55.  5.100 / 55.  5.100
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;參考資料&#34;&gt;參考資料
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://windowsloop.com/install-ffmpeg-windows-10/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;How to Install FFmpeg on Windows 10 &amp;amp; Add FFmpeg to Windows Path&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;http://jsnwork.kiiuo.com/archives/2705/ffmpeg-windows-%E5%AE%89%E8%A3%9D/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ffmpeg – Windows 安裝&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

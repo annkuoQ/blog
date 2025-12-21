@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Hexo 中文資源比較多，也有很多別人做好的主題可以直接用，一鍵就可以產生靜態網站並部署，在開始之前要先創建一個 repo，然後執行 npm install -g hexo-cli ...">
+<title>用 Hexo 和 GitHub Pages 架部落格</title>
+
+<link rel='canonical' href='http://localhost:1313/p/%E7%94%A8-hexo-%E5%92%8C-github-pages-%E6%9E%B6%E9%83%A8%E8%90%BD%E6%A0%BC/'>
+
+<link rel="stylesheet" href="/scss/style.min.35faae972d59d62eca361a063b7051fdcb5b3dc7cee34aba1e79d7034cf2b447.css"><meta property='og:title' content="用 Hexo 和 GitHub Pages 架部落格">
+<meta property='og:description' content="Hexo 中文資源比較多，也有很多別人做好的主題可以直接用，一鍵就可以產生靜態網站並部署，在開始之前要先創建一個 repo，然後執行 npm install -g hexo-cli ...">
+<meta property='og:url' content='http://localhost:1313/p/%E7%94%A8-hexo-%E5%92%8C-github-pages-%E6%9E%B6%E9%83%A8%E8%90%BD%E6%A0%BC/'>
+<meta property='og:site_name' content='AnnKuoQ Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='hexo' /><meta property='article:tag' content='github pages' /><meta property='article:published_time' content='2020-01-03T23:19:47&#43;00:00'/><meta property='article:modified_time' content='2020-01-03T23:19:47&#43;00:00'/>
+<meta name="twitter:title" content="用 Hexo 和 GitHub Pages 架部落格">
+<meta name="twitter:description" content="Hexo 中文資源比較多，也有很多別人做好的主題可以直接用，一鍵就可以產生靜態網站並部署，在開始之前要先創建一個 repo，然後執行 npm install -g hexo-cli ...">
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "dark");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切換選單">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    <img src="/img/avatar.png" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">AnnKuoQ Blog</a></h1>
+            <h2 class="site-description">擺放各種筆記的地方</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目錄</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前置步驟">前置步驟</a></li>
+    <li><a href="#安裝步驟">安裝步驟</a></li>
+    <li><a href="#建立網站">建立網站</a></li>
+    <li><a href="#建立文章">建立文章</a></li>
+    <li><a href="#部署網站">部署網站</a></li>
+    <li><a href="#參考資料">參考資料</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E8%B3%87%E5%B7%A5-/-%E7%A8%8B%E8%A8%AD/" >
+                資工 / 程設
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E7%94%A8-hexo-%E5%92%8C-github-pages-%E6%9E%B6%E9%83%A8%E8%90%BD%E6%A0%BC/">用 Hexo 和 GitHub Pages 架部落格</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Hexo 中文資源比較多，也有很多別人做好的主題可以直接用，一鍵就可以產生靜態網站並部署，在開始之前要先創建一個 repo，然後執行 npm install -g hexo-cli ...
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2020-01-03T23:19:47Z'>2020-1-3</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>為什麼要用 Hexo？</p>
+<ul>
+<li>因為中文資源比較多</li>
+<li>因為很多別人做好的主題可以直接用</li>
+</ul>
+<p>執行環境</p>
+<ul>
+<li>Win 10 與 Cmder</li>
+</ul>
+<!-- more -->
+<h2 id="前置步驟">前置步驟
+</h2><ol>
+<li>安裝 Git</li>
+<li>安裝 Node.js</li>
+<li>創建一個 GitHub Repository</li>
+</ol>
+<h2 id="安裝步驟">安裝步驟
+</h2><ol>
+<li>安裝 hexo</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ npm install -g hexo-cli
+</span></span><span class="line"><span class="cl">C:\Program Files\nodejs\node_global\hexo -&gt; C:\Program Files\nodejs\node_global\node_modules\hexo-cli\bin\hexo
+</span></span><span class="line"><span class="cl">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules\hexo-cli\node_modules\fsevents):
+</span></span><span class="line"><span class="cl">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.2: wanted {&#34;os&#34;:&#34;darwin&#34;,&#34;arch&#34;:&#34;any&#34;} (current: {&#34;os&#34;:&#34;win32&#34;,&#34;arch&#34;:&#34;x64&#34;})
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">+ hexo-cli@3.1.0
+</span></span><span class="line"><span class="cl">added 82 packages from 356 contributors in 5.298s
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>cd 到桌面</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd C:\Users\user\Desktop
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>建立網站所需檔案</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">$</span> <span class="n">hexo</span> <span class="n">init</span> <span class="n">test</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Cloning</span> <span class="n">hexo</span><span class="o">-</span><span class="n">starter</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hexojs</span><span class="o">/</span><span class="n">hexo</span><span class="o">-</span><span class="n">starter</span><span class="o">.</span><span class="n">git</span>
+</span></span><span class="line"><span class="cl"><span class="n">Cloning</span> <span class="n">into</span> <span class="s1">&#39;C:\Users\user\Desktop</span><span class="se">\t</span><span class="s1">est&#39;</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="n">remote</span><span class="p">:</span> <span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">remote</span><span class="p">:</span> <span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">30</span><span class="o">/</span><span class="mi">30</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">remote</span><span class="p">:</span> <span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">24</span><span class="o">/</span><span class="mi">24</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Receiving</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">161</span><span class="o">/</span><span class="mi">161</span><span class="p">),</span> <span class="mf">31.79</span> <span class="n">KiB</span> <span class="o">|</span> <span class="mf">4.54</span> <span class="n">MiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Resolving</span> <span class="n">deltas</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">74</span><span class="o">/</span><span class="mi">74</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Submodule</span> <span class="s1">&#39;themes/landscape&#39;</span> <span class="p">(</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hexojs</span><span class="o">/</span><span class="n">hexo</span><span class="o">-</span><span class="n">theme</span><span class="o">-</span><span class="n">landscape</span><span class="o">.</span><span class="n">git</span><span class="p">)</span> <span class="n">registered</span> <span class="k">for</span> <span class="n">path</span> <span class="s1">&#39;themes/landscape&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Cloning</span> <span class="n">into</span> <span class="s1">&#39;C:/Users/user/Desktop/test/themes/landscape&#39;</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="n">remote</span><span class="p">:</span> <span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">1054</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">remote</span><span class="p">:</span> <span class="n">Total</span> <span class="mi">1054</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">1054</span>
+</span></span><span class="line"><span class="cl"><span class="n">Receiving</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">1054</span><span class="o">/</span><span class="mi">1054</span><span class="p">),</span> <span class="mf">3.21</span> <span class="n">MiB</span> <span class="o">|</span> <span class="mf">1.91</span> <span class="n">MiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Resolving</span> <span class="n">deltas</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">581</span><span class="o">/</span><span class="mi">581</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Submodule</span> <span class="n">path</span> <span class="s1">&#39;themes/landscape&#39;</span><span class="p">:</span> <span class="n">checked</span> <span class="n">out</span> <span class="s1">&#39;73a23c51f8487cfcd7c6deec96ccc7543960d350&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Install</span> <span class="n">dependencies</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">ejs</span><span class="err">@</span><span class="mf">2.7</span><span class="o">.</span><span class="mi">4</span> <span class="n">postinstall</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">user</span>\<span class="n">Desktop</span>\<span class="n">test</span>\<span class="n">node_modules</span>\<span class="n">ejs</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">node</span> <span class="o">./</span><span class="n">postinstall</span><span class="o">.</span><span class="n">js</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Thank</span> <span class="n">you</span> <span class="k">for</span> <span class="n">installing</span> <span class="n">EJS</span><span class="p">:</span> <span class="n">built</span> <span class="n">with</span> <span class="n">the</span> <span class="n">Jake</span> <span class="n">JavaScript</span> <span class="n">build</span> <span class="k">tool</span> <span class="p">(</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">jakejs</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">npm</span> <span class="n">notice</span> <span class="n">created</span> <span class="n">a</span> <span class="n">lockfile</span> <span class="n">as</span> <span class="n">package</span><span class="o">-</span><span class="n">lock</span><span class="o">.</span><span class="n">json</span><span class="o">.</span> <span class="n">You</span> <span class="n">should</span> <span class="n">commit</span> <span class="n">this</span> <span class="n">file</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">npm</span> <span class="n">WARN</span> <span class="n">optional</span> <span class="n">SKIPPING</span> <span class="n">OPTIONAL</span> <span class="n">DEPENDENCY</span><span class="p">:</span> <span class="n">fsevents</span><span class="err">@</span><span class="mf">1.2</span><span class="o">.</span><span class="mi">11</span> <span class="p">(</span><span class="n">node_modules</span>\<span class="n">nunjucks</span>\<span class="n">node_modules</span>\<span class="n">fsevents</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"><span class="n">npm</span> <span class="n">WARN</span> <span class="n">notsup</span> <span class="n">SKIPPING</span> <span class="n">OPTIONAL</span> <span class="n">DEPENDENCY</span><span class="p">:</span> <span class="n">Unsupported</span> <span class="n">platform</span> <span class="k">for</span> <span class="n">fsevents</span><span class="err">@</span><span class="mf">1.2</span><span class="o">.</span><span class="mi">11</span><span class="p">:</span> <span class="n">wanted</span> <span class="p">{</span><span class="s2">&#34;os&#34;</span><span class="p">:</span><span class="s2">&#34;darwin&#34;</span><span class="p">,</span><span class="s2">&#34;arch&#34;</span><span class="p">:</span><span class="s2">&#34;any&#34;</span><span class="p">}</span> <span class="p">(</span><span class="n">current</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;os&#34;</span><span class="p">:</span><span class="s2">&#34;win32&#34;</span><span class="p">,</span><span class="s2">&#34;arch&#34;</span><span class="p">:</span><span class="s2">&#34;x64&#34;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="n">npm</span> <span class="n">WARN</span> <span class="n">optional</span> <span class="n">SKIPPING</span> <span class="n">OPTIONAL</span> <span class="n">DEPENDENCY</span><span class="p">:</span> <span class="n">fsevents</span><span class="err">@</span><span class="mf">2.1</span><span class="o">.</span><span class="mi">2</span> <span class="p">(</span><span class="n">node_modules</span>\<span class="n">fsevents</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"><span class="n">npm</span> <span class="n">WARN</span> <span class="n">notsup</span> <span class="n">SKIPPING</span> <span class="n">OPTIONAL</span> <span class="n">DEPENDENCY</span><span class="p">:</span> <span class="n">Unsupported</span> <span class="n">platform</span> <span class="k">for</span> <span class="n">fsevents</span><span class="err">@</span><span class="mf">2.1</span><span class="o">.</span><span class="mi">2</span><span class="p">:</span> <span class="n">wanted</span> <span class="p">{</span><span class="s2">&#34;os&#34;</span><span class="p">:</span><span class="s2">&#34;darwin&#34;</span><span class="p">,</span><span class="s2">&#34;arch&#34;</span><span class="p">:</span><span class="s2">&#34;any&#34;</span><span class="p">}</span> <span class="p">(</span><span class="n">current</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;os&#34;</span><span class="p">:</span><span class="s2">&#34;win32&#34;</span><span class="p">,</span><span class="s2">&#34;arch&#34;</span><span class="p">:</span><span class="s2">&#34;x64&#34;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">added</span> <span class="mi">371</span> <span class="n">packages</span> <span class="n">from</span> <span class="mi">472</span> <span class="n">contributors</span> <span class="ow">and</span> <span class="n">audited</span> <span class="mi">2643</span> <span class="n">packages</span> <span class="ow">in</span> <span class="mf">31.54</span><span class="n">s</span>
+</span></span><span class="line"><span class="cl"><span class="n">found</span> <span class="mi">0</span> <span class="n">vulnerabilities</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Start</span> <span class="n">blogging</span> <span class="n">with</span> <span class="n">Hexo</span><span class="o">!</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>現在的目錄結構變成這樣</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">test
+</span></span><span class="line"><span class="cl">├─node_modules
+</span></span><span class="line"><span class="cl">│  ├─...
+</span></span><span class="line"><span class="cl">├─scaffolds
+</span></span><span class="line"><span class="cl">├─source
+</span></span><span class="line"><span class="cl">│  └─_posts
+</span></span><span class="line"><span class="cl">└─themes
+</span></span><span class="line"><span class="cl">    └─landscape
+</span></span><span class="line"><span class="cl">        ├─languages
+</span></span><span class="line"><span class="cl">        ├─layout
+</span></span><span class="line"><span class="cl">        │  ├─_partial
+</span></span><span class="line"><span class="cl">        │  │  └─post
+</span></span><span class="line"><span class="cl">        │  └─_widget
+</span></span><span class="line"><span class="cl">        ├─scripts
+</span></span><span class="line"><span class="cl">        └─source
+</span></span><span class="line"><span class="cl">            ├─css
+</span></span><span class="line"><span class="cl">            │  ├─fonts
+</span></span><span class="line"><span class="cl">            │  ├─images
+</span></span><span class="line"><span class="cl">            │  ├─_partial
+</span></span><span class="line"><span class="cl">            │  └─_util
+</span></span><span class="line"><span class="cl">            ├─fancybox
+</span></span><span class="line"><span class="cl">            │  └─helpers
+</span></span><span class="line"><span class="cl">            └─js
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>進到資料夾中</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ cd test\
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="6">
+<li>安裝相關套件</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ npm install
+</span></span><span class="line"><span class="cl">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules\fsevents):
+</span></span><span class="line"><span class="cl">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.2: wanted {&#34;os&#34;:&#34;darwin&#34;,&#34;arch&#34;:&#34;any&#34;} (current: {&#34;os&#34;:&#34;win32&#34;,&#34;arch&#34;:&#34;x64&#34;})
+</span></span><span class="line"><span class="cl">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules\nunjucks\node_modules\fsevents):
+</span></span><span class="line"><span class="cl">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {&#34;os&#34;:&#34;darwin&#34;,&#34;arch&#34;:&#34;any&#34;} (current: {&#34;os&#34;:&#34;win32&#34;,&#34;arch&#34;:&#34;x64&#34;})
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">audited 2643 packages in 4.048s
+</span></span><span class="line"><span class="cl">found 0 vulnerabilities
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="建立網站">建立網站
+</h2><ol>
+<li>產生靜態網站</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">$</span> <span class="n">hexo</span> <span class="n">g</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Start</span> <span class="n">processing</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Files</span> <span class="n">loaded</span> <span class="ow">in</span> <span class="mi">191</span> <span class="n">ms</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">archives</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">blank</span><span class="o">.</span><span class="n">gif</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">.</span><span class="n">css</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">fancybox_loading</span><span class="o">.</span><span class="n">gif</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">.</span><span class="n">pack</span><span class="o">.</span><span class="n">js</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">.</span><span class="n">js</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">fancybox_loading</span><span class="err">@</span><span class="mi">2</span><span class="n">x</span><span class="o">.</span><span class="n">gif</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">fancybox_overlay</span><span class="o">.</span><span class="n">png</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">fancybox_sprite</span><span class="o">.</span><span class="n">png</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">fancybox_sprite</span><span class="err">@</span><span class="mi">2</span><span class="n">x</span><span class="o">.</span><span class="n">png</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">archives</span><span class="o">/</span><span class="mi">2020</span><span class="o">/</span><span class="mi">01</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">archives</span><span class="o">/</span><span class="mi">2020</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">css</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">fontawesome</span><span class="o">-</span><span class="n">webfont</span><span class="o">.</span><span class="n">eot</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">helpers</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">-</span><span class="n">media</span><span class="o">.</span><span class="n">js</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">helpers</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">-</span><span class="n">buttons</span><span class="o">.</span><span class="n">css</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">js</span><span class="o">/</span><span class="n">script</span><span class="o">.</span><span class="n">js</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">helpers</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">-</span><span class="n">thumbs</span><span class="o">.</span><span class="n">css</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">helpers</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">-</span><span class="n">thumbs</span><span class="o">.</span><span class="n">js</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">css</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">fontawesome</span><span class="o">-</span><span class="n">webfont</span><span class="o">.</span><span class="n">woff</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">helpers</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">-</span><span class="n">buttons</span><span class="o">.</span><span class="n">js</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">helpers</span><span class="o">/</span><span class="n">fancybox_buttons</span><span class="o">.</span><span class="n">png</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">css</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">fontawesome</span><span class="o">-</span><span class="n">webfont</span><span class="o">.</span><span class="n">svg</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">css</span><span class="o">/</span><span class="n">style</span><span class="o">.</span><span class="n">css</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">css</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">fontawesome</span><span class="o">-</span><span class="n">webfont</span><span class="o">.</span><span class="n">ttf</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">css</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">FontAwesome</span><span class="o">.</span><span class="n">otf</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="mi">2020</span><span class="o">/</span><span class="mi">01</span><span class="o">/</span><span class="mi">03</span><span class="o">/</span><span class="n">hello</span><span class="o">-</span><span class="n">world</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">css</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">banner</span><span class="o">.</span><span class="n">jpg</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="mi">28</span> <span class="n">files</span> <span class="n">generated</span> <span class="ow">in</span> <span class="mi">533</span> <span class="n">ms</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>多了一個 <code>public\</code> 資料夾出來，目錄結構如下</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">public
+</span></span><span class="line"><span class="cl">├─2020
+</span></span><span class="line"><span class="cl">│  └─01
+</span></span><span class="line"><span class="cl">│      └─03
+</span></span><span class="line"><span class="cl">│          └─hello-world
+</span></span><span class="line"><span class="cl">├─archives
+</span></span><span class="line"><span class="cl">│  └─2020
+</span></span><span class="line"><span class="cl">│      └─01
+</span></span><span class="line"><span class="cl">├─css
+</span></span><span class="line"><span class="cl">│  ├─fonts
+</span></span><span class="line"><span class="cl">│  └─images
+</span></span><span class="line"><span class="cl">├─fancybox
+</span></span><span class="line"><span class="cl">│  └─helpers
+</span></span><span class="line"><span class="cl">└─js
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>啟動本地服務器</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ hexo server
+</span></span><span class="line"><span class="cl">INFO  Start processing
+</span></span><span class="line"><span class="cl">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>前往 http://localhost:4000 顯示範例網站
+<img src="/hexo-new-site.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="hexo-new-site"
+	
+	
+></li>
+<li><code>Ctrl+ C</code> 停止服務器</li>
+</ol>
+<h2 id="建立文章">建立文章
+</h2><ol>
+<li>執行創建文章的指令</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ hexo new &#34;post title&#34;
+</span></span><span class="line"><span class="cl">INFO  Created: ~\Desktop\test\source\_posts\post-title.md
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>在 <code>\source\_posts</code> 底下新增了一個叫 <code>post-title.md</code> 的檔案
+打開檔案後，可以看到已經有些內容在裡面
+是剛剛打的標題和創建文章的時間</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: post title
+</span></span><span class="line"><span class="cl">date: 2020-01-03 23:25:41
+</span></span><span class="line"><span class="cl">tags:
+</span></span><span class="line"><span class="cl">---
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>試著在下面打一些內容，並儲存</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">---</span>
+</span></span><span class="line"><span class="cl"><span class="n">title</span><span class="p">:</span> <span class="n">post</span> <span class="n">title</span>
+</span></span><span class="line"><span class="cl"><span class="n">date</span><span class="p">:</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">03</span> <span class="mi">23</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mi">41</span>
+</span></span><span class="line"><span class="cl"><span class="n">tags</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="o">---</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># H1</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## H2</span>
+</span></span><span class="line"><span class="cl"><span class="c1">### H3</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#### H4</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##### H5</span>
+</span></span><span class="line"><span class="cl"><span class="c1">###### H6</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">_下劃線_</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">**</span><span class="err">兩個星號</span><span class="o">**</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">~~</span><span class="err">兩個波浪</span><span class="o">~~</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="err">引用區塊</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">-</span> <span class="err">無序列表</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span> <span class="err">無序列表</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span> <span class="err">無序列表</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">1.</span> <span class="err">有序列表</span>
+</span></span><span class="line"><span class="cl"><span class="mf">2.</span> <span class="err">有序列表</span>
+</span></span><span class="line"><span class="cl"><span class="mf">3.</span> <span class="err">有序列表</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="err">連結文字</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">頭尾使用</span> <span class="err">`反引號`</span> <span class="err">包起來</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">​```</span><span class="n">javascript</span>
+</span></span><span class="line"><span class="cl"><span class="k">var</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">&#34;JavaScript&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">alert</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="err">``</span> <span class="err">`</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>再次產生靜態網站</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">$</span> <span class="n">hexo</span> <span class="n">g</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Start</span> <span class="n">processing</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Files</span> <span class="n">loaded</span> <span class="ow">in</span> <span class="mi">168</span> <span class="n">ms</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">archives</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="mi">2020</span><span class="o">/</span><span class="mi">01</span><span class="o">/</span><span class="mi">03</span><span class="o">/</span><span class="n">hello</span><span class="o">-</span><span class="n">world</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">archives</span><span class="o">/</span><span class="mi">2020</span><span class="o">/</span><span class="mi">01</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="n">archives</span><span class="o">/</span><span class="mi">2020</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Generated</span><span class="p">:</span> <span class="mi">2020</span><span class="o">/</span><span class="mi">01</span><span class="o">/</span><span class="mi">03</span><span class="o">/</span><span class="n">post</span><span class="o">-</span><span class="n">title</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="mi">6</span> <span class="n">files</span> <span class="n">generated</span> <span class="ow">in</span> <span class="mi">52</span> <span class="n">ms</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>再次啟動服務器</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ hexo server
+</span></span><span class="line"><span class="cl">INFO  Start processing
+</span></span><span class="line"><span class="cl">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="6">
+<li>前往 http://localhost:4000/test/2020/01/03/post-title/ 可以看到新文章出現
+<img src="/hexo-new-post.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="hexo-new-post"
+	
+	
+></li>
+</ol>
+<h2 id="部署網站">部署網站
+</h2><ol>
+<li>安裝 Git 部署套件</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="err">$</span><span class="w"> </span><span class="nx">npm</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">hexo</span><span class="o">-</span><span class="nx">deployer</span><span class="o">-</span><span class="nx">git</span><span class="w"> </span><span class="o">--</span><span class="nx">save</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">npm</span><span class="w"> </span><span class="nx">WARN</span><span class="w"> </span><span class="nx">optional</span><span class="w"> </span><span class="nx">SKIPPING</span><span class="w"> </span><span class="nx">OPTIONAL</span><span class="w"> </span><span class="nx">DEPENDENCY</span><span class="p">:</span><span class="w"> </span><span class="nx">fsevents</span><span class="err">@</span><span class="mf">2.1.2</span><span class="w"> </span><span class="p">(</span><span class="nx">node_modules</span><span class="err">\</span><span class="nx">fsevents</span><span class="p">):</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">npm</span><span class="w"> </span><span class="nx">WARN</span><span class="w"> </span><span class="nx">notsup</span><span class="w"> </span><span class="nx">SKIPPING</span><span class="w"> </span><span class="nx">OPTIONAL</span><span class="w"> </span><span class="nx">DEPENDENCY</span><span class="p">:</span><span class="w"> </span><span class="nx">Unsupported</span><span class="w"> </span><span class="nx">platform</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">fsevents</span><span class="err">@</span><span class="mf">2.1.2</span><span class="p">:</span><span class="w"> </span><span class="nx">wanted</span><span class="w"> </span><span class="p">{</span><span class="s">&#34;os&#34;</span><span class="p">:</span><span class="s">&#34;darwin&#34;</span><span class="p">,</span><span class="s">&#34;arch&#34;</span><span class="p">:</span><span class="s">&#34;any&#34;</span><span class="p">}</span><span class="w"> </span><span class="p">(</span><span class="nx">current</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s">&#34;os&#34;</span><span class="p">:</span><span class="s">&#34;win32&#34;</span><span class="p">,</span><span class="s">&#34;arch&#34;</span><span class="p">:</span><span class="s">&#34;x64&#34;</span><span class="p">})</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">npm</span><span class="w"> </span><span class="nx">WARN</span><span class="w"> </span><span class="nx">optional</span><span class="w"> </span><span class="nx">SKIPPING</span><span class="w"> </span><span class="nx">OPTIONAL</span><span class="w"> </span><span class="nx">DEPENDENCY</span><span class="p">:</span><span class="w"> </span><span class="nx">fsevents</span><span class="err">@</span><span class="mf">1.2.11</span><span class="w"> </span><span class="p">(</span><span class="nx">node_modules</span><span class="err">\</span><span class="nx">nunjucks</span><span class="err">\</span><span class="nx">node_modules</span><span class="err">\</span><span class="nx">fsevents</span><span class="p">):</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">npm</span><span class="w"> </span><span class="nx">WARN</span><span class="w"> </span><span class="nx">notsup</span><span class="w"> </span><span class="nx">SKIPPING</span><span class="w"> </span><span class="nx">OPTIONAL</span><span class="w"> </span><span class="nx">DEPENDENCY</span><span class="p">:</span><span class="w"> </span><span class="nx">Unsupported</span><span class="w"> </span><span class="nx">platform</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">fsevents</span><span class="err">@</span><span class="mf">1.2.11</span><span class="p">:</span><span class="w"> </span><span class="nx">wanted</span><span class="w"> </span><span class="p">{</span><span class="s">&#34;os&#34;</span><span class="p">:</span><span class="s">&#34;darwin&#34;</span><span class="p">,</span><span class="s">&#34;arch&#34;</span><span class="p">:</span><span class="s">&#34;any&#34;</span><span class="p">}</span><span class="w"> </span><span class="p">(</span><span class="nx">current</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s">&#34;os&#34;</span><span class="p">:</span><span class="s">&#34;win32&#34;</span><span class="p">,</span><span class="s">&#34;arch&#34;</span><span class="p">:</span><span class="s">&#34;x64&#34;</span><span class="p">})</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="o">+</span><span class="w"> </span><span class="nx">hexo</span><span class="o">-</span><span class="nx">deployer</span><span class="o">-</span><span class="nx">git</span><span class="err">@</span><span class="mf">2.1.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">added</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="kn">package</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nx">contributor</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">audited</span><span class="w"> </span><span class="mi">2744</span><span class="w"> </span><span class="nx">packages</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="mf">6.991</span><span class="nx">s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nx">found</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nx">vulnerabilities</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>開啟 <code>_config.yml</code>，編寫以下的值，並儲存檔案</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># URL
+</span></span><span class="line"><span class="cl">url: https://&lt;username&gt;.github.io
+</span></span><span class="line"><span class="cl">root: /&lt;reponame&gt;/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">deploy:
+</span></span><span class="line"><span class="cl">  type: git
+</span></span><span class="line"><span class="cl">  repo: git@github.com:&lt;username&gt;/&lt;reponame&gt;.git
+</span></span><span class="line"><span class="cl">  branch: master
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>部署到 GitHub</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">$</span> <span class="n">hexo</span> <span class="n">d</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Deploying</span><span class="p">:</span> <span class="n">git</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Setting</span> <span class="n">up</span> <span class="n">Git</span> <span class="n">deployment</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="n">Initialized</span> <span class="n">empty</span> <span class="n">Git</span> <span class="n">repository</span> <span class="ow">in</span> <span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">test</span><span class="o">/.</span><span class="n">deploy_git</span><span class="o">/.</span><span class="n">git</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">master</span> <span class="p">(</span><span class="n">root</span><span class="o">-</span><span class="n">commit</span><span class="p">)</span> <span class="mi">5</span><span class="n">f12877</span><span class="p">]</span> <span class="n">First</span> <span class="n">commit</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">0</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">),</span> <span class="mi">0</span> <span class="n">deletions</span><span class="p">(</span><span class="o">-</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">placeholder</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Clearing</span> <span class="o">.</span><span class="n">deploy_git</span> <span class="n">folder</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Copying</span> <span class="n">files</span> <span class="n">from</span> <span class="n">public</span> <span class="n">folder</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Copying</span> <span class="n">files</span> <span class="n">from</span> <span class="n">extend</span> <span class="n">dirs</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="n">warning</span><span class="p">:</span> <span class="n">LF</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">CRLF</span> <span class="ow">in</span> <span class="mi">2020</span><span class="o">/</span><span class="mi">01</span><span class="o">/</span><span class="mi">03</span><span class="o">/</span><span class="n">hello</span><span class="o">-</span><span class="n">world</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">The</span> <span class="n">file</span> <span class="n">will</span> <span class="n">have</span> <span class="n">its</span> <span class="n">original</span> <span class="n">line</span> <span class="n">endings</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">working</span> <span class="n">directory</span>
+</span></span><span class="line"><span class="cl"><span class="n">warning</span><span class="p">:</span> <span class="n">LF</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">CRLF</span> <span class="ow">in</span> <span class="mi">2020</span><span class="o">/</span><span class="mi">01</span><span class="o">/</span><span class="mi">03</span><span class="o">/</span><span class="n">post</span><span class="o">-</span><span class="n">title</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">The</span> <span class="n">file</span> <span class="n">will</span> <span class="n">have</span> <span class="n">its</span> <span class="n">original</span> <span class="n">line</span> <span class="n">endings</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">working</span> <span class="n">directory</span>
+</span></span><span class="line"><span class="cl"><span class="n">warning</span><span class="p">:</span> <span class="n">LF</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">CRLF</span> <span class="ow">in</span> <span class="n">archives</span><span class="o">/</span><span class="mi">2020</span><span class="o">/</span><span class="mi">01</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">The</span> <span class="n">file</span> <span class="n">will</span> <span class="n">have</span> <span class="n">its</span> <span class="n">original</span> <span class="n">line</span> <span class="n">endings</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">working</span> <span class="n">directory</span>
+</span></span><span class="line"><span class="cl"><span class="n">warning</span><span class="p">:</span> <span class="n">LF</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">CRLF</span> <span class="ow">in</span> <span class="n">archives</span><span class="o">/</span><span class="mi">2020</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">The</span> <span class="n">file</span> <span class="n">will</span> <span class="n">have</span> <span class="n">its</span> <span class="n">original</span> <span class="n">line</span> <span class="n">endings</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">working</span> <span class="n">directory</span>
+</span></span><span class="line"><span class="cl"><span class="n">warning</span><span class="p">:</span> <span class="n">LF</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">CRLF</span> <span class="ow">in</span> <span class="n">archives</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">The</span> <span class="n">file</span> <span class="n">will</span> <span class="n">have</span> <span class="n">its</span> <span class="n">original</span> <span class="n">line</span> <span class="n">endings</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">working</span> <span class="n">directory</span>
+</span></span><span class="line"><span class="cl"><span class="n">warning</span><span class="p">:</span> <span class="n">LF</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">CRLF</span> <span class="ow">in</span> <span class="n">css</span><span class="o">/</span><span class="n">style</span><span class="o">.</span><span class="n">css</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">The</span> <span class="n">file</span> <span class="n">will</span> <span class="n">have</span> <span class="n">its</span> <span class="n">original</span> <span class="n">line</span> <span class="n">endings</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">working</span> <span class="n">directory</span>
+</span></span><span class="line"><span class="cl"><span class="n">warning</span><span class="p">:</span> <span class="n">LF</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">CRLF</span> <span class="ow">in</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">helpers</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">-</span><span class="n">buttons</span><span class="o">.</span><span class="n">css</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">The</span> <span class="n">file</span> <span class="n">will</span> <span class="n">have</span> <span class="n">its</span> <span class="n">original</span> <span class="n">line</span> <span class="n">endings</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">working</span> <span class="n">directory</span>
+</span></span><span class="line"><span class="cl"><span class="n">warning</span><span class="p">:</span> <span class="n">LF</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">CRLF</span> <span class="ow">in</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">helpers</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">-</span><span class="n">buttons</span><span class="o">.</span><span class="n">js</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">The</span> <span class="n">file</span> <span class="n">will</span> <span class="n">have</span> <span class="n">its</span> <span class="n">original</span> <span class="n">line</span> <span class="n">endings</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">working</span> <span class="n">directory</span>
+</span></span><span class="line"><span class="cl"><span class="n">warning</span><span class="p">:</span> <span class="n">LF</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">CRLF</span> <span class="ow">in</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">helpers</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">-</span><span class="n">media</span><span class="o">.</span><span class="n">js</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">The</span> <span class="n">file</span> <span class="n">will</span> <span class="n">have</span> <span class="n">its</span> <span class="n">original</span> <span class="n">line</span> <span class="n">endings</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">working</span> <span class="n">directory</span>
+</span></span><span class="line"><span class="cl"><span class="n">warning</span><span class="p">:</span> <span class="n">LF</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">CRLF</span> <span class="ow">in</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">helpers</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">-</span><span class="n">thumbs</span><span class="o">.</span><span class="n">css</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">The</span> <span class="n">file</span> <span class="n">will</span> <span class="n">have</span> <span class="n">its</span> <span class="n">original</span> <span class="n">line</span> <span class="n">endings</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">working</span> <span class="n">directory</span>
+</span></span><span class="line"><span class="cl"><span class="n">warning</span><span class="p">:</span> <span class="n">LF</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">CRLF</span> <span class="ow">in</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">helpers</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">-</span><span class="n">thumbs</span><span class="o">.</span><span class="n">js</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">The</span> <span class="n">file</span> <span class="n">will</span> <span class="n">have</span> <span class="n">its</span> <span class="n">original</span> <span class="n">line</span> <span class="n">endings</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">working</span> <span class="n">directory</span>
+</span></span><span class="line"><span class="cl"><span class="n">warning</span><span class="p">:</span> <span class="n">LF</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">CRLF</span> <span class="ow">in</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">.</span><span class="n">css</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">The</span> <span class="n">file</span> <span class="n">will</span> <span class="n">have</span> <span class="n">its</span> <span class="n">original</span> <span class="n">line</span> <span class="n">endings</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">working</span> <span class="n">directory</span>
+</span></span><span class="line"><span class="cl"><span class="n">warning</span><span class="p">:</span> <span class="n">LF</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">CRLF</span> <span class="ow">in</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">.</span><span class="n">js</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">The</span> <span class="n">file</span> <span class="n">will</span> <span class="n">have</span> <span class="n">its</span> <span class="n">original</span> <span class="n">line</span> <span class="n">endings</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">working</span> <span class="n">directory</span>
+</span></span><span class="line"><span class="cl"><span class="n">warning</span><span class="p">:</span> <span class="n">LF</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">CRLF</span> <span class="ow">in</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">.</span><span class="n">pack</span><span class="o">.</span><span class="n">js</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">The</span> <span class="n">file</span> <span class="n">will</span> <span class="n">have</span> <span class="n">its</span> <span class="n">original</span> <span class="n">line</span> <span class="n">endings</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">working</span> <span class="n">directory</span>
+</span></span><span class="line"><span class="cl"><span class="n">warning</span><span class="p">:</span> <span class="n">LF</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">CRLF</span> <span class="ow">in</span> <span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">The</span> <span class="n">file</span> <span class="n">will</span> <span class="n">have</span> <span class="n">its</span> <span class="n">original</span> <span class="n">line</span> <span class="n">endings</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">working</span> <span class="n">directory</span>
+</span></span><span class="line"><span class="cl"><span class="n">warning</span><span class="p">:</span> <span class="n">LF</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span> <span class="n">by</span> <span class="n">CRLF</span> <span class="ow">in</span> <span class="n">js</span><span class="o">/</span><span class="n">script</span><span class="o">.</span><span class="n">js</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">The</span> <span class="n">file</span> <span class="n">will</span> <span class="n">have</span> <span class="n">its</span> <span class="n">original</span> <span class="n">line</span> <span class="n">endings</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">working</span> <span class="n">directory</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">master</span> <span class="mi">4</span><span class="n">b0880d</span><span class="p">]</span> <span class="n">Site</span> <span class="n">updated</span><span class="p">:</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">04</span> <span class="mi">11</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mi">09</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">30</span> <span class="n">files</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">6185</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="mi">2020</span><span class="o">/</span><span class="mi">01</span><span class="o">/</span><span class="mi">03</span><span class="o">/</span><span class="n">hello</span><span class="o">-</span><span class="n">world</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="mi">2020</span><span class="o">/</span><span class="mi">01</span><span class="o">/</span><span class="mi">03</span><span class="o">/</span><span class="n">post</span><span class="o">-</span><span class="n">title</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">archives</span><span class="o">/</span><span class="mi">2020</span><span class="o">/</span><span class="mi">01</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">archives</span><span class="o">/</span><span class="mi">2020</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">archives</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">css</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">FontAwesome</span><span class="o">.</span><span class="n">otf</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">css</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">fontawesome</span><span class="o">-</span><span class="n">webfont</span><span class="o">.</span><span class="n">eot</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">css</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">fontawesome</span><span class="o">-</span><span class="n">webfont</span><span class="o">.</span><span class="n">svg</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">css</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">fontawesome</span><span class="o">-</span><span class="n">webfont</span><span class="o">.</span><span class="n">ttf</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">css</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">fontawesome</span><span class="o">-</span><span class="n">webfont</span><span class="o">.</span><span class="n">woff</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">css</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">banner</span><span class="o">.</span><span class="n">jpg</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">css</span><span class="o">/</span><span class="n">style</span><span class="o">.</span><span class="n">css</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">blank</span><span class="o">.</span><span class="n">gif</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">fancybox_loading</span><span class="o">.</span><span class="n">gif</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">fancybox_loading</span><span class="err">@</span><span class="mi">2</span><span class="n">x</span><span class="o">.</span><span class="n">gif</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">fancybox_overlay</span><span class="o">.</span><span class="n">png</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">fancybox_sprite</span><span class="o">.</span><span class="n">png</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">fancybox_sprite</span><span class="err">@</span><span class="mi">2</span><span class="n">x</span><span class="o">.</span><span class="n">png</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">helpers</span><span class="o">/</span><span class="n">fancybox_buttons</span><span class="o">.</span><span class="n">png</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">helpers</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">-</span><span class="n">buttons</span><span class="o">.</span><span class="n">css</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">helpers</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">-</span><span class="n">buttons</span><span class="o">.</span><span class="n">js</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">helpers</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">-</span><span class="n">media</span><span class="o">.</span><span class="n">js</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">helpers</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">-</span><span class="n">thumbs</span><span class="o">.</span><span class="n">css</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">helpers</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">-</span><span class="n">thumbs</span><span class="o">.</span><span class="n">js</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">.</span><span class="n">css</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">.</span><span class="n">js</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">fancybox</span><span class="o">/</span><span class="n">jquery</span><span class="o">.</span><span class="n">fancybox</span><span class="o">.</span><span class="n">pack</span><span class="o">.</span><span class="n">js</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</span></span><span class="line"><span class="cl"> <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">js</span><span class="o">/</span><span class="n">script</span><span class="o">.</span><span class="n">js</span>
+</span></span><span class="line"><span class="cl"> <span class="n">delete</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">placeholder</span>
+</span></span><span class="line"><span class="cl"><span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">48</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">48</span><span class="o">/</span><span class="mi">48</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Delta</span> <span class="n">compression</span> <span class="n">using</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">8</span> <span class="n">threads</span>
+</span></span><span class="line"><span class="cl"><span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">38</span><span class="o">/</span><span class="mi">38</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Writing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">48</span><span class="o">/</span><span class="mi">48</span><span class="p">),</span> <span class="mf">508.32</span> <span class="n">KiB</span> <span class="o">|</span> <span class="mf">2.35</span> <span class="n">MiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Total</span> <span class="mi">48</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">5</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">remote</span><span class="p">:</span> <span class="n">Resolving</span> <span class="n">deltas</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">5</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">To</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">annkuoQ</span><span class="o">/</span><span class="n">test</span><span class="o">.</span><span class="n">git</span>
+</span></span><span class="line"><span class="cl"> <span class="o">+</span> <span class="mf">6e14434</span><span class="o">...</span><span class="n">e701c89</span> <span class="n">HEAD</span> <span class="o">-&gt;</span> <span class="n">master</span> <span class="p">(</span><span class="n">forced</span> <span class="n">update</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Branch</span> <span class="s1">&#39;master&#39;</span> <span class="n">set</span> <span class="n">up</span> <span class="n">to</span> <span class="n">track</span> <span class="n">remote</span> <span class="n">branch</span> <span class="s1">&#39;master&#39;</span> <span class="n">from</span> <span class="s1">&#39;git@github.com:annkuoQ/test.git&#39;</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">INFO</span>  <span class="n">Deploy</span> <span class="n">done</span><span class="p">:</span> <span class="n">git</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>前往 <a class="link" href="https://annkuoQ.github.io/test"  target="_blank" rel="noopener"
+    >https://annkuoQ.github.io/test</a> 就可以看到自己的網站囉
+(開啟 GitHub Pages 功能需要一點時間，若頁面還沒出來，讓子彈飛一下)</li>
+</ol>
+<h2 id="參考資料">參考資料
+</h2><ul>
+<li><a class="link" href="https://hexo.io/docs/index.html"  target="_blank" rel="noopener"
+    >Hexo 官方文件</a></li>
+<li><a class="link" href="https://www.youtube.com/playlist?list=PLD5dyQmlN6xPqBV0cxO7zAe1C8OmDPqfX"  target="_blank" rel="noopener"
+    >Hexo静态网页制作教程</a></li>
+<li><a class="link" href="https://www.larrynote.com/website-service/6590/"  target="_blank" rel="noopener"
+    >Hexo + Github Pages：手把手教你打造免費個人部落格</a></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/hexo/">Hexo</a>
+        
+            <a href="/tags/github-pages/">Github Pages</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相關文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/%E5%9C%A8-hexo-%E5%AE%89%E8%A3%9D-utterances-%E7%95%99%E8%A8%80%E7%89%88/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">在 Hexo 安裝 utterances 留言版</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/2019-12-27-use-docusaurus-to-deploy-github-pages/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">用 Docusaurus 和 GitHub Pages 架網站</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-line-notify-%E7%99%BC%E9%80%9A%E7%9F%A5/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何使用 LINE Notify 發通知</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E5%88%A9%E7%94%A8-github-actions-%E7%9B%A3%E6%8E%A7%E7%B6%B2%E7%AB%99%E6%9C%8D%E5%8B%99-upptime/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">利用 GitHub Actions 監控網站服務 - Upptime</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E5%A6%82%E4%BD%95%E5%9C%A8-cmd-%E8%BC%B8%E5%87%BA-log-%E6%AA%94/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何在 CMD 輸出 log 檔</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="https://github.com/annkuoQ/blog-utterances"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 AnnKuoQ
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 建立 <br />
+        主題 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.32.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 設計
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.3cd37fefb8a5e8b1583cc4816c142139608f7385c41a4327a554c4f839ad4f34.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
