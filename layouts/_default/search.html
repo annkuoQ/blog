@@ -13,9 +13,12 @@
 <div class="search-result--list article-list--compact"></div>
 
 <script>
-    window.searchConfig = {{ .Site.Params.search | jsonify }};
+    // 直接定義搜尋配置，確保 indexURL 指向正確的 JSON 位置
+    window.searchConfig = {
+        "indexURL": "/blog/index.json"
+    };
 </script>
 
-{{/* 這裡改用普通載入方式，避開 js.Build 的錯誤 */}}
+{{/* 繼續使用手動載入的 JS */}}
 <script type="text/javascript" src="/blog/ts/search.js" defer></script>
 {{ end }}
