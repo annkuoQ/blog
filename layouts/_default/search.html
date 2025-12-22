@@ -10,56 +10,35 @@
 
 <script>
     (function() {
+        let isInitialLoad = true; // 旗標：用來判斷是否為第一次進入頁面
+
         const initSearch = () => {
             const input = document.getElementById('manual-search-input');
             const resultsContainer = document.getElementById('manual-search-results');
             
-            // 1. 處理搜尋頁面本體的邏輯
-            if (input && resultsContainer) {
-                // 如果網址有 keyword 參數，自動執行一次搜尋
-                const urlParams = new URLSearchParams(window.location.search);
-                const keyword = urlParams.get('keyword');
-                if (keyword) {
-                    input.value = keyword;
-                    performSearch(keyword, resultsContainer);
-                }
+            if (!input || !resultsContainer) return;
 
+            // 只有在「第一次載入」且「網址有參數」時才自動填入
+            if (isInitialLoad) {
+                const urlParams = new URLSearchParams(window.location.search);
+                const keywordFromUrl = urlParams.get('keyword');
+                
+                if (keywordFromUrl) {
+                    input.value = keywordFromUrl;
+                    performSearch(keywordFromUrl, resultsContainer);
+                }
+                isInitialLoad = false; // 填完後立刻關閉旗標，防止之後被 setInterval 重置
+            }
+
+            // 監聽手動輸入事件
+            if (!input.dataset.listenerBound) {
                 input.addEventListener('input', () => {
                     performSearch(input.value.trim(), resultsContainer);
                 });
-            }
-
-            // 2. 處理側欄搜尋框 (Sidebar) 的邏輯
-            // 嘗試抓取側欄的輸入框或表單
-            const sidebarInput = document.querySelector('.widget.search input') || document.querySelector('aside .search input');
-            const sidebarForm = document.querySelector('.widget.search form') || document.querySelector('aside .search form');
-
-            if (sidebarInput) {
-                // 攔截鍵盤 Enter 事件
-                sidebarInput.addEventListener('keydown', function(e) {
-                    if (e.key === 'Enter') {
-                        e.preventDefault();
-                        const query = this.value.trim();
-                        if (query) {
-                            window.location.href = `/blog/search/?keyword=${encodeURIComponent(query)}`;
-                        }
-                    }
-                });
-            }
-
-            // 如果側欄有 form，攔截其 submit 事件
-            if (sidebarForm) {
-                sidebarForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const q = sidebarForm.querySelector('input').value.trim();
-                    if (q) {
-                        window.location.href = `/blog/search/?keyword=${encodeURIComponent(q)}`;
-                    }
-                });
+                input.dataset.listenerBound = "true";
             }
         };
 
-        // 核心搜尋邏輯
         function performSearch(query, container) {
             if (!query) {
                 container.innerHTML = "";
@@ -80,12 +59,12 @@
                 });
         }
 
-        // 確保 SPA 與直接載入都能執行
+        // 啟動監測
         document.addEventListener('DOMContentLoaded', initSearch);
         const checker = setInterval(() => {
             initSearch();
-            // 如果兩者都找到了，就停止檢查
-            if (document.getElementById('manual-search-input') && document.querySelector('.widget.search input')) {
+            // 如果搜尋框已經正確顯示且旗標已關閉，就停止檢查
+            if (document.getElementById('manual-search-input') && !isInitialLoad) {
                 clearInterval(checker);
             }
         }, 1000);
