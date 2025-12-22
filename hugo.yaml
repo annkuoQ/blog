@@ -70,7 +70,7 @@ params:
 
     widgets:
         homepage:
-#            - type: search
+            - type: search
 #            - type: archives
 #              params:
 #                  limit: 2
