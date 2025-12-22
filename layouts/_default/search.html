@@ -1,13 +1,14 @@
 {{ define "main" }}
-<div id="custom-search-page" style="padding: 20px;">
-    <h1 style="margin-bottom: 20px;">Search</h1>
-    <input type="text" id="search-input" placeholder="請輸入關鍵字（例如：OBS）..." 
-           style="width: 100%; padding: 15px; font-size: 18px; border: 2px solid var(--primary); border-radius: 10px; background: white; color: black !important; display: block;">
+<div id="search-wrapper" style="padding: 20px; max-width: 800px; margin: 0 auto;">
+    <h1 style="margin-bottom: 20px; color: var(--card-text-color-main);">Search</h1>
     
-    <div id="search-results" style="margin-top: 30px; min-height: 200px;">
+    <input type="text" id="search-input" placeholder="鍵入關鍵字開始搜尋..." 
+           style="width: 100%; padding: 15px; font-size: 18px; border: 2px solid var(--primary); border-radius: 10px; background: #fff !important; color: #000 !important;">
+    
+    <div id="search-results" style="margin-top: 30px;">
         </div>
 </div>
 
-{{/* 移除所有主題內部的 JS 呼叫，直接用我們寫好的 */}}
+{{/* 加上版本號避免快取 */}}
 <script src="/blog/ts/search.js?v={{ now.Unix }}"></script>
 {{ end }}
