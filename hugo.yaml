@@ -70,7 +70,7 @@ params:
         enabled: true
         provider: utterances
         utterances:
-            repo: https://github.com/annkuoQ/blog-utterances
+            repo: annkuoQ/blog-utterances
             issueTerm: pathname
             label: 
 
