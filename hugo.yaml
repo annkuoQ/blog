@@ -122,7 +122,8 @@ params:
     search:
         enable: true
         url: /search/
-
+        # 確保主題知道 index.json 的位置
+        indexPath: index.json
 
 ### Custom menu
 ### See https://stack.jimmycai.com/config/menu
