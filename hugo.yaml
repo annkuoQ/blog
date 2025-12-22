@@ -71,7 +71,7 @@ params:
         provider: utterances
         utterances:
             repo: annkuoQ/blog-utterances
-            issueTerm: pathname
+            issueTerm: title
             label: 
 
     widgets:
