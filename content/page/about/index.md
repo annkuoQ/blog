@@ -2,6 +2,7 @@
 title: "關於"
 slug: "about"
 layout: "page"
+comments: false
 ---
 頭髮很捲的人
 喜歡觀察
