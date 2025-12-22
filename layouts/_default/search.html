@@ -1,14 +1,50 @@
 {{ define "main" }}
-<div id="search-wrapper" style="padding: 20px; max-width: 800px; margin: 0 auto;">
-    <h1 style="margin-bottom: 20px; color: var(--card-text-color-main);">Search</h1>
+<div id="search-page-container" style="padding: 20px; max-width: 800px; margin: 0 auto;">
+    <h1 style="color: var(--card-text-color-main); margin-bottom: 20px;">Search</h1>
+    <input type="text" id="manual-search-input" placeholder="鍵入關鍵字開始搜尋..." 
+           style="width: 100%; padding: 15px; font-size: 18px; border-radius: 10px; border: 2px solid var(--primary); background: #fff; color: #000;">
     
-    <input type="text" id="search-input" placeholder="鍵入關鍵字開始搜尋..." 
-           style="width: 100%; padding: 15px; font-size: 18px; border: 2px solid var(--primary); border-radius: 10px; background: #fff !important; color: #000 !important;">
-    
-    <div id="search-results" style="margin-top: 30px;">
-        </div>
+    <div id="manual-search-results" style="margin-top: 30px;"></div>
 </div>
 
-{{/* 加上版本號避免快取 */}}
-<script src="/blog/ts/search.js?v={{ now.Unix }}"></script>
+<script>
+    // 使用立即執行函式避免污染全域環境
+    (function() {
+        const initSearch = () => {
+            const input = document.getElementById('manual-search-input');
+            const resultsContainer = document.getElementById('manual-search-results');
+            
+            if (!input || !resultsContainer) return;
+
+            input.addEventListener('input', () => {
+                const query = input.value.trim().toLowerCase();
+                if (!query) {
+                    resultsContainer.innerHTML = "";
+                    return;
+                }
+
+                // 修正路徑對接
+                fetch("/blog/index.json")
+                    .then(res => res.json())
+                    .then(data => {
+                        const matched = data.filter(item => 
+                            item.title.toLowerCase().includes(query) || 
+                            (item.content && item.content.toLowerCase().includes(query))
+                        );
+
+                        resultsContainer.innerHTML = matched.map(item => `
+                            <div style="padding: 15px; margin-bottom: 10px; background: var(--card-background); border-radius: 8px; border: 1px solid var(--border-color);">
+                                <a href="${item.uri}" style="color: var(--primary); font-weight: bold; text-decoration: none;">${item.title}</a>
+                            </div>
+                        `).join('');
+                    });
+            });
+        };
+
+        // 監聽 Stack 主題的頁面切換事件 (SPA 支援)
+        document.addEventListener('DOMContentLoaded', initSearch);
+        // 如果是透過連結跳轉進入
+        initSearch();
+    })();
+</script>
 {{ end }}
