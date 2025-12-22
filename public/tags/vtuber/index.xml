@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Vtuber on AnnKuoQ Blog</title>
+        <link>http://localhost:1313/blog/tags/vtuber/</link>
+        <description>Recent content in Vtuber on AnnKuoQ Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <copyright>AnnKuoQ</copyright>
+        <lastBuildDate>Sat, 19 Feb 2022 15:27:21 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/vtuber/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>介紹 VTuber 相關技術與軟體</title>
+        <link>http://localhost:1313/blog/2022-02-19-how-to-be-a-vtuber/</link>
+        <pubDate>Sat, 19 Feb 2022 15:27:21 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/2022-02-19-how-to-be-a-vtuber/</guid>
+        <description>&lt;p&gt;VTuber 是 Virtual YouTuber 的縮寫&lt;br&gt;
+就是虛擬形象結合真人的 YouTuber&lt;br&gt;
+透過捕捉真人的動作，讓虛擬人物有生動的表情與動作&lt;/p&gt;
+&lt;p&gt;其實現在的技術門檻降低很多了&lt;br&gt;
+網路上也有很多教學&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;本篇主要是講 3D VTuber&lt;br&gt;
+(因為我還沒研究到 2D 啊 @@)&lt;/p&gt;
+&lt;h2 id=&#34;概述&#34;&gt;概述
+&lt;/h2&gt;&lt;p&gt;我把它拆成三塊&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;3D 模型&lt;/li&gt;
+&lt;li&gt;動作捕捉&lt;/li&gt;
+&lt;li&gt;直播串流&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3d-模型&#34;&gt;3D 模型
+&lt;/h2&gt;&lt;p&gt;我不會建模&lt;br&gt;
+什麼 Unity, Blender, MMD 也沒聽過&lt;/p&gt;
+&lt;p&gt;沒關係～&lt;br&gt;
+你可以用這個 &lt;a class=&#34;link&#34; href=&#34;https://vroid.com/en/studio&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;VRoid Studio&lt;/a&gt; 免費輕鬆建模！&lt;br&gt;
+直接生成一個基本人物，然後去微調它裡面的設定&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./vroid-studio.png&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;五官、四肢、髮型、服裝都有很多預設可選擇&lt;br&gt;
+也能用滑鼠直接拉數值來調整&lt;/p&gt;
+&lt;p&gt;顏色 (Texture) 可以在裡面直接畫&lt;br&gt;
+或是在 Photoshop 畫完匯進去也可以喔&lt;/p&gt;
+&lt;p&gt;骨架 (Bones) 目前只有頭髮有支援&lt;br&gt;
+如果要更細緻就要找其他建模軟體了&lt;br&gt;
+但學習門檻會很高&lt;/p&gt;
+&lt;p&gt;解釋一下骨架要幹麻？&lt;br&gt;
+如果頭髮沒有骨架&lt;br&gt;
+當你轉頭的時候，頭髮就死板板的跟著轉&lt;br&gt;
+如果有骨架&lt;br&gt;
+頭髮就會隨著頭動的方向而擺動，比較像現實世界&lt;/p&gt;
+&lt;p&gt;然後還有衣服&lt;br&gt;
+除了可以使用內建的衣服，來改顏色與增減布料&lt;br&gt;
+也可以到 &lt;a class=&#34;link&#34; href=&#34;https://booth.pm/zh-tw/search/vroid&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;BOOTH&lt;/a&gt; 購買人家做好的成衣&lt;/p&gt;
+&lt;p&gt;最後完成了之後，你需要存兩種檔案&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.vroid&lt;/code&gt; (之後還能在 VRoid Studio 繼續編輯)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.vrm&lt;/code&gt; (模型完成檔)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;補充: VRoid Studio &lt;a class=&#34;link&#34; href=&#34;https://vroid.pixiv.help/hc/en-us/articles/360008211814-Can-I-use-VRoid-Studio-for-commercial-purposes-&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;可商用條款&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;動作捕捉&#34;&gt;動作捕捉
+&lt;/h2&gt;&lt;p&gt;這裡分成硬體和軟體&lt;br&gt;
+最簡單的硬體就是 Webcam&lt;br&gt;
+也是你在家遠距上班用的視訊鏡頭&lt;/p&gt;
+&lt;p&gt;軟體使用 &lt;a class=&#34;link&#34; href=&#34;https://www.vseeface.icu/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;VSeeFace&lt;/a&gt; 免費的動捕軟體&lt;br&gt;
+首先匯入你在 VRoid Studio 完成的 &lt;code&gt;.vrm&lt;/code&gt; 檔&lt;br&gt;
+然後插上 Webcam 攝影機&lt;/p&gt;
+&lt;p&gt;神奇的事就發生了~&lt;br&gt;
+你做什麼表情，模型就跟你做一樣的表情&lt;br&gt;
+注意: 這裡僅有臉部捕捉，若要手部或身體捕捉，就要有另外的設備&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./vseeface.png&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;VSeeFace 也是有很多可以微調的地方&lt;br&gt;
+自動眨眼、捕捉靈敏度、熱鍵切換表情等等&lt;br&gt;
+網路上有很多教學影片可以看&lt;br&gt;
+若有問題也可以使用&lt;a class=&#34;link&#34; href=&#34;https://twitter.com/emiliana_vt&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;推特&lt;/a&gt;聯絡開發者&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;補充: VSeeFace &lt;a class=&#34;link&#34; href=&#34;https://www.vseeface.icu/#terms-of-use&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;可商用條款&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;上面講的是臉部捕捉，那全身捕捉呢？&lt;br&gt;
+大概分為兩種，光學式和穿戴式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;光學式&lt;br&gt;
+要有一個攝影棚，架設很多攝影機&lt;br&gt;
+人身上穿很多點點的衣服 (電影幕後花絮常看到)&lt;br&gt;
+攝影機去捕捉點點的軌跡來記錄動作&lt;br&gt;
+這種一般人負擔不起的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;穿戴式&lt;br&gt;
+把好幾個感應器穿在身上各個部位&lt;br&gt;
+類似手機陀螺儀，可以偵測到你在移動&lt;br&gt;
+藉由無線網路回傳給接受器&lt;br&gt;
+有名的品牌有: Xsens, Rokoko, Neuron&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不過呢～&lt;br&gt;
+如果只是一般直播，臉部捕捉就夠了&lt;br&gt;
+除非是什麼演唱會之類的&lt;/p&gt;
+&lt;p&gt;(補充!!!)&lt;br&gt;
+後來我發現一個超厲害的軟體&lt;br&gt;
+可以透過 Webcam 來做到全身捕捉&lt;br&gt;
+就是 &lt;a class=&#34;link&#34; href=&#34;https://qiita.com/yukihiko_a/items/43d09db5628334789fab&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ThreeDPoseTracker&lt;/a&gt;&lt;br&gt;
+不過我電腦效能不夠，看來要升級 GPU 惹 QQ&lt;/p&gt;
+&lt;h2 id=&#34;直播串流&#34;&gt;直播串流
+&lt;/h2&gt;&lt;p&gt;免費直播軟體的霸主肯定是 &lt;a class=&#34;link&#34; href=&#34;https://obsproject.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OBS&lt;/a&gt; 沒錯&lt;br&gt;
+開放原始碼，而且擁有廣大的社群&lt;br&gt;
+有問題都可以到&lt;a class=&#34;link&#34; href=&#34;https://obsproject.com/forum/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官方論壇&lt;/a&gt;搜尋看看喔&lt;br&gt;
+也有很多外掛可以下載&lt;/p&gt;
+&lt;p&gt;你可以使用遊戲擷取 (Game Capture)來把 VSeeFace 擷取進畫面裡&lt;br&gt;
+然後把上下左右裁剪掉，就不會露出功能介面&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./obs-game-capture.png&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;補充: OBS &lt;a class=&#34;link&#34; href=&#34;https://obsproject.com/help&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;可商用條款&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;其他&#34;&gt;其他
+&lt;/h2&gt;&lt;h3 id=&#34;麥克風&#34;&gt;麥克風
+&lt;/h3&gt;&lt;p&gt;美美的皮，配上破破的聲音&lt;br&gt;
+肯定無法忍受啊&lt;/p&gt;
+&lt;p&gt;如果你環境很吵，又用電容式麥克風&lt;br&gt;
+那空調聲、滑鼠聲、媽媽叫吃飯都會收進去&lt;/p&gt;
+&lt;p&gt;如果用動圈式麥克風，因為比較不敏感&lt;br&gt;
+就不會什麼都收進去，但嘴巴要很靠近麥講話&lt;/p&gt;
+&lt;p&gt;如果你只有一個人的話，買 USB 麥克風即可&lt;br&gt;
+不要買 XLR 搞死自己，因為它還要接錄音介面&lt;/p&gt;
+&lt;h3 id=&#34;聊天室&#34;&gt;聊天室
+&lt;/h3&gt;&lt;p&gt;很多 V 都會把觀眾留言放在畫面上&lt;br&gt;
+那要怎麼用呢？&lt;br&gt;
+首先去直播聊天室按 &lt;code&gt;...&lt;/code&gt; &amp;gt; &lt;code&gt;在彈出式視窗中開啟聊天室&lt;/code&gt;&lt;br&gt;
+把網址複製到 OBS 的瀏覽器來源 (Browser Source)&lt;/p&gt;
+&lt;p&gt;你會發現&amp;hellip;背景怎麼有顏色，但別人的都是透明的啊&lt;br&gt;
+如果你剛好懂怎麼寫網頁，那就可以自己改 CSS&lt;/p&gt;
+&lt;p&gt;如果不懂就可以去 &lt;a class=&#34;link&#34; href=&#34;https://chatv2.septapus.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Chat v2.0 Style Generator&lt;/a&gt; 網站&lt;br&gt;
+修改自己想要的顏色與字型等&lt;br&gt;
+最後把下面的 CSS 複製到 OBS 中&lt;/p&gt;
+&lt;h3 id=&#34;配樂&#34;&gt;配樂
+&lt;/h3&gt;&lt;p&gt;一個人講話肯定很乾，這時來點配樂也是不錯的&lt;/p&gt;
+&lt;p&gt;但是要注意版權！建議使用 YouTube 的免費&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/audiolibrary&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;音樂庫&lt;/a&gt;&lt;br&gt;
+可以透過篩選找出不同的情境跟氛圍&lt;br&gt;
+每首歌有自己的授權類型，有些會需要註明出處喔&lt;/p&gt;
+&lt;h2 id=&#34;結語&#34;&gt;結語
+&lt;/h2&gt;&lt;p&gt;最後啊～&lt;br&gt;
+雖然這些軟體都是免費的&lt;br&gt;
+但你可能會發現自己的電腦跑不動&lt;br&gt;
+而且如果要直播，網路也要穩定才行&lt;br&gt;
+就要開始砸更多錢錢囉&lt;/p&gt;
+&lt;p&gt;另外有看過一個名言&lt;br&gt;
+皮讓人停下來，魂讓人留下來&lt;br&gt;
+如果皮很美，但講話/企劃內容很無聊&lt;br&gt;
+那也是無法留住人的&lt;/p&gt;
+&lt;p&gt;哎呀離題啦&lt;br&gt;
+總之經營 VTuber 是有很多眉角的&lt;br&gt;
+可不是只有技術方面要處理喔&lt;/p&gt;
+&lt;h2 id=&#34;參考資料&#34;&gt;參考資料
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://vroid.com/en/studio&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;VRoid Studio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.vseeface.icu/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;VSeeFace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://obsproject.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Open Broadcaster Software | OBS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

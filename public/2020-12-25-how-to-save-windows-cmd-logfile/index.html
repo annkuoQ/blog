@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr">
+    <head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="最近在學寫批次檔，需要輸出 log 檔作為紀錄，去網路搜尋之後，看到了有好幾種的指令，> output.log, 2> output.log, 2>> output.log, 1>&2...">
+<title>如何在 CMD 輸出 log 檔</title>
+
+<link rel='canonical' href='http://localhost:1313/blog/2020-12-25-how-to-save-windows-cmd-logfile/'>
+
+<link rel="stylesheet" href="http://localhost:1313/blog/scss/style.min.9181d21a9686d2b9df6804e8423ef89abbe3f2eaa68cdd1fe46406b71b17759c.css"><meta property='og:title' content="如何在 CMD 輸出 log 檔">
+<meta property='og:description' content="最近在學寫批次檔，需要輸出 log 檔作為紀錄，去網路搜尋之後，看到了有好幾種的指令，> output.log, 2> output.log, 2>> output.log, 1>&2...">
+<meta property='og:url' content='http://localhost:1313/blog/2020-12-25-how-to-save-windows-cmd-logfile/'>
+<meta property='og:site_name' content='AnnKuoQ Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='CMD' /><meta property='article:tag' content='windows' /><meta property='article:published_time' content='2020-12-25T22:57:47&#43;00:00'/><meta property='article:modified_time' content='2020-12-25T22:57:47&#43;00:00'/>
+<meta name="twitter:title" content="如何在 CMD 輸出 log 檔">
+<meta name="twitter:description" content="最近在學寫批次檔，需要輸出 log 檔作為紀錄，去網路搜尋之後，看到了有好幾種的指令，> output.log, 2> output.log, 2>> output.log, 1>&2...">
+    <link rel="shortcut icon" href="http://localhost:1313/blog/img/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "dark");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切換選單">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="http://localhost:1313/blog/">
+                
+                    <img src="http://localhost:1313/blog/img/avatar.png" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="http://localhost:1313/blog/">AnnKuoQ Blog</a></h1>
+            <h2 class="site-description">擺放各種筆記的地方</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='http://localhost:1313/blog/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='http://localhost:1313/blog/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='http://localhost:1313/blog/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='http://localhost:1313/blog/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目錄</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前置作業">前置作業</a></li>
+    <li><a href="#輸出-log">輸出 log</a>
+      <ol>
+        <li><a href="#測試一-dir">測試一: <code>dir</code></a></li>
+        <li><a href="#測試二-dir-alog">測試二: <code>dir &gt;a.log</code></a></li>
+        <li><a href="#測試三-dir-1blog">測試三: <code>dir 1&gt;b.log</code></a></li>
+        <li><a href="#測試四-dir-nopng">測試四: <code>dir no.png</code></a></li>
+        <li><a href="#測試五-dir-nopng-1clog">測試五: <code>dir no.png 1&gt;c.log</code></a></li>
+        <li><a href="#測試六-dir-nopng-2dlog">測試六: <code>dir no.png 2&gt;d.log</code></a></li>
+        <li><a href="#小結">小結</a></li>
+      </ol>
+    </li>
+    <li><a href="#合併不同類型的-log">合併不同類型的 log</a>
+      <ol>
+        <li><a href="#測試七-dir-nopng-elog-21">測試七: <code>dir no.png &gt;e.log 2&gt;&amp;1</code></a></li>
+        <li><a href="#測試八-dir-nopng-21-flog">測試八: <code>dir no.png 2&gt;&amp;1 &gt;f.log</code></a></li>
+        <li><a href="#測試九-dir-nopng-2glog-12">測試九: <code>dir no.png 2&gt;g.log 1&gt;&amp;2</code></a></li>
+        <li><a href="#小結-1">小結</a></li>
+      </ol>
+    </li>
+    <li><a href="#覆蓋或接續寫-log">覆蓋或接續寫 log</a>
+      <ol>
+        <li><a href="#測試十-type-emptylog-2hlog">測試十: <code>type empty.log 2&gt;h.log</code></a></li>
+        <li><a href="#測試十一-type-hahalog-2ilog">測試十一: <code>type haha.log 2&gt;&gt;i.log</code></a></li>
+        <li><a href="#小結-2">小結</a></li>
+      </ol>
+    </li>
+    <li><a href="#結論">結論</a></li>
+    <li><a href="#參考資料">參考資料</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="http://localhost:1313/blog/categories/%E8%B3%87%E5%B7%A5-/-%E7%A8%8B%E8%A8%AD/" >
+                資工 / 程設
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="http://localhost:1313/blog/2020-12-25-how-to-save-windows-cmd-logfile/">如何在 CMD 輸出 log 檔</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            最近在學寫批次檔，需要輸出 log 檔作為紀錄，去網路搜尋之後，看到了有好幾種的指令，&gt; output.log, 2&gt; output.log, 2&gt;&gt; output.log, 1&gt;&amp;2...
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2020-12-25T22:57:47Z'>2020-12-25</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>最近在學寫批次檔<br>
+需要輸出 log 檔作為紀錄<br>
+去網路搜尋之後<br>
+看到了有好幾種的指令</p>
+<!-- more -->
+<ul>
+<li><code>&gt; output.log</code></li>
+<li><code>2&gt; output.log</code></li>
+<li><code>2&gt;&gt; output.log</code></li>
+<li><code>1&gt;&amp;2</code></li>
+<li><code>2&gt;&amp;1</code></li>
+</ul>
+<p>對於一個門外漢來說<br>
+不如就直接 Trial and error 吧<br>
+(想直接看結論 <a class="link" href="#%e7%b5%90%e8%ab%96" >點此</a>)</p>
+<h2 id="前置作業">前置作業
+</h2><ol>
+<li>開啟檔案總管</li>
+<li>在 D 槽下新增一個 test 資料夾，並放入幾個檔案</li>
+<li>滑鼠點擊網址列</li>
+<li>輸入 cmd 並按下 Enter</li>
+<li>成功開啟 CMD (命令提示字元)，並且路徑是 <code>D:\test</code></li>
+</ol>
+<div align="center"><img src="./open-cmd.jpg"" width="700px"/></div>
+<h2 id="輸出-log">輸出 log
+</h2><h3 id="測試一-dir">測試一: <code>dir</code>
+</h3><p>先在 CMD 上用一個最簡單的指令 <code>dir</code><br>
+螢幕上列出了 <code>D:\test</code> 的目錄結構</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ dir
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">磁碟區 D 中的磁碟是 新增磁碟區
+</span></span><span class="line"><span class="cl">磁碟區序號:  XXXX-XXXX
+</span></span><span class="line"><span class="cl">D:\test 的目錄
+</span></span><span class="line"><span class="cl">2020/12/21  下午 08:37    &lt;DIR&gt;          .
+</span></span><span class="line"><span class="cl">2020/12/21  下午 08:37    &lt;DIR&gt;          ..
+</span></span><span class="line"><span class="cl">2020/10/14  下午 09:17             6,330 angry.png
+</span></span><span class="line"><span class="cl">2020/10/14  下午 09:17             8,192 crying.png
+</span></span><span class="line"><span class="cl">2020/10/14  下午 09:16             7,411 smile.png
+</span></span><span class="line"><span class="cl">2020/10/14  下午 09:18             8,004 sweating.png
+</span></span><span class="line"><span class="cl">               4 個檔案          29,937 位元組
+</span></span><span class="line"><span class="cl">               2 個目錄  362,101,317,632 位元組可用
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="測試二-dir-alog">測試二: <code>dir &gt;a.log</code>
+</h3><p>螢幕上沒出現東西<br>
+但多了一個 <code>a.log</code> 的檔案<br>
+打開來看是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">磁碟區 D 中的磁碟是 新增磁碟區
+</span></span><span class="line"><span class="cl">磁碟區序號:  XXXX-XXXX
+</span></span><span class="line"><span class="cl">D:\test 的目錄
+</span></span><span class="line"><span class="cl">2020/12/21  下午 08:37    &lt;DIR&gt;          .
+</span></span><span class="line"><span class="cl">2020/12/21  下午 08:37    &lt;DIR&gt;          ..
+</span></span><span class="line"><span class="cl">2020/10/14  下午 09:17             6,330 angry.png
+</span></span><span class="line"><span class="cl">2020/10/14  下午 09:17             8,192 crying.png
+</span></span><span class="line"><span class="cl">2020/10/14  下午 09:16             7,411 smile.png
+</span></span><span class="line"><span class="cl">2020/10/14  下午 09:18             8,004 sweating.png
+</span></span><span class="line"><span class="cl">               4 個檔案          29,937 位元組
+</span></span><span class="line"><span class="cl">               2 個目錄  362,101,317,632 位元組可用
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>a.log</code> 內容長得跟 &ldquo;測試一&rdquo; 的螢幕一樣<br>
+代表 <code>&gt;a.log</code> 成功把螢幕上的東西輸出到 log 檔中</p>
+<h3 id="測試三-dir-1blog">測試三: <code>dir 1&gt;b.log</code>
+</h3><p>螢幕還是沒出現東西<br>
+但多了一個 <code>b.log</code><br>
+打開來看是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">磁碟區 D 中的磁碟是 新增磁碟區
+</span></span><span class="line"><span class="cl">磁碟區序號:  XXXX-XXXX
+</span></span><span class="line"><span class="cl">D:\test 的目錄
+</span></span><span class="line"><span class="cl">2020/12/21  下午 08:37    &lt;DIR&gt;          .
+</span></span><span class="line"><span class="cl">2020/12/21  下午 08:37    &lt;DIR&gt;          ..
+</span></span><span class="line"><span class="cl">2020/12/25  下午 09:18               529 a.log
+</span></span><span class="line"><span class="cl">2020/10/14  下午 09:17             6,330 angry.png
+</span></span><span class="line"><span class="cl">2020/10/14  下午 09:17             8,192 crying.png
+</span></span><span class="line"><span class="cl">2020/10/14  下午 09:16             7,411 smile.png
+</span></span><span class="line"><span class="cl">2020/10/14  下午 09:18             8,004 sweating.png
+</span></span><span class="line"><span class="cl">               4 個檔案          29,937 位元組
+</span></span><span class="line"><span class="cl">               2 個目錄  362,101,317,632 位元組可用
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>除了多了一個 <code>a.log</code> 的檔案<br>
+其他跟 &ldquo;測試一&rdquo; 的結果相同<br>
+代表 <code>&gt;</code> 與 <code>1&gt;</code> 功能相同</p>
+<h3 id="測試四-dir-nopng">測試四: <code>dir no.png</code>
+</h3><p>再來用 dir 找一個不存在的檔案</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ dir no.png
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">磁碟區 D 中的磁碟是 新增磁碟區
+</span></span><span class="line"><span class="cl">磁碟區序號:  XXXX-XXXX
+</span></span><span class="line"><span class="cl">D:\test 的目錄
+</span></span><span class="line"><span class="cl">找不到檔案
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>螢幕上跑出 找不到檔案 的訊息</p>
+<h3 id="測試五-dir-nopng-1clog">測試五: <code>dir no.png 1&gt;c.log</code>
+</h3><p>接著使用 <code>1&gt;</code> 試著將錯誤訊息輸出到 log 檔</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ dir no.png 1&gt;c.log
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">找不到檔案
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>咦？螢幕上怎麼還有東西呢<br>
+而且 <code>c.log</code> 也有產生出來<br>
+打開來看是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">磁碟區 D 中的磁碟是 新增磁碟區
+</span></span><span class="line"><span class="cl">磁碟區序號:  XXXX-XXXX
+</span></span><span class="line"><span class="cl">D:\test 的目錄
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>喔～<br>
+錯誤訊息輸出到螢幕上<br>
+但沒有錯誤的部分輸出到 log 檔中了</p>
+<h3 id="測試六-dir-nopng-2dlog">測試六: <code>dir no.png 2&gt;d.log</code>
+</h3><p>這次用用看 <code>2&gt;</code> 看會有什麼效果</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ dir no.png 2&gt;d.log
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">磁碟區 D 中的磁碟是 新增磁碟區
+</span></span><span class="line"><span class="cl">磁碟區序號:  XXXX-XXXX
+</span></span><span class="line"><span class="cl">D:\test 的目錄
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>咦？螢幕變成輸出沒有錯誤的部分</p>
+<p>那 <code>d.log</code> 內容打開是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">找不到檔案
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>這個結果跟 &ldquo;測試五&rdquo; 完全相反呢！</p>
+<p>代表 <code>1&gt;</code> 輸出沒有錯誤的 log<br>
+<code>2&gt;</code> 輸出有錯誤的 log</p>
+<h3 id="小結">小結
+</h3><ul>
+<li><code>&gt;</code> 等於 <code>1&gt;</code>，負責輸出沒錯誤的部分<br>
+<code>2&gt;</code> 負責輸出有錯誤的部分</li>
+<li>1 的正式名稱為 <code>stdout</code> 標準輸出<br>
+2 的正式名稱為 <code>stderr</code> 標準錯誤輸出</li>
+</ul>
+<h2 id="合併不同類型的-log">合併不同類型的 log
+</h2><h3 id="測試七-dir-nopng-elog-21">測試七: <code>dir no.png &gt;e.log 2&gt;&amp;1</code>
+</h3><p>這次來試試 <code>2&gt;&amp;1</code></p>
+<p>螢幕上沒有東西<br>
+而 <code>e.log</code> 打開內容是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">磁碟區 D 中的磁碟是 新增磁碟區
+</span></span><span class="line"><span class="cl">磁碟區序號:  XXXX-XXXX
+</span></span><span class="line"><span class="cl">D:\test 的目錄
+</span></span><span class="line"><span class="cl">找不到檔案
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>喔～<br>
+沒錯誤的跟有錯誤的 log 都輸出到同個檔了呢</p>
+<p>原來 <code>&gt;e.log</code> 把 stdout 輸出到 log 檔中<br>
+<code>2&gt;&amp;1</code> 把 stderr 輸出到 stdout</p>
+<h3 id="測試八-dir-nopng-21-flog">測試八: <code>dir no.png 2&gt;&amp;1 &gt;f.log</code>
+</h3><p>這次把 <code>2&gt;&amp;1</code> 移到 <code>&gt;e.log</code> 前面</p>
+<p>螢幕上出現了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ dir no.png 2&gt;&amp;1 &gt;f.log
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">找不到檔案
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>f.log</code> 打開來內容是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">磁碟區 D 中的磁碟是 新增磁碟區
+</span></span><span class="line"><span class="cl">磁碟區序號:  XXXX-XXXX
+</span></span><span class="line"><span class="cl">D:\test 的目錄
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>這結果跟 &ldquo;測試五&rdquo; 一樣 (<code>1&gt;c.log</code>)<br>
+代表執行 <code>2&gt;&amp;1</code> 時， <code>&gt;f.log</code> 還未生效<br>
+所以 stderr 還是輸出到螢幕上了</p>
+<h3 id="測試九-dir-nopng-2glog-12">測試九: <code>dir no.png 2&gt;g.log 1&gt;&amp;2</code>
+</h3><p>這次改成輸出 stderr 到 log 檔<br>
+並把 stdout 輸出到 stderr</p>
+<p>結果螢幕沒有東西<br>
+而 <code>g.log</code> 打開來是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">磁碟區 D 中的磁碟是 新增磁碟區
+</span></span><span class="line"><span class="cl">磁碟區序號:  XXXX-XXXX
+</span></span><span class="line"><span class="cl">D:\test 的目錄
+</span></span><span class="line"><span class="cl">找不到檔案
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>這個結果跟 &ldquo;測試七&rdquo; 一模一樣 (<code>&gt;e.log 2&gt;&amp;1</code>)</p>
+<h3 id="小結-1">小結
+</h3><ul>
+<li><code>&gt;</code> 把螢幕上的 log 輸出到檔案</li>
+<li><code>&gt;&amp;</code> 把 stdout 輸出到 stderr 的輸入，或是把 stderr 輸出到 stdout 的輸入</li>
+</ul>
+<h2 id="覆蓋或接續寫-log">覆蓋或接續寫 log
+</h2><h3 id="測試十-type-emptylog-2hlog">測試十: <code>type empty.log 2&gt;h.log</code>
+</h3><p>這次試試 type 這個指令<br>
+可以把指定的檔案印在螢幕上<br>
+我們指定一個不存在的檔案</p>
+<p>螢幕上沒出現東西<br>
+但產生了 <code>h.log</code> 檔案<br>
+打開來是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">系統找不到指定的檔案。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接著新增一個名字叫 <code>empty.log</code> 的檔案<br>
+再次嘗試相同的指令</p>
+<p>結果螢幕上還是沒有東西<br>
+而且打開 <code>h.log</code> 也沒有內容<br>
+為什麼呢？</p>
+<p>因為 <code>2&gt;</code> 只會輸出錯誤訊息<br>
+然後 <code>empty.log</code> 這個檔案也確實存在<br>
+所以不會報錯說找不到檔案<br>
+沒有報錯當然就不會有錯誤訊息寫入 <code>h.log</code> 囉</p>
+<p>不過你可以發現～<br>
+就算沒有要輸出東西<br>
+這個 <code>h.log</code> 還是被清空了<br>
+原本裡面還寫著 &ldquo;系統找不到指定的檔案。&rdquo; 的訊息<br>
+現在已經不見了</p>
+<h3 id="測試十一-type-hahalog-2ilog">測試十一: <code>type haha.log 2&gt;&gt;i.log</code>
+</h3><p>這次我們用兩個大於 <code>&gt;&gt;</code><br>
+看看有什麼不同的效果<br>
+先叫 type 印一個不存在的檔案</p>
+<p>螢幕上沒有東西<br>
+打開 <code>i.log</code> 的內容是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">系統找不到指定的檔案。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接著執行相同的指令共三次</p>
+<p>螢幕依舊沒有東西<br>
+打開 <code>f.log</code> 的內容是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">系統找不到指定的檔案。
+</span></span><span class="line"><span class="cl">系統找不到指定的檔案。
+</span></span><span class="line"><span class="cl">系統找不到指定的檔案。
+</span></span><span class="line"><span class="cl">系統找不到指定的檔案。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>代表兩個大於會接續寫下去<br>
+而不是覆蓋掉檔案</p>
+<h3 id="小結-2">小結
+</h3><p>當 log 檔存在時</p>
+<ul>
+<li><code>&gt;</code> 會覆蓋掉檔案 (override)</li>
+<li><code>&gt;&gt;</code> 會從檔案結尾接續寫下去 (append)</li>
+</ul>
+<h2 id="結論">結論
+</h2><ul>
+<li>log 種類
+<ul>
+<li><code>stdout</code> 標準輸出: 代號為 <code>1</code>，正常執行時的 log</li>
+<li><code>stderr</code> 標準錯誤輸出: 代號為 <code>2</code>，出現錯誤時的 log</li>
+</ul>
+</li>
+<li>輸出 log 的指令
+<ul>
+<li><code>command &gt;file</code>: 輸出 stdout 到 file</li>
+<li><code>command 1&gt;file</code>: 同上</li>
+<li><code>command 2&gt;file</code>: 輸出 stderr 到 file</li>
+<li><code>command &gt;file 2&gt;&amp;1</code>: 將 stdout 和 stderr 同時輸出到 file</li>
+<li><code>command &gt;&gt;file</code>: 若 file 存在，就從結尾接續寫下去</li>
+</ul>
+</li>
+</ul>
+<h2 id="參考資料">參考資料
+</h2><ul>
+<li><a class="link" href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-xp/bb490982%28v=technet.10%29"  target="_blank" rel="noopener"
+    >Using command redirection operators | Microsoft Docs</a></li>
+<li><a class="link" href="https://www.robvanderwoude.com/redirection.php"  target="_blank" rel="noopener"
+    >Batch files - Redirection</a></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="http://localhost:1313/blog/tags/cmd/">CMD</a>
+        
+            <a href="http://localhost:1313/blog/tags/windows/">Windows</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相關文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="http://localhost:1313/blog/2021-02-03-how-to-use-line-notify-to-send-messages/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何使用 LINE Notify 發通知</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="http://localhost:1313/blog/2021-01-09-uptime-monitor-and-status-website-service-with-upptime/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">利用 GitHub Actions 監控網站服務 - Upptime</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="http://localhost:1313/blog/2020-03-09-add-utterances-comment-widget-to-hexo/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">在 Hexo 安裝 utterances 留言版</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="http://localhost:1313/blog/2020-01-03-use-hexo-to-deploy-github-pages/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">用 Hexo 和 GitHub Pages 架部落格</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="http://localhost:1313/blog/2019-12-27-use-docusaurus-to-deploy-github-pages/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">用 Docusaurus 和 GitHub Pages 架網站</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="https://github.com/annkuoQ/blog-utterances"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 AnnKuoQ
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 建立 <br />
+        主題 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.32.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 設計
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="http://localhost:1313/blog/ts/main.3cd37fefb8a5e8b1583cc4816c142139608f7385c41a4327a554c4f839ad4f34.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

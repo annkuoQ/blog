@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Windows on AnnKuoQ Blog</title>
+        <link>http://localhost:1313/blog/tags/windows/</link>
+        <description>Recent content in Windows on AnnKuoQ Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <copyright>AnnKuoQ</copyright>
+        <lastBuildDate>Wed, 03 Feb 2021 22:11:31 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/windows/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>如何使用 LINE Notify 發通知</title>
+        <link>http://localhost:1313/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</link>
+        <pubDate>Wed, 03 Feb 2021 22:11:31 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</guid>
+        <description>&lt;p&gt;最近做了一個監控的 bat&lt;br&gt;
+如果服務有發生問題就發通知提醒&lt;br&gt;
+而 LINE 是很多人都在用的通訊軟體&lt;br&gt;
+於是就把腦筋動到 LINE 上&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;LINE Notify 跟 LINE Bot 不同&lt;br&gt;
+Bot 超過額度需要收費，Notify 則是免費&lt;br&gt;
+但 Bot 有一些更進階的功能&lt;br&gt;
+像是可以利用官方帳號來推播訊息&lt;br&gt;
+不過我只是工作上使用，所以不需要用到&lt;/p&gt;
+&lt;h2 id=&#34;設定步驟&#34;&gt;設定步驟
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;到 &lt;a class=&#34;link&#34; href=&#34;https://notify-bot.line.me/zh_TW/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://notify-bot.line.me/zh_TW/&lt;/a&gt; 登入帳號&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;點擊右上角自己的名稱 &amp;gt; 個人頁面&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./my-page.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;點擊 &lt;code&gt;發行權杖&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;權杖名稱: 未來通知內容的 &amp;ldquo;開頭&amp;rdquo; 會出現這個名稱&lt;/li&gt;
+&lt;li&gt;選擇要接收通知的聊天室: 有兩種，只有自己、群組聊天室&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./generate-token.jpg&#34; width=&#34;300px&#34;/&gt;&lt;/div&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;點擊 &lt;code&gt;發行&lt;/code&gt; 之後，會顯示一串亂碼&lt;br&gt;
+先把它複製到別的地方保存&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./copy-token.jpg&#34; width=&#34;300px&#34;/&gt;&lt;/div&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;&lt;code&gt;已連動的服務&lt;/code&gt; 出現我們剛剛設定的東西&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./connected-services.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;LINE 出現 Notify 的訊息&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;已發行個人存取權杖。連動設定完成後，請將此帳號邀請至「XX」群組中
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./successfully-generated-token.jpg&#34; width=&#34;400px&#34;/&gt;&lt;/div&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;到要收通知的群組邀請 LINE Notify 進來&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打開命令提示字元，使用以下指令&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ curl -X POST -H &amp;#34;Authorization: Bearer XXXXXXXXXXXX&amp;#34; -F &amp;#34;message=Hello World&amp;#34; https://notify-api.line.me/api/notify
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;XXXXXXXXXXXX&lt;/code&gt; 要改成 &amp;ldquo;步驟 4&amp;rdquo; 的一串亂碼&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;message=&lt;/code&gt; 之後要接通知內文&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;收到通知啦~~~&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./curl-post.jpg&#34; width=&#34;400px&#34;/&gt;&lt;/div&gt;
+&lt;h2 id=&#34;後記&#34;&gt;後記
+&lt;/h2&gt;&lt;p&gt;原本 curl 用單引號&lt;br&gt;
+結果一直報錯&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ curl -X POST -H &amp;#39;Authorization: Bearer XXXXXXXXXXXX&amp;#39; -F &amp;#39;message=Hello World&amp;#39; https://notify-api.line.me/api/notify
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl: (6) Could not resolve host: Bearer
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl: (6) Could not resolve host: XXXXXXXXXXXX&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{&amp;#34;status&amp;#34;:401,&amp;#34;message&amp;#34;:&amp;#34;Missing authorization header&amp;#34;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;後來改成雙引號就 OK 了&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ curl -X POST -H &amp;#34;Authorization: Bearer XXXXXXXXXXXX&amp;#34; -F &amp;#34;message=Hello World&amp;#34; https://notify-api.line.me/api/notify
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{&amp;#34;status&amp;#34;:200,&amp;#34;message&amp;#34;:&amp;#34;ok&amp;#34;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;參考資料&#34;&gt;參考資料
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://notify-bot.line.me/doc/en/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LINE Notify API Document&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://engineering.linecorp.com/zh-hant/blog/tag/line-notify-tw/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LINE Notify Tag Archives - LINE ENGINEERING&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>如何在 CMD 輸出 log 檔</title>
+        <link>http://localhost:1313/blog/2020-12-25-how-to-save-windows-cmd-logfile/</link>
+        <pubDate>Fri, 25 Dec 2020 22:57:47 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/2020-12-25-how-to-save-windows-cmd-logfile/</guid>
+        <description>&lt;p&gt;最近在學寫批次檔&lt;br&gt;
+需要輸出 log 檔作為紀錄&lt;br&gt;
+去網路搜尋之後&lt;br&gt;
+看到了有好幾種的指令&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt; output.log&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2&amp;gt; output.log&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2&amp;gt;&amp;gt; output.log&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1&amp;gt;&amp;amp;2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2&amp;gt;&amp;amp;1&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;對於一個門外漢來說&lt;br&gt;
+不如就直接 Trial and error 吧&lt;br&gt;
+(想直接看結論 &lt;a class=&#34;link&#34; href=&#34;#%e7%b5%90%e8%ab%96&#34; &gt;點此&lt;/a&gt;)&lt;/p&gt;
+&lt;h2 id=&#34;前置作業&#34;&gt;前置作業
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;開啟檔案總管&lt;/li&gt;
+&lt;li&gt;在 D 槽下新增一個 test 資料夾，並放入幾個檔案&lt;/li&gt;
+&lt;li&gt;滑鼠點擊網址列&lt;/li&gt;
+&lt;li&gt;輸入 cmd 並按下 Enter&lt;/li&gt;
+&lt;li&gt;成功開啟 CMD (命令提示字元)，並且路徑是 &lt;code&gt;D:\test&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./open-cmd.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;h2 id=&#34;輸出-log&#34;&gt;輸出 log
+&lt;/h2&gt;&lt;h3 id=&#34;測試一-dir&#34;&gt;測試一: &lt;code&gt;dir&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;先在 CMD 上用一個最簡單的指令 &lt;code&gt;dir&lt;/code&gt;&lt;br&gt;
+螢幕上列出了 &lt;code&gt;D:\test&lt;/code&gt; 的目錄結構&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ dir
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;磁碟區 D 中的磁碟是 新增磁碟區
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;磁碟區序號:  XXXX-XXXX
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;D:\test 的目錄
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2020/12/21  下午 08:37    &amp;lt;DIR&amp;gt;          .
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2020/12/21  下午 08:37    &amp;lt;DIR&amp;gt;          ..
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2020/10/14  下午 09:17             6,330 angry.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2020/10/14  下午 09:17             8,192 crying.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2020/10/14  下午 09:16             7,411 smile.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2020/10/14  下午 09:18             8,004 sweating.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               4 個檔案          29,937 位元組
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               2 個目錄  362,101,317,632 位元組可用
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;測試二-dir-alog&#34;&gt;測試二: &lt;code&gt;dir &amp;gt;a.log&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;螢幕上沒出現東西&lt;br&gt;
+但多了一個 &lt;code&gt;a.log&lt;/code&gt; 的檔案&lt;br&gt;
+打開來看是&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;磁碟區 D 中的磁碟是 新增磁碟區
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;磁碟區序號:  XXXX-XXXX
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;D:\test 的目錄
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2020/12/21  下午 08:37    &amp;lt;DIR&amp;gt;          .
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2020/12/21  下午 08:37    &amp;lt;DIR&amp;gt;          ..
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2020/10/14  下午 09:17             6,330 angry.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2020/10/14  下午 09:17             8,192 crying.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2020/10/14  下午 09:16             7,411 smile.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2020/10/14  下午 09:18             8,004 sweating.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               4 個檔案          29,937 位元組
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               2 個目錄  362,101,317,632 位元組可用
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;a.log&lt;/code&gt; 內容長得跟 &amp;ldquo;測試一&amp;rdquo; 的螢幕一樣&lt;br&gt;
+代表 &lt;code&gt;&amp;gt;a.log&lt;/code&gt; 成功把螢幕上的東西輸出到 log 檔中&lt;/p&gt;
+&lt;h3 id=&#34;測試三-dir-1blog&#34;&gt;測試三: &lt;code&gt;dir 1&amp;gt;b.log&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;螢幕還是沒出現東西&lt;br&gt;
+但多了一個 &lt;code&gt;b.log&lt;/code&gt;&lt;br&gt;
+打開來看是&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;磁碟區 D 中的磁碟是 新增磁碟區
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;磁碟區序號:  XXXX-XXXX
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;D:\test 的目錄
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2020/12/21  下午 08:37    &amp;lt;DIR&amp;gt;          .
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2020/12/21  下午 08:37    &amp;lt;DIR&amp;gt;          ..
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2020/12/25  下午 09:18               529 a.log
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2020/10/14  下午 09:17             6,330 angry.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2020/10/14  下午 09:17             8,192 crying.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2020/10/14  下午 09:16             7,411 smile.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2020/10/14  下午 09:18             8,004 sweating.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               4 個檔案          29,937 位元組
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               2 個目錄  362,101,317,632 位元組可用
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;除了多了一個 &lt;code&gt;a.log&lt;/code&gt; 的檔案&lt;br&gt;
+其他跟 &amp;ldquo;測試一&amp;rdquo; 的結果相同&lt;br&gt;
+代表 &lt;code&gt;&amp;gt;&lt;/code&gt; 與 &lt;code&gt;1&amp;gt;&lt;/code&gt; 功能相同&lt;/p&gt;
+&lt;h3 id=&#34;測試四-dir-nopng&#34;&gt;測試四: &lt;code&gt;dir no.png&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;再來用 dir 找一個不存在的檔案&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ dir no.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;磁碟區 D 中的磁碟是 新增磁碟區
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;磁碟區序號:  XXXX-XXXX
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;D:\test 的目錄
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;找不到檔案
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;螢幕上跑出 找不到檔案 的訊息&lt;/p&gt;
+&lt;h3 id=&#34;測試五-dir-nopng-1clog&#34;&gt;測試五: &lt;code&gt;dir no.png 1&amp;gt;c.log&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;接著使用 &lt;code&gt;1&amp;gt;&lt;/code&gt; 試著將錯誤訊息輸出到 log 檔&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ dir no.png 1&amp;gt;c.log
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;找不到檔案
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;咦？螢幕上怎麼還有東西呢&lt;br&gt;
+而且 &lt;code&gt;c.log&lt;/code&gt; 也有產生出來&lt;br&gt;
+打開來看是&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;磁碟區 D 中的磁碟是 新增磁碟區
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;磁碟區序號:  XXXX-XXXX
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;D:\test 的目錄
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;喔～&lt;br&gt;
+錯誤訊息輸出到螢幕上&lt;br&gt;
+但沒有錯誤的部分輸出到 log 檔中了&lt;/p&gt;
+&lt;h3 id=&#34;測試六-dir-nopng-2dlog&#34;&gt;測試六: &lt;code&gt;dir no.png 2&amp;gt;d.log&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;這次用用看 &lt;code&gt;2&amp;gt;&lt;/code&gt; 看會有什麼效果&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ dir no.png 2&amp;gt;d.log
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;磁碟區 D 中的磁碟是 新增磁碟區
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;磁碟區序號:  XXXX-XXXX
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;D:\test 的目錄
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;咦？螢幕變成輸出沒有錯誤的部分&lt;/p&gt;
+&lt;p&gt;那 &lt;code&gt;d.log&lt;/code&gt; 內容打開是&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;找不到檔案
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;這個結果跟 &amp;ldquo;測試五&amp;rdquo; 完全相反呢！&lt;/p&gt;
+&lt;p&gt;代表 &lt;code&gt;1&amp;gt;&lt;/code&gt; 輸出沒有錯誤的 log&lt;br&gt;
+&lt;code&gt;2&amp;gt;&lt;/code&gt; 輸出有錯誤的 log&lt;/p&gt;
+&lt;h3 id=&#34;小結&#34;&gt;小結
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;&lt;/code&gt; 等於 &lt;code&gt;1&amp;gt;&lt;/code&gt;，負責輸出沒錯誤的部分&lt;br&gt;
+&lt;code&gt;2&amp;gt;&lt;/code&gt; 負責輸出有錯誤的部分&lt;/li&gt;
+&lt;li&gt;1 的正式名稱為 &lt;code&gt;stdout&lt;/code&gt; 標準輸出&lt;br&gt;
+2 的正式名稱為 &lt;code&gt;stderr&lt;/code&gt; 標準錯誤輸出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;合併不同類型的-log&#34;&gt;合併不同類型的 log
+&lt;/h2&gt;&lt;h3 id=&#34;測試七-dir-nopng-elog-21&#34;&gt;測試七: &lt;code&gt;dir no.png &amp;gt;e.log 2&amp;gt;&amp;amp;1&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;這次來試試 &lt;code&gt;2&amp;gt;&amp;amp;1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;螢幕上沒有東西&lt;br&gt;
+而 &lt;code&gt;e.log&lt;/code&gt; 打開內容是&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;磁碟區 D 中的磁碟是 新增磁碟區
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;磁碟區序號:  XXXX-XXXX
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;D:\test 的目錄
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;找不到檔案
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;喔～&lt;br&gt;
+沒錯誤的跟有錯誤的 log 都輸出到同個檔了呢&lt;/p&gt;
+&lt;p&gt;原來 &lt;code&gt;&amp;gt;e.log&lt;/code&gt; 把 stdout 輸出到 log 檔中&lt;br&gt;
+&lt;code&gt;2&amp;gt;&amp;amp;1&lt;/code&gt; 把 stderr 輸出到 stdout&lt;/p&gt;
+&lt;h3 id=&#34;測試八-dir-nopng-21-flog&#34;&gt;測試八: &lt;code&gt;dir no.png 2&amp;gt;&amp;amp;1 &amp;gt;f.log&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;這次把 &lt;code&gt;2&amp;gt;&amp;amp;1&lt;/code&gt; 移到 &lt;code&gt;&amp;gt;e.log&lt;/code&gt; 前面&lt;/p&gt;
+&lt;p&gt;螢幕上出現了&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ dir no.png 2&amp;gt;&amp;amp;1 &amp;gt;f.log
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;找不到檔案
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;f.log&lt;/code&gt; 打開來內容是&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;磁碟區 D 中的磁碟是 新增磁碟區
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;磁碟區序號:  XXXX-XXXX
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;D:\test 的目錄
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;這結果跟 &amp;ldquo;測試五&amp;rdquo; 一樣 (&lt;code&gt;1&amp;gt;c.log&lt;/code&gt;)&lt;br&gt;
+代表執行 &lt;code&gt;2&amp;gt;&amp;amp;1&lt;/code&gt; 時， &lt;code&gt;&amp;gt;f.log&lt;/code&gt; 還未生效&lt;br&gt;
+所以 stderr 還是輸出到螢幕上了&lt;/p&gt;
+&lt;h3 id=&#34;測試九-dir-nopng-2glog-12&#34;&gt;測試九: &lt;code&gt;dir no.png 2&amp;gt;g.log 1&amp;gt;&amp;amp;2&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;這次改成輸出 stderr 到 log 檔&lt;br&gt;
+並把 stdout 輸出到 stderr&lt;/p&gt;
+&lt;p&gt;結果螢幕沒有東西&lt;br&gt;
+而 &lt;code&gt;g.log&lt;/code&gt; 打開來是&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;磁碟區 D 中的磁碟是 新增磁碟區
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;磁碟區序號:  XXXX-XXXX
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;D:\test 的目錄
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;找不到檔案
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;這個結果跟 &amp;ldquo;測試七&amp;rdquo; 一模一樣 (&lt;code&gt;&amp;gt;e.log 2&amp;gt;&amp;amp;1&lt;/code&gt;)&lt;/p&gt;
+&lt;h3 id=&#34;小結-1&#34;&gt;小結
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;&lt;/code&gt; 把螢幕上的 log 輸出到檔案&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;&amp;amp;&lt;/code&gt; 把 stdout 輸出到 stderr 的輸入，或是把 stderr 輸出到 stdout 的輸入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;覆蓋或接續寫-log&#34;&gt;覆蓋或接續寫 log
+&lt;/h2&gt;&lt;h3 id=&#34;測試十-type-emptylog-2hlog&#34;&gt;測試十: &lt;code&gt;type empty.log 2&amp;gt;h.log&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;這次試試 type 這個指令&lt;br&gt;
+可以把指定的檔案印在螢幕上&lt;br&gt;
+我們指定一個不存在的檔案&lt;/p&gt;
+&lt;p&gt;螢幕上沒出現東西&lt;br&gt;
+但產生了 &lt;code&gt;h.log&lt;/code&gt; 檔案&lt;br&gt;
+打開來是&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;系統找不到指定的檔案。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;接著新增一個名字叫 &lt;code&gt;empty.log&lt;/code&gt; 的檔案&lt;br&gt;
+再次嘗試相同的指令&lt;/p&gt;
+&lt;p&gt;結果螢幕上還是沒有東西&lt;br&gt;
+而且打開 &lt;code&gt;h.log&lt;/code&gt; 也沒有內容&lt;br&gt;
+為什麼呢？&lt;/p&gt;
+&lt;p&gt;因為 &lt;code&gt;2&amp;gt;&lt;/code&gt; 只會輸出錯誤訊息&lt;br&gt;
+然後 &lt;code&gt;empty.log&lt;/code&gt; 這個檔案也確實存在&lt;br&gt;
+所以不會報錯說找不到檔案&lt;br&gt;
+沒有報錯當然就不會有錯誤訊息寫入 &lt;code&gt;h.log&lt;/code&gt; 囉&lt;/p&gt;
+&lt;p&gt;不過你可以發現～&lt;br&gt;
+就算沒有要輸出東西&lt;br&gt;
+這個 &lt;code&gt;h.log&lt;/code&gt; 還是被清空了&lt;br&gt;
+原本裡面還寫著 &amp;ldquo;系統找不到指定的檔案。&amp;rdquo; 的訊息&lt;br&gt;
+現在已經不見了&lt;/p&gt;
+&lt;h3 id=&#34;測試十一-type-hahalog-2ilog&#34;&gt;測試十一: &lt;code&gt;type haha.log 2&amp;gt;&amp;gt;i.log&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;這次我們用兩個大於 &lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt;&lt;br&gt;
+看看有什麼不同的效果&lt;br&gt;
+先叫 type 印一個不存在的檔案&lt;/p&gt;
+&lt;p&gt;螢幕上沒有東西&lt;br&gt;
+打開 &lt;code&gt;i.log&lt;/code&gt; 的內容是&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;系統找不到指定的檔案。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;接著執行相同的指令共三次&lt;/p&gt;
+&lt;p&gt;螢幕依舊沒有東西&lt;br&gt;
+打開 &lt;code&gt;f.log&lt;/code&gt; 的內容是&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;系統找不到指定的檔案。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;系統找不到指定的檔案。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;系統找不到指定的檔案。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;系統找不到指定的檔案。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;代表兩個大於會接續寫下去&lt;br&gt;
+而不是覆蓋掉檔案&lt;/p&gt;
+&lt;h3 id=&#34;小結-2&#34;&gt;小結
+&lt;/h3&gt;&lt;p&gt;當 log 檔存在時&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;&lt;/code&gt; 會覆蓋掉檔案 (override)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt; 會從檔案結尾接續寫下去 (append)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;結論&#34;&gt;結論
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;log 種類
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;stdout&lt;/code&gt; 標準輸出: 代號為 &lt;code&gt;1&lt;/code&gt;，正常執行時的 log&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;stderr&lt;/code&gt; 標準錯誤輸出: 代號為 &lt;code&gt;2&lt;/code&gt;，出現錯誤時的 log&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;輸出 log 的指令
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;command &amp;gt;file&lt;/code&gt;: 輸出 stdout 到 file&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;command 1&amp;gt;file&lt;/code&gt;: 同上&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;command 2&amp;gt;file&lt;/code&gt;: 輸出 stderr 到 file&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;command &amp;gt;file 2&amp;gt;&amp;amp;1&lt;/code&gt;: 將 stdout 和 stderr 同時輸出到 file&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;command &amp;gt;&amp;gt;file&lt;/code&gt;: 若 file 存在，就從結尾接續寫下去&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;參考資料&#34;&gt;參考資料
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-xp/bb490982%28v=technet.10%29&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Using command redirection operators | Microsoft Docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.robvanderwoude.com/redirection.php&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Batch files - Redirection&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>更改 Win 10 檔案總管預設開啟位置</title>
+        <link>http://localhost:1313/blog/2019-12-15-change-file-explorer-open-in-win10/</link>
+        <pubDate>Sun, 15 Dec 2019 22:14:43 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/2019-12-15-change-file-explorer-open-in-win10/</guid>
+        <description>&lt;p&gt;為什麼要更改開啟位置？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Win 10 檔案總管預設是開啟&lt;code&gt;快速存取&lt;/code&gt;&lt;br&gt;
+且會自動顯示&lt;code&gt;常用資料夾&lt;/code&gt;與&lt;code&gt;最近使用過的檔案&lt;/code&gt;&lt;br&gt;
+但我只是想趕快到&lt;code&gt;本機&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- more --&gt;
+&lt;h2 id=&#34;步驟&#34;&gt;步驟
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;到 &lt;code&gt;檔案總管&lt;/code&gt; &amp;gt; 對 &lt;code&gt;快速存取&lt;/code&gt; 按 &lt;code&gt;右鍵&lt;/code&gt; &amp;gt; &lt;code&gt;選項&lt;/code&gt; &amp;gt; &lt;code&gt;一般&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;開啟檔案總管以 : &lt;code&gt;本機&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;隱私權:&lt;br&gt;
+取消勾選 &lt;code&gt;在「快速存取」中顯示最近使用的檔案&lt;/code&gt;&lt;br&gt;
+取消勾選 &lt;code&gt;在「快速存取」中顯示經常使用的資料夾&lt;/code&gt;&lt;br&gt;
+清除檔案總管歷程記錄 &amp;gt; &lt;code&gt;清除&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;點擊 &lt;code&gt;確定&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;參考資料&#34;&gt;參考資料
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://support.microsoft.com/zh-tw/help/4027032/windows-pin-remove-and-customize-in-quick-access&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Windows 支援 - 在快速存取中釘選、移除及自訂&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://walker-a.com/archives/5637&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;談Windows 10檔案總管上的 快速存取 運用與移除&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Win 10 使用 Win 7 的相片檢視器</title>
+        <link>http://localhost:1313/blog/2019-12-14-win7-photoviewer-in-win10/</link>
+        <pubDate>Sat, 14 Dec 2019 11:23:35 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/2019-12-14-win7-photoviewer-in-win10/</guid>
+        <description>&lt;p&gt;為什麼要改用 Win 7 的 Windows 相片檢視器？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;因為 Win 10 內建的 相片 APP 開圖片很慢&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- more --&gt;
+&lt;h2 id=&#34;如果電腦本身有-windows-相片檢視器&#34;&gt;如果電腦本身有 Windows 相片檢視器
+&lt;/h2&gt;&lt;h3 id=&#34;方法一&#34;&gt;方法一
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;對 &lt;code&gt;開始&lt;/code&gt; 按右鍵 &amp;gt; &lt;code&gt;執行&lt;/code&gt; &amp;gt; 輸入 &lt;code&gt;regedit&lt;/code&gt; &amp;gt; &lt;code&gt;確定&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;開啟&lt;code&gt;登錄編輯程式&lt;/code&gt;後，找到以下路徑&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;電腦\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;在空白處按&lt;code&gt;右鍵&lt;/code&gt; &amp;gt; &lt;code&gt;新增&lt;/code&gt; &amp;gt; &lt;code&gt;字串符&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;名稱: 圖檔格式 (e.g. &lt;code&gt;.jpg&lt;/code&gt; &lt;code&gt;.jpeg&lt;/code&gt; &lt;code&gt;.png&lt;/code&gt; &lt;code&gt;.gif&lt;/code&gt; &lt;code&gt;.bmp&lt;/code&gt; &lt;code&gt;.ico&lt;/code&gt;&amp;hellip;)&lt;br&gt;
+數值資料:  &lt;code&gt;PhotoViewer.FileAssoc.Tiff&lt;/code&gt;&lt;br&gt;
+(每種圖檔格式都要個別新增)&lt;/li&gt;
+&lt;li&gt;關閉&lt;code&gt;登錄編輯程式&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;對任一圖檔按&lt;code&gt;右鍵&lt;/code&gt; &amp;gt; &lt;code&gt;開啟檔案&lt;/code&gt; &amp;gt;  &lt;code&gt;Windows 相片檢視器&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;方法二&#34;&gt;方法二
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;開始&lt;/code&gt; &amp;gt; &lt;code&gt;設定&lt;/code&gt; &amp;gt; &lt;code&gt;應用程式&lt;/code&gt; &amp;gt; &lt;code&gt;預設應用程式&lt;/code&gt; &amp;gt; &lt;code&gt;相片檢視器&lt;/code&gt; &amp;gt; &lt;code&gt;Windows 相片檢視器&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;如果電腦沒有-windows-相片檢視器&#34;&gt;如果電腦沒有 Windows 相片檢視器
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;開啟 &lt;code&gt;記事本&lt;/code&gt; &amp;gt; 將以下文字存成文字檔 &amp;gt; 檔名改為 &lt;code&gt;PhotoViewer.reg&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Windows Registry Editor Version 5.00
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;; Change Extension&amp;#39;s File Type
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[HKEY_CURRENT_USER\Software\Classes\.jpg]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@=&amp;#34;PhotoViewer.FileAssoc.Tiff&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;; Change Extension&amp;#39;s File Type
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[HKEY_CURRENT_USER\Software\Classes\.jpeg]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@=&amp;#34;PhotoViewer.FileAssoc.Tiff&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;; Change Extension&amp;#39;s File Type
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[HKEY_CURRENT_USER\Software\Classes\.gif]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@=&amp;#34;PhotoViewer.FileAssoc.Tiff&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;; Change Extension&amp;#39;s File Type
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[HKEY_CURRENT_USER\Software\Classes\.png]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@=&amp;#34;PhotoViewer.FileAssoc.Tiff&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;; Change Extension&amp;#39;s File Type
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[HKEY_CURRENT_USER\Software\Classes\.bmp]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@=&amp;#34;PhotoViewer.FileAssoc.Tiff&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;; Change Extension&amp;#39;s File Type
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[HKEY_CURRENT_USER\Software\Classes\.tiff]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@=&amp;#34;PhotoViewer.FileAssoc.Tiff&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;; Change Extension&amp;#39;s File Type
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[HKEY_CURRENT_USER\Software\Classes\.ico]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@=&amp;#34;PhotoViewer.FileAssoc.Tiff&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;下載完成後，點擊兩下執行&lt;/li&gt;
+&lt;li&gt;出現 &lt;code&gt;安全性警告&lt;/code&gt; &lt;code&gt;無法辨認發行者，您確定要執行這個軟體？&lt;/code&gt; &amp;gt; &lt;code&gt;執行&lt;/code&gt;&lt;br&gt;
+出現 &lt;code&gt;使用者帳戶控制&lt;/code&gt;  &lt;code&gt;您是否要允許此應用程式變更您的電腦&lt;/code&gt; &amp;gt; &lt;code&gt;是&lt;/code&gt;&lt;br&gt;
+出現 &lt;code&gt;登錄檔編輯程式&lt;/code&gt; &lt;code&gt;新增資訊會意外變更或刪除值，而且會造成元件無法正確工作，如果不信任 C:\Users\user\Desktop\PhotoViewer.reg 中的資訊來源，請不要新增至登錄。是否確定要繼續？&lt;/code&gt; &amp;gt; &lt;code&gt;是&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;出現 &lt;code&gt;登錄檔編輯程式&lt;/code&gt; &lt;code&gt;C:\Users\user\Desktop\PhotoViewer.reg 中的機碼和值已經成功加入登錄中&lt;/code&gt; &amp;gt; &lt;code&gt;確定&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;開始&lt;/code&gt; &amp;gt; &lt;code&gt;設定&lt;/code&gt; &amp;gt; &lt;code&gt;應用程式&lt;/code&gt; &amp;gt; &lt;code&gt;預設應用程式&lt;/code&gt; &amp;gt; &lt;code&gt;相片檢視器&lt;/code&gt; &amp;gt; &lt;code&gt;Windows 相片檢視器&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;參考資料&#34;&gt;參考資料
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://hcwang.pixnet.net/blog/post/42718982-win10%E5%B0%87%E7%9B%B8%E7%89%87%E6%AA%A2%E8%A6%96%E5%99%A8%E7%82%BA%E9%A0%90%E8%A8%AD%E9%81%B8%E9%A0%85&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Win10將相片檢視器為預設選項&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.kocpc.com.tw/archives/95887&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;如何在Windows 10使用傳統的「相片檢視器」程式來看圖&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

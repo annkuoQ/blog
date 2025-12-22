@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>File Explorer on AnnKuoQ Blog</title>
+        <link>http://localhost:1313/blog/tags/file-explorer/</link>
+        <description>Recent content in File Explorer on AnnKuoQ Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <copyright>AnnKuoQ</copyright>
+        <lastBuildDate>Sun, 15 Dec 2019 22:14:43 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/file-explorer/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>更改 Win 10 檔案總管預設開啟位置</title>
+        <link>http://localhost:1313/blog/2019-12-15-change-file-explorer-open-in-win10/</link>
+        <pubDate>Sun, 15 Dec 2019 22:14:43 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/2019-12-15-change-file-explorer-open-in-win10/</guid>
+        <description>&lt;p&gt;為什麼要更改開啟位置？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Win 10 檔案總管預設是開啟&lt;code&gt;快速存取&lt;/code&gt;&lt;br&gt;
+且會自動顯示&lt;code&gt;常用資料夾&lt;/code&gt;與&lt;code&gt;最近使用過的檔案&lt;/code&gt;&lt;br&gt;
+但我只是想趕快到&lt;code&gt;本機&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- more --&gt;
+&lt;h2 id=&#34;步驟&#34;&gt;步驟
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;到 &lt;code&gt;檔案總管&lt;/code&gt; &amp;gt; 對 &lt;code&gt;快速存取&lt;/code&gt; 按 &lt;code&gt;右鍵&lt;/code&gt; &amp;gt; &lt;code&gt;選項&lt;/code&gt; &amp;gt; &lt;code&gt;一般&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;開啟檔案總管以 : &lt;code&gt;本機&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;隱私權:&lt;br&gt;
+取消勾選 &lt;code&gt;在「快速存取」中顯示最近使用的檔案&lt;/code&gt;&lt;br&gt;
+取消勾選 &lt;code&gt;在「快速存取」中顯示經常使用的資料夾&lt;/code&gt;&lt;br&gt;
+清除檔案總管歷程記錄 &amp;gt; &lt;code&gt;清除&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;點擊 &lt;code&gt;確定&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;參考資料&#34;&gt;參考資料
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://support.microsoft.com/zh-tw/help/4027032/windows-pin-remove-and-customize-in-quick-access&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Windows 支援 - 在快速存取中釘選、移除及自訂&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://walker-a.com/archives/5637&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;談Windows 10檔案總管上的 快速存取 運用與移除&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
