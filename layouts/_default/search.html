@@ -2,7 +2,7 @@
 <div id="search-page-container" style="padding: 20px; max-width: 800px; margin: 0 auto;">
     <h1 style="color: var(--card-text-color-main); margin-bottom: 20px;">Search</h1>
     
-    <input type="text" id="manual-search-input" placeholder="鍵入關鍵字開始搜尋..." 
+    <input type="text" id="manual-search-input" placeholder="輸入關鍵字..." 
            style="width: 100%; padding: 15px; font-size: 18px; border-radius: 10px; border: 2px solid var(--primary); background: #fff !important; color: #000 !important;">
     
     <div id="manual-search-results" style="margin-top: 30px;"></div>
@@ -14,80 +14,81 @@
             const input = document.getElementById('manual-search-input');
             const resultsContainer = document.getElementById('manual-search-results');
             
-            // 防錯檢查
-            if (!input || !resultsContainer) return;
-
-            input.addEventListener('input', () => {
-                const query = input.value.trim().toLowerCase();
-                if (!query) {
-                    resultsContainer.innerHTML = "";
-                    return;
+            // 1. 處理搜尋頁面本體的邏輯
+            if (input && resultsContainer) {
+                // 如果網址有 keyword 參數，自動執行一次搜尋
+                const urlParams = new URLSearchParams(window.location.search);
+                const keyword = urlParams.get('keyword');
+                if (keyword) {
+                    input.value = keyword;
+                    performSearch(keyword, resultsContainer);
                 }
 
-                // 抓取你站點產生的 index.json
-                fetch("/blog/index.json")
-                    .then(res => res.json())
-                    .then(data => {
-                        // 比對標題或內容
-                        const matched = data.filter(item => 
-                            item.title.toLowerCase().includes(query) || 
-                            (item.contents && item.contents.toLowerCase().includes(query))
-                        );
+                input.addEventListener('input', () => {
+                    performSearch(input.value.trim(), resultsContainer);
+                });
+            }
 
-                        // 渲染結果：直接使用 permalink 避免 404
-                        resultsContainer.innerHTML = matched.map(item => `
-                            <div style="padding: 20px; margin-bottom: 15px; background: var(--card-background); border-radius: 12px; border: 1px solid var(--border-color); box-shadow: var(--shadow-l1);">
-                                <a href="${item.permalink}" style="color: var(--primary); font-weight: bold; text-decoration: none; font-size: 1.2rem; display: block; margin-bottom: 5px;">
-                                    ${item.title}
-                                </a>
-                                <div style="font-size: 0.9rem; color: var(--card-text-color-tertiary); opacity: 0.8;">
-                                    ${item.categories ? 'Category: ' + item.categories : ''}
-                                </div>
-                            </div>
-                        `).join('');
-                    })
-                    .catch(err => {
-                        console.error("搜尋索引載入失敗:", err);
-                        resultsContainer.innerHTML = "<p>無法載入搜尋索引，請檢查 index.json 是否存在。</p>";
-                    });
-            });
+            // 2. 處理側欄搜尋框 (Sidebar) 的邏輯
+            // 嘗試抓取側欄的輸入框或表單
+            const sidebarInput = document.querySelector('.widget.search input') || document.querySelector('aside .search input');
+            const sidebarForm = document.querySelector('.widget.search form') || document.querySelector('aside .search form');
+
+            if (sidebarInput) {
+                // 攔截鍵盤 Enter 事件
+                sidebarInput.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        const query = this.value.trim();
+                        if (query) {
+                            window.location.href = `/blog/search/?keyword=${encodeURIComponent(query)}`;
+                        }
+                    }
+                });
+            }
+
+            // 如果側欄有 form，攔截其 submit 事件
+            if (sidebarForm) {
+                sidebarForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const q = sidebarForm.querySelector('input').value.trim();
+                    if (q) {
+                        window.location.href = `/blog/search/?keyword=${encodeURIComponent(q)}`;
+                    }
+                });
+            }
         };
 
-        // 確保在 DOM 載入後執行
-        if (document.readyState === "complete") {
-            initSearch();
-        } else {
-            document.addEventListener('DOMContentLoaded', initSearch);
+        // 核心搜尋邏輯
+        function performSearch(query, container) {
+            if (!query) {
+                container.innerHTML = "";
+                return;
+            }
+            fetch("/blog/index.json")
+                .then(res => res.json())
+                .then(data => {
+                    const matched = data.filter(item => 
+                        item.title.toLowerCase().includes(query.toLowerCase()) || 
+                        (item.contents && item.contents.toLowerCase().includes(query.toLowerCase()))
+                    );
+                    container.innerHTML = matched.map(item => `
+                        <div style="padding: 20px; margin-bottom: 15px; background: var(--card-background); border-radius: 12px; border: 1px solid var(--border-color);">
+                            <a href="${item.permalink}" style="color: var(--primary); font-weight: bold; text-decoration: none; font-size: 1.2rem;">${item.title}</a>
+                        </div>
+                    `).join('');
+                });
         }
 
-        // 針對 Stack 主題的 SPA 跳轉優化：如果找不到元素就定時檢查
+        // 確保 SPA 與直接載入都能執行
+        document.addEventListener('DOMContentLoaded', initSearch);
         const checker = setInterval(() => {
-            if (document.getElementById('manual-search-input')) {
-                initSearch();
+            initSearch();
+            // 如果兩者都找到了，就停止檢查
+            if (document.getElementById('manual-search-input') && document.querySelector('.widget.search input')) {
                 clearInterval(checker);
             }
-        }, 500);
+        }, 1000);
     })();
-	
-	
-    (function() {
-        // 監控側欄的搜尋框
-        const sidebarSearch = document.querySelector('.widget.search input');
-        
-        if (sidebarSearch) {
-            sidebarSearch.addEventListener('keypress', function(e) {
-                // 當使用者在側欄按下 Enter 時
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    const query = this.value.trim();
-                    if (query) {
-                        // 強制跳轉到你的搜尋頁，並帶上參數
-                        window.location.href = `/blog/search/?keyword=${encodeURIComponent(query)}`;
-                    }
-                }
-            });
-        }
-    })();
-
 </script>
 {{ end }}
