@@ -20,7 +20,7 @@
     <loc>http://localhost:1313/blog/tags/</loc>
     <lastmod>2024-11-05T18:14:15+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/</loc>
+    <loc>http://localhost:1313/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/</loc>
     <lastmod>2024-11-05T18:14:15+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/categories/%E7%9B%B4%E6%92%AD-/-%E4%B8%B2%E6%B5%81/</loc>
@@ -35,7 +35,7 @@
     <loc>http://localhost:1313/blog/tags/m3u8/</loc>
     <lastmod>2024-03-25T09:40:22+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2024-03-25-how-to-play-local-hls-m3u8-in-windows-chrome/</loc>
+    <loc>http://localhost:1313/blog/2024-03-25-how-to-play-local-hls-m3u8-in-windows-chrome/</loc>
     <lastmod>2024-03-25T09:40:22+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/tags/motion-capture/</loc>
@@ -50,13 +50,13 @@
     <loc>http://localhost:1313/blog/tags/vtuber/</loc>
     <lastmod>2022-02-19T15:27:21+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2022-02-19-how-to-be-a-vtuber/</loc>
+    <loc>http://localhost:1313/blog/2022-02-19-how-to-be-a-vtuber/</loc>
     <lastmod>2022-02-19T15:27:21+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/tags/ffmpeg/</loc>
     <lastmod>2021-05-08T14:51:15+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2021-05-08-how-to-combine-videos-using-ffmpeg/</loc>
+    <loc>http://localhost:1313/blog/2021-05-08-how-to-combine-videos-using-ffmpeg/</loc>
     <lastmod>2021-05-08T14:51:15+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/categories/%E8%BD%89%E6%AA%94-/-%E7%B7%A8%E7%A2%BC/</loc>
@@ -77,7 +77,7 @@
     <loc>http://localhost:1313/blog/categories/%E9%9B%BB%E8%85%A6-/-%E7%A1%AC%E9%AB%94/</loc>
     <lastmod>2021-05-02T10:28:20+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2021-05-02-use-tracert-to-troubleshoot-network/</loc>
+    <loc>http://localhost:1313/blog/2021-05-02-use-tracert-to-troubleshoot-network/</loc>
     <lastmod>2021-05-02T10:28:20+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/tags/obs.ninja/</loc>
@@ -86,7 +86,7 @@
     <loc>http://localhost:1313/blog/tags/webrtc/</loc>
     <lastmod>2021-04-13T20:36:32+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2021-04-13-how-to-use-mobile-as-webcam/</loc>
+    <loc>http://localhost:1313/blog/2021-04-13-how-to-use-mobile-as-webcam/</loc>
     <lastmod>2021-04-13T20:36:32+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/tags/aes/</loc>
@@ -95,7 +95,7 @@
     <loc>http://localhost:1313/blog/tags/drm/</loc>
     <lastmod>2021-03-02T21:03:21+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2021-03-02-aes-or-drm/</loc>
+    <loc>http://localhost:1313/blog/2021-03-02-aes-or-drm/</loc>
     <lastmod>2021-03-02T21:03:21+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/tags/cmd/</loc>
@@ -107,7 +107,7 @@
     <loc>http://localhost:1313/blog/tags/windows/</loc>
     <lastmod>2021-02-03T22:11:31+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2021-02-03-how-to-use-line-notify-to-send-messages/</loc>
+    <loc>http://localhost:1313/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</loc>
     <lastmod>2021-02-03T22:11:31+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/categories/%E8%B3%87%E5%B7%A5-/-%E7%A8%8B%E8%A8%AD/</loc>
@@ -119,25 +119,25 @@
     <loc>http://localhost:1313/blog/tags/upptime/</loc>
     <lastmod>2021-01-09T21:02:33+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2021-01-09-uptime-monitor-and-status-website-service-with-upptime/</loc>
+    <loc>http://localhost:1313/blog/2021-01-09-uptime-monitor-and-status-website-service-with-upptime/</loc>
     <lastmod>2021-01-09T21:02:33+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2020-12-25-how-to-save-windows-cmd-logfile/</loc>
+    <loc>http://localhost:1313/blog/2020-12-25-how-to-save-windows-cmd-logfile/</loc>
     <lastmod>2020-12-25T22:57:47+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/tags/mixkit/</loc>
     <lastmod>2020-10-25T16:46:42+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2020-10-25-bitrate-vs-resolution/</loc>
+    <loc>http://localhost:1313/blog/2020-10-25-bitrate-vs-resolution/</loc>
     <lastmod>2020-10-25T16:46:42+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2020-09-23-obs-multi-rtmp-outputs-plugin/</loc>
+    <loc>http://localhost:1313/blog/2020-09-23-obs-multi-rtmp-outputs-plugin/</loc>
     <lastmod>2020-09-23T09:12:05+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/tags/iphone/</loc>
     <lastmod>2020-05-11T22:27:01+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2020-05-11-iphone-se-battery-replacement-at-xinyi-a13/</loc>
+    <loc>http://localhost:1313/blog/2020-05-11-iphone-se-battery-replacement-at-xinyi-a13/</loc>
     <lastmod>2020-05-11T22:27:01+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/tags/bitrate-viewer/</loc>
@@ -149,7 +149,7 @@
     <loc>http://localhost:1313/blog/tags/vlc-media-player/</loc>
     <lastmod>2020-04-26T14:29:21+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2020-04-26-how-to-check-video-bitrate/</loc>
+    <loc>http://localhost:1313/blog/2020-04-26-how-to-check-video-bitrate/</loc>
     <lastmod>2020-04-26T14:29:21+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/tags/aws/</loc>
@@ -158,7 +158,7 @@
     <loc>http://localhost:1313/blog/tags/compression/</loc>
     <lastmod>2020-04-03T22:13:37+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2020-04-03-free-aws-digital-training-for-video-compression-basics/</loc>
+    <loc>http://localhost:1313/blog/2020-04-03-free-aws-digital-training-for-video-compression-basics/</loc>
     <lastmod>2020-04-03T22:13:37+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/tags/github-pages/</loc>
@@ -173,43 +173,43 @@
     <loc>http://localhost:1313/blog/categories/%E4%BC%81%E5%8A%83-/-%E8%A1%8C%E9%8A%B7/</loc>
     <lastmod>2020-03-15T10:50:02+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2020-03-15-how-to-find-my-blog-on-google-search/</loc>
+    <loc>http://localhost:1313/blog/2020-03-15-how-to-find-my-blog-on-google-search/</loc>
     <lastmod>2020-03-15T10:50:02+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/tags/utterances/</loc>
     <lastmod>2020-03-09T22:14:53+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2020-03-09-add-utterances-comment-widget-to-hexo/</loc>
+    <loc>http://localhost:1313/blog/2020-03-09-add-utterances-comment-widget-to-hexo/</loc>
     <lastmod>2020-03-09T22:14:53+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2020-01-03-use-hexo-to-deploy-github-pages/</loc>
+    <loc>http://localhost:1313/blog/2020-01-03-use-hexo-to-deploy-github-pages/</loc>
     <lastmod>2020-01-03T23:19:47+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/tags/docusaurus/</loc>
     <lastmod>2019-12-27T23:18:01+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2019-12-27-use-docusaurus-to-deploy-github-pages/</loc>
+    <loc>http://localhost:1313/blog/2019-12-27-use-docusaurus-to-deploy-github-pages/</loc>
     <lastmod>2019-12-27T23:18:01+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2019-12-17-install-ffmpeg/</loc>
+    <loc>http://localhost:1313/blog/2019-12-17-install-ffmpeg/</loc>
     <lastmod>2019-12-17T12:25:39+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/tags/node.js/</loc>
     <lastmod>2019-12-16T13:56:25+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2019-12-16-install-nodejs-httpserver/</loc>
+    <loc>http://localhost:1313/blog/2019-12-16-install-nodejs-httpserver/</loc>
     <lastmod>2019-12-16T13:56:25+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/tags/file-explorer/</loc>
     <lastmod>2019-12-15T22:14:43+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2019-12-15-change-file-explorer-open-in-win10/</loc>
+    <loc>http://localhost:1313/blog/2019-12-15-change-file-explorer-open-in-win10/</loc>
     <lastmod>2019-12-15T22:14:43+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/tags/photo-viewer/</loc>
     <lastmod>2019-12-14T11:23:35+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2019-12-14-win7-photoviewer-in-win10/</loc>
+    <loc>http://localhost:1313/blog/2019-12-14-win7-photoviewer-in-win10/</loc>
     <lastmod>2019-12-14T11:23:35+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/tags/cmder/</loc>
@@ -218,16 +218,16 @@
     <loc>http://localhost:1313/blog/tags/git/</loc>
     <lastmod>2019-12-10T22:31:46+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2019-12-10-install-cmder-and-git/</loc>
+    <loc>http://localhost:1313/blog/2019-12-10-install-cmder-and-git/</loc>
     <lastmod>2019-12-10T22:31:46+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/tags/travel/</loc>
     <lastmod>2019-08-04T00:31:46+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2019-08-04-how-to-plan-a-family-vacation/</loc>
+    <loc>http://localhost:1313/blog/2019-08-04-how-to-plan-a-family-vacation/</loc>
     <lastmod>2019-08-04T00:31:46+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2018-12-21-line-taiwan-techpulse-2018/</loc>
+    <loc>http://localhost:1313/blog/2018-12-21-line-taiwan-techpulse-2018/</loc>
     <lastmod>2018-12-21T23:10:11+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/tags/ukulele/</loc>
@@ -236,28 +236,28 @@
     <loc>http://localhost:1313/blog/categories/%E9%9F%B3%E6%A8%82-/-%E6%A8%82%E5%99%A8/</loc>
     <lastmod>2014-02-01T13:51:43+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2014-02-01-ukulele-do-re-mi-scales/</loc>
+    <loc>http://localhost:1313/blog/2014-02-01-ukulele-do-re-mi-scales/</loc>
     <lastmod>2014-02-01T13:51:43+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2014-01-19-hand-stretch-exercises/</loc>
+    <loc>http://localhost:1313/blog/2014-01-19-hand-stretch-exercises/</loc>
     <lastmod>2014-01-19T23:09:43+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2013-08-11-ukulele-tab-symbols-and-repetition/</loc>
+    <loc>http://localhost:1313/blog/2013-08-11-ukulele-tab-symbols-and-repetition/</loc>
     <lastmod>2013-08-11T23:24:43+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2013-08-10-ukulele-read-chord-and-tab/</loc>
+    <loc>http://localhost:1313/blog/2013-08-10-ukulele-read-chord-and-tab/</loc>
     <lastmod>2013-08-10T22:19:43+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2013-08-09-music-notes-and-rhythm/</loc>
+    <loc>http://localhost:1313/blog/2013-08-09-music-notes-and-rhythm/</loc>
     <lastmod>2013-08-09T17:42:43+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2013-07-29-hold-and-strum-ukulele/</loc>
+    <loc>http://localhost:1313/blog/2013-07-29-hold-and-strum-ukulele/</loc>
     <lastmod>2013-07-29T23:46:43+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2013-07-25-tune-ukulele-and-c-major-scale/</loc>
+    <loc>http://localhost:1313/blog/2013-07-25-tune-ukulele-and-c-major-scale/</loc>
     <lastmod>2013-07-25T22:27:43+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/p/2013-07-22-ukulele-history-types-anatomy/</loc>
+    <loc>http://localhost:1313/blog/2013-07-22-ukulele-history-types-anatomy/</loc>
     <lastmod>2013-07-22T23:20:43+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/page/</loc>

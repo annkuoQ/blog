@@ -9,10 +9,10 @@
         <copyright>AnnKuoQ</copyright>
         <lastBuildDate>Tue, 02 Mar 2021 21:03:21 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/drm/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>淺談 AES 與 DRM</title>
-        <link>http://localhost:1313/blog/p/2021-03-02-aes-or-drm/</link>
+        <link>http://localhost:1313/blog/2021-03-02-aes-or-drm/</link>
         <pubDate>Tue, 02 Mar 2021 21:03:21 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/p/2021-03-02-aes-or-drm/</guid>
+        <guid>http://localhost:1313/blog/2021-03-02-aes-or-drm/</guid>
         <description>&lt;p&gt;最近工作上有碰到 AES 和 DRM&lt;br&gt;
 雖然是使用別人的服務&lt;br&gt;
 但還是想稍微了解一下運作的方式&lt;/p&gt;

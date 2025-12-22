@@ -9,10 +9,10 @@
         <copyright>AnnKuoQ</copyright>
         <lastBuildDate>Mon, 25 Mar 2024 09:40:22 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/m3u8/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何在 Win10 Chrome 播放本機的 HLS M3U8 影片</title>
-        <link>http://localhost:1313/blog/p/2024-03-25-how-to-play-local-hls-m3u8-in-windows-chrome/</link>
+        <link>http://localhost:1313/blog/2024-03-25-how-to-play-local-hls-m3u8-in-windows-chrome/</link>
         <pubDate>Mon, 25 Mar 2024 09:40:22 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/p/2024-03-25-how-to-play-local-hls-m3u8-in-windows-chrome/</guid>
+        <guid>http://localhost:1313/blog/2024-03-25-how-to-play-local-hls-m3u8-in-windows-chrome/</guid>
         <description>&lt;p&gt;最近在測試 HLS 轉檔&lt;br&gt;
 轉出來後有一堆 ts 片段&lt;br&gt;
 又懶得上傳到 Staging 環境&lt;br&gt;

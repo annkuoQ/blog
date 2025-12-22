@@ -9,10 +9,10 @@
         <copyright>AnnKuoQ</copyright>
         <lastBuildDate>Sat, 08 May 2021 14:51:15 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何使用 ffmpeg 串接多個影片</title>
-        <link>http://localhost:1313/blog/p/2021-05-08-how-to-combine-videos-using-ffmpeg/</link>
+        <link>http://localhost:1313/blog/2021-05-08-how-to-combine-videos-using-ffmpeg/</link>
         <pubDate>Sat, 08 May 2021 14:51:15 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/p/2021-05-08-how-to-combine-videos-using-ffmpeg/</guid>
+        <guid>http://localhost:1313/blog/2021-05-08-how-to-combine-videos-using-ffmpeg/</guid>
         <description>&lt;p&gt;最近同事在用 Premiere 串接影片時&lt;br&gt;
 表示輸出很花時間&lt;br&gt;
 因為 Premiere 會重新編碼&lt;/p&gt;
@@ -304,10 +304,10 @@ index 是從 &lt;code&gt;0&lt;/code&gt; 而不是 &lt;code&gt;1&lt;/code&gt; 開
         </item>
         <item>
         <title>一樣的 Bitrate，解析度高的畫質會比較好嗎？</title>
-        <link>http://localhost:1313/blog/p/2020-10-25-bitrate-vs-resolution/</link>
+        <link>http://localhost:1313/blog/2020-10-25-bitrate-vs-resolution/</link>
         <pubDate>Sun, 25 Oct 2020 16:46:42 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/p/2020-10-25-bitrate-vs-resolution/</guid>
+        <guid>http://localhost:1313/blog/2020-10-25-bitrate-vs-resolution/</guid>
         <description>&lt;p&gt;某天同事問說 iMovie 怎麼輸出&lt;br&gt;
 我說: 除了設解析度，還有 Bitrate&lt;br&gt;
 同事問 Bitrate 是什麼？&lt;br&gt;
@@ -428,10 +428,10 @@ index 是從 &lt;code&gt;0&lt;/code&gt; 而不是 &lt;code&gt;1&lt;/code&gt; 開
         </item>
         <item>
         <title>如何知道影片從頭到尾 Bitrate 的變化</title>
-        <link>http://localhost:1313/blog/p/2020-04-26-how-to-check-video-bitrate/</link>
+        <link>http://localhost:1313/blog/2020-04-26-how-to-check-video-bitrate/</link>
         <pubDate>Sun, 26 Apr 2020 14:29:21 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/p/2020-04-26-how-to-check-video-bitrate/</guid>
+        <guid>http://localhost:1313/blog/2020-04-26-how-to-check-video-bitrate/</guid>
         <description>&lt;p&gt;最近在研究適合網路串流的 VBR 轉檔&lt;br&gt;
 想知道整段影片的 Bitrate 是怎樣變化的&lt;br&gt;
 要是 maximum bitrate (最大流量) 高過網速時&lt;br&gt;
@@ -673,10 +673,10 @@ index 是從 &lt;code&gt;0&lt;/code&gt; 而不是 &lt;code&gt;1&lt;/code&gt; 開
         </item>
         <item>
         <title>Win 10 安裝 FFmpeg</title>
-        <link>http://localhost:1313/blog/p/2019-12-17-install-ffmpeg/</link>
+        <link>http://localhost:1313/blog/2019-12-17-install-ffmpeg/</link>
         <pubDate>Tue, 17 Dec 2019 12:25:39 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/p/2019-12-17-install-ffmpeg/</guid>
+        <guid>http://localhost:1313/blog/2019-12-17-install-ffmpeg/</guid>
         <description>&lt;p&gt;為什麼要安裝 FFmepg？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;因為開源、彈性大&lt;/li&gt;

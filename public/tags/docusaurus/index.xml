@@ -9,10 +9,10 @@
         <copyright>AnnKuoQ</copyright>
         <lastBuildDate>Fri, 27 Dec 2019 23:18:01 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/docusaurus/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>用 Docusaurus 和 GitHub Pages 架網站</title>
-        <link>http://localhost:1313/blog/p/2019-12-27-use-docusaurus-to-deploy-github-pages/</link>
+        <link>http://localhost:1313/blog/2019-12-27-use-docusaurus-to-deploy-github-pages/</link>
         <pubDate>Fri, 27 Dec 2019 23:18:01 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/p/2019-12-27-use-docusaurus-to-deploy-github-pages/</guid>
+        <guid>http://localhost:1313/blog/2019-12-27-use-docusaurus-to-deploy-github-pages/</guid>
         <description>&lt;p&gt;為什麼要用 Docusaurus？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;因為工程師朋友推薦&lt;/li&gt;

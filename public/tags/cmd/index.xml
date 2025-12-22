@@ -9,10 +9,10 @@
         <copyright>AnnKuoQ</copyright>
         <lastBuildDate>Wed, 03 Feb 2021 22:11:31 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/cmd/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何使用 LINE Notify 發通知</title>
-        <link>http://localhost:1313/blog/p/2021-02-03-how-to-use-line-notify-to-send-messages/</link>
+        <link>http://localhost:1313/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</link>
         <pubDate>Wed, 03 Feb 2021 22:11:31 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/p/2021-02-03-how-to-use-line-notify-to-send-messages/</guid>
+        <guid>http://localhost:1313/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</guid>
         <description>&lt;p&gt;最近做了一個監控的 bat&lt;br&gt;
 如果服務有發生問題就發通知提醒&lt;br&gt;
 而 LINE 是很多人都在用的通訊軟體&lt;br&gt;
@@ -128,10 +128,10 @@ Bot 超過額度需要收費，Notify 則是免費&lt;br&gt;
         </item>
         <item>
         <title>如何在 CMD 輸出 log 檔</title>
-        <link>http://localhost:1313/blog/p/2020-12-25-how-to-save-windows-cmd-logfile/</link>
+        <link>http://localhost:1313/blog/2020-12-25-how-to-save-windows-cmd-logfile/</link>
         <pubDate>Fri, 25 Dec 2020 22:57:47 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/p/2020-12-25-how-to-save-windows-cmd-logfile/</guid>
+        <guid>http://localhost:1313/blog/2020-12-25-how-to-save-windows-cmd-logfile/</guid>
         <description>&lt;p&gt;最近在學寫批次檔&lt;br&gt;
 需要輸出 log 檔作為紀錄&lt;br&gt;
 去網路搜尋之後&lt;br&gt;

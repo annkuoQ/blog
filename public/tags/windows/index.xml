@@ -9,10 +9,10 @@
         <copyright>AnnKuoQ</copyright>
         <lastBuildDate>Wed, 03 Feb 2021 22:11:31 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/windows/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何使用 LINE Notify 發通知</title>
-        <link>http://localhost:1313/blog/p/2021-02-03-how-to-use-line-notify-to-send-messages/</link>
+        <link>http://localhost:1313/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</link>
         <pubDate>Wed, 03 Feb 2021 22:11:31 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/p/2021-02-03-how-to-use-line-notify-to-send-messages/</guid>
+        <guid>http://localhost:1313/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</guid>
         <description>&lt;p&gt;最近做了一個監控的 bat&lt;br&gt;
 如果服務有發生問題就發通知提醒&lt;br&gt;
 而 LINE 是很多人都在用的通訊軟體&lt;br&gt;
@@ -128,10 +128,10 @@ Bot 超過額度需要收費，Notify 則是免費&lt;br&gt;
         </item>
         <item>
         <title>如何在 CMD 輸出 log 檔</title>
-        <link>http://localhost:1313/blog/p/2020-12-25-how-to-save-windows-cmd-logfile/</link>
+        <link>http://localhost:1313/blog/2020-12-25-how-to-save-windows-cmd-logfile/</link>
         <pubDate>Fri, 25 Dec 2020 22:57:47 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/p/2020-12-25-how-to-save-windows-cmd-logfile/</guid>
+        <guid>http://localhost:1313/blog/2020-12-25-how-to-save-windows-cmd-logfile/</guid>
         <description>&lt;p&gt;最近在學寫批次檔&lt;br&gt;
 需要輸出 log 檔作為紀錄&lt;br&gt;
 去網路搜尋之後&lt;br&gt;
@@ -531,10 +531,10 @@ Bot 超過額度需要收費，Notify 則是免費&lt;br&gt;
         </item>
         <item>
         <title>更改 Win 10 檔案總管預設開啟位置</title>
-        <link>http://localhost:1313/blog/p/2019-12-15-change-file-explorer-open-in-win10/</link>
+        <link>http://localhost:1313/blog/2019-12-15-change-file-explorer-open-in-win10/</link>
         <pubDate>Sun, 15 Dec 2019 22:14:43 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/p/2019-12-15-change-file-explorer-open-in-win10/</guid>
+        <guid>http://localhost:1313/blog/2019-12-15-change-file-explorer-open-in-win10/</guid>
         <description>&lt;p&gt;為什麼要更改開啟位置？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Win 10 檔案總管預設是開啟&lt;code&gt;快速存取&lt;/code&gt;&lt;br&gt;
@@ -563,10 +563,10 @@ Bot 超過額度需要收費，Notify 則是免費&lt;br&gt;
         </item>
         <item>
         <title>Win 10 使用 Win 7 的相片檢視器</title>
-        <link>http://localhost:1313/blog/p/2019-12-14-win7-photoviewer-in-win10/</link>
+        <link>http://localhost:1313/blog/2019-12-14-win7-photoviewer-in-win10/</link>
         <pubDate>Sat, 14 Dec 2019 11:23:35 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/p/2019-12-14-win7-photoviewer-in-win10/</guid>
+        <guid>http://localhost:1313/blog/2019-12-14-win7-photoviewer-in-win10/</guid>
         <description>&lt;p&gt;為什麼要改用 Win 7 的 Windows 相片檢視器？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;因為 Win 10 內建的 相片 APP 開圖片很慢&lt;/li&gt;

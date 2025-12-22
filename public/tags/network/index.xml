@@ -9,10 +9,10 @@
         <copyright>AnnKuoQ</copyright>
         <lastBuildDate>Sun, 02 May 2021 10:28:20 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/network/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>網路卡卡？快用 tracert 找出問題點！</title>
-        <link>http://localhost:1313/blog/p/2021-05-02-use-tracert-to-troubleshoot-network/</link>
+        <link>http://localhost:1313/blog/2021-05-02-use-tracert-to-troubleshoot-network/</link>
         <pubDate>Sun, 02 May 2021 10:28:20 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/p/2021-05-02-use-tracert-to-troubleshoot-network/</guid>
+        <guid>http://localhost:1313/blog/2021-05-02-use-tracert-to-troubleshoot-network/</guid>
         <description>&lt;p&gt;最近直播有遇到網路不穩的情況&lt;br&gt;
 但一句「網路卡卡」並不能有效的回報問題&lt;/p&gt;
 &lt;!-- more --&gt;

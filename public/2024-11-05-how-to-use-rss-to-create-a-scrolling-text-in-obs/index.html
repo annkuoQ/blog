@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-tw" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="最近常常需要做關於颱風的直播，畫面底部的跑馬燈，都是我工人智慧從氣象署複製貼上的，所以想說有沒有什麼外掛可以做到 ...">
 <title>如何在 OBS 使用 RSS 做跑馬燈</title>
 
-<link rel='canonical' href='http://localhost:1313/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/'>
+<link rel='canonical' href='http://localhost:1313/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/'>
 
-<link rel="stylesheet" href="/scss/style.min.35faae972d59d62eca361a063b7051fdcb5b3dc7cee34aba1e79d7034cf2b447.css"><meta property='og:title' content="如何在 OBS 使用 RSS 做跑馬燈">
+<link rel="stylesheet" href="/blog/scss/style.min.9181d21a9686d2b9df6804e8423ef89abbe3f2eaa68cdd1fe46406b71b17759c.css"><meta property='og:title' content="如何在 OBS 使用 RSS 做跑馬燈">
 <meta property='og:description' content="最近常常需要做關於颱風的直播，畫面底部的跑馬燈，都是我工人智慧從氣象署複製貼上的，所以想說有沒有什麼外掛可以做到 ...">
-<meta property='og:url' content='http://localhost:1313/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/'>
+<meta property='og:url' content='http://localhost:1313/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/'>
 <meta property='og:site_name' content='AnnKuoQ Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='obs' /><meta property='article:tag' content='rss' /><meta property='article:published_time' content='2024-11-05T18:14:15&#43;00:00'/><meta property='article:modified_time' content='2024-11-05T18:14:15&#43;00:00'/>
 <meta name="twitter:title" content="如何在 OBS 使用 RSS 做跑馬燈">
 <meta name="twitter:description" content="最近常常需要做關於颱風的直播，畫面底部的跑馬燈，都是我工人智慧從氣象署複製貼上的，所以想說有沒有什麼外掛可以做到 ...">
-    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link rel="shortcut icon" href="/blog/img/favicon.ico" />
 
     </head>
     <body class="
@@ -50,9 +50,9 @@
         
             
             <figure class="site-avatar">
-                <a href="/">
+                <a href="/blog/">
                 
-                    <img src="/img/avatar.png" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    <img src="img/avatar.png" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
                 
                 </a>
                 
@@ -61,7 +61,7 @@
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="/">AnnKuoQ Blog</a></h1>
+            <h1 class="site-name"><a href="/blog">AnnKuoQ Blog</a></h1>
             <h2 class="site-description">擺放各種筆記的地方</h2>
         </div>
     </header><ol class="menu" id="main-menu">
@@ -69,7 +69,7 @@
         
         
         <li >
-            <a href='/' >
+            <a href='/blog/' >
                 
                 
                 
@@ -89,7 +89,7 @@
         
         
         <li >
-            <a href='/about/' >
+            <a href='/blog/about/' >
                 
                 
                 
@@ -108,7 +108,7 @@
         
         
         <li >
-            <a href='/archives/' >
+            <a href='/blog/archives/' >
                 
                 
                 
@@ -186,7 +186,7 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E7%9B%B4%E6%92%AD-/-%E4%B8%B2%E6%B5%81/" >
+            <a href="/blog/categories/%E7%9B%B4%E6%92%AD-/-%E4%B8%B2%E6%B5%81/" >
                 直播 / 串流
             </a>
         
@@ -195,7 +195,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/">如何在 OBS 使用 RSS 做跑馬燈</a>
+            <a href="/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/">如何在 OBS 使用 RSS 做跑馬燈</a>
         </h2>
     
         
@@ -237,26 +237,26 @@
     <section class="article-content">
     
     
-    <p>最近常常需要做關於颱風的直播
-畫面底部的跑馬燈
-都是我 <del>工人智慧</del> 從氣象署複製貼上的 😆
+    <p>最近常常需要做關於颱風的直播<br>
+畫面底部的跑馬燈<br>
+都是我 <del>工人智慧</del> 從氣象署複製貼上的 😆<br>
 所以想說有沒有什麼外掛可以自動化</p>
 <!-- more -->
-<p>上網搜尋後
+<p>上網搜尋後<br>
 找到了這個 <a class="link" href="https://obsproject.com/forum/resources/url-api-source-live-data-media-and-ai-on-obs-made-simple.1756/"  target="_blank" rel="noopener"
     >URL/API Source</a> Plug-in</p>
-<p>一打開超多功能
-不是工程師的我看的眼花撩亂
+<p>一打開超多功能<br>
+不是工程師的我看的眼花撩亂<br>
 所以以下只介紹我有用到的部分</p>
 <h2 id="windows-安裝">Windows 安裝
 </h2><p>前往 <a class="link" href="https://github.com/locaal-ai/obs-urlsource/releases"  target="_blank" rel="noopener"
-    >這裡</a> 去下載安裝檔
+    >這裡</a> 去下載安裝檔<br>
 點擊 <code>obs-urlsource-x.x.x-windows-x64-Installer.exe</code> 後執行安裝</p>
-<p>要注意你的 OBS 版本是否與 Plug-in 版本有互相支援
-因為我一開始怎麼安裝都沒有跑出 Plug-in
-後來才發現因為我的 OBS 是 29.1.3
+<p>要注意你的 OBS 版本是否與 Plug-in 版本有互相支援<br>
+因為我一開始怎麼安裝都沒有跑出 Plug-in<br>
+後來才發現因為我的 OBS 是 29.1.3<br>
 必須搭配更老的 Plug-in 版本 0.2.7 才行</p>
-<p>不過我最後是把 OBS 升到 30.2.3
+<p>不過我最後是把 OBS 升到 30.2.3<br>
 並搭配 Plug-in 0.3.7</p>
 <h2 id="增加來源與提取內容">增加來源與提取內容
 </h2><ol>
@@ -268,7 +268,7 @@
 <li>取出你要的內容 XPath &gt; <code>//item/description</code></li>
 <li>點擊 <code>儲存</code> &gt; <code>確定</code></li>
 </ol>
-<p>解釋一下~
+<p>解釋一下~<br>
 那個 XPath 代表選擇所有 <code>&lt;item&gt;</code> 元素中的 <code>&lt;description&gt;</code> 內容</p>
 <div align="center"><img src="./add-source.jpg"" width="700px"/></div>
 <h3 id="原始的-xml-內容">原始的 XML 內容
@@ -363,21 +363,21 @@
 <li>點擊 <code>確定</code></li>
 </ol>
 <div align="center"><img src="./output-mapping.jpg"" width="500px"/></div>
-<p>提取出的內容就輸出到 <code>跑馬燈</code> 了
-不過字有點大
+<p>提取出的內容就輸出到 <code>跑馬燈</code> 了<br>
+不過字有點大<br>
 這時可以修改一下字型與文字大小</p>
 <div align="center"><img src="./modify-text-properties.jpg"" width="700px"/></div>
 <h2 id="輸出內容整理">輸出內容整理
-</h2><p>仔細看了一下
-文字裡面好像出現了奇怪的符號
+</h2><p>仔細看了一下<br>
+文字裡面好像出現了奇怪的符號<br>
 例如 <code>[</code> <code>]</code> <code>&quot;</code> <code>,</code></p>
-<p>原來這個是陣列中有多個值的意思
-結構大概是長這樣 <code>[&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]</code>
-意思是說取出了三個值
+<p>原來這個是陣列中有多個值的意思<br>
+結構大概是長這樣 <code>[&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]</code><br>
+意思是說取出了三個值<br>
 分別是 蘋果、香蕉、櫻桃</p>
-<p>因為氣象署同時發布了兩個警報
+<p>因為氣象署同時發布了兩個警報<br>
 所以就跑出了陣列的符號</p>
-<p>但沒關係
+<p>但沒關係<br>
 這個 Plug-in 可以解決這個問題</p>
 <ol>
 <li>雙擊 URL Source &gt; <code>Setup Outputs and Templates</code></li>
@@ -401,9 +401,9 @@
 </ol>
 <div align="center"><img src="./modify-text-scroll.jpg"" width="700px"/></div>
 <p>大功告成！</p>
-<p>如果對這個 Plug-in 有其他問題
+<p>如果對這個 Plug-in 有其他問題<br>
 也可以到作者的 <a class="link" href="https://discord.gg/AubP6DTT8r"  target="_blank" rel="noopener"
-    >Discord</a> 詢問喔
+    >Discord</a> 詢問喔<br>
 作者和成員們都蠻熱心回應的！</p>
 <h2 id="參考資料">參考資料
 </h2><ul>
@@ -422,9 +422,9 @@
     
     <section class="article-tags">
         
-            <a href="/tags/obs/">Obs</a>
+            <a href="/blog/tags/obs/">Obs</a>
         
-            <a href="/tags/rss/">Rss</a>
+            <a href="/blog/tags/rss/">Rss</a>
         
     </section>
 
@@ -458,7 +458,7 @@
             
                 
 <article class="">
-    <a href="/p/%E4%BB%8B%E7%B4%B9-vtuber-%E7%9B%B8%E9%97%9C%E6%8A%80%E8%A1%93%E8%88%87%E8%BB%9F%E9%AB%94/">
+    <a href="/blog/2022-02-19-how-to-be-a-vtuber/">
         
         
 
@@ -471,7 +471,7 @@
             
                 
 <article class="">
-    <a href="/p/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-obs-%E5%90%8C%E6%99%82%E7%9B%B4%E6%92%AD%E5%A4%9A%E5%80%8B%E5%B9%B3%E5%8F%B0/">
+    <a href="/blog/2020-09-23-obs-multi-rtmp-outputs-plugin/">
         
         
 
@@ -484,7 +484,7 @@
             
                 
 <article class="">
-    <a href="/p/%E5%A6%82%E4%BD%95%E5%9C%A8-win10-chrome-%E6%92%AD%E6%94%BE%E6%9C%AC%E6%A9%9F%E7%9A%84-hls-m3u8-%E5%BD%B1%E7%89%87/">
+    <a href="/blog/2024-03-25-how-to-play-local-hls-m3u8-in-windows-chrome/">
         
         
 
@@ -497,7 +497,7 @@
             
                 
 <article class="">
-    <a href="/p/%E5%A6%82%E4%BD%95%E6%8A%8A%E6%89%8B%E6%A9%9F%E8%AE%8A-webcam-%E5%85%8D%E5%AE%89%E8%A3%9D%E8%BB%9F%E9%AB%94%E5%85%8D%E6%8F%92%E7%B7%9A%E5%85%8D%E8%B2%BB/">
+    <a href="/blog/2021-04-13-how-to-use-mobile-as-webcam/">
         
         
 
@@ -510,7 +510,7 @@
             
                 
 <article class="">
-    <a href="/p/%E6%B7%BA%E8%AB%87-aes-%E8%88%87-drm/">
+    <a href="/blog/2021-03-02-aes-or-drm/">
         
         
 
@@ -676,7 +676,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.3cd37fefb8a5e8b1583cc4816c142139608f7385c41a4327a554c4f839ad4f34.js" defer></script>
+            </script><script type="text/javascript" src="/blog/ts/main.3cd37fefb8a5e8b1583cc4816c142139608f7385c41a4327a554c4f839ad4f34.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
