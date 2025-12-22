@@ -15,7 +15,12 @@
 <meta name="twitter:title" content="AnnKuoQ Blog">
 <meta name="twitter:description" content="擺放各種筆記的地方"><link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/blog/index.xml"><link rel="alternate" type="application/json" href="http://localhost:1313/blog/index.json">
     <link rel="shortcut icon" href="http://localhost:1313/blog/img/favicon.ico" />
-
+<meta name="google-site-verification" content="BA0c9S2A0y6LKGGUAyEEIYAl4C0O7hED1HrbKlYmzts" />/* 標籤雲或文章底部的標籤轉換為全小寫 */
+.tagCloud-tags a, 
+.article-tags a, 
+.tag-link {
+    text-transform: lowercase !important;
+}
     </head>
     <body class="">
     <script>
@@ -311,12 +316,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="http://localhost:1313/blog/2021-05-08-how-to-combine-videos-using-ffmpeg/">如何使用 ffmpeg 串接多個影片</a>
+            <a href="http://localhost:1313/blog/2020-10-25-bitrate-vs-resolution/">一樣的 Bitrate，解析度高的畫質會比較好嗎？</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            最近同事在用 Premiere 串接影片時，表示輸出很花時間，因為 Premiere 會重新編碼，以這個案例來說，其實可以使用 ffmpeg 來達成，因為是相同格式的影片，不用重新編碼 ...
+            我知道 Bitrate 越大，畫質越好，但是解析度越大，就代表畫質越好嗎？解析度、Bitrate、畫質它們三者的關係是什麼呢？誰是影響畫質的最大因素呢？於是決定做個實驗，看看同樣 Bitrate，不同解析度的畫質誰比較好 ...
         </h3>
         
     </div>
@@ -337,64 +342,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published" datetime='2021-05-08T14:51:15Z'>2021-5-8</time>
-            </div>
-        
-
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
-</article>
-        
-            
-<article class="">
-    <header class="article-header">
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="http://localhost:1313/blog/categories/%E9%9B%BB%E8%85%A6-/-%E7%A1%AC%E9%AB%94/" >
-                電腦 / 硬體
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="http://localhost:1313/blog/2021-05-02-use-tracert-to-troubleshoot-network/">網路卡卡？快用 tracert 找出問題點！</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            網路是一個很複雜的東西，從你家到目的地必須經過很多個節點，為了釐清封包是在哪個點卡住了，我們可以使用 Windows 內建的 `tracert` 指令 ...
-        </h3>
-        
-    </div>
-
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published" datetime='2021-05-02T10:28:20Z'>2021-5-2</time>
+                <time class="article-time--published" datetime='2020-10-25T16:46:42Z'>2020-10-25</time>
             </div>
         
 
@@ -425,12 +373,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="http://localhost:1313/blog/2021-04-13-how-to-use-mobile-as-webcam/">如何把手機變 Webcam (免安裝軟體、免插線、免費)</a>
+            <a href="http://localhost:1313/blog/2020-09-23-obs-multi-rtmp-outputs-plugin/">如何使用 OBS 同時直播多個平台</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            最近找到了一個開源的酷東西，不用安裝任何軟體、不用插任何線，只要有網路！就可以把手機拍到的畫面投到電腦上 ...
+            OBS 預設只能直播一個平台，但我需要同時直播 YouTube 和 Facebook，所以這陣子都在搜尋有沒有什麼好的解決方式，在心灰意冷的時候看到 OBS Forum 上有人做了 Plug-in ...
         </h3>
         
     </div>
@@ -451,7 +399,463 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published" datetime='2021-04-13T20:36:32Z'>2021-4-13</time>
+                <time class="article-time--published" datetime='2020-09-23T09:12:05Z'>2020-9-23</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+</article>
+        
+            
+<article class="">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="http://localhost:1313/blog/categories/%E9%9B%BB%E8%85%A6-/-%E7%A1%AC%E9%AB%94/" >
+                電腦 / 硬體
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="http://localhost:1313/blog/2020-05-11-iphone-se-battery-replacement-at-xinyi-a13/">來去直營店換 iPhone 電池</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            手上這支 iPhone SE 已經四年多，電池健康度為 82%，雖然它本來就只有 1624 mAh，但感覺用 safari 滿容易發熱和噴電的，於是就決定去原廠換電池，一個禮拜前先線上預約 ...
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2020-05-11T22:27:01Z'>2020-5-11</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+</article>
+        
+            
+<article class="">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="http://localhost:1313/blog/categories/%E8%BD%89%E6%AA%94-/-%E7%B7%A8%E7%A2%BC/" >
+                轉檔 / 編碼
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="http://localhost:1313/blog/2020-04-26-how-to-check-video-bitrate/">如何知道影片從頭到尾 Bitrate 的變化</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            最近在研究適合網路串流的 VBR 轉檔，想知道整段影片的 Bitrate 是怎樣變化的，要是 maximum bitrate 高過網速時，可能就會出現緩衝轉圈圈的情況，如果用 MediaInfo 看，只會有 average bitrate ...
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2020-04-26T14:29:21Z'>2020-4-26</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+</article>
+        
+            
+<article class="">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="http://localhost:1313/blog/categories/%E8%BD%89%E6%AA%94-/-%E7%B7%A8%E7%A2%BC/" >
+                轉檔 / 編碼
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="http://localhost:1313/blog/2020-04-03-free-aws-digital-training-for-video-compression-basics/">免費的 AWS 轉檔基礎知識線上課程</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            AWS 為了讓大家能更了解他們的服務，提供了許多免費的線上課程，其中包括了許多基礎知識，例如雲端架構、資料庫、物聯網、媒體服務等等，這次我上的是轉檔基礎知識 ...
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2020-04-03T22:13:37Z'>2020-4-3</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+</article>
+        
+            
+<article class="">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="http://localhost:1313/blog/categories/%E4%BC%81%E5%8A%83-/-%E8%A1%8C%E9%8A%B7/" >
+                企劃 / 行銷
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="http://localhost:1313/blog/2020-03-15-how-to-find-my-blog-on-google-search/">如何讓 Google 搜尋到自己的部落格</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            首先要先了解 Google 搜尋是怎麼運作的，因為 Google 不是搜尋整個網路，而是在搜尋 Google 的網頁索引 (index)，共有三個步驟，一 Crawling 抓取，二 Indexing 建立索引 ...
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2020-03-15T10:50:02Z'>2020-3-15</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+</article>
+        
+            
+<article class="">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="http://localhost:1313/blog/categories/%E8%B3%87%E5%B7%A5-/-%E7%A8%8B%E8%A8%AD/" >
+                資工 / 程設
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="http://localhost:1313/blog/2020-03-09-add-utterances-comment-widget-to-hexo/">在 Hexo 安裝 utterances 留言版</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            utterances 沒廣告、不追蹤用戶隱私，留言會自動開 issue 到 repo，首先在 github 創建一個 public repo，然後安裝 utterances app ...
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2020-03-09T22:14:53Z'>2020-3-9</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+</article>
+        
+            
+<article class="">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="http://localhost:1313/blog/categories/%E8%B3%87%E5%B7%A5-/-%E7%A8%8B%E8%A8%AD/" >
+                資工 / 程設
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="http://localhost:1313/blog/2020-01-03-use-hexo-to-deploy-github-pages/">用 Hexo 和 GitHub Pages 架部落格</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Hexo 中文資源比較多，也有很多別人做好的主題可以直接用，一鍵就可以產生靜態網站並部署，在開始之前要先創建一個 repo，然後執行 npm install -g hexo-cli ...
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2020-01-03T23:19:47Z'>2020-1-3</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+</article>
+        
+            
+<article class="">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="http://localhost:1313/blog/categories/%E8%B3%87%E5%B7%A5-/-%E7%A8%8B%E8%A8%AD/" >
+                資工 / 程設
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="http://localhost:1313/blog/2019-12-27-use-docusaurus-to-deploy-github-pages/">用 Docusaurus 和 GitHub Pages 架網站</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Docusaurus 是 Facebook 團隊的開源作品，可以輕鬆產生靜態網站，適合用於 Documentation Website，在開始前要安裝 git 和 node.js，並創建一個 repo ...
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2019-12-27T23:18:01Z'>2019-12-27</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+</article>
+        
+            
+<article class="">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="http://localhost:1313/blog/categories/%E8%BD%89%E6%AA%94-/-%E7%B7%A8%E7%A2%BC/" >
+                轉檔 / 編碼
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="http://localhost:1313/blog/2019-12-17-install-ffmpeg/">Win 10 安裝 FFmpeg</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            ffmpeg 是一個開源的影音處理軟體，不管是轉檔、分析、播放、剪接、字幕、濾鏡都做得到，首先前往官網下載打包好的靜態函式庫版本，解壓縮資料夾後，放到 C 槽路徑下面 ...
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2019-12-17T12:25:39Z'>2019-12-17</time>
             </div>
         
 
@@ -484,42 +888,7 @@
                 
             
             
-                    
-                        
-                        <span class='page-link dots'>&hellip;</span>
-                    
-                
-            
-            
-                    
-                
-            
-            
-                    
-                
-            
-            
-                    
-                
-            
-            
-                    
-                
-            
-            
-                    
-                
-            
-            
-                    
-                
-            
-            
-                    
-                
-            
-            
-                    <a class='page-link' href='http://localhost:1313/blog/page/12/'>12</a>
+                    <a class='page-link' href='http://localhost:1313/blog/page/4/'>4</a>
                 
             
     </nav>
