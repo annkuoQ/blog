@@ -152,12 +152,12 @@ menu:
           params:
               icon: user
 
-        - identifier: search
-          name: Search
-          url: /search/
-          weight: 3
-          params:
-              icon: search
+#        - identifier: search
+#          name: Search
+#          url: /search/
+#          weight: 3
+#          params:
+#              icon: search
 
         - identifier: archives
           name: Archives

@@ -1,0 +1,21 @@
+{{ define "main" }}
+<form action="{{ .RelPermalink }}" method="GET" class="search-form widget">
+    <p>
+        <label>搜尋</label>
+        <input name="keyword" placeholder="輸入關鍵字..." />
+        <button title="搜尋">
+            <i class="icon-search"></i>
+        </button>
+    </p>
+</form>
+
+<h4 class="search-result--title section-title"></h4>
+<div class="search-result--list article-list--compact"></div>
+
+<script>
+    window.searchConfig = {{ .Site.Params.search | jsonify }};
+</script>
+
+{{ $searchJs := resources.Get "ts/search.ts" | js.Build }}
+<script type="text/javascript" src="{{ $searchJs.RelPermalink }}" defer></script>
+{{ end }}
