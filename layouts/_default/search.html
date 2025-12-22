@@ -1,16 +1,74 @@
 {{ define "main" }}
-<div id="search-page-container" style="padding: 20px; max-width: 800px; margin: 0 auto;">
+
+<style>
+    /* 1. 調整整體容器寬度 */
+    #search-page-container {
+        max-width: 1000px !important; /* 拉寬讓畫面更開闊 */
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    /* 2. 優化搜尋輸入框 */
+    #manual-search-input {
+        background-color: #fcfcfc !important; 
+        border: 2px solid var(--primary) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        /* 確保在深色模式下文字也是黑色的，方便閱讀 */
+        color: #000 !important;
+    }
+
+    #manual-search-input:focus {
+        box-shadow: 0 4px 20px rgba(var(--primary-rgb), 0.3);
+        outline: none;
+    }
+
+    /* 3. 搜尋結果卡片樣式 */
+    .search-result-card {
+        padding: 25px;
+        margin-bottom: 20px;
+        background: #2a2a2a; /* 稍亮一點的深灰色 */
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.2s ease, background 0.2s ease;
+        display: block;
+        text-decoration: none !important;
+    }
+
+    .search-result-card:hover {
+        background: #333333;
+        transform: translateY(-3px);
+        border-color: var(--primary);
+    }
+
+    .search-result-title {
+        color: var(--primary) !important;
+        font-size: 1.4rem !important;
+        font-weight: 700;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .search-result-meta {
+        font-size: 0.85rem;
+        color: #aaaaaa;
+        display: flex;
+        gap: 15px;
+    }
+</style>
+
+<div id="search-page-container">
     <h1 style="color: var(--card-text-color-main); margin-bottom: 20px;">Search</h1>
     
     <input type="text" id="manual-search-input" placeholder="輸入關鍵字..." 
-           style="width: 100%; padding: 15px; font-size: 18px; border-radius: 10px; border: 2px solid var(--primary); background: #fff !important; color: #000 !important;">
+           style="width: 100%; padding: 15px; font-size: 18px; border-radius: 10px;">
     
     <div id="manual-search-results" style="margin-top: 30px;"></div>
 </div>
 
 <script>
     (function() {
-        let isInitialLoad = true; // 旗標：用來判斷是否為第一次進入頁面
+        let isInitialLoad = true;
 
         const initSearch = () => {
             const input = document.getElementById('manual-search-input');
@@ -18,7 +76,6 @@
             
             if (!input || !resultsContainer) return;
 
-            // 只有在「第一次載入」且「網址有參數」時才自動填入
             if (isInitialLoad) {
                 const urlParams = new URLSearchParams(window.location.search);
                 const keywordFromUrl = urlParams.get('keyword');
@@ -27,10 +84,9 @@
                     input.value = keywordFromUrl;
                     performSearch(keywordFromUrl, resultsContainer);
                 }
-                isInitialLoad = false; // 填完後立刻關閉旗標，防止之後被 setInterval 重置
+                isInitialLoad = false;
             }
 
-            // 監聽手動輸入事件
             if (!input.dataset.listenerBound) {
                 input.addEventListener('input', () => {
                     performSearch(input.value.trim(), resultsContainer);
@@ -51,19 +107,22 @@
                         item.title.toLowerCase().includes(query.toLowerCase()) || 
                         (item.contents && item.contents.toLowerCase().includes(query.toLowerCase()))
                     );
+                    
+                    // 修正：這裡的 HTML 結構要配合上面的 CSS Class
                     container.innerHTML = matched.map(item => `
-                        <div style="padding: 20px; margin-bottom: 15px; background: var(--card-background); border-radius: 12px; border: 1px solid var(--border-color);">
-                            <a href="${item.permalink}" style="color: var(--primary); font-weight: bold; text-decoration: none; font-size: 1.2rem;">${item.title}</a>
-                        </div>
+                        <a href="${item.permalink}" class="search-result-card">
+                            <span class="search-result-title">${item.title}</span>
+                            <div class="search-result-meta">
+                                <span>📂 ${item.categories || '未分類'}</span>
+                            </div>
+                        </a>
                     `).join('');
                 });
         }
 
-        // 啟動監測
         document.addEventListener('DOMContentLoaded', initSearch);
         const checker = setInterval(() => {
             initSearch();
-            // 如果搜尋框已經正確顯示且旗標已關閉，就停止檢查
             if (document.getElementById('manual-search-input') && !isInitialLoad) {
                 clearInterval(checker);
             }
