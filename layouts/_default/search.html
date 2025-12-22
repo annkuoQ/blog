@@ -1,24 +1,27 @@
+{{ define "footerfiles" }}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+<script src="{{ "js/search.js" | absURL }}"></script>
+{{ end }}
 {{ define "main" }}
-<form action="{{ .RelPermalink }}" method="GET" class="search-form widget">
-    <p>
-        <label>Search</label>
-        <input name="keyword" placeholder="輸入關鍵字..." />
-        <button title="Search">
-            <i class="icon-search"></i>
-        </button>
-    </p>
-</form>
-
-<h4 class="search-result--title section-title"></h4>
-<div class="search-result--list article-list--compact"></div>
-
-<script>
-    // 直接定義搜尋配置，確保 indexURL 指向正確的 JSON 位置
-    window.searchConfig = {
-        "indexURL": "/blog/index.json"
-    };
+<section class="resume-section p-3 p-lg-5 d-flex flex-column">
+  <div class="my-auto" >
+    <form action="{{ "search" | absURL }}">
+      <input id="search-query" name="s"/>
+    </form>
+    <div id="search-results">
+     <h3>Matching pages</h3>
+    </div>
+  </div>
+</section>
+<!-- this template is sucked in by search.js and appended to the search-results div above. So editing here will adjust style -->
+<script id="search-result-template" type="text/x-js-template">
+    <div id="summary-${key}">
+      <h4><a href="${link}">${title}</a></h4>
+      <p>${snippet}</p>
+      ${ isset tags }<p>Tags: ${tags}</p>${ end }
+      ${ isset categories }<p>Categories: ${categories}</p>${ end }
+    </div>
 </script>
-
-{{/* 繼續使用手動載入的 JS */}}
-<script type="text/javascript" src="/blog/ts/search.js" defer></script>
 {{ end }}
