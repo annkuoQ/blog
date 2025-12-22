@@ -263,6 +263,7 @@
     <loc>http://localhost:1313/blog/page/</loc>
   </url><url>
     <loc>http://localhost:1313/blog/search/</loc>
+    <priority>0.1</priority>
   </url><url>
     <loc>http://localhost:1313/blog/archives/</loc>
   </url><url>

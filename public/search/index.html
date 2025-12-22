@@ -2,23 +2,21 @@
 <html lang="zh-tw" dir="ltr">
     <head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="">
-<title>搜尋</title>
+<title>Search</title>
 
 <link rel='canonical' href='http://localhost:1313/blog/search/'>
 
-<link rel="stylesheet" href="http://localhost:1313/blog/scss/style.min.9181d21a9686d2b9df6804e8423ef89abbe3f2eaa68cdd1fe46406b71b17759c.css"><meta property='og:title' content="搜尋">
+<link rel="stylesheet" href="http://localhost:1313/blog/scss/style.min.9181d21a9686d2b9df6804e8423ef89abbe3f2eaa68cdd1fe46406b71b17759c.css"><meta property='og:title' content="Search">
 <meta property='og:description' content="">
 <meta property='og:url' content='http://localhost:1313/blog/search/'>
 <meta property='og:site_name' content='AnnKuoQ Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='' />
-<meta name="twitter:title" content="搜尋">
+<meta name="twitter:title" content="Search">
 <meta name="twitter:description" content="">
     <link rel="shortcut icon" href="http://localhost:1313/blog/img/favicon.ico" />
 
     </head>
-    <body class="
-    article-page
-    ">
+    <body class="">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -154,209 +152,149 @@
     </ol>
 </aside>
 
-    
-
             <main class="main full-width">
-    <article class="main-article">
-    <header class="article-header">
-
-    <div class="article-details">
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="http://localhost:1313/blog/search/">搜尋</a>
-        </h2>
-    
-        
-    </div>
-
-    
-    
-    
-    
-
-    
-</div>
-
-</header>
-
-    <section class="article-content">
-    
-    
-    
-</section>
-
-
-    <footer class="article-footer">
-    
-
-    
-    <section class="article-copyright">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
-</svg>
-
-
-
-        <span>Licensed under CC BY-NC-SA 4.0</span>
-    </section>
-    </footer>
-
-
-    
-</article>
-
-    
-
-    
-
-     
-    
-        
-    <script src="https://utteranc.es/client.js" 
-        repo="https://github.com/annkuoQ/blog-utterances"
-        issue-term="pathname"
-        
-        crossorigin="anonymous"
-        async
-        >
-</script>
 
 <style>
-    .utterances {
-        max-width: unset;
+     
+    #search-page-container {
+        width: 100% !important;
+        max-width: 100% !important;  
+        margin: 20px 0;
+    }
+
+     
+    .search-result-card {
+        padding: 25px;
+        margin-bottom: 20px;
+        background: #2d2d2d !important;  
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.25s ease;
+        display: block;
+        text-decoration: none !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+     
+    .search-result-card:hover {
+        background: #383838 !important;
+        transform: translateY(-4px);
+        border-color: #48C494;  
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .search-result-title {
+        color: #fff !important;  
+        font-size: 1.3rem !important;
+        font-weight: 600;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .search-result-meta {
+        font-size: 0.9rem;
+        color: #bbbbbb;  
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+		
+	 
+    #manual-search-input {
+        background-color: var(--card-background) !important;  
+        border: 1px solid var(--border-color) !important;  
+        color: var(--card-text-color-main) !important;  
+        box-shadow: none;  
+        transition: all 0.3s ease;
+        opacity: 0.9;
+    }
+
+    #manual-search-input:focus {
+        background-color: var(--card-background) !important;
+        border-color: var(--primary) !important;  
+        outline: none;
+        opacity: 1;
+    }
+
+     
+    #manual-search-input::placeholder {
+        color: var(--card-text-color-tertiary);
+        opacity: 0.5;
     }
 </style>
 
+<div id="search-page-container">
+    <h1 style="color: var(--card-text-color-main); margin-bottom: 20px;">Search</h1>
+    
+    <input type="text" id="manual-search-input" placeholder="輸入關鍵字..." 
+           style="width: 100%; padding: 15px; font-size: 18px; border-radius: 10px;">
+    
+    <div id="manual-search-results" style="margin-top: 30px;"></div>
+</div>
+
 <script>
-    let utterancesLoaded = false;
+    (function() {
+        let isInitialLoad = true;
 
-    function setUtterancesTheme(theme) {
-        let utterances = document.querySelector('.utterances iframe');
-        if (utterances) {
-            utterances.contentWindow.postMessage(
-                {
-                    type: 'set-theme',
-                    theme: `github-${theme}`
-                },
-                'https://utteranc.es'
-            );
+        const initSearch = () => {
+            const input = document.getElementById('manual-search-input');
+            const resultsContainer = document.getElementById('manual-search-results');
+            
+            if (!input || !resultsContainer) return;
+
+            if (isInitialLoad) {
+                const urlParams = new URLSearchParams(window.location.search);
+                const keywordFromUrl = urlParams.get('keyword');
+                
+                if (keywordFromUrl) {
+                    input.value = keywordFromUrl;
+                    performSearch(keywordFromUrl, resultsContainer);
+                }
+                isInitialLoad = false;
+            }
+
+            if (!input.dataset.listenerBound) {
+                input.addEventListener('input', () => {
+                    performSearch(input.value.trim(), resultsContainer);
+                });
+                input.dataset.listenerBound = "true";
+            }
+        };
+
+        function performSearch(query, container) {
+            if (!query) {
+                container.innerHTML = "";
+                return;
+            }
+            fetch("/blog/index.json")
+                .then(res => res.json())
+                .then(data => {
+                    const matched = data.filter(item => 
+                        item.title.toLowerCase().includes(query.toLowerCase()) || 
+                        (item.contents && item.contents.toLowerCase().includes(query.toLowerCase()))
+                    );
+                    
+                    
+                    container.innerHTML = matched.map(item => `
+                        <a href="${item.permalink}" class="search-result-card">
+                            <span class="search-result-title">${item.title}</span>
+                            <div class="search-result-meta">
+                                <span>📂 ${item.categories || '未分類'}</span>
+                            </div>
+                        </a>
+                    `).join('');
+                });
         }
-    }
 
-    addEventListener('message', event => {
-        if (event.origin !== 'https://utteranc.es') return;
-
-        
-        utterancesLoaded = true;
-        setUtterancesTheme(document.documentElement.dataset.scheme)
-    });
-
-    window.addEventListener('onColorSchemeChange', (e) => {
-        if (!utterancesLoaded) return;
-        setUtterancesTheme(e.detail)
-    })
+        document.addEventListener('DOMContentLoaded', initSearch);
+        const checker = setInterval(() => {
+            initSearch();
+            if (document.getElementById('manual-search-input') && !isInitialLoad) {
+                clearInterval(checker);
+            }
+        }, 1000);
+    })();
 </script>
-
-
-    
-
-    <footer class="site-footer">
-    <section class="copyright">
-        &copy; 
-        
-            2020 - 
-        
-        2025 AnnKuoQ
-    </section>
-    
-    <section class="powerby">
-        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 建立 <br />
-        主題 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.32.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 設計
-    </section>
-</footer>
-
-
-    
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-    
-    <div class="pswp__bg"></div>
-
-    
-    <div class="pswp__scroll-wrap">
-
-        
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                
-                
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div><script 
-                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer
-                >
-            </script><link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
-            ><link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
-            >
 
             </main>
         </div>

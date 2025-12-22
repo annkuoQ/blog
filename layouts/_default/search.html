@@ -1,59 +1,71 @@
 {{ define "main" }}
 
 <style>
-    /* 1. 調整整體容器寬度 */
+    /* 核心容器 */
     #search-page-container {
-        max-width: 1000px !important; /* 拉寬讓畫面更開闊 */
-        margin: 40px auto;
-        padding: 0 20px;
+        width: 100% !important;
+        max-width: 100% !important; /* 讓容器能填滿父層 */
+        margin: 20px 0;
     }
 
-    /* 2. 優化搜尋輸入框 */
-    #manual-search-input {
-        background-color: #fcfcfc !important; 
-        border: 2px solid var(--primary) !important;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-        /* 確保在深色模式下文字也是黑色的，方便閱讀 */
-        color: #000 !important;
-    }
-
-    #manual-search-input:focus {
-        box-shadow: 0 4px 20px rgba(var(--primary-rgb), 0.3);
-        outline: none;
-    }
-
-    /* 3. 搜尋結果卡片樣式 */
+    /* 搜尋結果卡片樣式優化 */
     .search-result-card {
         padding: 25px;
         margin-bottom: 20px;
-        background: #2a2a2a; /* 稍亮一點的深灰色 */
-        border-radius: 16px;
+        background: #2d2d2d !important; /* 稍微提升亮度，增加對比 */
+        border-radius: 12px;
         border: 1px solid rgba(255, 255, 255, 0.1);
-        transition: transform 0.2s ease, background 0.2s ease;
+        transition: all 0.25s ease;
         display: block;
         text-decoration: none !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
+    /* 卡片懸停效果 */
     .search-result-card:hover {
-        background: #333333;
-        transform: translateY(-3px);
-        border-color: var(--primary);
+        background: #383838 !important;
+        transform: translateY(-4px);
+        border-color: #48C494; /* 改為白色邊框，或是你想要的顏色 */
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     }
 
     .search-result-title {
-        color: var(--primary) !important;
-        font-size: 1.4rem !important;
-        font-weight: 700;
-        margin-bottom: 8px;
+        color: #fff !important; /* 標題強制白色，避免被主題綠色覆蓋 */
+        font-size: 1.3rem !important;
+        font-weight: 600;
+        margin-bottom: 10px;
         display: block;
     }
 
     .search-result-meta {
-        font-size: 0.85rem;
-        color: #aaaaaa;
+        font-size: 0.9rem;
+        color: #bbbbbb; /* 文字變亮一點 */
         display: flex;
         gap: 15px;
+        align-items: center;
+    }
+		
+	/* 優化搜尋輸入框：仿照側欄樣式 */
+    #manual-search-input {
+        background-color: var(--card-background) !important; /* 跟隨主題深色卡片背景 */
+        border: 1px solid var(--border-color) !important; /* 使用細微的邊框 */
+        color: var(--card-text-color-main) !important; /* 文字顏色跟隨主題 */
+        box-shadow: none; /* 移除發光陰影 */
+        transition: all 0.3s ease;
+        opacity: 0.9;
+    }
+
+    #manual-search-input:focus {
+        background-color: var(--card-background) !important;
+        border-color: var(--primary) !important; /* 聚焦時顯示主題色邊框 */
+        outline: none;
+        opacity: 1;
+    }
+
+    /* 確保 placeholder 顏色不要太亮 */
+    #manual-search-input::placeholder {
+        color: var(--card-text-color-tertiary);
+        opacity: 0.5;
     }
 </style>
 
