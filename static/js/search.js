@@ -1,54 +1,51 @@
-$(function() {
-    const summaryInclude = 60;
-    const fuseOptions = {
-        shouldSort: true,
-        includeMatches: true,
-        threshold: 0.4,
-        location: 0,
-        distance: 100,
-        maxPatternLength: 32,
-        minMatchCharLength: 1,
-        keys: [
-            { name: "title", weight: 0.8 },
-            { name: "contents", weight: 0.5 }
-        ]
-    };
+// 使用最保險的載入方式，確保 DOM 完全準備好
+window.addEventListener('load', function() {
+    console.log("搜尋腳本開始初始化...");
 
-    // 修正 1：對接網址參數，同時支援 s 和 keyword
-    let searchQuery = new URLSearchParams(window.location.search).get('keyword') || new URLSearchParams(window.location.search).get('s');
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
 
-    if (searchQuery) {
-        $("#search-input").val(searchQuery);
-        executeSearch(searchQuery);
+    // 防錯檢查：如果找不到元素就不執行，避免 console 紅字
+    if (!searchInput || !searchResults) {
+        console.warn("找不到 search-input 或 search-results 元素，請檢查 HTML ID 設定");
+        return;
     }
 
-    function executeSearch(query) {
-        // 修正 2：寫死 GitHub Pages 的正確路徑
-        $.getJSON("/blog/index.json", function(data) {
-            let fuse = new Fuse(data, fuseOptions);
-            let result = fuse.search(query);
-            showResults(result);
-        }).fail(function() {
-            console.error("無法讀取 /blog/index.json，請檢查檔案是否存在");
-        });
-    }
-
-    function showResults(results) {
-        const $container = $("#search-results");
-        $container.empty();
-        if (results.length > 0) {
-            results.forEach(res => {
-                let item = res.item;
-                $container.append(`
-                    <article class="archive-item">
-                        <a href="${item.uri}">
-                            <h2 class="archive-item-title">${item.title}</h2>
-                        </a>
-                    </article>
-                `);
-            });
-        } else {
-            $container.append("<p>找不到相關結果</p>");
+    // 當使用者在搜尋框輸入時觸發
+    searchInput.addEventListener('input', function() {
+        const query = this.value.trim();
+        if (query.length < 1) {
+            searchResults.innerHTML = "";
+            return;
         }
+
+        // 寫死正確的索引路徑
+        fetch("/blog/index.json")
+            .then(response => response.json())
+            .then(data => {
+                // 簡單的關鍵字比對過濾
+                const results = data.filter(item => 
+                    item.title.toLowerCase().includes(query.toLowerCase()) || 
+                    (item.content && item.content.toLowerCase().includes(query.toLowerCase()))
+                );
+                
+                renderResults(results);
+            })
+            .catch(err => console.error("讀取索引失敗:", err));
+    });
+
+    function renderResults(results) {
+        if (results.length === 0) {
+            searchResults.innerHTML = "<p>找不到相關結果</p>";
+            return;
+        }
+
+        searchResults.innerHTML = results.map(item => `
+            <article class="archive-item" style="margin-bottom: 20px;">
+                <a href="${item.uri}" style="text-decoration: none;">
+                    <h2 style="color: var(--primary); font-size: 1.2rem;">${item.title}</h2>
+                </a>
+            </article>
+        `).join('');
     }
 });

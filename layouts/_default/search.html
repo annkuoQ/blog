@@ -1,14 +1,12 @@
 {{ define "main" }}
 <div class="search-container">
-    <form action="{{ .RelPermalink }}" method="GET" style="margin-bottom: 20px;">
-        <input name="keyword" id="search-input" placeholder="輸入關鍵字..." 
-               style="width: 100%; padding: 10px; background: var(--card-background); color: var(--body-text-color); border: 1px solid var(--border-color); border-radius: var(--card-border-radius);">
-    </form>
+    <div style="margin-bottom: 30px;">
+        <input type="text" id="search-input" placeholder="輸入關鍵字..." 
+               style="width: 100%; padding: 12px; font-size: 16px; border-radius: 8px; border: 1px solid #ccc; background: var(--card-background); color: var(--body-text-color);">
+    </div>
+    
     <div id="search-results"></div>
 </div>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
 
 <script type="text/javascript" src="/blog/ts/search.js"></script>
 {{ end }}
