@@ -713,7 +713,7 @@ utterances APP 要求存取的權限有:&lt;/li&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;前往 http://localhost:4000 顯示範例網站&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/blog/hexo-new-site.jpg&#34;
+&lt;img src=&#34;http://localhost:1313/blog/./hexo-new-site.jpg&#34;
 	
 	
 	
@@ -887,7 +887,7 @@ utterances APP 要求存取的權限有:&lt;/li&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;前往 http://localhost:4000/test/2020/01/03/post-title/ 可以看到新文章出現&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/blog/hexo-new-post.jpg&#34;
+&lt;img src=&#34;http://localhost:1313/blog/./hexo-new-post.jpg&#34;
 	
 	
 	

@@ -1,4 +1,5 @@
 baseURL: https://annkuoq.github.io/blog/
+canonifyURLs: true  # 讓 Hugo 自動處理子目錄路徑
 languageCode: zh-tw
 theme: hugo-theme-stack
 title: AnnKuoQ Blog
@@ -49,7 +50,7 @@ params:
         avatar:
             enabled: true
             local: false
-            src: img/avatar.png
+            src: /img/avatar.png
 
     article:
         math: false
@@ -150,7 +151,7 @@ menu:
               icon: user
 
 #        - identifier: search
-#          name: 搜尋
+#          name: Search
 #          url: /search/
 #          weight: 3
 #          params:

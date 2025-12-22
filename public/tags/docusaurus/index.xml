@@ -376,7 +376,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;ol start=&#34;7&#34;&gt;
 &lt;li&gt;瀏覽器自動前往 http://localhost:3000/ 顯示範例網站&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/blog/docusaurus-new-site.jpg&#34;
+&lt;img src=&#34;http://localhost:1313/blog/./docusaurus-new-site.jpg&#34;
 	
 	
 	
@@ -439,7 +439,7 @@
 &lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;瀏覽器前往 http://localhost:3000/hello-world 可以看到新頁面&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/blog/docusaurus-new-page.jpg&#34;
+&lt;img src=&#34;http://localhost:1313/blog/./docusaurus-new-page.jpg&#34;
 	
 	
 	
@@ -552,7 +552,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;瀏覽器前往 http://localhost:3000/docs/doc9 可以看到側邊欄已更新&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/blog/docusaurus-new-doc.jpg&#34;
+&lt;img src=&#34;http://localhost:1313/blog/./docusaurus-new-doc.jpg&#34;
 	
 	
 	
