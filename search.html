@@ -1,0 +1,22 @@
+{{ define "main" }}
+<form action="{{ .RelPermalink }}" method="GET" class="search-form widget">
+    <p>
+        <label>{{ T "search.title" }}</label>
+        <input name="keyword" placeholder="{{ T "search.placeholder" }}" />
+        <button title="{{ T "search.title" }}">
+            {{ partial "helper/icon" "search" }}
+        </button>
+    </p>
+</form>
+
+<h4 class="search-result--title section-title"></h4>
+<div class="search-result--list article-list--compact"></div>
+
+<script>
+    window.searchConfig = {{ .Site.Params.search | jsonify }};
+    window.searchConfig.placeholder = {{ T "search.placeholder" }};
+</script>
+
+{{ $searchJs := resources.Get "ts/search.ts" | js.Build }}
+<script type="text/javascript" src="{{ $searchJs.RelPermalink }}" defer></script>
+{{ end }}
