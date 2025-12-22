@@ -1,9 +1,9 @@
 {{ define "main" }}
 <form action="{{ .RelPermalink }}" method="GET" class="search-form widget">
     <p>
-        <label>搜尋</label>
+        <label>Search</label>
         <input name="keyword" placeholder="輸入關鍵字..." />
-        <button title="搜尋">
+        <button title="Search">
             <i class="icon-search"></i>
         </button>
     </p>
@@ -16,6 +16,6 @@
     window.searchConfig = {{ .Site.Params.search | jsonify }};
 </script>
 
-{{ $searchJs := resources.Get "ts/search.ts" | js.Build }}
-<script type="text/javascript" src="{{ $searchJs.RelPermalink }}" defer></script>
+{{/* 這裡改用普通載入方式，避開 js.Build 的錯誤 */}}
+<script type="text/javascript" src="/blog/ts/search.js" defer></script>
 {{ end }}
