@@ -5,6 +5,12 @@ theme: hugo-theme-stack
 title: AnnKuoQ Blog
 copyright: AnnKuoQ
 
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
+
 # Theme i18n support
 # Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
 DefaultContentLanguage: zh-tw
@@ -116,12 +122,6 @@ params:
     search:
         enable: true
 
-outputs:
-    home:
-        - HTML
-        - RSS
-        - JSON
-
 
 ### Custom menu
 ### See https://stack.jimmycai.com/config/menu
@@ -152,7 +152,7 @@ menu:
 
         - identifier: search
           name: Search
-          url: /search/
+          url: search/
           weight: 3
           params:
               icon: search
