@@ -7,7 +7,135 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Sun, 02 May 2021 10:28:20 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/categories/%E9%9B%BB%E8%85%A6-/-%E7%A1%AC%E9%AB%94/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 23 Dec 2025 22:54:47 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/categories/%E9%9B%BB%E8%85%A6-/-%E7%A1%AC%E9%AB%94/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>每次換電腦我都會先裝的那些軟體</title>
+        <link>http://localhost:1313/blog/2025-12-23-my-go-to-apps-for-a-fresh-computer-setup/</link>
+        <pubDate>Tue, 23 Dec 2025 22:54:47 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/2025-12-23-my-go-to-apps-for-a-fresh-computer-setup/</guid>
+        <description>&lt;p&gt;沒想到我今年都還沒寫過部落格&lt;br&gt;
+可能已經社群成癮了哈哈哈&lt;/p&gt;
+&lt;p&gt;最近買了新筆電&lt;br&gt;
+因為舊的用了五年&lt;br&gt;
+怕某天掛掉&lt;br&gt;
+而且 Win10 也不能更新了&lt;/p&gt;
+&lt;p&gt;總之這篇就是紀錄一下&lt;br&gt;
+一台新電腦要安裝哪些軟體&lt;/p&gt;
+&lt;h2 id=&#34;開發與程式&#34;&gt;開發與程式
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://git-scm.com/install/windows&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Git&lt;/a&gt;: 版本控制&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.cloud.google.com/sdk/docs/install-sdk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Google Cloud CLI&lt;/a&gt;: GCP 命令列管理工具&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://nodejs.org/zh-tw/download&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Node.js&lt;/a&gt;: JavaScript 執行環境&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.python.org/downloads/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Python&lt;/a&gt;: 通用程式語言&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.postman.com/downloads/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Postman&lt;/a&gt;: API 測試工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;文字編輯器&#34;&gt;文字編輯器
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://code.visualstudio.com/download&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Visual Studio Code&lt;/a&gt; (可以一邊寫程式，一邊使用終端機)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://notepad-plus-plus.org/downloads/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Notepad++&lt;/a&gt; (當記事本用)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;瀏覽器&#34;&gt;瀏覽器
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.google.com/chrome/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Google Chrome&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.firefox.com/zh-TW/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Firefox&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;遠端連線&#34;&gt;遠端連線
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://remotedesktop.google.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Chrome Remote Desktop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.ivanti.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Ivanti Secure Access Client&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;通訊聯繫&#34;&gt;通訊聯繫
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://slack.com/intl/zh-tw/downloads/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Slack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.line.me/tw/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LINE&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;影音處理&#34;&gt;影音處理
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://obsproject.com/download&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OBS&lt;/a&gt;: 串流與錄影&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.ffmpeg.org/download.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ffmpeg&lt;/a&gt;: 影音轉檔&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/yt-dlp/yt-dlp/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;yt-dlp&lt;/a&gt;: 影音下載&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/SubtitleEdit/subtitleedit/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SubtitleEdit&lt;/a&gt;: 字幕編輯&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://mediaarea.net/en/MediaInfo/Download&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MediaInfo&lt;/a&gt;: 影音檔案資訊查看&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/MathewSachin/Captura/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Captura&lt;/a&gt;: 螢幕錄影 (雖然已停止維護，但還是可以用)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;影音播放器&#34;&gt;影音播放器
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://images.videolan.org/vlc/index.zh_TW.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;VLC media player&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://potplayer.daum.net/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PotPlayer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://xdcam-viewer.software.informer.com/download/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Sony XDCAM Viewer&lt;/a&gt;: 專用於播放 MXF&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;系統監測&#34;&gt;系統監測
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.jam-software.com/treesize&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;TreeSize&lt;/a&gt;: 磁碟空間分析 (一眼看出哪些資料夾或檔案佔最多空間)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.hwinfo.com/download/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HWiNFO&lt;/a&gt;: 硬體資訊監控&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/microsoft/PowerToys/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PowerToys&lt;/a&gt;: 微軟官方工具集 (很多實用小工具)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;文書與檔案管理&#34;&gt;文書與檔案管理
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.7-zip.org/download.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;7-Zip&lt;/a&gt;: 壓縮／解壓縮 (WinRAR 不是付費軟體XD)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://pdfsam.org/downloads/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDFsam&lt;/a&gt;: PDF 分割與合併 (把文件上傳到 iLovePDF 也是怕怕的)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/jasoncheng7115/pdf-simple-rotate/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF 轉向小工具&lt;/a&gt;: PDF 頁面旋轉&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;開源字型&#34;&gt;開源字型
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://fonts.google.com/noto/specimen/Noto&amp;#43;Sans&amp;#43;TC&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;思源黑體&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://fonts.google.com/noto/specimen/Noto&amp;#43;Serif&amp;#43;TC&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;思源宋體&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://justfont.com/huninn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;jf open 粉圓&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/ButTaiwan/iansui/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;芫荽&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最後來抱怨一下&lt;/p&gt;
+&lt;p&gt;現在鍵盤右邊的 Ctrl 都被改成 Copilot&lt;br&gt;
+嘗試了 &lt;a class=&#34;link&#34; href=&#34;https://github.com/microsoft/PowerToys/issues/35808&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;各種方式&lt;/a&gt; 都沒辦法改回來&lt;br&gt;
+原本習慣右手 Ctrl +/- 縮放畫面&lt;br&gt;
+還有 Ctrl + , 打出逗號&lt;br&gt;
+最後只好把右邊的 Alt 改成 Ctrl&lt;br&gt;
+Copilot 直接設定不作用&lt;/p&gt;
+&lt;p&gt;再來是 Win11 太多版位有不相干的資訊了&lt;br&gt;
+登入畫面有新聞跟天氣&lt;br&gt;
+工具列也有天氣&lt;br&gt;
+開始功能表、搜尋、通知都有推薦軟體&lt;br&gt;
+還一直跳 OneDrive 通知&lt;br&gt;
+只能一個一個慢慢去設定裡關掉&lt;/p&gt;
+&lt;p&gt;雖然抱怨了一番&lt;br&gt;
+但還是期待新電腦的陪伴&lt;br&gt;
+從今天開始就多多指教&lt;br&gt;
+希望我們能一起走很久 💪&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>網路卡卡？快用 tracert 找出問題點！</title>
         <link>http://localhost:1313/blog/2021-05-02-use-tracert-to-troubleshoot-network/</link>
         <pubDate>Sun, 02 May 2021 10:28:20 +0000</pubDate>
