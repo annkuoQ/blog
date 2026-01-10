@@ -7,14 +7,59 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Tue, 23 Dec 2025 22:54:47 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 09 Jan 2026 22:03:14 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>行為 vs. 樂受</title>
+        <link>http://localhost:1313/blog/2026-01-09-action-vs-pleasure/</link>
+        <pubDate>Fri, 09 Jan 2026 22:03:14 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/2026-01-09-action-vs-pleasure/</guid>
+        <description>&lt;p&gt;一個人如果喜歡聽音樂或喝飲料&lt;br&gt;
+那他是喜歡這件事的本身行為&lt;br&gt;
+還是喜歡做這件事所產生的樂受呢&lt;/p&gt;
+&lt;p&gt;人總是喜歡快樂&lt;br&gt;
+因為想要快樂&lt;br&gt;
+而去做某些行為&lt;/p&gt;
+&lt;p&gt;反之如果沒有快樂&lt;br&gt;
+就不再會去做那個行為&lt;br&gt;
+例如失去聽覺或是味覺&lt;br&gt;
+也就不會想聽那首歌或喝那杯飲料了&lt;/p&gt;
+&lt;p&gt;快樂本身不是痛苦&lt;br&gt;
+但 貪著/執取 就苦了&lt;br&gt;
+一直抓住不放&lt;br&gt;
+一直想維持&lt;br&gt;
+於是苦了起來&lt;/p&gt;
+&lt;p&gt;如果不能追求快樂&lt;br&gt;
+那我們能追求什麼呢&lt;/p&gt;
+&lt;p&gt;問了 AI&lt;br&gt;
+它說&lt;/p&gt;
+&lt;p&gt;樂來，知道是樂&lt;br&gt;
+樂走，不追&lt;br&gt;
+苦來，不逃&lt;/p&gt;
+&lt;p&gt;不是把握當下的快樂&lt;br&gt;
+而是 快樂/痛苦 發生時&lt;br&gt;
+我知道它正在發生&lt;br&gt;
+但不帶評論、不帶抵抗&lt;br&gt;
+只是看清楚，而不隨境轉&lt;/p&gt;
+&lt;p&gt;回到最初的問題&lt;br&gt;
+我認為是喜歡樂受的感覺&lt;/p&gt;
+&lt;p&gt;下次想做一個行為之前&lt;br&gt;
+可以先注意一下自己為何想做&lt;br&gt;
+觀察自己想做的原因&lt;br&gt;
+可能是肚子餓(生理)或逃避(心理)&lt;/p&gt;
+&lt;p&gt;小練習&lt;br&gt;
+行為前，觀動機&lt;br&gt;
+行為中，知感受&lt;br&gt;
+行為後，不糾結&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>每次換電腦我都會先裝的那些軟體</title>
         <link>http://localhost:1313/blog/2025-12-23-my-go-to-apps-for-a-fresh-computer-setup/</link>
         <pubDate>Tue, 23 Dec 2025 22:54:47 +0000</pubDate>
         
         <guid>http://localhost:1313/blog/2025-12-23-my-go-to-apps-for-a-fresh-computer-setup/</guid>
-        <description>&lt;p&gt;沒想到我今年都還沒寫過部落格&lt;br&gt;
-可能已經社群成癮了哈哈哈&lt;/p&gt;
+        <description>&lt;p&gt;&lt;del&gt;沒想到我今年都還沒寫過部落格&lt;/del&gt;&lt;br&gt;
+&lt;del&gt;可能已經社群成癮了哈哈哈&lt;/del&gt;&lt;/p&gt;
 &lt;p&gt;最近買了新筆電&lt;br&gt;
 因為舊的用了五年&lt;br&gt;
 怕某天掛掉&lt;br&gt;
@@ -39,7 +84,7 @@
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://code.visualstudio.com/download&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Visual Studio Code&lt;/a&gt; (可以一邊寫程式，一邊使用終端機)&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://notepad-plus-plus.org/downloads/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Notepad++&lt;/a&gt; (當記事本用)&lt;/li&gt;
+    &gt;Notepad++&lt;/a&gt; (取代內建記事本)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;瀏覽器&#34;&gt;瀏覽器
 &lt;/h2&gt;&lt;ul&gt;
@@ -116,13 +161,13 @@
     &gt;芫荽&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;最後來抱怨一下&lt;/p&gt;
-&lt;p&gt;現在鍵盤右邊的 Ctrl 都被改成 Copilot&lt;br&gt;
+&lt;p&gt;現在鍵盤右邊的 &lt;code&gt;Ctrl&lt;/code&gt; 都被改成 &lt;code&gt;Copilot&lt;/code&gt;&lt;br&gt;
 嘗試了 &lt;a class=&#34;link&#34; href=&#34;https://github.com/microsoft/PowerToys/issues/35808&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;各種方式&lt;/a&gt; 都沒辦法改回來&lt;br&gt;
-原本習慣右手 Ctrl +/- 縮放畫面&lt;br&gt;
-還有 Ctrl + , 打出逗號&lt;br&gt;
-最後只好把右邊的 Alt 改成 Ctrl&lt;br&gt;
-Copilot 直接設定不作用&lt;/p&gt;
+原本習慣右手 &lt;code&gt;Ctrl +/-&lt;/code&gt; 縮放畫面&lt;br&gt;
+還有 &lt;code&gt;Ctrl + ,&lt;/code&gt; 打出逗號&lt;br&gt;
+最後只好把右邊的 &lt;code&gt;Alt&lt;/code&gt; 改成 &lt;code&gt;Ctrl&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;Copilot&lt;/code&gt; 直接設定不作用&lt;/p&gt;
 &lt;p&gt;再來是 Win11 太多版位有不相干的資訊了&lt;br&gt;
 登入畫面有新聞跟天氣&lt;br&gt;
 工具列也有天氣&lt;br&gt;
@@ -132,7 +177,7 @@ Copilot 直接設定不作用&lt;/p&gt;
 &lt;p&gt;雖然抱怨了一番&lt;br&gt;
 但還是期待新電腦的陪伴&lt;br&gt;
 從今天開始就多多指教&lt;br&gt;
-希望我們能一起走很久 💪&lt;/p&gt;
+希望能一起走很久 💪&lt;/p&gt;
 </description>
         </item>
         <item>
