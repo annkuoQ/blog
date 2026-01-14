@@ -7,7 +7,47 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Fri, 09 Jan 2026 22:03:14 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 13 Jan 2026 21:52:29 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Ai</title>
+        <link>http://localhost:1313/blog/tags/ai/</link>
+        <pubDate>Tue, 13 Jan 2026 21:52:29 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/tags/ai/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Bat</title>
+        <link>http://localhost:1313/blog/tags/bat/</link>
+        <pubDate>Tue, 13 Jan 2026 21:52:29 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/tags/bat/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Notebooklm</title>
+        <link>http://localhost:1313/blog/tags/notebooklm/</link>
+        <pubDate>Tue, 13 Jan 2026 21:52:29 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/tags/notebooklm/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Python</title>
+        <link>http://localhost:1313/blog/tags/python/</link>
+        <pubDate>Tue, 13 Jan 2026 21:52:29 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/tags/python/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Yt-Dlp</title>
+        <link>http://localhost:1313/blog/tags/yt-dlp/</link>
+        <pubDate>Tue, 13 Jan 2026 21:52:29 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/tags/yt-dlp/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Behavioral Motivation</title>
         <link>http://localhost:1313/blog/tags/behavioral-motivation/</link>
         <pubDate>Fri, 09 Jan 2026 22:03:14 +0000</pubDate>

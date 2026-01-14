@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Fri, 09 Jan 2026 22:03:14 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 13 Jan 2026 21:52:29 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>資工 / 程設</title>
+        <link>http://localhost:1313/blog/categories/%E8%B3%87%E5%B7%A5-/-%E7%A8%8B%E8%A8%AD/</link>
+        <pubDate>Tue, 13 Jan 2026 21:52:29 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/categories/%E8%B3%87%E5%B7%A5-/-%E7%A8%8B%E8%A8%AD/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>哲學 / 思辨</title>
         <link>http://localhost:1313/blog/categories/%E5%93%B2%E5%AD%B8-/-%E6%80%9D%E8%BE%A8/</link>
         <pubDate>Fri, 09 Jan 2026 22:03:14 +0000</pubDate>
@@ -37,14 +45,6 @@
         <pubDate>Sat, 08 May 2021 14:51:15 +0000</pubDate>
         
         <guid>http://localhost:1313/blog/categories/%E8%BD%89%E6%AA%94-/-%E7%B7%A8%E7%A2%BC/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>資工 / 程設</title>
-        <link>http://localhost:1313/blog/categories/%E8%B3%87%E5%B7%A5-/-%E7%A8%8B%E8%A8%AD/</link>
-        <pubDate>Wed, 03 Feb 2021 22:11:31 +0000</pubDate>
-        
-        <guid>http://localhost:1313/blog/categories/%E8%B3%87%E5%B7%A5-/-%E7%A8%8B%E8%A8%AD/</guid>
         <description></description>
         </item>
         <item>
