@@ -266,8 +266,8 @@
     
     
     <p>每天都有看不完的影片跟聽不完的 Podcast<br>
-如果懶得看，但又想知道重點該怎麼做呢<br>
-我們需要三種工具來協助完成</p>
+如果懶得看，但又想知道重點該怎麼做呢</p>
+<p>我們需要三種工具來協助完成</p>
 <ul>
 <li>yt-dlp: 下載字幕</li>
 <li>Python: 整理字幕檔</li>
@@ -282,7 +282,7 @@
 <h3 id="下載字幕">下載字幕
 </h3><p>開一個資料夾<br>
 把 <code>yt-dlp.exe</code> 放進去<br>
-於此資料夾開啟 CMD 並執行以下指令</p>
+於此資料夾位置開啟 CMD 並執行以下指令</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -299,7 +299,7 @@
 <li><code>zh.*</code>：繁體中文</li>
 </ul>
 <p>你也可以使用以下指令<br>
-查看的所有可下載的字幕軌</p>
+查看的所有可下載的字幕</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -310,10 +310,10 @@
 </div>
 </div><h2 id="整理字幕檔內容">整理字幕檔內容
 </h2><h3 id="python-腳本">Python 腳本
-</h3><p>下載下來的 <code>.vtt</code> 檔<br>
+</h3><p>下載來的字幕 <code>.vtt</code> 檔<br>
 因為內容含有 Timecode<br>
 不只很佔 token<br>
-也很影響敘事上的連續性</p>
+也很影響敘事上的連續性 👇</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -344,7 +344,7 @@
 </span></span><span class="line"><span class="cl">你是否有曾經
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>所以我們先用 Python 來整理<br>
+</div><p>因此要先用 Python 把不需要的資訊刪除<br>
 請建立一個檔案叫 <code>vtt_to_txt.py</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -449,7 +449,7 @@
 <ol>
 <li>把 <code>.vtt</code> 丟進資料夾</li>
 <li>雙擊 <code>convert.bat</code></li>
-<li>同資料夾會出現一堆 <code>.txt</code></li>
+<li>此時資料夾會出現一堆 <code>.txt</code></li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -471,9 +471,29 @@
 </span></span><span class="line"><span class="cl">└─ ep02.txt           ← 整理好的純文字字幕檔
 </span></span></code></pre></td></tr></table>
 </div>
+</div><p>整理好的 <code>.txt</code> 長這樣 👇<br>
+只剩下純文字</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">哈囉各位聽眾大家好
+</span></span><span class="line"><span class="cl">歡迎收聽最新一集的博音
+</span></span><span class="line"><span class="cl">你是否有曾經
+</span></span><span class="line"><span class="cl">把你自己的人生
+</span></span><span class="line"><span class="cl">活成一個電玩角色呢
+</span></span><span class="line"><span class="cl">...
+</span></span></code></pre></td></tr></table>
+</div>
 </div><h2 id="請-ai-整理重點">請 AI 整理重點
 </h2><p>因為這種逐字稿都超級長<br>
-所以選擇使用 <a class="link" href="https://notebooklm.google.com/"  target="_blank" rel="noopener"
+所以選擇用 <a class="link" href="https://notebooklm.google.com/"  target="_blank" rel="noopener"
     >NotebookLM</a><br>
 不然其他 AI 可能會一直叫我晚點再來 XD<br>
 <del>畢竟是免費仔</del></p>
@@ -482,27 +502,23 @@
 <li>點擊 <code>＋新建</code></li>
 <li>把 <code>.txt</code> 上傳</li>
 </ol>
+<div align="center"><img src="./upload_source.jpg"/></div>
 <p>你看！光只是上傳字幕檔！<br>
 它就馬上摘要一段兩百字的介紹了</p>
+<div align="center"><img src="./notebooklm.jpg"/></div>
 <blockquote>
 <p>這段訪談內容圍繞著大人學共同創辦人 Joe 的新書《獨自升級》，深入探討現代人在職涯與個人成長中常見的誤區。Joe 主張與其盲目「跳出舒適圈」去面對無法負荷的挫折，不如透過有意識地擴大舒適圈，在保有現有優勢的基礎上逐步往外探索。他強調建立個人「標籤」的重要性，建議求職者先從自己擅長且具備競爭力的事物切入，以此換取資源後再追求興趣。針對中年危機與產業變遷，訪談指出唯有保持好奇心並持續產出，才能在變動中內化知識並維持不可替代的價值。最後，Joe 鼓勵聽眾將人生視為電玩遊戲，透過主動規劃技能點與任務，在職場中實現真正的選擇自由。</p>
 </blockquote>
-<div align="center"><img src="./notebooklm.jpg"/></div>
 <h3 id="對話面板">對話面板
-</h3><p>你可以在「對話」面板，點擊那些&quot;建議提問&quot;<br>
-藉由跟 AI 問答來瞭解內容</p>
-<blockquote>
-<ul>
-<li>如何透過「擴大舒適圈」而非「跳出舒適圈」的策略，在職場中穩健地建立優勢？</li>
-<li>在獨自升級的過程中，如何發掘自身天賦標籤並將內在動機轉化為成長動力？</li>
-<li>為什麼「有意識的產出」與「跨部門探索」是職場專業人士突破中年危機的關鍵？</li>
-</ul>
-</blockquote>
-<p>如果完全沒看過內容，可以請 AI 先導讀<br>
-指令範例一: <code>我還沒看過這份逐字稿，請幫我抓出這場討論的大綱架構，並告訴我裡面最核心的 3 個理論觀點與 3 個實際案例。</code></p>
+</h3><p>你可以在中間的「對話」面板<br>
+問 AI 問題來瞭解內容</p>
+<p>如果完全沒看過內容<br>
+可以請 AI 先抓出大綱</p>
+<p>指令範例一: <code>我還沒看過這份逐字稿，請幫我抓出這場討論的大綱架構，並告訴我裡面最核心的 3 個理論觀點與 3 個實際案例。</code></p>
 <div align="center"><img src="./outline.jpg" width="800px"/></div>
-<p>如果覺得有點生硬的話，可以請 AI 口語化<br>
-指令範例二:</p>
+<p>如果覺得有點生硬的<br>
+可以請 AI 口語化</p>
+<p>指令範例二:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -523,12 +539,18 @@
 </div>
 </div><div align="center"><img src="./conversational_tone.jpg" width="800px"/></div>
 <h3 id="工作室面板">工作室面板
-</h3><p>你也可以在「工作室」面板生成報告</p>
-<p>報告中有很多種類可以選擇<br>
-自訂報告、簡介文件、研讀指南、網誌文章<br>
-底下還有 AI 給的建議格式</p>
+</h3><p>你也可以在右邊的「工作室」面板<br>
+自動生成各種報告或文章</p>
+<p>報告有很多種類可以選擇</p>
+<ul>
+<li>自訂報告</li>
+<li>簡介文件</li>
+<li>研讀指南</li>
+<li>網誌文章</li>
+</ul>
+<p>底下還有 AI 給的建議格式</p>
 <div align="center"><img src="./reports.jpg" width="700px"/></div>
-<p>網誌文章 範例:</p>
+<p>我選了網誌文章看看</p>
 <div align="center"><img src="./blog_post.jpg" width="800px"/></div>
 <p>太強拉！<br>
 直接幫你寫部落格！</p>

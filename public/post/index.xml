@@ -225,16 +225,76 @@
     &gt;NotebookLM&lt;/a&gt;&lt;br&gt;
 不然其他 AI 可能會一直叫我晚點再來 XD&lt;br&gt;
 &lt;del&gt;畢竟是免費仔&lt;/del&gt;&lt;/p&gt;
-&lt;ol&gt;
+&lt;h3 id=&#34;上傳來源&#34;&gt;上傳來源
+&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;點擊 &lt;code&gt;＋新建&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;把 &lt;code&gt;.txt&lt;/code&gt; 上傳&lt;/li&gt;
-&lt;li&gt;跟 NotebookLM 對話，或使用工作室的&amp;quot;生成報告&amp;quot;功能&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;你看！光只是上傳字幕檔！&lt;br&gt;
-它就已經摘要一段兩百字的介紹了&lt;br&gt;
-下面也有&amp;quot;建議提問&amp;quot;快捷鍵&lt;br&gt;
-可以使用問答來更了解內容&lt;/p&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./notebooklm.jpg.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;</description>
+它就馬上摘要一段兩百字的介紹了&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;這段訪談內容圍繞著大人學共同創辦人 Joe 的新書《獨自升級》，深入探討現代人在職涯與個人成長中常見的誤區。Joe 主張與其盲目「跳出舒適圈」去面對無法負荷的挫折，不如透過有意識地擴大舒適圈，在保有現有優勢的基礎上逐步往外探索。他強調建立個人「標籤」的重要性，建議求職者先從自己擅長且具備競爭力的事物切入，以此換取資源後再追求興趣。針對中年危機與產業變遷，訪談指出唯有保持好奇心並持續產出，才能在變動中內化知識並維持不可替代的價值。最後，Joe 鼓勵聽眾將人生視為電玩遊戲，透過主動規劃技能點與任務，在職場中實現真正的選擇自由。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./notebooklm.jpg&#34;/&gt;&lt;/div&gt;
+&lt;h3 id=&#34;對話面板&#34;&gt;對話面板
+&lt;/h3&gt;&lt;p&gt;你可以在「對話」面板，點擊那些&amp;quot;建議提問&amp;quot;&lt;br&gt;
+藉由跟 AI 問答來瞭解內容&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;如何透過「擴大舒適圈」而非「跳出舒適圈」的策略，在職場中穩健地建立優勢？&lt;/li&gt;
+&lt;li&gt;在獨自升級的過程中，如何發掘自身天賦標籤並將內在動機轉化為成長動力？&lt;/li&gt;
+&lt;li&gt;為什麼「有意識的產出」與「跨部門探索」是職場專業人士突破中年危機的關鍵？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果完全沒看過內容，可以請 AI 先導讀&lt;br&gt;
+指令範例一: &lt;code&gt;我還沒看過這份逐字稿，請幫我抓出這場討論的大綱架構，並告訴我裡面最核心的 3 個理論觀點與 3 個實際案例。&lt;/code&gt;&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./outline.jpg&#34; width=&#34;800px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;如果覺得有點生硬的話，可以請 AI 口語化&lt;br&gt;
+指令範例二:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;請將我提供的逐字稿整理成 Podcast / 口語化風格：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1. 保留原本段落，不要刪除段落。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2. 每個段落壓縮成 3～5 行重點。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3. 語氣口語化、自然，讀起來像主持人講故事。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4. 可以保留一些連接詞或感嘆詞，讓語氣活潑。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;5. 可以加小標題（可選），幫助聽眾理解段落主題。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./conversational_tone.jpg&#34; width=&#34;800px&#34;/&gt;&lt;/div&gt;
+&lt;h3 id=&#34;工作室面板&#34;&gt;工作室面板
+&lt;/h3&gt;&lt;p&gt;你也可以在「工作室」面板生成報告&lt;/p&gt;
+&lt;p&gt;報告中有很多種類可以選擇&lt;br&gt;
+自訂報告、簡介文件、研讀指南、網誌文章&lt;br&gt;
+底下還有 AI 給的建議格式&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./reports.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;網誌文章 範例:&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./blog_post.jpg&#34; width=&#34;800px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;太強拉！&lt;br&gt;
+直接幫你寫部落格！&lt;/p&gt;
+&lt;p&gt;它還可以看產生這個報告的提示詞:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Act as a thoughtful writer and synthesizer of ideas, tasked with creating an engaging and readable blog post for a popular online publishing platform known for its clean aesthetic and insightful content. Your goal is to distill the top most surprising, counter-intuitive, or impactful takeaways from the provided source materials into a compelling listicle. The writing style should be clean, accessible, and highly scannable, employing a conversational yet intelligent tone. Craft a compelling, click-worthy headline. Begin the article with a short introduction that hooks the reader by establishing a relatable problem or curiosity, then present each of the takeaway points as a distinct section with a clear, bolded subheading. Within each section, use short paragraphs to explain the concept clearly, and don&#39;t just summarize; offer a brief analysis or a reflection on why this point is so interesting or important, and if a powerful quote exists in the sources, feature it in a blockquote for emphasis. Conclude the post with a brief, forward-looking summary that leaves the reader with a final thought-provoking question or a powerful takeaway to ponder.&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;請 ChatGPT 翻譯中文:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;擔任一位善於思考、整合觀點的寫作者，為一個以簡潔美學與深度內容聞名的主流線上出版平台撰寫一篇引人入勝、易於閱讀的部落格文章。你的任務是：從提供的來源資料中，萃取出最令人驚訝、最違反直覺，或最具影響力的重點洞見，並整理成一篇具吸引力的清單型文章（listicle）。&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;整體寫作風格應該乾淨、親切、且高度適合快速掃讀，語氣保持對話感但不失思考深度。請撰寫一個吸睛、值得點擊的標題。&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;文章開頭請以一小段引言切入，透過提出讀者能產生共鳴的問題或好奇心來勾住注意力。接著，將每一個重點洞見作為一個獨立段落呈現，並搭配清楚、加粗的小標題。&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;在每個段落中，使用短段落清楚說明該觀點，且不要只是摘要內容；請加入你對該觀點為何有趣或重要的簡短分析或反思。如果來源資料中有特別有力的引述，請以**區塊引言（blockquote）**的方式呈現，以加強重點。&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;最後，請用一段簡短、具前瞻性的結語收尾，留給讀者一個值得深思的問題，或一個令人回味的關鍵洞見作為結束。&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其他還有很多功能&lt;br&gt;
+之後再慢慢玩吧～&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>行為 vs. 樂受</title>
@@ -242,24 +302,23 @@
         <pubDate>Fri, 09 Jan 2026 22:03:14 +0000</pubDate>
         
         <guid>http://localhost:1313/blog/2026-01-09-action-vs-pleasure/</guid>
-        <description>&lt;h2 id=&#34;我們到底在喜歡什麼&#34;&gt;我們到底在喜歡什麼？
+        <description>&lt;h2 id=&#34;人到底喜歡什麼&#34;&gt;人到底喜歡什麼
 &lt;/h2&gt;&lt;p&gt;一個人如果喜歡聽音樂或喝飲料&lt;br&gt;
 那他是喜歡這件事本身的行為&lt;br&gt;
 還是喜歡做這件事所產生的樂受呢&lt;/p&gt;
-&lt;h2 id=&#34;行為往往是為了快樂&#34;&gt;行為，往往是為了快樂
-&lt;/h2&gt;&lt;p&gt;人總是喜歡快樂&lt;br&gt;
+&lt;p&gt;人總是喜歡快樂&lt;br&gt;
 因為想要快樂&lt;br&gt;
 而去做某些行為&lt;/p&gt;
 &lt;p&gt;反之如果沒有快樂&lt;br&gt;
 就不再會去做那個行為&lt;br&gt;
 例如失去聽覺或味覺&lt;br&gt;
 也就不會想聽那首歌或喝那杯飲料了&lt;/p&gt;
-&lt;h2 id=&#34;快樂本身不是問題&#34;&gt;快樂本身不是問題
+&lt;h2 id=&#34;想要永遠快樂卻變成苦&#34;&gt;想要永遠快樂卻變成苦
 &lt;/h2&gt;&lt;p&gt;快樂本身不是痛苦&lt;br&gt;
 但因為想抓住不放&lt;br&gt;
 想永遠維持&lt;br&gt;
 於是苦了起來&lt;/p&gt;
-&lt;h2 id=&#34;如果不能追求快樂還能追求什麼&#34;&gt;如果不能追求快樂，還能追求什麼？
+&lt;h2 id=&#34;如果不能追求快樂還能追求什麼&#34;&gt;如果不能追求快樂，還能追求什麼
 &lt;/h2&gt;&lt;p&gt;如果不能追求快樂&lt;br&gt;
 那我們能追求什麼呢&lt;/p&gt;
 &lt;p&gt;問了 AI&lt;br&gt;
@@ -273,8 +332,7 @@
 當 快樂/痛苦 發生時，我知道它正在發生&lt;br&gt;
 但不帶評論、不帶追求、不帶抵抗&lt;br&gt;
 只是看清楚，而不是順著走&lt;/p&gt;
-&lt;h2 id=&#34;回到最初問題&#34;&gt;回到最初問題
-&lt;/h2&gt;&lt;p&gt;回到最初的問題&lt;br&gt;
+&lt;p&gt;回到最初的問題&lt;br&gt;
 我認為是喜歡「樂受」的感覺&lt;/p&gt;
 &lt;h2 id=&#34;生活中的小練習&#34;&gt;生活中的小練習
 &lt;/h2&gt;&lt;p&gt;下次想做一個行為前&lt;br&gt;
