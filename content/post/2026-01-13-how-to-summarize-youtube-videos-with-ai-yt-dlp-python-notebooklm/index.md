@@ -47,6 +47,8 @@ yt-dlp --write-sub --sub-lang "zh.*" --skip-download <影片網址>
 yt-dlp --list-subs <影片網址>
 ```
 
+_如果沒有字幕的話
+可以 [使用 Whisper 把聲音轉成文字](https://annkuoq.github.io/blog/2026-01-17-how-to-use-whisper-on-windows/)!!_
 ## 整理字幕檔內容
 
 ### Python 腳本
