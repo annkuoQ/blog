@@ -101,7 +101,7 @@
 &lt;li&gt;Select scopes: 勾選 &lt;code&gt;repo&lt;/code&gt; 和 &lt;code&gt;workflow&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;點擊 &lt;code&gt;Generate token&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./new-pat.png&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./new-pat.png&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;複製這段很長的 token&lt;/li&gt;
 &lt;/ol&gt;

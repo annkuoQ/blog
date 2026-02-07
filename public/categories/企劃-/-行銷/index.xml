@@ -86,7 +86,7 @@ Google 提供了多種驗證方法:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;我是用 &lt;code&gt;HTML 標記&lt;/code&gt; 的方式&lt;br&gt;
 把 &lt;code&gt;&amp;lt;meta&amp;gt; tag&lt;/code&gt; 貼到 &lt;code&gt;\themes\你的主題名稱\layout\_partia\head.ejs&lt;/code&gt;&lt;/p&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./verify.jpg&#34;&#34; width=&#34;450px&#34; /&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./verify.jpg&#34; width=&#34;450px&#34; /&gt;&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;儲存 &lt;code&gt;.head.ejs&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;清除快取和舊的靜態檔案&lt;/li&gt;
@@ -107,7 +107,7 @@ Google 提供了多種驗證方法:&lt;/li&gt;
 &lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;點擊 &lt;code&gt;驗證&lt;/code&gt; 鈕後就成功囉～&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./verified.jpg&#34;&#34; width=&#34;450px&#34; /&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./verified.jpg&#34; width=&#34;450px&#34; /&gt;&lt;/div&gt;
 &lt;h3 id=&#34;測試搜尋結果&#34;&gt;測試搜尋結果
 &lt;/h3&gt;&lt;p&gt;過幾天後，搜尋 &lt;code&gt;site:https://annkuoq.github.io/blog/&lt;/code&gt;&lt;br&gt;
 看見自己的網站出現太感人了 😭&lt;/p&gt;

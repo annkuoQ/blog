@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Cmd on AnnKuoQ Blog</title>
+        <title>CMD on AnnKuoQ Blog</title>
         <link>http://localhost:1313/blog/tags/cmd/</link>
-        <description>Recent content in Cmd on AnnKuoQ Blog</description>
+        <description>Recent content in CMD on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
@@ -512,7 +512,7 @@ Bot 超過額度需要收費，Notify 則是免費&lt;br&gt;
 &lt;li&gt;輸入 cmd 並按下 Enter&lt;/li&gt;
 &lt;li&gt;成功開啟 CMD (命令提示字元)，並且路徑是 &lt;code&gt;D:\test&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./open-cmd.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./open-cmd.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
 &lt;h2 id=&#34;輸出-log&#34;&gt;輸出 log
 &lt;/h2&gt;&lt;h3 id=&#34;測試一-dir&#34;&gt;測試一: &lt;code&gt;dir&lt;/code&gt;
 &lt;/h3&gt;&lt;p&gt;先在 CMD 上用一個最簡單的指令 &lt;code&gt;dir&lt;/code&gt;&lt;br&gt;

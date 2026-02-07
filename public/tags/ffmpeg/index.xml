@@ -745,12 +745,12 @@ index 是從 &lt;code&gt;0&lt;/code&gt; 而不是 &lt;code&gt;1&lt;/code&gt; 開
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://annkuoq.github.io/blog/2020-10-25-bitrate-vs-resolution/compare.jpg&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;點我看大圖&lt;/a&gt; 👈&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./compare.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./compare.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
 &lt;h3 id=&#34;完整截圖-依畫質排序&#34;&gt;完整截圖 (依畫質排序)
-&lt;/h3&gt;&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./1080p4m.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./480p4m.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./480p1m.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./1080p1m.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;/h3&gt;&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./1080p4m.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./480p4m.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./480p1m.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./1080p1m.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
 &lt;p&gt;因為 1080p 要記錄的像素比 480p 還要多，所以需要更多 Bitrate&lt;br&gt;
 雖然兩者檔案大小一樣，但 480p 畫質比較好&lt;/p&gt;
 &lt;p&gt;這讓我想起「一碗麵的故事」&lt;br&gt;
@@ -998,7 +998,7 @@ index 是從 &lt;code&gt;0&lt;/code&gt; 而不是 &lt;code&gt;1&lt;/code&gt; 開
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;接著就可以用圖表功能畫出 Bitrate 變化囉～&lt;/p&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./bitrate-graph.jpg&#34;&#34; width=&#34;500px&#34; /&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./bitrate-graph.jpg&#34; width=&#34;500px&#34; /&gt;&lt;/div&gt;
 &lt;h2 id=&#34;其他軟體&#34;&gt;其他軟體
 &lt;/h2&gt;&lt;p&gt;看完上面這個笨方法之後&lt;br&gt;
 有沒有其他比較輕鬆的方式呢？&lt;/p&gt;
@@ -1008,7 +1008,7 @@ index 是從 &lt;code&gt;0&lt;/code&gt; 而不是 &lt;code&gt;1&lt;/code&gt; 開
 主要支援 MPEG-1, MPEG-2, MPEG-4 等格式&lt;br&gt;
 只要把影片拖拉進軟體內&lt;br&gt;
 就會自動跑出圖表&lt;/p&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./bitrate-viewer.jpg&#34;&#34; width=&#34;500px&#34; /&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./bitrate-viewer.jpg&#34; width=&#34;500px&#34; /&gt;&lt;/div&gt;
 &lt;h3 id=&#34;vlc-media-player&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.videolan.org/vlc/index.nb.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;VLC media player&lt;/a&gt;
 &lt;/h3&gt;&lt;p&gt;這是一個開源的免費軟體&lt;br&gt;
@@ -1020,7 +1020,7 @@ index 是從 &lt;code&gt;0&lt;/code&gt; 而不是 &lt;code&gt;1&lt;/code&gt; 開
 &lt;li&gt;展開 &lt;code&gt;輸入位元率&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;這樣就可以看到目前使用了多少 Bitrate&lt;/p&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./vlc-player.jpg&#34;&#34; width=&#34;700px&#34; /&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./vlc-player.jpg&#34; width=&#34;700px&#34; /&gt;&lt;/div&gt;
 &lt;p&gt;以上方法看起來&lt;br&gt;
 還是用 Bitrate Viewer 最快了&lt;br&gt;
 但支援的格式有限&lt;br&gt;
@@ -1060,7 +1060,7 @@ index 是從 &lt;code&gt;0&lt;/code&gt; 而不是 &lt;code&gt;1&lt;/code&gt; 開
 &lt;p&gt;我選擇去 gyan.dev 下載&lt;br&gt;
 往下拉到 release 的部分有四個連結&lt;br&gt;
 點擊第一個 &lt;code&gt;release-full.7z&lt;/code&gt; 下載&lt;/p&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./release_full_download.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./release_full_download.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;解壓縮資料夾後，修改資料夾名稱為 &lt;code&gt;ffmpeg&lt;/code&gt;&lt;/p&gt;

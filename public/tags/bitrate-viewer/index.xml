@@ -222,7 +222,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;接著就可以用圖表功能畫出 Bitrate 變化囉～&lt;/p&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./bitrate-graph.jpg&#34;&#34; width=&#34;500px&#34; /&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./bitrate-graph.jpg&#34; width=&#34;500px&#34; /&gt;&lt;/div&gt;
 &lt;h2 id=&#34;其他軟體&#34;&gt;其他軟體
 &lt;/h2&gt;&lt;p&gt;看完上面這個笨方法之後&lt;br&gt;
 有沒有其他比較輕鬆的方式呢？&lt;/p&gt;
@@ -232,7 +232,7 @@
 主要支援 MPEG-1, MPEG-2, MPEG-4 等格式&lt;br&gt;
 只要把影片拖拉進軟體內&lt;br&gt;
 就會自動跑出圖表&lt;/p&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./bitrate-viewer.jpg&#34;&#34; width=&#34;500px&#34; /&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./bitrate-viewer.jpg&#34; width=&#34;500px&#34; /&gt;&lt;/div&gt;
 &lt;h3 id=&#34;vlc-media-player&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.videolan.org/vlc/index.nb.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;VLC media player&lt;/a&gt;
 &lt;/h3&gt;&lt;p&gt;這是一個開源的免費軟體&lt;br&gt;
@@ -244,7 +244,7 @@
 &lt;li&gt;展開 &lt;code&gt;輸入位元率&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;這樣就可以看到目前使用了多少 Bitrate&lt;/p&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./vlc-player.jpg&#34;&#34; width=&#34;700px&#34; /&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./vlc-player.jpg&#34; width=&#34;700px&#34; /&gt;&lt;/div&gt;
 &lt;p&gt;以上方法看起來&lt;br&gt;
 還是用 Bitrate Viewer 最快了&lt;br&gt;
 但支援的格式有限&lt;br&gt;

@@ -46,7 +46,7 @@
 &lt;/ol&gt;
 &lt;p&gt;解釋一下~&lt;br&gt;
 那個 XPath 代表選擇所有 &lt;code&gt;&amp;lt;item&amp;gt;&lt;/code&gt; 元素中的 &lt;code&gt;&amp;lt;description&amp;gt;&lt;/code&gt; 內容&lt;/p&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./add-source.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./add-source.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
 &lt;h3 id=&#34;原始的-xml-內容&#34;&gt;原始的 XML 內容
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -138,11 +138,11 @@
 &lt;li&gt;點擊 Mapping Name 的 &lt;code&gt;output&lt;/code&gt; &amp;gt; &lt;code&gt;(Text)跑馬燈&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;點擊 &lt;code&gt;確定&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./output-mapping.jpg&#34;&#34; width=&#34;500px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./output-mapping.jpg&#34; width=&#34;500px&#34;/&gt;&lt;/div&gt;
 &lt;p&gt;提取出的內容就輸出到 &lt;code&gt;跑馬燈&lt;/code&gt; 了&lt;br&gt;
 不過字有點大&lt;br&gt;
 這時可以修改一下字型與文字大小&lt;/p&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./modify-text-properties.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./modify-text-properties.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
 &lt;h2 id=&#34;輸出內容整理&#34;&gt;輸出內容整理
 &lt;/h2&gt;&lt;p&gt;仔細看了一下&lt;br&gt;
 文字裡面好像出現了奇怪的符號&lt;br&gt;
@@ -166,7 +166,7 @@
 &lt;li&gt;{% raw %} {{output1}} 代表第二個警報 (大雨特報) {% endraw %}&lt;/li&gt;
 &lt;li&gt;中間用 🚨 隔開兩段文字&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./output-template.jpg&#34;&#34; width=&#34;500px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./output-template.jpg&#34; width=&#34;500px&#34;/&gt;&lt;/div&gt;
 &lt;h2 id=&#34;設定跑馬捲動特效&#34;&gt;設定跑馬捲動特效
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;對 &lt;code&gt;跑馬燈&lt;/code&gt; 點擊右鍵 &amp;gt; &lt;code&gt;濾鏡&lt;/code&gt;&lt;/li&gt;
@@ -175,7 +175,7 @@
 &lt;li&gt;調整 &lt;code&gt;水平速度&lt;/code&gt; &amp;gt; 設定跑馬的速度為 100&lt;/li&gt;
 &lt;li&gt;點擊 &lt;code&gt;關閉&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./modify-text-scroll.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./modify-text-scroll.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
 &lt;p&gt;大功告成！&lt;/p&gt;
 &lt;p&gt;如果對這個 Plug-in 有其他問題&lt;br&gt;
 也可以到作者的 &lt;a class=&#34;link&#34; href=&#34;https://discord.gg/AubP6DTT8r&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -391,7 +391,7 @@
 &lt;del&gt;(0.2.5 是我這個時候的最新版本，你也可以下載之後更新的版本)&lt;/del&gt;&lt;br&gt;
 &lt;del&gt;解壓縮後有兩個資料夾: &lt;code&gt;data&lt;/code&gt;, &lt;code&gt;obs-plugins&lt;/code&gt;&lt;/del&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./windows-download-obs-multi-rtmp-zip.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./windows-download-obs-multi-rtmp-zip.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
 2. ~把套件複製到相對應的主程式目錄底下~
 &lt;ul&gt;
 &lt;li&gt;
@@ -403,7 +403,7 @@
 &lt;del&gt;將 &lt;code&gt;data\obs-plugins\obs-multi-rtmp&lt;/code&gt; 複製到 &lt;code&gt;C:\Program Files\obs-studio\data\obs-plugins&lt;/code&gt; 目錄下&lt;/del&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./windows-plugin-copy.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./windows-plugin-copy.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;打開 OBS，介面左上角會出現一個 &lt;code&gt;多路串流&lt;/code&gt; 的區塊&lt;br&gt;
@@ -416,7 +416,7 @@
 &lt;p&gt;點擊 &lt;code&gt;開始&lt;/code&gt; 送直播訊號&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./windows-obs-multi-rtmp-setting.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./windows-obs-multi-rtmp-setting.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
 &lt;h2 id=&#34;mac-安裝&#34;&gt;Mac 安裝
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;2021/7/23 更新&lt;br&gt;
@@ -445,7 +445,7 @@
 &lt;p&gt;點擊 &lt;code&gt;開始&lt;/code&gt; 送直播訊號&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./mac-obs-multi-rtmp-setting-2612.jpg&#34;&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./mac-obs-multi-rtmp-setting-2612.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
 &lt;h2 id=&#34;補充&#34;&gt;補充
 &lt;/h2&gt;&lt;p&gt;這個套件可以單獨停止或開始某路直播&lt;br&gt;
 也可以個別設定解析度和編碼格式&lt;br&gt;
