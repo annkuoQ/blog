@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Sat, 17 Jan 2026 11:20:10 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 07 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何在 Windows 使用 Whisper</title>
         <link>http://localhost:1313/blog/2026-01-17-how-to-use-whisper-on-windows/</link>
         <pubDate>Sat, 17 Jan 2026 11:20:10 +0000</pubDate>
@@ -6160,7 +6160,7 @@ utterances APP 要求存取的權限有:&lt;/li&gt;
 </description>
         </item>
         <item>
-        <title>Win 10 安裝 FFmpeg</title>
+        <title>Windows 安裝 FFmpeg</title>
         <link>http://localhost:1313/blog/2019-12-17-install-ffmpeg/</link>
         <pubDate>Tue, 17 Dec 2019 12:25:39 +0000</pubDate>
         

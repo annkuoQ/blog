@@ -1,6 +1,7 @@
 ---
-title: Win 10 安裝 FFmpeg
+title: Windows 安裝 FFmpeg
 date: 2019-12-17 12:25:39
+lastmod: 2026-02-07
 slug: "2019-12-17-install-ffmpeg"
 description: ffmpeg 是一個開源的影音處理軟體，不管是轉檔、分析、播放、剪接、字幕、濾鏡都做得到，首先前往官網下載打包好的靜態函式庫版本，解壓縮資料夾後，放到 C 槽路徑下面 ...
 categories: 影音轉檔
@@ -16,28 +17,27 @@ tags:
 <!-- more -->
 
 ### 安裝步驟
-1. ~前往官網 [下載](https://ffmpeg.zeranoe.com/builds/)，我下載的版本是~
-~- Version: 4.2.1 (穩定版本)~
-~- Architecture: Windows 64-bit (作業系統)~
-~- Linking: Static (打包好的靜態函式庫)~
+1. 前往 [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) 下載
+往下拉到 release builds 的區塊
+點擊 `ffmpeg-release-full.7z` 下載
 
-ffmpeg.zeranoe.com 已於 2020 年 9 月 18 日 [關閉](https://www.reddit.com/r/ffmpeg/comments/ikht2k/ffmpegzeranoecom_will_close_on_sep_18_2020/)
-目前有兩個地方可以下載
-- [gyan.dev](https://www.gyan.dev/ffmpeg/builds/)
-- [BtbN](https://github.com/BtbN/FFmpeg-Builds/releases)
-
-我選擇去 gyan.dev 下載
-往下拉到 release 的部分有四個連結
-點擊第一個 `release-full.7z` 下載
-
-<div align="center"><img src="./release_full_download.jpg" width="700px"/></div>
+<div align="center"><img src="./release_full_download_new.jpg" width="700px"/></div>
 
 2. 解壓縮資料夾後，修改資料夾名稱為 `ffmpeg`
 
 3. 將資料夾放到以下路徑 `C:\ffmpeg`
-4. 開啟檔案總管
-對 `本機` 按右鍵 > `內容` > `進階系統設定` > `進階` > `環境變數` >
-點擊`系統變數`的 `Path` > `編輯` > `新增` > `C:\ffmpeg\bin` > `確定`
+
+<div align="center"><img src="./ffmpeg_folder.jpg" width="700px"/></div>
+
+4. 搜尋 `編輯系統環境變數` 並開啟，點擊 `環境變數`
+
+<div align="center"><img src="./environment_variable_1.jpg"/></div>
+
+雙擊下方 `系統變數` 區塊的 `Path`，開啟 `編輯環境變數`視窗
+點擊 `新增`，輸入 `C:\ffmpeg\bin` > `確定`
+
+<div align="center"><img src="./environment_variable_2.jpg"/></div>
+
 5. 開啟 CMD，輸入 `set PATH=C:`，讓環境變數立即生效，不用重開機
 6. 關閉 CMD 再重啟，輸入 `echo %PATH%`，查看是否有增加 `C:\ffmpeg\bin`
 7. 在 CMD 或 Cmder 輸入 `ffmpeg -version`，檢查是否安裝成功
