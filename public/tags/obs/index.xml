@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Tue, 05 Nov 2024 18:14:15 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/obs/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 07 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/obs/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何在 OBS 使用 RSS 做跑馬燈</title>
         <link>http://localhost:1313/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/</link>
         <pubDate>Tue, 05 Nov 2024 18:14:15 +0000</pubDate>
@@ -379,20 +379,16 @@
     &gt;OBS Forum&lt;/a&gt; 上有人做了 Plug-in&lt;br&gt;
 話不多說就趕快開始吧！&lt;/p&gt;
 &lt;h2 id=&#34;windows-安裝&#34;&gt;Windows 安裝
-&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;2021/7/23 更新&lt;br&gt;
-&lt;a class=&#34;link&#34; href=&#34;https://github.com/sorayuki/obs-multi-rtmp/releases/tag/0.2.6&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;0.2.6 版&lt;/a&gt; 已可自動安裝在 windows 上，不用手動複製檔案&lt;br&gt;
-請點擊下載 obs-multi-rtmp.zip，解壓縮後執行 .exe&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;del&gt;下載 &lt;a class=&#34;link&#34; href=&#34;https://github.com/sorayuki/obs-multi-rtmp/releases/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;obs-multi-rtmp_Windows_0.2.5.zip&lt;/a&gt;&lt;/del&gt;&lt;br&gt;
-&lt;del&gt;(0.2.5 是我這個時候的最新版本，你也可以下載之後更新的版本)&lt;/del&gt;&lt;br&gt;
-&lt;del&gt;解壓縮後有兩個資料夾: &lt;code&gt;data&lt;/code&gt;, &lt;code&gt;obs-plugins&lt;/code&gt;&lt;/del&gt;&lt;/li&gt;
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;到 &lt;a class=&#34;link&#34; href=&#34;https://github.com/sorayuki/obs-multi-rtmp/releases/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub Releases 頁面&lt;/a&gt;&lt;br&gt;
+依照自己的作業系統下載安裝檔後，解壓縮執行安裝&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;del&gt;把套件複製到相對應的主程式目錄底下&lt;/del&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./windows-download-obs-multi-rtmp-zip.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
-2. ~把套件複製到相對應的主程式目錄底下~
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;del&gt;套件主程式 (.dll 檔)&lt;/del&gt;&lt;br&gt;
