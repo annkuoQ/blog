@@ -3,7 +3,7 @@ title: 一樣的 Bitrate，解析度高的畫質會比較好嗎？
 date: 2020-10-25 16:46:42
 slug: "2020-10-25-bitrate-vs-resolution"
 description: 我知道 Bitrate 越大，畫質越好，但是解析度越大，就代表畫質越好嗎？解析度、Bitrate、畫質它們三者的關係是什麼呢？誰是影響畫質的最大因素呢？於是決定做個實驗，看看同樣 Bitrate，不同解析度的畫質誰比較好 ...
-categories: 轉檔 / 編碼
+categories: 影音轉檔
 tags:
 - ffmpeg
 - Mixkit

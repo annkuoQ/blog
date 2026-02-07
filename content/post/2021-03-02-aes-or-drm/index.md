@@ -3,7 +3,7 @@ title: 淺談 AES 與 DRM
 date: 2021-03-02 21:03:21
 slug: "2021-03-02-aes-or-drm"
 description: 最近工作上有碰到 AES 和 DRM，雖然是使用別人的服務，但還是想稍微了解一下運作的方式 ...
-categories: 直播 / 串流
+categories: 直播串流
 tags:
 - aes
 - drm

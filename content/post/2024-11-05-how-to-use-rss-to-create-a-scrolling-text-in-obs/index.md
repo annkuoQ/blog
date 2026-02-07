@@ -3,7 +3,7 @@ title: 如何在 OBS 使用 RSS 做跑馬燈
 date: 2024-11-05 18:14:15
 slug: "2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs"
 description: 最近常常需要做關於颱風的直播，畫面底部的跑馬燈，都是我工人智慧從氣象署複製貼上的，所以想說有沒有什麼外掛可以做到 ...
-categories: 直播 / 串流
+categories: 直播串流
 tags:
 - obs
 - rss

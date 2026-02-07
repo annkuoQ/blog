@@ -3,7 +3,7 @@ title: 如何在 CMD 輸出 log 檔
 date: 2020-12-25 22:57:47
 slug: "2020-12-25-how-to-save-windows-cmd-logfile"
 description: 最近在學寫批次檔，需要輸出 log 檔作為紀錄，去網路搜尋之後，看到了有好幾種的指令，> output.log, 2> output.log, 2>> output.log, 1>&2...
-categories: 資工 / 程設
+categories: 技術筆記
 tags:
 - CMD
 - windows

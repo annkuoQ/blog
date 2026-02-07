@@ -3,7 +3,7 @@ title: 如何使用 OBS 同時直播多個平台
 date: 2020-09-23 09:12:05
 slug: "2020-09-23-obs-multi-rtmp-outputs-plugin"
 description: OBS 預設只能直播一個平台，但我需要同時直播 YouTube 和 Facebook，所以這陣子都在搜尋有沒有什麼好的解決方式，在心灰意冷的時候看到 OBS Forum 上有人做了 Plug-in ...
-categories: 直播 / 串流
+categories: 直播串流
 tags:
 - obs
 ---

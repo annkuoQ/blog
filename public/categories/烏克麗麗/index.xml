@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>烏克麗麗 on AnnKuoQ Blog</title>
+        <link>http://localhost:1313/blog/categories/%E7%83%8F%E5%85%8B%E9%BA%97%E9%BA%97/</link>
+        <description>Recent content in 烏克麗麗 on AnnKuoQ Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <copyright>AnnKuoQ</copyright>
+        <lastBuildDate>Sat, 01 Feb 2014 13:51:43 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/categories/%E7%83%8F%E5%85%8B%E9%BA%97%E9%BA%97/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>烏克麗麗如何彈 Do Re Mi</title>
+        <link>http://localhost:1313/blog/2014-02-01-ukulele-do-re-mi-scales/</link>
+        <pubDate>Sat, 01 Feb 2014 13:51:43 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/2014-02-01-ukulele-do-re-mi-scales/</guid>
+        <description>&lt;p&gt;想要知道怎麼在烏克麗麗上彈 Do Re Mi&lt;br&gt;
+首先要知道每一條弦的空弦音&lt;br&gt;
+你只要會調音，就一定知道空弦音&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h3 id=&#34;空弦音&#34;&gt;空弦音
+&lt;/h3&gt;&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./open_string_note.jpg&#34; width=&#34;350px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;先從最細的開始&lt;br&gt;
+第四弦是 G&lt;br&gt;
+第三弦是 C&lt;br&gt;
+第二弦是 E&lt;br&gt;
+第一弦是 A&lt;/p&gt;
+&lt;h3 id=&#34;音程&#34;&gt;音程
+&lt;/h3&gt;&lt;p&gt;再來還要知道音與音之間的距離&lt;br&gt;
+就是 &lt;code&gt;全全半全全全半&lt;/code&gt;&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./interval.jpg&#34; width=&#34;450px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;指板上的每個音格都是一個半音&lt;br&gt;
+半音 + 半音 = 全音&lt;br&gt;
+所以兩格是一個全音&lt;/p&gt;
+&lt;h3 id=&#34;推算指板上的音&#34;&gt;推算指板上的音
+&lt;/h3&gt;&lt;p&gt;我們知道第一弦空弦音是 A&lt;br&gt;
+也知道 A 跟 B 之間的距離是一個 &lt;code&gt;全音&lt;/code&gt;&lt;br&gt;
+一個全音又等於 &lt;code&gt;兩格&lt;/code&gt;&lt;br&gt;
+所以 B 就會在第一弦 &lt;code&gt;第二格&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;再來&lt;br&gt;
+B 和 C 距離一個半音 (一格) =&amp;gt; C 在第三格&lt;br&gt;
+C 和 D 距離一個全音 (兩格) =&amp;gt; D 在第五格&lt;br&gt;
+D 和 E 距離一個全音 (兩格) =&amp;gt; E 在第七格&lt;br&gt;
+E 和 F 距離一個半音 (一格) =&amp;gt; F 在第八格&lt;br&gt;
+F 和 G 距離一個全音 (兩格) =&amp;gt; G 在第十格&lt;br&gt;
+G 和 A 距離一個全音 (兩格) =&amp;gt; A 在第十二格&lt;/p&gt;
+&lt;p&gt;以此類推，你就能知道指板上所有的音&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./note_fretboard.jpg&#34; width=&#34;450px&#34;/&gt;&lt;/div&gt;
+&lt;h3 id=&#34;do-re-mi&#34;&gt;Do Re Mi
+&lt;/h3&gt;&lt;p&gt;通常我們彈 DO RE MI 不會只彈同一條弦&lt;br&gt;
+因為手要一直橫移很麻煩&lt;br&gt;
+所以我們會換一條弦&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./doremi.jpg&#34; width=&#34;350px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;食指負責第一格&lt;br&gt;
+中指負責第二格&lt;br&gt;
+無名指負責第三格&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Do&lt;/code&gt; 是第三弦空弦音&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Re&lt;/code&gt; 是中指按第三弦第二格&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Mi&lt;/code&gt; 是第二弦空弦音&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Fa&lt;/code&gt; 是食指按第二弦第一格&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Sol&lt;/code&gt; 是無名指按第二弦第三格&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;La&lt;/code&gt; 是第一弦空弦音&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ti&lt;/code&gt; 是中指按第一弦第二格&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Do&lt;/code&gt; 是無名指按第一弦第三格&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;高把位-do-re-mi&#34;&gt;高把位 Do Re Mi
+&lt;/h3&gt;&lt;p&gt;很多歌都會超過一個八度 (低音 Do 到 高音 Do)&lt;br&gt;
+但烏克麗麗的結構的限制&lt;br&gt;
+比較沒辦法彈出低音，解決的方法有:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;換 Low G 弦&lt;/li&gt;
+&lt;li&gt;移調&lt;/li&gt;
+&lt;li&gt;移動你的手&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;前兩個對初學者可能有點難&lt;br&gt;
+所以我介紹第三個&lt;br&gt;
+首先把剛在指板上推算的音拿出來&lt;br&gt;
+然後上個色&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./position_shifting_note.jpg&#34; width=&#34;450px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;綠色的範圍就是 &lt;code&gt;低音 C&lt;/code&gt; 到 &lt;code&gt;高音 A&lt;/code&gt; 囉~&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>暖身操與爬格子</title>
+        <link>http://localhost:1313/blog/2014-01-19-hand-stretch-exercises/</link>
+        <pubDate>Sun, 19 Jan 2014 23:09:43 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/2014-01-19-hand-stretch-exercises/</guid>
+        <description>&lt;p&gt;彈琴之前要做一些熱身練習&lt;br&gt;
+就像運動之前的拉筋一樣&lt;br&gt;
+可以讓你的手指更靈活&lt;br&gt;
+也比較不會受傷喔&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h3 id=&#34;暖身操&#34;&gt;暖身操
+&lt;/h3&gt;&lt;h4 id=&#34;繞肩&#34;&gt;繞肩
+&lt;/h4&gt;&lt;p&gt;雙手放鬆自然垂下&lt;br&gt;
+肩膀聳起向後繞圈個幾次，再向前繞個幾次&lt;br&gt;
+放鬆你的肩胛骨肌肉&lt;/p&gt;
+&lt;h4 id=&#34;轉手臂&#34;&gt;轉手臂
+&lt;/h4&gt;&lt;p&gt;慢慢向後轉整支左手臂，畫幾個大圈，再向前轉&lt;br&gt;
+換右手臂慢慢向後轉，再向前轉&lt;br&gt;
+好像游自由式的感覺&lt;/p&gt;
+&lt;h4 id=&#34;擴胸&#34;&gt;擴胸
+&lt;/h4&gt;&lt;p&gt;雙手向後伸後，掌心對掌心十指交扣&lt;br&gt;
+慢慢向後拉，停個幾秒&lt;br&gt;
+再向上拉，停個幾秒&lt;br&gt;
+再向下拉，停個幾秒&lt;/p&gt;
+&lt;h4 id=&#34;轉手腕&#34;&gt;轉手腕
+&lt;/h4&gt;&lt;p&gt;兩隻手可以一起轉&lt;br&gt;
+慢慢往順/逆時針轉幾圈&lt;br&gt;
+然後再換逆/順時針轉幾圈&lt;/p&gt;
+&lt;h4 id=&#34;壓四根手指&#34;&gt;壓四根手指
+&lt;/h4&gt;&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./stretch_4finger.jpg&#34; width=&#34;350px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;把右手掌心橫向面對自己&lt;br&gt;
+左手食指/中指/無名指/小指背對自己併攏，並貼在左掌心&lt;br&gt;
+右手往自己這邊壓一壓&lt;br&gt;
+再換左手壓右手&lt;/p&gt;
+&lt;h4 id=&#34;壓一根手指&#34;&gt;壓一根手指
+&lt;/h4&gt;&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./stretch_1finger.jpg&#34; width=&#34;350px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;跟上一個動作很像&lt;br&gt;
+但一次只壓一根手指&lt;br&gt;
+大拇指也要喔&lt;/p&gt;
+&lt;h4 id=&#34;分開手指&#34;&gt;分開手指
+&lt;/h4&gt;&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./stretch_push.jpg&#34; width=&#34;350px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;用右手把左手每個指頭和指頭間推開&lt;br&gt;
+然後換左手推開右手指&lt;br&gt;
+最後呢，你的手指可以自己分開&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./stretch_push.gif&#34; width=&#34;350px&#34;/&gt;&lt;/div&gt;
+&lt;h3 id=&#34;爬格子&#34;&gt;爬格子
+&lt;/h3&gt;&lt;p&gt;爬格子可以讓你的左手變靈活，也可以更熟悉這個樂器&lt;br&gt;
+或是看電視的時候，不要吃零食，來爬格子&lt;br&gt;
+這樣比較不會變胖喔&lt;/p&gt;
+&lt;p&gt;左手不要用虎口扣住琴頸，把大拇指放在琴頸中間的的位置&lt;br&gt;
+因為這樣手比較可以伸展的開來&lt;br&gt;
+右手可以用大拇指、食指，或每一條弦用不同手指都可以&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./lift_hold.gif&#34; width=&#34;400px&#34;/&gt;&lt;/div&gt;
+&lt;h4 id=&#34;原地運動&#34;&gt;原地運動
+&lt;/h4&gt;&lt;p&gt;先固定在同一條弦上原地按&lt;br&gt;
+食指負責第一格&lt;br&gt;
+中指負責第二格&lt;br&gt;
+無名指負責第三格&lt;br&gt;
+小指負責第四格&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./warm_up1.jpg&#34; width=&#34;600px&#34;/&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;按的位置要在金屬條 (琴衍) 旁邊，這樣會比較省力&lt;/li&gt;
+&lt;li&gt;爬完四個音，手指頭才可以&amp;quot;翹&amp;quot;起來&lt;/li&gt;
+&lt;li&gt;速度和力量要穩定一致，可用節拍器協助練習&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./warm_up1.gif&#34; width=&#34;350px&#34;/&gt;&lt;/div&gt;
+&lt;h4 id=&#34;縱向運動&#34;&gt;縱向運動
+&lt;/h4&gt;&lt;p&gt;固定在前四格，但不同條弦&lt;br&gt;
+一次只能動一根手指頭&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./warm_up2.jpg&#34; width=&#34;600px&#34;/&gt;&lt;/div&gt;
+-
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./warm_up2.gif&#34; width=&#34;350px&#34;/&gt;&lt;/div&gt;
+&lt;h4 id=&#34;橫向運動&#34;&gt;橫向運動
+&lt;/h4&gt;&lt;p&gt;固定在同一條弦，但格數變多&lt;br&gt;
+所以手需要橫向移動&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./warm_up3.jpg&#34; width=&#34;600px&#34;/&gt;&lt;/div&gt;
+-
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./warm_up3.gif&#34; width=&#34;350px&#34;/&gt;&lt;/div&gt;
+&lt;h4 id=&#34;24-種指法&#34;&gt;24 種指法
+&lt;/h4&gt;&lt;p&gt;除了上面的練習，其實還有很多種跑法&lt;br&gt;
+像斜的、跨弦、跨格子&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./lift_play.gif&#34; width=&#34;350px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;不同跑法，再搭配下面 24 種指法&lt;br&gt;
+真是練都練不完呢&lt;br&gt;
+(1 = 食指、2 = 中指、3 = 無名指、4 = 小指)&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./24_warm_up.jpg&#34; width=&#34;400px&#34;/&gt;&lt;/div&gt;
+&lt;h4 id=&#34;右手&#34;&gt;右手
+&lt;/h4&gt;&lt;p&gt;如果你左手累了想休息，你也可以練右手&lt;br&gt;
+像從第四弦彈到第一弦再彈回來&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./right_4finger.gif&#34; width=&#34;350px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;或是很有名的 T1213121&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./right_t1213121.gif&#34; width=&#34;350px&#34;/&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;每天都練幾分鐘，而不是一天練很久&lt;/li&gt;
+&lt;li&gt;一開始速度慢慢來，可以對節拍器&lt;/li&gt;
+&lt;li&gt;動作要小，減少多餘的動作&lt;/li&gt;
+&lt;li&gt;音要彈的清楚、彈得連續&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>烏克麗麗的技巧記號與反覆記號</title>
+        <link>http://localhost:1313/blog/2013-08-11-ukulele-tab-symbols-and-repetition/</link>
+        <pubDate>Sun, 11 Aug 2013 23:24:43 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/2013-08-11-ukulele-tab-symbols-and-repetition/</guid>
+        <description>&lt;h3 id=&#34;技巧記號&#34;&gt;技巧記號
+&lt;/h3&gt;&lt;p&gt;四線譜上有哪些常見的技巧記號呢&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h4 id=&#34;1-搥弦-hammer-on&#34;&gt;1. 搥弦 (Hammer-on)
+&lt;/h4&gt;&lt;p&gt;記號是 &lt;code&gt;H&lt;/code&gt;&lt;br&gt;
+用左手指快速擊弦所發出的聲音&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./hammer_on.jpg&#34; width=&#34;150px&#34;/&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;左手食指按第一弦第五格&lt;/li&gt;
+&lt;li&gt;右手彈第一弦&lt;/li&gt;
+&lt;li&gt;左手無名指快速搥第一弦第七格 (發出第一弦第七格的音)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;2-勾弦-pull-off&#34;&gt;2. 勾弦 (Pull-off)
+&lt;/h4&gt;&lt;p&gt;記號是 &lt;code&gt;P&lt;/code&gt;&lt;br&gt;
+用左手指快速勾弦所發出的聲音&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./pull_off.jpg&#34; width=&#34;150px&#34;/&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;左手食指按第一弦第五格，無名指按第一弦第七格&lt;/li&gt;
+&lt;li&gt;右手彈第一弦&lt;/li&gt;
+&lt;li&gt;左手無名指勾第一弦 (發出第一弦第五格的音)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;3-滑弦-slide&#34;&gt;3. 滑弦 (Slide)
+&lt;/h4&gt;&lt;p&gt;記號是 &lt;code&gt;S&lt;/code&gt;&lt;br&gt;
+用左手壓弦後快速的橫向滑動&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./slide_up.jpg&#34; width=&#34;150px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;第一個: 從低的音滑到高的音&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;左手按第一弦第五格&lt;/li&gt;
+&lt;li&gt;右手彈第一弦&lt;/li&gt;
+&lt;li&gt;左手快速滑動到第一弦第七格 (發出第一弦第五格到第七格的連音)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./slide_down.jpg&#34; width=&#34;150px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;第二個: 從高的音滑到低的音&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;左手按第一弦第七格&lt;/li&gt;
+&lt;li&gt;右手彈第一弦&lt;/li&gt;
+&lt;li&gt;左手快速滑動到第一弦第五格 (發出第一弦第七格到第五格的連音)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;4-推弦與鬆弦-bend--release&#34;&gt;4. 推弦與鬆弦 (Bend &amp;amp; Release)
+&lt;/h4&gt;&lt;p&gt;推弦記號是 &lt;code&gt;B&lt;/code&gt;&lt;br&gt;
+用左手把弦往上推使音變高&lt;/p&gt;
+&lt;p&gt;鬆弦記號是 &lt;code&gt;R&lt;/code&gt;&lt;br&gt;
+把推好的弦放鬆讓音變回來&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./bend_release.jpg&#34; width=&#34;150px&#34;/&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;左手按第一弦第五格&lt;/li&gt;
+&lt;li&gt;右手彈第一弦&lt;/li&gt;
+&lt;li&gt;左手快速把弦往上推，讓音變成第一弦第六格&lt;/li&gt;
+&lt;li&gt;左手快速把弦放鬆，讓音變回第一弦第五格 (左手依舊按著第一弦第五格)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;5-切音-staccato&#34;&gt;5. 切音 (Staccato)
+&lt;/h4&gt;&lt;p&gt;記號是箭頭加上一個&lt;code&gt;實心圓點&lt;/code&gt;&lt;br&gt;
+撥完弦之後用手把音切掉&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./staccato.jpg&#34; width=&#34;200px&#34;/&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;左手按第一弦第三格&lt;/li&gt;
+&lt;li&gt;右手往下刷&lt;/li&gt;
+&lt;li&gt;右手快速碰弦讓聲音消失 (恰恰聲)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;6-悶音-mute&#34;&gt;6. 悶音 (Mute)
+&lt;/h4&gt;&lt;p&gt;記號是箭頭加上一個&lt;code&gt;空心圓點&lt;/code&gt;&lt;br&gt;
+先把音悶住在撥弦&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./mute.jpg&#34; width=&#34;200px&#34;/&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;左手按第一弦第三格&lt;/li&gt;
+&lt;li&gt;右手輕壓住弦&lt;/li&gt;
+&lt;li&gt;右手往下刷 (比切音低沉的聲音)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;7-琶音-arpeggio&#34;&gt;7. 琶音 (Arpeggio)
+&lt;/h4&gt;&lt;p&gt;記號是一個&lt;code&gt;波浪箭頭&lt;/code&gt;&lt;br&gt;
+用右手依序慢慢的撥過四條弦&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./arpeggio.jpg&#34; width=&#34;150px&#34;/&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;左手按第一弦第三格&lt;/li&gt;
+&lt;li&gt;右手從第四弦慢慢撥到第一弦&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;反覆記號&#34;&gt;反覆記號
+&lt;/h3&gt;&lt;h4 id=&#34;1-左右蓋子&#34;&gt;1. 左右蓋子 &lt;img src=&#34;./repeat_sign_1.jpg&#34; width=&#34;50px&#34;/&gt;
+&lt;/h4&gt;&lt;p&gt;當看到它時&lt;br&gt;
+就要重複蓋子裡的所有小節&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./repeat1.jpg&#34; width=&#34;300px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;答案是: &lt;code&gt;1 2 3 4 3 4&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2-上面蓋子&#34;&gt;2. 上面蓋子 &lt;img src=&#34;./repeat_sign_2.jpg&#34; width=&#34;130px&#34;/&gt;
+&lt;/h4&gt;&lt;p&gt;第一次彈奏，彈 1 裡面的&lt;br&gt;
+第二次彈 2 裡面的&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./repeat2.jpg&#34; width=&#34;320px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;答案是: &lt;code&gt;1 2 3 1 4 5&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;3-da-capo&#34;&gt;3. Da Capo &lt;img src=&#34;./da_capo.jpg&#34; width=&#34;100px&#34;/&gt;
+&lt;/h4&gt;&lt;p&gt;當在小節上方看到 &lt;strong&gt;Da Capo&lt;/strong&gt;&lt;br&gt;
+或在小節下方看到 &lt;strong&gt;(D.C.)&lt;/strong&gt;&lt;br&gt;
+代表要從頭彈起&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./repeat3.jpg&#34; width=&#34;320px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;答案是: &lt;code&gt;1 2 3 4 5 1 2 3 4 5&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;4-da-segno&#34;&gt;4. Da Segno &lt;img src=&#34;./da_segno.jpg&#34; width=&#34;120px&#34;/&gt;
+&lt;/h4&gt;&lt;p&gt;當在小節上方看到 &lt;strong&gt;Da Segno&lt;/strong&gt;&lt;br&gt;
+或在小節下方看到 &lt;strong&gt;(D.S.)&lt;/strong&gt;&lt;br&gt;
+代表從前面的 &lt;img src=&#34;./segno_teken.jpg&#34; width=&#34;20px&#34;/&gt; 彈起&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./repeat4.jpg&#34; width=&#34;380px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;答案是: &lt;code&gt;1 2 3 4 5 6 4 5 6&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;5-coda&#34;&gt;5. Coda &lt;img src=&#34;./coda.jpg&#34; width=&#34;80px&#34;/&gt;
+&lt;/h4&gt;&lt;p&gt;通常譜重複到第二遍時，烏龜才會出現&lt;br&gt;
+所以當看到它時，就跳到下一個烏龜處彈起&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./repeat5.jpg&#34; width=&#34;380px&#34;/&gt;&lt;/div&gt;
+&lt;p&gt;答案是: &lt;code&gt;1 2 3 4 1 2 6 7&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>烏克麗麗的和弦圖與四線譜</title>
+        <link>http://localhost:1313/blog/2013-08-10-ukulele-read-chord-and-tab/</link>
+        <pubDate>Sat, 10 Aug 2013 22:19:43 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/2013-08-10-ukulele-read-chord-and-tab/</guid>
+        <description>&lt;h3 id=&#34;和弦圖&#34;&gt;和弦圖
+&lt;/h3&gt;&lt;p&gt;和弦圖有直的也有橫的&lt;br&gt;
+其實它就是烏克麗麗的指板&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./chord.jpg&#34; width=&#34;350px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;直式&lt;/code&gt; 就是把烏克麗麗面對自己拿直的樣子&lt;br&gt;
+由右而左 1A 2E 3C 4G&lt;br&gt;
+由上到下 一 二 三 格&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;橫式&lt;/code&gt; 就是把烏克麗麗面對自己拿橫的樣子&lt;br&gt;
+由上到下 1A 2E 3C 4G&lt;br&gt;
+由左而右 一 二 三 格&lt;/p&gt;
+&lt;p&gt;通常由左手來按和弦&lt;br&gt;
+第一格食指負責&lt;br&gt;
+第二格中指負責&lt;br&gt;
+第三格無名指負責&lt;/p&gt;
+&lt;h3 id=&#34;國際四和弦&#34;&gt;國際四和弦
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;C&lt;/code&gt; &lt;code&gt;Am&lt;/code&gt; &lt;code&gt;F&lt;/code&gt; &lt;code&gt;G7&lt;/code&gt;&lt;br&gt;
+會這四個就可以彈很多歌囉&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./4chords.jpg&#34; width=&#34;400px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;和弦圖上方的英文是和弦名稱&lt;br&gt;
+黑點點是要按的位置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;C&lt;br&gt;
+無名指 按第一弦第三格&lt;/li&gt;
+&lt;li&gt;Am&lt;br&gt;
+中指 按第四弦第二格&lt;/li&gt;
+&lt;li&gt;F&lt;br&gt;
+食指 按第二弦第一格&lt;br&gt;
+中指 按第四弦第二格&lt;/li&gt;
+&lt;li&gt;G7&lt;br&gt;
+食指 按第二弦第一格&lt;br&gt;
+中指 按第三弦第二格&lt;br&gt;
+無名指 按第一弦第二格&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;四線譜-tab-tablature&#34;&gt;四線譜 TAB (Tablature)
+&lt;/h3&gt;&lt;p&gt;它其實也是烏克麗麗的指板&lt;br&gt;
+把烏克麗麗面向自己就和 TAB 一樣了&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./tab.jpg&#34; width=&#34;600px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;由上而下 1A 2E 3C 4G&lt;br&gt;
+TAB 上的數字就是我們要按的格數&lt;br&gt;
+通常由右手撥弦&lt;/p&gt;
+&lt;h4 id=&#34;1-練習一---按弦與撥弦位置&#34;&gt;1. 練習一 - 按弦與撥弦位置
+&lt;/h4&gt;&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./tab1.jpg&#34; width=&#34;300px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;左邊 TAB 在第二弦上有個 1&lt;br&gt;
+代表要按第二弦的第一格&lt;br&gt;
+第一格通常由食指負責&lt;br&gt;
+所以就是左手食指按住第二弦第一格，右手彈第二弦&lt;/p&gt;
+&lt;p&gt;右邊 TAB 在第四弦有個 0&lt;br&gt;
+代表空弦音不用按&lt;br&gt;
+所以只需要用右手彈第四弦即可&lt;/p&gt;
+&lt;h4 id=&#34;2-練習二---彈奏順序&#34;&gt;2. 練習二 - 彈奏順序
+&lt;/h4&gt;&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./tab2.jpg&#34; width=&#34;300px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;TAB 上有四個數字&lt;br&gt;
+彈奏的順序是由左而右&lt;br&gt;
+第一個是按第二弦的第二格，右手彈第二弦&lt;br&gt;
+第二個是第二弦的空弦音，右手彈第二弦&lt;br&gt;
+第三個按第一弦第三格，右手彈第一弦&lt;br&gt;
+第四個案第四弦第四格，右手彈第四弦&lt;/p&gt;
+&lt;h4 id=&#34;3-練習三---同時彈奏&#34;&gt;3. 練習三 - 同時彈奏
+&lt;/h4&gt;&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./tab3.jpg&#34; width=&#34;300px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;第一個: 同時按第一弦第二格和第二弦第三格，右手撥第一二弦&lt;br&gt;
+第二個: 同時按第一弦第四格和第二弦第五個，右手撥第一二弦&lt;br&gt;
+第三個: 同時按第二弦第二格和第三弦第二格，右手撥第二三弦&lt;br&gt;
+第四個: 同時按第三弦第三格和第四弦第一格，右手撥第三四弦&lt;/p&gt;
+&lt;h4 id=&#34;4-練習四---和弦&#34;&gt;4. 練習四 - 和弦
+&lt;/h4&gt;&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./tab4.jpg&#34; width=&#34;300px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;有一整排的數字要同時彈奏時&lt;br&gt;
+通常就是和弦&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一個 (C 和弦)&lt;br&gt;
+按第一弦第三格，二三四弦都空弦音，右手四條刷下去&lt;/li&gt;
+&lt;li&gt;第二個 (F 和弦)&lt;br&gt;
+按第二弦第一格和第四弦第二格，一三弦空弦音，右手四條刷下去&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;5-練習五---箭頭方向&#34;&gt;5. 練習五 - 箭頭方向
+&lt;/h4&gt;&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./tab5.jpg&#34; width=&#34;300px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;箭頭就是指刷的方向&lt;br&gt;
+它有四個箭頭 上下上下&lt;/p&gt;
+&lt;p&gt;但箭頭往上不代表手要往上刷&lt;br&gt;
+因為四線譜是把烏克麗麗面對自己的樣子&lt;/p&gt;
+&lt;p&gt;試試看把有響孔那面轉過來面對自己，然後往上刷&lt;br&gt;
+接著把響孔轉回去對外，就變成往下刷了&lt;br&gt;
+所以手的方向跟譜是相反的&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一個&lt;br&gt;
+左手按 F 和弦，右手往下刷&lt;/li&gt;
+&lt;li&gt;第二個&lt;br&gt;
+左手按 F 和弦，右手往上刷&lt;/li&gt;
+&lt;li&gt;第三個&lt;br&gt;
+左手按 C 和弦，右手往下刷&lt;/li&gt;
+&lt;li&gt;第四個&lt;br&gt;
+左手按 C 和弦，右手往上刷&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;6-練習六---ㄇ-與-v&#34;&gt;6. 練習六 - ㄇ 與 V
+&lt;/h4&gt;&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./tab6.jpg&#34; width=&#34;300px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;這兩個符號也是指刷的方向&lt;br&gt;
+ㄇ 是往下刷&lt;br&gt;
+V 是往上刷&lt;/p&gt;
+&lt;p&gt;所以 &lt;code&gt;練習六&lt;/code&gt; 跟 &lt;code&gt;練習五&lt;/code&gt; 彈起來是一樣的&lt;br&gt;
+左手按 F 跟 C 和弦&lt;br&gt;
+右手刷 下上下上&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>音符與節拍</title>
+        <link>http://localhost:1313/blog/2013-08-09-music-notes-and-rhythm/</link>
+        <pubDate>Fri, 09 Aug 2013 17:42:43 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/2013-08-09-music-notes-and-rhythm/</guid>
+        <description>&lt;p&gt;在讀譜之前&lt;br&gt;
+要先認識音符和拍值&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h3 id=&#34;音符--休止符&#34;&gt;音符 &amp;amp; 休止符
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;音符&lt;/code&gt; 由符頭、符桿、符尾組成&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./note.jpg&#34; width=&#34;200px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;拍值&lt;/code&gt; 是拍子的長度&lt;br&gt;
+它不代表絕對的時間長度，而是用來了解它們之間 &lt;code&gt;相對&lt;/code&gt; 的時間長度&lt;/p&gt;
+&lt;h4 id=&#34;常見音符種類與拍值&#34;&gt;常見音符種類與拍值
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;全音符&lt;/code&gt; 長度是 4 拍&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;二分音符&lt;/code&gt; 把全音符分成了一半，長度是 2 拍&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;四分音符&lt;/code&gt; 把二分音符分成一半，長度是 1 拍&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;八分音符&lt;/code&gt; 把四分音符分成一半，長度是 1/2 拍&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;十六分音符&lt;/code&gt; 把八分音符分成一半，長度是 1/4 拍&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./note-value.jpg&#34; width=&#34;500px&#34; /&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;全音符 x 1  = 二分音符 x 2 = 四分音符 x 4 = 八分音符 x 8 = 十六分音符 x 16&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;節拍練習&#34;&gt;節拍練習
+&lt;/h3&gt;&lt;p&gt;一開始初學者不熟會拍子不穩，所以一定要用節拍器&lt;br&gt;
+先設定為 60 BPM&lt;br&gt;
+BPM (beats per minute) 是每分鐘的拍數&lt;/p&gt;
+&lt;h4 id=&#34;全音符練習&#34;&gt;全音符練習
+&lt;/h4&gt;&lt;p&gt;這是五線譜，最前面是高音譜記號&lt;br&gt;
+&lt;code&gt;44&lt;/code&gt; 是拍號，拍號是指歌曲每小節的拍數，通常寫在譜的最前面&lt;br&gt;
+分母 4 代表以 &lt;code&gt;四分音符&lt;/code&gt; 為一拍&lt;br&gt;
+分子 4 代表每一小節有 &lt;code&gt;四拍&lt;/code&gt;&lt;br&gt;
+這數字是可以換的，只要知道分母分子代表的意思就好囉&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./whole-note.jpg&#34; width=&#34;250px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;全音符的長度是四拍，剛說過每一小節有四拍&lt;br&gt;
+所以一個全音符就塞滿了整個小節&lt;br&gt;
+下面的 1 2 3 4 要用嘴巴念拍子&lt;br&gt;
+若遇到橘色數字表示右手要刷&lt;/p&gt;
+&lt;p&gt;先把左手輕輕放在弦上悶住&lt;br&gt;
+右手上下刷弦來打拍子&lt;/p&gt;
+&lt;p&gt;所以就是&lt;br&gt;
+嘴巴念 &lt;code&gt;1、2、3、4&lt;/code&gt;&lt;br&gt;
+右手刷 &lt;code&gt;1 &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;彈四遍的話就是&lt;br&gt;
+嘴巴念 &lt;code&gt;1、2、3、4&lt;/code&gt; &lt;code&gt;1、2、3、4&lt;/code&gt; &lt;code&gt;1、2、3、4&lt;/code&gt; &lt;code&gt;1、2、3、4&lt;/code&gt;&lt;br&gt;
+右手刷 &lt;code&gt;1 - - -&lt;/code&gt; &lt;code&gt;1 - - -&lt;/code&gt; &lt;code&gt;1 - - -&lt;/code&gt; &lt;code&gt;1 - - -&lt;/code&gt;&lt;br&gt;
+嘴念了 16 次，手刷了 4 次&lt;/p&gt;
+&lt;h4 id=&#34;二分音符練習&#34;&gt;二分音符練習
+&lt;/h4&gt;&lt;p&gt;二分音符的長度是兩拍&lt;br&gt;
+剛說過每一小節有四拍&lt;br&gt;
+所以 一個兩拍 + 一個兩拍 = 四拍&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./half-note.jpg&#34; width=&#34;250px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;彈四遍的話就是&lt;br&gt;
+嘴巴念 &lt;code&gt;1、2、3、4&lt;/code&gt; &lt;code&gt;1、2、3、4&lt;/code&gt; &lt;code&gt;1、2、3、4&lt;/code&gt; &lt;code&gt;1、2、3、4&lt;/code&gt;&lt;br&gt;
+右手刷 &lt;code&gt;1 - 3 -&lt;/code&gt; &lt;code&gt;1 - 3 -&lt;/code&gt; &lt;code&gt;1 - 3 -&lt;/code&gt; &lt;code&gt;1 - 3 -&lt;/code&gt;&lt;br&gt;
+嘴念了 16 次，手刷了 8 次&lt;/p&gt;
+&lt;h4 id=&#34;四分音符練習&#34;&gt;四分音符練習
+&lt;/h4&gt;&lt;p&gt;四分音符的長度是一拍&lt;br&gt;
+所以四個四分音符就有四拍&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./quarter-note.jpg&#34; width=&#34;250px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;彈四遍的話就是&lt;br&gt;
+嘴巴念 &lt;code&gt;1、2、3、4&lt;/code&gt; &lt;code&gt;1、2、3、4&lt;/code&gt; &lt;code&gt;1、2、3、4&lt;/code&gt; &lt;code&gt;1、2、3、4&lt;/code&gt;&lt;br&gt;
+右手刷 &lt;code&gt;1 2 3 4&lt;/code&gt; &lt;code&gt;1 2 3 4&lt;/code&gt; &lt;code&gt;1 2 3 4&lt;/code&gt; &lt;code&gt;1 2 3 4&lt;/code&gt;&lt;br&gt;
+嘴念了 16 次，手刷了 16 次&lt;/p&gt;
+&lt;h4 id=&#34;八分音符練習&#34;&gt;八分音符練習
+&lt;/h4&gt;&lt;p&gt;八分音符的長度是 1/2 拍&lt;br&gt;
+所以八個八分音符有四拍&lt;br&gt;
+譜上的 &lt;code&gt;1&lt;/code&gt;、&lt;code&gt;2&lt;/code&gt;、&lt;code&gt;3&lt;/code&gt;、&lt;code&gt;4&lt;/code&gt; 是往下刷，&lt;code&gt;&amp;amp;&lt;/code&gt; 是往上刷&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./eighth-note.jpg&#34; width=&#34;250px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;兩個八分音符在一起時，符尾可相連，變成ㄇ字型 ♫&lt;br&gt;
+兩個十六分也可以喔，就變有兩條槓 ♬&lt;/p&gt;
+&lt;p&gt;彈四遍的話就是&lt;br&gt;
+嘴巴念 &lt;code&gt;1 &amp;amp; 2 &amp;amp; 3 &amp;amp; 4&lt;/code&gt; &lt;code&gt;1 &amp;amp; 2 &amp;amp; 3 &amp;amp; 4&lt;/code&gt; &lt;code&gt;1 &amp;amp; 2 &amp;amp; 3 &amp;amp; 4&lt;/code&gt; &lt;code&gt;1 &amp;amp; 2 &amp;amp; 3 &amp;amp; 4&lt;/code&gt;&lt;br&gt;
+右手刷 &lt;code&gt;1 &amp;amp; 2 &amp;amp; 3 &amp;amp; 4&lt;/code&gt; &lt;code&gt;1 &amp;amp; 2 &amp;amp; 3 &amp;amp; 4&lt;/code&gt; &lt;code&gt;1 &amp;amp; 2 &amp;amp; 3 &amp;amp; 4&lt;/code&gt; &lt;code&gt;1 &amp;amp; 2 &amp;amp; 3 &amp;amp; 4&lt;/code&gt;&lt;br&gt;
+嘴念了 32 次，手刷了 32 次&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>烏克麗麗的持琴姿勢/彈奏方式</title>
+        <link>http://localhost:1313/blog/2013-07-29-hold-and-strum-ukulele/</link>
+        <pubDate>Mon, 29 Jul 2013 23:46:43 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/2013-07-29-hold-and-strum-ukulele/</guid>
+        <description>&lt;p&gt;烏克麗麗是一個很隨興的樂器&lt;br&gt;
+所以沒有一定的姿勢或方式&lt;br&gt;
+最重要的就是讓自己感覺到舒服自在就好囉&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h3 id=&#34;持琴姿勢&#34;&gt;持琴姿勢
+&lt;/h3&gt;&lt;h4 id=&#34;一般&#34;&gt;一般
+&lt;/h4&gt;&lt;p&gt;首先坐挺，不要駝背&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;右手抓起琴身，擺到胸口的位置&lt;/li&gt;
+&lt;li&gt;右手臂和身體順勢夾住琴身，琴頭會比琴身高&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./hold_right.gif&#34; width=&#34;450px&#34; /&gt;&lt;/div&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;左手虎口輕輕扣住琴頸上方的位置，不用用力&lt;br&gt;
+注意是虎口而不是手掌貼住&lt;br&gt;
+可以利用虎口當支點，轉轉看手腕是否很靈活&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./hold_left.gif&#34; width=&#34;450px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;或者把琴身放在腿上&lt;br&gt;
+只要你喜歡就可以囉~&lt;/p&gt;
+&lt;h4 id=&#34;背帶-掛勾式&#34;&gt;背帶 (掛勾式)
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;把背帶掛到脖子上&lt;/li&gt;
+&lt;li&gt;勾勾扣住響孔&lt;/li&gt;
+&lt;li&gt;用彎曲的右手臂固定住琴身，左手輕輕支撐住琴頭&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./strap.jpg&#34; width=&#34;400px&#34; /&gt;&lt;/div&gt;
+&lt;h3 id=&#34;彈奏方式&#34;&gt;彈奏方式
+&lt;/h3&gt;&lt;p&gt;左手指甲剪乾淨&lt;br&gt;
+右手可留指甲&lt;/p&gt;
+&lt;h4 id=&#34;拇指撥弦法&#34;&gt;拇指撥弦法
+&lt;/h4&gt;&lt;p&gt;適合溫暖的歌曲&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;食指、中指、無名指、小指扶著琴身&lt;/li&gt;
+&lt;li&gt;拇指用 &lt;code&gt;側邊&lt;/code&gt; 的肉撥弦&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;注意是 &lt;code&gt;往下撥&lt;/code&gt;不是往外撥&lt;br&gt;
+彈完第四弦之後，拇指落在第三弦&lt;br&gt;
+彈完第三弦之後，拇指停在第二弦&lt;br&gt;
+彈完第二弦之後，拇指停在第一弦&lt;br&gt;
+彈完第一弦，拇指停在琴身&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./thumb.gif&#34; width=&#34;450px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;一開始先一根一根慢慢彈&lt;br&gt;
+熟悉後可加快速度&lt;br&gt;
+而且四根手指頭也不用扶著琴身&lt;br&gt;
+利用 &lt;code&gt;手腕&lt;/code&gt; 的轉動來帶動即可&lt;/p&gt;
+&lt;h4 id=&#34;食指刷弦法&#34;&gt;食指刷弦法
+&lt;/h4&gt;&lt;p&gt;適合輕快的歌曲&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;轉動 &lt;code&gt;手腕&lt;/code&gt; 並用食指 &lt;code&gt;側邊&lt;/code&gt; 指甲刷弦&lt;/li&gt;
+&lt;li&gt;刷完後手腕轉回來，食指彎曲回來&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果覺得很僵硬可以甩手，或假裝被燙到，甩到整隻手放鬆 XD&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./index-finger.gif&#34; width=&#34;450px&#34; /&gt;&lt;/div&gt;
+&lt;h4 id=&#34;分散和弦法&#34;&gt;分散和弦法
+&lt;/h4&gt;&lt;p&gt;適合柔美的歌曲&lt;br&gt;
+可以讓歌變的有層次&lt;br&gt;
+上面的方式都是是用一根手指頭一次刷&lt;br&gt;
+但這個是用一根一根手指頭彈&lt;br&gt;
+彈奏沒有固定的順序，手指也沒有固定要彈哪一弦&lt;/p&gt;
+&lt;p&gt;範例一&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;把拇指放在第四弦上面，食指放第三弦、中指放第二弦、無名指放第一弦&lt;/li&gt;
+&lt;li&gt;拇指彈第四弦&lt;/li&gt;
+&lt;li&gt;食指彈第三弦&lt;/li&gt;
+&lt;li&gt;中指彈第二弦&lt;/li&gt;
+&lt;li&gt;無名指彈第一弦&lt;br&gt;
+步驟 2~5 不停循環&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./T123.gif&#34; width=&#34;450px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;範例二&lt;br&gt;
+著名的 &lt;code&gt;T1213121&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;把拇指放在第四弦上面，食指放第三弦、中指放第二弦、無名指放第一弦&lt;/li&gt;
+&lt;li&gt;拇指彈第四弦&lt;/li&gt;
+&lt;li&gt;食指彈第三弦&lt;/li&gt;
+&lt;li&gt;中指彈第二弦&lt;/li&gt;
+&lt;li&gt;食指彈第三弦&lt;/li&gt;
+&lt;li&gt;無名指彈第一弦&lt;/li&gt;
+&lt;li&gt;食指彈第三弦&lt;/li&gt;
+&lt;li&gt;中指彈第二弦&lt;/li&gt;
+&lt;li&gt;食指彈第三弦&lt;br&gt;
+步驟 2~9 不停循環&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./T1213121.gif&#34; width=&#34;450px&#34; /&gt;&lt;/div&gt;
+&lt;h4 id=&#34;pick-法&#34;&gt;Pick 法
+&lt;/h4&gt;&lt;p&gt;適合快節奏的 Solo 或單音&lt;br&gt;
+Pick 有分軟硬，軟適合刷和弦，硬適合 Solo&lt;/p&gt;
+&lt;p&gt;拿法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先將 Pick 拿橫的&lt;/li&gt;
+&lt;li&gt;拇指直的放上去&lt;/li&gt;
+&lt;li&gt;食指橫的放上去&lt;br&gt;
+一樣是用轉動手腕的方式刷奏&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./pick.gif&#34; width=&#34;450px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;如果要刷弦就拿後面一點，讓 Pick 露出比較多地方&lt;br&gt;
+如果要 Solo 就拿前面一點，速度可以比較快&lt;/p&gt;
+&lt;p&gt;可能有人覺得用 Pick 刷弦很吵有嘎嘎的聲音&lt;br&gt;
+但聽說現在烏克麗麗有專門的 Pick&lt;br&gt;
+材質是羊毛氈&lt;br&gt;
+有興趣的朋友可以試試看&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>烏克麗麗的調音/C大調音階</title>
+        <link>http://localhost:1313/blog/2013-07-25-tune-ukulele-and-c-major-scale/</link>
+        <pubDate>Thu, 25 Jul 2013 22:27:43 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/2013-07-25-tune-ukulele-and-c-major-scale/</guid>
+        <description>&lt;h3 id=&#34;音的名字&#34;&gt;音的名字
+&lt;/h3&gt;&lt;p&gt;在調音之前呢&lt;br&gt;
+我們要先知道每個音的名字&lt;br&gt;
+因為調音器上面只會顯示音名&lt;br&gt;
+不會寫 Do Re Mi&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;那什麼是音名呢&lt;br&gt;
+喔~原來音的表現方式有很多種&lt;br&gt;
+像是 &lt;code&gt;音名&lt;/code&gt; 的 &lt;code&gt;C D E F G A B&lt;/code&gt;&lt;br&gt;
+或 &lt;code&gt;唱名&lt;/code&gt; 的 &lt;code&gt;Do Re Mi Fa Sol La Ti&lt;/code&gt;&lt;br&gt;
+或 &lt;code&gt;簡譜&lt;/code&gt; 的 &lt;code&gt;1 2 3 4 5 6 7&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;c-大調音階&#34;&gt;C 大調音階
+&lt;/h3&gt;&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./c-major-scale.jpg&#34; width=&#34;500px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;C 大調&lt;/code&gt; 是由 DO 為出發點的七個音&lt;br&gt;
+由 C D E F G A B 組成&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;音階&lt;/code&gt; 是把音由低到高或由高到低，像階梯一樣的排列&lt;br&gt;
+這個要背起來~&lt;br&gt;
+當別人說 C 你馬上就知道這是 Do&lt;br&gt;
+或別人說 Sol 你馬上知道是 G&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;音程&lt;/code&gt; 是音與音之間的距離，單位是度&lt;br&gt;
+Do 到 Do (自己) 是一度&lt;br&gt;
+Do 到 Re 是兩度&lt;br&gt;
+Do 到 Mi 是三度&lt;br&gt;
+以此類推，DO 到 高音 DO 就是八度&lt;br&gt;
+所以你可以常常聽到別人說幾個高八度的&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;全全半全全全半&lt;/code&gt; 是它們之間的距離&lt;br&gt;
+這就要說到一個東西，就是 &lt;code&gt;十二平均律&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;十二平均律&#34;&gt;十二平均律
+&lt;/h3&gt;&lt;p&gt;把一個八度平均分成十二等份&lt;br&gt;
+每一等份為半音&lt;br&gt;
+半音是音程的最小距離&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;半音 + 半音 = 全音&lt;/code&gt;&lt;br&gt;
+把 &lt;code&gt;Do Re Mi Fa Sol La Ti Do&lt;/code&gt; 丟到 &lt;code&gt;十二平均律&lt;/code&gt; 裡面就變這樣&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./equal-temperament.jpg&#34; width=&#34;500px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;C 加一個半音等於 C# 或 Db&lt;br&gt;
+再加一個半音等於 D&lt;br&gt;
+再加一個半音等於 D# 或 Eb&lt;br&gt;
+再加一個半音等於 E&lt;br&gt;
+再加一個半音等於 F&lt;br&gt;
+再加一個半音等於 F# 或 Gb&lt;br&gt;
+再加一個半音等於 G&lt;br&gt;
+再加一個半音等於 G# 或 Ab&lt;br&gt;
+再加一個半音等於 A&lt;br&gt;
+再加一個半音等於 A# 或 Bb&lt;br&gt;
+再加一個半音等於 B&lt;br&gt;
+再加一個半音等於 C&lt;br&gt;
+這樣就是一個八度&lt;/p&gt;
+&lt;p&gt;搭配著鋼琴邊彈邊看，有沒有更懂一點了呢&lt;br&gt;
+懂了之後，就可以開始調音囉&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./equal-temperament-2.jpg&#34; width=&#34;500px&#34; /&gt;&lt;/div&gt;
+&lt;h3 id=&#34;調音&#34;&gt;調音
+&lt;/h3&gt;&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./ukulele-tune.jpg&#34; width=&#34;450px&#34; /&gt;&lt;/div&gt;
+&lt;p&gt;在我們彈奏之前&lt;br&gt;
+第一件事就是要調音&lt;br&gt;
+首先我們要先認識弦的位置&lt;br&gt;
+離我們最遠 (最細) 的弦是 &lt;code&gt;第一弦 A&lt;/code&gt;&lt;br&gt;
+再來是 &lt;code&gt;第二弦 E&lt;/code&gt;、&lt;code&gt;第三弦 C&lt;/code&gt;、&lt;code&gt;第四弦 G&lt;/code&gt;&lt;br&gt;
+這也要背起來喔~&lt;/p&gt;
+&lt;p&gt;了解之後呢&lt;br&gt;
+把調音器夾在琴頭，並打開電源 (440 Hz)&lt;br&gt;
+通常有兩種模式&lt;br&gt;
+一種是震動，一種是麥克風收音&lt;br&gt;
+震動比較不會受到外界干擾&lt;/p&gt;
+&lt;p&gt;撥一下要調的弦&lt;br&gt;
+若顯示的音名比我們的目標低，就 &lt;code&gt;轉緊&lt;/code&gt; 弦紐，把音 &lt;code&gt;調高&lt;/code&gt;&lt;br&gt;
+若顯示比我們目標高，就 &lt;code&gt;轉鬆&lt;/code&gt; 弦紐，把音 &lt;code&gt;調低&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;除了要看音名&lt;br&gt;
+指針也要對到中間&lt;br&gt;
+若指針在 &lt;code&gt;左邊&lt;/code&gt;，就 &lt;code&gt;轉緊調高&lt;/code&gt;&lt;br&gt;
+若指針在 &lt;code&gt;右邊&lt;/code&gt;，就 &lt;code&gt;轉鬆調低&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>烏克麗麗的歷史/種類/結構</title>
+        <link>http://localhost:1313/blog/2013-07-22-ukulele-history-types-anatomy/</link>
+        <pubDate>Mon, 22 Jul 2013 23:20:43 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/2013-07-22-ukulele-history-types-anatomy/</guid>
+        <description>&lt;h3 id=&#34;歷史&#34;&gt;歷史
+&lt;/h3&gt;&lt;p&gt;在很久很久以前 (老套開頭)&lt;br&gt;
+就是在 1879 年 8 月 23 日那天&lt;br&gt;
+有 419 位的葡萄牙移民在夏威夷上岸&lt;br&gt;
+在這當中還包含了專業的製琴師:&lt;br&gt;
+Manuel Nunes, Joao Fernandes, Augustine Dias&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;在航行超過四個月，約 15000 公里之後&lt;br&gt;
+Joao Fernandes 拿起家鄉的傳統樂器 (Braguinha)&lt;br&gt;
+開始高唱家鄉的傳統歌謠&lt;/p&gt;
+&lt;p&gt;當地的夏威夷人不但覺得這種琴音色優美&lt;br&gt;
+還對演奏者飛快的手指頭在指板上移動跳躍感到驚訝&lt;br&gt;
+簡直就像跳躍的跳蚤一樣&lt;br&gt;
+用當地語言把 &lt;code&gt;跳躍的跳蚤&lt;/code&gt; 說出來，就是現在的烏克麗麗囉&lt;/p&gt;
+&lt;p&gt;還有另外一種說法是&lt;br&gt;
+Liliuokalani 女王 覺得這個樂器是葡萄牙人為當地帶來的禮物&lt;br&gt;
+用夏威夷話來說，UKU 是「禮物」，LELE 是「來」的意思&lt;br&gt;
+結合在一起就成為現在的 UKULELE 囉&lt;/p&gt;
+&lt;h3 id=&#34;種類&#34;&gt;種類
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Soprano (21吋)&lt;/li&gt;
+&lt;li&gt;Concert (23吋)&lt;/li&gt;
+&lt;li&gt;Tenor (26吋)&lt;/li&gt;
+&lt;li&gt;Baritone (30吋)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Size 越大，音格數越多，能彈的音也越多&lt;/p&gt;
+&lt;h3 id=&#34;構造&#34;&gt;構造
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;琴頭 - 品牌 LOGO&lt;/li&gt;
+&lt;li&gt;弦鈕 &amp;amp; 弦栓 - 調整弦的鬆緊度與高低音&lt;/li&gt;
+&lt;li&gt;上弦枕 &amp;amp; 下弦枕 &amp;amp; 琴橋 - 把四條弦固定住&lt;/li&gt;
+&lt;li&gt;琴頸 - 很長的脖子&lt;/li&gt;
+&lt;li&gt;琴衍 - 金屬條&lt;/li&gt;
+&lt;li&gt;指板 &amp;amp; 音格 - 手指頭按的地方&lt;/li&gt;
+&lt;li&gt;指位記號 - 指版上的點點，快速辨識是在哪一格&lt;/li&gt;
+&lt;li&gt;音箱 &amp;amp; 響孔 - 聲音發出來的地方&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./ukulele-anatomy.jpg&#34; width=&#34;350px&#34; /&gt;&lt;/div&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

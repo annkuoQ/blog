@@ -3,7 +3,7 @@ title: 來去直營店換 iPhone 電池
 date: 2020-05-11 22:27:01
 slug: "2020-05-11-iphone-se-battery-replacement-at-xinyi-a13"
 description: 手上這支 iPhone SE 已經四年多，電池健康度為 82%，雖然它本來就只有 1624 mAh，但感覺用 safari 滿容易發熱和噴電的，於是就決定去原廠換電池，一個禮拜前先線上預約 ...
-categories: 電腦 / 硬體
+categories: 隨筆
 tags:
 - iphone
 ---

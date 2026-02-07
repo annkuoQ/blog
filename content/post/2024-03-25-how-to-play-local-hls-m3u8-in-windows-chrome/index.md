@@ -3,7 +3,7 @@ title: 如何在 Win10 Chrome 播放本機的 HLS M3U8 影片
 date: 2024-03-25 09:40:22
 slug: "2024-03-25-how-to-play-local-hls-m3u8-in-windows-chrome"
 description: 最近在測試 HLS 轉檔，轉出來之後有一堆 ts 片段，又懶得上傳到 Staging 環境，於是就想找在本機端就可以播放影片的方法 ...
-categories: 直播 / 串流
+categories: 直播串流
 tags:
 - hls
 - m3u8

@@ -3,7 +3,7 @@ title: 關於旅遊企劃的二三事
 date: 2019-08-04 00:31:46
 slug: "2019-08-04-how-to-plan-a-family-vacation"
 description: 做出好的活動企劃並不容易，不過現在企劃薪水好像不高，回到正題，此篇目的是想整理出在規劃旅遊時，需要注意到哪些細節，首先要知道目標對象、旅遊時間、旅遊目的 ...
-categories: 企劃 / 行銷
+categories: 隨筆
 tags:
 - travel
 ---

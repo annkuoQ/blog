@@ -3,7 +3,7 @@ title: 如何使用 LINE Notify 發通知
 date: 2021-02-03 22:11:31
 slug: "2021-02-03-how-to-use-line-notify-to-send-messages"
 description: 最近做了一個監控的 bat，如果服務有發生問題就發通知提醒，而 LINE 是很多人都在用的通訊軟體，於是就把腦筋動到 LINE 上 ...
-categories: 資工 / 程設
+categories: 技術筆記
 tags:
 - windows
 - CMD

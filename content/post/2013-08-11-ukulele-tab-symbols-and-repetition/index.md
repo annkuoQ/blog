@@ -3,7 +3,7 @@ title: 烏克麗麗的技巧記號與反覆記號
 date: 2013-08-11 23:24:43
 slug: "2013-08-11-ukulele-tab-symbols-and-repetition"
 description: 常見的技巧記號有搥弦、勾弦、滑弦、推弦、切音、悶音、琶音，搥弦記號是 H，是用左手指快速擊弦所發出的聲音，勾弦記號是 P，是用左手指快速勾弦所發出的聲音，滑弦記號是 S ...
-categories: 音樂 / 樂器
+categories: 烏克麗麗
 tags:
 - ukulele
 ---

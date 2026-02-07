@@ -3,7 +3,7 @@ title: 利用 GitHub Actions 監控網站服務 - Upptime
 date: 2021-01-09 21:02:33
 slug: "2021-01-09-uptime-monitor-and-status-website-service-with-upptime"
 description: 前陣子在網路上看到一個很酷的開源專案，充分的使用 GitHub，每隔一段時間用 GitHub Actions 看網站有沒有掛掉，若掛掉就用 GitHub Issues 回報異常事件，使用 GitHub Pages 產生服務狀態的頁面 ...
-categories: 資工 / 程設
+categories: 架站
 tags:
 - upptime
 - github

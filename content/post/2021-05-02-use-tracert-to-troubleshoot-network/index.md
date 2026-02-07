@@ -3,7 +3,7 @@ title: 網路卡卡？快用 tracert 找出問題點！
 date: 2021-05-02 10:28:20
 slug: "2021-05-02-use-tracert-to-troubleshoot-network"
 description: 網路是一個很複雜的東西，從你家到目的地必須經過很多個節點，為了釐清封包是在哪個點卡住了，我們可以使用 Windows 內建的 `tracert` 指令 ...
-categories: 電腦 / 硬體
+categories: 技術筆記
 tags:
 - network
 - tracert

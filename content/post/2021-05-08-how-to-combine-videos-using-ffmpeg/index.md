@@ -3,7 +3,7 @@ title: 如何使用 ffmpeg 串接多個影片
 date: 2021-05-08 14:51:15
 slug: "2021-05-08-how-to-combine-videos-using-ffmpeg"
 description: 最近同事在用 Premiere 串接影片時，表示輸出很花時間，因為 Premiere 會重新編碼，以這個案例來說，其實可以使用 ffmpeg 來達成，因為是相同格式的影片，不用重新編碼 ...
-categories: 轉檔 / 編碼
+categories: 影音轉檔
 tags:
 - ffmpeg
 ---

@@ -3,7 +3,7 @@ title: 如何把手機變 Webcam (免安裝軟體、免插線、免費)
 date: 2021-04-13 20:36:32
 slug: "2021-04-13-how-to-use-mobile-as-webcam"
 description: 最近找到了一個開源的酷東西，不用安裝任何軟體、不用插任何線，只要有網路！就可以把手機拍到的畫面投到電腦上 ...
-categories: 直播 / 串流
+categories: 直播串流
 tags:
 - obs.ninja
 - webrtc

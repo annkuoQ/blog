@@ -3,7 +3,7 @@ title: 如何用 AI 摘要 YouTube 影片重點
 date: 2026-01-13 21:52:29
 slug: "2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm"
 description: 每天都有看不完的影片跟聽不完的 Podcast，如果懶得看，但又想知道重點該怎麼做呢，我們需要三種工具來協助完成 yt-dlp, Python, NotebookLM...
-categories: 資工 / 程設
+categories: 技術筆記
 tags:
 - yt-dlp
 - python

@@ -3,7 +3,7 @@ title: 每次換電腦我都會先裝的那些軟體
 date: 2025-12-23 22:54:47
 slug: "2025-12-23-my-go-to-apps-for-a-fresh-computer-setup"
 description:  最近買了新筆電，因為舊的用了五年，怕某天掛掉，而且 Win10 也不能更新了，總之這篇就是紀錄一下，一台新電腦要安裝哪些軟體...
-categories: 電腦 / 硬體
+categories: Windows 筆記
 tags:
 - windows
 ---

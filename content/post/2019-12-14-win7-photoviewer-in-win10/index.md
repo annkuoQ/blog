@@ -3,7 +3,7 @@ title: Win 10 使用 Win 7 的相片檢視器
 date: 2019-12-14 11:23:35
 slug: "2019-12-14-win7-photoviewer-in-win10"
 description: Win 10 開相片變得超慢，還是比較習慣 Win 7 的相片檢視器，首先開啟登錄編輯程式，找到以下路徑，電腦\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations ...
-categories: 電腦 / 硬體
+categories: Windows 筆記
 tags: 
 - windows
 - photo viewer

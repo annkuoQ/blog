@@ -3,7 +3,7 @@ title: 烏克麗麗如何彈 Do Re Mi
 date: 2014-02-01 13:51:43
 slug: "2014-02-01-ukulele-do-re-mi-scales"
 description: 要先知道每一條弦的空弦音，經過推算就可以知道指板上所有的音，當然也知道 Do Re Mi 的位置囉，再來還要知道音與音之間的距離，就是全全半全全全半，指板上的每個音格都是一個半音 ...
-categories: 音樂 / 樂器
+categories: 烏克麗麗
 tags:
 - ukulele
 ---

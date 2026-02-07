@@ -3,7 +3,7 @@ title: Win 10 安裝 Cmder 與 Git
 date: 2019-12-10 22:31:46
 slug: "2019-12-10-install-cmder-and-git"
 description: Cmder 可以讓我們在 Windows 上跑 Linux 指令，取代內建的 CMD，首先到官網下載，點擊 Download Full，解壓縮 cmder.zip，然後將 Cmder 資料夾放到 C 槽底下 ...
-categories: 資工 / 程設
+categories: 技術筆記
 tags:
 - cmder
 - git

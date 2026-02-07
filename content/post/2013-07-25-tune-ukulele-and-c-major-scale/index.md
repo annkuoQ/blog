@@ -3,7 +3,7 @@ title: 烏克麗麗的調音/C大調音階
 date: 2013-07-25 22:27:43
 slug: "2013-07-25-tune-ukulele-and-c-major-scale"
 description: 在調音之前要先知道每個音的名字，因為調音器上面只會顯示音名，不會寫 Do Re Mi，那什麼是音名呢，音的表現方式有很多種，像是「音名」的 C D E F G A B，或「唱名」的 Do Re Mi Fa Sol La Ti ...
-categories: 音樂 / 樂器
+categories: 烏克麗麗
 tags:
 - ukulele
 ---

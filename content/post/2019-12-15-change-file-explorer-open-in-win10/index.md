@@ -3,7 +3,7 @@ title: 更改 Win 10 檔案總管預設開啟位置
 date: 2019-12-15 22:14:43
 slug: "2019-12-15-change-file-explorer-open-in-win10"
 description: Win 10 開啟檔案總管時，預設是打開常用資料夾與檔案，但我還是比較習慣顯示本機，首先到檔案總管，對快速存取按右鍵，選擇開啟檔案總管以本機 ...
-categories: 電腦 / 硬體
+categories: Windows 筆記
 tags:
 - windows
 - file explorer

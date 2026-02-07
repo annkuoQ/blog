@@ -3,7 +3,7 @@ title: 介紹 VTuber 相關技術與軟體
 date: 2022-02-19 15:27:21
 slug: "2022-02-19-how-to-be-a-vtuber"
 description: VTuber 是 Virtual YouTuber 的縮寫，就是虛擬形象結合真人的 YouTuber，透過捕捉真人的動作，讓虛擬人物有生動的表情與動作，其實現在的技術門檻降低很多了...
-categories: 直播 / 串流
+categories: 直播串流
 tags:
 - vtuber
 - motion capture

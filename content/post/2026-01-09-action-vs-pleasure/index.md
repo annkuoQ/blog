@@ -3,7 +3,7 @@ title: 行為 vs. 樂受
 date: 2026-01-09 22:03:14
 slug: "2026-01-09-action-vs-pleasure"
 description:  一個人如果喜歡聽音樂或喝飲料，那他是喜歡這件事的本身行為，還是喜歡做這件事所產生的樂受呢...
-categories: 哲學 / 思辨
+categories: 隨筆
 tags:
 - behavioral motivation
 - mindfulness

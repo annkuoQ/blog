@@ -3,7 +3,7 @@ title: 如何在 Windows 使用 Whisper
 date: 2026-01-17 11:20:10
 slug: "2026-01-17-how-to-use-whisper-on-windows"
 description: Whisper 是 OpenAI 開發的自動語音辨識模型，可以把「人講話的聲音」轉成「文字」...
-categories: 資工 / 程設
+categories: 技術筆記
 tags:
 - python
 - ffmpeg
