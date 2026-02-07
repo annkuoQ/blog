@@ -48,7 +48,7 @@ tags:
 解釋一下~
 那個 XPath 代表選擇所有 `<item>` 元素中的 `<description>` 內容
 
-<div align="center"><img src="./add-source.jpg"" width="700px"/></div>
+<div align="center"><img src="./add-source.jpg" width="700px"/></div>
 
 ### 原始的 XML 內容
 
@@ -102,13 +102,13 @@ tags:
 3. 點擊 Mapping Name 的 `output` > `(Text)跑馬燈`
 4. 點擊 `確定`
 
-<div align="center"><img src="./output-mapping.jpg"" width="500px"/></div>
+<div align="center"><img src="./output-mapping.jpg" width="500px"/></div>
 
 提取出的內容就輸出到 `跑馬燈` 了
 不過字有點大
 這時可以修改一下字型與文字大小
 
-<div align="center"><img src="./modify-text-properties.jpg"" width="700px"/></div>
+<div align="center"><img src="./modify-text-properties.jpg" width="700px"/></div>
 
 ## 輸出內容整理
 
@@ -137,7 +137,7 @@ tags:
 - 中間用 🚨 隔開兩段文字
 
 
-<div align="center"><img src="./output-template.jpg"" width="500px"/></div>
+<div align="center"><img src="./output-template.jpg" width="500px"/></div>
 
 ## 設定跑馬捲動特效
 
@@ -147,7 +147,7 @@ tags:
 4. 調整 `水平速度` > 設定跑馬的速度為 100
 5. 點擊 `關閉`
 
-<div align="center"><img src="./modify-text-scroll.jpg"" width="700px"/></div>
+<div align="center"><img src="./modify-text-scroll.jpg" width="700px"/></div>
 
 大功告成！
 

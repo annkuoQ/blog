@@ -36,7 +36,7 @@ tags:
 2. 勾勾扣住響孔
 3. 用彎曲的右手臂固定住琴身，左手輕輕支撐住琴頭
 
-<div align="center"><img src="./strap.jpg"" width="400px" /></div>
+<div align="center"><img src="./strap.jpg" width="400px" /></div>
 
 ### 彈奏方式
 左手指甲剪乾淨

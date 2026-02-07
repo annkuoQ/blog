@@ -40,7 +40,7 @@ tags:
 
 #### 壓四根手指
 
-<div align="center"><img src="./stretch_4finger.jpg"" width="350px"/></div>
+<div align="center"><img src="./stretch_4finger.jpg" width="350px"/></div>
 
 把右手掌心橫向面對自己
 左手食指/中指/無名指/小指背對自己併攏，並貼在左掌心
@@ -49,7 +49,7 @@ tags:
 
 #### 壓一根手指
 
-<div align="center"><img src="./stretch_1finger.jpg"" width="350px"/></div>
+<div align="center"><img src="./stretch_1finger.jpg" width="350px"/></div>
 
 跟上一個動作很像
 但一次只壓一根手指
@@ -57,7 +57,7 @@ tags:
 
 #### 分開手指
 
-<div align="center"><img src="./stretch_push.jpg"" width="350px"/></div>
+<div align="center"><img src="./stretch_push.jpg" width="350px"/></div>
 
 用右手把左手每個指頭和指頭間推開
 然後換左手推開右手指
@@ -85,7 +85,7 @@ tags:
 無名指負責第三格
 小指負責第四格
 
-<div align="center"><img src="./warm_up1.jpg"" width="600px"/></div>
+<div align="center"><img src="./warm_up1.jpg" width="600px"/></div>
 
 - 按的位置要在金屬條 (琴衍) 旁邊，這樣會比較省力
 - 爬完四個音，手指頭才可以"翹"起來
@@ -98,7 +98,7 @@ tags:
 固定在前四格，但不同條弦
 一次只能動一根手指頭
 
-<div align="center"><img src="./warm_up2.jpg"" width="600px"/></div>
+<div align="center"><img src="./warm_up2.jpg" width="600px"/></div>
 -
 <div align="center"><img src="./warm_up2.gif" width="350px"/></div>
 
@@ -107,7 +107,7 @@ tags:
 固定在同一條弦，但格數變多
 所以手需要橫向移動
 
-<div align="center"><img src="./warm_up3.jpg"" width="600px"/></div>
+<div align="center"><img src="./warm_up3.jpg" width="600px"/></div>
 -
 <div align="center"><img src="./warm_up3.gif" width="350px"/></div>
 
@@ -122,7 +122,7 @@ tags:
 真是練都練不完呢
 (1 = 食指、2 = 中指、3 = 無名指、4 = 小指)
 
-<div align="center"><img src="./24_warm_up.jpg"" width="400px"/></div>
+<div align="center"><img src="./24_warm_up.jpg" width="400px"/></div>
 
 
 #### 右手

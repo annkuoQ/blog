@@ -77,7 +77,7 @@ Google 提供了多種驗證方法:
 我是用 `HTML 標記` 的方式
 把 `<meta> tag` 貼到 `\themes\你的主題名稱\layout\_partia\head.ejs`
 
-<div align="center"><img src="./verify.jpg"" width="450px" /></div>
+<div align="center"><img src="./verify.jpg" width="450px" /></div>
 
 - 儲存 `.head.ejs`
 - 清除快取和舊的靜態檔案
@@ -89,7 +89,7 @@ $ hexo d
 ```
 - 點擊 `驗證` 鈕後就成功囉～
 
-<div align="center"><img src="./verified.jpg"" width="450px" /></div>
+<div align="center"><img src="./verified.jpg" width="450px" /></div>
 
 ### 測試搜尋結果
 

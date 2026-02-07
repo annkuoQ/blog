@@ -93,7 +93,7 @@ tags:
   - Select scopes: 勾選 `repo` 和 `workflow`
   - 點擊 `Generate token`
 
-<div align="center"><img src="./new-pat.png"" width="700px"/></div>
+<div align="center"><img src="./new-pat.png" width="700px"/></div>
 
 4. 複製這段很長的 token
 

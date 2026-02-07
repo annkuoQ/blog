@@ -191,8 +191,8 @@ $ npm start
 LiveReload server started on port 35729
 Docusaurus server started on port 3000
 ```
-7. 瀏覽器自動前往 http://localhost:3000/ 顯示範例網站
-![docusaurus-new-site](./docusaurus-new-site.jpg)
+7. 瀏覽器自動前往 `http://localhost:3000/` 顯示範例網站
+<div align="center"><img src="./docusaurus-new-site.jpg" width="800px"/></div>
 
 ## 創建頁面
 ### 一般頁面
@@ -218,8 +218,8 @@ function HelloWorld(props) {
 
 module.exports = HelloWorld;
 ```
-2. 瀏覽器前往 http://localhost:3000/hello-world 可以看到新頁面
-    ![docusaurus-new-page](./docusaurus-new-page.jpg)
+2. 瀏覽器前往 `http://localhost:3000/hello-world` 可以看到新頁面
+<div align="center"><img src="./docusaurus-new-page.jpg" width="800px"/></div>
 
   
 
@@ -271,9 +271,8 @@ I can write content using [GitHub-flavored Markdown syntax](https://github.githu
 ```
 3. `Ctrl+ C` 停止服務器後，再 `npm start`
 
-4. 瀏覽器前往 http://localhost:3000/docs/doc9 可以看到側邊欄已更新
-    ![docusaurus-new-doc](./docusaurus-new-doc.jpg)
-
+4. 瀏覽器前往 `http://localhost:3000/docs/doc9` 可以看到側邊欄已更新
+<div align="center"><img src="./docusaurus-new-doc.jpg" width="800px"/></div>
   
 
 5. `Ctrl+ C` 停止服務器

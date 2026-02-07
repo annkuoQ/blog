@@ -56,7 +56,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yt-dlp --list-subs &amp;lt;影片網址&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;整理字幕檔內容&#34;&gt;整理字幕檔內容
+&lt;/div&gt;&lt;p&gt;&lt;em&gt;如果沒有字幕的話&lt;br&gt;
+可以 &lt;a class=&#34;link&#34; href=&#34;https://annkuoq.github.io/blog/2026-01-17-how-to-use-whisper-on-windows/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;使用 Whisper 把聲音轉成文字&lt;/a&gt;!!&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;整理字幕檔內容&#34;&gt;整理字幕檔內容
 &lt;/h2&gt;&lt;h3 id=&#34;python-腳本&#34;&gt;Python 腳本
 &lt;/h3&gt;&lt;p&gt;下載來的字幕 &lt;code&gt;.vtt&lt;/code&gt; 檔&lt;br&gt;
 因為內容含有 Timecode&lt;br&gt;

@@ -175,9 +175,10 @@ $ hexo server
 INFO  Start processing
 INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.
 ```
-4. 前往 http://localhost:4000 顯示範例網站
-![hexo-new-site](./hexo-new-site.jpg)
-5. `Ctrl+ C` 停止服務器
+4. 前往 `http://localhost:4000` 顯示範例網站
+<div align="center"><img src="./hexo-new-site.jpg" width="800px"/></div>
+
+5. `Ctrl+C` 停止服務器
 
 ## 建立文章
 
@@ -256,8 +257,8 @@ $ hexo server
 INFO  Start processing
 INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.
 ```
-6. 前往 http://localhost:4000/test/2020/01/03/post-title/ 可以看到新文章出現
-![hexo-new-post](./hexo-new-post.jpg)
+6. 前往 `http://localhost:4000/test/2020/01/03/post-title/` 可以看到新文章出現
+<div align="center"><img src="./hexo-new-post.jpg" width="800px"/></div>
 
 ## 部署網站
 1. 安裝 Git 部署套件
@@ -371,7 +372,7 @@ To github.com:annkuoQ/test.git
 Branch 'master' set up to track remote branch 'master' from 'git@github.com:annkuoQ/test.git'.
 INFO  Deploy done: git
 ```
-4. 前往 https://annkuoQ.github.io/test 就可以看到自己的網站囉
+4. 前往 `https://annkuoQ.github.io/test` 就可以看到自己的網站囉
 (開啟 GitHub Pages 功能需要一點時間，若頁面還沒出來，讓子彈飛一下)
 
 ## 參考資料

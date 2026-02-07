@@ -33,7 +33,7 @@ tags:
 4. 輸入 cmd 並按下 Enter
 5. 成功開啟 CMD (命令提示字元)，並且路徑是 `D:\test`
 
-<div align="center"><img src="./open-cmd.jpg"" width="700px"/></div>
+<div align="center"><img src="./open-cmd.jpg" width="700px"/></div>
 
 ## 輸出 log
 

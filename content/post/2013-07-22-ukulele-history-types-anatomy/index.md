@@ -50,4 +50,4 @@ Size 越大，音格數越多，能彈的音也越多
 - 指位記號 - 指版上的點點，快速辨識是在哪一格
 - 音箱 & 響孔 - 聲音發出來的地方
 
-<div align="center"><img src="./ukulele-anatomy.jpg"" width="350px" /></div>
+<div align="center"><img src="./ukulele-anatomy.jpg" width="350px" /></div>
