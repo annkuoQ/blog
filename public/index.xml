@@ -7,7 +7,20 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Sat, 07 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 07 Feb 2026 23:30:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>《老祖宗》烏克麗麗 TAB 四線譜</title>
+        <link>http://localhost:1313/blog/2026-02-07-honors_to_us-all_mulan_ukulele_tabs/</link>
+        <pubDate>Sat, 07 Feb 2026 23:30:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/2026-02-07-honors_to_us-all_mulan_ukulele_tabs/</guid>
+        <description>&lt;p&gt;《老祖宗》 是最近社群上很紅的中獎神曲&lt;br&gt;
+來自於電影 《花木蘭》 的插曲 《&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=lDSrdwuPgCE&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Honors to Us All&lt;/a&gt;》&lt;br&gt;
+祝大家尾牙都開心中獎 😆&lt;/p&gt;
+&lt;p&gt;非專業，純屬興趣分享，如有錯誤敬請指教～&lt;/p&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./tab.jpg&#34;/&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
         <title>如何在 Windows 使用 Whisper</title>
         <link>http://localhost:1313/blog/2026-01-17-how-to-use-whisper-on-windows/</link>
         <pubDate>Sat, 17 Jan 2026 11:20:10 +0000</pubDate>
@@ -3115,50 +3128,35 @@ Actions 就會自動開始跑 (黃圈圈在轉)&lt;br&gt;
 話不多說就趕快開始吧！&lt;/p&gt;
 &lt;h2 id=&#34;windows-安裝&#34;&gt;Windows 安裝
 &lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;到 &lt;a class=&#34;link&#34; href=&#34;https://github.com/sorayuki/obs-multi-rtmp/releases/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;GitHub Releases 頁面&lt;/a&gt;&lt;br&gt;
-依照自己的作業系統下載安裝檔後，解壓縮執行安裝&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;del&gt;把套件複製到相對應的主程式目錄底下&lt;/del&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;到 &lt;a class=&#34;link&#34; href=&#34;https://github.com/sorayuki/obs-multi-rtmp/releases/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub Releases 頁面&lt;/a&gt;，依照自己的作業系統下載安裝檔後，解壓縮執行安裝&lt;br&gt;
+我是選擇 &lt;code&gt;obs-multi-rtmp-0.7.3.0-windows-x64-Installer.exe&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;ul&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./windows-installer.jpg&#34; width=&#34;400px&#34;/&gt;&lt;/div&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;打開 OBS，介面左上角會出現一個 &lt;code&gt;多路串流&lt;/code&gt; 的區塊&lt;br&gt;
+如果沒有出現，可以點擊 &lt;code&gt;停駐視窗&lt;/code&gt; &amp;gt; &lt;code&gt;多路串流&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./windows-obs-docks.jpg&#34; width=&#34;500px&#34;/&gt;&lt;/div&gt;
+&lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;del&gt;套件主程式 (.dll 檔)&lt;/del&gt;&lt;br&gt;
-&lt;del&gt;將 &lt;code&gt;obs-plugins\64bit\obs-multi-rtmp.dll&lt;/code&gt; 複製到 &lt;code&gt;C:\Program Files\obs-studio\obs-plugins\64bit&lt;/code&gt; 目錄下&lt;/del&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;del&gt;套件語系 (資料夾)&lt;/del&gt;&lt;br&gt;
-&lt;del&gt;將 &lt;code&gt;data\obs-plugins\obs-multi-rtmp&lt;/code&gt; 複製到 &lt;code&gt;C:\Program Files\obs-studio\data\obs-plugins&lt;/code&gt; 目錄下&lt;/del&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./windows-plugin-copy.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;打開 OBS，介面左上角會出現一個 &lt;code&gt;多路串流&lt;/code&gt; 的區塊&lt;br&gt;
-你可能需要拉寬那個視窗才看得清楚&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;點擊 &lt;code&gt;建立新串流目標&lt;/code&gt; &amp;gt; 輸入&lt;code&gt;名稱&lt;/code&gt;、&lt;code&gt;伺服器&lt;/code&gt;、&lt;code&gt;串流碼&lt;/code&gt;等設定 &amp;gt; &lt;code&gt;OK&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;點擊 &lt;code&gt;建立新串流目標&lt;/code&gt; &amp;gt; 輸入&lt;code&gt;名稱&lt;/code&gt;、&lt;code&gt;URL&lt;/code&gt;、&lt;code&gt;串流金鑰&lt;/code&gt;等設定 &amp;gt; &lt;code&gt;確定&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;點擊 &lt;code&gt;開始&lt;/code&gt; 送直播訊號&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./windows-obs-multi-rtmp-setting.jpg&#34; width=&#34;700px&#34;/&gt;&lt;/div&gt;
+&lt;div align=&#34;center&#34;&gt;&lt;img src=&#34;./windows-obs-multi-rtmp-setting.jpg&#34; width=&#34;800px&#34;/&gt;&lt;/div&gt;
+&lt;h2 id=&#34;windows-解除安裝&#34;&gt;Windows 解除安裝
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;打開檔案總管，到 &lt;code&gt;C:\ProgramData\obs-studio\plugins&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;刪除 &lt;code&gt;obs-multi-rtmp&lt;/code&gt; 資料夾&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&#34;mac-安裝&#34;&gt;Mac 安裝
-&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;2021/7/23 更新&lt;br&gt;
-該網友的連結已掛，可改使用 &lt;a class=&#34;link&#34; href=&#34;https://github.com/sorayuki/obs-multi-rtmp/releases/tag/0.2.6&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;此連結&lt;/a&gt;&lt;br&gt;
-請點擊下載 obs-multi-rtmp_0.2.6.pkg&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol&gt;
+&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;del&gt;下載這位 &lt;a class=&#34;link&#34; href=&#34;https://obsproject.com/forum/threads/multiple-rtmp-outputs-plugin.122535/post-516109&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;網友&lt;/a&gt; 做的 &lt;code&gt;obs-multi-rtmp_0.2.5.3.pkg&lt;/code&gt;&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;到 &lt;a class=&#34;link&#34; href=&#34;https://github.com/sorayuki/obs-multi-rtmp/releases/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub Releases 頁面&lt;/a&gt;，依照自己的作業系統下載安裝檔，Mac 請選擇 &lt;code&gt;.pkg&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;點兩下執行安裝&lt;br&gt;
@@ -3167,7 +3165,7 @@ Actions 就會自動開始跑 (黃圈圈在轉)&lt;br&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;打開 OBS，介面左上角會出現一個 &lt;code&gt;多路串流&lt;/code&gt; 的區塊&lt;br&gt;
-你可能需要拉寬那個視窗才看得清楚&lt;/p&gt;
+如果沒有出現，可以點擊 &lt;code&gt;停駐視窗&lt;/code&gt; &amp;gt; &lt;code&gt;多路串流&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;點擊 &lt;code&gt;建立新串流目標&lt;/code&gt; &amp;gt; 輸入&lt;code&gt;名稱&lt;/code&gt;、&lt;code&gt;伺服器&lt;/code&gt;、&lt;code&gt;串流碼&lt;/code&gt;等設定 &amp;gt; &lt;code&gt;OK&lt;/code&gt;&lt;/p&gt;
@@ -3181,8 +3179,6 @@ Actions 就會自動開始跑 (黃圈圈在轉)&lt;br&gt;
 &lt;/h2&gt;&lt;p&gt;這個套件可以單獨停止或開始某路直播&lt;br&gt;
 也可以個別設定解析度和編碼格式&lt;br&gt;
 不過要注意電腦效能和網速能承受的量&lt;/p&gt;
-&lt;p&gt;如果不小心關閉了套件的視窗&lt;br&gt;
-可以從 &lt;code&gt;檢視&lt;/code&gt; &amp;gt; &lt;code&gt;停駐視窗&lt;/code&gt; &amp;gt; &lt;code&gt;多路串流&lt;/code&gt; (Multiple output) 再次開啟&lt;/p&gt;
 &lt;h2 id=&#34;參考資料&#34;&gt;參考資料
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://obsproject.com/forum/resources/multiple-rtmp-outputs-plugin.964/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
