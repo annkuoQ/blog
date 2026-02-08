@@ -26,6 +26,15 @@
     <loc>http://localhost:1313/blog/categories/%E6%A8%82%E8%AD%9C/</loc>
     <lastmod>2026-02-07T23:30:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/blog/tags/podcast/</loc>
+    <lastmod>2026-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/2026-01-31-2026-01-30-sweet-talk-is-not-emotional-value/</loc>
+    <lastmod>2026-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/categories/%E9%9A%A8%E7%AD%86/</loc>
+    <lastmod>2026-01-31T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/blog/tags/ai/</loc>
     <lastmod>2026-01-17T11:20:10+00:00</lastmod>
   </url><url>
@@ -66,9 +75,6 @@
     <lastmod>2026-01-09T22:03:14+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/2026-01-09-action-vs-pleasure/</loc>
-    <lastmod>2026-01-09T22:03:14+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/categories/%E9%9A%A8%E7%AD%86/</loc>
     <lastmod>2026-01-09T22:03:14+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/tags/windows/</loc>
