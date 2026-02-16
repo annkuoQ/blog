@@ -2,7 +2,7 @@
 title: 如何用 MuseScore 打烏克麗麗譜
 date: 2026-02-15 11:01:00
 slug: "2026-02-15-how-to-make-ukulele-tabs-in-musescore"
-description: MuseScore 是一套免費且開源的製譜軟體，支援 Windows, Mac OS, Linux，以讓你打五線譜、打 TAB、匯出 PDF...
+description: MuseScore 是一套免費且開源的製譜軟體，支援 Windows, Mac OS, Linux，可以讓你打五線譜、打 TAB、匯出 PDF...
 categories: 樂譜
 tags:
 - ukulele
@@ -54,9 +54,9 @@ MuseScore 是一套免費且開源的製譜軟體
 
 <div align="center"><img src="./musescore_save.jpg"/></div>
 
-如果想設定自動儲存
+若想設定自動儲存
 可以到上方選單列 > `編輯` > `偏好設定` > `儲存並發布`
-然後就能調整自動儲存的間隔時間
+然後就能調整 `自動儲存間隔時間`
 
 <div align="center"><img src="./musescore_auto_save.jpg"/></div>
 
@@ -154,20 +154,20 @@ MuseScore 是一套免費且開源的製譜軟體
 
 <div align="center"><img src="./musescore_tempo_marking.jpg" width="200px"/></div>
 
-### 輸出樂譜
+### 匯出樂譜
 1. 上方選單列 `檔案` > `匯出`
 2. 有很多種格式可以選擇
-- PDF
-- PNG
-- SVG
-- MP3
-- WAV
-- ...
+   - PDF
+   - PNG
+   - SVG
+   - MP3
+   - WAV
+   - ...
 3. 點擊 `匯出...`
 
 <div align="center"><img src="./musescore_file_export.jpg"/></div>
 
-## 成品
+## 樂譜成品
 
 《蝴蝶》樂譜完成~
 <div align="center"><img src="./pdf.jpg"/></div>
