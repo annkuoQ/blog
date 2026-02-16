@@ -2,17 +2,13 @@
 title: 甜言蜜語不是「情緒價值」
 date: 2026-01-31
 slug: "2026-01-31-2026-01-30-sweet-talk-is-not-emotional-value"
-description: 偶然聽到這集 Podcast (心理敲敲門#311)，覺得內容講得很好，也可以放在任何親情或友情中...
+description: 情緒價值並非單指溫柔的語氣或甜言蜜語，而是在發現對方與自己期待不同時，內心是否仍有「想要去理解對方」的空間...
 categories: 隨筆
 tags:
 - podcast
 ---
 
-偶然聽到這集 Podcast ([心理敲敲門#311](https://www.youtube.com/watch?v=V6o1Cr5SqVw))
-覺得內容講得很好
-也可以放在任何親情或友情中
-
-_以下為 AI 摘要內容_
+> 本文為 Podcast ([心理敲敲門#311](https://www.youtube.com/watch?v=V6o1Cr5SqVw)) 的 AI 摘要內容
 
 ## 定義情緒價值
 
