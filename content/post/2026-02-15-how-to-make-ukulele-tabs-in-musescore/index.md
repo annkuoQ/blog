@@ -3,7 +3,7 @@ title: 如何用 MuseScore 打烏克麗麗譜
 date: 2026-02-15 11:01:00
 slug: "2026-02-15-how-to-make-ukulele-tabs-in-musescore"
 description: MuseScore 是一套免費且開源的製譜軟體，支援 Windows, Mac OS, Linux，可以讓你打五線譜、打 TAB、匯出 PDF...
-categories: 樂譜
+categories: 烏克麗麗
 tags:
 - ukulele
 - tab
