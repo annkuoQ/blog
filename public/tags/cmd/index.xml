@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>CMD on AnnKuoQ Blog</title>
+        <title>Cmd on AnnKuoQ Blog</title>
         <link>http://localhost:1313/blog/tags/cmd/</link>
-        <description>Recent content in CMD on AnnKuoQ Blog</description>
+        <description>Recent content in Cmd on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
