@@ -10,8 +10,9 @@ tags:
 - tailscale
 ---
 
-如果你想做一場運動賽事的比分轉播，
-人就在球場邊，但直播電腦卻放在家裡，該怎麼辦？
+如果你想做一場運動賽事的比分轉播
+人就在球場邊，但直播電腦卻放在家裡
+該怎麼辦呢？
 
 使用 RustDesk 或 Chrome Remote 雖然可行
 但畫面容易延遲，而且會占用大量網路頻寬
@@ -32,17 +33,20 @@ WebSocket 是一種網路通訊協定
 每次發送請求都需要重新建立連線，屬於短連線模式
 
 而 WebSocket 在連線建立後會一直保持開啟
-雙方都可以隨時主動傳送資料，不需要等待對方先發出請求
+雙方都可以隨時主動傳送資料
+不需要等待對方先發出請求
 因此特別適合即時更新的應用場景
 
 OBS 剛好內建 WebSocket 伺服器
 讓外部程式或網頁可以透過這個通道傳送指令來控制它
 例如切換場景、更新文字、修改比分等等
 
-不過預設情況下，它通常只能在內網中連線
+不過預設情況下
+它通常只能在內網中連線
 例如電腦和手機都連在同一個 Wi-Fi 下
 
-所以如果人不在家裡，就需要再加上一個工具
+所以如果人不在家裡
+就需要再加上一個工具
 那就是 Tailscale
 
 ## Tailscale 介紹
@@ -57,14 +61,14 @@ Tailscale 是一個基於 WireGuard 的 VPN 服務
 
 而使用 Tailscale 就簡單得多
 只要在各個設備上安裝並登入同一個帳號
-它就會自動建立安全連線，幾乎不需要額外設定
+它就會自動建立連線
+幾乎不需要什麼額外設定
 
 由於它支援 Windows、macOS、Linux、Android、iOS
 因此也可以安裝在手機或平板上
 
-在 [免費方案](https://tailscale.com/pricing?plan=personal) 下，目前最多可連接 100 台設備
-對個人使用或小型團隊來說已經相當足夠
-
+在 [免費方案](https://tailscale.com/pricing?plan=personal) 下
+目前最多可連接 100 台設備
 
 ## 開始動手
 
@@ -95,7 +99,7 @@ Tailscale 是一個基於 WireGuard 的 VPN 服務
 ### Tailscale 設定
 1. 在 OBS 電腦和遠端設備安裝 [Tailscale](https://tailscale.com/)
 2. 兩台設備都使用同一個帳號登入
-3. 檢查 Tailscale [後台](https://login.tailscale.com/admin/machines) 是否有顯示兩台設備上線 (顯示綠點 Connected)
+3. 檢查 Tailscale [後台](https://login.tailscale.com/admin/machines) 是否有顯示兩台設備上線 (應顯示綠點 Connected)
 
 請記下 OBS 電腦的 Tailscale IP
 
