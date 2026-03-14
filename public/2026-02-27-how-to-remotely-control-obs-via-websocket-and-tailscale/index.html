@@ -210,8 +210,8 @@
     
     <header class="article-category">
         
-            <a href="http://localhost:1313/blog/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" >
-                技術筆記
+            <a href="http://localhost:1313/blog/categories/%E7%9B%B4%E6%92%AD%E4%B8%B2%E6%B5%81/" >
+                直播串流
             </a>
         
     </header>
@@ -261,8 +261,9 @@
     <section class="article-content">
     
     
-    <p>如果你想做一場運動賽事的比分轉播，<br>
-人就在球場邊，但直播電腦卻放在家裡，該怎麼辦？</p>
+    <p>如果你想做一場運動賽事的比分轉播<br>
+人就在球場邊，但直播電腦卻放在家裡<br>
+該怎麼辦呢？</p>
 <p>使用 RustDesk 或 Chrome Remote 雖然可行<br>
 但畫面容易延遲，而且會占用大量網路頻寬</p>
 <p>其實只要準備這三樣工具<br>
@@ -278,14 +279,17 @@
 <p>一般網頁的運作方式是「你問一次，伺服器答一次」<br>
 每次發送請求都需要重新建立連線，屬於短連線模式</p>
 <p>而 WebSocket 在連線建立後會一直保持開啟<br>
-雙方都可以隨時主動傳送資料，不需要等待對方先發出請求<br>
+雙方都可以隨時主動傳送資料<br>
+不需要等待對方先發出請求<br>
 因此特別適合即時更新的應用場景</p>
 <p>OBS 剛好內建 WebSocket 伺服器<br>
 讓外部程式或網頁可以透過這個通道傳送指令來控制它<br>
 例如切換場景、更新文字、修改比分等等</p>
-<p>不過預設情況下，它通常只能在內網中連線<br>
+<p>不過預設情況下<br>
+它通常只能在內網中連線<br>
 例如電腦和手機都連在同一個 Wi-Fi 下</p>
-<p>所以如果人不在家裡，就需要再加上一個工具<br>
+<p>所以如果人不在家裡<br>
+就需要再加上一個工具<br>
 那就是 Tailscale</p>
 <h2 id="tailscale-介紹">Tailscale 介紹
 </h2><p>Tailscale 是一個基於 WireGuard 的 VPN 服務<br>
@@ -296,12 +300,13 @@
 技術門檻相對較高</p>
 <p>而使用 Tailscale 就簡單得多<br>
 只要在各個設備上安裝並登入同一個帳號<br>
-它就會自動建立安全連線，幾乎不需要額外設定</p>
+它就會自動建立連線<br>
+幾乎不需要什麼額外設定</p>
 <p>由於它支援 Windows、macOS、Linux、Android、iOS<br>
 因此也可以安裝在手機或平板上</p>
 <p>在 <a class="link" href="https://tailscale.com/pricing?plan=personal"  target="_blank" rel="noopener"
-    >免費方案</a> 下，目前最多可連接 100 台設備<br>
-對個人使用或小型團隊來說已經相當足夠</p>
+    >免費方案</a> 下<br>
+目前最多可連接 100 台設備</p>
 <h2 id="開始動手">開始動手
 </h2><h3 id="obs-場景設定">OBS 場景設定
 </h3><p>先簡單做幾張圖放進 OBS 中</p>
@@ -331,7 +336,7 @@
     >Tailscale</a></li>
 <li>兩台設備都使用同一個帳號登入</li>
 <li>檢查 Tailscale <a class="link" href="https://login.tailscale.com/admin/machines"  target="_blank" rel="noopener"
-    >後台</a> 是否有顯示兩台設備上線 (顯示綠點 Connected)</li>
+    >後台</a> 是否有顯示兩台設備上線 (應顯示綠點 Connected)</li>
 </ol>
 <p>請記下 OBS 電腦的 Tailscale IP</p>
 <div align="center"><img src="./tailscale-console.jpg"></div>
@@ -1779,12 +1784,12 @@
             
                 
 <article class="">
-    <a href="http://localhost:1313/blog/2026-01-17-how-to-use-whisper-on-windows/">
+    <a href="http://localhost:1313/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">如何在 Windows 使用 Whisper</h2>
+            <h2 class="article-title">如何在 OBS 使用 RSS 做跑馬燈</h2>
         </div>
     </a>
 </article>
@@ -1792,12 +1797,12 @@
             
                 
 <article class="">
-    <a href="http://localhost:1313/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/">
+    <a href="http://localhost:1313/blog/2022-02-19-how-to-be-a-vtuber/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">如何用 AI 摘要 YouTube 影片重點</h2>
+            <h2 class="article-title">介紹 VTuber 相關技術與軟體</h2>
         </div>
     </a>
 </article>
@@ -1805,12 +1810,12 @@
             
                 
 <article class="">
-    <a href="http://localhost:1313/blog/2021-05-02-use-tracert-to-troubleshoot-network/">
+    <a href="http://localhost:1313/blog/2020-09-23-obs-multi-rtmp-outputs-plugin/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">網路卡卡？快用 tracert 找出問題點！</h2>
+            <h2 class="article-title">如何使用 OBS 同時直播多個平台</h2>
         </div>
     </a>
 </article>
@@ -1818,12 +1823,12 @@
             
                 
 <article class="">
-    <a href="http://localhost:1313/blog/2021-02-03-how-to-use-line-notify-to-send-messages/">
+    <a href="http://localhost:1313/blog/2024-03-25-how-to-play-local-hls-m3u8-in-windows-chrome/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">如何使用 LINE Notify 發通知</h2>
+            <h2 class="article-title">如何在 Win10 Chrome 播放本機的 HLS M3U8 影片</h2>
         </div>
     </a>
 </article>
@@ -1831,12 +1836,12 @@
             
                 
 <article class="">
-    <a href="http://localhost:1313/blog/2020-12-25-how-to-save-windows-cmd-logfile/">
+    <a href="http://localhost:1313/blog/2021-04-13-how-to-use-mobile-as-webcam/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">如何在 CMD 輸出 log 檔</h2>
+            <h2 class="article-title">如何把手機變 Webcam (免安裝軟體、免插線、免費)</h2>
         </div>
     </a>
 </article>

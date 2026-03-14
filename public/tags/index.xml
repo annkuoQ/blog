@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Fri, 27 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 14 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Behavioral Motivation</title>
+        <link>http://localhost:1313/blog/tags/behavioral-motivation/</link>
+        <pubDate>Sat, 14 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/tags/behavioral-motivation/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Obs</title>
         <link>http://localhost:1313/blog/tags/obs/</link>
         <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
@@ -125,14 +133,6 @@
         <pubDate>Tue, 13 Jan 2026 21:52:29 +0000</pubDate>
         
         <guid>http://localhost:1313/blog/tags/yt-dlp/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Behavioral Motivation</title>
-        <link>http://localhost:1313/blog/tags/behavioral-motivation/</link>
-        <pubDate>Fri, 09 Jan 2026 22:03:14 +0000</pubDate>
-        
-        <guid>http://localhost:1313/blog/tags/behavioral-motivation/</guid>
         <description></description>
         </item>
         <item>
