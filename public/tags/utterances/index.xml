@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Utterances on AnnKuoQ Blog</title>
-        <link>http://localhost:1313/blog/tags/utterances/</link>
+        <link>https://annkuoq.github.io/blog/tags/utterances/</link>
         <description>Recent content in Utterances on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Mon, 09 Mar 2020 22:14:53 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/utterances/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 09 Mar 2020 22:14:53 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/utterances/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>在 Hexo 安裝 utterances 留言版</title>
-        <link>http://localhost:1313/blog/2020-03-09-add-utterances-comment-widget-to-hexo/</link>
+        <link>https://annkuoq.github.io/blog/2020-03-09-add-utterances-comment-widget-to-hexo/</link>
         <pubDate>Mon, 09 Mar 2020 22:14:53 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2020-03-09-add-utterances-comment-widget-to-hexo/</guid>
+        <guid>https://annkuoq.github.io/blog/2020-03-09-add-utterances-comment-widget-to-hexo/</guid>
         <description>&lt;p&gt;為什麼要用 utterances？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;因為沒有廣告&lt;/li&gt;

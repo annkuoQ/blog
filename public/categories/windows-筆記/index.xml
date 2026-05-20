@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Windows 筆記 on AnnKuoQ Blog</title>
-        <link>http://localhost:1313/blog/categories/windows-%E7%AD%86%E8%A8%98/</link>
+        <link>https://annkuoq.github.io/blog/categories/windows-%E7%AD%86%E8%A8%98/</link>
         <description>Recent content in Windows 筆記 on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Tue, 23 Dec 2025 22:54:47 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/categories/windows-%E7%AD%86%E8%A8%98/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 23 Dec 2025 22:54:47 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/categories/windows-%E7%AD%86%E8%A8%98/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>每次換電腦我都會先裝的那些軟體</title>
-        <link>http://localhost:1313/blog/2025-12-23-my-go-to-apps-for-a-fresh-computer-setup/</link>
+        <link>https://annkuoq.github.io/blog/2025-12-23-my-go-to-apps-for-a-fresh-computer-setup/</link>
         <pubDate>Tue, 23 Dec 2025 22:54:47 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2025-12-23-my-go-to-apps-for-a-fresh-computer-setup/</guid>
+        <guid>https://annkuoq.github.io/blog/2025-12-23-my-go-to-apps-for-a-fresh-computer-setup/</guid>
         <description>&lt;p&gt;&lt;del&gt;沒想到我今年都還沒寫過部落格&lt;/del&gt;&lt;br&gt;
 &lt;del&gt;可能已經社群成癮了哈哈哈&lt;/del&gt;&lt;/p&gt;
 &lt;p&gt;最近買了新筆電&lt;br&gt;
@@ -137,10 +137,10 @@
         </item>
         <item>
         <title>更改 Win 10 檔案總管預設開啟位置</title>
-        <link>http://localhost:1313/blog/2019-12-15-change-file-explorer-open-in-win10/</link>
+        <link>https://annkuoq.github.io/blog/2019-12-15-change-file-explorer-open-in-win10/</link>
         <pubDate>Sun, 15 Dec 2019 22:14:43 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2019-12-15-change-file-explorer-open-in-win10/</guid>
+        <guid>https://annkuoq.github.io/blog/2019-12-15-change-file-explorer-open-in-win10/</guid>
         <description>&lt;p&gt;為什麼要更改開啟位置？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Win 10 檔案總管預設是開啟&lt;code&gt;快速存取&lt;/code&gt;&lt;br&gt;
@@ -169,10 +169,10 @@
         </item>
         <item>
         <title>Win 10 使用 Win 7 的相片檢視器</title>
-        <link>http://localhost:1313/blog/2019-12-14-win7-photoviewer-in-win10/</link>
+        <link>https://annkuoq.github.io/blog/2019-12-14-win7-photoviewer-in-win10/</link>
         <pubDate>Sat, 14 Dec 2019 11:23:35 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2019-12-14-win7-photoviewer-in-win10/</guid>
+        <guid>https://annkuoq.github.io/blog/2019-12-14-win7-photoviewer-in-win10/</guid>
         <description>&lt;p&gt;為什麼要改用 Win 7 的 Windows 相片檢視器？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;因為 Win 10 內建的 相片 APP 開圖片很慢&lt;/li&gt;

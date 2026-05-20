@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Docusaurus on AnnKuoQ Blog</title>
-        <link>http://localhost:1313/blog/tags/docusaurus/</link>
+        <link>https://annkuoq.github.io/blog/tags/docusaurus/</link>
         <description>Recent content in Docusaurus on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Fri, 27 Dec 2019 23:18:01 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/docusaurus/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 27 Dec 2019 23:18:01 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/docusaurus/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>用 Docusaurus 和 GitHub Pages 架網站</title>
-        <link>http://localhost:1313/blog/2019-12-27-use-docusaurus-to-deploy-github-pages/</link>
+        <link>https://annkuoq.github.io/blog/2019-12-27-use-docusaurus-to-deploy-github-pages/</link>
         <pubDate>Fri, 27 Dec 2019 23:18:01 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2019-12-27-use-docusaurus-to-deploy-github-pages/</guid>
+        <guid>https://annkuoq.github.io/blog/2019-12-27-use-docusaurus-to-deploy-github-pages/</guid>
         <description>&lt;p&gt;為什麼要用 Docusaurus？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;因為工程師朋友推薦&lt;/li&gt;

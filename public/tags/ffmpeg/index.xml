@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Ffmpeg on AnnKuoQ Blog</title>
-        <link>http://localhost:1313/blog/tags/ffmpeg/</link>
+        <link>https://annkuoq.github.io/blog/tags/ffmpeg/</link>
         <description>Recent content in Ffmpeg on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Sat, 07 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 07 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何在 Windows 使用 Whisper</title>
-        <link>http://localhost:1313/blog/2026-01-17-how-to-use-whisper-on-windows/</link>
+        <link>https://annkuoq.github.io/blog/2026-01-17-how-to-use-whisper-on-windows/</link>
         <pubDate>Sat, 17 Jan 2026 11:20:10 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2026-01-17-how-to-use-whisper-on-windows/</guid>
+        <guid>https://annkuoq.github.io/blog/2026-01-17-how-to-use-whisper-on-windows/</guid>
         <description>&lt;h2 id=&#34;whisper-介紹&#34;&gt;Whisper 介紹
 &lt;/h2&gt;&lt;p&gt;Whisper 是 OpenAI 開發的自動語音辨識模型&lt;br&gt;
 可以把「人講話的聲音」轉成「文字」&lt;/p&gt;
@@ -366,10 +366,10 @@ CMD 也會顯示目前處理的進度&lt;/p&gt;
         </item>
         <item>
         <title>如何使用 ffmpeg 串接多個影片</title>
-        <link>http://localhost:1313/blog/2021-05-08-how-to-combine-videos-using-ffmpeg/</link>
+        <link>https://annkuoq.github.io/blog/2021-05-08-how-to-combine-videos-using-ffmpeg/</link>
         <pubDate>Sat, 08 May 2021 14:51:15 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2021-05-08-how-to-combine-videos-using-ffmpeg/</guid>
+        <guid>https://annkuoq.github.io/blog/2021-05-08-how-to-combine-videos-using-ffmpeg/</guid>
         <description>&lt;p&gt;最近同事在用 Premiere 串接影片時&lt;br&gt;
 表示輸出很花時間&lt;br&gt;
 因為 Premiere 會重新編碼&lt;/p&gt;
@@ -661,10 +661,10 @@ index 是從 &lt;code&gt;0&lt;/code&gt; 而不是 &lt;code&gt;1&lt;/code&gt; 開
         </item>
         <item>
         <title>一樣的 Bitrate，解析度高的畫質會比較好嗎？</title>
-        <link>http://localhost:1313/blog/2020-10-25-bitrate-vs-resolution/</link>
+        <link>https://annkuoq.github.io/blog/2020-10-25-bitrate-vs-resolution/</link>
         <pubDate>Sun, 25 Oct 2020 16:46:42 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2020-10-25-bitrate-vs-resolution/</guid>
+        <guid>https://annkuoq.github.io/blog/2020-10-25-bitrate-vs-resolution/</guid>
         <description>&lt;p&gt;某天同事問說 iMovie 怎麼輸出&lt;br&gt;
 我說: 除了設解析度，還有 Bitrate&lt;br&gt;
 同事問 Bitrate 是什麼？&lt;br&gt;
@@ -785,10 +785,10 @@ index 是從 &lt;code&gt;0&lt;/code&gt; 而不是 &lt;code&gt;1&lt;/code&gt; 開
         </item>
         <item>
         <title>如何知道影片從頭到尾 Bitrate 的變化</title>
-        <link>http://localhost:1313/blog/2020-04-26-how-to-check-video-bitrate/</link>
+        <link>https://annkuoq.github.io/blog/2020-04-26-how-to-check-video-bitrate/</link>
         <pubDate>Sun, 26 Apr 2020 14:29:21 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2020-04-26-how-to-check-video-bitrate/</guid>
+        <guid>https://annkuoq.github.io/blog/2020-04-26-how-to-check-video-bitrate/</guid>
         <description>&lt;p&gt;最近在研究適合網路串流的 VBR 轉檔&lt;br&gt;
 想知道整段影片的 Bitrate 是怎樣變化的&lt;br&gt;
 要是 maximum bitrate (最大流量) 高過網速時&lt;br&gt;
@@ -1030,10 +1030,10 @@ index 是從 &lt;code&gt;0&lt;/code&gt; 而不是 &lt;code&gt;1&lt;/code&gt; 開
         </item>
         <item>
         <title>Windows 安裝 FFmpeg</title>
-        <link>http://localhost:1313/blog/2019-12-17-install-ffmpeg/</link>
+        <link>https://annkuoq.github.io/blog/2019-12-17-install-ffmpeg/</link>
         <pubDate>Tue, 17 Dec 2019 12:25:39 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2019-12-17-install-ffmpeg/</guid>
+        <guid>https://annkuoq.github.io/blog/2019-12-17-install-ffmpeg/</guid>
         <description>&lt;p&gt;為什麼要安裝 FFmepg？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;因為開源、彈性大&lt;/li&gt;

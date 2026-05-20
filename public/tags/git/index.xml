@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Git on AnnKuoQ Blog</title>
-        <link>http://localhost:1313/blog/tags/git/</link>
+        <link>https://annkuoq.github.io/blog/tags/git/</link>
         <description>Recent content in Git on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Tue, 10 Dec 2019 22:31:46 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/git/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 10 Dec 2019 22:31:46 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/git/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Win 10 安裝 Cmder 與 Git</title>
-        <link>http://localhost:1313/blog/2019-12-10-install-cmder-and-git/</link>
+        <link>https://annkuoq.github.io/blog/2019-12-10-install-cmder-and-git/</link>
         <pubDate>Tue, 10 Dec 2019 22:31:46 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2019-12-10-install-cmder-and-git/</guid>
+        <guid>https://annkuoq.github.io/blog/2019-12-10-install-cmder-and-git/</guid>
         <description>&lt;p&gt;為什麼要安裝 Cmder？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;因為要在 Windows 使用 Linux 的指令&lt;/li&gt;

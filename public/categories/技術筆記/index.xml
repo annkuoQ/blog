@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>技術筆記 on AnnKuoQ Blog</title>
-        <link>http://localhost:1313/blog/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/</link>
+        <link>https://annkuoq.github.io/blog/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/</link>
         <description>Recent content in 技術筆記 on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Sat, 17 Jan 2026 11:20:10 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 17 Jan 2026 11:20:10 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何在 Windows 使用 Whisper</title>
-        <link>http://localhost:1313/blog/2026-01-17-how-to-use-whisper-on-windows/</link>
+        <link>https://annkuoq.github.io/blog/2026-01-17-how-to-use-whisper-on-windows/</link>
         <pubDate>Sat, 17 Jan 2026 11:20:10 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2026-01-17-how-to-use-whisper-on-windows/</guid>
+        <guid>https://annkuoq.github.io/blog/2026-01-17-how-to-use-whisper-on-windows/</guid>
         <description>&lt;h2 id=&#34;whisper-介紹&#34;&gt;Whisper 介紹
 &lt;/h2&gt;&lt;p&gt;Whisper 是 OpenAI 開發的自動語音辨識模型&lt;br&gt;
 可以把「人講話的聲音」轉成「文字」&lt;/p&gt;
@@ -366,10 +366,10 @@ CMD 也會顯示目前處理的進度&lt;/p&gt;
         </item>
         <item>
         <title>如何用 AI 摘要 YouTube 影片重點</title>
-        <link>http://localhost:1313/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/</link>
+        <link>https://annkuoq.github.io/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/</link>
         <pubDate>Tue, 13 Jan 2026 21:52:29 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/</guid>
+        <guid>https://annkuoq.github.io/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/</guid>
         <description>&lt;p&gt;每天都有看不完的影片跟聽不完的 Podcast&lt;br&gt;
 如果懶得看，但又想知道重點該怎麼做呢&lt;/p&gt;
 &lt;p&gt;我們需要三種工具來協助完成&lt;/p&gt;
@@ -680,10 +680,10 @@ CMD 也會顯示目前處理的進度&lt;/p&gt;
         </item>
         <item>
         <title>網路卡卡？快用 tracert 找出問題點！</title>
-        <link>http://localhost:1313/blog/2021-05-02-use-tracert-to-troubleshoot-network/</link>
+        <link>https://annkuoq.github.io/blog/2021-05-02-use-tracert-to-troubleshoot-network/</link>
         <pubDate>Sun, 02 May 2021 10:28:20 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2021-05-02-use-tracert-to-troubleshoot-network/</guid>
+        <guid>https://annkuoq.github.io/blog/2021-05-02-use-tracert-to-troubleshoot-network/</guid>
         <description>&lt;p&gt;最近直播有遇到網路不穩的情況&lt;br&gt;
 但一句「網路卡卡」並不能有效的回報問題&lt;/p&gt;
 &lt;!-- more --&gt;
@@ -821,10 +821,10 @@ Host Name 就是你熟悉的 &lt;code&gt;www.google.com&lt;/code&gt;&lt;/p&gt;
         </item>
         <item>
         <title>如何使用 LINE Notify 發通知</title>
-        <link>http://localhost:1313/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</link>
+        <link>https://annkuoq.github.io/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</link>
         <pubDate>Wed, 03 Feb 2021 22:11:31 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</guid>
+        <guid>https://annkuoq.github.io/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</guid>
         <description>&lt;p&gt;最近做了一個監控的 bat&lt;br&gt;
 如果服務有發生問題就發通知提醒&lt;br&gt;
 而 LINE 是很多人都在用的通訊軟體&lt;br&gt;
@@ -940,10 +940,10 @@ Bot 超過額度需要收費，Notify 則是免費&lt;br&gt;
         </item>
         <item>
         <title>如何在 CMD 輸出 log 檔</title>
-        <link>http://localhost:1313/blog/2020-12-25-how-to-save-windows-cmd-logfile/</link>
+        <link>https://annkuoq.github.io/blog/2020-12-25-how-to-save-windows-cmd-logfile/</link>
         <pubDate>Fri, 25 Dec 2020 22:57:47 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2020-12-25-how-to-save-windows-cmd-logfile/</guid>
+        <guid>https://annkuoq.github.io/blog/2020-12-25-how-to-save-windows-cmd-logfile/</guid>
         <description>&lt;p&gt;最近在學寫批次檔&lt;br&gt;
 需要輸出 log 檔作為紀錄&lt;br&gt;
 去網路搜尋之後&lt;br&gt;
@@ -1343,10 +1343,10 @@ Bot 超過額度需要收費，Notify 則是免費&lt;br&gt;
         </item>
         <item>
         <title>Win 10 安裝 Node.js 和 http-server</title>
-        <link>http://localhost:1313/blog/2019-12-16-install-nodejs-httpserver/</link>
+        <link>https://annkuoq.github.io/blog/2019-12-16-install-nodejs-httpserver/</link>
         <pubDate>Mon, 16 Dec 2019 13:56:25 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2019-12-16-install-nodejs-httpserver/</guid>
+        <guid>https://annkuoq.github.io/blog/2019-12-16-install-nodejs-httpserver/</guid>
         <description>&lt;p&gt;為什麼要安裝 Node.js？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;因為它可以讓後端伺服器跑 JavaScript&lt;/li&gt;
@@ -1481,10 +1481,10 @@ Bot 超過額度需要收費，Notify 則是免費&lt;br&gt;
         </item>
         <item>
         <title>Win 10 安裝 Cmder 與 Git</title>
-        <link>http://localhost:1313/blog/2019-12-10-install-cmder-and-git/</link>
+        <link>https://annkuoq.github.io/blog/2019-12-10-install-cmder-and-git/</link>
         <pubDate>Tue, 10 Dec 2019 22:31:46 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2019-12-10-install-cmder-and-git/</guid>
+        <guid>https://annkuoq.github.io/blog/2019-12-10-install-cmder-and-git/</guid>
         <description>&lt;p&gt;為什麼要安裝 Cmder？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;因為要在 Windows 使用 Linux 的指令&lt;/li&gt;

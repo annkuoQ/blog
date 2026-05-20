@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Yt-Dlp on AnnKuoQ Blog</title>
-        <link>http://localhost:1313/blog/tags/yt-dlp/</link>
+        <link>https://annkuoq.github.io/blog/tags/yt-dlp/</link>
         <description>Recent content in Yt-Dlp on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Tue, 13 Jan 2026 21:52:29 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/yt-dlp/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 13 Jan 2026 21:52:29 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/yt-dlp/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何用 AI 摘要 YouTube 影片重點</title>
-        <link>http://localhost:1313/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/</link>
+        <link>https://annkuoq.github.io/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/</link>
         <pubDate>Tue, 13 Jan 2026 21:52:29 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/</guid>
+        <guid>https://annkuoq.github.io/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/</guid>
         <description>&lt;p&gt;每天都有看不完的影片跟聽不完的 Podcast&lt;br&gt;
 如果懶得看，但又想知道重點該怎麼做呢&lt;/p&gt;
 &lt;p&gt;我們需要三種工具來協助完成&lt;/p&gt;

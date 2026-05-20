@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on AnnKuoQ Blog</title>
-        <link>http://localhost:1313/blog/post/</link>
+        <link>https://annkuoq.github.io/blog/post/</link>
         <description>Recent content in Posts on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Sat, 14 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/post/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>活得像自己，從認識動機開始</title>
-        <link>http://localhost:1313/blog/2026-03-14-live-authentically-know-what-drives-you/</link>
+        <lastBuildDate>Sat, 14 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>想活得像自己，從認識自己的動機開始</title>
+        <link>https://annkuoq.github.io/blog/2026-03-14-live-authentically-know-what-drives-you/</link>
         <pubDate>Sat, 14 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2026-03-14-live-authentically-know-what-drives-you/</guid>
+        <guid>https://annkuoq.github.io/blog/2026-03-14-live-authentically-know-what-drives-you/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;啟發於 劉軒 Podcast &lt;a class=&#34;link&#34; href=&#34;https://podcasts.apple.com/tw/podcast/ep462-%E7%82%BA%E4%BB%80%E9%BA%BC%E6%84%9B%E8%87%AA%E5%B7%B1%E9%80%99%E9%BA%BC%E9%9B%A3-%E4%BD%A0%E4%BB%A5%E7%82%BA%E7%9A%84%E8%87%AA%E6%88%91%E7%85%A7%E9%A1%A7-%E5%8F%AF%E8%83%BD%E5%8F%AA%E6%98%AF%E5%8F%A6%E4%B8%80%E7%A8%AE%E6%B6%88%E8%80%97/id1547950387?i=1000754842777&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;EP462｜為什麼愛自己這麼難？你以為的自我照顧，可能只是另一種消耗&lt;/a&gt;&lt;/p&gt;
@@ -32,7 +32,7 @@
 &lt;/h2&gt;&lt;p&gt;很多看起來相同的行動&lt;br&gt;
 背後的聲音其實完全不一樣&lt;/p&gt;
 &lt;p&gt;有些出於「恐懼」&lt;br&gt;
-有些出於「愛」&lt;/p&gt;
+有些出於「愛」 (在乎/認同/想變更好)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;健身、早睡&lt;/strong&gt;&lt;br&gt;
 是因為喜歡運動完流汗、睡飽後清醒，那種很有活著的感覺&lt;br&gt;
 還是因為&lt;br&gt;
@@ -68,20 +68,19 @@
 &lt;h2 id=&#34;結論&#34;&gt;結論
 &lt;/h2&gt;&lt;p&gt;重點從來不是你做了什麼&lt;br&gt;
 而是你用什麼心在做&lt;/p&gt;
-&lt;p&gt;你不需要馬上改變什麼&lt;br&gt;
-只是下次做一件事之前，停一秒問問自己&lt;br&gt;
+&lt;p&gt;下次做一件事之前，停一秒問問自己&lt;br&gt;
 我為什麼要這樣做？&lt;/p&gt;
 &lt;p&gt;這兩種聲音，可能同時都有&lt;br&gt;
-你不需要假裝只有愛、沒有恐懼&lt;br&gt;
-試著問問自己，現在哪一個聲音比較大？&lt;/p&gt;
+但可以試著問問自己&lt;br&gt;
+現在哪一個聲音比較大？&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>如何透過 WebSocket 與 Tailscale 遠端操控 OBS</title>
-        <link>http://localhost:1313/blog/2026-02-27-how-to-remotely-control-obs-via-websocket-and-tailscale/</link>
+        <link>https://annkuoq.github.io/blog/2026-02-27-how-to-remotely-control-obs-via-websocket-and-tailscale/</link>
         <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2026-02-27-how-to-remotely-control-obs-via-websocket-and-tailscale/</guid>
+        <guid>https://annkuoq.github.io/blog/2026-02-27-how-to-remotely-control-obs-via-websocket-and-tailscale/</guid>
         <description>&lt;p&gt;如果你想做一場運動賽事的比分轉播&lt;br&gt;
 人就在球場邊，但直播電腦卻放在家裡&lt;br&gt;
 該怎麼辦呢？&lt;/p&gt;
@@ -1563,10 +1562,10 @@
         </item>
         <item>
         <title>《我可能錯了》閱讀筆記</title>
-        <link>http://localhost:1313/blog/2026-02-18-i-may-be-wrong-reading-notes/</link>
+        <link>https://annkuoq.github.io/blog/2026-02-18-i-may-be-wrong-reading-notes/</link>
         <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2026-02-18-i-may-be-wrong-reading-notes/</guid>
+        <guid>https://annkuoq.github.io/blog/2026-02-18-i-may-be-wrong-reading-notes/</guid>
         <description>&lt;p&gt;這本書講的是一位人生看似一路順遂的人&lt;br&gt;
 某天決定辭職出家成為修行人 (最後又選擇還俗) 的故事&lt;/p&gt;
 &lt;p&gt;我一開始是在 &lt;a class=&#34;link&#34; href=&#34;https://podcasts.apple.com/tw/podcast/ep66-%E6%88%91%E5%8F%AF%E8%83%BD%E9%8C%AF%E4%BA%86-%E6%88%91%E5%B0%8D%E8%87%AA%E5%B7%B1%E7%9A%84%E6%AF%8F%E5%80%8B%E5%BF%B5%E9%A0%AD%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%9B%B8%E4%BF%A1%E4%BA%86-%E9%80%99%E6%98%AF%E6%88%91%E7%9A%84%E8%B6%85%E8%83%BD%E5%8A%9B/id1625222138?i=1000616253536&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -1689,15 +1688,16 @@
 會在心裡留下重量&lt;/p&gt;
 &lt;p&gt;這裡沒有要討論什麼是對或錯&lt;br&gt;
 只是提醒我們，要對自己的言行負責&lt;/p&gt;
-&lt;p&gt;問心無愧，才能真正輕盈&lt;/p&gt;
+&lt;p&gt;因為就算沒有人知道&lt;br&gt;
+你還是會知道&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>如何用 MuseScore 打烏克麗麗譜</title>
-        <link>http://localhost:1313/blog/2026-02-15-how-to-make-ukulele-tabs-in-musescore/</link>
+        <link>https://annkuoq.github.io/blog/2026-02-15-how-to-make-ukulele-tabs-in-musescore/</link>
         <pubDate>Sun, 15 Feb 2026 11:01:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2026-02-15-how-to-make-ukulele-tabs-in-musescore/</guid>
+        <guid>https://annkuoq.github.io/blog/2026-02-15-how-to-make-ukulele-tabs-in-musescore/</guid>
         <description>&lt;h2 id=&#34;musescore-介紹&#34;&gt;MuseScore 介紹
 &lt;/h2&gt;&lt;p&gt;MuseScore 是一套免費且開源的製譜軟體&lt;br&gt;
 支援 Windows, Mac OS, Linux&lt;br&gt;
@@ -1917,11 +1917,11 @@ b. 編輯 &lt;code&gt;作品標題&lt;/code&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>甜言蜜語不是「情緒價值」</title>
-        <link>http://localhost:1313/blog/2026-01-31-2026-01-30-sweet-talk-is-not-emotional-value/</link>
-        <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
+        <title>真正的情緒價值，不是甜言蜜語</title>
+        <link>https://annkuoq.github.io/blog/2026-01-30-sweet-talk-is-not-emotional-value/</link>
+        <pubDate>Fri, 30 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2026-01-31-2026-01-30-sweet-talk-is-not-emotional-value/</guid>
+        <guid>https://annkuoq.github.io/blog/2026-01-30-sweet-talk-is-not-emotional-value/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;本文為 Podcast (&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=V6o1Cr5SqVw&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;心理敲敲門#311&lt;/a&gt;) 的 AI 摘要內容&lt;/p&gt;
@@ -1963,14 +1963,6 @@ b. 編輯 &lt;code&gt;作品標題&lt;/code&gt;&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;例-3-朋友圈中的歸屬感對照&#34;&gt;例 3: 朋友圈中的「歸屬感」對照
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;與好友（閨蜜或兄弟）相處時，即使對方臉臭、沈默，或雙方一起罵髒話，我們往往仍感到有情緒價值。
-&lt;ul&gt;
-&lt;li&gt;關鍵點：因為在朋友面前我們可以「自在地做自己」，這種不需刻意維持正能量的「允許」，就是情緒價值的核心體現。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id=&#34;如何給予真正的情緒價值&#34;&gt;如何給予真正的情緒價值？
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;先認出自己的情緒：覺察自己的失落、恐懼或生氣，而非直接要求對方負責。&lt;/li&gt;
@@ -1985,10 +1977,10 @@ b. 編輯 &lt;code&gt;作品標題&lt;/code&gt;&lt;/p&gt;
         </item>
         <item>
         <title>如何在 Windows 使用 Whisper</title>
-        <link>http://localhost:1313/blog/2026-01-17-how-to-use-whisper-on-windows/</link>
+        <link>https://annkuoq.github.io/blog/2026-01-17-how-to-use-whisper-on-windows/</link>
         <pubDate>Sat, 17 Jan 2026 11:20:10 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2026-01-17-how-to-use-whisper-on-windows/</guid>
+        <guid>https://annkuoq.github.io/blog/2026-01-17-how-to-use-whisper-on-windows/</guid>
         <description>&lt;h2 id=&#34;whisper-介紹&#34;&gt;Whisper 介紹
 &lt;/h2&gt;&lt;p&gt;Whisper 是 OpenAI 開發的自動語音辨識模型&lt;br&gt;
 可以把「人講話的聲音」轉成「文字」&lt;/p&gt;
@@ -2342,10 +2334,10 @@ CMD 也會顯示目前處理的進度&lt;/p&gt;
         </item>
         <item>
         <title>如何用 AI 摘要 YouTube 影片重點</title>
-        <link>http://localhost:1313/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/</link>
+        <link>https://annkuoq.github.io/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/</link>
         <pubDate>Tue, 13 Jan 2026 21:52:29 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/</guid>
+        <guid>https://annkuoq.github.io/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/</guid>
         <description>&lt;p&gt;每天都有看不完的影片跟聽不完的 Podcast&lt;br&gt;
 如果懶得看，但又想知道重點該怎麼做呢&lt;/p&gt;
 &lt;p&gt;我們需要三種工具來協助完成&lt;/p&gt;
@@ -2656,10 +2648,10 @@ CMD 也會顯示目前處理的進度&lt;/p&gt;
         </item>
         <item>
         <title>行為 vs. 樂受</title>
-        <link>http://localhost:1313/blog/2026-01-09-action-vs-pleasure/</link>
+        <link>https://annkuoq.github.io/blog/2026-01-09-action-vs-pleasure/</link>
         <pubDate>Fri, 09 Jan 2026 22:03:14 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2026-01-09-action-vs-pleasure/</guid>
+        <guid>https://annkuoq.github.io/blog/2026-01-09-action-vs-pleasure/</guid>
         <description>&lt;h2 id=&#34;人到底喜歡什麼&#34;&gt;人到底喜歡什麼
 &lt;/h2&gt;&lt;p&gt;一個人如果喜歡聽音樂或喝飲料&lt;br&gt;
 那他是喜歡這件事本身的行為&lt;br&gt;
@@ -2718,10 +2710,10 @@ CMD 也會顯示目前處理的進度&lt;/p&gt;
         </item>
         <item>
         <title>每次換電腦我都會先裝的那些軟體</title>
-        <link>http://localhost:1313/blog/2025-12-23-my-go-to-apps-for-a-fresh-computer-setup/</link>
+        <link>https://annkuoq.github.io/blog/2025-12-23-my-go-to-apps-for-a-fresh-computer-setup/</link>
         <pubDate>Tue, 23 Dec 2025 22:54:47 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2025-12-23-my-go-to-apps-for-a-fresh-computer-setup/</guid>
+        <guid>https://annkuoq.github.io/blog/2025-12-23-my-go-to-apps-for-a-fresh-computer-setup/</guid>
         <description>&lt;p&gt;&lt;del&gt;沒想到我今年都還沒寫過部落格&lt;/del&gt;&lt;br&gt;
 &lt;del&gt;可能已經社群成癮了哈哈哈&lt;/del&gt;&lt;/p&gt;
 &lt;p&gt;最近買了新筆電&lt;br&gt;
@@ -2846,10 +2838,10 @@ CMD 也會顯示目前處理的進度&lt;/p&gt;
         </item>
         <item>
         <title>如何在 OBS 使用 RSS 做跑馬燈</title>
-        <link>http://localhost:1313/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/</link>
+        <link>https://annkuoq.github.io/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/</link>
         <pubDate>Tue, 05 Nov 2024 18:14:15 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/</guid>
+        <guid>https://annkuoq.github.io/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/</guid>
         <description>&lt;p&gt;最近常常需要做關於颱風的直播&lt;br&gt;
 畫面底部的跑馬燈&lt;br&gt;
 都是我 &lt;del&gt;工人智慧&lt;/del&gt; 從氣象署複製貼上的 😆&lt;br&gt;
@@ -3031,10 +3023,10 @@ CMD 也會顯示目前處理的進度&lt;/p&gt;
         </item>
         <item>
         <title>如何在 Win10 Chrome 播放本機的 HLS M3U8 影片</title>
-        <link>http://localhost:1313/blog/2024-03-25-how-to-play-local-hls-m3u8-in-windows-chrome/</link>
+        <link>https://annkuoq.github.io/blog/2024-03-25-how-to-play-local-hls-m3u8-in-windows-chrome/</link>
         <pubDate>Mon, 25 Mar 2024 09:40:22 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2024-03-25-how-to-play-local-hls-m3u8-in-windows-chrome/</guid>
+        <guid>https://annkuoq.github.io/blog/2024-03-25-how-to-play-local-hls-m3u8-in-windows-chrome/</guid>
         <description>&lt;p&gt;最近在測試 HLS 轉檔&lt;br&gt;
 轉出來後有一堆 ts 片段&lt;br&gt;
 又懶得上傳到 Staging 環境&lt;br&gt;
@@ -3204,10 +3196,10 @@ CMD 也會顯示目前處理的進度&lt;/p&gt;
         </item>
         <item>
         <title>介紹 VTuber 相關技術與軟體</title>
-        <link>http://localhost:1313/blog/2022-02-19-how-to-be-a-vtuber/</link>
+        <link>https://annkuoq.github.io/blog/2022-02-19-how-to-be-a-vtuber/</link>
         <pubDate>Sat, 19 Feb 2022 15:27:21 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2022-02-19-how-to-be-a-vtuber/</guid>
+        <guid>https://annkuoq.github.io/blog/2022-02-19-how-to-be-a-vtuber/</guid>
         <description>&lt;p&gt;VTuber 是 Virtual YouTuber 的縮寫&lt;br&gt;
 就是虛擬形象結合真人的 YouTuber&lt;br&gt;
 透過捕捉真人的動作，讓虛擬人物有生動的表情與動作&lt;/p&gt;
@@ -3371,10 +3363,10 @@ CMD 也會顯示目前處理的進度&lt;/p&gt;
         </item>
         <item>
         <title>如何使用 ffmpeg 串接多個影片</title>
-        <link>http://localhost:1313/blog/2021-05-08-how-to-combine-videos-using-ffmpeg/</link>
+        <link>https://annkuoq.github.io/blog/2021-05-08-how-to-combine-videos-using-ffmpeg/</link>
         <pubDate>Sat, 08 May 2021 14:51:15 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2021-05-08-how-to-combine-videos-using-ffmpeg/</guid>
+        <guid>https://annkuoq.github.io/blog/2021-05-08-how-to-combine-videos-using-ffmpeg/</guid>
         <description>&lt;p&gt;最近同事在用 Premiere 串接影片時&lt;br&gt;
 表示輸出很花時間&lt;br&gt;
 因為 Premiere 會重新編碼&lt;/p&gt;
@@ -3666,10 +3658,10 @@ index 是從 &lt;code&gt;0&lt;/code&gt; 而不是 &lt;code&gt;1&lt;/code&gt; 開
         </item>
         <item>
         <title>網路卡卡？快用 tracert 找出問題點！</title>
-        <link>http://localhost:1313/blog/2021-05-02-use-tracert-to-troubleshoot-network/</link>
+        <link>https://annkuoq.github.io/blog/2021-05-02-use-tracert-to-troubleshoot-network/</link>
         <pubDate>Sun, 02 May 2021 10:28:20 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2021-05-02-use-tracert-to-troubleshoot-network/</guid>
+        <guid>https://annkuoq.github.io/blog/2021-05-02-use-tracert-to-troubleshoot-network/</guid>
         <description>&lt;p&gt;最近直播有遇到網路不穩的情況&lt;br&gt;
 但一句「網路卡卡」並不能有效的回報問題&lt;/p&gt;
 &lt;!-- more --&gt;
@@ -3807,10 +3799,10 @@ Host Name 就是你熟悉的 &lt;code&gt;www.google.com&lt;/code&gt;&lt;/p&gt;
         </item>
         <item>
         <title>如何把手機變 Webcam (免安裝軟體、免插線、免費)</title>
-        <link>http://localhost:1313/blog/2021-04-13-how-to-use-mobile-as-webcam/</link>
+        <link>https://annkuoq.github.io/blog/2021-04-13-how-to-use-mobile-as-webcam/</link>
         <pubDate>Tue, 13 Apr 2021 20:36:32 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2021-04-13-how-to-use-mobile-as-webcam/</guid>
+        <guid>https://annkuoq.github.io/blog/2021-04-13-how-to-use-mobile-as-webcam/</guid>
         <description>&lt;p&gt;最近找到了一個開源的酷東西&lt;br&gt;
 不用安裝任何軟體、不用插任何線&lt;br&gt;
 只要有網路！&lt;br&gt;
@@ -3920,10 +3912,10 @@ OBS 的畫面也會變橫的喔&lt;/p&gt;
         </item>
         <item>
         <title>淺談 AES 與 DRM</title>
-        <link>http://localhost:1313/blog/2021-03-02-aes-or-drm/</link>
+        <link>https://annkuoq.github.io/blog/2021-03-02-aes-or-drm/</link>
         <pubDate>Tue, 02 Mar 2021 21:03:21 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2021-03-02-aes-or-drm/</guid>
+        <guid>https://annkuoq.github.io/blog/2021-03-02-aes-or-drm/</guid>
         <description>&lt;p&gt;最近工作上有碰到 AES 和 DRM&lt;br&gt;
 雖然是使用別人的服務&lt;br&gt;
 但還是想稍微了解一下運作的方式&lt;/p&gt;
@@ -4131,10 +4123,10 @@ Headers 裡的 Request Payload 有一堆亂碼&lt;br&gt;
         </item>
         <item>
         <title>如何使用 LINE Notify 發通知</title>
-        <link>http://localhost:1313/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</link>
+        <link>https://annkuoq.github.io/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</link>
         <pubDate>Wed, 03 Feb 2021 22:11:31 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</guid>
+        <guid>https://annkuoq.github.io/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</guid>
         <description>&lt;p&gt;最近做了一個監控的 bat&lt;br&gt;
 如果服務有發生問題就發通知提醒&lt;br&gt;
 而 LINE 是很多人都在用的通訊軟體&lt;br&gt;
@@ -4250,10 +4242,10 @@ Bot 超過額度需要收費，Notify 則是免費&lt;br&gt;
         </item>
         <item>
         <title>利用 GitHub Actions 監控網站服務 - Upptime</title>
-        <link>http://localhost:1313/blog/2021-01-09-uptime-monitor-and-status-website-service-with-upptime/</link>
+        <link>https://annkuoq.github.io/blog/2021-01-09-uptime-monitor-and-status-website-service-with-upptime/</link>
         <pubDate>Sat, 09 Jan 2021 21:02:33 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2021-01-09-uptime-monitor-and-status-website-service-with-upptime/</guid>
+        <guid>https://annkuoq.github.io/blog/2021-01-09-uptime-monitor-and-status-website-service-with-upptime/</guid>
         <description>&lt;p&gt;前陣子在網路上看到一個很酷的開源專案&lt;br&gt;
 充分的使用&lt;del&gt;榨乾&lt;/del&gt; GitHub&lt;/p&gt;
 &lt;ul&gt;
@@ -4545,10 +4537,10 @@ Actions 就會自動開始跑 (黃圈圈在轉)&lt;br&gt;
         </item>
         <item>
         <title>如何在 CMD 輸出 log 檔</title>
-        <link>http://localhost:1313/blog/2020-12-25-how-to-save-windows-cmd-logfile/</link>
+        <link>https://annkuoq.github.io/blog/2020-12-25-how-to-save-windows-cmd-logfile/</link>
         <pubDate>Fri, 25 Dec 2020 22:57:47 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2020-12-25-how-to-save-windows-cmd-logfile/</guid>
+        <guid>https://annkuoq.github.io/blog/2020-12-25-how-to-save-windows-cmd-logfile/</guid>
         <description>&lt;p&gt;最近在學寫批次檔&lt;br&gt;
 需要輸出 log 檔作為紀錄&lt;br&gt;
 去網路搜尋之後&lt;br&gt;
@@ -4948,10 +4940,10 @@ Actions 就會自動開始跑 (黃圈圈在轉)&lt;br&gt;
         </item>
         <item>
         <title>一樣的 Bitrate，解析度高的畫質會比較好嗎？</title>
-        <link>http://localhost:1313/blog/2020-10-25-bitrate-vs-resolution/</link>
+        <link>https://annkuoq.github.io/blog/2020-10-25-bitrate-vs-resolution/</link>
         <pubDate>Sun, 25 Oct 2020 16:46:42 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2020-10-25-bitrate-vs-resolution/</guid>
+        <guid>https://annkuoq.github.io/blog/2020-10-25-bitrate-vs-resolution/</guid>
         <description>&lt;p&gt;某天同事問說 iMovie 怎麼輸出&lt;br&gt;
 我說: 除了設解析度，還有 Bitrate&lt;br&gt;
 同事問 Bitrate 是什麼？&lt;br&gt;
@@ -5072,10 +5064,10 @@ Actions 就會自動開始跑 (黃圈圈在轉)&lt;br&gt;
         </item>
         <item>
         <title>如何使用 OBS 同時直播多個平台</title>
-        <link>http://localhost:1313/blog/2020-09-23-obs-multi-rtmp-outputs-plugin/</link>
+        <link>https://annkuoq.github.io/blog/2020-09-23-obs-multi-rtmp-outputs-plugin/</link>
         <pubDate>Wed, 23 Sep 2020 09:12:05 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2020-09-23-obs-multi-rtmp-outputs-plugin/</guid>
+        <guid>https://annkuoq.github.io/blog/2020-09-23-obs-multi-rtmp-outputs-plugin/</guid>
         <description>&lt;p&gt;OBS 預設只能直播一個平台&lt;br&gt;
 但我需要同時直播 YouTube 和 Facebook&lt;br&gt;
 所以這陣子都在搜尋有沒有什麼好的解決方法&lt;/p&gt;
@@ -5157,10 +5149,10 @@ Actions 就會自動開始跑 (黃圈圈在轉)&lt;br&gt;
         </item>
         <item>
         <title>來去直營店換 iPhone 電池</title>
-        <link>http://localhost:1313/blog/2020-05-11-iphone-se-battery-replacement-at-xinyi-a13/</link>
+        <link>https://annkuoq.github.io/blog/2020-05-11-iphone-se-battery-replacement-at-xinyi-a13/</link>
         <pubDate>Mon, 11 May 2020 22:27:01 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2020-05-11-iphone-se-battery-replacement-at-xinyi-a13/</guid>
+        <guid>https://annkuoq.github.io/blog/2020-05-11-iphone-se-battery-replacement-at-xinyi-a13/</guid>
         <description>&lt;p&gt;手上這支 iPhone SE 已經四年多&lt;br&gt;
 電池健康度為 82%&lt;br&gt;
 雖然它本來就只有 1624 mAh&lt;br&gt;
@@ -5217,10 +5209,10 @@ Actions 就會自動開始跑 (黃圈圈在轉)&lt;br&gt;
         </item>
         <item>
         <title>如何知道影片從頭到尾 Bitrate 的變化</title>
-        <link>http://localhost:1313/blog/2020-04-26-how-to-check-video-bitrate/</link>
+        <link>https://annkuoq.github.io/blog/2020-04-26-how-to-check-video-bitrate/</link>
         <pubDate>Sun, 26 Apr 2020 14:29:21 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2020-04-26-how-to-check-video-bitrate/</guid>
+        <guid>https://annkuoq.github.io/blog/2020-04-26-how-to-check-video-bitrate/</guid>
         <description>&lt;p&gt;最近在研究適合網路串流的 VBR 轉檔&lt;br&gt;
 想知道整段影片的 Bitrate 是怎樣變化的&lt;br&gt;
 要是 maximum bitrate (最大流量) 高過網速時&lt;br&gt;
@@ -5462,10 +5454,10 @@ Actions 就會自動開始跑 (黃圈圈在轉)&lt;br&gt;
         </item>
         <item>
         <title>免費的 AWS 轉檔基礎知識線上課程</title>
-        <link>http://localhost:1313/blog/2020-04-03-free-aws-digital-training-for-video-compression-basics/</link>
+        <link>https://annkuoq.github.io/blog/2020-04-03-free-aws-digital-training-for-video-compression-basics/</link>
         <pubDate>Fri, 03 Apr 2020 22:13:37 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2020-04-03-free-aws-digital-training-for-video-compression-basics/</guid>
+        <guid>https://annkuoq.github.io/blog/2020-04-03-free-aws-digital-training-for-video-compression-basics/</guid>
         <description>&lt;p&gt;AWS 為了讓大家能更了解他們的服務&lt;br&gt;
 提供了許多免費的線上課程&lt;br&gt;
 其中包括了許多基礎知識&lt;br&gt;
@@ -5813,10 +5805,10 @@ I-frame 首先被壓縮&lt;br&gt;
         </item>
         <item>
         <title>如何讓 Google 搜尋到自己的部落格</title>
-        <link>http://localhost:1313/blog/2020-03-15-how-to-find-my-blog-on-google-search/</link>
+        <link>https://annkuoq.github.io/blog/2020-03-15-how-to-find-my-blog-on-google-search/</link>
         <pubDate>Sun, 15 Mar 2020 10:50:02 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2020-03-15-how-to-find-my-blog-on-google-search/</guid>
+        <guid>https://annkuoq.github.io/blog/2020-03-15-how-to-find-my-blog-on-google-search/</guid>
         <description>&lt;p&gt;首先要先了解 Google 搜尋是怎麼運作的&lt;br&gt;
 其實 Google 不是搜尋整個網路&lt;br&gt;
 而是在搜尋 Google 的網頁索引 (index)&lt;/p&gt;
@@ -6063,10 +6055,10 @@ Google 提供了多種驗證方法:&lt;/li&gt;
         </item>
         <item>
         <title>在 Hexo 安裝 utterances 留言版</title>
-        <link>http://localhost:1313/blog/2020-03-09-add-utterances-comment-widget-to-hexo/</link>
+        <link>https://annkuoq.github.io/blog/2020-03-09-add-utterances-comment-widget-to-hexo/</link>
         <pubDate>Mon, 09 Mar 2020 22:14:53 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2020-03-09-add-utterances-comment-widget-to-hexo/</guid>
+        <guid>https://annkuoq.github.io/blog/2020-03-09-add-utterances-comment-widget-to-hexo/</guid>
         <description>&lt;p&gt;為什麼要用 utterances？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;因為沒有廣告&lt;/li&gt;
@@ -6168,10 +6160,10 @@ utterances APP 要求存取的權限有:&lt;/li&gt;
         </item>
         <item>
         <title>用 Hexo 和 GitHub Pages 架部落格</title>
-        <link>http://localhost:1313/blog/2020-01-03-use-hexo-to-deploy-github-pages/</link>
+        <link>https://annkuoq.github.io/blog/2020-01-03-use-hexo-to-deploy-github-pages/</link>
         <pubDate>Fri, 03 Jan 2020 23:19:47 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2020-01-03-use-hexo-to-deploy-github-pages/</guid>
+        <guid>https://annkuoq.github.io/blog/2020-01-03-use-hexo-to-deploy-github-pages/</guid>
         <description>&lt;p&gt;為什麼要用 Hexo？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;因為中文資源比較多&lt;/li&gt;
@@ -6935,10 +6927,10 @@ utterances APP 要求存取的權限有:&lt;/li&gt;
         </item>
         <item>
         <title>用 Docusaurus 和 GitHub Pages 架網站</title>
-        <link>http://localhost:1313/blog/2019-12-27-use-docusaurus-to-deploy-github-pages/</link>
+        <link>https://annkuoq.github.io/blog/2019-12-27-use-docusaurus-to-deploy-github-pages/</link>
         <pubDate>Fri, 27 Dec 2019 23:18:01 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2019-12-27-use-docusaurus-to-deploy-github-pages/</guid>
+        <guid>https://annkuoq.github.io/blog/2019-12-27-use-docusaurus-to-deploy-github-pages/</guid>
         <description>&lt;p&gt;為什麼要用 Docusaurus？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;因為工程師朋友推薦&lt;/li&gt;
@@ -8116,10 +8108,10 @@ utterances APP 要求存取的權限有:&lt;/li&gt;
         </item>
         <item>
         <title>Windows 安裝 FFmpeg</title>
-        <link>http://localhost:1313/blog/2019-12-17-install-ffmpeg/</link>
+        <link>https://annkuoq.github.io/blog/2019-12-17-install-ffmpeg/</link>
         <pubDate>Tue, 17 Dec 2019 12:25:39 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2019-12-17-install-ffmpeg/</guid>
+        <guid>https://annkuoq.github.io/blog/2019-12-17-install-ffmpeg/</guid>
         <description>&lt;p&gt;為什麼要安裝 FFmepg？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;因為開源、彈性大&lt;/li&gt;
@@ -8196,10 +8188,10 @@ utterances APP 要求存取的權限有:&lt;/li&gt;
         </item>
         <item>
         <title>Win 10 安裝 Node.js 和 http-server</title>
-        <link>http://localhost:1313/blog/2019-12-16-install-nodejs-httpserver/</link>
+        <link>https://annkuoq.github.io/blog/2019-12-16-install-nodejs-httpserver/</link>
         <pubDate>Mon, 16 Dec 2019 13:56:25 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2019-12-16-install-nodejs-httpserver/</guid>
+        <guid>https://annkuoq.github.io/blog/2019-12-16-install-nodejs-httpserver/</guid>
         <description>&lt;p&gt;為什麼要安裝 Node.js？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;因為它可以讓後端伺服器跑 JavaScript&lt;/li&gt;
@@ -8334,10 +8326,10 @@ utterances APP 要求存取的權限有:&lt;/li&gt;
         </item>
         <item>
         <title>更改 Win 10 檔案總管預設開啟位置</title>
-        <link>http://localhost:1313/blog/2019-12-15-change-file-explorer-open-in-win10/</link>
+        <link>https://annkuoq.github.io/blog/2019-12-15-change-file-explorer-open-in-win10/</link>
         <pubDate>Sun, 15 Dec 2019 22:14:43 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2019-12-15-change-file-explorer-open-in-win10/</guid>
+        <guid>https://annkuoq.github.io/blog/2019-12-15-change-file-explorer-open-in-win10/</guid>
         <description>&lt;p&gt;為什麼要更改開啟位置？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Win 10 檔案總管預設是開啟&lt;code&gt;快速存取&lt;/code&gt;&lt;br&gt;
@@ -8366,10 +8358,10 @@ utterances APP 要求存取的權限有:&lt;/li&gt;
         </item>
         <item>
         <title>Win 10 使用 Win 7 的相片檢視器</title>
-        <link>http://localhost:1313/blog/2019-12-14-win7-photoviewer-in-win10/</link>
+        <link>https://annkuoq.github.io/blog/2019-12-14-win7-photoviewer-in-win10/</link>
         <pubDate>Sat, 14 Dec 2019 11:23:35 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2019-12-14-win7-photoviewer-in-win10/</guid>
+        <guid>https://annkuoq.github.io/blog/2019-12-14-win7-photoviewer-in-win10/</guid>
         <description>&lt;p&gt;為什麼要改用 Win 7 的 Windows 相片檢視器？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;因為 Win 10 內建的 相片 APP 開圖片很慢&lt;/li&gt;
@@ -8502,10 +8494,10 @@ utterances APP 要求存取的權限有:&lt;/li&gt;
         </item>
         <item>
         <title>Win 10 安裝 Cmder 與 Git</title>
-        <link>http://localhost:1313/blog/2019-12-10-install-cmder-and-git/</link>
+        <link>https://annkuoq.github.io/blog/2019-12-10-install-cmder-and-git/</link>
         <pubDate>Tue, 10 Dec 2019 22:31:46 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2019-12-10-install-cmder-and-git/</guid>
+        <guid>https://annkuoq.github.io/blog/2019-12-10-install-cmder-and-git/</guid>
         <description>&lt;p&gt;為什麼要安裝 Cmder？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;因為要在 Windows 使用 Linux 的指令&lt;/li&gt;
@@ -8815,10 +8807,10 @@ utterances APP 要求存取的權限有:&lt;/li&gt;
         </item>
         <item>
         <title>關於旅遊企劃的二三事</title>
-        <link>http://localhost:1313/blog/2019-08-04-how-to-plan-a-family-vacation/</link>
+        <link>https://annkuoq.github.io/blog/2019-08-04-how-to-plan-a-family-vacation/</link>
         <pubDate>Sun, 04 Aug 2019 00:31:46 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2019-08-04-how-to-plan-a-family-vacation/</guid>
+        <guid>https://annkuoq.github.io/blog/2019-08-04-how-to-plan-a-family-vacation/</guid>
         <description>&lt;p&gt;家旅至今走過十九個年頭～&lt;br&gt;
 父母也開始交棒給孩子們舉辦&lt;br&gt;
 輪到的那一家總是壓力特別大XD&lt;br&gt;
@@ -8993,10 +8985,10 @@ d. 民宿 / 餐廳老闆&lt;br&gt;
         </item>
         <item>
         <title>LINE Taiwan TechPulse 2018 開發者大會</title>
-        <link>http://localhost:1313/blog/2018-12-21-line-taiwan-techpulse-2018/</link>
+        <link>https://annkuoq.github.io/blog/2018-12-21-line-taiwan-techpulse-2018/</link>
         <pubDate>Fri, 21 Dec 2018 23:10:11 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2018-12-21-line-taiwan-techpulse-2018/</guid>
+        <guid>https://annkuoq.github.io/blog/2018-12-21-line-taiwan-techpulse-2018/</guid>
         <description>&lt;p&gt;同事告知最近有一個 LINE 的開發者說明會&lt;br&gt;
 覺得很酷就報名了&lt;br&gt;
 &lt;del&gt;雖然不懂程式，英文也不好&lt;/del&gt;&lt;br&gt;
@@ -9508,10 +9500,10 @@ LINE 團隊的簡報超美&lt;br&gt;
         </item>
         <item>
         <title>烏克麗麗如何彈 Do Re Mi</title>
-        <link>http://localhost:1313/blog/2014-02-01-ukulele-do-re-mi-scales/</link>
+        <link>https://annkuoq.github.io/blog/2014-02-01-ukulele-do-re-mi-scales/</link>
         <pubDate>Sat, 01 Feb 2014 13:51:43 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2014-02-01-ukulele-do-re-mi-scales/</guid>
+        <guid>https://annkuoq.github.io/blog/2014-02-01-ukulele-do-re-mi-scales/</guid>
         <description>&lt;p&gt;想要知道怎麼在烏克麗麗上彈 Do Re Mi&lt;br&gt;
 首先要知道每一條弦的空弦音&lt;br&gt;
 你只要會調音，就一定知道空弦音&lt;/p&gt;
@@ -9581,10 +9573,10 @@ G 和 A 距離一個全音 (兩格) =&amp;gt; A 在第十二格&lt;/p&gt;
         </item>
         <item>
         <title>暖身操與爬格子</title>
-        <link>http://localhost:1313/blog/2014-01-19-hand-stretch-exercises/</link>
+        <link>https://annkuoq.github.io/blog/2014-01-19-hand-stretch-exercises/</link>
         <pubDate>Sun, 19 Jan 2014 23:09:43 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2014-01-19-hand-stretch-exercises/</guid>
+        <guid>https://annkuoq.github.io/blog/2014-01-19-hand-stretch-exercises/</guid>
         <description>&lt;p&gt;彈琴之前要做一些熱身練習&lt;br&gt;
 就像運動之前的拉筋一樣&lt;br&gt;
 可以讓你的手指更靈活&lt;br&gt;
@@ -9682,10 +9674,10 @@ G 和 A 距離一個全音 (兩格) =&amp;gt; A 在第十二格&lt;/p&gt;
         </item>
         <item>
         <title>烏克麗麗的技巧記號與反覆記號</title>
-        <link>http://localhost:1313/blog/2013-08-11-ukulele-tab-symbols-and-repetition/</link>
+        <link>https://annkuoq.github.io/blog/2013-08-11-ukulele-tab-symbols-and-repetition/</link>
         <pubDate>Sun, 11 Aug 2013 23:24:43 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2013-08-11-ukulele-tab-symbols-and-repetition/</guid>
+        <guid>https://annkuoq.github.io/blog/2013-08-11-ukulele-tab-symbols-and-repetition/</guid>
         <description>&lt;h3 id=&#34;技巧記號&#34;&gt;技巧記號
 &lt;/h3&gt;&lt;p&gt;四線譜上有哪些常見的技巧記號呢&lt;/p&gt;
 &lt;!-- more --&gt;
@@ -9794,10 +9786,10 @@ G 和 A 距離一個全音 (兩格) =&amp;gt; A 在第十二格&lt;/p&gt;
         </item>
         <item>
         <title>烏克麗麗的和弦圖與四線譜</title>
-        <link>http://localhost:1313/blog/2013-08-10-ukulele-read-chord-and-tab/</link>
+        <link>https://annkuoq.github.io/blog/2013-08-10-ukulele-read-chord-and-tab/</link>
         <pubDate>Sat, 10 Aug 2013 22:19:43 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2013-08-10-ukulele-read-chord-and-tab/</guid>
+        <guid>https://annkuoq.github.io/blog/2013-08-10-ukulele-read-chord-and-tab/</guid>
         <description>&lt;h3 id=&#34;和弦圖&#34;&gt;和弦圖
 &lt;/h3&gt;&lt;p&gt;和弦圖有直的也有橫的&lt;br&gt;
 其實它就是烏克麗麗的指板&lt;/p&gt;
@@ -9903,10 +9895,10 @@ V 是往上刷&lt;/p&gt;
         </item>
         <item>
         <title>音符與節拍</title>
-        <link>http://localhost:1313/blog/2013-08-09-music-notes-and-rhythm/</link>
+        <link>https://annkuoq.github.io/blog/2013-08-09-music-notes-and-rhythm/</link>
         <pubDate>Fri, 09 Aug 2013 17:42:43 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2013-08-09-music-notes-and-rhythm/</guid>
+        <guid>https://annkuoq.github.io/blog/2013-08-09-music-notes-and-rhythm/</guid>
         <description>&lt;p&gt;在讀譜之前&lt;br&gt;
 要先認識音符和拍值&lt;/p&gt;
 &lt;!-- more --&gt;
@@ -9983,10 +9975,10 @@ BPM (beats per minute) 是每分鐘的拍數&lt;/p&gt;
         </item>
         <item>
         <title>烏克麗麗的持琴姿勢/彈奏方式</title>
-        <link>http://localhost:1313/blog/2013-07-29-hold-and-strum-ukulele/</link>
+        <link>https://annkuoq.github.io/blog/2013-07-29-hold-and-strum-ukulele/</link>
         <pubDate>Mon, 29 Jul 2013 23:46:43 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2013-07-29-hold-and-strum-ukulele/</guid>
+        <guid>https://annkuoq.github.io/blog/2013-07-29-hold-and-strum-ukulele/</guid>
         <description>&lt;p&gt;烏克麗麗是一個很隨興的樂器&lt;br&gt;
 所以沒有一定的姿勢或方式&lt;br&gt;
 最重要的就是讓自己感覺到舒服自在就好囉&lt;/p&gt;
@@ -10093,10 +10085,10 @@ Pick 有分軟硬，軟適合刷和弦，硬適合 Solo&lt;/p&gt;
         </item>
         <item>
         <title>烏克麗麗的調音/C大調音階</title>
-        <link>http://localhost:1313/blog/2013-07-25-tune-ukulele-and-c-major-scale/</link>
+        <link>https://annkuoq.github.io/blog/2013-07-25-tune-ukulele-and-c-major-scale/</link>
         <pubDate>Thu, 25 Jul 2013 22:27:43 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2013-07-25-tune-ukulele-and-c-major-scale/</guid>
+        <guid>https://annkuoq.github.io/blog/2013-07-25-tune-ukulele-and-c-major-scale/</guid>
         <description>&lt;h3 id=&#34;音的名字&#34;&gt;音的名字
 &lt;/h3&gt;&lt;p&gt;在調音之前呢&lt;br&gt;
 我們要先知道每個音的名字&lt;br&gt;
@@ -10171,10 +10163,10 @@ Do 到 Mi 是三度&lt;br&gt;
         </item>
         <item>
         <title>烏克麗麗的歷史/種類/結構</title>
-        <link>http://localhost:1313/blog/2013-07-22-ukulele-history-types-anatomy/</link>
+        <link>https://annkuoq.github.io/blog/2013-07-22-ukulele-history-types-anatomy/</link>
         <pubDate>Mon, 22 Jul 2013 23:20:43 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2013-07-22-ukulele-history-types-anatomy/</guid>
+        <guid>https://annkuoq.github.io/blog/2013-07-22-ukulele-history-types-anatomy/</guid>
         <description>&lt;h3 id=&#34;歷史&#34;&gt;歷史
 &lt;/h3&gt;&lt;p&gt;在很久很久以前 (老套開頭)&lt;br&gt;
 就是在 1879 年 8 月 23 日那天&lt;br&gt;

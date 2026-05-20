@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tailscale on AnnKuoQ Blog</title>
-        <link>http://localhost:1313/blog/tags/tailscale/</link>
+        <link>https://annkuoq.github.io/blog/tags/tailscale/</link>
         <description>Recent content in Tailscale on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Fri, 27 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/tailscale/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 27 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/tailscale/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何透過 WebSocket 與 Tailscale 遠端操控 OBS</title>
-        <link>http://localhost:1313/blog/2026-02-27-how-to-remotely-control-obs-via-websocket-and-tailscale/</link>
+        <link>https://annkuoq.github.io/blog/2026-02-27-how-to-remotely-control-obs-via-websocket-and-tailscale/</link>
         <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2026-02-27-how-to-remotely-control-obs-via-websocket-and-tailscale/</guid>
+        <guid>https://annkuoq.github.io/blog/2026-02-27-how-to-remotely-control-obs-via-websocket-and-tailscale/</guid>
         <description>&lt;p&gt;如果你想做一場運動賽事的比分轉播&lt;br&gt;
 人就在球場邊，但直播電腦卻放在家裡&lt;br&gt;
 該怎麼辦呢？&lt;/p&gt;

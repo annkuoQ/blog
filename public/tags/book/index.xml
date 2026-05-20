@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Book on AnnKuoQ Blog</title>
-        <link>http://localhost:1313/blog/tags/book/</link>
+        <link>https://annkuoq.github.io/blog/tags/book/</link>
         <description>Recent content in Book on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Wed, 18 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/book/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 18 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/book/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>《我可能錯了》閱讀筆記</title>
-        <link>http://localhost:1313/blog/2026-02-18-i-may-be-wrong-reading-notes/</link>
+        <link>https://annkuoq.github.io/blog/2026-02-18-i-may-be-wrong-reading-notes/</link>
         <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2026-02-18-i-may-be-wrong-reading-notes/</guid>
+        <guid>https://annkuoq.github.io/blog/2026-02-18-i-may-be-wrong-reading-notes/</guid>
         <description>&lt;p&gt;這本書講的是一位人生看似一路順遂的人&lt;br&gt;
 某天決定辭職出家成為修行人 (最後又選擇還俗) 的故事&lt;/p&gt;
 &lt;p&gt;我一開始是在 &lt;a class=&#34;link&#34; href=&#34;https://podcasts.apple.com/tw/podcast/ep66-%E6%88%91%E5%8F%AF%E8%83%BD%E9%8C%AF%E4%BA%86-%E6%88%91%E5%B0%8D%E8%87%AA%E5%B7%B1%E7%9A%84%E6%AF%8F%E5%80%8B%E5%BF%B5%E9%A0%AD%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%9B%B8%E4%BF%A1%E4%BA%86-%E9%80%99%E6%98%AF%E6%88%91%E7%9A%84%E8%B6%85%E8%83%BD%E5%8A%9B/id1625222138?i=1000616253536&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -135,7 +135,8 @@
 會在心裡留下重量&lt;/p&gt;
 &lt;p&gt;這裡沒有要討論什麼是對或錯&lt;br&gt;
 只是提醒我們，要對自己的言行負責&lt;/p&gt;
-&lt;p&gt;問心無愧，才能真正輕盈&lt;/p&gt;
+&lt;p&gt;因為就算沒有人知道&lt;br&gt;
+你還是會知道&lt;/p&gt;
 </description>
         </item>
         

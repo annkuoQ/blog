@@ -17,6 +17,13 @@
     window.searchConfig.placeholder = {{ T "search.placeholder" }};
 </script>
 
-{{ $searchJs := resources.Get "ts/search.ts" | js.Build }}
-<script type="text/javascript" src="{{ $searchJs.RelPermalink }}" defer></script>
+{{/* 1. 先安全地向 Hugo 宣告抓取 search.ts 資源 */}}
+{{ $searchTs := resources.Get "ts/search.ts" }}
+
+{{/* 2. 只有在成功抓到檔案時，才進行 js.Build 編譯與輸出，這能完美防呆 */}}
+{{ if $searchTs }}
+    {{ $searchJs := $searchTs | js.Build }}
+    <script type="text/javascript" src="{{ $searchJs.RelPermalink }}" defer></script>
+{{ end }}
+
 {{ end }}

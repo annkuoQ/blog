@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Mixkit on AnnKuoQ Blog</title>
-        <link>http://localhost:1313/blog/tags/mixkit/</link>
+        <link>https://annkuoq.github.io/blog/tags/mixkit/</link>
         <description>Recent content in Mixkit on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Sun, 25 Oct 2020 16:46:42 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/mixkit/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 25 Oct 2020 16:46:42 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/mixkit/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>一樣的 Bitrate，解析度高的畫質會比較好嗎？</title>
-        <link>http://localhost:1313/blog/2020-10-25-bitrate-vs-resolution/</link>
+        <link>https://annkuoq.github.io/blog/2020-10-25-bitrate-vs-resolution/</link>
         <pubDate>Sun, 25 Oct 2020 16:46:42 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2020-10-25-bitrate-vs-resolution/</guid>
+        <guid>https://annkuoq.github.io/blog/2020-10-25-bitrate-vs-resolution/</guid>
         <description>&lt;p&gt;某天同事問說 iMovie 怎麼輸出&lt;br&gt;
 我說: 除了設解析度，還有 Bitrate&lt;br&gt;
 同事問 Bitrate 是什麼？&lt;br&gt;

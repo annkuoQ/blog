@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>隨筆 on AnnKuoQ Blog</title>
-        <link>http://localhost:1313/blog/categories/%E9%9A%A8%E7%AD%86/</link>
+        <link>https://annkuoq.github.io/blog/categories/%E9%9A%A8%E7%AD%86/</link>
         <description>Recent content in 隨筆 on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Sat, 14 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/categories/%E9%9A%A8%E7%AD%86/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>活得像自己，從認識動機開始</title>
-        <link>http://localhost:1313/blog/2026-03-14-live-authentically-know-what-drives-you/</link>
+        <lastBuildDate>Sat, 14 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/categories/%E9%9A%A8%E7%AD%86/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>想活得像自己，從認識自己的動機開始</title>
+        <link>https://annkuoq.github.io/blog/2026-03-14-live-authentically-know-what-drives-you/</link>
         <pubDate>Sat, 14 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2026-03-14-live-authentically-know-what-drives-you/</guid>
+        <guid>https://annkuoq.github.io/blog/2026-03-14-live-authentically-know-what-drives-you/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;啟發於 劉軒 Podcast &lt;a class=&#34;link&#34; href=&#34;https://podcasts.apple.com/tw/podcast/ep462-%E7%82%BA%E4%BB%80%E9%BA%BC%E6%84%9B%E8%87%AA%E5%B7%B1%E9%80%99%E9%BA%BC%E9%9B%A3-%E4%BD%A0%E4%BB%A5%E7%82%BA%E7%9A%84%E8%87%AA%E6%88%91%E7%85%A7%E9%A1%A7-%E5%8F%AF%E8%83%BD%E5%8F%AA%E6%98%AF%E5%8F%A6%E4%B8%80%E7%A8%AE%E6%B6%88%E8%80%97/id1547950387?i=1000754842777&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;EP462｜為什麼愛自己這麼難？你以為的自我照顧，可能只是另一種消耗&lt;/a&gt;&lt;/p&gt;
@@ -32,7 +32,7 @@
 &lt;/h2&gt;&lt;p&gt;很多看起來相同的行動&lt;br&gt;
 背後的聲音其實完全不一樣&lt;/p&gt;
 &lt;p&gt;有些出於「恐懼」&lt;br&gt;
-有些出於「愛」&lt;/p&gt;
+有些出於「愛」 (在乎/認同/想變更好)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;健身、早睡&lt;/strong&gt;&lt;br&gt;
 是因為喜歡運動完流汗、睡飽後清醒，那種很有活著的感覺&lt;br&gt;
 還是因為&lt;br&gt;
@@ -68,20 +68,19 @@
 &lt;h2 id=&#34;結論&#34;&gt;結論
 &lt;/h2&gt;&lt;p&gt;重點從來不是你做了什麼&lt;br&gt;
 而是你用什麼心在做&lt;/p&gt;
-&lt;p&gt;你不需要馬上改變什麼&lt;br&gt;
-只是下次做一件事之前，停一秒問問自己&lt;br&gt;
+&lt;p&gt;下次做一件事之前，停一秒問問自己&lt;br&gt;
 我為什麼要這樣做？&lt;/p&gt;
 &lt;p&gt;這兩種聲音，可能同時都有&lt;br&gt;
-你不需要假裝只有愛、沒有恐懼&lt;br&gt;
-試著問問自己，現在哪一個聲音比較大？&lt;/p&gt;
+但可以試著問問自己&lt;br&gt;
+現在哪一個聲音比較大？&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>《我可能錯了》閱讀筆記</title>
-        <link>http://localhost:1313/blog/2026-02-18-i-may-be-wrong-reading-notes/</link>
+        <link>https://annkuoq.github.io/blog/2026-02-18-i-may-be-wrong-reading-notes/</link>
         <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2026-02-18-i-may-be-wrong-reading-notes/</guid>
+        <guid>https://annkuoq.github.io/blog/2026-02-18-i-may-be-wrong-reading-notes/</guid>
         <description>&lt;p&gt;這本書講的是一位人生看似一路順遂的人&lt;br&gt;
 某天決定辭職出家成為修行人 (最後又選擇還俗) 的故事&lt;/p&gt;
 &lt;p&gt;我一開始是在 &lt;a class=&#34;link&#34; href=&#34;https://podcasts.apple.com/tw/podcast/ep66-%E6%88%91%E5%8F%AF%E8%83%BD%E9%8C%AF%E4%BA%86-%E6%88%91%E5%B0%8D%E8%87%AA%E5%B7%B1%E7%9A%84%E6%AF%8F%E5%80%8B%E5%BF%B5%E9%A0%AD%E5%86%8D%E4%B9%9F%E4%B8%8D%E7%9B%B8%E4%BF%A1%E4%BA%86-%E9%80%99%E6%98%AF%E6%88%91%E7%9A%84%E8%B6%85%E8%83%BD%E5%8A%9B/id1625222138?i=1000616253536&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -204,15 +203,16 @@
 會在心裡留下重量&lt;/p&gt;
 &lt;p&gt;這裡沒有要討論什麼是對或錯&lt;br&gt;
 只是提醒我們，要對自己的言行負責&lt;/p&gt;
-&lt;p&gt;問心無愧，才能真正輕盈&lt;/p&gt;
+&lt;p&gt;因為就算沒有人知道&lt;br&gt;
+你還是會知道&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>甜言蜜語不是「情緒價值」</title>
-        <link>http://localhost:1313/blog/2026-01-31-2026-01-30-sweet-talk-is-not-emotional-value/</link>
-        <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
+        <title>真正的情緒價值，不是甜言蜜語</title>
+        <link>https://annkuoq.github.io/blog/2026-01-30-sweet-talk-is-not-emotional-value/</link>
+        <pubDate>Fri, 30 Jan 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2026-01-31-2026-01-30-sweet-talk-is-not-emotional-value/</guid>
+        <guid>https://annkuoq.github.io/blog/2026-01-30-sweet-talk-is-not-emotional-value/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;本文為 Podcast (&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=V6o1Cr5SqVw&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;心理敲敲門#311&lt;/a&gt;) 的 AI 摘要內容&lt;/p&gt;
@@ -254,14 +254,6 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;例-3-朋友圈中的歸屬感對照&#34;&gt;例 3: 朋友圈中的「歸屬感」對照
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;與好友（閨蜜或兄弟）相處時，即使對方臉臭、沈默，或雙方一起罵髒話，我們往往仍感到有情緒價值。
-&lt;ul&gt;
-&lt;li&gt;關鍵點：因為在朋友面前我們可以「自在地做自己」，這種不需刻意維持正能量的「允許」，就是情緒價值的核心體現。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id=&#34;如何給予真正的情緒價值&#34;&gt;如何給予真正的情緒價值？
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;先認出自己的情緒：覺察自己的失落、恐懼或生氣，而非直接要求對方負責。&lt;/li&gt;
@@ -276,10 +268,10 @@
         </item>
         <item>
         <title>行為 vs. 樂受</title>
-        <link>http://localhost:1313/blog/2026-01-09-action-vs-pleasure/</link>
+        <link>https://annkuoq.github.io/blog/2026-01-09-action-vs-pleasure/</link>
         <pubDate>Fri, 09 Jan 2026 22:03:14 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2026-01-09-action-vs-pleasure/</guid>
+        <guid>https://annkuoq.github.io/blog/2026-01-09-action-vs-pleasure/</guid>
         <description>&lt;h2 id=&#34;人到底喜歡什麼&#34;&gt;人到底喜歡什麼
 &lt;/h2&gt;&lt;p&gt;一個人如果喜歡聽音樂或喝飲料&lt;br&gt;
 那他是喜歡這件事本身的行為&lt;br&gt;
@@ -338,10 +330,10 @@
         </item>
         <item>
         <title>來去直營店換 iPhone 電池</title>
-        <link>http://localhost:1313/blog/2020-05-11-iphone-se-battery-replacement-at-xinyi-a13/</link>
+        <link>https://annkuoq.github.io/blog/2020-05-11-iphone-se-battery-replacement-at-xinyi-a13/</link>
         <pubDate>Mon, 11 May 2020 22:27:01 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2020-05-11-iphone-se-battery-replacement-at-xinyi-a13/</guid>
+        <guid>https://annkuoq.github.io/blog/2020-05-11-iphone-se-battery-replacement-at-xinyi-a13/</guid>
         <description>&lt;p&gt;手上這支 iPhone SE 已經四年多&lt;br&gt;
 電池健康度為 82%&lt;br&gt;
 雖然它本來就只有 1624 mAh&lt;br&gt;
@@ -398,10 +390,10 @@
         </item>
         <item>
         <title>關於旅遊企劃的二三事</title>
-        <link>http://localhost:1313/blog/2019-08-04-how-to-plan-a-family-vacation/</link>
+        <link>https://annkuoq.github.io/blog/2019-08-04-how-to-plan-a-family-vacation/</link>
         <pubDate>Sun, 04 Aug 2019 00:31:46 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2019-08-04-how-to-plan-a-family-vacation/</guid>
+        <guid>https://annkuoq.github.io/blog/2019-08-04-how-to-plan-a-family-vacation/</guid>
         <description>&lt;p&gt;家旅至今走過十九個年頭～&lt;br&gt;
 父母也開始交棒給孩子們舉辦&lt;br&gt;
 輪到的那一家總是壓力特別大XD&lt;br&gt;
@@ -576,10 +568,10 @@ d. 民宿 / 餐廳老闆&lt;br&gt;
         </item>
         <item>
         <title>LINE Taiwan TechPulse 2018 開發者大會</title>
-        <link>http://localhost:1313/blog/2018-12-21-line-taiwan-techpulse-2018/</link>
+        <link>https://annkuoq.github.io/blog/2018-12-21-line-taiwan-techpulse-2018/</link>
         <pubDate>Fri, 21 Dec 2018 23:10:11 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2018-12-21-line-taiwan-techpulse-2018/</guid>
+        <guid>https://annkuoq.github.io/blog/2018-12-21-line-taiwan-techpulse-2018/</guid>
         <description>&lt;p&gt;同事告知最近有一個 LINE 的開發者說明會&lt;br&gt;
 覺得很酷就報名了&lt;br&gt;
 &lt;del&gt;雖然不懂程式，英文也不好&lt;/del&gt;&lt;br&gt;

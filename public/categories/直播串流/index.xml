@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>直播串流 on AnnKuoQ Blog</title>
-        <link>http://localhost:1313/blog/categories/%E7%9B%B4%E6%92%AD%E4%B8%B2%E6%B5%81/</link>
+        <link>https://annkuoq.github.io/blog/categories/%E7%9B%B4%E6%92%AD%E4%B8%B2%E6%B5%81/</link>
         <description>Recent content in 直播串流 on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Fri, 27 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/categories/%E7%9B%B4%E6%92%AD%E4%B8%B2%E6%B5%81/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 27 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/categories/%E7%9B%B4%E6%92%AD%E4%B8%B2%E6%B5%81/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何透過 WebSocket 與 Tailscale 遠端操控 OBS</title>
-        <link>http://localhost:1313/blog/2026-02-27-how-to-remotely-control-obs-via-websocket-and-tailscale/</link>
+        <link>https://annkuoq.github.io/blog/2026-02-27-how-to-remotely-control-obs-via-websocket-and-tailscale/</link>
         <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2026-02-27-how-to-remotely-control-obs-via-websocket-and-tailscale/</guid>
+        <guid>https://annkuoq.github.io/blog/2026-02-27-how-to-remotely-control-obs-via-websocket-and-tailscale/</guid>
         <description>&lt;p&gt;如果你想做一場運動賽事的比分轉播&lt;br&gt;
 人就在球場邊，但直播電腦卻放在家裡&lt;br&gt;
 該怎麼辦呢？&lt;/p&gt;
@@ -1494,10 +1494,10 @@
         </item>
         <item>
         <title>如何在 OBS 使用 RSS 做跑馬燈</title>
-        <link>http://localhost:1313/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/</link>
+        <link>https://annkuoq.github.io/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/</link>
         <pubDate>Tue, 05 Nov 2024 18:14:15 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/</guid>
+        <guid>https://annkuoq.github.io/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/</guid>
         <description>&lt;p&gt;最近常常需要做關於颱風的直播&lt;br&gt;
 畫面底部的跑馬燈&lt;br&gt;
 都是我 &lt;del&gt;工人智慧&lt;/del&gt; 從氣象署複製貼上的 😆&lt;br&gt;
@@ -1679,10 +1679,10 @@
         </item>
         <item>
         <title>如何在 Win10 Chrome 播放本機的 HLS M3U8 影片</title>
-        <link>http://localhost:1313/blog/2024-03-25-how-to-play-local-hls-m3u8-in-windows-chrome/</link>
+        <link>https://annkuoq.github.io/blog/2024-03-25-how-to-play-local-hls-m3u8-in-windows-chrome/</link>
         <pubDate>Mon, 25 Mar 2024 09:40:22 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2024-03-25-how-to-play-local-hls-m3u8-in-windows-chrome/</guid>
+        <guid>https://annkuoq.github.io/blog/2024-03-25-how-to-play-local-hls-m3u8-in-windows-chrome/</guid>
         <description>&lt;p&gt;最近在測試 HLS 轉檔&lt;br&gt;
 轉出來後有一堆 ts 片段&lt;br&gt;
 又懶得上傳到 Staging 環境&lt;br&gt;
@@ -1852,10 +1852,10 @@
         </item>
         <item>
         <title>介紹 VTuber 相關技術與軟體</title>
-        <link>http://localhost:1313/blog/2022-02-19-how-to-be-a-vtuber/</link>
+        <link>https://annkuoq.github.io/blog/2022-02-19-how-to-be-a-vtuber/</link>
         <pubDate>Sat, 19 Feb 2022 15:27:21 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2022-02-19-how-to-be-a-vtuber/</guid>
+        <guid>https://annkuoq.github.io/blog/2022-02-19-how-to-be-a-vtuber/</guid>
         <description>&lt;p&gt;VTuber 是 Virtual YouTuber 的縮寫&lt;br&gt;
 就是虛擬形象結合真人的 YouTuber&lt;br&gt;
 透過捕捉真人的動作，讓虛擬人物有生動的表情與動作&lt;/p&gt;
@@ -2019,10 +2019,10 @@
         </item>
         <item>
         <title>如何把手機變 Webcam (免安裝軟體、免插線、免費)</title>
-        <link>http://localhost:1313/blog/2021-04-13-how-to-use-mobile-as-webcam/</link>
+        <link>https://annkuoq.github.io/blog/2021-04-13-how-to-use-mobile-as-webcam/</link>
         <pubDate>Tue, 13 Apr 2021 20:36:32 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2021-04-13-how-to-use-mobile-as-webcam/</guid>
+        <guid>https://annkuoq.github.io/blog/2021-04-13-how-to-use-mobile-as-webcam/</guid>
         <description>&lt;p&gt;最近找到了一個開源的酷東西&lt;br&gt;
 不用安裝任何軟體、不用插任何線&lt;br&gt;
 只要有網路！&lt;br&gt;
@@ -2132,10 +2132,10 @@ OBS 的畫面也會變橫的喔&lt;/p&gt;
         </item>
         <item>
         <title>淺談 AES 與 DRM</title>
-        <link>http://localhost:1313/blog/2021-03-02-aes-or-drm/</link>
+        <link>https://annkuoq.github.io/blog/2021-03-02-aes-or-drm/</link>
         <pubDate>Tue, 02 Mar 2021 21:03:21 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2021-03-02-aes-or-drm/</guid>
+        <guid>https://annkuoq.github.io/blog/2021-03-02-aes-or-drm/</guid>
         <description>&lt;p&gt;最近工作上有碰到 AES 和 DRM&lt;br&gt;
 雖然是使用別人的服務&lt;br&gt;
 但還是想稍微了解一下運作的方式&lt;/p&gt;
@@ -2343,10 +2343,10 @@ Headers 裡的 Request Payload 有一堆亂碼&lt;br&gt;
         </item>
         <item>
         <title>如何使用 OBS 同時直播多個平台</title>
-        <link>http://localhost:1313/blog/2020-09-23-obs-multi-rtmp-outputs-plugin/</link>
+        <link>https://annkuoq.github.io/blog/2020-09-23-obs-multi-rtmp-outputs-plugin/</link>
         <pubDate>Wed, 23 Sep 2020 09:12:05 +0000</pubDate>
         
-        <guid>http://localhost:1313/blog/2020-09-23-obs-multi-rtmp-outputs-plugin/</guid>
+        <guid>https://annkuoq.github.io/blog/2020-09-23-obs-multi-rtmp-outputs-plugin/</guid>
         <description>&lt;p&gt;OBS 預設只能直播一個平台&lt;br&gt;
 但我需要同時直播 YouTube 和 Facebook&lt;br&gt;
 所以這陣子都在搜尋有沒有什麼好的解決方法&lt;/p&gt;
