@@ -1,5 +1,5 @@
 ---
-title: 活得像自己，從認識動機開始
+title: 想活得像自己，就先認識自己的動機
 date: 2026-03-14
 slug: "2026-03-14-live-authentically-know-what-drives-you"
 description:  很多看起來相同的行動，背後的聲音其實完全不一樣，有些出於恐懼、有些出於愛...
