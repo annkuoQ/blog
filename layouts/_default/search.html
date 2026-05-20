@@ -1,143 +1,22 @@
 {{ define "main" }}
+<form action="{{ .RelPermalink }}" method="GET" class="search-form widget">
+    <p>
+        <label>{{ T "search.title" }}</label>
+        <input name="keyword" placeholder="{{ T "search.placeholder" }}" />
+        <button title="{{ T "search.title" }}">
+            {{ partial "helper/icon" "search" }}
+        </button>
+    </p>
+</form>
 
-<style>
-    /* 核心容器 */
-    #search-page-container {
-        width: 100% !important;
-        max-width: 100% !important; /* 讓容器能填滿父層 */
-        margin: 20px 0;
-    }
-
-    /* 搜尋結果卡片樣式優化 */
-    .search-result-card {
-        padding: 25px;
-        margin-bottom: 20px;
-        background: #2d2d2d !important; /* 稍微提升亮度，增加對比 */
-        border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        transition: all 0.25s ease;
-        display: block;
-        text-decoration: none !important;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-
-    /* 卡片懸停效果 */
-    .search-result-card:hover {
-        background: #383838 !important;
-        border-color: #48C494;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    }
-
-    .search-result-title {
-        color: #fff !important; /* 標題強制白色，避免被主題綠色覆蓋 */
-        font-size: 1.3rem !important;
-        font-weight: 600;
-        margin-bottom: 10px;
-        display: block;
-    }
-
-    .search-result-meta {
-        font-size: 0.9rem;
-        color: #bbbbbb; /* 文字變亮一點 */
-        display: flex;
-        gap: 15px;
-        align-items: center;
-    }
-		
-	/* 優化搜尋輸入框：仿照側欄樣式 */
-    #manual-search-input {
-        background-color: var(--card-background) !important; /* 跟隨主題深色卡片背景 */
-        border: 1px solid var(--border-color) !important; /* 使用細微的邊框 */
-        color: var(--card-text-color-main) !important; /* 文字顏色跟隨主題 */
-        box-shadow: none; /* 移除發光陰影 */
-        transition: all 0.3s ease;
-        opacity: 0.9;
-    }
-
-    #manual-search-input:focus {
-        background-color: var(--card-background) !important;
-        border-color: var(--primary) !important; /* 聚焦時顯示主題色邊框 */
-        outline: none;
-        opacity: 1;
-    }
-
-    /* placeholder */
-    #manual-search-input::placeholder {
-        color: var(--card-text-color-tertiary);
-        opacity: 0.5;
-    }
-</style>
-
-<div id="search-page-container">
-    <h1 style="color: var(--card-text-color-main); margin-bottom: 20px;">Search</h1>
-    
-    <input type="text" id="manual-search-input" placeholder="輸入關鍵字..." 
-           style="width: 100%; padding: 15px; font-size: 18px; border-radius: 10px;">
-    
-    <div id="manual-search-results" style="margin-top: 30px;"></div>
-</div>
+<h4 class="search-result--title section-title"></h4>
+<div class="search-result--list article-list--compact"></div>
 
 <script>
-    (function() {
-        let isInitialLoad = true;
-
-        const initSearch = () => {
-            const input = document.getElementById('manual-search-input');
-            const resultsContainer = document.getElementById('manual-search-results');
-            
-            if (!input || !resultsContainer) return;
-
-            if (isInitialLoad) {
-                const urlParams = new URLSearchParams(window.location.search);
-                const keywordFromUrl = urlParams.get('keyword');
-                
-                if (keywordFromUrl) {
-                    input.value = keywordFromUrl;
-                    performSearch(keywordFromUrl, resultsContainer);
-                }
-                isInitialLoad = false;
-            }
-
-            if (!input.dataset.listenerBound) {
-                input.addEventListener('input', () => {
-                    performSearch(input.value.trim(), resultsContainer);
-                });
-                input.dataset.listenerBound = "true";
-            }
-        };
-
-        function performSearch(query, container) {
-            if (!query) {
-                container.innerHTML = "";
-                return;
-            }
-            fetch("/blog/index.json")
-                .then(res => res.json())
-                .then(data => {
-                    const matched = data.filter(item => 
-                        item.title.toLowerCase().includes(query.toLowerCase()) || 
-                        (item.contents && item.contents.toLowerCase().includes(query.toLowerCase()))
-                    );
-                    
-                    // 修正：這裡的 HTML 結構要配合上面的 CSS Class
-                    container.innerHTML = matched.map(item => `
-                        <a href="${item.permalink}" class="search-result-card">
-                            <span class="search-result-title">${item.title}</span>
-                            <div class="search-result-meta">
-                                <span>📂 ${item.categories || '未分類'}</span>
-                            </div>
-                        </a>
-                    `).join('');
-                });
-        }
-
-        document.addEventListener('DOMContentLoaded', initSearch);
-        const checker = setInterval(() => {
-            initSearch();
-            if (document.getElementById('manual-search-input') && !isInitialLoad) {
-                clearInterval(checker);
-            }
-        }, 1000);
-    })();
+    window.searchConfig = {{ .Site.Params.search | jsonify }};
+    window.searchConfig.placeholder = {{ T "search.placeholder" }};
 </script>
+
+{{ $searchJs := resources.Get "ts/search.ts" | js.Build }}
+<script type="text/javascript" src="{{ $searchJs.RelPermalink }}" defer></script>
 {{ end }}
