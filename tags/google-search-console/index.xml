@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Google Search Console on AnnKuoQ Blog</title><link>https://annkuoq.github.io/blog/tags/google-search-console/</link><description>Recent content in Google Search Console on AnnKuoQ Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>AnnKuoQ</copyright><lastBuildDate>Sun, 15 Mar 2020 10:50:02 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/google-search-console/index.xml" rel="self" type="application/rss+xml"/><item><title>如何讓 Google 搜尋到自己的部落格</title><link>https://annkuoq.github.io/blog/2020-03-15-how-to-find-my-blog-on-google-search/</link><pubDate>Sun, 15 Mar 2020 10:50:02 +0000</pubDate><guid>https://annkuoq.github.io/blog/2020-03-15-how-to-find-my-blog-on-google-search/</guid><description>&lt;p&gt;首先要先了解 Google 搜尋是怎麼運作的&lt;br&gt;
+其實 Google 不是搜尋整個網路&lt;br&gt;
+而是在搜尋 Google 的網頁索引 (index)&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h2 id="google-搜尋的運作方式"&gt;Google 搜尋的運作方式
+&lt;/h2&gt;&lt;p&gt;有三個步驟:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Crawling 抓取&lt;/li&gt;
+&lt;li&gt;Indexing 建立索引&lt;/li&gt;
+&lt;li&gt;Serving and Ranking 傳回搜尋結果和排名&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="1-crawling-抓取"&gt;1. Crawling 抓取
+&lt;/h3&gt;&lt;p&gt;因為網頁沒有統一登錄的地方&lt;br&gt;
+所以 Google 會透過稱為 Crawlers 的自動化程式來抓取網路上的內容&lt;br&gt;
+再將這些網頁所含的資料傳回 Google 伺服器&lt;/p&gt;
+&lt;h3 id="2-indexing-建立索引"&gt;2. Indexing 建立索引
+&lt;/h3&gt;&lt;p&gt;Google 的系統在分析網頁的內容後 (文字、圖片、影片等)&lt;br&gt;
+就會將這些資料編目到 Google 索引中&lt;br&gt;
+就像書末索引一樣&lt;br&gt;
+Google 會為網頁中的每個字詞建立條目&lt;/p&gt;
+&lt;h3 id="3-serving-and-ranking-傳回搜尋結果和排名"&gt;3. Serving and Ranking 傳回搜尋結果和排名
+&lt;/h3&gt;&lt;p&gt;因為搜尋結果太多了&lt;br&gt;
+所以 Gooogle 會用演算法排名&lt;br&gt;
+例如關鍵字出現頻率、或使用者所在位置、以前的搜尋紀錄等等&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;想更了解 Google 搜尋的運作方式 &lt;a class="link" href="https://www.google.com/intl/zh-TW/search/howsearchworks/" target="_blank" rel="noopener"
+&gt;可點我&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;現在我們知道了 Google 其實是在搜尋 index&lt;br&gt;
+所以你有兩個選擇:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;等 Google Crawlers 爬到你且建好索引的那一天&lt;/li&gt;
+&lt;li&gt;直接把網頁內容告訴 Google&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;看起來當然是直接告訴 Google 比較快～&lt;/p&gt;
+&lt;h2 id="使用-search-console"&gt;使用 Search Console
+&lt;/h2&gt;&lt;p&gt;&lt;a class="link" href="https://search.google.com/search-console/about" target="_blank" rel="noopener"
+&gt;Search Console&lt;/a&gt; 是 Google 的服務&lt;br&gt;
+我們把網站交給它之後&lt;br&gt;
+就可以搜尋到自己的部落格囉！&lt;/p&gt;
+&lt;h3 id="安裝步驟"&gt;安裝步驟
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;登入 Google 並前往 &lt;a class="link" href="https://search.google.com/search-console/about" target="_blank" rel="noopener"
+&gt;Search Console&lt;/a&gt; &amp;gt; &lt;code&gt;立即開始&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;選擇要新增的網站資源&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;網域&lt;/code&gt;: 必須進行 DNS 驗證&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;網址前置字元&lt;/code&gt;: 支援多種驗證方式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因為我是用 &lt;a class="link" href="https://pages.github.com/" target="_blank" rel="noopener"
+&gt;GitHub Pages&lt;/a&gt; 架站，並沒有買網域，所以用 &lt;code&gt;網址前置字元&lt;/code&gt;&lt;br&gt;
+接著輸入包含&lt;code&gt;通訊協定&lt;/code&gt;和&lt;code&gt;子網域&lt;/code&gt;的完整網址: &lt;code&gt;https://annkuoq.github.io/blog/&lt;/code&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;驗證我擁有這個網站&lt;br&gt;
+Google 提供了多種驗證方法:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;上傳 HTML 檔案&lt;/li&gt;
+&lt;li&gt;HTML 標記&lt;/li&gt;
+&lt;li&gt;DNS 紀錄&lt;/li&gt;
+&lt;li&gt;Google Analytics (分析) 追蹤程式碼&lt;/li&gt;
+&lt;li&gt;Google 代碼管理工具容器片段&lt;/li&gt;
+&lt;li&gt;Google 協作平台&lt;/li&gt;
+&lt;li&gt;Blogger&lt;/li&gt;
+&lt;li&gt;Google Domains&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我是用 &lt;code&gt;HTML 標記&lt;/code&gt; 的方式&lt;br&gt;
+把 &lt;code&gt;&amp;lt;meta&amp;gt; tag&lt;/code&gt; 貼到 &lt;code&gt;\themes\你的主題名稱\layout\_partia\head.ejs&lt;/code&gt;&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./verify.jpg" width="450px" /&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;儲存 &lt;code&gt;.head.ejs&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;清除快取和舊的靜態檔案&lt;/li&gt;
+&lt;li&gt;重新產生靜態檔案與部署網站&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ hexo clean
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ hexo g
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ hexo d
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;點擊 &lt;code&gt;驗證&lt;/code&gt; 鈕後就成功囉～&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div align="center"&gt;&lt;img src="./verified.jpg" width="450px" /&gt;&lt;/div&gt;
+&lt;h3 id="測試搜尋結果"&gt;測試搜尋結果
+&lt;/h3&gt;&lt;p&gt;過幾天後，搜尋 &lt;code&gt;site:https://annkuoq.github.io/blog/&lt;/code&gt;&lt;br&gt;
+看見自己的網站出現太感人了 😭&lt;/p&gt;
+&lt;h2 id="sitemap-網站地圖"&gt;Sitemap 網站地圖
+&lt;/h2&gt;&lt;p&gt;除了給 Google 網址&lt;br&gt;
+也可以提供 Sitemap (網站地圖)&lt;br&gt;
+它會列出所有頁面 URL 和 metadata&lt;br&gt;
+讓搜尋引擎更有效的完整抓取網站&lt;/p&gt;
+&lt;p&gt;標準的 XML Sitemap 範例:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;span class="lnt"&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;urlset xmlns=&amp;#34;http://www.sitemaps.org/schemas/sitemap/0.9&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;url&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;loc&amp;gt;http://www.example.com/&amp;lt;/loc&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;lastmod&amp;gt;2005-01-01&amp;lt;/lastmod&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;changefreq&amp;gt;monthly&amp;lt;/changefreq&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;priority&amp;gt;0.8&amp;lt;/priority&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;/url&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;/urlset&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;想了解上面那些 tag 的用意 &lt;a class="link" href="https://www.sitemaps.org/zh_TW/protocol.html" target="_blank" rel="noopener"
+&gt;可點我&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="如何產生-sitemap"&gt;如何產生 Sitemap
+&lt;/h3&gt;&lt;h4 id="1-線上產生器"&gt;1. 線上產生器
+&lt;/h4&gt;&lt;p&gt;網路上有很多免費 Sitemap 線上產生器&lt;br&gt;
+例如 &lt;a class="link" href="https://www.xml-sitemaps.com/" target="_blank" rel="noopener"
+&gt;XML-Sitemaps&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在根目錄的 &lt;code&gt;_config.yml &lt;/code&gt; 加上設定&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sitemap:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; path: sitemap.xml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start="2"&gt;
+&lt;li&gt;清除快取和舊的靜態檔案&lt;br&gt;
+重新產生靜態檔案與部署網站&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ hexo clean
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ hexo g
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ hexo d
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start="3"&gt;
+&lt;li&gt;到 &lt;a class="link" href="https://www.xml-sitemaps.com/" target="_blank" rel="noopener"
+&gt;XML-Sitemaps&lt;/a&gt; 輸入網址 &amp;gt; &lt;code&gt;START&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;View Sitemap Details&lt;/code&gt; &amp;gt; &lt;code&gt;Download Your XML Sitemap File&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;把 &lt;code&gt;sitemap.xml&lt;/code&gt; 上傳到根目錄 (GitHub Repo)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="2-第三方套件"&gt;2. 第三方套件
+&lt;/h4&gt;&lt;p&gt;有一個叫 &lt;a class="link" href="https://www.npmjs.com/package/hexo-generator-sitemap" target="_blank" rel="noopener"
+&gt;hexo-generator-sitemap&lt;/a&gt; 的套件&lt;br&gt;
+能讓你的 Sitemap 和靜態檔案同時產生&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;安裝套件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ npm install hexo-generator-sitemap --save
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start="2"&gt;
+&lt;li&gt;在根目錄的 &lt;code&gt;_config.yml &lt;/code&gt; 加上設定&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sitemap:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; path: sitemap.xml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start="3"&gt;
+&lt;li&gt;清除快取和舊的靜態檔案&lt;br&gt;
+產生靜態檔案和 Sitemap&lt;br&gt;
+重新部署網站&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ hexo clean
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ hexo g
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ hexo d
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="提交-sitemap"&gt;提交 Sitemap
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;前往 Search Console 主控台&lt;/li&gt;
+&lt;li&gt;點擊左側欄位中的 &lt;code&gt;Sitemap&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;輸入 &lt;code&gt;sitemap.xml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;點擊 &lt;code&gt;提交&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="新增或修改網頁內容"&gt;新增或修改網頁內容
+&lt;/h2&gt;&lt;p&gt;如果之後有新增網頁或修改內容&lt;br&gt;
+可以重新提交 Sitemap&lt;br&gt;
+或請 Search Console 重新檢索&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;點擊左側的 &lt;code&gt;網址審查&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;輸入網址&lt;/li&gt;
+&lt;li&gt;點擊 &lt;code&gt;要求建立索引&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="參考資料"&gt;參考資料
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://support.google.com/webmasters?hl=zh-Hant#topic=9128571" target="_blank" rel="noopener"
+&gt;Search Console 官方文件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://www.yesharris.com/search-console-intro/" target="_blank" rel="noopener"
+&gt;Google Search Console 初學者指南，如何使用及安裝&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://jenifers001d.github.io/2019/12/09/SEO/SEO1-Website-is-Not-Showing-in-Google-Search/" target="_blank" rel="noopener"
+&gt;為什麼搜尋 (Google) 不到我的 Hexo 部落格？&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

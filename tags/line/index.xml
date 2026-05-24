@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LINE on AnnKuoQ Blog</title><link>https://annkuoq.github.io/blog/tags/line/</link><description>Recent content in LINE on AnnKuoQ Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>AnnKuoQ</copyright><lastBuildDate>Wed, 03 Feb 2021 22:11:31 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/line/index.xml" rel="self" type="application/rss+xml"/><item><title>如何使用 LINE Notify 發通知</title><link>https://annkuoq.github.io/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</link><pubDate>Wed, 03 Feb 2021 22:11:31 +0000</pubDate><guid>https://annkuoq.github.io/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</guid><description>&lt;p&gt;最近做了一個監控的 bat&lt;br&gt;
+如果服務有發生問題就發通知提醒&lt;br&gt;
+而 LINE 是很多人都在用的通訊軟體&lt;br&gt;
+於是就把腦筋動到 LINE 上&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;LINE Notify 跟 LINE Bot 不同&lt;br&gt;
+Bot 超過額度需要收費，Notify 則是免費&lt;br&gt;
+但 Bot 有一些更進階的功能&lt;br&gt;
+像是可以利用官方帳號來推播訊息&lt;br&gt;
+不過我只是工作上使用，所以不需要用到&lt;/p&gt;
+&lt;h2 id="設定步驟"&gt;設定步驟
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;到 &lt;a class="link" href="https://notify-bot.line.me/zh_TW/" target="_blank" rel="noopener"
+&gt;https://notify-bot.line.me/zh_TW/&lt;/a&gt; 登入帳號&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;點擊右上角自己的名稱 &amp;gt; 個人頁面&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align="center"&gt;&lt;img src="./my-page.jpg" width="700px"/&gt;&lt;/div&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;點擊 &lt;code&gt;發行權杖&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;權杖名稱: 未來通知內容的 &amp;ldquo;開頭&amp;rdquo; 會出現這個名稱&lt;/li&gt;
+&lt;li&gt;選擇要接收通知的聊天室: 有兩種，只有自己、群組聊天室&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div align="center"&gt;&lt;img src="./generate-token.jpg" width="300px"/&gt;&lt;/div&gt;
+&lt;ol start="4"&gt;
+&lt;li&gt;點擊 &lt;code&gt;發行&lt;/code&gt; 之後，會顯示一串亂碼&lt;br&gt;
+先把它複製到別的地方保存&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align="center"&gt;&lt;img src="./copy-token.jpg" width="300px"/&gt;&lt;/div&gt;
+&lt;ol start="5"&gt;
+&lt;li&gt;&lt;code&gt;已連動的服務&lt;/code&gt; 出現我們剛剛設定的東西&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align="center"&gt;&lt;img src="./connected-services.jpg" width="700px"/&gt;&lt;/div&gt;
+&lt;ol start="6"&gt;
+&lt;li&gt;LINE 出現 Notify 的訊息&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;已發行個人存取權杖。連動設定完成後，請將此帳號邀請至「XX」群組中
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div align="center"&gt;&lt;img src="./successfully-generated-token.jpg" width="400px"/&gt;&lt;/div&gt;
+&lt;ol start="7"&gt;
+&lt;li&gt;
+&lt;p&gt;到要收通知的群組邀請 LINE Notify 進來&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打開命令提示字元，使用以下指令&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ curl -X POST -H &amp;#34;Authorization: Bearer XXXXXXXXXXXX&amp;#34; -F &amp;#34;message=Hello World&amp;#34; https://notify-api.line.me/api/notify
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;XXXXXXXXXXXX&lt;/code&gt; 要改成 &amp;ldquo;步驟 4&amp;rdquo; 的一串亂碼&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;message=&lt;/code&gt; 之後要接通知內文&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start="9"&gt;
+&lt;li&gt;收到通知啦~~~&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align="center"&gt;&lt;img src="./curl-post.jpg" width="400px"/&gt;&lt;/div&gt;
+&lt;h2 id="後記"&gt;後記
+&lt;/h2&gt;&lt;p&gt;原本 curl 用單引號&lt;br&gt;
+結果一直報錯&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ curl -X POST -H &amp;#39;Authorization: Bearer XXXXXXXXXXXX&amp;#39; -F &amp;#39;message=Hello World&amp;#39; https://notify-api.line.me/api/notify
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;curl: (6) Could not resolve host: Bearer
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;curl: (6) Could not resolve host: XXXXXXXXXXXX&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;{&amp;#34;status&amp;#34;:401,&amp;#34;message&amp;#34;:&amp;#34;Missing authorization header&amp;#34;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;後來改成雙引號就 OK 了&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ curl -X POST -H &amp;#34;Authorization: Bearer XXXXXXXXXXXX&amp;#34; -F &amp;#34;message=Hello World&amp;#34; https://notify-api.line.me/api/notify
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;{&amp;#34;status&amp;#34;:200,&amp;#34;message&amp;#34;:&amp;#34;ok&amp;#34;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="參考資料"&gt;參考資料
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://notify-bot.line.me/doc/en/" target="_blank" rel="noopener"
+&gt;LINE Notify API Document&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://engineering.linecorp.com/zh-hant/blog/tag/line-notify-tw/" target="_blank" rel="noopener"
+&gt;LINE Notify Tag Archives - LINE ENGINEERING&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>LINE Taiwan TechPulse 2018 開發者大會</title><link>https://annkuoq.github.io/blog/2018-12-21-line-taiwan-techpulse-2018/</link><pubDate>Fri, 21 Dec 2018 23:10:11 +0000</pubDate><guid>https://annkuoq.github.io/blog/2018-12-21-line-taiwan-techpulse-2018/</guid><description>&lt;p&gt;同事告知最近有一個 LINE 的開發者說明會&lt;br&gt;
+覺得很酷就報名了&lt;br&gt;
+&lt;del&gt;雖然不懂程式，英文也不好&lt;/del&gt;&lt;br&gt;
+結果整間公司只有我抽到門票哈哈&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h1 id="報名與報到"&gt;報名與報到
+&lt;/h1&gt;&lt;p&gt;2018/11/29&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;到 &lt;a class="link" href="https://techpulse.line.me/" target="_blank" rel="noopener"
+&gt;官網&lt;/a&gt; 點擊 &lt;code&gt;立即報名&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;用 LINE 掃描頁面上的 QR CODE 並加 &lt;code&gt; LINE TECHPULSE 2018&lt;/code&gt; 官方帳號好友&lt;/li&gt;
+&lt;li&gt;用聊天的方式填報名資料&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-register.jpg" width="300px" /&gt;&lt;/div&gt;
+&lt;p&gt;2018/12/12&lt;br&gt;
+收到報名成功通知&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-registration-successful.jpg" width="300px" /&gt;&lt;/div&gt;
+&lt;p&gt;2018/12/20&lt;br&gt;
+活動前一天，收到報到流程的說明&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-reception-agenda.jpg" width="300px" /&gt;&lt;/div&gt;
+&lt;p&gt;2018/12/21&lt;br&gt;
+活動當天&lt;br&gt;
+依照報到說明，開啟藍芽和 GPS&lt;br&gt;
+但並沒有收到報到成功的通知&lt;br&gt;
+後來⼯作⼈員直接拿⼀個 QR Code 給我掃，才出現報到成功的訊息&lt;br&gt;
+我前後也有幾個⼈也收不到推播，有點漏氣哈哈&lt;br&gt;
+但⼯作⼈員說有可能不是最新版的 LINE，的確我不是最新版的😅&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;插曲：&lt;br&gt;
+有個中年⼈問，是否有報名就可以來？⼯作⼈員回答要收到報名成功通知才可入場&lt;br&gt;
+他可能有點⽣氣，說我是公司負責⼈，你們不讓我來聽？&lt;br&gt;
+⼯作⼈員說不好意思，後來他就離開了。&lt;del&gt;((太新穎的報名⽅式可能需要適應&lt;/del&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-reception.jpg" width="500px" /&gt;&lt;/div&gt;
+&lt;p&gt;向⾨⼝的⼯作⼈員出⽰報到成功的訊息，即可進入會場～&lt;/p&gt;
+&lt;h1 id="會場佈置"&gt;會場佈置
+&lt;/h1&gt;&lt;div align="center"&gt;&lt;img src="./techpulse-event decoration-1.jpg" width="500px" /&gt;&lt;/div&gt;
+&lt;p&gt;⼀進⾨就看到⼀個⼤⼤的深藍⾊背板與⽩⾊的⼤會 LOGO&lt;br&gt;
+旁邊則有兩塊⼩積⽊，上⾯⽤點陣字型寫著&lt;br&gt;
+&lt;code&gt;THINK&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;TWICE&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;CODE&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;ONCE&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;&amp;lt;CODING IS LIFE/&amp;gt;&lt;/code&gt;&lt;br&gt;
+我猜它可能想表達程式碼就跟積⽊⼀樣!?&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-badge.jpg" width="500px" /&gt;&lt;/div&gt;
+&lt;p&gt;接著在服務台領取識別證，材質是厚紙板&lt;br&gt;
+正⾯寫個 ⼤G (GUEST)，背⾯是⼤會 LOGO&lt;br&gt;
+⼯作⼈員的吊牌則是 ⼤ S (STAFF)&lt;br&gt;
+這個設計可以在很遠的地⽅就清楚辨認⾝分&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-event decoration-2.jpg" width="500px" /&gt;&lt;/div&gt;
+&lt;p&gt;搭兩層⼿扶梯後，來到了會議室外的⼤廳&lt;br&gt;
+這裡擺設了三個互動體驗區：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;公園&lt;/li&gt;
+&lt;li&gt;⾏⼈路⼝&lt;/li&gt;
+&lt;li&gt;銀⾏⾦庫&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="互動體驗"&gt;互動體驗
+&lt;/h1&gt;&lt;h2 id="第關-公園"&gt;第⼀關: 公園
+&lt;/h2&gt;&lt;div align="center"&gt;&lt;img src="./techpulse-interactive-park-1.jpg" width="500px" /&gt;&lt;/div&gt;
+&lt;p&gt;它是⼀個兩⼈對戰的互動遊戲&lt;br&gt;
+先掃螢幕上的 QR Code 後，就會導⾄遊戲畫⾯&lt;br&gt;
+等兩個⼈的頭貼都出現在螢幕上，就可以開始遊戲&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-jungle-pang-battle.jpg" width="250px" /&gt;&lt;/div&gt;
+&lt;p&gt;進入遊戲後，⼿機上會有兩個⾓⾊的按鈕&lt;br&gt;
+螢幕出現什麼⾓⾊，就點擊⼿機上相對應的⾓⾊，時間內分數⾼的就贏囉&lt;br&gt;
+(可應⽤在牆上的電⼦互動廣告)&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-interactive-park-4.jpg" width="220px" /&gt;&lt;/div&gt;
+&lt;p&gt;我輸得很慘哈哈&amp;hellip;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;插曲：&lt;br&gt;
+跟我比賽的路⼈&lt;br&gt;
+⽤⼿機內建的掃描器掃 QR Code，都掃不進去&lt;br&gt;
+最後用 LINE 的掃描器才成功&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-interactive-park-5.jpg" width="250px" /&gt;&lt;/div&gt;
+&lt;p&gt;完成第⼀關之後，⼯作⼈員會給⼀個 QR Code&lt;br&gt;
+掃完就獲得⼀個徽章，以及該技術資訊的推播訊息&lt;br&gt;
+這個技術叫 LIFF，就是把 Web 的功能塞進 LINE APP 裡面&lt;/p&gt;
+&lt;h2 id="第二關-路"&gt;第二關: ⾏⼈路⼝
+&lt;/h2&gt;&lt;div align="center"&gt;&lt;img src="./techpulse-interactive-intersection-1.jpg" width="500px" /&gt;&lt;/div&gt;
+&lt;p&gt;它是⼀個有關物聯網的遊戲&lt;br&gt;
+只要點擊 LINE 的按鈕&lt;br&gt;
+就可以控制路⼝的號誌燈 (⼩紅⼈變⼩綠⼈)&lt;/p&gt;
+&lt;p&gt;也就是透過 LIFF 選單來啟動 LINE THINGS，無需撰寫任何藍牙 APP&lt;br&gt;
+僅透過樹莓派連接燈號裝置，再由 LIFF 的 Web 藍牙傳送資料來控制號誌燈&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-interactive-intersection-2.jpg" width="250px" /&gt;&lt;/div&gt;
+&lt;p&gt;獲得第⼆個徽章，同時收到該技術資訊的推播訊息&lt;br&gt;
+LIFF = 把 Web 功能塞進 LINE&lt;br&gt;
+Line Things = 物聯網平台技術&lt;/p&gt;
+&lt;h2 id="第三關-銀庫"&gt;第三關: 銀⾏⾦庫
+&lt;/h2&gt;&lt;div align="center"&gt;&lt;img src="./techpulse-interactive-safebox-1.jpg" width="450px" /&gt;&lt;/div&gt;
+&lt;p&gt;它跟第⼆關⼀樣是物聯網的遊戲&lt;br&gt;
+在 LINE 上輸入正確的密碼後&lt;br&gt;
+⾦庫的電磁鎖就可打開，不⽤使⽤實體按鍵&lt;/p&gt;
+&lt;p&gt;也就是先用 LIFF 呈現解鎖介面，再透過 LINE THINGS 操控 IOT 金庫設備&lt;br&gt;
+由 LIFF 直接傳送資料，控制連接樹莓派的繼電器&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-interactive-safebox-2.jpg" width="300px" /&gt;&lt;/div&gt;
+&lt;p&gt;⾦庫的⾨打開後，裡⾯有很多⼩徽章&lt;br&gt;
+可以拿⼀個當作紀念品&lt;br&gt;
+手機也獲得第三個徽章囉&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;插曲：&lt;br&gt;
+因為這些服務都仰賴於網路，據說現場將近有⼀千⼈ (|||ﾟдﾟ)ﾉ&lt;br&gt;
+⼤家都同時上網的結果就是跑不動，所以在第三關卡了⼀陣⼦&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-interactive-coupon-1.jpg" width="250px" /&gt;&lt;/div&gt;
+&lt;p&gt;手機集滿三個徽章後，就收到 Conpon 推播&lt;br&gt;
+到服務台請⼯作⼈員點擊 &lt;code&gt;兌換&lt;/code&gt; 按鈕&lt;br&gt;
+這張 Coupon 就失效囉&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-interactive-coupon-2.jpg" width="500px" /&gt;&lt;/div&gt;
+&lt;p&gt;居然是無線充電器!!!&lt;br&gt;
+太高級了ㄅ&lt;/p&gt;
+&lt;h1 id="演講主題與內容"&gt;演講主題與內容
+&lt;/h1&gt;&lt;h2 id="議程表"&gt;議程表
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;主題&lt;/th&gt;
+&lt;th&gt;講者&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;LINE 的技術策略佈局與跨國產品開發&lt;/td&gt;
+&lt;td&gt;Marco Chen&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LINE Platform API Update - 打造⼀個更好的Chatbot服務&lt;/td&gt;
+&lt;td&gt;Yvonne Wang&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LINE Pay - ⼀卡通⽀付新體驗&lt;/td&gt;
+&lt;td&gt;Bill Chan&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LINE Smart Portal應⽤ - 臺北市政府致⼒提供更完善的便⺠體驗&lt;/td&gt;
+&lt;td&gt;市政府資訊局局⻑ 李維斌&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LINE Things - LINE IoT平台新技術分享&lt;/td&gt;
+&lt;td&gt;Kevin Luo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LINE 區塊鏈平台及代幣經濟 - LINK Chain及LINK介紹 (英文演講)&lt;/td&gt;
+&lt;td&gt;Jinhee Lee&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LINE Smart Portal應⽤ - ⾏動化防災資訊的應⽤&lt;/td&gt;
+&lt;td&gt;國家災害防救科技中⼼ 陳宏宇 主任&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LINE TODAY⾼效率的敏捷測試開發技巧&lt;/td&gt;
+&lt;td&gt;Kuan-Wei Lin&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;在 LINE 私有雲中使⽤ Managed Kubernetes (英文演講)&lt;/td&gt;
+&lt;td&gt;Nishiwaki Yuki&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LINE Chatbot - 活動報名報到設計分享&lt;/td&gt;
+&lt;td&gt;Sean Huang&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;⽇本開發者⼤會短講分享&lt;/td&gt;
+&lt;td&gt;Daniel Kao / Irene Chen / Ting-Ting Hu&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LINE 新星計劃介紹與新創團隊分享&lt;/td&gt;
+&lt;td&gt;Yeats Yang&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LINE 開發者社群經營與技術推廣&lt;/td&gt;
+&lt;td&gt;Evan Lin&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LINE 技術合作夥伴與應⽤分享&lt;/td&gt;
+&lt;td&gt;Kay Chang&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="開場"&gt;開場
+&lt;/h2&gt;&lt;div align="center"&gt;&lt;img src="./techpulse-event decoration-3.jpg" width="500px" /&gt;&lt;/div&gt;
+&lt;p&gt;會議廳有三個投影布幕&lt;br&gt;
+前排座位附有桌⼦，後排則只有椅⼦&lt;br&gt;
+最後⾯有⼀個放攝影機的⾼檯，以及⼀些看起來很像⾳控的⼈員&lt;/p&gt;
+&lt;p&gt;主持⼈開場&lt;br&gt;
+說明這次⼤會主題為「串連」，包含 &lt;code&gt;⼈與⼈&lt;/code&gt; &amp;amp; &lt;code&gt;⼈與資訊&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="chatbot-機器人"&gt;ChatBot 機器人
+&lt;/h2&gt;&lt;p&gt;不只是聊天機器⼈，還能購物、訂餐、叫⾞等&lt;/p&gt;
+&lt;h3 id="1-購物"&gt;1. 購物
+&lt;/h3&gt;&lt;div align="center"&gt;&lt;img src="./techpulse-chatbot-flex-message.jpg" width="350px" /&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Flex message 訊息優化&lt;br&gt;
+可結合圖片、按鈕、表格等元素來客製化訊息版⾯&lt;br&gt;
+除了文字也可傳送影⾳訊息 ( Video Image Map )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-chatbot-quick-reply.jpg" width="350px" /&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Quick reply 快速回覆&lt;br&gt;
+使⽤者只需點擊按鈕即可回應訊息&lt;br&gt;
+避免⽤⼾輸入錯誤的資料&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-shopping-1.jpg" width="550px" /&gt;&lt;/div&gt;
+&lt;p&gt;購買的流程&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Rich Menu (下⽅功能選單) &amp;gt; 選擇服務&lt;/li&gt;
+&lt;li&gt;Image Map (影像地圖) &amp;gt; 點擊不同區域會發⽣的⾏為&lt;/li&gt;
+&lt;li&gt;Flex message (優化訊息) &amp;gt; 橫式導覽列呈現&lt;/li&gt;
+&lt;li&gt;LIFF (內置 WebView) &amp;gt; 把 Web 的商品資訊放進來&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-shopping-2.jpg" width="550px" /&gt;&lt;/div&gt;
+&lt;ol start="5"&gt;
+&lt;li&gt;LIFF 把 Web 的商品列出來&lt;/li&gt;
+&lt;li&gt;LINE Pay 付款&lt;/li&gt;
+&lt;li&gt;Flex message 優化訂單訊息&lt;/li&gt;
+&lt;li&gt;LIFF 把 Web 的訂單呈現&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;這就是完整的 Chatbot 服務&lt;br&gt;
+⽤ Line 登入各種應⽤程式、結合各種 API&lt;br&gt;
+讓你不⽤離開聊天室也能完成所有事情&lt;/p&gt;
+&lt;h3 id="2-辦活動"&gt;2. 辦活動
+&lt;/h3&gt;&lt;div align="center"&gt;&lt;img src="./techpulse-add-friend.jpg" width="400px" /&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;報名&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;在 Web 放上 QR Code&lt;/li&gt;
+&lt;li&gt;掃描後導⾄ Line 並加好友&lt;/li&gt;
+&lt;li&gt;點擊 Rich menu 的報名按鈕&lt;/li&gt;
+&lt;li&gt;⽤ LIFF 顯⽰報名單&lt;/li&gt;
+&lt;li&gt;完成後⽤ Flex message 優化報名資料&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-reception-2.jpg" width="350px" /&gt;&lt;/div&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;報到&lt;br&gt;
+⽤ Beacon 與 藍芽 收推播，或掃描 QR Code&lt;br&gt;
+還沒踏進⼤⾨就報到好了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align="center"&gt;
+&lt;img src="./techpulse-event-survey.jpg" width="210"/&gt;
+&lt;/div&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;事件活動推播&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;即時訊息 (提醒休息時間)&lt;/li&gt;
+&lt;li&gt;互動遊戲 (Jungle Pang Battle)&lt;/li&gt;
+&lt;li&gt;問卷 (沒有筆沒關係)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;技術&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;利⽤ LIFF 把所有服務整合在聊天室&lt;/li&gt;
+&lt;li&gt;⽤ Beacon 藍牙發推播&lt;/li&gt;
+&lt;li&gt;⽤不同的 Message Type 優化資訊外觀&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="3-融業"&gt;3. ⾦融業
+&lt;/h3&gt;&lt;div align="center"&gt;&lt;img src="./techpulse-ctbcbank-1.jpg" width="280px" /&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;Rich Menu&lt;br&gt;
+即時個⼈化查詢，不同⾝份顯示不同選單&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;薪資入帳通知&lt;/li&gt;
+&lt;li&gt;詢問優惠客服&lt;/li&gt;
+&lt;li&gt;參加活動報名&lt;/li&gt;
+&lt;li&gt;刷卡消費通知&lt;/li&gt;
+&lt;li&gt;繳費通知提醒&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-ctbcbank-2.jpg" width="450px" /&gt;&lt;/div&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;Call to Line&lt;br&gt;
+節省簡訊成本、舒緩客服電話量&lt;br&gt;
+若客服忙線中，能透過 LINE 的聊天機器⼈，線上進⾏解答&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-switcher-api.jpg" width="450px" /&gt;&lt;/div&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;Switcher API&lt;br&gt;
+⼀開始先⽤機器⼈客服，機器⼈無法解決就通知真⼈&lt;br&gt;
+訊息格式可以⽤文字或語⾳，完全不⽤離開聊天室&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="mobile-payment-行動支付"&gt;Mobile Payment 行動支付
+&lt;/h2&gt;&lt;h3 id="1-line-pay"&gt;1. Line Pay
+&lt;/h3&gt;&lt;div align="center"&gt;&lt;img src="./techpulse-line-pay.jpg" width="500px" /&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Line Pay ⼀卡通 (iPASS)&lt;/li&gt;
+&lt;li&gt;轉帳 - 免⼿續費&lt;/li&gt;
+&lt;li&gt;儲值 - 銀⾏、虛擬 ATM、⾃動儲值&lt;/li&gt;
+&lt;li&gt;提領 - 全台銀⾏皆可&lt;/li&gt;
+&lt;li&gt;分攤付款 - 唱 KTV&lt;/li&gt;
+&lt;li&gt;邀請轉帳 - 討債&lt;/li&gt;
+&lt;li&gt;繳費 (停⾞費) - 店員掃描條碼即可繳費，還可綁定⾞號，⼀卡通會發推播通知繳費&lt;/li&gt;
+&lt;li&gt;坐⾼捷 - 前提是閘⾨要有 QR Code 掃碼器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="2-line-wallet"&gt;2. Line Wallet
+&lt;/h3&gt;&lt;div align="center"&gt;&lt;img src="./techpulse-line-wallet.jpg" width="500px" /&gt;&lt;/div&gt;
+&lt;p&gt;⾦流入⼝&lt;br&gt;
+把其他⾴⾯改版成「錢包」&lt;br&gt;
+錢包可做到的事情都放在這個⾴⾯&lt;/p&gt;
+&lt;h2 id="iot-物聯網"&gt;IOT 物聯網
+&lt;/h2&gt;&lt;h3 id="1-line-beacon"&gt;1. LINE Beacon
+&lt;/h3&gt;&lt;p&gt;Beacon 是⼀個藍牙發射裝置&lt;br&gt;
+只要⾛到 LINE Beacon 的發送範圍，就可收到推播&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-line-beacon.jpg" width="500px" /&gt;&lt;/div&gt;
+&lt;p&gt;現在台北捷運共有兩百顆 Beacon 站點&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Coupon 優惠: 收到附近商家的特價資訊&lt;/li&gt;
+&lt;li&gt;Puzzle Game 拼圖遊戲: 到特定站點的進出⼝閘⾨，可得點數或貼圖&lt;/li&gt;
+&lt;li&gt;Bus Info: 收到附近公⾞資訊推播&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="2-line-things"&gt;2. LINE Things
+&lt;/h3&gt;&lt;p&gt;透過 LINE 來連接支援 Bluetooth 的設備&lt;/p&gt;
+&lt;p&gt;⺠眾痛點：⼀個家具⼀個 APP，要⼀直切換&lt;br&gt;
+⼯程師痛點：要寫⼀個完整的 APP，煩惱不同的通訊協定&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-line-things.jpg" width="500px" /&gt;&lt;/div&gt;
+&lt;p&gt;改變&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在⼀個平台管理所有物聯網裝置&lt;/li&gt;
+&lt;li&gt;使⽤ BLE 協定&lt;/li&gt;
+&lt;li&gt;可以雙向溝通&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;案例⼀&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;當家中的⾨被打開，LINE 將發推播通知你&lt;br&gt;
+且可傳送監視器影片給你&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;案例⼆&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;掃描 QR Code，找到體重計裝置，並且配對藍牙&lt;br&gt;
+站上體重計後，LINE 將發推播體重數字給你&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="政府機關的便民服務"&gt;政府機關的便民服務
+&lt;/h2&gt;&lt;h3 id="1-台北市政府"&gt;1. 台北市政府
+&lt;/h3&gt;&lt;p&gt;打破公部⾨流程，沒有採購、也沒有教育訓練&lt;br&gt;
+只有規定辦法，限制何種層級的的事情不能放上 LINE&lt;/p&gt;
+&lt;p&gt;原本是把 LINE 當成訊息通知平台，也就是⼤聲公&lt;br&gt;
+但因為局處很多，訊息⼀天就上百則，於是很多⼈取消好友 QQ&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-taipei-1.jpg" width="500px" /&gt;&lt;/div&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-taipei-4.jpg" width="250px" /&gt;&lt;/div&gt;
+&lt;p&gt;⺠眾痛點&lt;br&gt;
+看不懂、⽤不到、沒跟到、查不到&lt;/p&gt;
+&lt;p&gt;改變&lt;br&gt;
+把業務分類改成服務分類，提供個⼈化訊息 (訂閱)&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-taipei-2.jpg" width="500px" /&gt;&lt;/div&gt;
+&lt;p&gt;如何訓練客服機器⼈？&lt;br&gt;
+把幾百份的 Q&amp;amp;A 轉換為幾千種的問法&lt;br&gt;
+因為不同年紀的⼈問法不同&lt;/p&gt;
+&lt;p&gt;局長的期望&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;希望 LINE 未來能增加管理者權限，可控管誰能加/退群組，也希望有加密通訊&lt;/li&gt;
+&lt;li&gt;歡迎⼤家使⽤政府的資訊加到你的 APP&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="2-國家災防中"&gt;2. 國家災防中⼼
+&lt;/h3&gt;&lt;div align="center"&gt;&lt;img src="./techpulse-ncdr.jpg" width="250px" /&gt;&lt;/div&gt;
+&lt;p&gt;即時通報&lt;br&gt;
+哪裡淹⽔、寒流溫度、地震、⽔庫放流、停班停課&lt;/p&gt;
+&lt;p&gt;點擊 Rich Menu 的&lt;code&gt;訂閱⽰警&lt;/code&gt;&lt;br&gt;
+開啟 WebView，點選要訂閱的&lt;code&gt;地區&lt;/code&gt;和&lt;code&gt;⽰警類型&lt;/code&gt;即可&lt;/p&gt;
+&lt;p&gt;災情回報&lt;br&gt;
+當有重⼤災情時，Rich Menu 會多⼀個&lt;code&gt;災情回報&lt;/code&gt;按鈕&lt;br&gt;
+你可以⽤文字或影片訊息來回報，它會⾃動帶入 GPS 和時間&lt;/p&gt;
+&lt;h2 id="agile-testing-敏捷測試"&gt;Agile Testing 敏捷測試
+&lt;/h2&gt;&lt;p&gt;品質控管是所有⼈員責任，不是只有 QA&lt;/p&gt;
+&lt;p&gt;問題&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;測試時間不夠&lt;/li&gt;
+&lt;li&gt;修 bug 要很多時間&lt;/li&gt;
+&lt;li&gt;修好⼜要重複的測，⽽且相關的功能都要測&lt;/li&gt;
+&lt;li&gt;QA 像拿到⼀個⿊盒⼦，不知改了哪裡&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;改變&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;QA 要看 Code 改了什麼 (平常就要監控)&lt;/li&gt;
+&lt;li&gt;瞭解整體架構，決定重點測試項⽬，避免重復測試&lt;/li&gt;
+&lt;li&gt;團隊互相幫忙&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-qa-1.jpg" width="500px" /&gt;&lt;/div&gt;
+&lt;p&gt;流程&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;開發⼈員寫完 Code&lt;/li&gt;
+&lt;li&gt;⽤ Github 指派⼈Code review (不得超過兩百⾏)&lt;/li&gt;
+&lt;li&gt;每個 Task 完成後都進行驗證 (測試是在開發當中要做的事，不是等最後才測試)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-qa-2.jpg" width="500px" /&gt;&lt;/div&gt;
+&lt;p&gt;總結&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Control Change Scope 監控變更的範圍&lt;/li&gt;
+&lt;li&gt;Keep Testing 持續測試&lt;/li&gt;
+&lt;li&gt;DevOps 開發和維運團隊整合&lt;/li&gt;
+&lt;li&gt;Work Closely with Developers 與開發人員緊密合作&lt;/li&gt;
+&lt;li&gt;Less Repetitive Work &amp;amp; More Agilie 減少重複工作，更敏捷&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="line-新創團隊"&gt;LINE 新創團隊
+&lt;/h2&gt;&lt;h3 id="官帳號-20-計畫"&gt;官⽅帳號 2.0 計畫
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;不必經過審核就能申請&lt;/li&gt;
+&lt;li&gt;採⽤「以量計費」模式&lt;/li&gt;
+&lt;li&gt;可使⽤ Messaging API&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="line-protostar-新星計畫"&gt;LINE Protostar 新星計畫
+&lt;/h3&gt;&lt;p&gt;提供新創團隊協助 (⾏銷.稅務.法律.創投.募資等)&lt;/p&gt;
+&lt;p&gt;資源&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;無上限好友的官⽅帳號 (LINE Business Connect)&lt;/li&gt;
+&lt;li&gt;開源 API 與 SDK&lt;/li&gt;
+&lt;li&gt;外有 中華開發創新加速器 專業經理⼈，內有 LINE 有定期商務會議與技術會議&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;資⾦&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可被 LINE 直接投資，或變你的股東&lt;/li&gt;
+&lt;li&gt;可便宜續約新星計畫&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="案例---潔客幫"&gt;案例⼀ - 潔客幫
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;家政服務平台&lt;br&gt;
+公開清潔⼈員評價，員⼯透過五星評價來加薪&lt;br&gt;
+Chatbot 24⼩時線上預約，Line Pay 線上付款&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="案例---跑跑腿"&gt;案例⼆ - 跑跑腿
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;即時⼈⼒媒合服務&lt;br&gt;
+輸入地址、填寫要做什麼事情、選擇任務執⾏時間&lt;br&gt;
+幫你買交換聖誕禮物送朋友、取貨、遛狗、繳費、買票、代辦都可以&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="開發者社群"&gt;開發者社群
+&lt;/h2&gt;&lt;p&gt;因為語⾔、平台、遇到的情境的不同&lt;br&gt;
+⼯程師常找不到⼈討論，&lt;strong&gt;分享是義務！&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;網路社群&lt;br&gt;
+&lt;a class="link" href="https://engineering.linecorp.com/zh-hant/" target="_blank" rel="noopener"
+&gt;Line Engineering&lt;/a&gt; (是中文!)&lt;br&gt;
+&lt;a class="link" href="https://timeline.line.me/user/_dYQBNAPN9aA7q-CiVoPp20DyysbWl9y4f0JYMIg" target="_blank" rel="noopener"
+&gt;LINE 開發者官⽅社群&lt;/a&gt; (LINE 開發社群活動及職缺訊息)&lt;br&gt;
+&lt;a class="link" href="https://www.facebook.com/groups/linebot/" target="_blank" rel="noopener"
+&gt;LINE Developers Group Taiwan&lt;/a&gt; (臉書社團)&lt;br&gt;
+&lt;a class="link" href="https://www.line-community.me/questions" target="_blank" rel="noopener"
+&gt;LINE Developer Community&lt;/a&gt; (LINE API Expert 專家給你問)&lt;br&gt;
+&lt;a class="link" href="https://developers.line.biz/en/" target="_blank" rel="noopener"
+&gt;Line developer website&lt;/a&gt; (文件)&lt;br&gt;
+&lt;a class="link" href="https://github.com/line" target="_blank" rel="noopener"
+&gt;Line GitHub&lt;/a&gt; (開源碼)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;聚會&lt;br&gt;
+LINE Developer Meetup (開發者⼩聚)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;比賽&lt;br&gt;
+HACK 2018 (奪冠隊伍將以台灣代表隊⾝分參加 BOOT AWARDS)&lt;br&gt;
+LINE BOOT AWARDS (跨國開發者⼤賽)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;講座&lt;br&gt;
+Campus Talk (校園講座)&lt;br&gt;
+TechPulse (台灣開發者⼤會)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="後記"&gt;後記
+&lt;/h2&gt;&lt;p&gt;&lt;del&gt;間諜開發者不懂開發，只是來體驗大會的氛圍&lt;/del&gt; 😎&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-ppt.jpg" width="550px" /&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;簡報設計&lt;br&gt;
+LINE 團隊的簡報超美&lt;br&gt;
+風格⼀致都是⿊底，在會場效果非常的好&lt;br&gt;
+也不會有字太⼩，或訊息過多的問題&lt;br&gt;
+⽽外⾯公司或公部⾨幾乎是⽤⽩底，字體就是預設那種 (((ﾟдﾟ)))&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-food-2.jpg" width="350px" /&gt;&lt;/div&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;餐點&lt;br&gt;
+早上是飲料餅乾區，中午變麵包區&lt;br&gt;
+超多人排隊的，我是跑去吃便利商店的麥片飲和茶葉蛋哈哈&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-event-survey-2.jpg" width="700px" /&gt;&lt;/div&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;問卷調查&lt;br&gt;
+活動結束之後的問卷調查&lt;br&gt;
+我想它應該把各種功能都擺上來了!?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-freebie-1.jpg" width="350px" /&gt;&lt;/div&gt;
+&lt;ol start="4"&gt;
+&lt;li&gt;參加禮&lt;br&gt;
+送出問卷後，收到了 Coupon 推播&lt;br&gt;
+帶著⼿機去找服務台，即可領取參加禮~&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align="center"&gt;&lt;img src="./techpulse-freebie-2.jpg" width="500px" /&gt;&lt;/div&gt;
+&lt;p&gt;戰利品如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;紙袋&lt;/li&gt;
+&lt;li&gt;識別證&lt;/li&gt;
+&lt;li&gt;無線充電器&lt;/li&gt;
+&lt;li&gt;紀念 T-Shirt&lt;/li&gt;
+&lt;li&gt;⼤會 LOGO 的⼩徽章&lt;/li&gt;
+&lt;li&gt;熊⼤穿著豬裝的⾏李吊牌&lt;/li&gt;
+&lt;li&gt;⼀包 Line Friends ⾓⾊貼紙&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="參考資料"&gt;參考資料
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://www.slideshare.net/linecorp/presentations" target="_blank" rel="noopener"
+&gt;LINE TechPulse 2018 簡報檔&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://linecorp.com/zh-hant/pr/news/zh-hant/2018/2557" target="_blank" rel="noopener"
+&gt;LINE 釋出平台資源 積極打造互惠⽣態圈&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://linecorp.com/zh-hant/pr/news/zh-hant/2018/2556" target="_blank" rel="noopener"
+&gt;LINE 向台灣開發者招⼿ 釋出全新職缺&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

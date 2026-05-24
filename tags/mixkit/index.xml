@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mixkit on AnnKuoQ Blog</title><link>https://annkuoq.github.io/blog/tags/mixkit/</link><description>Recent content in Mixkit on AnnKuoQ Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>AnnKuoQ</copyright><lastBuildDate>Sun, 25 Oct 2020 16:46:42 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/mixkit/index.xml" rel="self" type="application/rss+xml"/><item><title>一樣的 Bitrate，解析度高的畫質會比較好嗎？</title><link>https://annkuoq.github.io/blog/2020-10-25-bitrate-vs-resolution/</link><pubDate>Sun, 25 Oct 2020 16:46:42 +0000</pubDate><guid>https://annkuoq.github.io/blog/2020-10-25-bitrate-vs-resolution/</guid><description>&lt;p&gt;某天同事問說 iMovie 怎麼輸出&lt;br&gt;
+我說: 除了設解析度，還有 Bitrate&lt;br&gt;
+同事問 Bitrate 是什麼？&lt;br&gt;
+我說: 就是資料流，每秒的資料量&lt;br&gt;
+通常越大，畫質越好，但檔案越大&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;後來回到自己的位置上&lt;br&gt;
+突然覺得很好奇&lt;br&gt;
+我知道 Bitrate 越大，畫質越好&lt;br&gt;
+但是解析度越大，就代表畫質越好嗎？&lt;/p&gt;
+&lt;p&gt;解析度、Bitrate、畫質它們三者的關係是什麼呢？&lt;br&gt;
+誰是影響畫質的最大因素呢？&lt;/p&gt;
+&lt;p&gt;於是決定做個實驗&lt;br&gt;
+看看同樣 Bitrate，不同解析度的畫質誰比較好&lt;/p&gt;
+&lt;h2 id="測試方法"&gt;測試方法
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;使用 &lt;a class="link" href="https://mixkit.co/free-stock-video/man-plays-an-accordion-in-front-of-a-fountain-and-631/" target="_blank" rel="noopener"
+&gt;Mixkit&lt;/a&gt; 的影片素材&lt;/li&gt;
+&lt;li&gt;使用 &lt;a class="link" href="https://ffmpeg.org/" target="_blank" rel="noopener"
+&gt;FFmpeg&lt;/a&gt; 轉出四個檔案
+&lt;ul&gt;
+&lt;li&gt;1080p 4 Mbps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ffmpeg -i input.mp4 -s 1920x1080 -c:v libx264 -x264-params &amp;#34;nal-hrd=cbr:force-cfr=1&amp;#34; -b:v 4M -minrate 4M -maxrate 4M -bufsize 8M 1080p4M.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;1080p 1 Mbps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ffmpeg -i input.mp4 -s 1920x1080 -c:v libx264 -x264-params &amp;#34;nal-hrd=cbr:force-cfr=1&amp;#34; -b:v 1M -minrate 1M -maxrate 1M -bufsize 2M 1080p1M.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;480p 4 Mbps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ffmpeg -i input.mp4 -s 854x480 -c:v libx264 -x264-params &amp;#34;nal-hrd=cbr:force-cfr=1&amp;#34; -b:v 4M -minrate 4M -maxrate 4M -bufsize 8M 480p4M.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;480p 1 Mbps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ffmpeg -i input.mp4 -s 854x480 -c:v libx264 -x264-params &amp;#34;nal-hrd=cbr:force-cfr=1&amp;#34; -b:v 1M -minrate 1M -maxrate 1M -bufsize 2M 480p1M.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="測試結果"&gt;測試結果
+&lt;/h2&gt;&lt;h3 id="畫質比較"&gt;畫質比較
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1080p4M&lt;/code&gt; &amp;gt; &lt;code&gt;480p4M&lt;/code&gt; &amp;gt; &lt;code&gt;480p1M&lt;/code&gt; &amp;gt; &lt;code&gt;1080p1M&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="大小比較"&gt;大小比較
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1080p4M&lt;/code&gt; = &lt;code&gt;480p4M&lt;/code&gt; &amp;gt; &lt;code&gt;1080p1M&lt;/code&gt; = &lt;code&gt;480p1M&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="截圖比較"&gt;截圖比較
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://annkuoq.github.io/blog/2020-10-25-bitrate-vs-resolution/compare.jpg" target="_blank" rel="noopener"
+&gt;點我看大圖&lt;/a&gt; 👈&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div align="center"&gt;&lt;img src="./compare.jpg" width="700px"/&gt;&lt;/div&gt;
+&lt;h3 id="完整截圖-依畫質排序"&gt;完整截圖 (依畫質排序)
+&lt;/h3&gt;&lt;div align="center"&gt;&lt;img src="./1080p4m.jpg" width="700px"/&gt;&lt;/div&gt;
+&lt;div align="center"&gt;&lt;img src="./480p4m.jpg" width="700px"/&gt;&lt;/div&gt;
+&lt;div align="center"&gt;&lt;img src="./480p1m.jpg" width="700px"/&gt;&lt;/div&gt;
+&lt;div align="center"&gt;&lt;img src="./1080p1m.jpg" width="700px"/&gt;&lt;/div&gt;
+&lt;p&gt;因為 1080p 要記錄的像素比 480p 還要多，所以需要更多 Bitrate&lt;br&gt;
+雖然兩者檔案大小一樣，但 480p 畫質比較好&lt;/p&gt;
+&lt;p&gt;這讓我想起「一碗麵的故事」&lt;br&gt;
+一個人吃一碗麵剛剛好&lt;br&gt;
+三個人吃一碗麵會餓&lt;br&gt;
+雖然有很多人 (像素)，但只吃一碗麵 (Bitrate)&lt;br&gt;
+結果每個人都營養不良 (畫質不良)&lt;/p&gt;
+&lt;p&gt;所以或許反過來想&lt;br&gt;
+你應該依照可以提供的 Bitrate 來決定解析度&lt;br&gt;
+要是你只能提供 5 Mbps&lt;br&gt;
+解析度卻給到 4K&lt;br&gt;
+那也觀賞馬賽克了 QQ&lt;/p&gt;
+&lt;h2 id="結論"&gt;結論
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;同 Bitrate，解析度越大 -&amp;gt; 畫質越差&lt;/li&gt;
+&lt;li&gt;同解析度，Bitrate 越大 -&amp;gt; 畫質越好&lt;br&gt;
+(但 Bitrate 大到一定的階段，畫質也不會一直無限好上去)&lt;/li&gt;
+&lt;li&gt;一樣的 Bitrate，不論解析度多大，檔案大小都一樣&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="參考資料"&gt;參考資料
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://mixkit.co/" target="_blank" rel="noopener"
+&gt;Mixkit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://ffmpeg.org/" target="_blank" rel="noopener"
+&gt;FFmpeg&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://www.ptt.cc/man/AVEncode/DA31/M.1320786495.A.B02.html" target="_blank" rel="noopener"
+&gt;同片源1080p與720p同流量下的畫質 - 精華區 AVEncode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://forum.videohelp.com/threads/395300-For-same-bitrate-which-looks-better-between-720p-and-1080p" target="_blank" rel="noopener"
+&gt;For same bitrate which looks better between 720p and 1080p - VideoHelp Forum&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

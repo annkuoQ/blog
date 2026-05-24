@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Utterances on AnnKuoQ Blog</title><link>https://annkuoq.github.io/blog/tags/utterances/</link><description>Recent content in Utterances on AnnKuoQ Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>AnnKuoQ</copyright><lastBuildDate>Mon, 09 Mar 2020 22:14:53 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/utterances/index.xml" rel="self" type="application/rss+xml"/><item><title>在 Hexo 安裝 utterances 留言版</title><link>https://annkuoq.github.io/blog/2020-03-09-add-utterances-comment-widget-to-hexo/</link><pubDate>Mon, 09 Mar 2020 22:14:53 +0000</pubDate><guid>https://annkuoq.github.io/blog/2020-03-09-add-utterances-comment-widget-to-hexo/</guid><description>&lt;p&gt;為什麼要用 utterances？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;因為沒有廣告&lt;/li&gt;
+&lt;li&gt;因為不會追蹤用戶隱私&lt;/li&gt;
+&lt;li&gt;因為不用再申請一個帳號 (部落格本來就架在 GitHub 上)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- more --&gt;
+&lt;h2 id="安裝步驟"&gt;安裝步驟
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;在 GitHub 創建一個 Public Repository&lt;/li&gt;
+&lt;li&gt;安裝 &lt;a class="link" href="https://github.com/apps/utterances" target="_blank" rel="noopener"
+&gt;utterances app&lt;/a&gt; &amp;gt; &lt;code&gt;Only select repositories&lt;/code&gt; &amp;gt; 選剛剛創建的 repo &amp;gt; &lt;code&gt;Install&lt;/code&gt;&lt;br&gt;
+utterances APP 要求存取的權限有:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;No access to code&lt;/li&gt;
+&lt;li&gt;Read access to metadata&lt;/li&gt;
+&lt;li&gt;Read and write access to issues&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div align="center"&gt;&lt;img src="./permissions.jpg" width="400px" /&gt;&lt;/div&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;輸入 &lt;code&gt;owner/repo&lt;/code&gt;，就是要放留言的倉庫&lt;/li&gt;
+&lt;li&gt;設定 issue 標題怎麼開，有以下幾種選擇:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Issue title contains page pathname&lt;/li&gt;
+&lt;li&gt;Issue title contains page URL&lt;/li&gt;
+&lt;li&gt;Issue title contains page title&lt;/li&gt;
+&lt;li&gt;Issue title contains page og:title&lt;/li&gt;
+&lt;li&gt;Specific issue number&lt;/li&gt;
+&lt;li&gt;Issue title contains specific term&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start="5"&gt;
+&lt;li&gt;選擇主題樣式，有以下幾種選擇:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub Light&lt;/li&gt;
+&lt;li&gt;GitHub Dark&lt;/li&gt;
+&lt;li&gt;GitHub Dark Orange&lt;/li&gt;
+&lt;li&gt;Icy Dark&lt;/li&gt;
+&lt;li&gt;Dark Blue&lt;/li&gt;
+&lt;li&gt;Photon Dark&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start="6"&gt;
+&lt;li&gt;複製自動產生的程式碼到 &lt;code&gt;\themes\你的主題名稱\layout\_partia\article.ejs&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;div&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;section id=&amp;#34;comments&amp;#34; class=&amp;#34;comments&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;style&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; .utterances{max-width: 100%;}
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;/style&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;script src=&amp;#34;https://utteranc.es/client.js&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; repo=&amp;#34;annkuoQ/blog-utterances&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; issue-term=&amp;#34;title&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; theme=&amp;#34;github-dark&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; crossorigin=&amp;#34;anonymous&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; async&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;/script&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;/section&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;/div&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="測試留言"&gt;測試留言
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;點擊留言版的 &lt;code&gt;Sign in to comment&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;同意授權 &amp;gt; &lt;code&gt;Authorize utterances by utterances&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align="center"&gt;&lt;img src="./authorize.jpg" width="400px" /&gt;&lt;/div&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;回到留言板留言後，repo 就會自動開好票囉&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align="center"&gt;&lt;img src="./test-comment.jpg" width="800px" /&gt;&lt;/div&gt;
+&lt;h2 id="參考資料"&gt;參考資料
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://utteranc.es/" target="_blank" rel="noopener"
+&gt;utterances 官方網站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://blog.csdn.net/weixin_41287260/article/details/103049579" target="_blank" rel="noopener"
+&gt;hexo+yilia 集成 utteranc 评论系统&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

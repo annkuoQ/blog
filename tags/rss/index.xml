@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rss on AnnKuoQ Blog</title><link>https://annkuoq.github.io/blog/tags/rss/</link><description>Recent content in Rss on AnnKuoQ Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>AnnKuoQ</copyright><lastBuildDate>Tue, 05 Nov 2024 18:14:15 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/rss/index.xml" rel="self" type="application/rss+xml"/><item><title>如何在 OBS 使用 RSS 做跑馬燈</title><link>https://annkuoq.github.io/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/</link><pubDate>Tue, 05 Nov 2024 18:14:15 +0000</pubDate><guid>https://annkuoq.github.io/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/</guid><description>&lt;p&gt;最近常常需要做關於颱風的直播&lt;br&gt;
+畫面底部的跑馬燈&lt;br&gt;
+都是我 &lt;del&gt;工人智慧&lt;/del&gt; 從氣象署複製貼上的 😆&lt;br&gt;
+所以想說有沒有什麼外掛可以自動化&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;上網搜尋後&lt;br&gt;
+找到了這個 &lt;a class="link" href="https://obsproject.com/forum/resources/url-api-source-live-data-media-and-ai-on-obs-made-simple.1756/" target="_blank" rel="noopener"
+&gt;URL/API Source&lt;/a&gt; Plug-in&lt;/p&gt;
+&lt;p&gt;一打開超多功能&lt;br&gt;
+不是工程師的我看的眼花撩亂&lt;br&gt;
+所以以下只介紹我有用到的部分&lt;/p&gt;
+&lt;h2 id="windows-安裝"&gt;Windows 安裝
+&lt;/h2&gt;&lt;p&gt;前往 &lt;a class="link" href="https://github.com/locaal-ai/obs-urlsource/releases" target="_blank" rel="noopener"
+&gt;這裡&lt;/a&gt; 去下載安裝檔&lt;br&gt;
+點擊 &lt;code&gt;obs-urlsource-x.x.x-windows-x64-Installer.exe&lt;/code&gt; 後執行安裝&lt;/p&gt;
+&lt;p&gt;要注意你的 OBS 版本是否與 Plug-in 版本有互相支援&lt;br&gt;
+因為我一開始怎麼安裝都沒有跑出 Plug-in&lt;br&gt;
+後來才發現因為我的 OBS 是 29.1.3&lt;br&gt;
+必須搭配更老的 Plug-in 版本 0.2.7 才行&lt;/p&gt;
+&lt;p&gt;不過我最後是把 OBS 升到 30.2.3&lt;br&gt;
+並搭配 Plug-in 0.3.7&lt;/p&gt;
+&lt;h2 id="增加來源與提取內容"&gt;增加來源與提取內容
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;加入來源 &amp;gt; &lt;code&gt;URL Source&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;點擊 &lt;code&gt;Setup Data Source&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;貼上 RSS URL &amp;gt; &lt;a class="link" href="https://www.cwa.gov.tw/rss/Data/cwa_warning.xml" target="_blank" rel="noopener"
+&gt;https://www.cwa.gov.tw/rss/Data/cwa_warning.xml&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;解析類型 Parsing Type &amp;gt; &lt;code&gt;XML (XPath)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;取出你要的內容 XPath &amp;gt; &lt;code&gt;//item/description&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;點擊 &lt;code&gt;儲存&lt;/code&gt; &amp;gt; &lt;code&gt;確定&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;解釋一下~&lt;br&gt;
+那個 XPath 代表選擇所有 &lt;code&gt;&amp;lt;item&amp;gt;&lt;/code&gt; 元素中的 &lt;code&gt;&amp;lt;description&amp;gt;&lt;/code&gt; 內容&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./add-source.jpg" width="700px"/&gt;&lt;/div&gt;
+&lt;h3 id="原始的-xml-內容"&gt;原始的 XML 內容
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;span class="lnt"&gt;28
+&lt;/span&gt;&lt;span class="lnt"&gt;29
+&lt;/span&gt;&lt;span class="lnt"&gt;30
+&lt;/span&gt;&lt;span class="lnt"&gt;31
+&lt;/span&gt;&lt;span class="lnt"&gt;32
+&lt;/span&gt;&lt;span class="lnt"&gt;33
+&lt;/span&gt;&lt;span class="lnt"&gt;34
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;rss version=&amp;#34;2.0&amp;#34; xmlns:dc=&amp;#34;http://purl.org/dc/elements/1.1/&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;channel&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;title&amp;gt;&amp;lt;![CDATA[ 中央氣象署警報、特報 ]]&amp;gt;&amp;lt;/title&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;link&amp;gt;https://www.cwa.gov.tw/&amp;lt;/link&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;description&amp;gt;&amp;lt;![CDATA[ 中央氣象署 RSS服務 ]]&amp;gt;&amp;lt;/description&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;language&amp;gt;zh-tw&amp;lt;/language&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;copyright&amp;gt;&amp;lt;![CDATA[ 使用聲明
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;1.本署可授權個人以 RSS reader 方式使用本署RSS。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;2.個人和非營利網站以及Blog，可以在私人、非商業用途內呈現本署 RSS內的標題資訊，詳細內容必須以連結方式連回本署，呈現資訊時必須標明該來源是「中央氣象署」，且不得更改 RSS內容及解析本 RSS 相關資訊用以製作衍生產品。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;3.本署保留適時修改此服務內容及格式的權利。 ]]&amp;gt;&amp;lt;/copyright&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;lastBuildDate&amp;gt;Tue, 05 Nov 2024 09:00:33 GMT&amp;lt;/lastBuildDate&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;ttl&amp;gt;1&amp;lt;/ttl&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;image&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;url&amp;gt;https://www.cwa.gov.tw/rss/img/Mark.jpg&amp;lt;/url&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;title&amp;gt;&amp;lt;![CDATA[ 中央氣象署警報、特報 ]]&amp;gt;&amp;lt;/title&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;link&amp;gt;https://www.cwa.gov.tw/&amp;lt;/link&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;/image&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;item&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;pubDate&amp;gt;Tue, 05 Nov 2024 07:25:00 GMT&amp;lt;/pubDate&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;title&amp;gt;11/05 15:25 發布陸上強風特報&amp;lt;/title&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;link&amp;gt;https://www.cwa.gov.tw/V8/C/P/Warning/W25.html?T=202411051525&amp;lt;/link&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;guid&amp;gt;https://www.cwa.gov.tw/V8/C/P/Warning/W25.html?T=202411051525&amp;lt;/guid&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;description&amp;gt;&amp;lt;![CDATA[ 東北風明顯偏強，桃園至雲林沿海空曠地區及恆春半島、綠島、蘭嶼、澎湖、金門、馬祖易有9至10級強陣風，基隆北海岸、嘉義、臺南、東半部沿海空曠地區及北部地區亦有較強陣風，尤其明(6)日恆春半島、苗栗至彰化沿海空曠地區將有10至11級強陣風，鄰近海域並有較大風浪，請特別注意。 ]]&amp;gt;&amp;lt;/description&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;/item&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;item&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;pubDate&amp;gt;Tue, 05 Nov 2024 08:30:00 GMT&amp;lt;/pubDate&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;title&amp;gt;11/05 16:30 發布大雨特報&amp;lt;/title&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;link&amp;gt;https://www.cwa.gov.tw/V8/C/P/Warning/W26.html?T=202411051630&amp;lt;/link&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;guid&amp;gt;https://www.cwa.gov.tw/V8/C/P/Warning/W26.html?T=202411051630&amp;lt;/guid&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;description&amp;gt;&amp;lt;![CDATA[ 東北季風影響，今(5)日基隆北海岸、臺北市(南港區)及大臺北山區、宜蘭山區有局部大雨發生的機率，請注意瞬間大雨，山區慎防坍方、落石及溪水暴漲。 ]]&amp;gt;&amp;lt;/description&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;lt;/item&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;/channel&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;/rss&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="提取出來的內容"&gt;提取出來的內容
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;[&amp;#34; 東北風明顯偏強，桃園至雲林沿海空曠地區及恆春半島、綠島、蘭嶼、澎湖、金門、馬祖易有9至10級強陣風，基隆北海岸、嘉義、臺南、東半部沿海空曠地區及北部地區亦有較強陣風，尤其明(6)日恆春半島、苗栗至彰化沿海空曠地區將有10至11級強陣風，鄰近海域並有較大風浪，請特別注意。 &amp;#34;,&amp;#34; 東北季風影響，今(5)日基隆北海岸、臺北市(南港區)及大臺北山區、宜蘭山區有局部大雨發生的機率，請注意瞬間大雨，山區慎防坍方、落石及溪水暴漲。 &amp;#34;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="輸出提取結果"&gt;輸出提取結果
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;新增文字來源，取名為 &lt;code&gt;跑馬燈&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;雙擊 &lt;code&gt;URL Source&lt;/code&gt; &amp;gt; &lt;code&gt;Setup Outputs and Templates&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;點擊 Mapping Name 的 &lt;code&gt;output&lt;/code&gt; &amp;gt; &lt;code&gt;(Text)跑馬燈&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;點擊 &lt;code&gt;確定&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align="center"&gt;&lt;img src="./output-mapping.jpg" width="500px"/&gt;&lt;/div&gt;
+&lt;p&gt;提取出的內容就輸出到 &lt;code&gt;跑馬燈&lt;/code&gt; 了&lt;br&gt;
+不過字有點大&lt;br&gt;
+這時可以修改一下字型與文字大小&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./modify-text-properties.jpg" width="700px"/&gt;&lt;/div&gt;
+&lt;h2 id="輸出內容整理"&gt;輸出內容整理
+&lt;/h2&gt;&lt;p&gt;仔細看了一下&lt;br&gt;
+文字裡面好像出現了奇怪的符號&lt;br&gt;
+例如 &lt;code&gt;[&lt;/code&gt; &lt;code&gt;]&lt;/code&gt; &lt;code&gt;&amp;quot;&lt;/code&gt; &lt;code&gt;,&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;原來這個是陣列中有多個值的意思&lt;br&gt;
+結構大概是長這樣 &lt;code&gt;[&amp;quot;apple&amp;quot;, &amp;quot;banana&amp;quot;, &amp;quot;cherry&amp;quot;]&lt;/code&gt;&lt;br&gt;
+意思是說取出了三個值&lt;br&gt;
+分別是 蘋果、香蕉、櫻桃&lt;/p&gt;
+&lt;p&gt;因為氣象署同時發布了兩個警報&lt;br&gt;
+所以就跑出了陣列的符號&lt;/p&gt;
+&lt;p&gt;但沒關係&lt;br&gt;
+這個 Plug-in 可以解決這個問題&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;雙擊 URL Source &amp;gt; &lt;code&gt;Setup Outputs and Templates&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;{% raw %} 把 {{output}} 改成 {{output0}} 🚨 {{output1}} 🚨 {% endraw %}&lt;/li&gt;
+&lt;li&gt;點擊 &lt;code&gt;確定&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;解釋一下~&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;{% raw %} {{output0}} 代表第一個警報 (陸上強風特報) {% endraw %}&lt;/li&gt;
+&lt;li&gt;{% raw %} {{output1}} 代表第二個警報 (大雨特報) {% endraw %}&lt;/li&gt;
+&lt;li&gt;中間用 🚨 隔開兩段文字&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div align="center"&gt;&lt;img src="./output-template.jpg" width="500px"/&gt;&lt;/div&gt;
+&lt;h2 id="設定跑馬捲動特效"&gt;設定跑馬捲動特效
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;對 &lt;code&gt;跑馬燈&lt;/code&gt; 點擊右鍵 &amp;gt; &lt;code&gt;濾鏡&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;新增 &lt;code&gt;捲動&lt;/code&gt; 特效&lt;/li&gt;
+&lt;li&gt;將 &lt;code&gt;限制寬度&lt;/code&gt; 打勾 &amp;gt; 設定跑馬的寬度為 1500&lt;/li&gt;
+&lt;li&gt;調整 &lt;code&gt;水平速度&lt;/code&gt; &amp;gt; 設定跑馬的速度為 100&lt;/li&gt;
+&lt;li&gt;點擊 &lt;code&gt;關閉&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align="center"&gt;&lt;img src="./modify-text-scroll.jpg" width="700px"/&gt;&lt;/div&gt;
+&lt;p&gt;大功告成！&lt;/p&gt;
+&lt;p&gt;如果對這個 Plug-in 有其他問題&lt;br&gt;
+也可以到作者的 &lt;a class="link" href="https://discord.gg/AubP6DTT8r" target="_blank" rel="noopener"
+&gt;Discord&lt;/a&gt; 詢問喔&lt;br&gt;
+作者和成員們都蠻熱心回應的！&lt;/p&gt;
+&lt;h2 id="參考資料"&gt;參考資料
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://obsproject.com/forum/resources/url-api-source-live-data-media-and-ai-on-obs-made-simple.1756/" target="_blank" rel="noopener"
+&gt;URL/API Source: Live Data, Media and AI on OBS Made Simple | OBS Forums&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://github.com/locaal-ai/obs-urlsource" target="_blank" rel="noopener"
+&gt;locaal-ai/obs-urlsource | GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://www.w3schools.com/xml/xpath_syntax.asp" target="_blank" rel="noopener"
+&gt;XPath Syntax | W3Schools&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

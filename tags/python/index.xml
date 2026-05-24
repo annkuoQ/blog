@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on AnnKuoQ Blog</title><link>https://annkuoq.github.io/blog/tags/python/</link><description>Recent content in Python on AnnKuoQ Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>AnnKuoQ</copyright><lastBuildDate>Sat, 17 Jan 2026 11:20:10 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>如何在 Windows 使用 Whisper</title><link>https://annkuoq.github.io/blog/2026-01-17-how-to-use-whisper-on-windows/</link><pubDate>Sat, 17 Jan 2026 11:20:10 +0000</pubDate><guid>https://annkuoq.github.io/blog/2026-01-17-how-to-use-whisper-on-windows/</guid><description>&lt;h2 id="whisper-介紹"&gt;Whisper 介紹
+&lt;/h2&gt;&lt;p&gt;Whisper 是 OpenAI 開發的自動語音辨識模型&lt;br&gt;
+可以把「人講話的聲音」轉成「文字」&lt;/p&gt;
+&lt;p&gt;對於影片創作者&lt;br&gt;
+可以自動產出 SRT/VTT 字幕檔&lt;br&gt;
+匯入後製軟體後再修正內容&lt;br&gt;
+或是直接匯入 YouTube 後台 (CC 字幕)&lt;br&gt;
+不必從頭到尾都自己慢慢打&lt;/p&gt;
+&lt;p&gt;對於會議紀錄人員&lt;br&gt;
+可以把錄音檔轉成逐字稿&lt;br&gt;
+再去進行更進階的處理&lt;/p&gt;
+&lt;p&gt;那我自己的話&lt;br&gt;
+就是拿來把影片或 Podcast 轉成逐字稿&lt;br&gt;
+再&lt;a class="link" href="https://annkuoq.github.io/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/" target="_blank" rel="noopener"
+&gt;丟進 AI 快速摘要重點&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="本地端與雲端版本"&gt;本地端與雲端版本
+&lt;/h2&gt;&lt;p&gt;Whisper 分為 &lt;code&gt;本地端(Local)&lt;/code&gt; 與 &lt;code&gt;API (雲端)&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;比較項目&lt;/th&gt;
+&lt;th&gt;本地端&lt;/th&gt;
+&lt;th&gt;雲端&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;費用&lt;/td&gt;
+&lt;td&gt;完全免費 (需電腦電費)&lt;/td&gt;
+&lt;td&gt;付費 (目前 &lt;a class="link" href="https://platform.openai.com/docs/pricing#other-models" target="_blank" rel="noopener"
+&gt;每分鐘 $0.006 美金&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;硬體要求&lt;/td&gt;
+&lt;td&gt;要有 NVIDIA 顯卡&lt;/td&gt;
+&lt;td&gt;只要能連網，老舊電腦也能跑&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;處理速度&lt;/td&gt;
+&lt;td&gt;取決於你的顯示卡&lt;/td&gt;
+&lt;td&gt;OpenAI 伺服器會幫你處理好&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;隱私性&lt;/td&gt;
+&lt;td&gt;檔案不會離開電腦，適合機密資訊&lt;/td&gt;
+&lt;td&gt;檔案需傳輸到 OpenAI 伺服器&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;如果你有資安與隱私需求&lt;br&gt;
+而且有不錯的電腦設備&lt;br&gt;
+就可以使用&lt;code&gt;本地端(Local)&lt;/code&gt;版本&lt;/p&gt;
+&lt;p&gt;本篇文章主要介紹「本地端」版本&lt;/p&gt;
+&lt;h2 id="目前主流的本地端版本"&gt;目前主流的本地端版本
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;版本名稱&lt;/th&gt;
+&lt;th&gt;特色與優勢&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class="link" href="https://github.com/openai/whisper" target="_blank" rel="noopener"
+&gt;OpenAI Whisper&lt;/a&gt; (官方原版)&lt;/td&gt;
+&lt;td&gt;官方維護，最標準的 Python 庫&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class="link" href="https://github.com/SYSTRAN/faster-whisper" target="_blank" rel="noopener"
+&gt;Faster-Whisper&lt;/a&gt; (推薦)&lt;/td&gt;
+&lt;td&gt;使用 CTranslate2 引擎重新實作，速度快 4 倍，記憶體用量減少 50%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class="link" href="https://github.com/ggml-org/whisper.cpp" target="_blank" rel="noopener"
+&gt;Whisper.cpp&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;用 C/C++ 語言重新編寫，針對 CPU 進行優化&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a class="link" href="https://github.com/m-bain/whisperX" target="_blank" rel="noopener"
+&gt;WhisperX&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;時間精確度最高 (到單字級別)、可辨識誰說了什麼 (說話人分離)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="openai-whisper-官方"&gt;OpenAI Whisper (官方)
+&lt;/h2&gt;&lt;p&gt;我們先嘗試官方版本的 Whisper&lt;/p&gt;
+&lt;h3 id="whisper-安裝"&gt;Whisper 安裝
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;安裝 &lt;a class="link" href="https://www.python.org/downloads/" target="_blank" rel="noopener"
+&gt;Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;新增一個專案資料夾叫 &lt;code&gt;whisper&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在此資料夾位置開啟 CMD&lt;/li&gt;
+&lt;li&gt;建立虛擬環境 &lt;code&gt;python -m venv venv&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;啟動虛擬環境 &lt;code&gt;.\venv\Scripts\activate&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;安裝 Whisper &lt;code&gt;pip install -U openai-whisper&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;檢查是否安裝成功 &lt;code&gt;whisper --help&lt;/code&gt;，如果有出現各種參數訊息就成功了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="ffmpeg-安裝"&gt;ffmpeg 安裝
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;到 &lt;a class="link" href="https://www.gyan.dev/ffmpeg/builds/" target="_blank" rel="noopener"
+&gt;gyan.dev&lt;/a&gt; 下載 &lt;code&gt;ffmpeg-release-full.7z&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;解壓縮後，把 bin 資料夾中的三個檔案放到專案資料夾中&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;whisper/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── venv/ # 虛擬環境
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── ffmpeg.exe # ← 放這裡
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── ffprobe.exe # ← 放這裡
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── ffplay.exe # ← 放這裡
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└── video.mp4 # 要語音轉文字的影片
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="模型版本"&gt;模型版本
+&lt;/h3&gt;&lt;p&gt;Whisper 有不同大小的模型&lt;br&gt;
+越大精準度越高，但也越吃效能&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;模型名稱&lt;/th&gt;
+&lt;th&gt;檔案大小&lt;/th&gt;
+&lt;th&gt;VRAM 用量&lt;/th&gt;
+&lt;th&gt;相對速度&lt;/th&gt;
+&lt;th&gt;準確度&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Tiny&lt;/td&gt;
+&lt;td&gt;~75 MB&lt;/td&gt;
+&lt;td&gt;~1 GB&lt;/td&gt;
+&lt;td&gt;10x (最快)&lt;/td&gt;
+&lt;td&gt;低&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Base&lt;/td&gt;
+&lt;td&gt;~140 MB&lt;/td&gt;
+&lt;td&gt;~1 GB&lt;/td&gt;
+&lt;td&gt;7x&lt;/td&gt;
+&lt;td&gt;中低&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Small&lt;/td&gt;
+&lt;td&gt;~460 MB&lt;/td&gt;
+&lt;td&gt;~2 GB&lt;/td&gt;
+&lt;td&gt;4x&lt;/td&gt;
+&lt;td&gt;中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Medium (推薦)&lt;/td&gt;
+&lt;td&gt;~1.5 GB&lt;/td&gt;
+&lt;td&gt;~5 GB&lt;/td&gt;
+&lt;td&gt;2x&lt;/td&gt;
+&lt;td&gt;高&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Large-v3&lt;/td&gt;
+&lt;td&gt;~3 GB&lt;/td&gt;
+&lt;td&gt;~10 GB&lt;/td&gt;
+&lt;td&gt;1x (基準)&lt;/td&gt;
+&lt;td&gt;最高&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;中文的話推薦使用 Medium 模型&lt;br&gt;
+速度跟準確率適中&lt;/p&gt;
+&lt;h3 id="開始使用"&gt;開始使用
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;將要轉換的影片或音檔放入資料夾中&lt;/li&gt;
+&lt;li&gt;執行 &lt;code&gt;whisper video.mp4 --model medium --language zh --device cuda&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;video.mp4&lt;/code&gt;: 來源檔案，ffmpeg 會提取音訊出來&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--model medium&lt;/code&gt;: 模型等級&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--language zh&lt;/code&gt;: 使用中文來辨識&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--device cuda&lt;/code&gt;: 使用 NVIDIA 顯示卡加速 (若不指定預設用 CPU 跑)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;結果發生了錯誤，最後一段寫了&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;RuntimeError: Attempting to deserialize object on a CUDA device but torch.cuda.is_available() is False.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Whisper 想要使用顯卡（CUDA），但 PyTorch 環境偵測不到顯卡&lt;br&gt;
+但我電腦確實有 RTX 3050 的顯示卡&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;移除現有的 PyTorch &lt;code&gt;pip uninstall torch torchvision torchaudio -y&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;安裝 CUDA 版本的 Torch (v12.1) &lt;code&gt;pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;檢查是否安裝成功 &lt;code&gt;python -c &amp;quot;import torch; print(torch.cuda.is_available())&amp;quot;&lt;/code&gt;，如果回傳 True 代表成功&lt;/li&gt;
+&lt;li&gt;再次執行 &lt;code&gt;whisper video.mp4 --model medium --language zh --device cuda&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;成功啦！&lt;br&gt;
+GPU 使用量飛到 100%&lt;br&gt;
+CMD 也會顯示目前處理的進度&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./whisper.jpg" width="800px"/&gt;&lt;/div&gt;
+&lt;p&gt;使用 3050 顯卡+ medium 模型&lt;br&gt;
+測試 52 分 30 秒的檔案&lt;br&gt;
+花費了約 24 分鐘&lt;br&gt;
+大概就是 2 倍速！&lt;/p&gt;
+&lt;p&gt;總共產出了五種格式的檔案: &lt;code&gt;.srt&lt;/code&gt;, &lt;code&gt;.vtt&lt;/code&gt;, &lt;code&gt;.txt&lt;/code&gt;, &lt;code&gt;.json&lt;/code&gt;, &lt;code&gt;.tsv&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.srt&lt;/code&gt;: 帶有時間的字幕檔，可匯入後製軟體&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;00:00:00,000 --&amp;gt; 00:00:01,080
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;在職場裡面
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;2
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;00:00:01,080 --&amp;gt; 00:00:03,600
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;我們好像也是把它當成戀愛
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;3
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;00:00:03,600 --&amp;gt; 00:00:06,920
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;好像感覺離職就代表我還沒有找到那個對的人
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.vtt&lt;/code&gt;: 與 SRT 類似，可直接適用於網頁播放器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;WEBVTT
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;00:00.000 --&amp;gt; 00:01.080
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;在職場裡面
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;00:01.080 --&amp;gt; 00:03.600
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;我們好像也是把它當成戀愛
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;00:03.600 --&amp;gt; 00:06.920
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;好像感覺離職就代表我還沒有找到那個對的人
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.txt&lt;/code&gt;: 純文字逐字稿，適合&lt;a class="link" href="https://annkuoq.github.io/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/" target="_blank" rel="noopener"
+&gt;丟進 AI 作重點整理&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;在職場裡面
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;我們好像也是把它當成戀愛
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;好像感覺離職就代表我還沒有找到那個對的人
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.json&lt;/code&gt;: 用於程式開發與深度分析，除了時間軸和文字，它還包含了 Whisper 內部的評分，例如：「信心分數」（AI 覺得自己聽得準不準）和「靜音檢測」等資訊&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;{&amp;#34;text&amp;#34;: &amp;#34;\u5728\u8077\u5834\u88e1\u9762\u6211\u5011\u597d\u50cf\u4e5f\u662f\u628a\u5b83\u7576\u6210\u6200\u611b\u597d\u50cf\u611f\u89ba\u96e2\u8077\u5c31\u4ee3\u8868\u6211\u9084\u6c92\u6709\u627e\u5230\u90a3\u500b\u5c0d\u7684\u4eba\u53ef\u662f\............
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.tsv&lt;/code&gt;: 用於 Excel 整理、資料庫匯入，用 Excel 打開會分成 start (開始時間)、end (結束時間)、text (內容) 三欄&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;start end text
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;0 1080 在職場裡面
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;1080 3600 我們好像也是把它當成戀愛
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;3600 6920 好像感覺離職就代表我還沒有找到那個對的人
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果只想要產出一種檔案，例如 &lt;code&gt;.srt&lt;/code&gt;&lt;br&gt;
+可以使用 &lt;code&gt;--output_format&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;whisper video.mp4 --model medium --language zh --device cuda --output_format srt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;檢查了一下準確度&lt;br&gt;
+有些字和專有名詞有打錯&lt;br&gt;
+所以需要人工再檢查一次&lt;br&gt;
+但比從零開始快多了！&lt;/p&gt;
+&lt;p&gt;中英數交雜也是可以辨識出來&lt;br&gt;
+句子分段跟時間軸也都 OK&lt;/p&gt;
+&lt;h2 id="faster-whisper-社群"&gt;Faster-Whisper (社群)
+&lt;/h2&gt;&lt;p&gt;如果想要更快&lt;br&gt;
+可以試試看 Faster-whisper&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;安裝主程式 &lt;code&gt;pip install faster-whisper&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;安裝指令工具 &lt;code&gt;pip install whisper-ctranslate2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;開始轉換 &lt;code&gt;whisper-ctranslate2 video.mp4 --model medium --language zh --device cuda&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在一樣的設備和檔案下&lt;br&gt;
+花費了約 6 分鐘&lt;br&gt;
+比官方 whisper 快了 4 倍！&lt;/p&gt;
+&lt;h2 id="參考資料"&gt;參考資料
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://github.com/openai/whisper" target="_blank" rel="noopener"
+&gt;openai/whisper: Robust Speech Recognition via Large-Scale Weak Supervision&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://github.com/SYSTRAN/faster-whisper" target="_blank" rel="noopener"
+&gt;SYSTRAN/faster-whisper: Faster Whisper transcription with CTranslate2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://www.youtube.com/watch?v=kFtrvdriLU8" target="_blank" rel="noopener"
+&gt;【Whisper】免費開源語音辨識自動上字幕　字幕正確率比剪映還高！！！｜下載完後無須聯網　僅需使用自己電腦處理｜如何在Windows上使用Whisper - YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>如何用 AI 摘要 YouTube 影片重點</title><link>https://annkuoq.github.io/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/</link><pubDate>Tue, 13 Jan 2026 21:52:29 +0000</pubDate><guid>https://annkuoq.github.io/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/</guid><description>&lt;p&gt;每天都有看不完的影片跟聽不完的 Podcast&lt;br&gt;
+如果懶得看，但又想知道重點該怎麼做呢&lt;/p&gt;
+&lt;p&gt;我們需要三種工具來協助完成&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;yt-dlp: 下載字幕&lt;/li&gt;
+&lt;li&gt;Python: 整理字幕檔&lt;/li&gt;
+&lt;li&gt;NotebookLM: 摘要重點&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="下載-youtube-字幕"&gt;下載 YouTube 字幕
+&lt;/h2&gt;&lt;h3 id="安裝-yt-dlp"&gt;安裝 yt-dlp
+&lt;/h3&gt;&lt;p&gt;首先先下載 &lt;a class="link" href="https://github.com/yt-dlp/yt-dlp/releases" target="_blank" rel="noopener"
+&gt;yt-dlp&lt;/a&gt; 這個工具&lt;br&gt;
+請依照自己的作業系統選擇安裝檔&lt;br&gt;
+我是 Windows 選擇 &lt;code&gt;yt-dlp.exe&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="下載字幕"&gt;下載字幕
+&lt;/h3&gt;&lt;p&gt;開一個資料夾&lt;br&gt;
+把 &lt;code&gt;yt-dlp.exe&lt;/code&gt; 放進去&lt;br&gt;
+於此資料夾位置開啟 CMD 並執行以下指令&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gdscript3" data-lang="gdscript3"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;yt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dlp&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;sub&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;lang&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;zh.*&amp;#34;&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;skip&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;download&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="err"&gt;影片網址&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;意思是 &lt;code&gt;抓上傳者提供的中文字幕&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--write-sub&lt;/code&gt;：上傳者提供的字幕檔 (subtitles)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--skip-download&lt;/code&gt;：不抓影片&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--sub-lang&lt;/code&gt;：指定語言&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zh.*&lt;/code&gt;：繁體中文&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;你也可以使用以下指令&lt;br&gt;
+查看的所有可下載的字幕&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;yt-dlp --list-subs &amp;lt;影片網址&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;em&gt;如果沒有字幕的話&lt;br&gt;
+可以 &lt;a class="link" href="https://annkuoq.github.io/blog/2026-01-17-how-to-use-whisper-on-windows/" target="_blank" rel="noopener"
+&gt;使用 Whisper 把聲音轉成文字&lt;/a&gt;!!&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id="整理字幕檔內容"&gt;整理字幕檔內容
+&lt;/h2&gt;&lt;h3 id="python-腳本"&gt;Python 腳本
+&lt;/h3&gt;&lt;p&gt;下載來的字幕 &lt;code&gt;.vtt&lt;/code&gt; 檔&lt;br&gt;
+因為內容含有 Timecode&lt;br&gt;
+不只很佔 token&lt;br&gt;
+也很影響敘事上的連續性 👇&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;WEBVTT
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Kind: captions
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Language: zh-TW
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;00:01:08.234 --&amp;gt; 00:01:09.269
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;哈囉各位聽眾大家好
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;00:01:09.269 --&amp;gt; 00:01:10.603
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;歡迎收聽最新一集的博音
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;00:01:10.603 --&amp;gt; 00:01:11.538
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;你是否有曾經
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;因此要先用 Python 把不需要的資訊刪除&lt;br&gt;
+請建立一個檔案叫 &lt;code&gt;vtt_to_txt.py&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;span class="lnt"&gt;28
+&lt;/span&gt;&lt;span class="lnt"&gt;29
+&lt;/span&gt;&lt;span class="lnt"&gt;30
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;from pathlib import Path
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;import re
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;def vtt_to_txt(vtt_path):
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; text_lines = []
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; with open(vtt_path, &amp;#34;r&amp;#34;, encoding=&amp;#34;utf-8&amp;#34;) as f:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; for line in f:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; line = line.strip()
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; if not line:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; continue
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; if line.startswith(&amp;#34;WEBVTT&amp;#34;) or line.startswith(&amp;#34;Kind:&amp;#34;) or line.startswith(&amp;#34;Language:&amp;#34;):
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; continue
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; if re.match(r&amp;#34;\d{2}:\d{2}:\d{2}\.\d{3}\s--&amp;gt;\s\d{2}:\d{2}:\d{2}\.\d{3}&amp;#34;, line):
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; continue
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; text_lines.append(line)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; return &amp;#34;\n&amp;#34;.join(text_lines)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;if __name__ == &amp;#34;__main__&amp;#34;:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; for vtt_file in Path(&amp;#34;.&amp;#34;).glob(&amp;#34;*.vtt&amp;#34;):
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; output_file = vtt_file.with_suffix(&amp;#34;.txt&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; content = vtt_to_txt(vtt_file)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; output_file.write_text(content, encoding=&amp;#34;utf-8&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; print(f&amp;#34;轉換完成：{vtt_file.name}&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="bat-檔"&gt;BAT 檔
+&lt;/h3&gt;&lt;p&gt;為了讓我們可以方便執行 Python 腳本&lt;br&gt;
+請建立一個檔案叫 &lt;code&gt;convert.bat&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;@echo off
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;chcp 65001 &amp;gt; nul
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;echo 開始轉換 VTT 為 TXT...
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;echo.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;python vtt_to_txt.py
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;echo.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;echo 全部處理完成，按任意鍵關閉視窗
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pause &amp;gt; nul
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="開始轉換"&gt;開始轉換
+&lt;/h3&gt;&lt;p&gt;先確認有安裝 &lt;a class="link" href="https://www.python.org/downloads/" target="_blank" rel="noopener"
+&gt;Python&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;把 &lt;code&gt;.vtt&lt;/code&gt; 丟進資料夾&lt;/li&gt;
+&lt;li&gt;雙擊 &lt;code&gt;convert.bat&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;此時資料夾會出現一堆 &lt;code&gt;.txt&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;字幕整理資料夾/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├─ convert.bat ← 雙擊 bat 檔案
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├─ vtt_to_txt.py ← Python 腳本
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├─ ep01.vtt ← YT 字幕檔
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├─ ep02.vtt ← YT 字幕檔
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├─ ep01.txt ← 整理好的純文字字幕檔
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└─ ep02.txt ← 整理好的純文字字幕檔
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;整理好的 &lt;code&gt;.txt&lt;/code&gt; 長這樣 👇&lt;br&gt;
+只剩下純文字&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;哈囉各位聽眾大家好
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;歡迎收聽最新一集的博音
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;你是否有曾經
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;把你自己的人生
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;活成一個電玩角色呢
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="請-ai-整理重點"&gt;請 AI 整理重點
+&lt;/h2&gt;&lt;p&gt;因為這種逐字稿都超級長&lt;br&gt;
+所以選擇用 &lt;a class="link" href="https://notebooklm.google.com/" target="_blank" rel="noopener"
+&gt;NotebookLM&lt;/a&gt;&lt;br&gt;
+不然其他 AI 可能會一直叫我晚點再來 XD&lt;br&gt;
+&lt;del&gt;畢竟是免費仔&lt;/del&gt;&lt;/p&gt;
+&lt;h3 id="上傳來源"&gt;上傳來源
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;點擊 &lt;code&gt;＋新建&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;把 &lt;code&gt;.txt&lt;/code&gt; 上傳&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div align="center"&gt;&lt;img src="./upload_source.jpg"/&gt;&lt;/div&gt;
+&lt;p&gt;你看！光只是上傳字幕檔！&lt;br&gt;
+它就馬上摘要一段兩百字的介紹了&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./notebooklm.jpg"/&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;這段訪談內容圍繞著大人學共同創辦人 Joe 的新書《獨自升級》，深入探討現代人在職涯與個人成長中常見的誤區。Joe 主張與其盲目「跳出舒適圈」去面對無法負荷的挫折，不如透過有意識地擴大舒適圈，在保有現有優勢的基礎上逐步往外探索。他強調建立個人「標籤」的重要性，建議求職者先從自己擅長且具備競爭力的事物切入，以此換取資源後再追求興趣。針對中年危機與產業變遷，訪談指出唯有保持好奇心並持續產出，才能在變動中內化知識並維持不可替代的價值。最後，Joe 鼓勵聽眾將人生視為電玩遊戲，透過主動規劃技能點與任務，在職場中實現真正的選擇自由。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="對話面板"&gt;對話面板
+&lt;/h3&gt;&lt;p&gt;你可以在中間的「對話」面板&lt;br&gt;
+問 AI 問題來瞭解內容&lt;/p&gt;
+&lt;p&gt;如果完全沒看過內容&lt;br&gt;
+可以請 AI 先抓出大綱&lt;/p&gt;
+&lt;p&gt;指令範例一: &lt;code&gt;我還沒看過這份逐字稿，請幫我抓出這場討論的大綱架構，並告訴我裡面最核心的 3 個理論觀點與 3 個實際案例。&lt;/code&gt;&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./outline.jpg" width="800px"/&gt;&lt;/div&gt;
+&lt;p&gt;如果覺得有點生硬的&lt;br&gt;
+可以請 AI 口語化&lt;/p&gt;
+&lt;p&gt;指令範例二:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;請將我提供的逐字稿整理成 Podcast / 口語化風格：
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;1. 保留原本段落，不要刪除段落。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;2. 每個段落壓縮成 3～5 行重點。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;3. 語氣口語化、自然，讀起來像主持人講故事。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;4. 可以保留一些連接詞或感嘆詞，讓語氣活潑。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;5. 可以加小標題（可選），幫助聽眾理解段落主題。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div align="center"&gt;&lt;img src="./conversational_tone.jpg" width="800px"/&gt;&lt;/div&gt;
+&lt;h3 id="工作室面板"&gt;工作室面板
+&lt;/h3&gt;&lt;p&gt;你也可以在右邊的「工作室」面板&lt;br&gt;
+自動生成各種報告或文章&lt;/p&gt;
+&lt;p&gt;報告有很多種類可以選擇&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自訂報告&lt;/li&gt;
+&lt;li&gt;簡介文件&lt;/li&gt;
+&lt;li&gt;研讀指南&lt;/li&gt;
+&lt;li&gt;網誌文章&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;底下還有 AI 給的建議格式&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./reports.jpg" width="700px"/&gt;&lt;/div&gt;
+&lt;p&gt;我選了網誌文章看看&lt;/p&gt;
+&lt;div align="center"&gt;&lt;img src="./blog_post.jpg" width="800px"/&gt;&lt;/div&gt;
+&lt;p&gt;太強拉！&lt;br&gt;
+直接幫你寫部落格！&lt;/p&gt;
+&lt;p&gt;它還可以看產生這個報告的提示詞:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Act as a thoughtful writer and synthesizer of ideas, tasked with creating an engaging and readable blog post for a popular online publishing platform known for its clean aesthetic and insightful content. Your goal is to distill the top most surprising, counter-intuitive, or impactful takeaways from the provided source materials into a compelling listicle. The writing style should be clean, accessible, and highly scannable, employing a conversational yet intelligent tone. Craft a compelling, click-worthy headline. Begin the article with a short introduction that hooks the reader by establishing a relatable problem or curiosity, then present each of the takeaway points as a distinct section with a clear, bolded subheading. Within each section, use short paragraphs to explain the concept clearly, and don't just summarize; offer a brief analysis or a reflection on why this point is so interesting or important, and if a powerful quote exists in the sources, feature it in a blockquote for emphasis. Conclude the post with a brief, forward-looking summary that leaves the reader with a final thought-provoking question or a powerful takeaway to ponder.&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;請 ChatGPT 翻譯中文:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;擔任一位善於思考、整合觀點的寫作者，為一個以簡潔美學與深度內容聞名的主流線上出版平台撰寫一篇引人入勝、易於閱讀的部落格文章。你的任務是：從提供的來源資料中，萃取出最令人驚訝、最違反直覺，或最具影響力的重點洞見，並整理成一篇具吸引力的清單型文章（listicle）。&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;整體寫作風格應該乾淨、親切、且高度適合快速掃讀，語氣保持對話感但不失思考深度。請撰寫一個吸睛、值得點擊的標題。&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;文章開頭請以一小段引言切入，透過提出讀者能產生共鳴的問題或好奇心來勾住注意力。接著，將每一個重點洞見作為一個獨立段落呈現，並搭配清楚、加粗的小標題。&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;在每個段落中，使用短段落清楚說明該觀點，且不要只是摘要內容；請加入你對該觀點為何有趣或重要的簡短分析或反思。如果來源資料中有特別有力的引述，請以**區塊引言（blockquote）**的方式呈現，以加強重點。&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;最後，請用一段簡短、具前瞻性的結語收尾，留給讀者一個值得深思的問題，或一個令人回味的關鍵洞見作為結束。&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其他還有很多功能&lt;br&gt;
+之後再慢慢玩吧～&lt;/p&gt;</description></item></channel></rss>

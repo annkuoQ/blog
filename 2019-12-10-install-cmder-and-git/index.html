@@ -1,0 +1,178 @@
+<!doctype html><html lang=zh-tw dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="Cmder 可以讓我們在 Windows 上跑 Linux 指令，取代內建的 CMD，首先到官網下載，點擊 Download Full，解壓縮 cmder.zip，然後將 Cmder 資料夾放到 C 槽底下 ..."><title>Win 10 安裝 Cmder 與 Git</title><link rel=canonical href=https://annkuoq.github.io/blog/2019-12-10-install-cmder-and-git/><link rel=stylesheet href=https://annkuoq.github.io/blog/scss/style.min.c38d35806443e9879b9ee49faf4f2eb10bfd4d4c6900ac3be31ad537da444fb1.css><meta property='og:title' content="Win 10 安裝 Cmder 與 Git"><meta property='og:description' content="Cmder 可以讓我們在 Windows 上跑 Linux 指令，取代內建的 CMD，首先到官網下載，點擊 Download Full，解壓縮 cmder.zip，然後將 Cmder 資料夾放到 C 槽底下 ..."><meta property='og:url' content='https://annkuoq.github.io/blog/2019-12-10-install-cmder-and-git/'><meta property='og:site_name' content='AnnKuoQ Blog'><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='cmder'><meta property='article:tag' content='git'><meta property='article:published_time' content='2019-12-10T22:31:46+00:00'><meta property='article:modified_time' content='2019-12-10T22:31:46+00:00'><meta name=twitter:title content="Win 10 安裝 Cmder 與 Git"><meta name=twitter:description content="Cmder 可以讓我們在 Windows 上跑 Linux 指令，取代內建的 CMD，首先到官網下載，點擊 Download Full，解壓縮 cmder.zip，然後將 Cmder 資料夾放到 C 槽底下 ..."><link rel="shortcut icon" href=https://annkuoq.github.io/blog/img/favicon.ico><meta name=google-site-verification content="BA0c9S2A0y6LKGGUAyEEIYAl4C0O7hED1HrbKlYmzts"></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.setItem(e,"dark")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切換選單>
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=https://annkuoq.github.io/blog/><img src=https://annkuoq.github.io/blog/img/avatar.png width=300 height=300 class=site-logo loading=lazy alt=Avatar></a></figure><div class=site-meta><h1 class=site-name><a href=https://annkuoq.github.io/blog/>AnnKuoQ Blog</a></h1><h2 class=site-description>擺放各種筆記的地方</h2></div></header><ol class=menu id=main-menu><li><a href=https://annkuoq.github.io/blog/><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>Home</span></a></li><li><a href=https://annkuoq.github.io/blog/about/><svg class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>About</span></a></li><li><a href=https://annkuoq.github.io/blog/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span></a></li><li><a href=https://annkuoq.github.io/blog/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span></a></li><li class=menu-bottom-section><ol class=menu></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">目錄</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#安裝步驟>安裝步驟</a></li><li><a href=#優化-cmder>優化 Cmder</a><ol><li><a href=#1-更改提示符號-λ>1. 更改提示符號 λ</a></li><li><a href=#2-以管理員身分執行>2. 以管理員身分執行</a></li><li><a href=#3-新增到右鍵清單>3. 新增到右鍵清單</a></li></ol></li><li><a href=#使用-git-指令>使用 Git 指令</a></li><li><a href=#參考資料>參考資料</a></li></ol></nav></div></section></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><header class=article-category><a href=https://annkuoq.github.io/blog/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/>技術筆記</a></header><div class=article-title-wrapper><h2 class=article-title><a href=https://annkuoq.github.io/blog/2019-12-10-install-cmder-and-git/>Win 10 安裝 Cmder 與 Git</a></h2><h3 class=article-subtitle>Cmder 可以讓我們在 Windows 上跑 Linux 指令，取代內建的 CMD，首先到官網下載，點擊 Download Full，解壓縮 cmder.zip，然後將 Cmder 資料夾放到 C 槽底下 ...</h3></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published datetime=2019-12-10T22:31:46Z>2019-12-10</time></div></footer></div></header><section class=article-content><p>為什麼要安裝 Cmder？</p><ul><li>因為要在 Windows 使用 Linux 的指令</li></ul><h2 id=安裝步驟>安裝步驟</h2><ol><li><p>前往 Cmder 官網 <a class=link href=https://cmder.net/ target=_blank rel=noopener>下載</a></p></li><li><p>點擊 <code>Download Full</code>，下載 Full 版本 (包含 Git 指令)</p></li><li><p>解壓縮 <code>cmder.zip</code></p></li><li><p>將 Cmder 資料夾放到 C 槽底下 <code>C:\cmder</code></p></li><li><p>開啟檔案總管<br>對 <code>本機</code> 按右鍵 > <code>內容</code> > <code>進階系統設定</code> > <code>進階</code> > <code>環境變數</code> ><br>點擊<code>系統變數</code>的 <code>Path</code> > <code>編輯</code> > <code>新增</code> > <code>C:\cmder</code> > <code>確定</code></p></li><li><p>開啟 CMD，輸入 <code>set PATH=C:</code>，讓環境變數立即生效，不用重開機</p></li><li><p>關閉 CMD 再重啟，輸入 <code>echo %PATH%</code>，查看是否有增加 <code>C:\cmder</code></p></li><li><p>開啟 Cmder，出現警告視窗</p></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl><span class=n>Warning</span><span class=o>!</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>ConEmu</span> <span class=n>binaries</span> <span class=n>were</span> <span class=n>marked</span> <span class=n>as</span> <span class=s1>&#39;Down loaded from internet&#39;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl><span class=n>C</span><span class=p>:</span>\<span class=n>cmder</span>\<span class=n>vendor</span>\<span class=n>conemu</span><span class=o>-</span><span class=n>maximus5</span>\<span class=n>ConEmu</span><span class=o>.</span><span class=n>exe</span>
+</span></span><span class=line><span class=cl><span class=n>C</span><span class=p>:</span>\<span class=n>cmder</span>\<span class=n>vendor</span>\<span class=n>conemu</span><span class=o>-</span><span class=n>maximus5</span>\<span class=n>ConEmu64</span><span class=o>.</span><span class=n>exe</span>
+</span></span><span class=line><span class=cl><span class=n>C</span><span class=p>:</span>\<span class=n>cmder</span>\<span class=n>vendor</span>\<span class=n>conemu</span><span class=o>-</span><span class=n>maximus5</span>\<span class=n>ConEmu</span>\<span class=n>ConEmuC</span><span class=o>.</span><span class=n>exe</span>
+</span></span><span class=line><span class=cl><span class=n>C</span><span class=p>:</span>\<span class=n>cmder</span>\<span class=n>vendor</span>\<span class=n>conemu</span><span class=o>-</span><span class=n>maximus5</span>\<span class=n>ConEmu</span>\<span class=n>ConEmuC64</span><span class=o>.</span><span class=n>exe</span>
+</span></span><span class=line><span class=cl><span class=n>C</span><span class=p>:</span>\<span class=n>cmder</span>\<span class=n>vendor</span>\<span class=n>conemu</span><span class=o>-</span><span class=n>maximus5</span>\<span class=n>ConEmu</span>\<span class=n>ConEmuCD</span><span class=o>.</span><span class=n>dll</span>
+</span></span><span class=line><span class=cl><span class=n>C</span><span class=p>:</span>\<span class=n>cmder</span>\<span class=n>vendor</span>\<span class=n>conemu</span><span class=o>-</span><span class=n>maximus5</span>\<span class=n>ConEmu</span>\<span class=n>ConEmuCD64</span><span class=o>.</span><span class=n>dll</span>
+</span></span><span class=line><span class=cl><span class=n>C</span><span class=p>:</span>\<span class=n>cmder</span>\<span class=n>vendor</span>\<span class=n>conemu</span><span class=o>-</span><span class=n>maximus5</span>\<span class=n>ConEmu</span>\<span class=n>ConEmuHIcdll</span>
+</span></span><span class=line><span class=cl><span class=n>C</span><span class=p>:</span>\<span class=n>cmder</span>\<span class=n>vendor</span>\<span class=n>conemu</span><span class=o>-</span><span class=n>maximus5</span>\<span class=n>ConEmu</span>\<span class=n>ConEmuHk64</span><span class=o>.</span><span class=n>dll</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>This</span> <span class=n>may</span> <span class=n>cause</span> <span class=n>blocking</span> <span class=ow>or</span> <span class=n>access</span> <span class=n>denied</span> <span class=n>errors</span><span class=o>!</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>-&gt;</span> <span class=n>Unblock</span> <span class=ow>and</span> <span class=n>Continue</span>
+</span></span><span class=line><span class=cl>     <span class=n>Let</span> <span class=n>ConEmu</span> <span class=n>try</span> <span class=n>to</span> <span class=n>unblock</span> <span class=n>these</span> <span class=n>files</span>
+</span></span><span class=line><span class=cl>     <span class=n>You</span> <span class=n>may</span> <span class=n>see</span> <span class=n>SmartScreen</span> <span class=ow>and</span> <span class=n>UAC</span> <span class=n>confirmations</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>-&gt;</span> <span class=n>Visit</span> <span class=n>home</span> <span class=n>page</span> <span class=ow>and</span> <span class=n>Exit</span>
+</span></span><span class=line><span class=cl>     <span class=n>htt</span> <span class=n>ps</span><span class=p>:</span><span class=o>//</span><span class=n>conemu</span><span class=o>.</span><span class=n>github</span> <span class=n>jo</span><span class=o>/</span><span class=n>en</span><span class=o>/</span><span class=n>Zoneld</span><span class=o>.</span><span class=n>html</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>-&gt;</span> <span class=n>Ignore</span> <span class=ow>and</span> <span class=n>Continue</span>
+</span></span><span class=line><span class=cl>     <span class=n>You</span> <span class=n>may</span> <span class=n>face</span> <span class=n>further</span> <span class=n>warnings</span>
+</span></span></code></pre></td></tr></table></div></div><p>點擊 <code>Unblock and Continue</code> 即可解決上面的錯誤</p><ol start=9><li>但若是你點擊了 <code>Unblock and Continue</code> 以外的選項<br>就要到警告視窗提到的路徑找出這些檔案<br>對它們點擊<code>右鍵</code> > <code>內容</code> > 勾選 <code>解除封鎖</code> > <code>確定</code></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>C:\cmder\vendor\conemu-maximus5\ConEmu.exe
+</span></span><span class=line><span class=cl>C:\cmder\vendor\conemu-maximus5\ConEmu64.exe
+</span></span><span class=line><span class=cl>C:\cmder\vendor\conemu-maximus5\ConEmu\ConEmuC.exe
+</span></span><span class=line><span class=cl>C:\cmder\vendor\conemu-maximus5\ConEmu\ConEmuC64.exe
+</span></span><span class=line><span class=cl>C:\cmder\vendor\conemu-maximus5\ConEmu\ConEmuCD.dll
+</span></span><span class=line><span class=cl>C:\cmder\vendor\conemu-maximus5\ConEmu\ConEmuCD64.dll
+</span></span><span class=line><span class=cl>C:\cmder\vendor\conemu-maximus5\ConEmu\ConEmuHIcdll
+</span></span><span class=line><span class=cl>C:\cmder\vendor\conemu-maximus5\ConEmu\ConEmuHk64.dll
+</span></span></code></pre></td></tr></table></div></div><h2 id=優化-cmder>優化 Cmder</h2><h3 id=1-更改提示符號-λ>1. 更改提示符號 λ</h3><p>到 <code>cmder</code> > <code>vendor</code> > 用記事本開啟 <code>clink.lua</code> 後<br>找到 <code>local lambda</code> 修改成自己喜歡的符號<br>儲存後，重新開啟 Cmder 即可</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>- local lambda = &#34;λ&#34;
+</span></span><span class=line><span class=cl>+ local lambda = &#34;$&#34;
+</span></span></code></pre></td></tr></table></div></div><h3 id=2-以管理員身分執行>2. 以管理員身分執行</h3><p>對 <code>Cmder.exe</code> 按右鍵 > <code>相容性</code> > 勾選 <code>以系統管理員的身分執行此程式</code> > <code>確定</code></p><h3 id=3-新增到右鍵清單>3. 新增到右鍵清單</h3><p>執行以下指令後<br>在桌面或任一資料夾按右鍵，即可看到 <code>Cmder Here</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>$ Cmder.exe /REGISTER ALL
+</span></span></code></pre></td></tr></table></div></div><h2 id=使用-git-指令>使用 Git 指令</h2><ol><li>嘗試 clone 一個 repo<br>看起來沒有訪問的權限，沒有設定 SSH KEY</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>git clone git@github.com:annkuoQ/test.git
+</span></span><span class=line><span class=cl>Cloning into &#39;test&#39;...
+</span></span><span class=line><span class=cl>The authenticity of host &#39;github.com (IP ADDRESS)&#39; can&#39;t be established.
+</span></span><span class=line><span class=cl>RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+</span></span><span class=line><span class=cl>Are you sure you want to continue connecting (yes/no/[fingerprint])?
+</span></span><span class=line><span class=cl>y
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Warning: Permanently added &#39;github.com,IP ADDRESS&#39; (RSA) to the list of known hosts.
+</span></span><span class=line><span class=cl>git@github.com: Permission denied (publickey).
+</span></span><span class=line><span class=cl>fatal: Could not read from remote repository.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Please make sure you have the correct access rights
+</span></span><span class=line><span class=cl>and the repository exists.
+</span></span></code></pre></td></tr></table></div></div><ol start=2><li>設定 email 與 user name</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>git config --global user.email &#34;annkuo@example.com&#34;
+</span></span><span class=line><span class=cl>git config --global user.name &#34;annkuo&#34;
+</span></span></code></pre></td></tr></table></div></div><ol start=3><li>設定 SSH KEY</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>ssh-keygen -t rsa -C &#34;annkuo@example.com&#34;
+</span></span><span class=line><span class=cl>Generating public/private rsa key pair.
+</span></span><span class=line><span class=cl>Enter file in which to save the key (C:\Users\user/.ssh/id_rsa):
+</span></span><span class=line><span class=cl>Enter passphrase (empty for no passphrase):
+</span></span><span class=line><span class=cl>Enter same passphrase again:
+</span></span><span class=line><span class=cl>Your identification has been saved in C:\Users\user/.ssh/id_rsa.
+</span></span><span class=line><span class=cl>Your public key has been saved in C:\Users\user/.ssh/id_rsa.pub.
+</span></span><span class=line><span class=cl>The key fingerprint is:
+</span></span><span class=line><span class=cl>SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx annkuo@example.com
+</span></span><span class=line><span class=cl>The key&#39;s randomart image is:
+</span></span><span class=line><span class=cl>+---[RSA 2048]----+
+</span></span><span class=line><span class=cl>|.  XXXXXXX..     |
+</span></span><span class=line><span class=cl>|.XXXXXXX. .      |
+</span></span><span class=line><span class=cl>|..XXXXX. .       |
+</span></span><span class=line><span class=cl>|   XXXXXXXX      |
+</span></span><span class=line><span class=cl>|    X   XXXX     |
+</span></span><span class=line><span class=cl>|     X XX X      |
+</span></span><span class=line><span class=cl>|      X  X X     |
+</span></span><span class=line><span class=cl>|      XXX X      |
+</span></span><span class=line><span class=cl>|       XXX       |
+</span></span><span class=line><span class=cl>+----[SHA256]-----+
+</span></span></code></pre></td></tr></table></div></div><ol start=4><li><p>到 <a class=link href=https://github.com/ target=_blank rel=noopener>GitHub</a> > <code>Setting</code> > <code>SSH and GPG keys</code> > <code>New SSH Key</code><br>找到剛剛在 <code>C:\Users\user\.ssh</code> 生成的 <code>id_rsa.pub</code><br>用記事本打開，把內容複製到 Key 欄位 (忽視 Title) > <code>Add SSH key</code></p></li><li><p>檢查是否成功驗證身分</p></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>ssh -T git@github.com
+</span></span><span class=line><span class=cl>Hi annkuoQ! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+</span></span></code></pre></td></tr></table></div></div><ol start=6><li>再次 clone repo 成功</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>git clone git@github.com:annkuoQ/test.git
+</span></span><span class=line><span class=cl>Cloning into &#39;test&#39;...
+</span></span><span class=line><span class=cl>Warning: Permanently added the RSA host key for IP address &#39;(IP ADDRESS)&#39; to the list of known hosts.
+</span></span><span class=line><span class=cl>remote: Enumerating objects: 486, done.
+</span></span><span class=line><span class=cl>remote: Counting objects: 100% (486/486), done.
+</span></span><span class=line><span class=cl>remote: Compressing objects: 100% (377/377), done.
+</span></span><span class=line><span class=cl>remote: Total 486 (delta 79), reused 482 (delta 77), pack-reused 0
+</span></span><span class=line><span class=cl>Receiving objects: 100% (486/486), 784.38 KiB | 752.00 KiB/s, done.
+</span></span><span class=line><span class=cl>Resolving deltas: 100% (79/79), done.
+</span></span></code></pre></td></tr></table></div></div><h2 id=參考資料>參考資料</h2><ul><li><a class=link href=https://github.com/cmderdev/cmder/wiki target=_blank rel=noopener>Cmder GitHub Wiki</a></li><li><a class=link href=https://www.jianshu.com/p/d19791b7e121 target=_blank rel=noopener>cmder waring conEmu binaries were marked as &lsquo;Downloaded from internet&rsquo;</a></li><li><a class=link href=https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh target=_blank rel=noopener>GitHub Help - Connecting to GitHub with SSH</a></li><li><a class=link href=https://help.github.com/en/github/authenticating-to-github/error-permission-denied-publickey target=_blank rel=noopener>GitHub Help - Error: Permission denied (publickey)</a></li><li><a class=link href=https://www.jianshu.com/p/21f4f47689b0 target=_blank rel=noopener>git遇到的问题之“Please make sure you have the correct access rights and the repository exists.”</a></li></ul></section><footer class=article-footer><section class=article-tags><a href=https://annkuoq.github.io/blog/tags/cmder/>Cmder</a>
+<a href=https://annkuoq.github.io/blog/tags/git/>Git</a></section><section class=article-copyright><svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>相關文章</h2><div class=related-content><div class="flex article-list--tile"><article><a href=https://annkuoq.github.io/blog/2026-05-17-how-to-build-a-personal-expense-tracking-system-with-google-sheets-and-iphone-shortcuts/><div class=article-details><h2 class=article-title>如何使用 Google Sheets 和 iPhone 捷徑打造記帳系統</h2></div></a></article><article><a href=https://annkuoq.github.io/blog/2026-01-17-how-to-use-whisper-on-windows/><div class=article-details><h2 class=article-title>如何在 Windows 使用 Whisper</h2></div></a></article><article><a href=https://annkuoq.github.io/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/><div class=article-details><h2 class=article-title>如何用 AI 摘要 YouTube 影片重點</h2></div></a></article><article><a href=https://annkuoq.github.io/blog/2021-05-02-use-tracert-to-troubleshoot-network/><div class=article-details><h2 class=article-title>網路卡卡？快用 tracert 找出問題點！</h2></div></a></article><article><a href=https://annkuoq.github.io/blog/2021-02-03-how-to-use-line-notify-to-send-messages/><div class=article-details><h2 class=article-title>如何使用 LINE Notify 發通知</h2></div></a></article></div></div></aside><script src=https://utteranc.es/client.js repo=annkuoQ/blog-utterances issue-term=title crossorigin=anonymous async></script><style>.utterances{max-width:unset}</style><script>let utterancesLoaded=!1;function setUtterancesTheme(e){let t=document.querySelector(".utterances iframe");t&&t.contentWindow.postMessage({type:"set-theme",theme:`github-${e}`},"https://utteranc.es")}addEventListener("message",e=>{if(e.origin!=="https://utteranc.es")return;utterancesLoaded=!0,setUtterancesTheme(document.documentElement.dataset.scheme)}),window.addEventListener("onColorSchemeChange",e=>{if(!utterancesLoaded)return;setUtterancesTheme(e.detail)})</script><footer class=site-footer><section class=copyright>&copy;
+2020 -
+2026 AnnKuoQ</section><section class=powerby>使用 <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> 建立<br>主題 <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.32.0>Stack</a></b> 由 <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a> 設計</section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=https://annkuoq.github.io/blog/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script></body></html>
