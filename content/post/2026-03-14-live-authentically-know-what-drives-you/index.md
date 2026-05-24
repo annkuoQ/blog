@@ -2,7 +2,7 @@
 title: 想活得像自己，從認識自己的動機開始
 date: 2026-03-14
 slug: "2026-03-14-live-authentically-know-what-drives-you"
-description:  很多看起來相同的行動，背後的聲音其實完全不一樣，有些出於恐懼、有些出於愛...
+description:  許多人感到空虛，生活明明很忙，卻總覺得哪裡不對勁，因為填滿時間的那些事，大多不是自己真正在意的...
 categories: 隨筆
 tags:
 - behavioral motivation
