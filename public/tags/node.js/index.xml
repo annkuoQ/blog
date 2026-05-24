@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Node.js on AnnKuoQ Blog</title>
-        <link>https://annkuoq.github.io/blog/tags/node.js/</link>
+        <link>http://localhost:1313/blog/tags/node.js/</link>
         <description>Recent content in Node.js on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Mon, 16 Dec 2019 13:56:25 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/node.js/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 16 Dec 2019 13:56:25 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/node.js/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Win 10 安裝 Node.js 和 http-server</title>
-        <link>https://annkuoq.github.io/blog/2019-12-16-install-nodejs-httpserver/</link>
+        <link>http://localhost:1313/blog/2019-12-16-install-nodejs-httpserver/</link>
         <pubDate>Mon, 16 Dec 2019 13:56:25 +0000</pubDate>
         
-        <guid>https://annkuoq.github.io/blog/2019-12-16-install-nodejs-httpserver/</guid>
+        <guid>http://localhost:1313/blog/2019-12-16-install-nodejs-httpserver/</guid>
         <description>&lt;p&gt;為什麼要安裝 Node.js？&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;因為它可以讓後端伺服器跑 JavaScript&lt;/li&gt;

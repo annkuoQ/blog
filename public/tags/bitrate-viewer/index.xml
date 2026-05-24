@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Bitrate Viewer on AnnKuoQ Blog</title>
-        <link>https://annkuoq.github.io/blog/tags/bitrate-viewer/</link>
+        <link>http://localhost:1313/blog/tags/bitrate-viewer/</link>
         <description>Recent content in Bitrate Viewer on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Sun, 26 Apr 2020 14:29:21 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/bitrate-viewer/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 26 Apr 2020 14:29:21 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/bitrate-viewer/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何知道影片從頭到尾 Bitrate 的變化</title>
-        <link>https://annkuoq.github.io/blog/2020-04-26-how-to-check-video-bitrate/</link>
+        <link>http://localhost:1313/blog/2020-04-26-how-to-check-video-bitrate/</link>
         <pubDate>Sun, 26 Apr 2020 14:29:21 +0000</pubDate>
         
-        <guid>https://annkuoq.github.io/blog/2020-04-26-how-to-check-video-bitrate/</guid>
+        <guid>http://localhost:1313/blog/2020-04-26-how-to-check-video-bitrate/</guid>
         <description>&lt;p&gt;最近在研究適合網路串流的 VBR 轉檔&lt;br&gt;
 想知道整段影片的 Bitrate 是怎樣變化的&lt;br&gt;
 要是 maximum bitrate (最大流量) 高過網速時&lt;br&gt;

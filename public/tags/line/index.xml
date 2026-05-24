@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>LINE on AnnKuoQ Blog</title>
-        <link>https://annkuoq.github.io/blog/tags/line/</link>
+        <link>http://localhost:1313/blog/tags/line/</link>
         <description>Recent content in LINE on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Wed, 03 Feb 2021 22:11:31 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/line/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 03 Feb 2021 22:11:31 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/line/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何使用 LINE Notify 發通知</title>
-        <link>https://annkuoq.github.io/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</link>
+        <link>http://localhost:1313/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</link>
         <pubDate>Wed, 03 Feb 2021 22:11:31 +0000</pubDate>
         
-        <guid>https://annkuoq.github.io/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</guid>
+        <guid>http://localhost:1313/blog/2021-02-03-how-to-use-line-notify-to-send-messages/</guid>
         <description>&lt;p&gt;最近做了一個監控的 bat&lt;br&gt;
 如果服務有發生問題就發通知提醒&lt;br&gt;
 而 LINE 是很多人都在用的通訊軟體&lt;br&gt;
@@ -128,10 +128,10 @@ Bot 超過額度需要收費，Notify 則是免費&lt;br&gt;
         </item>
         <item>
         <title>LINE Taiwan TechPulse 2018 開發者大會</title>
-        <link>https://annkuoq.github.io/blog/2018-12-21-line-taiwan-techpulse-2018/</link>
+        <link>http://localhost:1313/blog/2018-12-21-line-taiwan-techpulse-2018/</link>
         <pubDate>Fri, 21 Dec 2018 23:10:11 +0000</pubDate>
         
-        <guid>https://annkuoq.github.io/blog/2018-12-21-line-taiwan-techpulse-2018/</guid>
+        <guid>http://localhost:1313/blog/2018-12-21-line-taiwan-techpulse-2018/</guid>
         <description>&lt;p&gt;同事告知最近有一個 LINE 的開發者說明會&lt;br&gt;
 覺得很酷就報名了&lt;br&gt;
 &lt;del&gt;雖然不懂程式，英文也不好&lt;/del&gt;&lt;br&gt;

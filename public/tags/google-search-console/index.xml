@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Google Search Console on AnnKuoQ Blog</title>
-        <link>https://annkuoq.github.io/blog/tags/google-search-console/</link>
+        <link>http://localhost:1313/blog/tags/google-search-console/</link>
         <description>Recent content in Google Search Console on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Sun, 15 Mar 2020 10:50:02 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/google-search-console/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 15 Mar 2020 10:50:02 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/google-search-console/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何讓 Google 搜尋到自己的部落格</title>
-        <link>https://annkuoq.github.io/blog/2020-03-15-how-to-find-my-blog-on-google-search/</link>
+        <link>http://localhost:1313/blog/2020-03-15-how-to-find-my-blog-on-google-search/</link>
         <pubDate>Sun, 15 Mar 2020 10:50:02 +0000</pubDate>
         
-        <guid>https://annkuoq.github.io/blog/2020-03-15-how-to-find-my-blog-on-google-search/</guid>
+        <guid>http://localhost:1313/blog/2020-03-15-how-to-find-my-blog-on-google-search/</guid>
         <description>&lt;p&gt;首先要先了解 Google 搜尋是怎麼運作的&lt;br&gt;
 其實 Google 不是搜尋整個網路&lt;br&gt;
 而是在搜尋 Google 的網頁索引 (index)&lt;/p&gt;

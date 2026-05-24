@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Aws on AnnKuoQ Blog</title>
-        <link>https://annkuoq.github.io/blog/tags/aws/</link>
+        <link>http://localhost:1313/blog/tags/aws/</link>
         <description>Recent content in Aws on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Fri, 03 Apr 2020 22:13:37 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/aws/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 03 Apr 2020 22:13:37 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/aws/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>免費的 AWS 轉檔基礎知識線上課程</title>
-        <link>https://annkuoq.github.io/blog/2020-04-03-free-aws-digital-training-for-video-compression-basics/</link>
+        <link>http://localhost:1313/blog/2020-04-03-free-aws-digital-training-for-video-compression-basics/</link>
         <pubDate>Fri, 03 Apr 2020 22:13:37 +0000</pubDate>
         
-        <guid>https://annkuoq.github.io/blog/2020-04-03-free-aws-digital-training-for-video-compression-basics/</guid>
+        <guid>http://localhost:1313/blog/2020-04-03-free-aws-digital-training-for-video-compression-basics/</guid>
         <description>&lt;p&gt;AWS 為了讓大家能更了解他們的服務&lt;br&gt;
 提供了許多免費的線上課程&lt;br&gt;
 其中包括了許多基礎知識&lt;br&gt;

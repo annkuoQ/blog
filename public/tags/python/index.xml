@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Python on AnnKuoQ Blog</title>
-        <link>https://annkuoq.github.io/blog/tags/python/</link>
+        <link>http://localhost:1313/blog/tags/python/</link>
         <description>Recent content in Python on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Sat, 17 Jan 2026 11:20:10 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/python/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 17 Jan 2026 11:20:10 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/python/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何在 Windows 使用 Whisper</title>
-        <link>https://annkuoq.github.io/blog/2026-01-17-how-to-use-whisper-on-windows/</link>
+        <link>http://localhost:1313/blog/2026-01-17-how-to-use-whisper-on-windows/</link>
         <pubDate>Sat, 17 Jan 2026 11:20:10 +0000</pubDate>
         
-        <guid>https://annkuoq.github.io/blog/2026-01-17-how-to-use-whisper-on-windows/</guid>
+        <guid>http://localhost:1313/blog/2026-01-17-how-to-use-whisper-on-windows/</guid>
         <description>&lt;h2 id=&#34;whisper-介紹&#34;&gt;Whisper 介紹
 &lt;/h2&gt;&lt;p&gt;Whisper 是 OpenAI 開發的自動語音辨識模型&lt;br&gt;
 可以把「人講話的聲音」轉成「文字」&lt;/p&gt;
@@ -366,10 +366,10 @@ CMD 也會顯示目前處理的進度&lt;/p&gt;
         </item>
         <item>
         <title>如何用 AI 摘要 YouTube 影片重點</title>
-        <link>https://annkuoq.github.io/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/</link>
+        <link>http://localhost:1313/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/</link>
         <pubDate>Tue, 13 Jan 2026 21:52:29 +0000</pubDate>
         
-        <guid>https://annkuoq.github.io/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/</guid>
+        <guid>http://localhost:1313/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/</guid>
         <description>&lt;p&gt;每天都有看不完的影片跟聽不完的 Podcast&lt;br&gt;
 如果懶得看，但又想知道重點該怎麼做呢&lt;/p&gt;
 &lt;p&gt;我們需要三種工具來協助完成&lt;/p&gt;

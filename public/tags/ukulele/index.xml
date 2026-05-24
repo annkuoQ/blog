@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Ukulele on AnnKuoQ Blog</title>
-        <link>https://annkuoq.github.io/blog/tags/ukulele/</link>
+        <link>http://localhost:1313/blog/tags/ukulele/</link>
         <description>Recent content in Ukulele on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Sun, 15 Feb 2026 11:01:00 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/ukulele/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 15 Feb 2026 11:01:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/ukulele/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何用 MuseScore 打烏克麗麗譜</title>
-        <link>https://annkuoq.github.io/blog/2026-02-15-how-to-make-ukulele-tabs-in-musescore/</link>
+        <link>http://localhost:1313/blog/2026-02-15-how-to-make-ukulele-tabs-in-musescore/</link>
         <pubDate>Sun, 15 Feb 2026 11:01:00 +0000</pubDate>
         
-        <guid>https://annkuoq.github.io/blog/2026-02-15-how-to-make-ukulele-tabs-in-musescore/</guid>
+        <guid>http://localhost:1313/blog/2026-02-15-how-to-make-ukulele-tabs-in-musescore/</guid>
         <description>&lt;h2 id=&#34;musescore-介紹&#34;&gt;MuseScore 介紹
 &lt;/h2&gt;&lt;p&gt;MuseScore 是一套免費且開源的製譜軟體&lt;br&gt;
 支援 Windows, Mac OS, Linux&lt;br&gt;
@@ -233,10 +233,10 @@ b. 編輯 &lt;code&gt;作品標題&lt;/code&gt;&lt;/p&gt;
         </item>
         <item>
         <title>烏克麗麗如何彈 Do Re Mi</title>
-        <link>https://annkuoq.github.io/blog/2014-02-01-ukulele-do-re-mi-scales/</link>
+        <link>http://localhost:1313/blog/2014-02-01-ukulele-do-re-mi-scales/</link>
         <pubDate>Sat, 01 Feb 2014 13:51:43 +0000</pubDate>
         
-        <guid>https://annkuoq.github.io/blog/2014-02-01-ukulele-do-re-mi-scales/</guid>
+        <guid>http://localhost:1313/blog/2014-02-01-ukulele-do-re-mi-scales/</guid>
         <description>&lt;p&gt;想要知道怎麼在烏克麗麗上彈 Do Re Mi&lt;br&gt;
 首先要知道每一條弦的空弦音&lt;br&gt;
 你只要會調音，就一定知道空弦音&lt;/p&gt;
@@ -306,10 +306,10 @@ G 和 A 距離一個全音 (兩格) =&amp;gt; A 在第十二格&lt;/p&gt;
         </item>
         <item>
         <title>暖身操與爬格子</title>
-        <link>https://annkuoq.github.io/blog/2014-01-19-hand-stretch-exercises/</link>
+        <link>http://localhost:1313/blog/2014-01-19-hand-stretch-exercises/</link>
         <pubDate>Sun, 19 Jan 2014 23:09:43 +0000</pubDate>
         
-        <guid>https://annkuoq.github.io/blog/2014-01-19-hand-stretch-exercises/</guid>
+        <guid>http://localhost:1313/blog/2014-01-19-hand-stretch-exercises/</guid>
         <description>&lt;p&gt;彈琴之前要做一些熱身練習&lt;br&gt;
 就像運動之前的拉筋一樣&lt;br&gt;
 可以讓你的手指更靈活&lt;br&gt;
@@ -407,10 +407,10 @@ G 和 A 距離一個全音 (兩格) =&amp;gt; A 在第十二格&lt;/p&gt;
         </item>
         <item>
         <title>烏克麗麗的技巧記號與反覆記號</title>
-        <link>https://annkuoq.github.io/blog/2013-08-11-ukulele-tab-symbols-and-repetition/</link>
+        <link>http://localhost:1313/blog/2013-08-11-ukulele-tab-symbols-and-repetition/</link>
         <pubDate>Sun, 11 Aug 2013 23:24:43 +0000</pubDate>
         
-        <guid>https://annkuoq.github.io/blog/2013-08-11-ukulele-tab-symbols-and-repetition/</guid>
+        <guid>http://localhost:1313/blog/2013-08-11-ukulele-tab-symbols-and-repetition/</guid>
         <description>&lt;h3 id=&#34;技巧記號&#34;&gt;技巧記號
 &lt;/h3&gt;&lt;p&gt;四線譜上有哪些常見的技巧記號呢&lt;/p&gt;
 &lt;!-- more --&gt;
@@ -519,10 +519,10 @@ G 和 A 距離一個全音 (兩格) =&amp;gt; A 在第十二格&lt;/p&gt;
         </item>
         <item>
         <title>烏克麗麗的和弦圖與四線譜</title>
-        <link>https://annkuoq.github.io/blog/2013-08-10-ukulele-read-chord-and-tab/</link>
+        <link>http://localhost:1313/blog/2013-08-10-ukulele-read-chord-and-tab/</link>
         <pubDate>Sat, 10 Aug 2013 22:19:43 +0000</pubDate>
         
-        <guid>https://annkuoq.github.io/blog/2013-08-10-ukulele-read-chord-and-tab/</guid>
+        <guid>http://localhost:1313/blog/2013-08-10-ukulele-read-chord-and-tab/</guid>
         <description>&lt;h3 id=&#34;和弦圖&#34;&gt;和弦圖
 &lt;/h3&gt;&lt;p&gt;和弦圖有直的也有橫的&lt;br&gt;
 其實它就是烏克麗麗的指板&lt;/p&gt;
@@ -628,10 +628,10 @@ V 是往上刷&lt;/p&gt;
         </item>
         <item>
         <title>音符與節拍</title>
-        <link>https://annkuoq.github.io/blog/2013-08-09-music-notes-and-rhythm/</link>
+        <link>http://localhost:1313/blog/2013-08-09-music-notes-and-rhythm/</link>
         <pubDate>Fri, 09 Aug 2013 17:42:43 +0000</pubDate>
         
-        <guid>https://annkuoq.github.io/blog/2013-08-09-music-notes-and-rhythm/</guid>
+        <guid>http://localhost:1313/blog/2013-08-09-music-notes-and-rhythm/</guid>
         <description>&lt;p&gt;在讀譜之前&lt;br&gt;
 要先認識音符和拍值&lt;/p&gt;
 &lt;!-- more --&gt;
@@ -708,10 +708,10 @@ BPM (beats per minute) 是每分鐘的拍數&lt;/p&gt;
         </item>
         <item>
         <title>烏克麗麗的持琴姿勢/彈奏方式</title>
-        <link>https://annkuoq.github.io/blog/2013-07-29-hold-and-strum-ukulele/</link>
+        <link>http://localhost:1313/blog/2013-07-29-hold-and-strum-ukulele/</link>
         <pubDate>Mon, 29 Jul 2013 23:46:43 +0000</pubDate>
         
-        <guid>https://annkuoq.github.io/blog/2013-07-29-hold-and-strum-ukulele/</guid>
+        <guid>http://localhost:1313/blog/2013-07-29-hold-and-strum-ukulele/</guid>
         <description>&lt;p&gt;烏克麗麗是一個很隨興的樂器&lt;br&gt;
 所以沒有一定的姿勢或方式&lt;br&gt;
 最重要的就是讓自己感覺到舒服自在就好囉&lt;/p&gt;
@@ -818,10 +818,10 @@ Pick 有分軟硬，軟適合刷和弦，硬適合 Solo&lt;/p&gt;
         </item>
         <item>
         <title>烏克麗麗的調音/C大調音階</title>
-        <link>https://annkuoq.github.io/blog/2013-07-25-tune-ukulele-and-c-major-scale/</link>
+        <link>http://localhost:1313/blog/2013-07-25-tune-ukulele-and-c-major-scale/</link>
         <pubDate>Thu, 25 Jul 2013 22:27:43 +0000</pubDate>
         
-        <guid>https://annkuoq.github.io/blog/2013-07-25-tune-ukulele-and-c-major-scale/</guid>
+        <guid>http://localhost:1313/blog/2013-07-25-tune-ukulele-and-c-major-scale/</guid>
         <description>&lt;h3 id=&#34;音的名字&#34;&gt;音的名字
 &lt;/h3&gt;&lt;p&gt;在調音之前呢&lt;br&gt;
 我們要先知道每個音的名字&lt;br&gt;
@@ -896,10 +896,10 @@ Do 到 Mi 是三度&lt;br&gt;
         </item>
         <item>
         <title>烏克麗麗的歷史/種類/結構</title>
-        <link>https://annkuoq.github.io/blog/2013-07-22-ukulele-history-types-anatomy/</link>
+        <link>http://localhost:1313/blog/2013-07-22-ukulele-history-types-anatomy/</link>
         <pubDate>Mon, 22 Jul 2013 23:20:43 +0000</pubDate>
         
-        <guid>https://annkuoq.github.io/blog/2013-07-22-ukulele-history-types-anatomy/</guid>
+        <guid>http://localhost:1313/blog/2013-07-22-ukulele-history-types-anatomy/</guid>
         <description>&lt;h3 id=&#34;歷史&#34;&gt;歷史
 &lt;/h3&gt;&lt;p&gt;在很久很久以前 (老套開頭)&lt;br&gt;
 就是在 1879 年 8 月 23 日那天&lt;br&gt;

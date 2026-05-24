@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr">
+    <head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="我原本一直是用一個 APP 在記帳，但想到如果哪天這個 APP 停止服務，那我過去的資料怎麼辦...">
+<title>如何使用 Google Sheets 和 iPhone 捷徑打造記帳系統</title>
+
+<link rel='canonical' href='http://localhost:1313/blog/2026-05-17-how-to-build-a-personal-expense-tracking-system-with-google-sheets-and-iphone-shortcuts/'>
+
+<link rel="stylesheet" href="http://localhost:1313/blog/scss/style.min.9181d21a9686d2b9df6804e8423ef89abbe3f2eaa68cdd1fe46406b71b17759c.css"><meta property='og:title' content="如何使用 Google Sheets 和 iPhone 捷徑打造記帳系統">
+<meta property='og:description' content="我原本一直是用一個 APP 在記帳，但想到如果哪天這個 APP 停止服務，那我過去的資料怎麼辦...">
+<meta property='og:url' content='http://localhost:1313/blog/2026-05-17-how-to-build-a-personal-expense-tracking-system-with-google-sheets-and-iphone-shortcuts/'>
+<meta property='og:site_name' content='AnnKuoQ Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Google Apps Script' /><meta property='article:tag' content='iOS Shortcuts' /><meta property='article:published_time' content='2026-05-17T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-05-17T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="如何使用 Google Sheets 和 iPhone 捷徑打造記帳系統">
+<meta name="twitter:description" content="我原本一直是用一個 APP 在記帳，但想到如果哪天這個 APP 停止服務，那我過去的資料怎麼辦...">
+    <link rel="shortcut icon" href="http://localhost:1313/blog/img/favicon.ico" />
+<meta name="google-site-verification" content="BA0c9S2A0y6LKGGUAyEEIYAl4C0O7hED1HrbKlYmzts" />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "dark");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切換選單">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="http://localhost:1313/blog/">
+                
+                    <img src="http://localhost:1313/blog/img/avatar.png" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="http://localhost:1313/blog/">AnnKuoQ Blog</a></h1>
+            <h2 class="site-description">擺放各種筆記的地方</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='http://localhost:1313/blog/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='http://localhost:1313/blog/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='http://localhost:1313/blog/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='http://localhost:1313/blog/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目錄</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#建立-google-sheet-結構">建立 Google Sheet 結構</a>
+      <ol>
+        <li><a href="#建立工作表與欄位">建立工作表與欄位</a></li>
+        <li><a href="#建立命名範圍">建立命名範圍</a></li>
+        <li><a href="#匯入舊資料">匯入舊資料</a></li>
+      </ol>
+    </li>
+    <li><a href="#apps-script-開發">Apps Script 開發</a>
+      <ol>
+        <li><a href="#撰寫程式碼">撰寫程式碼</a></li>
+        <li><a href="#部署程式碼">部署程式碼</a></li>
+      </ol>
+    </li>
+    <li><a href="#iphone-捷徑設定">iPhone 捷徑設定</a>
+      <ol>
+        <li><a href="#建立捷徑">建立捷徑</a></li>
+        <li><a href="#新增動作">新增動作</a></li>
+        <li><a href="#測試捷徑">測試捷徑</a></li>
+        <li><a href="#加入主畫面">加入主畫面</a></li>
+        <li><a href="#下載捷徑">下載捷徑</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="http://localhost:1313/blog/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" >
+                技術筆記
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="http://localhost:1313/blog/2026-05-17-how-to-build-a-personal-expense-tracking-system-with-google-sheets-and-iphone-shortcuts/">如何使用 Google Sheets 和 iPhone 捷徑打造記帳系統</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            我原本一直是用一個 APP 在記帳，但想到如果哪天這個 APP 停止服務，那我過去的資料怎麼辦...
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2026-05-17T00:00:00Z'>2026-5-17</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>我原本一直是用一個 APP 在記帳<br>
+但想到如果哪天這個 APP 停止服務<br>
+那我過去的資料怎麼辦</p>
+<p>於是我先把 APP 裡的資料全部匯出<br>
+接著跟 AI 研究怎麼做一套簡單的系統</p>
+<p>後來架構決定是</p>
+<ul>
+<li>Google Sheets：存放所有記帳資料</li>
+<li>Apps Script：當作後端 API，處理資料寫入與查詢</li>
+<li>iPhone 捷徑：作為前端輸入介面，快速新增支出紀錄</li>
+</ul>
+<p>中間卡最久的是 iPhone 捷徑<br>
+因為要一個一個動作自己新增<br>
+而且 AI 跟我講的動作名稱常常找不到<br>
+例如 AI 說 <code>詢問輸入</code>，結果其實叫 <code>要求輸入</code><br>
+還有 AI 說 <code>從清單中選擇</code>，但應該叫 <code>從列表中選擇</code><br>
+而且還有什麼 <code>鍵</code> <code>值</code> 都搞不懂<br>
+抱怨完了XD，就趕快開始吧 😆</p>
+<h2 id="建立-google-sheet-結構">建立 Google Sheet 結構
+</h2><h3 id="建立工作表與欄位">建立工作表與欄位
+</h3><ol>
+<li>前往 <a class="link" href="https://sheets.google.com/"  target="_blank" rel="noopener"
+    >Google Sheets</a> 建立新檔案</li>
+<li>將試算表重新命名為「個人記帳系統」</li>
+<li>將預設的「工作表1」重新命名為「設定」</li>
+<li>在「設定」分頁輸入以下欄位:</li>
+</ol>
+<p>金錢流向類型</p>
+<ul>
+<li>A1: <code>類型</code></li>
+<li>A2~A3: <code>消費</code>、<code>收入</code></li>
+</ul>
+<p>資金來源帳戶</p>
+<ul>
+<li>B1: <code>帳戶</code></li>
+<li>B2~B5: <code>現金</code>、<code>信用卡</code>、<code>簽帳金融卡</code>、<code>銀行</code></li>
+</ul>
+<p>消費科目標記 (Apps Script 自動偵測用)</p>
+<ul>
+<li>C1: <code>[消費]</code></li>
+</ul>
+<p>消費科目與次科目</p>
+<ul>
+<li>D1~I1: <code>食</code>、<code>衣</code>、<code>住</code>、<code>行</code>、<code>育</code>、<code>樂</code></li>
+<li>D2~D4: <code>三餐</code>、<code>零食</code>、<code>飲料</code></li>
+<li>E2~E4: <code>服飾</code>、<code>鞋子</code>、<code>包包</code></li>
+<li>F2~F5: <code>房租</code>、<code>水電費</code>、<code>網路費</code>、<code>生活用品</code></li>
+<li>G2~G5: <code>大眾運輸</code>、<code>計程車</code>、<code>加油</code>、<code>停車費</code></li>
+<li>H2~H3: <code>書籍雜誌</code>、<code>線上課程</code></li>
+<li>I2~I5: <code>電影</code>、<code>演唱會</code>、<code>旅遊</code>、<code>串流平台</code></li>
+</ul>
+<p>收入科目標記 (Apps Script 自動偵測用)</p>
+<ul>
+<li>J1: <code>[收入]</code></li>
+</ul>
+<p>收入科目與次科目</p>
+<ul>
+<li>K1~M1: <code>主動收入</code>、<code>被動收入</code>、<code>其他</code></li>
+<li>K2~K3: <code>薪資</code>、<code>獎金</code></li>
+<li>L2~L3: <code>利息</code>、<code>廣告分潤</code></li>
+<li>M2~M3: <code>中獎</code>、<code>補助</code></li>
+</ul>
+<p>完成後長這樣 👇</p>
+<div align="center"><img src="./sheets-config-column.jpg"></div>
+<h3 id="建立命名範圍">建立命名範圍
+</h3><p>為了讓 Apps Script 可以動態抓取<br>
+要幫每個科目的次科目建立「命名範圍」<br>
+這樣抓「食」就能知道底下的「三餐、零食、飲料」</p>
+<ol>
+<li>框選「食」的次科目範圍</li>
+<li>點選上方選單: 「資料」 → 「已命名範圍」</li>
+<li>在右側面板中：
+<ul>
+<li>名稱輸入: <code>食</code></li>
+<li>範圍確認為: <code>'設定'!D2:D4</code></li>
+<li>點擊「完成」</li>
+</ul>
+</li>
+</ol>
+<div align="center"><img src="./named-range.jpg"></div>
+<p>重複此步驟，為每個科目建立命名範圍：</p>
+<ul>
+<li>衣 → <code>'設定'!E2:E4</code></li>
+<li>住 → <code>'設定'!F2:F5</code></li>
+<li>行 → <code>'設定'!G2:G5</code></li>
+<li>育 → <code>'設定'!H2:H3</code></li>
+<li>樂 → <code>'設定'!I2:I5</code></li>
+<li>主動收入 → <code>'設定'!K2:K3</code></li>
+<li>被動收入 → <code>'設定'!L2:L3</code></li>
+<li>其他 → <code>'設定'!M2:M3</code></li>
+</ul>
+<p>這裡我踩到了一個坑 🕳️<br>
+消費跟支出都有一個叫 <code>其他</code> 的科目<br>
+但不能重複命名<br>
+所以最後改成 <code>消費其他</code>、<code>收入其他</code></p>
+<h3 id="匯入舊資料">匯入舊資料
+</h3><p>接下來要把以前的資料匯進去<br>
+從 APP 匯出的 CSV 欄位是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#34;日期&#34;,&#34;類型&#34;,&#34;科目&#34;,&#34;帳戶&#34;,&#34;金額&#34;,&#34;摘要&#34;,
+</span></span><span class="line"><span class="cl">&#34;2024-06-03&#34;,&#34;消費&#34;,&#34;行-悠遊卡&#34;,&#34;現金&#34;,&#34;1200&#34;,&#34;&#34;,
+</span></span><span class="line"><span class="cl">&#34;2024-06-05&#34;,&#34;消費&#34;,&#34;樂-旅遊&#34;,&#34;信用卡&#34;,&#34;3699&#34;,&#34;遊樂園&#34;,
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>發現科目跟次科目在同一欄位<br>
+於是先用 Python 清理資料<br>
+把它們拆成不同欄位</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">科目 → 科目,次科目
+</span></span><span class="line"><span class="cl">行-悠遊卡 → 行,悠遊卡
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接著回到 Google Sheet</p>
+<ol>
+<li>新增年份的分頁，例如 <code>2024</code></li>
+<li>點選 <code>A1</code> 儲存格，上方選單「檔案」→「匯入」</li>
+<li>選擇 「上傳」，把清理好的 CSV 上傳</li>
+<li>匯入位置 →「附加到目前工作表」<br>
+分隔符類型 →「半形逗號」<br>
+點「匯入資料」</li>
+</ol>
+<div align="center"><img src="./import-legacy-data-1.jpg" width="400px"/></div>
+<p>重複以上步驟，把每年的 CSV 匯入對應分頁</p>
+<div align="center"><img src="./import-legacy-data-2.jpg" width="600px"/></div>
+<h2 id="apps-script-開發">Apps Script 開發
+</h2><h3 id="撰寫程式碼">撰寫程式碼
+</h3><ol>
+<li>點擊上方選單「擴充功能」→「Apps Script」</li>
+<li>將專案重新命名為「記帳系統 API」</li>
+</ol>
+<div align="center"><img src="./apps-script-1.jpg" width="700px"/></div>
+<ol start="3">
+<li>刪除預設的 <code>myFunction()</code> 程式碼</li>
+<li>貼上完整程式碼</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span><span class="lnt">258
+</span><span class="lnt">259
+</span><span class="lnt">260
+</span><span class="lnt">261
+</span><span class="lnt">262
+</span><span class="lnt">263
+</span><span class="lnt">264
+</span><span class="lnt">265
+</span><span class="lnt">266
+</span><span class="lnt">267
+</span><span class="lnt">268
+</span><span class="lnt">269
+</span><span class="lnt">270
+</span><span class="lnt">271
+</span><span class="lnt">272
+</span><span class="lnt">273
+</span><span class="lnt">274
+</span><span class="lnt">275
+</span><span class="lnt">276
+</span><span class="lnt">277
+</span><span class="lnt">278
+</span><span class="lnt">279
+</span><span class="lnt">280
+</span><span class="lnt">281
+</span><span class="lnt">282
+</span><span class="lnt">283
+</span><span class="lnt">284
+</span><span class="lnt">285
+</span><span class="lnt">286
+</span><span class="lnt">287
+</span><span class="lnt">288
+</span><span class="lnt">289
+</span><span class="lnt">290
+</span><span class="lnt">291
+</span><span class="lnt">292
+</span><span class="lnt">293
+</span><span class="lnt">294
+</span><span class="lnt">295
+</span><span class="lnt">296
+</span><span class="lnt">297
+</span><span class="lnt">298
+</span><span class="lnt">299
+</span><span class="lnt">300
+</span><span class="lnt">301
+</span><span class="lnt">302
+</span><span class="lnt">303
+</span><span class="lnt">304
+</span><span class="lnt">305
+</span><span class="lnt">306
+</span><span class="lnt">307
+</span><span class="lnt">308
+</span><span class="lnt">309
+</span><span class="lnt">310
+</span><span class="lnt">311
+</span><span class="lnt">312
+</span><span class="lnt">313
+</span><span class="lnt">314
+</span><span class="lnt">315
+</span><span class="lnt">316
+</span><span class="lnt">317
+</span><span class="lnt">318
+</span><span class="lnt">319
+</span><span class="lnt">320
+</span><span class="lnt">321
+</span><span class="lnt">322
+</span><span class="lnt">323
+</span><span class="lnt">324
+</span><span class="lnt">325
+</span><span class="lnt">326
+</span><span class="lnt">327
+</span><span class="lnt">328
+</span><span class="lnt">329
+</span><span class="lnt">330
+</span><span class="lnt">331
+</span><span class="lnt">332
+</span><span class="lnt">333
+</span><span class="lnt">334
+</span><span class="lnt">335
+</span><span class="lnt">336
+</span><span class="lnt">337
+</span><span class="lnt">338
+</span><span class="lnt">339
+</span><span class="lnt">340
+</span><span class="lnt">341
+</span><span class="lnt">342
+</span><span class="lnt">343
+</span><span class="lnt">344
+</span><span class="lnt">345
+</span><span class="lnt">346
+</span><span class="lnt">347
+</span><span class="lnt">348
+</span><span class="lnt">349
+</span><span class="lnt">350
+</span><span class="lnt">351
+</span><span class="lnt">352
+</span><span class="lnt">353
+</span><span class="lnt">354
+</span><span class="lnt">355
+</span><span class="lnt">356
+</span><span class="lnt">357
+</span><span class="lnt">358
+</span><span class="lnt">359
+</span><span class="lnt">360
+</span><span class="lnt">361
+</span><span class="lnt">362
+</span><span class="lnt">363
+</span><span class="lnt">364
+</span><span class="lnt">365
+</span><span class="lnt">366
+</span><span class="lnt">367
+</span><span class="lnt">368
+</span><span class="lnt">369
+</span><span class="lnt">370
+</span><span class="lnt">371
+</span><span class="lnt">372
+</span><span class="lnt">373
+</span><span class="lnt">374
+</span><span class="lnt">375
+</span><span class="lnt">376
+</span><span class="lnt">377
+</span><span class="lnt">378
+</span><span class="lnt">379
+</span><span class="lnt">380
+</span><span class="lnt">381
+</span><span class="lnt">382
+</span><span class="lnt">383
+</span><span class="lnt">384
+</span><span class="lnt">385
+</span><span class="lnt">386
+</span><span class="lnt">387
+</span><span class="lnt">388
+</span><span class="lnt">389
+</span><span class="lnt">390
+</span><span class="lnt">391
+</span><span class="lnt">392
+</span><span class="lnt">393
+</span><span class="lnt">394
+</span><span class="lnt">395
+</span><span class="lnt">396
+</span><span class="lnt">397
+</span><span class="lnt">398
+</span><span class="lnt">399
+</span><span class="lnt">400
+</span><span class="lnt">401
+</span><span class="lnt">402
+</span><span class="lnt">403
+</span><span class="lnt">404
+</span><span class="lnt">405
+</span><span class="lnt">406
+</span><span class="lnt">407
+</span><span class="lnt">408
+</span><span class="lnt">409
+</span><span class="lnt">410
+</span><span class="lnt">411
+</span><span class="lnt">412
+</span><span class="lnt">413
+</span><span class="lnt">414
+</span><span class="lnt">415
+</span><span class="lnt">416
+</span><span class="lnt">417
+</span><span class="lnt">418
+</span><span class="lnt">419
+</span><span class="lnt">420
+</span><span class="lnt">421
+</span><span class="lnt">422
+</span><span class="lnt">423
+</span><span class="lnt">424
+</span><span class="lnt">425
+</span><span class="lnt">426
+</span><span class="lnt">427
+</span><span class="lnt">428
+</span><span class="lnt">429
+</span><span class="lnt">430
+</span><span class="lnt">431
+</span><span class="lnt">432
+</span><span class="lnt">433
+</span><span class="lnt">434
+</span><span class="lnt">435
+</span><span class="lnt">436
+</span><span class="lnt">437
+</span><span class="lnt">438
+</span><span class="lnt">439
+</span><span class="lnt">440
+</span><span class="lnt">441
+</span><span class="lnt">442
+</span><span class="lnt">443
+</span><span class="lnt">444
+</span><span class="lnt">445
+</span><span class="lnt">446
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="k">const</span> <span class="n">SHEET_ID</span> <span class="o">=</span> <span class="s1">&#39;你的試算表ID&#39;</span><span class="p">;</span> <span class="o">//</span> <span class="err">記得改成你的</span><span class="n">ID</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">CONFIG_SHEET</span> <span class="o">=</span> <span class="s1">&#39;設定&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="err">自動偵測消費和收入的科目範圍</span>
+</span></span><span class="line"><span class="cl"><span class="n">function</span> <span class="n">getCategoryRanges</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">ss</span> <span class="o">=</span> <span class="n">SpreadsheetApp</span><span class="o">.</span><span class="n">openById</span><span class="p">(</span><span class="n">SHEET_ID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">sheet</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">getSheetByName</span><span class="p">(</span><span class="n">CONFIG_SHEET</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">firstRow</span> <span class="o">=</span> <span class="n">sheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="s1">&#39;1:1&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">getValues</span><span class="p">()[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">ranges</span> <span class="o">=</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl">  <span class="n">let</span> <span class="n">currentType</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">let</span> <span class="n">startCol</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">firstRow</span><span class="o">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">cell</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">col</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="err">找到標記</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">cell</span> <span class="o">===</span> <span class="s1">&#39;[消費]&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">currentType</span> <span class="o">=</span> <span class="s1">&#39;消費&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="n">startCol</span> <span class="o">=</span> <span class="n">col</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="err">科目從下一欄開始</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">cell</span> <span class="o">===</span> <span class="s1">&#39;[收入]&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="o">//</span> <span class="err">儲存消費範圍</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="n">currentType</span> <span class="o">===</span> <span class="s1">&#39;消費&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">startCol</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">const</span> <span class="n">endCol</span> <span class="o">=</span> <span class="n">col</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ranges</span><span class="p">[</span><span class="s1">&#39;消費&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">startCol</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">endCol</span> <span class="o">-</span> <span class="n">startCol</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="n">currentType</span> <span class="o">=</span> <span class="s1">&#39;收入&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="n">startCol</span> <span class="o">=</span> <span class="n">col</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="o">//</span> <span class="err">儲存收入範圍（到最後）</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">currentType</span> <span class="o">===</span> <span class="s1">&#39;收入&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">startCol</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">lastCol</span> <span class="o">=</span> <span class="n">firstRow</span><span class="o">.</span><span class="n">length</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="err">找到收入的最後一個有值的欄位</span>
+</span></span><span class="line"><span class="cl">    <span class="n">let</span> <span class="n">endCol</span> <span class="o">=</span> <span class="n">startCol</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">i</span> <span class="o">=</span> <span class="n">startCol</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">lastCol</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="n">firstRow</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span> <span class="n">endCol</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ranges</span><span class="p">[</span><span class="s1">&#39;收入&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">startCol</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">endCol</span> <span class="o">-</span> <span class="n">startCol</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">ranges</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">function</span> <span class="n">doGet</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">action</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">parameter</span><span class="o">.</span><span class="n">action</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">let</span> <span class="n">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">action</span> <span class="o">===</span> <span class="s1">&#39;getConfig&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="n">getConfig</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="n">ContentService</span><span class="o">.</span><span class="n">createTextOutput</span><span class="p">(</span><span class="s1">&#39;{}&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">setMimeType</span><span class="p">(</span><span class="n">ContentService</span><span class="o">.</span><span class="n">MimeType</span><span class="o">.</span><span class="n">JSON</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">function</span> <span class="n">doPost</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">params</span> <span class="o">=</span> <span class="n">JSON</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">postData</span><span class="o">.</span><span class="n">contents</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">action</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">action</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">action</span> <span class="o">===</span> <span class="s1">&#39;addEntry&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="n">addEntry</span><span class="p">(</span><span class="n">params</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ContentService</span><span class="o">.</span><span class="n">createTextOutput</span><span class="p">(</span><span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">({</span> <span class="n">success</span><span class="p">:</span> <span class="bp">false</span><span class="p">,</span> <span class="n">error</span><span class="p">:</span> <span class="s1">&#39;unknown action&#39;</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="n">action</span> <span class="p">}))</span>
+</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="n">setMimeType</span><span class="p">(</span><span class="n">ContentService</span><span class="o">.</span><span class="n">MimeType</span><span class="o">.</span><span class="n">JSON</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="n">catch</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ContentService</span><span class="o">.</span><span class="n">createTextOutput</span><span class="p">(</span><span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">({</span> <span class="n">success</span><span class="p">:</span> <span class="bp">false</span><span class="p">,</span> <span class="n">error</span><span class="p">:</span> <span class="n">err</span><span class="o">.</span><span class="n">toString</span><span class="p">()</span> <span class="p">}))</span>
+</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="n">setMimeType</span><span class="p">(</span><span class="n">ContentService</span><span class="o">.</span><span class="n">MimeType</span><span class="o">.</span><span class="n">JSON</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">function</span> <span class="n">getConfig</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">ss</span> <span class="o">=</span> <span class="n">SpreadsheetApp</span><span class="o">.</span><span class="n">openById</span><span class="p">(</span><span class="n">SHEET_ID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">sheet</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">getSheetByName</span><span class="p">(</span><span class="n">CONFIG_SHEET</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sheet</span><span class="o">.</span><span class="n">getDataRange</span><span class="p">()</span><span class="o">.</span><span class="n">getValues</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="err">帳戶</span><span class="p">:</span> <span class="p">[],</span>
+</span></span><span class="line"><span class="cl">    <span class="err">類型</span><span class="p">:</span> <span class="p">[],</span>
+</span></span><span class="line"><span class="cl">    <span class="err">消費科目</span><span class="p">:</span> <span class="p">[],</span>  <span class="o">//</span> <span class="err">陣列</span>
+</span></span><span class="line"><span class="cl">    <span class="err">收入科目</span><span class="p">:</span> <span class="p">[],</span>  <span class="o">//</span> <span class="err">陣列</span>
+</span></span><span class="line"><span class="cl">    <span class="err">次科目</span><span class="p">:</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">headers</span><span class="o">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">header</span><span class="p">,</span> <span class="n">colIndex</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">header</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="err">跳過標記欄位</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">header</span> <span class="o">===</span> <span class="s1">&#39;[消費]&#39;</span> <span class="o">||</span> <span class="n">header</span> <span class="o">===</span> <span class="s1">&#39;[收入]&#39;</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">data</span><span class="o">.</span><span class="n">length</span><span class="p">;</span> <span class="n">row</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">colIndex</span><span class="p">])</span> <span class="n">values</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">colIndex</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">header</span> <span class="o">===</span> <span class="s1">&#39;帳戶&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">config</span><span class="o">.</span><span class="err">帳戶</span> <span class="o">=</span> <span class="n">values</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">header</span> <span class="o">===</span> <span class="s1">&#39;類型&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">config</span><span class="o">.</span><span class="err">類型</span> <span class="o">=</span> <span class="n">values</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="o">//</span> <span class="err">判斷是消費還是收入科目</span>
+</span></span><span class="line"><span class="cl">      <span class="n">let</span> <span class="n">categoryType</span> <span class="o">=</span> <span class="s1">&#39;消費&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">i</span> <span class="o">=</span> <span class="n">colIndex</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">headers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">===</span> <span class="s1">&#39;[收入]&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="n">categoryType</span> <span class="o">=</span> <span class="s1">&#39;收入&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">headers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">===</span> <span class="s1">&#39;[消費]&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="n">categoryType</span> <span class="o">=</span> <span class="s1">&#39;消費&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="o">//</span> <span class="err">加入陣列（保持順序）</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="n">categoryType</span> <span class="o">===</span> <span class="s1">&#39;消費&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">config</span><span class="o">.</span><span class="err">消費科目</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">header</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">config</span><span class="o">.</span><span class="err">收入科目</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">header</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="o">//</span> <span class="err">儲存次科目</span>
+</span></span><span class="line"><span class="cl">      <span class="n">config</span><span class="o">.</span><span class="err">次科目</span><span class="p">[</span><span class="n">header</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">ContentService</span><span class="o">.</span><span class="n">createTextOutput</span><span class="p">(</span><span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">(</span><span class="n">config</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="n">setMimeType</span><span class="p">(</span><span class="n">ContentService</span><span class="o">.</span><span class="n">MimeType</span><span class="o">.</span><span class="n">JSON</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">function</span> <span class="n">addEntry</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">ss</span> <span class="o">=</span> <span class="n">SpreadsheetApp</span><span class="o">.</span><span class="n">openById</span><span class="p">(</span><span class="n">SHEET_ID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="o">//</span> <span class="err">從日期取年份</span>
+</span></span><span class="line"><span class="cl">  <span class="n">let</span> <span class="n">year</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">date</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">dateStr</span> <span class="o">=</span> <span class="ne">String</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">date</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">dateStr</span><span class="o">.</span><span class="n">includes</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">year</span> <span class="o">=</span> <span class="n">dateStr</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">dateStr</span><span class="o">.</span><span class="n">includes</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">year</span> <span class="o">=</span> <span class="n">dateStr</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">year</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Date</span><span class="p">()</span><span class="o">.</span><span class="n">getFullYear</span><span class="p">()</span><span class="o">.</span><span class="n">toString</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">year</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Date</span><span class="p">()</span><span class="o">.</span><span class="n">getFullYear</span><span class="p">()</span><span class="o">.</span><span class="n">toString</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">let</span> <span class="n">sheet</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">getSheetByName</span><span class="p">(</span><span class="n">year</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">sheet</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sheet</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">insertSheet</span><span class="p">(</span><span class="n">year</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sheet</span><span class="o">.</span><span class="n">appendRow</span><span class="p">([</span><span class="s1">&#39;日期&#39;</span><span class="p">,</span> <span class="s1">&#39;類型&#39;</span><span class="p">,</span> <span class="s1">&#39;科目&#39;</span><span class="p">,</span> <span class="s1">&#39;次科目&#39;</span><span class="p">,</span> <span class="s1">&#39;帳戶&#39;</span><span class="p">,</span> <span class="s1">&#39;金額&#39;</span><span class="p">,</span> <span class="s1">&#39;摘要&#39;</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">sheet</span><span class="o">.</span><span class="n">appendRow</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span><span class="o">.</span><span class="n">date</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span><span class="o">.</span><span class="n">type</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span><span class="o">.</span><span class="n">category</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span><span class="o">.</span><span class="n">subcategory</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span><span class="o">.</span><span class="n">account</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span><span class="o">.</span><span class="n">amount</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span><span class="o">.</span><span class="n">note</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">lastRow</span> <span class="o">=</span> <span class="n">sheet</span><span class="o">.</span><span class="n">getLastRow</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="o">//</span> <span class="err">先為新增的這一行設定驗證</span>
+</span></span><span class="line"><span class="cl">  <span class="n">updateTypeValidation</span><span class="p">(</span><span class="n">sheet</span><span class="p">,</span> <span class="n">lastRow</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">updateCategoryValidation</span><span class="p">(</span><span class="n">sheet</span><span class="p">,</span> <span class="n">lastRow</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">updateSubcategoryValidation</span><span class="p">(</span><span class="n">sheet</span><span class="p">,</span> <span class="n">lastRow</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">updateAccountValidation</span><span class="p">(</span><span class="n">sheet</span><span class="p">,</span> <span class="n">lastRow</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="o">//</span> <span class="err">再排序</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">lastRow</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">lastRow</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">({</span> <span class="n">column</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ascending</span><span class="p">:</span> <span class="bp">true</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">ContentService</span><span class="o">.</span><span class="n">createTextOutput</span><span class="p">(</span><span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">({</span> <span class="n">success</span><span class="p">:</span> <span class="bp">true</span> <span class="p">}))</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="n">setMimeType</span><span class="p">(</span><span class="n">ContentService</span><span class="o">.</span><span class="n">MimeType</span><span class="o">.</span><span class="n">JSON</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="o">===</span> <span class="err">連動下拉選單功能</span> <span class="o">===</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="err">當編輯儲存格時觸發</span>
+</span></span><span class="line"><span class="cl"><span class="n">function</span> <span class="n">onEdit</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">sheet</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">getActiveSheet</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="nb">range</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">range</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="o">//</span> <span class="err">跳過設定分頁和統計分頁</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">sheet</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">===</span> <span class="n">CONFIG_SHEET</span> <span class="o">||</span> <span class="n">sheet</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;統計&#39;</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">col</span> <span class="o">=</span> <span class="nb">range</span><span class="o">.</span><span class="n">getColumn</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">row</span> <span class="o">=</span> <span class="nb">range</span><span class="o">.</span><span class="n">getRow</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="o">//</span> <span class="err">處理類型欄（</span><span class="n">B</span> <span class="err">欄）的變更</span> <span class="err">→</span> <span class="err">更新科目</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">col</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">updateCategoryValidation</span><span class="p">(</span><span class="n">sheet</span><span class="p">,</span> <span class="n">row</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">updateSubcategoryValidation</span><span class="p">(</span><span class="n">sheet</span><span class="p">,</span> <span class="n">row</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="o">//</span> <span class="err">處理科目欄（</span><span class="n">C</span> <span class="err">欄）的變更</span> <span class="err">→</span> <span class="err">更新次科目</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">col</span> <span class="o">===</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">updateSubcategoryValidation</span><span class="p">(</span><span class="n">sheet</span><span class="p">,</span> <span class="n">row</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="err">設定類型的驗證</span>
+</span></span><span class="line"><span class="cl"><span class="n">function</span> <span class="n">updateTypeValidation</span><span class="p">(</span><span class="n">sheet</span><span class="p">,</span> <span class="n">row</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">typeCell</span> <span class="o">=</span> <span class="n">sheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="o">//</span> <span class="n">B</span> <span class="err">欄：類型</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">ss</span> <span class="o">=</span> <span class="n">SpreadsheetApp</span><span class="o">.</span><span class="n">openById</span><span class="p">(</span><span class="n">SHEET_ID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">configSheet</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">getSheetByName</span><span class="p">(</span><span class="n">CONFIG_SHEET</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="nb">range</span> <span class="o">=</span> <span class="n">configSheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="s1">&#39;A2:A3&#39;</span><span class="p">);</span> <span class="o">//</span> <span class="err">類型範圍</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">rule</span> <span class="o">=</span> <span class="n">SpreadsheetApp</span><span class="o">.</span><span class="n">newDataValidation</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="n">requireValueInRange</span><span class="p">(</span><span class="nb">range</span><span class="p">,</span> <span class="bp">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="n">setAllowInvalid</span><span class="p">(</span><span class="bp">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="n">build</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">typeCell</span><span class="o">.</span><span class="n">setDataValidation</span><span class="p">(</span><span class="n">rule</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;updateTypeValidation error: &#39;</span> <span class="o">+</span> <span class="n">err</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="err">根據類型更新科目的驗證</span>
+</span></span><span class="line"><span class="cl"><span class="n">function</span> <span class="n">updateCategoryValidation</span><span class="p">(</span><span class="n">sheet</span><span class="p">,</span> <span class="n">row</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">typeCell</span> <span class="o">=</span> <span class="n">sheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="o">//</span> <span class="n">B</span> <span class="err">欄：類型</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">categoryCell</span> <span class="o">=</span> <span class="n">sheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="o">//</span> <span class="n">C</span> <span class="err">欄：科目</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">type</span> <span class="o">=</span> <span class="n">typeCell</span><span class="o">.</span><span class="n">getValue</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">currentCategory</span> <span class="o">=</span> <span class="n">categoryCell</span><span class="o">.</span><span class="n">getValue</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="o">//</span> <span class="err">如果類型欄是空的，清除科目驗證和內容</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">categoryCell</span><span class="o">.</span><span class="n">clearDataValidations</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">categoryCell</span><span class="o">.</span><span class="n">clearContent</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">ranges</span> <span class="o">=</span> <span class="n">getCategoryRanges</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="nb">range</span> <span class="o">=</span> <span class="n">ranges</span><span class="p">[</span><span class="n">type</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">range</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">categoryCell</span><span class="o">.</span><span class="n">clearDataValidations</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="n">categoryCell</span><span class="o">.</span><span class="n">clearContent</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="err">取得有效的科目清單</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">validCategories</span> <span class="o">=</span> <span class="nb">range</span><span class="o">.</span><span class="n">getValues</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">v</span> <span class="o">=&gt;</span> <span class="n">v</span> <span class="o">!==</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="err">如果當前科目不在新範圍內，清除內容</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">currentCategory</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">validCategories</span><span class="o">.</span><span class="n">includes</span><span class="p">(</span><span class="n">currentCategory</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">categoryCell</span><span class="o">.</span><span class="n">clearContent</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="err">設定新的驗證</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">rule</span> <span class="o">=</span> <span class="n">SpreadsheetApp</span><span class="o">.</span><span class="n">newDataValidation</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="n">requireValueInRange</span><span class="p">(</span><span class="nb">range</span><span class="p">,</span> <span class="bp">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="n">setAllowInvalid</span><span class="p">(</span><span class="bp">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="n">build</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">categoryCell</span><span class="o">.</span><span class="n">setDataValidation</span><span class="p">(</span><span class="n">rule</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;updateCategoryValidation error: &#39;</span> <span class="o">+</span> <span class="n">err</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="err">根據科目更新次科目的驗證</span>
+</span></span><span class="line"><span class="cl"><span class="n">function</span> <span class="n">updateSubcategoryValidation</span><span class="p">(</span><span class="n">sheet</span><span class="p">,</span> <span class="n">row</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">categoryCell</span> <span class="o">=</span> <span class="n">sheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="o">//</span> <span class="n">C</span> <span class="err">欄：科目</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">subcategoryCell</span> <span class="o">=</span> <span class="n">sheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="o">//</span> <span class="n">D</span> <span class="err">欄：次科目</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">category</span> <span class="o">=</span> <span class="n">categoryCell</span><span class="o">.</span><span class="n">getValue</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">currentSubcategory</span> <span class="o">=</span> <span class="n">subcategoryCell</span><span class="o">.</span><span class="n">getValue</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="o">//</span> <span class="err">如果科目欄是空的，清除次科目驗證和內容</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">category</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">subcategoryCell</span><span class="o">.</span><span class="n">clearDataValidations</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">subcategoryCell</span><span class="o">.</span><span class="n">clearContent</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="o">//</span> <span class="err">嘗試從命名範圍取得次科目清單</span>
+</span></span><span class="line"><span class="cl">  <span class="n">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">ss</span> <span class="o">=</span> <span class="n">SpreadsheetApp</span><span class="o">.</span><span class="n">openById</span><span class="p">(</span><span class="n">SHEET_ID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">namedRange</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">getNamedRanges</span><span class="p">()</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">nr</span> <span class="o">=&gt;</span> <span class="n">nr</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">===</span> <span class="n">category</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">namedRange</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">const</span> <span class="nb">range</span> <span class="o">=</span> <span class="n">namedRange</span><span class="o">.</span><span class="n">getRange</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="k">const</span> <span class="n">validValues</span> <span class="o">=</span> <span class="nb">range</span><span class="o">.</span><span class="n">getValues</span><span class="p">()</span><span class="o">.</span><span class="n">flat</span><span class="p">()</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">v</span> <span class="o">=&gt;</span> <span class="n">v</span> <span class="o">!==</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="o">//</span> <span class="err">如果次科目不在新範圍內，清除內容</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="n">currentSubcategory</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">validValues</span><span class="o">.</span><span class="n">includes</span><span class="p">(</span><span class="n">currentSubcategory</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">subcategoryCell</span><span class="o">.</span><span class="n">clearContent</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="o">//</span> <span class="err">設定新的驗證</span>
+</span></span><span class="line"><span class="cl">      <span class="k">const</span> <span class="n">rule</span> <span class="o">=</span> <span class="n">SpreadsheetApp</span><span class="o">.</span><span class="n">newDataValidation</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="o">.</span><span class="n">requireValueInRange</span><span class="p">(</span><span class="nb">range</span><span class="p">,</span> <span class="bp">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">.</span><span class="n">setAllowInvalid</span><span class="p">(</span><span class="bp">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">.</span><span class="n">build</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="n">subcategoryCell</span><span class="o">.</span><span class="n">setDataValidation</span><span class="p">(</span><span class="n">rule</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="o">//</span> <span class="err">找不到對應的命名範圍，清除驗證和內容</span>
+</span></span><span class="line"><span class="cl">      <span class="n">subcategoryCell</span><span class="o">.</span><span class="n">clearDataValidations</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="n">subcategoryCell</span><span class="o">.</span><span class="n">clearContent</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;updateSubcategoryValidation error: &#39;</span> <span class="o">+</span> <span class="n">err</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="err">設定帳戶的驗證</span>
+</span></span><span class="line"><span class="cl"><span class="n">function</span> <span class="n">updateAccountValidation</span><span class="p">(</span><span class="n">sheet</span><span class="p">,</span> <span class="n">row</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">accountCell</span> <span class="o">=</span> <span class="n">sheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span> <span class="o">//</span> <span class="n">E</span> <span class="err">欄：帳戶</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">ss</span> <span class="o">=</span> <span class="n">SpreadsheetApp</span><span class="o">.</span><span class="n">openById</span><span class="p">(</span><span class="n">SHEET_ID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">configSheet</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">getSheetByName</span><span class="p">(</span><span class="n">CONFIG_SHEET</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="nb">range</span> <span class="o">=</span> <span class="n">configSheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="s1">&#39;B2:B6&#39;</span><span class="p">);</span> <span class="o">//</span> <span class="err">帳戶範圍</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">rule</span> <span class="o">=</span> <span class="n">SpreadsheetApp</span><span class="o">.</span><span class="n">newDataValidation</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="n">requireValueInRange</span><span class="p">(</span><span class="nb">range</span><span class="p">,</span> <span class="bp">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="n">setAllowInvalid</span><span class="p">(</span><span class="bp">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="n">build</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">accountCell</span><span class="o">.</span><span class="n">setDataValidation</span><span class="p">(</span><span class="n">rule</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;updateAccountValidation error: &#39;</span> <span class="o">+</span> <span class="n">err</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="err">手動執行：為整個工作表設定所有驗證（批次版，更快）</span>
+</span></span><span class="line"><span class="cl"><span class="n">function</span> <span class="n">setupAllValidations</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">ss</span> <span class="o">=</span> <span class="n">SpreadsheetApp</span><span class="o">.</span><span class="n">openById</span><span class="p">(</span><span class="n">SHEET_ID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">sheets</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">getSheets</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">categoryRanges</span> <span class="o">=</span> <span class="n">getCategoryRanges</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">configSheet</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">getSheetByName</span><span class="p">(</span><span class="n">CONFIG_SHEET</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">sheets</span><span class="o">.</span><span class="n">forEach</span><span class="p">(</span><span class="n">sheet</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="err">跳過設定分頁和統計分頁</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">sheet</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">===</span> <span class="n">CONFIG_SHEET</span> <span class="o">||</span> <span class="n">sheet</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;統計&#39;</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">lastRow</span> <span class="o">=</span> <span class="n">sheet</span><span class="o">.</span><span class="n">getLastRow</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">lastRow</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span> <span class="o">//</span> <span class="err">只有標題列</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">Logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="err">`處理分頁</span><span class="p">:</span> <span class="o">$</span><span class="p">{</span><span class="n">sheet</span><span class="o">.</span><span class="n">getName</span><span class="p">()},</span> <span class="o">$</span><span class="p">{</span><span class="n">lastRow</span> <span class="o">-</span> <span class="mi">1</span><span class="p">}</span> <span class="err">筆資料`</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="o">===</span> <span class="err">批次設定類型驗證</span> <span class="o">===</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">typeRange</span> <span class="o">=</span> <span class="n">configSheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="s1">&#39;A2:A3&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">typeRule</span> <span class="o">=</span> <span class="n">SpreadsheetApp</span><span class="o">.</span><span class="n">newDataValidation</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="n">requireValueInRange</span><span class="p">(</span><span class="n">typeRange</span><span class="p">,</span> <span class="bp">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="n">setAllowInvalid</span><span class="p">(</span><span class="bp">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="n">build</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">row</span> <span class="o">&lt;=</span> <span class="n">lastRow</span><span class="p">;</span> <span class="n">row</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">sheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">setDataValidation</span><span class="p">(</span><span class="n">typeRule</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="o">===</span> <span class="err">批次設定科目驗證</span> <span class="o">===</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="err">先清除</span> <span class="n">C</span> <span class="err">欄所有驗證</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">lastRow</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">clearDataValidations</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="err">取得所有類型值</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">types</span> <span class="o">=</span> <span class="n">sheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">lastRow</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">getValues</span><span class="p">()</span><span class="o">.</span><span class="n">flat</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="err">按類型分組</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">typeGroups</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;消費&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;收入&#39;</span><span class="p">:</span> <span class="p">[]</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="n">types</span><span class="o">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">type</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">const</span> <span class="n">row</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="n">typeGroups</span><span class="p">[</span><span class="n">type</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">typeGroups</span><span class="p">[</span><span class="n">type</span><span class="p">]</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">row</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="err">為每個類型批次設定科目驗證</span>
+</span></span><span class="line"><span class="cl">    <span class="ne">Object</span><span class="o">.</span><span class="n">keys</span><span class="p">(</span><span class="n">typeGroups</span><span class="p">)</span><span class="o">.</span><span class="n">forEach</span><span class="p">(</span><span class="n">type</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">const</span> <span class="n">rows</span> <span class="o">=</span> <span class="n">typeGroups</span><span class="p">[</span><span class="n">type</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="n">rows</span><span class="o">.</span><span class="n">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="k">const</span> <span class="nb">range</span> <span class="o">=</span> <span class="n">categoryRanges</span><span class="p">[</span><span class="n">type</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">range</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="k">const</span> <span class="n">rule</span> <span class="o">=</span> <span class="n">SpreadsheetApp</span><span class="o">.</span><span class="n">newDataValidation</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="o">.</span><span class="n">requireValueInRange</span><span class="p">(</span><span class="nb">range</span><span class="p">,</span> <span class="bp">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">.</span><span class="n">setAllowInvalid</span><span class="p">(</span><span class="bp">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">.</span><span class="n">build</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="o">//</span> <span class="err">批次設定這個類型的所有行</span>
+</span></span><span class="line"><span class="cl">      <span class="n">rows</span><span class="o">.</span><span class="n">forEach</span><span class="p">(</span><span class="n">row</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">setDataValidation</span><span class="p">(</span><span class="n">rule</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="o">===</span> <span class="err">批次設定次科目驗證</span> <span class="o">===</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="err">先清除</span> <span class="n">D</span> <span class="err">欄所有驗證</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">lastRow</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">clearDataValidations</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="err">取得所有科目值</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">categories</span> <span class="o">=</span> <span class="n">sheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">lastRow</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">getValues</span><span class="p">()</span><span class="o">.</span><span class="n">flat</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="err">按科目分組</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">categoryGroups</span> <span class="o">=</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl">    <span class="n">categories</span><span class="o">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">cat</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">const</span> <span class="n">row</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">cat</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">categoryGroups</span><span class="p">[</span><span class="n">cat</span><span class="p">])</span> <span class="n">categoryGroups</span><span class="p">[</span><span class="n">cat</span><span class="p">]</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">      <span class="n">categoryGroups</span><span class="p">[</span><span class="n">cat</span><span class="p">]</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">row</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="err">為每個科目批次設定次科目驗證</span>
+</span></span><span class="line"><span class="cl">    <span class="ne">Object</span><span class="o">.</span><span class="n">keys</span><span class="p">(</span><span class="n">categoryGroups</span><span class="p">)</span><span class="o">.</span><span class="n">forEach</span><span class="p">(</span><span class="n">category</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">const</span> <span class="n">rows</span> <span class="o">=</span> <span class="n">categoryGroups</span><span class="p">[</span><span class="n">category</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">      <span class="k">const</span> <span class="n">namedRange</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">getNamedRanges</span><span class="p">()</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">nr</span> <span class="o">=&gt;</span> <span class="n">nr</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">===</span> <span class="n">category</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="n">namedRange</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">const</span> <span class="nb">range</span> <span class="o">=</span> <span class="n">namedRange</span><span class="o">.</span><span class="n">getRange</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">const</span> <span class="n">rule</span> <span class="o">=</span> <span class="n">SpreadsheetApp</span><span class="o">.</span><span class="n">newDataValidation</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">          <span class="o">.</span><span class="n">requireValueInRange</span><span class="p">(</span><span class="nb">range</span><span class="p">,</span> <span class="bp">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="o">.</span><span class="n">setAllowInvalid</span><span class="p">(</span><span class="bp">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="o">.</span><span class="n">build</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="o">//</span> <span class="err">批次設定這個科目的所有行</span>
+</span></span><span class="line"><span class="cl">        <span class="n">rows</span><span class="o">.</span><span class="n">forEach</span><span class="p">(</span><span class="n">row</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="n">sheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">setDataValidation</span><span class="p">(</span><span class="n">rule</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">});</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="o">//</span> <span class="o">===</span> <span class="err">批次設定帳戶驗證</span> <span class="o">===</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">accountRange</span> <span class="o">=</span> <span class="n">configSheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="s1">&#39;B2:B6&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">accountRule</span> <span class="o">=</span> <span class="n">SpreadsheetApp</span><span class="o">.</span><span class="n">newDataValidation</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="n">requireValueInRange</span><span class="p">(</span><span class="n">accountRange</span><span class="p">,</span> <span class="bp">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="n">setAllowInvalid</span><span class="p">(</span><span class="bp">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="o">.</span><span class="n">build</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">row</span> <span class="o">&lt;=</span> <span class="n">lastRow</span><span class="p">;</span> <span class="n">row</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">sheet</span><span class="o">.</span><span class="n">getRange</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">setDataValidation</span><span class="p">(</span><span class="n">accountRule</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">Logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;所有驗證設定完成！&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>將程式碼第一行的 <code>SHEET_ID</code> 改成你的試算表 ID<br>
+ID 怎麼找呢？<br>
+先回到 Google Sheet<br>
+就是網址中 <code>/d/</code> 和 <code>/edit</code> 之間的文字</li>
+</ol>
+<div align="center"><img src="./sheet-id.jpg" width="700px"/></div>
+<ol start="6">
+<li>點擊上方的「儲存專案」圖示</li>
+</ol>
+<div align="center"><img src="./save-project.jpg" width="500px"/></div>
+<h3 id="部署程式碼">部署程式碼
+</h3><ol>
+<li>點擊右上角「部署 → 新增部署作業」
+<ul>
+<li>點擊「選取類型」旁的齒輪圖示 → 選擇「網頁應用程式」</li>
+<li>說明 →<code>記帳 API v1</code></li>
+<li>執行身分 → <code>我</code></li>
+<li>具有存取權的使用者 → <code>所有人</code></li>
+<li>點擊「部署」</li>
+</ul>
+</li>
+</ol>
+<div align="center"><img src="./new-deployment.jpg" width="600px"/></div>
+<ol start="2">
+<li>點擊「授予存取權」
+<ul>
+<li>點「Advanced」(或「顯示詳細資訊」)</li>
+<li>點最下面「Go to &hellip; (unsafe)」(或「前往 &hellip;(不安全)」)</li>
+<li>然後按「Continue」(或「繼續」)</li>
+</ul>
+</li>
+</ol>
+<div align="center"><img src="./verified-this-app.jpg" width="450px"/></div>
+<p>部署完成後<br>
+有一個 <code>部署作業 ID</code><br>
+記得先複製起來<br>
+等一下做捷徑會用到</p>
+<h2 id="iphone-捷徑設定">iPhone 捷徑設定
+</h2><h3 id="建立捷徑">建立捷徑
+</h3><ol>
+<li>在 iPhone 上開啟「捷徑」App</li>
+<li>點擊右上角的「+」建立新捷徑</li>
+<li>點擊上方「新捷徑」改名為「記帳」</li>
+</ol>
+<h3 id="新增動作">新增動作
+</h3><p>【輸入日期】</p>
+<ol>
+<li>搜尋並新增「格式化日期」
+<ul>
+<li>日期選擇「每次都詢問」</li>
+<li>展開之後，日期格式：選「自訂」</li>
+<li>格式化字串：輸入 <code>yyyy-MM-dd</code></li>
+</ul>
+</li>
+<li>新增「設定變數」
+<ul>
+<li>變數名稱輸入 <code>日期</code></li>
+<li>變數設為「格式化的日期」</li>
+</ul>
+</li>
+</ol>
+<p>【輸入金額】</p>
+<ol start="3">
+<li>新增「要求輸入」
+<ul>
+<li>提示輸入 <code>金額</code></li>
+<li>後面類型改成要求「數字」</li>
+</ul>
+</li>
+<li>新增「設定變數」
+<ul>
+<li>變數名稱輸入 <code>金額</code></li>
+<li>變數設為「要求輸入」</li>
+</ul>
+</li>
+</ol>
+<p>【載入設定】</p>
+<ol start="5">
+<li>
+<p>新增「取得 URL 內容」</p>
+<ul>
+<li>URL 輸入 <code>https://script.google.com/macros/s/你的ID/exec?action=getConfig</code><br>
+(<code>你的ID</code> 改成 <code>部署作業 ID</code>)</li>
+<li>展開之後，方式：選「GET」</li>
+</ul>
+</li>
+<li>
+<p>新增「設定變數」</p>
+<ul>
+<li>變數名稱輸入 <code>設定資料</code></li>
+<li>變數設為「URL 內容」</li>
+</ul>
+</li>
+</ol>
+<p>【選擇類型】</p>
+<ol start="7">
+<li>新增「取得辭典值」
+<ul>
+<li>鍵值輸入 <code>類型</code></li>
+<li>一整句長這樣: 在「設定資料」中取得 <code>類型</code> 的「數值」</li>
+</ul>
+</li>
+<li>新增「從列表中選擇」
+<ul>
+<li>展開之後，提示輸入 <code>選擇類型</code></li>
+<li>一整句長這樣: 從「辭典值」中選擇</li>
+</ul>
+</li>
+<li>新增「設定變數」
+<ul>
+<li>變數名稱輸入 <code>類型</code></li>
+<li>一整句長這樣: 將 <code>類型</code> 變數設為「所選擇的項目」</li>
+</ul>
+</li>
+</ol>
+<p>【選擇帳戶】</p>
+<ol start="10">
+<li>新增「取得辭典值」
+<ul>
+<li>把類型變數刪掉，改「設定資料」變數</li>
+<li>鍵值輸入 <code>帳戶</code></li>
+<li>一整句長這樣: 在「設定資料」中取得 <code>帳戶</code> 的「數值」</li>
+</ul>
+</li>
+<li>新增「從列表中選擇」
+<ul>
+<li>展開之後，提示輸入 <code>選擇帳戶</code></li>
+<li>一整句長這樣: 從「辭典值」中選擇</li>
+</ul>
+</li>
+<li>新增「設定變數」
+<ul>
+<li>變數名稱輸入  <code>帳戶</code></li>
+<li>一整句長這樣: 將 <code>帳戶</code> 變數設為「所選擇的項目」</li>
+</ul>
+</li>
+</ol>
+<p>【根據類型取得科目清單】</p>
+<ol start="13">
+<li>
+<p>新增「如果」</p>
+<ul>
+<li>把檔案大小變數刪掉，改「類型」變數</li>
+<li>(我在這步卡很久🕳️)
+<ul>
+<li>點一下「類型」下面會跳出選單</li>
+<li>點一下「文字」會展開類型選單，先點「文章」再點回「文字」，「包含任何數值」就自動變成「是任何」</li>
+<li>把 <code>任何</code> 改成 <code>消費</code> 就成功了！</li>
+</ul>
+</li>
+<li>一整句長這樣: 如果「類型」是 <code>消費</code></li>
+</ul>
+<p>看不懂的話，我有錄一小段操作 👇</p>
+<details>
+    <summary style="cursor: pointer;">點我打開圖片</summary>
+    <div align="center"><img src="./ios-shortcuts-if.gif" width="350px"/></div>
+</details>
+</li>
+<li>
+<p>新增「取得辭典值」，長按移到在「如果」下面</p>
+<ul>
+<li>把帳戶變數刪掉，改「設定資料」變數</li>
+<li>鍵值輸入 <code>消費科目</code></li>
+<li>一整句長這樣: 在「設定資料」中取得 <code>消費科目</code> 的數值</li>
+</ul>
+</li>
+<li>
+<p>新增「取得辭典值」，長按移到在「否則」下面</p>
+<ul>
+<li>把帳戶變數刪掉，改「設定資料」變數</li>
+<li>鍵值輸入 <code>收入科目</code></li>
+<li>一整句長這樣: 在「設定資料」中取得 <code>收入科目</code> 的數值</li>
+</ul>
+</li>
+</ol>
+<p>【選擇科目】</p>
+<ol start="16">
+<li>
+<p>新增「從列表中選擇」</p>
+<ul>
+<li>展開選項後，提示輸入 <code>選擇科目</code></li>
+<li>一整句長這樣: 從「如果結果」中選擇</li>
+</ul>
+</li>
+<li>
+<p>新增「設定變數」</p>
+<ul>
+<li>變數名稱輸入 <code>科目</code></li>
+<li>一整句長這樣: 將 <code>科目</code> 變數設為「所選擇的項目」</li>
+</ul>
+</li>
+</ol>
+<p>【選擇次科目】</p>
+<ol start="18">
+<li>
+<p>新增「取得辭典值」</p>
+<ul>
+<li>把科目變數刪掉，改「設定資料」變數</li>
+<li>鍵值輸入 <code>次科目</code></li>
+<li>一整句長這樣: 在「設定資料」中取得 <code>次科目</code> 的「數值」</li>
+</ul>
+</li>
+<li>
+<p>新增「取得辭典值」</p>
+<ul>
+<li>鍵值選擇「科目」變數<br>
+👆 注意「科目」是變數，不是手動輸入的文字</li>
+<li>一整句長這樣: 在「辭典值」中取得「科目」的「數值」</li>
+</ul>
+</li>
+<li>
+<p>新增「從列表中選擇」</p>
+<ul>
+<li>展開選項後，提示輸入 <code>選擇次科目</code></li>
+<li>一整句長這樣:在「辭典值」中選擇</li>
+</ul>
+</li>
+<li>
+<p>新增「設定變數」</p>
+<ul>
+<li>變數名稱輸入 <code>次科目</code></li>
+<li>一整句長這樣: 將 <code>次科目</code> 變數設為「所選的項目」</li>
+</ul>
+</li>
+</ol>
+<p>【輸入摘要】</p>
+<ol start="22">
+<li>新增「要求輸入」
+<ul>
+<li>提示輸入 <code>摘要 (選填)</code></li>
+<li>後面類型選擇要求「文字」</li>
+</ul>
+</li>
+<li>新增「設定變數」
+<ul>
+<li>變數名稱輸入 <code>摘要</code></li>
+<li>一整句長這樣: 將 <code>摘要</code> 變數設為「要求輸入」</li>
+</ul>
+</li>
+</ol>
+<p>【送出資料】</p>
+<ol start="24">
+<li>新增「取得 URL 內容」
+<ul>
+<li>把摘要變數刪除，URL 輸入<code>https://script.google.com/macros/s/你的ID/exec</code><br>
+(<code>你的ID</code> 改成 <code>部署作業 ID</code>)</li>
+<li>展開之後，方式：選「POST」</li>
+<li>要求內文選「JSON」</li>
+<li>點擊「加入新欄位」，選「文字」，依序加入以下 8 個：</li>
+</ul>
+</li>
+</ol>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>鍵值 (皆手動輸入)</th>
+          <th>文字</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>action</code></td>
+          <td><code>addEntry</code> (手動輸入)</td>
+      </tr>
+      <tr>
+          <td><code>date</code></td>
+          <td><code>日期</code> (變數)</td>
+      </tr>
+      <tr>
+          <td><code>type</code></td>
+          <td><code>類型</code> (變數)</td>
+      </tr>
+      <tr>
+          <td><code>category</code></td>
+          <td><code>科目</code> (變數)</td>
+      </tr>
+      <tr>
+          <td><code>subcategory</code></td>
+          <td><code>次科目</code> (變數)</td>
+      </tr>
+      <tr>
+          <td><code>account</code></td>
+          <td><code>帳戶</code> (變數)</td>
+      </tr>
+      <tr>
+          <td><code>amount</code></td>
+          <td><code>金額</code> (變數)</td>
+      </tr>
+      <tr>
+          <td><code>note</code></td>
+          <td><code>摘要</code> (變數)</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>【顯示結果】</p>
+<ol start="25">
+<li>
+<p>新增「取得辭典值」</p>
+<ul>
+<li>鍵值輸入 <code>success</code></li>
+<li>一整句長這樣: 在「URL 內容」中取得 <code>success</code> 的「數值」</li>
+</ul>
+</li>
+<li>
+<p>新增「如果」</p>
+<ul>
+<li>(我在這步卡很久🕳️)</li>
+<li>先點藍字「檔案大小」，下面會跳出選單，點「文字」會展開類型選單</li>
+<li>往下滑，選擇「布林值」即可</li>
+<li>一整句長這樣: 如果「辭典值」</li>
+</ul>
+</li>
+<li>
+<p>新增「顯示通知」，長按移到在「如果」下面</p>
+<ul>
+<li>(這裡我也卡了一下🕳️) 不知道怎麼把普通文字跟變數放在一起</li>
+<li>先把辭典值變數刪除，手動輸入文字 <code>$ 記帳成功！</code></li>
+<li>再把游標點到 <code>$</code> 後面，選取「金額」變數</li>
+<li>一整句長這樣: 顯示通知 <code>$「金額」記帳成功！</code></li>
+</ul>
+</li>
+<li>
+<p>新增「顯示通知」，長按移到在「否則」下面</p>
+<ul>
+<li>跟上個步驟一樣，先把辭典值變數刪掉</li>
+<li>手動輸入文字 <code>$ 記帳失敗，請重試！</code></li>
+<li>再把游標點到 <code>$</code> 後面，插入「金額」變數</li>
+<li>一整句長這樣: 顯示通知 <code>$「金額」記帳失敗，請重試！</code></li>
+</ul>
+</li>
+</ol>
+<p>完成這 28 個步驟後，全部長這樣 👇</p>
+<details>
+    <summary style="cursor: pointer;">點我打開圖片 (超長)</summary>
+    <div align="center"><img src="./ios-shortcuts.jpg" width="400px"/></div>
+</details>
+<h3 id="測試捷徑">測試捷徑
+</h3><ol>
+<li>點擊左上角「返回」，回到捷徑 APP 首頁</li>
+<li>點擊「記帳」捷徑</li>
+<li>依序選擇
+<ul>
+<li>日期</li>
+<li>金額</li>
+<li>類型 (消費或收入)</li>
+<li>帳戶 (現金或信用卡&hellip;)</li>
+<li>科目 (食衣住&hellip;)</li>
+<li>次科目</li>
+<li>摘要</li>
+</ul>
+</li>
+<li>點擊「完成」</li>
+<li>應該會顯示 <code>$金額 記帳成功！</code></li>
+<li>檢查 Google Sheet 是否有新增一筆資料</li>
+</ol>
+<h3 id="加入主畫面">加入主畫面
+</h3><ol>
+<li>長按「記帳」捷徑</li>
+<li>點「詳細資訊」</li>
+<li>點「加入主畫面」</li>
+<li>自訂圖示和名稱</li>
+<li>點擊「加入」</li>
+</ol>
+<p>之後就能從主畫面一鍵開啟記帳！</p>
+<div align="center"><img src="./demo.gif"></div>
+<h3 id="下載捷徑">下載捷徑
+</h3><ul>
+<li>iPhone 捷徑範本連結: <a class="link" href="https://www.icloud.com/shortcuts/b7bfbee2ac8a454695315496e726785a"  target="_blank" rel="noopener"
+    >https://www.icloud.com/shortcuts/b7bfbee2ac8a454695315496e726785a</a></li>
+</ul>
+<p>記得修改 <code>步驟 5</code> &amp; <code>步驟 24</code><br>
+<code>你的ID</code> 要改成 <code>部署作業 ID</code><br>
+一起來記帳吧 ( ´▽` )ﾉ</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="http://localhost:1313/blog/tags/google-apps-script/">Google Apps Script</a>
+        
+            <a href="http://localhost:1313/blog/tags/ios-shortcuts/">IOS Shortcuts</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相關文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="http://localhost:1313/blog/2026-01-17-how-to-use-whisper-on-windows/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何在 Windows 使用 Whisper</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="http://localhost:1313/blog/2026-01-13-how-to-summarize-youtube-videos-with-ai-yt-dlp-python-notebooklm/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何用 AI 摘要 YouTube 影片重點</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="http://localhost:1313/blog/2021-05-02-use-tracert-to-troubleshoot-network/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">網路卡卡？快用 tracert 找出問題點！</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="http://localhost:1313/blog/2021-02-03-how-to-use-line-notify-to-send-messages/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何使用 LINE Notify 發通知</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="http://localhost:1313/blog/2020-12-25-how-to-save-windows-cmd-logfile/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何在 CMD 輸出 log 檔</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="annkuoQ/blog-utterances"
+        issue-term="title"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 AnnKuoQ
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 建立 <br />
+        主題 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.32.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 設計
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="http://localhost:1313/blog/ts/main.3cd37fefb8a5e8b1583cc4816c142139608f7385c41a4327a554c4f839ad4f34.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

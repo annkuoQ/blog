@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Rss on AnnKuoQ Blog</title>
-        <link>https://annkuoq.github.io/blog/tags/rss/</link>
+        <link>http://localhost:1313/blog/tags/rss/</link>
         <description>Recent content in Rss on AnnKuoQ Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <copyright>AnnKuoQ</copyright>
-        <lastBuildDate>Tue, 05 Nov 2024 18:14:15 +0000</lastBuildDate><atom:link href="https://annkuoq.github.io/blog/tags/rss/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 05 Nov 2024 18:14:15 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/rss/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何在 OBS 使用 RSS 做跑馬燈</title>
-        <link>https://annkuoq.github.io/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/</link>
+        <link>http://localhost:1313/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/</link>
         <pubDate>Tue, 05 Nov 2024 18:14:15 +0000</pubDate>
         
-        <guid>https://annkuoq.github.io/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/</guid>
+        <guid>http://localhost:1313/blog/2024-11-05-how-to-use-rss-to-create-a-scrolling-text-in-obs/</guid>
         <description>&lt;p&gt;最近常常需要做關於颱風的直播&lt;br&gt;
 畫面底部的跑馬燈&lt;br&gt;
 都是我 &lt;del&gt;工人智慧&lt;/del&gt; 從氣象署複製貼上的 😆&lt;br&gt;
